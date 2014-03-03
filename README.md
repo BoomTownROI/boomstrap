@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Pattern Library
 
 Just shiz.
@@ -21,7 +21,3 @@ Extremely flexible, easy to customize and adheres to WordPress coding standards 
     * `grunt watch`
 
 Enjoy!
-=======
-pattern-library
-===============
->>>>>>> f8746fc0c9c16721b4eb958c96d31898a6a47e99
