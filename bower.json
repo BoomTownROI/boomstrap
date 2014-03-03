@@ -1,0 +1,20 @@
+{
+  "name": "bt-pattern-library",
+  "version": "1.0.0",
+  "authors": [
+    "Craig Anthony <mcraiganthony@gmail.com>",
+    "Craig Anthony <craig@boomtownroi.com>"
+  ],
+  "description": "A robust pattern library",
+  "main": "index.html",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "jquery": ">= 1.9.0"
+  }
+}
