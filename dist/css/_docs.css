@@ -68,3 +68,76 @@
 .modal-footer:after {
   clear: both;
 }
+.pl-body {
+  padding-top: 70px;
+}
+.pl-body h3 {
+  margin: 20px 0;
+}
+.pl-section {
+  padding: 3em 0;
+}
+.pl-section + .pl-section {
+  border-top: 1px #999999 solid;
+}
+.pl-code {
+  margin: 1.5em 0;
+}
+.pl-code .na {
+  color: #4f9fcf;
+}
+.pl-code .nt {
+  color: #2f6f9f;
+}
+.pl-code .s {
+  color: #d44950;
+}
+.pl-swatch {
+  background-color: black;
+  height: 160px;
+  width: 100%;
+}
+.pl-swatch-txt {
+  padding-top: 10px;
+  text-align: center;
+}
+[class*="pl-swatch--"] {
+  height: 160px;
+  width: 100%;
+}
+.pl-swatch--bt-orange {
+  background-color: #f18221;
+}
+.pl-swatch--bt-blue {
+  background-color: #3881c0;
+}
+.pl-swatch--bt-blue-dark {
+  background-color: #363d45;
+}
+.pl-swatch--success {
+  background-color: #5cb85c;
+}
+.pl-swatch--info {
+  background-color: #5bc0de;
+}
+.pl-swatch--warning {
+  background-color: #f0ad4e;
+}
+.pl-swatch--danger {
+  background-color: #d9534f;
+}
+.pl-swatch--gray {
+  background-color: #555555;
+}
+.pl-swatch--gray-light {
+  background-color: #999999;
+}
+.pl-swatch--gray-lighter {
+  background-color: #eeeeee;
+}
+.pl-swatch--gray-dark {
+  background-color: #333333;
+}
+.pl-swatch--gray-darker {
+  background-color: #222222;
+}

@@ -3,12 +3,64 @@
 
 
 @import (reference) 'bower_components/bootstrap/less/bootstrap';
+@import (reference) 'variables';
 
-.pl-docs-container {
-	
-
+.pl-body {
+	padding-top: 70px;
+	h3 {
+		margin: @line-height-computed 0;
+	}
 }
 
 .pl-section {
-	
+	padding: 3em 0;
+	&+.pl-section {
+		border-top: 1px @gray-light solid;
+	}
 }
+
+// Code Snippets
+// -------------------------
+
+.pl-code {
+	margin: 1.5em 0;
+ .na { color: #4f9fcf; }
+ .nt { color: #2f6f9f; }
+ .s { color: #d44950; }
+}
+
+// Colors
+// -------------------------
+
+.pl-swatch {
+	background-color: black;
+	height: 160px;
+	width: 100%;
+}
+
+.pl-swatch-txt {
+	padding-top: (@line-height-computed / 2);
+	text-align: center;
+}
+
+[class*="pl-swatch--"] {
+	height: 160px;
+	width: 100%;
+}
+
+.pl-swatch--bt-orange { background-color: @bt-orange; }
+.pl-swatch--bt-blue { background-color: @bt-blue; }
+.pl-swatch--bt-blue-dark { background-color: @bt-blue-dark; }
+
+.pl-swatch--success { background-color: @brand-success; }
+.pl-swatch--info { background-color: @brand-info; }
+.pl-swatch--warning { background-color: @brand-warning; }
+.pl-swatch--danger { background-color: @brand-danger; }
+
+.pl-swatch--gray { background-color: @gray; }
+.pl-swatch--gray-light { background-color: @gray-light; }
+.pl-swatch--gray-lighter { background-color: @gray-lighter; }
+.pl-swatch--gray-dark { background-color: @gray-dark; }
+.pl-swatch--gray-darker { background-color: @gray-darker; }
+
+

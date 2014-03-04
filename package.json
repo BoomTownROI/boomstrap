@@ -1,5 +1,5 @@
 {
-  "name": "ca-pattern-library",
+  "name": "pattern-library",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.1",
