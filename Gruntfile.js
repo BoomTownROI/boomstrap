@@ -61,6 +61,12 @@ module.exports = function(grunt) {
         }
       }
     },
+    copy: {
+      docs: {
+        src: 'index.html',
+        dest: 'docs/'
+      }
+    },
     watch: {
       scripts: {
         files: ['js/*.js'],
@@ -99,7 +105,7 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['less:dev']); // Development
   grunt.registerTask('dev', ['concat:dist','uglify:build','less:dev']); // Development
   grunt.registerTask('dist', ['concat:dist','uglify:build','less:dist']); // Distribution
-  grunt.registerTask('server', ['concat:docs', 'uglify:docs', 'less:docs', 'connect']);
+  grunt.registerTask('server', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']);
   grunt.registerTask('default', ['concat:dist','uglify:build','less:dist']);
 
 };
