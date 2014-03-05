@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pattern Library</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <link rel="stylesheet" href="css/pattern-library.css">
+  <link rel="stylesheet" href="css/_docs.css">
+  <script src="js/pattern-library.js"></script>
+</head>
+<body class="pl-body">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- :::::::::::::::::::::::: NAVIGATION :::::::::::::::::::::::: -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PL</a>
+      </div>
+      <div class="collapse navbar-collapse" id="pl-nav">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#pl-colors">Colors</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#pl-button-options">Options</a></li>
+              <li><a href="#pl-button-sizes">Sizes</a></li>
+              <li><a href="#pl-button-active">Active State</a></li>
+              <li><a href="#pl-button-disabled">Disabled State</a></li>
+              <li><a href="#pl-button-tags">Button Tags</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Button Groups <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Options</a></li>
+              <li><a href="#">Sizes</a></li>
+              <li><a href="#">Active State</a></li>
+              <li><a href="#">Disabled State</a></li>
+              <li><a href="#">Button Tags</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <!-- :::::::::::::::::::::::: BOOMTOWN COLORS :::::::::::::::::::::::: -->
+    <section id="pl-colors" class="pl-section">
+      <h1>Colors</h1>
+      <h3>Primary Colors</h3>
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="pl-swatch--bt-blue"></div>
+            <p class="pl-swatch-txt">BT Blue<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="pl-swatch--bt-orange"></div>
+            <p class="pl-swatch-txt">BT Orange<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="pl-swatch--bt-blue-dark"></div>
+            <p class="pl-swatch-txt">BT Blue Dark<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="pl-swatch"></div>
+            <p class="pl-swatch-txt">BT Lorem<br>#000</p>
+          </div>
+        </div>
+      </div>
+      <h3>Secondary Colors</h3>
+      <div class="row">
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--success"></div>
+            <p class="pl-swatch-txt">Success<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--info"></div>
+            <p class="pl-swatch-txt">Info<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--warning"></div>
+            <p class="pl-swatch-txt">Warning<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--danger"></div>
+            <p class="pl-swatch-txt">Danger<br>#000</p>
+          </div>
+        </div>
+      </div>
+      <h3>Grays</h3>
+      <div class="row">
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-darker"></div>
+            <p class="pl-swatch-txt">Gray Darker<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-dark"></div>
+            <p class="pl-swatch-txt">Gray Dark<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray"></div>
+            <p class="pl-swatch-txt">Gray<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-light"></div>
+            <p class="pl-swatch-txt">Gray Light<br>#000</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-lighter"></div>
+            <p class="pl-swatch-txt">Gray Lighter<br>#000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- :::::::::::::::::::::::: BOOMTOWN BUTTONS :::::::::::::::::::::::: -->
+    <section class="pl-section">
+      <h1>Buttons</h1>
+      <h3 id="pl-button-options">Options</h3>
+      <a href="#" class="btn btn-default">Default</a>
+      <a href="#" class="btn btn-primary">Primary</a>
+      <a href="#" class="btn btn-success">Success</a>
+      <a href="#" class="btn btn-info">Info</a>
+      <a href="#" class="btn btn-warning">Warning</a>
+      <a href="#" class="btn btn-danger">Danger</a>
+      <a href="#" class="btn btn-link">Link</a>
+      <div class="pl-code">
+        <pre><code><span class="c">&lt;!-- Standard button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Indicates a successful or positive action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-success&quot;</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Contextual button for informational alert messages --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-info&quot;</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Indicates caution should be taken with this action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-warning&quot;</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Indicates a dangerous or potentially negative action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span>
+        </code></pre>
+      </div>
+      <h3 id="pl-button-sizes">Sizes</h3>
+      <a href="#" class="btn btn-default btn-lg">Large Button</a>
+      <a href="#" class="btn btn-default">Default Button</a>
+      <a href="#" class="btn btn-default btn-sm">Default</a>
+      <a href="#" class="btn btn-default btn-xs">Default</a>
+    </section>
+  </div>
+</body>
+</html>
