@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "authors": [
     "Craig Anthony <mcraiganthony@gmail.com>",
-    "Craig Anthony <craig@boomtownroi.com>"
+    "Craig Anthony <craig@boomtownroi.com>",
+    "Mark Funk <mark@boomtownroilcom>"
   ],
   "description": "A robust pattern library",
   "main": "index.html",
