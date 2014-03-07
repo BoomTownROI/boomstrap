@@ -5093,3 +5093,69 @@ button.close {
     display: none !important;
   }
 }
+.label {
+  font-weight: normal;
+}
+.label-archive {
+  background-color: #acacac;
+}
+.label-archive[href]:hover,
+.label-archive[href]:focus {
+  background-color: #939393;
+}
+.label-closed {
+  background-color: #c7dcb7;
+}
+.label-closed[href]:hover,
+.label-closed[href]:focus {
+  background-color: #accb95;
+}
+.label-hot {
+  background-color: #ff6600;
+}
+.label-hot[href]:hover,
+.label-hot[href]:focus {
+  background-color: #cc5200;
+}
+.label-new {
+  background-color: #fafa6a;
+}
+.label-new[href]:hover,
+.label-new[href]:focus {
+  background-color: #f8f839;
+}
+.label-nurture {
+  background-color: #358de7;
+}
+.label-nurture[href]:hover,
+.label-nurture[href]:focus {
+  background-color: #1973d0;
+}
+.label-pending {
+  background-color: #c7dcb7;
+}
+.label-pending[href]:hover,
+.label-pending[href]:focus {
+  background-color: #accb95;
+}
+.label-qualify {
+  background-color: #3abb00;
+}
+.label-qualify[href]:hover,
+.label-qualify[href]:focus {
+  background-color: #2a8800;
+}
+.label-trash {
+  background-color: #555555;
+}
+.label-trash[href]:hover,
+.label-trash[href]:focus {
+  background-color: #3c3c3c;
+}
+.label-watch {
+  background-color: #cc8d14;
+}
+.label-watch[href]:hover,
+.label-watch[href]:focus {
+  background-color: #9e6d0f;
+}

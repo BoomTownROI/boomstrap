@@ -92,11 +92,6 @@
 .pl-code .s {
   color: #d44950;
 }
-.pl-swatch {
-  background-color: black;
-  height: 160px;
-  width: 100%;
-}
 .pl-swatch-txt {
   padding-top: 10px;
   text-align: center;
@@ -140,4 +135,7 @@
 }
 .pl-swatch--gray-darker {
   background-color: #222222;
+}
+.pl-swatch--black {
+  background-color: #000;
 }

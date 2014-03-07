@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/css/pattern-library.css':'less/pattern-library.less',
-          'dist/css/_docs.css':'less/_docs.less'
+          'dist/css/pattern-library-docs.css':'less/pattern-library-docs.less'
         }
       },
       dist: {
@@ -48,16 +48,16 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/css/pattern-library.css':'less/pattern-library.less',
-          'dist/css/_docs.css':'less/_docs.less'
+          'dist/css/pattern-library-docs.css':'less/pattern-library-docs.less'
         }
       },
       docs: {
         options: {
-          compress: true
+          compress: false
         },
         files: {
           'docs/css/pattern-library.css':'less/pattern-library.less',
-          'docs/css/_docs.css':'less/_docs.less'
+          'docs/css/pattern-library-docs.css':'less/pattern-library-docs.less'
         }
       }
     },
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['less/*.less'],
-        tasks: ['less:dev'],
+        tasks: ['less:dev','less:docs'],
         options: {
             spawn: false,
         }
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['concat:dist','uglify:build','less:dev']); // Development
   grunt.registerTask('dist', ['concat:dist','uglify:build','less:dist']); // Distribution
   grunt.registerTask('server', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']);
-  grunt.registerTask('default', ['concat:dist','uglify:build','less:dist']);
+  grunt.registerTask('default', ['concat:dist','concat:docs','uglify:build','uglify:docs','less:dist','less:docs']);
 
 };
 
