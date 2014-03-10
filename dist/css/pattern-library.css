@@ -355,7 +355,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
   color: inherit;
 }
@@ -2196,8 +2196,8 @@ fieldset[disabled] .btn-info.active {
 }
 .btn-warning {
   color: #ffffff;
-  background-color: #ffcc33;
-  border-color: #ffc619;
+  background-color: #e5ac00;
+  border-color: #cc9900;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -2205,8 +2205,8 @@ fieldset[disabled] .btn-info.active {
 .btn-warning.active,
 .open .dropdown-toggle.btn-warning {
   color: #ffffff;
-  background-color: #ffc20a;
-  border-color: #dba400;
+  background-color: #bc8d00;
+  border-color: #8e6b00;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -2228,11 +2228,11 @@ fieldset[disabled] .btn-warning:active,
 .btn-warning.disabled.active,
 .btn-warning[disabled].active,
 fieldset[disabled] .btn-warning.active {
-  background-color: #ffcc33;
-  border-color: #ffc619;
+  background-color: #e5ac00;
+  border-color: #cc9900;
 }
 .btn-warning .badge {
-  color: #ffcc33;
+  color: #e5ac00;
   background-color: #ffffff;
 }
 .btn-danger {
@@ -3686,11 +3686,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #31b0d5;
 }
 .label-warning {
-  background-color: #ffcc33;
+  background-color: #e5ac00;
 }
 .label-warning[href]:hover,
 .label-warning[href]:focus {
-  background-color: #ffbf00;
+  background-color: #b28600;
 }
 .label-danger {
   background-color: #ef5959;
@@ -3899,7 +3899,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
-  background-color: #ffcc33;
+  background-color: #e5ac00;
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5137,6 +5137,13 @@ fieldset[disabled] .btn-attention.active {
 .label {
   font-weight: normal;
 }
+.label-attention {
+  background-color: #f68a24;
+}
+.label-attention[href]:hover,
+.label-attention[href]:focus {
+  background-color: #de7009;
+}
 .label-archive {
   background-color: #999999;
 }
@@ -5152,25 +5159,25 @@ fieldset[disabled] .btn-attention.active {
   background-color: #8daf4a;
 }
 .label-hot {
-  background-color: #f48a34;
+  background-color: #f68a24;
 }
 .label-hot[href]:hover,
 .label-hot[href]:focus {
-  background-color: #e86f0d;
+  background-color: #de7009;
 }
 .label-new {
-  background-color: #fecc45;
+  background-color: #e5ac00;
 }
 .label-new[href]:hover,
 .label-new[href]:focus {
-  background-color: #febe12;
+  background-color: #b28600;
 }
 .label-nurture {
-  background-color: #2083df;
+  background-color: #1581e2;
 }
 .label-nurture[href]:hover,
 .label-nurture[href]:focus {
-  background-color: #1a69b2;
+  background-color: #1166b3;
 }
 .label-pending {
   background-color: #a9c49b;
@@ -5180,23 +5187,23 @@ fieldset[disabled] .btn-attention.active {
   background-color: #8db17b;
 }
 .label-qualify {
-  background-color: #669946;
+  background-color: #669900;
 }
 .label-qualify[href]:hover,
 .label-qualify[href]:focus {
-  background-color: #4f7636;
+  background-color: #446600;
 }
 .label-trash {
-  background-color: #606060;
+  background-color: #555555;
 }
 .label-trash[href]:hover,
 .label-trash[href]:focus {
-  background-color: #474747;
+  background-color: #3c3c3c;
 }
 .label-watch {
-  background-color: #cd8d20;
+  background-color: #997300;
 }
 .label-watch[href]:hover,
 .label-watch[href]:focus {
-  background-color: #a16f19;
+  background-color: #664c00;
 }

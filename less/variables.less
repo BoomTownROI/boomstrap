@@ -1,52 +1,67 @@
 // File: variables.less
 
 
-
+// -------------------------
 // Colors
 // -------------------------
 
-@bt-blue:									#1581e2;
-@bt-orange:								#f68a24;
+@bt-blue:										#1581e2;
+@bt-orange:									#f68a24;
 
-@gray-darker:           	lighten(#000, 13.5%); // #222
-@gray-dark:             	lighten(#000, 20%);   // #333
-@gray:                  	lighten(#000, 33.5%); // #555
-@gray-light:            	lighten(#000, 60%);   // #999
-@gray-lighter:          	lighten(#000, 93.5%); // #eee
+@gray-darker:           		lighten(#000, 13.5%); // #222
+@gray-dark:             		lighten(#000, 20%);   // #333
+@gray:                  		lighten(#000, 33.5%); // #555
+@gray-light:            		lighten(#000, 60%);   // #999
+@gray-lighter:          		lighten(#000, 93.5%); // #eee
 
-@brand-primary:         	@bt-blue;
-@brand-success:         	#669900;
-@brand-info:            	#5bc0de;
-@brand-warning:         	#ffcc33;
-@brand-danger:          	#ef5959;
+@brand-primary:         		@bt-blue;
+@brand-attention: 					@bt-orange;
+@brand-success:         		#669900;
+@brand-info:            		#5bc0de;
+@brand-warning:         		#e5ac00;
+@brand-danger:          		#ef5959;
+
+@white:											#ffffff;
 
 
-
+// -------------------------
 // Buttons
 // -------------------------
 
 @btn-attention-color:     	#fff;
-@btn-attention-bg:        	@bt-orange;
+@btn-attention-bg:        	@brand-attention;
 @btn-attention-border:    	darken(@btn-attention-bg, 5%);
 
 
-
+// -------------------------
 // Labels
 // -------------------------
 
-@label-archive-bg:				@gray-light;
-@label-closed-bg:       	#a4c16b; // light green
-@label-hot-bg:          	#f48a34; // orange
-@label-new-bg:          	#fecc45; // yellow
-@label-nurture-bg:      	#2083df; // blue
-@label-pending-bg:      	#a9c49b; // mint
-@label-qualify-bg:      	#669946; // dark green
-@label-trash-bg:        	#606060; // gray
-@label-watch-bg:					#cd8d20; // mustard
+@label-attention-bg:				@brand-attention;
+
+// Lead Category Labels
+@label-archive-bg:					@gray-light;
+@label-closed-bg:       		#a4c16b; // light green
+@label-hot-bg:          		@brand-attention;
+@label-new-bg:          		@brand-warning; // yellow
+@label-nurture-bg:      		@brand-primary;
+@label-pending-bg:      		#a9c49b; // mint
+@label-qualify-bg:      		@brand-success; // dark green
+@label-trash-bg:        		@gray;
+@label-watch-bg:						darken(@brand-warning,15%);
 
 
-
+// -------------------------
 // Typography
 // -------------------------
 
-@font-family-sans-serif:				'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-sans-serif:	 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+
+@headings-font-weight:    	600; // Open Sans Semi-Bold
+
+
+
+
+
+
+
