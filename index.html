@@ -5,12 +5,12 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
   <link rel="stylesheet" href="docs/css/pattern-library.css">
   <link rel="stylesheet" href="docs/css/pattern-library-docs.css">
-  <script src="js/pattern-library.js"></script>
+  <script src="docs/js/pattern-library.min.js"></script>
 </head>
 <body class="pl-body">
+  <!-- :::::::::::::::::::::::::::::::::: NAVIGATION :::::::::::::::::::::::::::::::::: -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
-      <!-- :::::::::::::::::::::::: NAVIGATION :::::::::::::::::::::::: -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
           <span class="icon-bar"></span>
@@ -23,7 +23,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#pl-colors">Colors</a></li>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#pl-button-options">Options</a></li>
               <li><a href="#pl-button-sizes">Sizes</a></li>
@@ -32,7 +32,9 @@
               <li><a href="#pl-button-tags">Button Tags</a></li>
             </ul>
           </li>
-          <li class="dropdown">
+          <li><a href="#pl-labels">Labels</a></li>
+          <li><a href="#pl-typography">Typography</a></li>
+          <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Button Groups <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">Options</a></li>
@@ -41,13 +43,13 @@
               <li><a href="#">Disabled State</a></li>
               <li><a href="#">Button Tags</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
   </nav>
   <div class="container">
-    <!-- :::::::::::::::::::::::: BOOMTOWN COLORS :::::::::::::::::::::::: -->
+    <!-- :::::::::::::::::::::::::::::::::: BOOMTOWN COLORS :::::::::::::::::::::::::::::::::: -->
     <section id="pl-colors" class="pl-section">
       <h1>Colors</h1>
       <h3>Primary Colors</h3>
@@ -55,25 +57,13 @@
         <div class="col-sm-6 col-md-3">
           <div class="thumbnail">
             <div class="pl-swatch--bt-blue"></div>
-            <p class="pl-swatch-txt">BT Blue<br>#000</p>
+            <p class="pl-swatch-txt">BT Blue<br>#1581e2</p>
           </div>
         </div>
         <div class="col-sm-6 col-md-3">
           <div class="thumbnail">
             <div class="pl-swatch--bt-orange"></div>
-            <p class="pl-swatch-txt">BT Orange<br>#000</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <div class="pl-swatch--bt-blue-dark"></div>
-            <p class="pl-swatch-txt">BT Blue Dark<br>#000</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <div class="pl-swatch--black"></div>
-            <p class="pl-swatch-txt">BT Lorem<br>#000</p>
+            <p class="pl-swatch-txt">BT Orange<br>#f68a24</p>
           </div>
         </div>
       </div>
@@ -82,25 +72,25 @@
         <div class="col-sm-3 col-md-2">
           <div class="thumbnail">
             <div class="pl-swatch--success"></div>
-            <p class="pl-swatch-txt">Success<br>#000</p>
+            <p class="pl-swatch-txt">Success<br>#669900</p>
           </div>
         </div>
         <div class="col-sm-3 col-md-2">
           <div class="thumbnail">
             <div class="pl-swatch--info"></div>
-            <p class="pl-swatch-txt">Info<br>#000</p>
+            <p class="pl-swatch-txt">Info<br>#5bc0de</p>
           </div>
         </div>
         <div class="col-sm-3 col-md-2">
           <div class="thumbnail">
             <div class="pl-swatch--warning"></div>
-            <p class="pl-swatch-txt">Warning<br>#000</p>
+            <p class="pl-swatch-txt">Warning<br>#ffcc33</p>
           </div>
         </div>
         <div class="col-sm-3 col-md-2">
           <div class="thumbnail">
             <div class="pl-swatch--danger"></div>
-            <p class="pl-swatch-txt">Danger<br>#000</p>
+            <p class="pl-swatch-txt">Danger<br>#ef5959</p>
           </div>
         </div>
       </div>
@@ -138,12 +128,13 @@
         </div>
       </div>
     </section>
-    <!-- :::::::::::::::::::::::: BOOMTOWN BUTTONS :::::::::::::::::::::::: -->
+    <!-- :::::::::::::::::::::::::::::::::: BOOMTOWN BUTTONS :::::::::::::::::::::::::::::::::: -->
     <section class="pl-section">
       <h1>Buttons</h1>
       <h3 id="pl-button-options">Options</h3>
       <a href="#" class="btn btn-default">Default</a>
       <a href="#" class="btn btn-primary">Primary</a>
+      <a href="#" class="btn btn-attention">Attention</a>
       <a href="#" class="btn btn-success">Success</a>
       <a href="#" class="btn btn-info">Info</a>
       <a href="#" class="btn btn-warning">Warning</a>
@@ -156,6 +147,9 @@
 
 <span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Provides extreme awareness through the use of BoomTown orange --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-attention&quot;</span><span class="nt">&gt;</span>Attention<span class="nt">&lt;/button&gt;</span>
 
 <span class="c">&lt;!-- Indicates a successful or positive action --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-success&quot;</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
@@ -187,8 +181,8 @@
         </code></pre> 
       </div>
     </section>
-    <!-- :::::::::::::::::::::::: BOOMTOWN LABELS :::::::::::::::::::::::: -->
-    <section class="pl-section">
+    <!-- :::::::::::::::::::::::::::::::::: BOOMTOWN LABELS :::::::::::::::::::::::::::::::::: -->
+    <section id="pl-labels" class="pl-section">
       <h1>Labels</h1>
       <h3>Options</h3>
       <div>
@@ -212,6 +206,11 @@
         <span class="label label-watch">watch</span>
       </div>
     </section>
-  </div>
+    <!-- :::::::::::::::::::::::::::::::::: BOOMTOWN LABELS :::::::::::::::::::::::::::::::::: -->
+    <section id="pl-typography" class="pl-section">
+      <h1>Typography</h1>
+      <h3>Headlines</h3>
+    </section>
+  </div> <!-- end container -->
 </body>
 </html>
