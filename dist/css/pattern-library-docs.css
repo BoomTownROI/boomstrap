@@ -116,7 +116,7 @@
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-.pl-example p:last-child {
+.pl-example > p:last-child {
   margin-bottom: 0;
 }
 .pl-code {
