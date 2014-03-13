@@ -5095,6 +5095,9 @@ button.close {
     display: none !important;
   }
 }
+img {
+  max-width: 100%;
+}
 .btn-attention {
   color: #ffffff;
   background-color: #f68a24;
