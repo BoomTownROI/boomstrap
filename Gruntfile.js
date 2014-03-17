@@ -81,6 +81,13 @@ module.exports = function(grunt) {
         options: {
           spawn: false,
         }
+      },
+      src: {
+        files: ['index.html'],
+        tasks: ['copy:docs'],
+        options: {
+          spawn: false,
+        }
       }
     },
     connect: {
@@ -102,9 +109,10 @@ module.exports = function(grunt) {
 
   // Tell Grunt what to do when we type "grunt" into the terminal.
 
-  grunt.registerTask('css', ['less:dist','less:docs']);
-  grunt.registerTask('server', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']);
-  grunt.registerTask('default', ['concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist','less:docs','copy:dist','copy:docs']);
+  grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
+  grunt.registerTask('server', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']); // Run server
+  grunt.registerTask('default', ['concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist',
+    'less:docs','copy:dist','copy:docs']); // Full Monty
 
 };
 
