@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           'bower_components/jquery/dist/jquery.js', // jQuery JS
           'bower_components/bootstrap/dist/js/bootstrap.js', // Bootstrap JS
           'js/libs/*.js', // Libraries JS
-          'js/pattern-library.js'  // Pattern Library JS
+          'js/global.js'  // Global JS
         ],
         dest: 'dist/js/pattern-library.js',
       },
@@ -17,13 +17,13 @@ module.exports = function(grunt) {
           'bower_components/jquery/dist/jquery.js', // jQuery JS
           'bower_components/bootstrap/dist/js/bootstrap.js', // Bootstrap JS
           'js/libs/*.js', // Libraries JS
-          'js/pattern-library.js'  // Pattern Library JS
+          'js/global.js'  // Global JS
         ],
         dest: 'docs/js/pattern-library.js',
       }
     },
     uglify: {
-      build: {
+      dist: {
         src: 'dist/js/pattern-library.js',
         dest: 'dist/js/pattern-library.min.js'
       },
@@ -33,15 +33,6 @@ module.exports = function(grunt) {
       }
     },
     less: {
-      dev: {
-        options: {
-          compress: false
-        },
-        files: {
-          'dist/css/pattern-library.css':'less/pattern-library.less',
-          'dist/css/pattern-library-docs.css':'less/pattern-library-docs.less'
-        }
-      },
       dist: {
         options: {
           compress: true
@@ -62,9 +53,18 @@ module.exports = function(grunt) {
       }
     },
     copy: {
+      // copy index.html and images directory into two locations
+      dist: {
+        files: [
+          {src: ['index.html'], dest: 'dist/'},
+          {src: ['images/**'], dest: 'dist/'}
+        ]
+      },
       docs: {
-        src: 'index.html',
-        dest: 'docs/'
+        files: [
+          {src: ['index.html'], dest: 'docs/'},
+          {src: ['images/**'], dest: 'docs/'}
+        ]
       }
     },
     watch: {
@@ -77,9 +77,9 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['less/*.less'],
-        tasks: ['less:dev','less:docs'],
+        tasks: ['less:dist','less:docs'],
         options: {
-            spawn: false,
+          spawn: false,
         }
       }
     },
@@ -102,11 +102,9 @@ module.exports = function(grunt) {
 
   // Tell Grunt what to do when we type "grunt" into the terminal.
 
-  grunt.registerTask('css', ['less:dev']); // Development
-  grunt.registerTask('dev', ['concat:dist','uglify:build','less:dev']); // Development
-  grunt.registerTask('dist', ['concat:dist','uglify:build','less:dist']); // Distribution
+  grunt.registerTask('css', ['less:dist','less:docs']);
   grunt.registerTask('server', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']);
-  grunt.registerTask('default', ['concat:dist','concat:docs','uglify:build','uglify:docs','less:dist','less:docs']);
+  grunt.registerTask('default', ['concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist','less:docs','copy:dist','copy:docs']);
 
 };
 
