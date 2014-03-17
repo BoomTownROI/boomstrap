@@ -2238,8 +2238,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #ef5959;
-  border-color: #ed4242;
+  background-color: #cb2027;
+  border-color: #b51d23;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -2247,8 +2247,8 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger.active,
 .open .dropdown-toggle.btn-danger {
   color: #ffffff;
-  background-color: #eb3434;
-  border-color: #dc1515;
+  background-color: #a81a20;
+  border-color: #801419;
 }
 .btn-danger:active,
 .btn-danger.active,
@@ -2270,11 +2270,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #ef5959;
-  border-color: #ed4242;
+  background-color: #cb2027;
+  border-color: #b51d23;
 }
 .btn-danger .badge {
-  color: #ef5959;
+  color: #cb2027;
   background-color: #ffffff;
 }
 .btn-link {
@@ -3695,11 +3695,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #b28600;
 }
 .label-danger {
-  background-color: #ef5959;
+  background-color: #cb2027;
 }
 .label-danger[href]:hover,
 .label-danger[href]:focus {
-  background-color: #eb2a2a;
+  background-color: #9f191f;
 }
 .badge {
   display: inline-block;
@@ -3908,7 +3908,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-danger {
-  background-color: #ef5959;
+  background-color: #cb2027;
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5165,7 +5165,7 @@ a.callout-attention:hover {
 }
 .callout-danger {
   background-color: #f2dede;
-  border-color: #ef5959;
+  border-color: #cb2027;
 }
 a.callout-danger:hover {
   background-color: #e4b9b9;
