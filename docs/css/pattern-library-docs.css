@@ -105,12 +105,15 @@
 .pl-article > h3 {
   color: #696969;
 }
+.pl-article > h4 {
+  color: #696969;
+}
 .pl-example {
   background-color: #ffffff;
   margin-bottom: 0;
 }
 .pl-example + .pl-code {
-  margin: -6px 0 0 0;
+  margin: -6px 0 20px 0;
 }
 .pl-example + .pl-code pre {
   border-top-right-radius: 0;
