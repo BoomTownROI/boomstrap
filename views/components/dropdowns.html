@@ -1,0 +1,115 @@
+    <!-- ================================== BOOMTOWN DROPDOWNS ================================== -->
+    <section class="pl-section">
+      <h1>Dropdowns</h1>
+
+      <p class="lead">Toggleable, contextual menu for displaying lists of links. Made interactive with the <a href="../javascript/#dropdowns">dropdown JavaScript plugin</a>.</p>
+
+      <h2 id="dropdowns-example">Example</h2>
+      <p>Wrap the dropdown's trigger and the dropdown menu within <code>.dropdown</code>, or another element that declares <code>position: relative;</code>. Then add the menu's HTML.</p>
+      <div class="pl-example">
+        <div class="dropdown clearfix">
+          <button data-toggle="dropdown" id="dropdownMenu1" type="button" class="btn dropdown-toggle">
+            Dropdown
+            <span class="caret"></span>
+          </button>
+          <ul aria-labelledby="dropdownMenu1" role="menu" class="dropdown-menu">
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Action</a></li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Another action</a></li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Something else here</a></li>
+            <li class="divider" role="presentation"></li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Separated link</a></li>
+          </ul>
+        </div>
+      </div><!-- /example -->
+      <div class="pl-code">
+        <pre><code class="html">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn dropdown-toggle"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"dropdownMenu1"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+  Dropdown
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"dropdownMenu1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+        </code></pre>
+      </div>
+
+      <h3 id="dropdowns-alignment">Alignment</h3>
+      <p>By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add <code>.dropdown-menu-right</code> to a <code>.dropdown-menu</code> to right align the dropdown menu.</p>
+      <div class="bs-callout bs-callout-warning">
+        <h4>May require additional positioning</h4>
+        <p>Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped by parents with certain <code>overflow</code> properties or appear out of bounds of the viewport. Address these issues on your own as they arise.</p>
+      </div>
+      <div class="bs-callout bs-callout-warning">
+        <h4>Deprecated <code>.pull-right</code> alignment</h4>
+        <p>As of v3.1.0, we've deprecated <code>.pull-right</code> on dropdown menus. To right-align a menu, use <code>.dropdown-menu-right</code>. Right-aligned nav components in the navbar use a mixin version of this class to automatically align the menu. To override it, use <code>.dropdown-menu-left</code>.</p>
+      </div>
+      <div class="pl-code">
+        <pre><code class="html">
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu dropdown-menu-right"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"dLabel"</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/ul&gt;</span>
+        </code></pre>
+      </div>
+
+      <h3 id="dropdowns-headers">Headers</h3>
+      <p>Add a header to label sections of actions in any dropdown menu.</p>
+      <div class="pl-example">
+        <div class="dropdown clearfix">
+          <button data-toggle="dropdown" id="dropdownMenu2" type="button" class="btn dropdown-toggle">
+            Dropdown
+            <span class="caret"></span>
+          </button>
+          <ul aria-labelledby="dropdownMenu2" role="menu" class="dropdown-menu">
+            <li class="dropdown-header" role="presentation">Dropdown header</li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Action</a></li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Another action</a></li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Something else here</a></li>
+            <li class="divider" role="presentation"></li>
+            <li class="dropdown-header" role="presentation">Dropdown header</li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Separated link</a></li>
+          </ul>
+        </div>
+      </div><!-- /example -->
+      <div class="pl-code">
+        <pre><code class="html">
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"dropdownMenu2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"dropdown-header"</span><span class="nt">&gt;</span>Dropdown header<span class="nt">&lt;/li&gt;</span>
+...
+<span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"dropdown-header"</span><span class="nt">&gt;</span>Dropdown header<span class="nt">&lt;/li&gt;</span>
+...
+<span class="nt">&lt;/ul&gt;</span>
+        </code></pre>
+      </div>
+
+      <h3 id="dropdowns-disabled">Disabled menu items</h3>
+      <p>Add <code>.disabled</code> to a <code>&lt;li&gt;</code> in the dropdown to disable the link.</p>
+      <div class="pl-example">
+        <div class="dropdown clearfix">
+          <button data-toggle="dropdown" id="dropdownMenu3" type="button" class="btn dropdown-toggle">
+            Dropdown
+            <span class="caret"></span>
+          </button>
+          <ul aria-labelledby="dropdownMenu3" role="menu" class="dropdown-menu">
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Regular link</a></li>
+            <li class="disabled" role="presentation"><a href="#" tabindex="-1" role="menuitem">Disabled link</a></li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Another link</a></li>
+          </ul>
+        </div>
+      </div><!-- /example -->
+      <div class="pl-code">
+        <pre><code class="html">
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"dropdownMenu3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Regular link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"disabled"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Disabled link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+        </code></pre>
+      </div>
+    </section>

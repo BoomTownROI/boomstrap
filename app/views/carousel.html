@@ -1,0 +1,93 @@
+                    <section id="carousel">
+                        <div class="page-header">
+                          <h1>Carousel<small>
+                              (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/carousel">ui.bootstrap.carousel</a>)
+                          </small></h1>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6 show-grid">
+                                <div ng-controller="CarouselDemoCtrl">
+  <div style="height: 305px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <a class="btn btn-info" ng-click="addSlide()">Add Slide</a>
+    </div>
+    <div class="col-md-6">
+      Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
+      <br />Enter a negative number to stop the interval.
+    </div>
+  </div>
+</div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <p>Carousel creates a carousel similar to bootstrap's image carousel.</p>
+
+<p>Use a <code>&lt;carousel&gt;</code> element with <code>&lt;slide&gt;</code> elements inside it.  It will automatically cycle through the slides at a given rate, and a current-index variable will be kept in sync with the currently visible slide.</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row code">
+                            <div class="col-md-12">
+                                <tabset>
+                                    <tab heading="Markup">
+                                        <div plunker-content="markup">
+                                            <pre ng-non-bindable><code data-language="html">&lt;div ng-controller=&quot;CarouselDemoCtrl&quot;&gt;
+  &lt;div style=&quot;height: 305px&quot;&gt;
+    &lt;carousel interval=&quot;myInterval&quot;&gt;
+      &lt;slide ng-repeat=&quot;slide in slides&quot; active=&quot;slide.active&quot;&gt;
+        &lt;img ng-src=&quot;{{slide.image}}&quot; style=&quot;margin:auto;&quot;&gt;
+        &lt;div class=&quot;carousel-caption&quot;&gt;
+          &lt;h4&gt;Slide {{$index}}&lt;/h4&gt;
+          &lt;p&gt;{{slide.text}}&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/slide&gt;
+    &lt;/carousel&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-6&quot;&gt;
+      &lt;a class=&quot;btn btn-info&quot; ng-click=&quot;addSlide()&quot;&gt;Add Slide&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-6&quot;&gt;
+      Interval, in milliseconds: &lt;input type=&quot;number&quot; class=&quot;form-control&quot; ng-model=&quot;myInterval&quot;&gt;
+      &lt;br /&gt;Enter a negative number to stop the interval.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                        </div>
+                                    </tab>
+                                    <tab heading="JavaScript">
+                                        <div plunker-content="javascript">
+                                            <pre ng-non-bindable><code data-language="javascript">function CarouselDemoCtrl($scope) {
+  $scope.myInterval = 5000;
+  var slides = $scope.slides = [];
+  $scope.addSlide = function() {
+    var newWidth = 600 + slides.length;
+    slides.push({
+      image: &#x27;http://placekitten.com/&#x27; + newWidth + &#x27;/300&#x27;,
+      text: [&#x27;More&#x27;,&#x27;Extra&#x27;,&#x27;Lots of&#x27;,&#x27;Surplus&#x27;][slides.length % 4] + &#x27; &#x27; +
+        [&#x27;Cats&#x27;, &#x27;Kittys&#x27;, &#x27;Felines&#x27;, &#x27;Cutes&#x27;][slides.length % 4]
+    });
+  };
+  for (var i=0; i&lt;4; i++) {
+    $scope.addSlide();
+  }
+}
+</code></pre>
+                                        </div>
+                                    </tab>
+                                </tabset>
+                            </div>
+                        </div>
+                    </section>

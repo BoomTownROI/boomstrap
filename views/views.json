@@ -47,7 +47,7 @@
 		"views/javascript/table.html"
 	],
 	"angular": [
-		"app/index.html",
+		"app/index-top.html",
 		"app/views/modals.html",
 		"app/views/dropdown.html",
 		"app/views/scrollspy.html",
@@ -61,6 +61,7 @@
 		"app/views/affix.html",
 		"app/views/tour.html",
 		"app/views/table.html",
-		"app/views/chosen.html"
+		"app/views/chosen.html",
+		"app/index-bottom.html"
 	]
 }
