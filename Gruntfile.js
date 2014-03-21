@@ -127,8 +127,11 @@ module.exports = function (grunt) {
     concat: {
       dist: {
         src: [
+          'bower_components/jquery/dist/jquery.js',
           'bower_components/angular/angular.min.js',
           'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+          'vendor/chosen_v1.1.0/chosen.jquery.min.js',
+          'bower_components/angular-chosen/angular-chosen.js',
           '<%= yeoman.app %>/app.js',
           '<%= yeoman.app %>/scripts/**/{,*/}*.js',
           'js/**/{,*/}*.js'
@@ -137,8 +140,11 @@ module.exports = function (grunt) {
       },
       docs: {
         src:  [
+          'bower_components/jquery/dist/jquery.js',
           'bower_components/angular/angular.min.js',
           'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+          'vendor/chosen_v1.1.0/chosen.jquery.min.js',
+          'bower_components/angular-chosen/angular-chosen.js',
           '<%= yeoman.app %>/app.js',
           '<%= yeoman.app %>/scripts/**/{,*/}*.js',
           'js/**/{,*/}*.js'
@@ -162,6 +168,9 @@ module.exports = function (grunt) {
           banner: grunt.file.read('views/partials/header.html'),
           footer: grunt.file.read('views/partials/footer.html')
         }
+      },
+      css: {
+        src: ''
       }
     },
 
@@ -264,6 +273,11 @@ module.exports = function (grunt) {
           {
             src: ['images/**'],
             dest: 'docs/'
+          },
+          {
+            flatten: true,
+            src: 'vendor/chosen_v1.1.0/chosen.css',
+            dest: 'docs/css/chosen.css'
           }
         ]
       }
