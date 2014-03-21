@@ -90,6 +90,30 @@ module.exports = function (grunt) {
       server: '.tmp'
     },
 
+    concat: {
+      dist: {
+        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js'],
+        dest: '<%= yeoman.dist %>/<%= yeoman.app %>/js/pattern-library.js',
+      },
+      docs: {
+        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js'],
+        dest: 'docs/<%= yeoman.app %>/js/pattern-library.js',
+      }
+    },
+
+    uglify: {
+      options: {
+        mangle: false
+      },
+      dist: {
+        src: '<%= yeoman.dist %>/<%= yeoman.app %>/js/pattern-library.js',
+        dest: '<%= yeoman.dist %>/<%= yeoman.app %>/js/pattern-library.min.js'
+      },
+      docs: {
+        src: 'docs/<%= yeoman.app %>/js/pattern-library.js',
+        dest: 'docs/<%= yeoman.app %>/js/pattern-library.min.js'
+      }
+    },
 
 //    // Renames files for browser caching purposes
 //    rev: {
@@ -232,11 +256,6 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    uglify: {
-      options: {
-        mangle: false
-      }
-    }
     // concat: {
     //   dist: {}
     // },
