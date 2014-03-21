@@ -20,6 +20,7 @@
     "angular": "~1.2.0",
     "bootstrap": "~3.1.1",
     "jquery": ">= 1.9.0",
-    "angular-bootstrap": "~0.10.0"
+    "angular-bootstrap": "~0.10.0",
+    "angular-chosen": "*"
   }
 }
