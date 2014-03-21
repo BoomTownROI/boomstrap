@@ -195,7 +195,7 @@ module.exports = function (grunt) {
           hostname: 'localhost',
           port: 9000,
           open: true,
-          base: '<%= yeoman.dist %>',
+          base: '<%= yeoman.docs %>',
           keepalive: true
         }
       }
