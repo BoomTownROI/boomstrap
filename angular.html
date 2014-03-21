@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/pattern-library-docs.css">
   <link rel="stylesheet" href="css/chosen.css">
   <script src="js/pattern-library.min.js"></script>
+  <script src="js/pattern-library-docs.min.js"></script>
 </head>
 <body class="pl-body">
   <!-- ================================== NAVIGATION ================================== -->
@@ -176,20 +177,25 @@
                 </tab>
                 <tab heading="JavaScript">
                     <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">var TabsDemoCtrl = function ($scope) {
-                                                $scope.tabs = [
-                                                { title:&quot;Dynamic Title 1&quot;, content:&quot;Dynamic content 1&quot; },
-                                                { title:&quot;Dynamic Title 2&quot;, content:&quot;Dynamic content 2&quot;, disabled: true }
-                                                ];
+                                            <pre ng-non-bindable><code data-language="javascript">
+(function(PatternLibrary) {
+    'use strict';
+    PatternLibrary.controller('TabsDemoCtrl', ['$scope', function TabsDemoCtrl($scope) {
+        $scope.tabs = [
+        { title:"Dynamic Title 1", content:"Dynamic content 1" },
+        { title:"Dynamic Title 2", content:"Dynamic content 2", disabled: true }
+        ];
 
-                                                $scope.alertMe = function() {
-                                                setTimeout(function() {
-                                                alert(&quot;You&#x27;ve selected the alert tab!&quot;);
-                                                });
-                                                };
+        $scope.alertMe = function() {
+        setTimeout(function() {
+        alert("You've selected the alert tab!");
+        });
+        };
 
-                                                $scope.navType = &#x27;pills&#x27;;
-                                                };
+        $scope.navType = 'pills';
+    }]);
+})(angular.module('PatternLibrary'));
+
                                             </code></pre>
                     </div>
                 </tab>
@@ -366,12 +372,17 @@ appendToBody: false
                 </tab>
                 <tab heading="JavaScript">
                     <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">var TooltipDemoCtrl = function ($scope) {
-                                                $scope.dynamicTooltip = &quot;Hello, World!&quot;;
-                                                $scope.dynamicTooltipText = &quot;dynamic&quot;;
-                                                $scope.htmlTooltip = &quot;I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!&quot;;
-                                                };
-                                            </code></pre>
+<pre ng-non-bindable><code data-language="javascript">
+(function(PatternLibrary) {
+    'use strict';
+    PatternLibrary.controller('TooltipDemoCtrl', ['$scope', function TooltipDemoCtrl($scope) {
+        $scope.dynamicTooltip = 'Hello, World!';
+        $scope.dynamicTooltipText = 'dynamic';
+        $scope.htmlTooltip = 'I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!';
+    }]);
+})(angular.module('PatternLibrary'));
+
+</code></pre>
                     </div>
                 </tab>
             </tabset>
