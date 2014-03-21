@@ -4,7 +4,7 @@
   "authors": [
     "Craig Anthony <mcraiganthony@gmail.com>",
     "Craig Anthony <craig@boomtownroi.com>",
-    "Mark Funk <mark@boomtownroilcom>"
+    "Mark Funk <mark@boomtownroi.com>"
   ],
   "description": "A robust pattern library",
   "main": "index.html",
@@ -15,6 +15,7 @@
     "bower_components"
   ],
   "dependencies": {
+    "angular": "~1.2.0",
     "bootstrap": "~3.1.1",
     "jquery": ">= 1.9.0"
   }
