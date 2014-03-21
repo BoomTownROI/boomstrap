@@ -19,6 +19,14 @@ module.exports = function (grunt) {
 
   var views = grunt.file.readJSON('views/views.json');
 
+  var docs = [
+    'concat:docs',
+    'concat:html',
+    'uglify:docs',
+    'less:docs',
+    'copy:docs'
+  ];
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -32,13 +40,22 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      options: {
+        livereload: {
+          port: 9000
+        }
+      },
       js: {
         files: ['<%= yeoman.app %>/**/{,*/}*.js', '<%= yeoman.app %>/**/{,*/}*.html'],
-        tasks: ['build']
+        tasks: docs
+      },
+      views: {
+        files: ['views/**/*.html'],
+        tasks: docs
       },
       less: {
         files: ['less/*.less'],
-        tasks: ['less']
+        tasks: docs
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -216,7 +233,7 @@ module.exports = function (grunt) {
           port: 9000,
           open: true,
           base: 'docs',
-          keepalive: true
+          keepalive: false
         }
       }
     },
@@ -232,10 +249,6 @@ module.exports = function (grunt) {
        },
       docs: {
         files: [
-          {
-            src: ['index.html'],
-            dest: 'docs/'
-          },
           {
             src: ['images/**'],
             dest: 'docs/'
@@ -313,15 +326,8 @@ module.exports = function (grunt) {
     'copy:docs'
   ]); // Full Monty
 
-  var docs = [
-    'concat:docs',
-    'concat:html',
-    'uglify:docs',
-    'less:docs',
-    'copy:docs'
-  ];
 
-  grunt.registerTask('server', docs.concat(['connect'])); // Run server
+  grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
   grunt.registerTask('website', docs.concat(['gh-pages']));
 
   //grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
