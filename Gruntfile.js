@@ -302,14 +302,27 @@ module.exports = function (grunt) {
   grunt.registerTask('styles', ['less']);
 
   grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
-  grunt.registerTask('server', [
-  'concat:docs', 'concat:html', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']); // Run server
   grunt.registerTask('default', [
-    'concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist',
-    'less:docs','copy:dist','copy:docs']); // Full Monty
+    'concat:dist',
+    'concat:docs',
+    'uglify:dist',
+    'uglify:docs',
+    'less:dist',
+    'less:docs',
+    'copy:dist',
+    'copy:docs'
+  ]); // Full Monty
 
-  grunt.registerTask('website', [
-    'concat:docs', 'concat:html', 'uglify:docs', 'less:docs', 'copy:docs', 'gh-pages']);
+  var docs = [
+    'concat:docs',
+    'concat:html',
+    'uglify:docs',
+    'less:docs',
+    'copy:docs'
+  ];
+
+  grunt.registerTask('server', docs.concat(['connect'])); // Run server
+  grunt.registerTask('website', docs.concat(['gh-pages']));
 
   //grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 //  grunt.registerTask('server', [
