@@ -126,30 +126,41 @@ module.exports = function (grunt) {
 
     concat: {
       dist: {
-        src: [
-          'bower_components/jquery/dist/jquery.js',
-          'bower_components/angular/angular.min.js',
-          'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-          'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-          'bower_components/angular-chosen/angular-chosen.js',
-          '<%= yeoman.app %>/app.js',
-          '<%= yeoman.app %>/scripts/**/{,*/}*.js',
-          'js/**/{,*/}*.js'
-        ],
-        dest: '<%= yeoman.dist %>/js/pattern-library.js',
+        files: [
+          {
+            src: [
+              'bower_components/jquery/dist/jquery.js',
+              'bower_components/angular/angular.min.js',
+              'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+              'vendor/chosen_v1.1.0/chosen.jquery.min.js',
+              'bower_components/angular-chosen/angular-chosen.js'
+            ],
+            dest: '<%= yeoman.dist %>/js/pattern-library.js'
+          }
+        ]
+
       },
       docs: {
-        src:  [
-          'bower_components/jquery/dist/jquery.js',
-          'bower_components/angular/angular.min.js',
-          'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-          'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-          'bower_components/angular-chosen/angular-chosen.js',
-          '<%= yeoman.app %>/app.js',
-          '<%= yeoman.app %>/scripts/**/{,*/}*.js',
-          'js/**/{,*/}*.js'
-        ],
-        dest: 'docs/js/pattern-library.js'
+        files: [
+          {
+            src: [
+              'bower_components/jquery/dist/jquery.js',
+              'bower_components/angular/angular.min.js',
+              'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+              'vendor/chosen_v1.1.0/chosen.jquery.min.js',
+              'bower_components/angular-chosen/angular-chosen.js'
+            ],
+            dest: 'docs/js/pattern-library.js'
+          },
+          {
+            src: [
+              '<%= yeoman.app %>/app.js',
+              '<%= yeoman.app %>/scripts/**/{,*/}*.js',
+              'js/**/{,*/}*.js'
+            ],
+            dest: 'docs/js/pattern-library-docs.js'
+          }
+        ]
       },
       html: {
         files: (function() {
@@ -183,8 +194,16 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.dist %>/js/pattern-library.min.js'
       },
       docs: {
-        src: 'docs/js/pattern-library.js',
-        dest: 'docs/js/pattern-library.min.js'
+        files: [
+          {
+            src: 'docs/js/pattern-library.js',
+            dest: 'docs/js/pattern-library.min.js'
+          },
+          {
+            src: 'docs/js/pattern-library-docs.js',
+            dest: 'docs/js/pattern-library-docs.min.js'
+          }
+        ]
       }
     },
 
