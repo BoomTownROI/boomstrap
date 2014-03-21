@@ -22,11 +22,11 @@
 		"views/components/cards.html",
 		"views/components/pills.html",
 		"views/components/scores.html",
-		"views/components/forms.html"
-		"views/components/thumbnails.html"
-		"views/components/alerts.html"
-		"views/components/list-group.html"
-		"views/components/panels.html"
+		"views/components/forms.html",
+		"views/components/thumbnails.html",
+		"views/components/alerts.html",
+		"views/components/list-group.html",
+		"views/components/panels.html",
 		"views/components/wells.html"
 	],
 	"javascript": [
