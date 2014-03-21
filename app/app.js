@@ -2,6 +2,7 @@
   'use strict';
 
   angular.module('PatternLibrary', [
-      'ui.bootstrap'
-    ])
+    'ui.bootstrap',
+    'angular-chosen'
+  ]);
 })();
