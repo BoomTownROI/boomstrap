@@ -45,13 +45,22 @@ module.exports = function (grunt) {
     },
 
     less: {
-      admin: {
+      dist: {
         options: {
-          paths: ['<%= yeoman.lms %>/stylesheets/'],
           compress: true
         },
         files: {
-          '<%= yeoman.lms %>/stylesheets/master.css': '<%= yeoman.lms %>/stylesheets/less/master.less'
+          'dist/css/pattern-library.css':'less/pattern-library.less',
+          'dist/css/pattern-library-docs.css':'less/pattern-library-docs.less'
+         }
+      },
+      docs: {
+        options: {
+          compress: false
+        },
+        files: {
+          'docs/css/pattern-library.css':'less/pattern-library.less',
+          'docs/css/pattern-library-docs.css':'less/pattern-library-docs.less'
         }
       }
     },
