@@ -7,109 +7,36 @@
   <link rel="stylesheet" href="css/pattern-library.css">
   <link rel="stylesheet" href="css/pattern-library-docs.css">
   <script src="js/pattern-library.min.js"></script>
-  <script src="app.js"></script>
-  <script src="scripts/directives/navigation.js"></script>
 </head>
-<body class="pl-body" ng-app="PatternLibrary">>
+<body class="pl-body" ng-app="patternLibrary">>
+  <!-- ================================== NAVIGATION ================================== -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">BoomStrap</a>
+      </div>
+      <div class="collapse navbar-collapse" id="pl-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Section One</a></li>
+          <li><a href="#">Section Two</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section Three <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Sub Section One</a></li>
+              <li><a href="#">Sub Section Two</a></li>
+              <li><a href="#">Sub Section Three</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> <!-- /navigation -->
   <div class="container">
-    <div pl-nav></div>
-    <!-- ================================== BOOMTOWN COLORS ================================== -->
-    <section id="" class="pl-section">
-      <h1>Colors</h1> 
-      <h2>Brand Colors</h2>
-      <div class="row">
-        <div class="col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <div class="pl-swatch--bt-blue"></div>
-            <p class="pl-swatch-txt">BT Blue<br>#1581e2</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <div class="pl-swatch--bt-orange"></div>
-            <p class="pl-swatch-txt">BT Orange<br>#f68a24</p>
-          </div>
-        </div>
-      </div>
-      <h2>Color Options</h2>
-      <div class="row">
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--primary"></div>
-            <p class="pl-swatch-txt">Primary<br>#1581e2</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--attention"></div>
-            <p class="pl-swatch-txt">Attention<br>#f68a24</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--success"></div>
-            <p class="pl-swatch-txt">Success<br>#669900</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--info"></div>
-            <p class="pl-swatch-txt">Info<br>#5bc0de</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--warning"></div>
-            <p class="pl-swatch-txt">Warning<br>#e5ac00</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--danger"></div>
-            <p class="pl-swatch-txt">Danger<br>#ef5959</p>
-          </div>
-        </div>
-      </div>
-      <h2>Grays</h2>
-      <div class="row">
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--gray-darker"></div>
-            <p class="pl-swatch-txt">Gray Darker<br>#444444</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--gray-dark"></div>
-            <p class="pl-swatch-txt">Gray Dark<br>#696969</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--gray"></div>
-            <p class="pl-swatch-txt">Gray<br>#848484</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--gray-light"></div>
-            <p class="pl-swatch-txt">Gray Light<br>#b4b4b4</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--gray-lighter"></div>
-            <p class="pl-swatch-txt">Gray Lighter<br>#ececec</p>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-2">
-          <div class="thumbnail">
-            <div class="pl-swatch--gray-lightest"></div>
-            <p class="pl-swatch-txt">Gray Lightest<br>#ececec</p>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- ================================== BOOMTOWN BUTTONS ================================== -->
     <section class="pl-section">
       <h1>Buttons</h1>
