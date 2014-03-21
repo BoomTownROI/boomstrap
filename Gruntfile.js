@@ -44,6 +44,13 @@ module.exports = function (grunt) {
       }
     },
 
+    'gh-pages': {
+      options: {
+        base: 'docs'
+      },
+      src: ['**']
+    },
+
     less: {
       dist: {
         options: {
@@ -101,12 +108,12 @@ module.exports = function (grunt) {
 
     concat: {
       dist: {
-        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js'],
-        dest: '<%= yeoman.dist %>/<%= yeoman.app %>/js/pattern-library.js',
+        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js', 'js/**/{,*/}*.js'],
+        dest: '<%= yeoman.dist %>/js/pattern-library.js',
       },
       docs: {
-        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js'],
-        dest: 'docs/<%= yeoman.app %>/js/pattern-library.js',
+        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js', 'js/**/{,*/}*.js'],
+        dest: 'docs/js/pattern-library.js'
       }
     },
 
@@ -115,12 +122,12 @@ module.exports = function (grunt) {
         mangle: false
       },
       dist: {
-        src: '<%= yeoman.dist %>/<%= yeoman.app %>/js/pattern-library.js',
-        dest: '<%= yeoman.dist %>/<%= yeoman.app %>/js/pattern-library.min.js'
+        src: '<%= yeoman.dist %>/js/pattern-library.js',
+        dest: '<%= yeoman.dist %>/js/pattern-library.min.js'
       },
       docs: {
-        src: 'docs/<%= yeoman.app %>/js/pattern-library.js',
-        dest: 'docs/<%= yeoman.app %>/js/pattern-library.min.js'
+        src: 'docs/js/pattern-library.js',
+        dest: 'docs/js/pattern-library.min.js'
       }
     },
 
@@ -274,10 +281,12 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist',
     'less:docs','copy:dist','copy:docs']); // Full Monty
 
+  grunt.registerTask('website', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'gh-pages']);
+
   //grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 //  grunt.registerTask('server', [
-//    'build', 
-//    'less:docs', 
+//    'build',
+//    'less:docs',
 //    'connect'
 //  ]);
 
