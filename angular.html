@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="css/pattern-library.css">
   <link rel="stylesheet" href="css/pattern-library-docs.css">
+  <link rel="stylesheet" href="css/chosen.css">
   <script src="js/pattern-library.min.js"></script>
 </head>
 <body class="pl-body">
@@ -383,6 +384,135 @@ appendToBody: false
     $scope.htmlTooltip = "I've been made <b>bold</b>!";
 };
 </script>
+<section id="popover">
+    <div class="page-header">
+        <h1>Popover<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/popover">ui.bootstrap.popover</a>)
+        </small></h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6 show-grid">
+            <div ng-controller="PopoverDemoCtrl">
+                <h4>Dynamic</h4>
+                <div class="form-group">
+                    <label>Popup Text:</label>
+                    <input type="text" ng-model="dynamicPopover" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Popup Title:</label>
+                    <input type="text" ng-model="dynamicPopoverTitle" class="form-control">
+                </div>
+                <button popover="{{dynamicPopover}}" popover-title="{{dynamicPopoverTitle}}" class="btn btn-default">Dynamic Popover</button>
+
+                <hr />
+                <h4>Positional</h4>
+                <button popover-placement="top" popover="On the Top!" class="btn btn-default">Top</button>
+                <button popover-placement="left" popover="On the Left!" class="btn btn-default">Left</button>
+                <button popover-placement="right" popover="On the Right!" class="btn btn-default">Right</button>
+                <button popover-placement="bottom" popover="On the Bottom!" class="btn btn-default">Bottom</button>
+
+                <hr />
+                <h4>Triggers</h4>
+                <p>
+                    <button popover="I appeared on mouse enter!" popover-trigger="mouseenter" class="btn btn-default">Mouseenter</button>
+                </p>
+                <input type="text" value="Click me!" popover="I appeared on focus! Click away and I'll vanish..."  popover-trigger="focus" class="form-control">
+
+                <hr />
+                <h4>Other</h4>
+                <button Popover-animation="true" popover="I fade in and out!" class="btn btn-default">fading</button>
+                <button popover="I have a title!" popover-title="The title." class="btn btn-default">title</button>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <p>A lightweight, extensible directive for fancy popover creation. The popover
+                directive supports multiple placements, optional transition animation, and more.</p>
+
+            <p>Like the Bootstrap jQuery plugin, the popover <strong>requires</strong> the tooltip
+                module.</p>
+
+            <p>The popover directives provides several optional attributes to control how it
+                will display:</p>
+
+            <ul>
+                <li><code>popover-title</code>: A string to display as a fancy title.</li>
+                <li><code>popover-placement</code>: Where to place it? Defaults to "top", but also accepts
+                    "bottom", "left", "right".</li>
+                <li><code>popover-animation</code>: Should it fade in and out? Defaults to "true".</li>
+                <li><code>popover-popup-delay</code>: For how long should the user have to have the mouse
+                    over the element before the popover shows (in milliseconds)? Defaults to 0.</li>
+                <li><code>popover-trigger</code>: What should trigger the show of the popover? See the
+                    <code>tooltip</code> directive for supported values.</li>
+                <li><code>popover-append-to-body</code>: Should the tooltip be appended to <code>$body</code> instead of
+                    the parent element?</li>
+            </ul>
+
+            <p>The popover directives require the <code>$position</code> service.</p>
+
+            <p>The popover directive also supports various default configurations through the
+                $tooltipProvider. See the <a href="#tooltip">tooltip</a> section for more information.</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row code">
+        <div class="col-md-12">
+            <tabset>
+                <tab heading="Markup">
+                    <div plunker-content="markup">
+                                            <pre ng-non-bindable><code data-language="html">
+&lt;div ng-controller=&quot;PopoverDemoCtrl&quot;&gt;
+&lt;h4&gt;Dynamic&lt;/h4&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label&gt;Popup Text:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;dynamicPopover&quot; class=&quot;form-control&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label&gt;Popup Title:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;dynamicPopoverTitle&quot; class=&quot;form-control&quot;&gt;
+&lt;/div&gt;
+&lt;button popover=&quot;{{dynamicPopover}}&quot; popover-title=&quot;{{dynamicPopoverTitle}}&quot; class=&quot;btn btn-default&quot;&gt;Dynamic Popover&lt;/button&gt;
+
+&lt;hr /&gt;
+&lt;h4&gt;Positional&lt;/h4&gt;
+&lt;button popover-placement=&quot;top&quot; popover=&quot;On the Top!&quot; class=&quot;btn btn-default&quot;&gt;Top&lt;/button&gt;
+&lt;button popover-placement=&quot;left&quot; popover=&quot;On the Left!&quot; class=&quot;btn btn-default&quot;&gt;Left&lt;/button&gt;
+&lt;button popover-placement=&quot;right&quot; popover=&quot;On the Right!&quot; class=&quot;btn btn-default&quot;&gt;Right&lt;/button&gt;
+&lt;button popover-placement=&quot;bottom&quot; popover=&quot;On the Bottom!&quot; class=&quot;btn btn-default&quot;&gt;Bottom&lt;/button&gt;
+
+&lt;hr /&gt;
+&lt;h4&gt;Triggers&lt;/h4&gt;
+&lt;p&gt;
+    &lt;button popover=&quot;I appeared on mouse enter!&quot; popover-trigger=&quot;mouseenter&quot; class=&quot;btn btn-default&quot;&gt;Mouseenter&lt;/button&gt;
+&lt;/p&gt;
+&lt;input type=&quot;text&quot; value=&quot;Click me!&quot; popover=&quot;I appeared on focus! Click away and I&#x27;ll vanish...&quot;  popover-trigger=&quot;focus&quot; class=&quot;form-control&quot;&gt;
+
+&lt;hr /&gt;
+&lt;h4&gt;Other&lt;/h4&gt;
+&lt;button Popover-animation=&quot;true&quot; popover=&quot;I fade in and out!&quot; class=&quot;btn btn-default&quot;&gt;fading&lt;/button&gt;
+&lt;button popover=&quot;I have a title!&quot; popover-title=&quot;The title.&quot; class=&quot;btn btn-default&quot;&gt;title&lt;/button&gt;
+&lt;/div&gt;
+                                            </code></pre>
+                    </div>
+                </tab>
+                <tab heading="JavaScript">
+                    <div plunker-content="javascript">
+                                            <pre ng-non-bindable><code data-language="javascript">var PopoverDemoCtrl = function ($scope) {
+                                                $scope.dynamicPopover = &quot;Hello, World!&quot;;
+                                                $scope.dynamicPopoverTitle = &quot;Title&quot;;
+                                                };
+                                            </code></pre>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</section>
+<script>var PopoverDemoCtrl = function ($scope) {
+    $scope.dynamicPopover = "Hello, World!";
+    $scope.dynamicPopoverTitle = "Title";
+};
+</script>
 
                     <section id="alert">
                         <div class="page-header">
@@ -541,7 +671,7 @@ appendToBody: false
 
 
 
-<!-- <section id="chosen">
+<section id="chosen">
   <div class="page-header">
     <h1>Chosen<small>
         (<a target="_blank" href="http://harvesthq.github.io/chosen/">Chosen</a>, <a target="_blank" href="https://github.com/localytics/angular-chosen">angular-chosen</a>)
@@ -550,90 +680,57 @@ appendToBody: false
   </div>
   <div class="row">
     <div class="col-md-6 show-grid">
-        <div ng-controller="CarouselDemoCtrl">
-          <div style="height: 305px">
-            <carousel interval="myInterval">
-              <slide ng-repeat="slide in slides" active="slide.active">
-                <img ng-src="{{slide.image}}" style="margin:auto;">
-                <div class="carousel-caption">
-                  <h4>Slide {{$index}}</h4>
-                  <p>{{slide.text}}</p>
-                </div>
-              </slide>
-            </carousel>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <a class="btn btn-info" ng-click="addSlide()">Add Slide</a>
-            </div>
-            <div class="col-md-6">
-              Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
-              <br />Enter a negative number to stop the interval.
-            </div>
-          </div>
+        <div ng-controller="ChosenDemoCtrl">
+          <select style="width:200px"
+            chosen
+            ng-model="superhero"
+            ng-options="s as s for s in superheroes">
+            <option value=""></option>
+          </select>
+          <label>You have chosen {{ superhero }}!</label>
         </div>
     </div>
-        <div class="col-md-6">
-            <p>Carousel creates a carousel similar to bootstrap's image carousel.</p>
+    <div class="col-md-6">
+        <p>Chosen allows for searchable dropdowns.</p>
 
-<p>Use a <code>&lt;carousel&gt;</code> element with <code>&lt;slide&gt;</code> elements inside it.  It will automatically cycle through the slides at a given rate, and a current-index variable will be kept in sync with the currently visible slide.</p>
-        </div>
+        <p>Provide a <code>chosen</code> attribute with an <code>ng-options</code> attribute to a <code>select</code> tag to search for elements.</p>
     </div>
-    <hr>
-    <div class="row code">
-        <div class="col-md-12">
-            <tabset>
-                <tab heading="Markup">
-                    <div plunker-content="markup">
-                        <pre ng-non-bindable><code data-language="html">&lt;div ng-controller=&quot;CarouselDemoCtrl&quot;&gt;
-  &lt;div style=&quot;height: 305px&quot;&gt;
-    &lt;carousel interval=&quot;myInterval&quot;&gt;
-      &lt;slide ng-repeat=&quot;slide in slides&quot; active=&quot;slide.active&quot;&gt;
-        &lt;img ng-src=&quot;{{slide.image}}&quot; style=&quot;margin:auto;&quot;&gt;
-        &lt;div class=&quot;carousel-caption&quot;&gt;
-          &lt;h4&gt;Slide {{$index}}&lt;/h4&gt;
-          &lt;p&gt;{{slide.text}}&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/slide&gt;
-    &lt;/carousel&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-md-6&quot;&gt;
-      &lt;a class=&quot;btn btn-info&quot; ng-click=&quot;addSlide()&quot;&gt;Add Slide&lt;/a&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col-md-6&quot;&gt;
-      Interval, in milliseconds: &lt;input type=&quot;number&quot; class=&quot;form-control&quot; ng-model=&quot;myInterval&quot;&gt;
-      &lt;br /&gt;Enter a negative number to stop the interval.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  </div>
+  <hr>
+  <div class="row code">
+    <div class="col-md-12">
+      <tabset>
+        <tab heading="Markup">
+          <div>
+            <pre ng-non-bindable><code data-language="html">&lt;select chosen
+  ng-model=&quot;superhero&quot;
+  ng-options=&quot;s for s in superheroes&quot;&gt;
+&lt;/select&gt;
+&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+&lt;label&gt;You have chosen {{ superhero }}!&lt;/label&gt;
+            </code></pre>
+          </div>
+        </tab>
+        <tab heading="JavaScript">
+          <div plunker-content="javascript">
+            <pre ng-non-bindable><code data-language="javascript">(function(PatternLibrary) {
+  'use strict';
+  PatternLibrary.controller('ChosenDemoCtrl', ['$scope', function($scope) {
+    $scope.superheroes = [
+      'Batman',
+      'Superman',
+      'Green Arrow',
+      'Wonder Woman'
+    ];
+  }]);
+})(angular.module('PatternLibrary'));
 </code></pre>
-                                        </div>
-                                    </tab>
-                                    <tab heading="JavaScript">
-                                        <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">function CarouselDemoCtrl($scope) {
-  $scope.myInterval = 5000;
-  var slides = $scope.slides = [];
-  $scope.addSlide = function() {
-    var newWidth = 600 + slides.length;
-    slides.push({
-      image: &#x27;http://placekitten.com/&#x27; + newWidth + &#x27;/300&#x27;,
-      text: [&#x27;More&#x27;,&#x27;Extra&#x27;,&#x27;Lots of&#x27;,&#x27;Surplus&#x27;][slides.length % 4] + &#x27; &#x27; +
-        [&#x27;Cats&#x27;, &#x27;Kittys&#x27;, &#x27;Felines&#x27;, &#x27;Cutes&#x27;][slides.length % 4]
-    });
-  };
-  for (var i=0; i&lt;4; i++) {
-    $scope.addSlide();
-  }
-}
-</code></pre>
-                                        </div>
-                                    </tab>
-                                </tabset>
-                            </div>
-                        </div>
-                    </section> -->
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</section>
 </div></div>
 </body>
 </html>
