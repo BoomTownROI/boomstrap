@@ -195,63 +195,22 @@ module.exports = function (grunt) {
       }
     },
 
-    // Copies remaining files to places other tasks can use
+
     copy: {
-      dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            // 'bower_components/**/*',
-            'images/{,*/}*.{webp}',
-            'fonts/*',
-            '*.ascx'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }]
-      },
-      lms: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.dist %>',
-          dest: '<%= yeoman.lms %>',
-          src: [
-            'scripts/bestfit/{,*/}*.js'
-          ]
-        }, {
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.dist %>',
-          dest: '<%= yeoman.lms %>/controls/',
-          src: [ '*.ascx' ]
-        },{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.dist %>',
-          dest: '<%= yeoman.lms %>/scripts/bestfit',
-          src: [
-            '*.html'
-            //'views/{,*/}*.html'//, 'template/{,*/}*.html' no longer need templates if theyre cached
-          ]
-        },{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.dist %>',
-          dest: '<%= yeoman.lms %>',
-          src: ['stylesheets/*.css']
-        }]
+      // copy index.html and images directory into two locations
+       dist: {
+        files: [
+          {src: ['<%= yeoman.app %>/index.html'], dest: '<%= yeoman.dist %>/'},
+          {src: ['images/**'], dest: '<%= yeoman.dist %>/'}
+        ]
+       },
+      docs: {
+        files: [
+          {src: ['<%= yeoman.app %>/index.html'], dest: 'docs/'},
+          {src: ['images/**'], dest: 'docs/'}
+        ]
       }
-    },
+    }
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
