@@ -1,5 +1,5 @@
 {
-	"css": [
+	"index": [
 		"views/css/color.html",
 		"views/css/typography.html",
 		"views/css/tables.html",
