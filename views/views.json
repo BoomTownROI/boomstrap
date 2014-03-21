@@ -1,6 +1,7 @@
 {
 	"index": [
-		"views/css/color.html",
+		"views/css/installation.html",
+		"views/css/colors.html",
 		"views/css/typography.html",
 		"views/css/tables.html",
 		"views/css/forms.html",
@@ -46,19 +47,20 @@
 		"views/javascript/table.html"
 	],
 	"angular": [
-		"views/angular/modals.html",
-		"views/angular/dropdown.html",
-		"views/angular/scrollspy.html",
-		"views/angular/tabs.html",
-		"views/angular/tooltip.html",
-		"views/angular/popover.html",
-		"views/angular/alert.html",
-		"views/angular/button.html",
-		"views/angular/collapse.html",
-		"views/angular/carousel.html",
-		"views/angular/affix.html",
-		"views/angular/tour.html",
-		"views/angular/table.html",
-		"views/angular/chosen.html"
+		"app/index.html",
+		"app/views/modals.html",
+		"app/views/dropdown.html",
+		"app/views/scrollspy.html",
+		"app/views/tabs.html",
+		"app/views/tooltip.html",
+		"app/views/popover.html",
+		"app/views/alert.html",
+		"app/views/button.html",
+		"app/views/collapse.html",
+		"app/views/carousel.html",
+		"app/views/affix.html",
+		"app/views/tour.html",
+		"app/views/table.html",
+		"app/views/chosen.html"
 	]
 }
