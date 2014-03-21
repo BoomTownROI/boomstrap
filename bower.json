@@ -11,6 +11,8 @@
   "private": false,
   "ignore": [
     "**/.*",
+    "app/**/*.*",
+    "views/**.*.*",
     "node_modules",
     "bower_components"
   ],
