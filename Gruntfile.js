@@ -126,11 +126,23 @@ module.exports = function (grunt) {
 
     concat: {
       dist: {
-        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js', 'js/**/{,*/}*.js'],
+        src: [
+          'bower_components/angular/angular.min.js',
+          'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+          '<%= yeoman.app %>/app.js',
+          '<%= yeoman.app %>/scripts/**/{,*/}*.js',
+          'js/**/{,*/}*.js'
+        ],
         dest: '<%= yeoman.dist %>/js/pattern-library.js',
       },
       docs: {
-        src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js', 'js/**/{,*/}*.js'],
+        src:  [
+          'bower_components/angular/angular.min.js',
+          'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+          '<%= yeoman.app %>/app.js',
+          '<%= yeoman.app %>/scripts/**/{,*/}*.js',
+          'js/**/{,*/}*.js'
+        ],
         dest: 'docs/js/pattern-library.js'
       },
       html: {
