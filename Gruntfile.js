@@ -17,6 +17,8 @@ module.exports = function (grunt) {
 
   var fs = require('fs');
 
+  var views = grunt.file.readJSON('views/views.json');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -113,6 +115,20 @@ module.exports = function (grunt) {
       docs: {
         src: ['<%= yeoman.app %>/scripts/**/{,*/}*.js', 'js/**/{,*/}*.js'],
         dest: 'docs/js/pattern-library.js'
+      },
+      html: {
+        files: (function() {
+          var copyList = [];
+
+          Object.keys(views).forEach(function(key) {
+            copyList.push({
+              src: views[key],
+              dest: 'docs/' + key + '.html'
+            });
+          });
+
+          return copyList;
+        })()
       }
     },
 
@@ -212,8 +228,14 @@ module.exports = function (grunt) {
        },
       docs: {
         files: [
-          {src: ['<%= yeoman.app %>/index.html'], dest: 'docs/'},
-          {src: ['images/**'], dest: 'docs/'}
+          {
+            src: ['index.html'],
+            dest: 'docs/'
+          },
+          {
+            src: ['images/**'],
+            dest: 'docs/'
+          }
         ]
       }
     }
@@ -276,11 +298,14 @@ module.exports = function (grunt) {
   grunt.registerTask('styles', ['less']);
 
   grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
-  grunt.registerTask('server', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']); // Run server
-  grunt.registerTask('default', ['concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist',
+  grunt.registerTask('server', [
+  'concat:docs', 'concat:html', 'uglify:docs', 'less:docs', 'copy:docs', 'connect']); // Run server
+  grunt.registerTask('default', [
+    'concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist',
     'less:docs','copy:dist','copy:docs']); // Full Monty
 
-  grunt.registerTask('website', ['concat:docs', 'uglify:docs', 'less:docs', 'copy:docs', 'gh-pages']);
+  grunt.registerTask('website', [
+    'concat:docs', 'concat:html', 'uglify:docs', 'less:docs', 'copy:docs', 'gh-pages']);
 
   //grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 //  grunt.registerTask('server', [

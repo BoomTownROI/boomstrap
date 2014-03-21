@@ -1,0 +1,27 @@
+{
+	"css": [
+		"views/css/color.html",
+		"views/css/typography.html",
+		"views/css/tables.html",
+		"views/css/forms.html",
+		"views/css/buttons.html",
+		"views/css/images.html",
+		"views/css/helper-classes.html",
+		"views/css/responsive-utilities.html"
+	],
+	"components": [
+		"views/components/icons.html",
+		"views/components/dropdowns.html",
+		"views/components/button-groups.html",
+		"views/components/button-dropdowns.html",
+		"views/components/input-groups.html",
+		"views/components/pagination.html",
+		"views/components/labels.html",
+		"views/components/badges.html",
+		"views/components/jumbotron.html",
+		"views/components/cards.html",
+		"views/components/pills.html",
+		"views/components/scores.html",
+		"views/components/forms.html"
+	]
+}
