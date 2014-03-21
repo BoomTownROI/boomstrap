@@ -22,6 +22,42 @@
 		"views/components/cards.html",
 		"views/components/pills.html",
 		"views/components/scores.html",
-		"views/components/forms.html"
+		"views/components/forms.html",
+		"views/components/thumbnails.html",
+		"views/components/alerts.html",
+		"views/components/list-group.html",
+		"views/components/panels.html",
+		"views/components/wells.html"
+	],
+	"javascript": [
+		"views/javascript/modals.html",
+		"views/javascript/dropdown.html",
+		"views/javascript/scrollspy.html",
+		"views/javascript/tabs.html",
+		"views/javascript/tooltip.html",
+		"views/javascript/popover.html",
+		"views/javascript/alert.html",
+		"views/javascript/button.html",
+		"views/javascript/collapse.html",
+		"views/javascript/carousel.html",
+		"views/javascript/affix.html",
+		"views/javascript/tour.html",
+		"views/javascript/table.html"
+	],
+	"angular": [
+		"views/angular/modals.html",
+		"views/angular/dropdown.html",
+		"views/angular/scrollspy.html",
+		"views/angular/tabs.html",
+		"views/angular/tooltip.html",
+		"views/angular/popover.html",
+		"views/angular/alert.html",
+		"views/angular/button.html",
+		"views/angular/collapse.html",
+		"views/angular/carousel.html",
+		"views/angular/affix.html",
+		"views/angular/tour.html",
+		"views/angular/table.html",
+		"views/angular/chosen.html"
 	]
 }
