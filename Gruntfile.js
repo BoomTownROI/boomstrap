@@ -56,13 +56,13 @@ module.exports = function(grunt) {
       // copy index.html and images directory into two locations
       dist: {
         files: [
-          {src: ['index.html'], dest: 'dist/'},
+          {src: ['app/index.html'], dest: 'dist/'},
           {src: ['images/**'], dest: 'dist/'}
         ]
       },
       docs: {
         files: [
-          {src: ['index.html'], dest: 'docs/'},
+          {src: ['app/index.html'], dest: 'docs/'},
           {src: ['images/**'], dest: 'docs/'}
         ]
       }
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
         }
       },
       src: {
-        files: ['index.html'],
+        files: ['app/index.html'],
         tasks: ['copy:docs'],
         options: {
           spawn: false,
