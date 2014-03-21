@@ -46,7 +46,7 @@
 		"views/javascript/table.html"
 	],
 	"angular": [
-		"app/index.html"
+		"app/index.html",
 		"app/views/modals.html",
 		"app/views/dropdown.html",
 		"app/views/scrollspy.html",
