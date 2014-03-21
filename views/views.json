@@ -27,7 +27,8 @@
 		"views/components/alerts.html",
 		"views/components/list-group.html",
 		"views/components/panels.html",
-		"views/components/wells.html"
+		"views/components/wells.html",
+		"views/components/callouts.html"
 	],
 	"javascript": [
 		"views/javascript/modals.html",
