@@ -128,7 +128,11 @@ module.exports = function (grunt) {
           });
 
           return copyList;
-        })()
+        })(),
+        options: {
+          banner: grunt.file.read('views/partials/header.html'),
+          footer: grunt.file.read('views/partials/footer.html')
+        }
       }
     },
 
