@@ -1,6 +1,7 @@
 {
 	"index": [
-		"views/css/color.html",
+		"views/css/installation.html",
+		"views/css/colors.html",
 		"views/css/typography.html",
 		"views/css/tables.html",
 		"views/css/forms.html",
