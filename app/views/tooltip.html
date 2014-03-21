@@ -152,12 +152,17 @@ appendToBody: false
                 </tab>
                 <tab heading="JavaScript">
                     <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">var TooltipDemoCtrl = function ($scope) {
-                                                $scope.dynamicTooltip = &quot;Hello, World!&quot;;
-                                                $scope.dynamicTooltipText = &quot;dynamic&quot;;
-                                                $scope.htmlTooltip = &quot;I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!&quot;;
-                                                };
-                                            </code></pre>
+<pre ng-non-bindable><code data-language="javascript">
+(function(PatternLibrary) {
+    'use strict';
+    PatternLibrary.controller('TooltipDemoCtrl', ['$scope', function TooltipDemoCtrl($scope) {
+        $scope.dynamicTooltip = 'Hello, World!';
+        $scope.dynamicTooltipText = 'dynamic';
+        $scope.htmlTooltip = 'I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!';
+    }]);
+})(angular.module('PatternLibrary'));
+
+</code></pre>
                     </div>
                 </tab>
             </tabset>
