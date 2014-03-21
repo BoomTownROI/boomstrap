@@ -25,18 +25,17 @@ module.exports = function (grunt) {
       // configurable paths
       app: 'app',
       dist: 'dist',
-      lms: '../../admin',
       tmp: '.tmp'
     },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-        files: ['<%= yeoman.app %>/scripts/**/{,*/}*.js', '<%= yeoman.app %>/**/{,*/}*.html'],
+        files: ['<%= yeoman.app %>/**/{,*/}*.js', '<%= yeoman.app %>/**/{,*/}*.html'],
         tasks: ['build']
       },
       less: {
-        files: ['<%= yeoman.lms %>/stylesheets/**/*.less'],
+        files: ['less/*.less'],
         tasks: ['less']
       },
       gruntfile: {
