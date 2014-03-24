@@ -122,6 +122,10 @@
 .pl-example > p:last-child {
   margin-bottom: 0;
 }
+.pl-example-control-sizing select,
+.pl-example-control-sizing input[type=text] + input[type=text] {
+  margin-top: 10px;
+}
 .pl-code {
   margin: 1.5em 0;
 }

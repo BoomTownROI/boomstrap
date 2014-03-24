@@ -5777,6 +5777,9 @@ button.close {
 img {
   max-width: 100%;
 }
+.logo-boomtown {
+  max-width: 242px;
+}
 .btn-attention {
   color: #ffffff;
   background-color: #f68a24;
