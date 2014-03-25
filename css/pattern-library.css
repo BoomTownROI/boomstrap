@@ -5774,9 +5774,6 @@ button.close {
     display: none !important;
   }
 }
-img {
-  max-width: 100%;
-}
 .logo-boomtown {
   max-width: 242px;
 }
@@ -5845,12 +5842,18 @@ fieldset[disabled] .btn-attention.active {
 a.callout-attention:hover {
   background-color: #fcd9b7;
 }
+.callout-attention h4 {
+  color: #f68a24;
+}
 .callout-danger {
   background-color: #f2dede;
   border-color: #cb2027;
 }
 a.callout-danger:hover {
   background-color: #e4b9b9;
+}
+.callout-danger h4 {
+  color: #cb2027;
 }
 .callout-info {
   background-color: #d9edf7;
@@ -5859,6 +5862,9 @@ a.callout-danger:hover {
 a.callout-info:hover {
   background-color: #afd9ee;
 }
+.callout-info h4 {
+  color: #5bc0de;
+}
 .callout-success {
   background-color: #dff0d8;
   border-color: #669900;
@@ -5866,12 +5872,18 @@ a.callout-info:hover {
 a.callout-success:hover {
   background-color: #c1e2b3;
 }
+.callout-success h4 {
+  color: #669900;
+}
 .callout-warning {
   background-color: #fcf8e3;
   border-color: #e5ac00;
 }
 a.callout-warning:hover {
   background-color: #f7ecb5;
+}
+.callout-warning h4 {
+  color: #e5ac00;
 }
 .label,
 .cat {

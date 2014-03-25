@@ -93,11 +93,8 @@
 .pl-section > h3 {
   color: #696969;
 }
-.pl-article {
-  margin-bottom: 3em;
-}
-.pl-article:last-child {
-  margin-bottom: 0;
+.pl-article + article {
+  margin-top: 3em;
 }
 .pl-article > h1 {
   margin-top: 0;
@@ -126,6 +123,17 @@
 .pl-example-control-sizing input[type=text] + input[type=text] {
   margin-top: 10px;
 }
+.pl-example > .img-circle,
+.pl-example > .img-rounded,
+.pl-example > .img-thumbnail {
+  margin: 5px;
+}
+.pl-example-bg-classes > p {
+  padding: 10px;
+}
+.pl-example > p > .close {
+  float: none;
+}
 .pl-code {
   margin: 1.5em 0;
 }
@@ -136,6 +144,9 @@
 }
 .pl-code .na {
   color: #4f9fcf;
+}
+.pl-code .nc {
+  color: #0A8;
 }
 .pl-code .nt {
   color: #2f6f9f;

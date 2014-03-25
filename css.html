@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="css/pattern-library.css">
   <link rel="stylesheet" href="css/pattern-library-docs.css">
+  <link rel="stylesheet" href="css/chosen.css">
   <script src="js/pattern-library.min.js"></script>
+  <script src="js/pattern-library-docs.min.js"></script>
 </head>
 <body class="pl-body">
   <!-- ================================== NAVIGATION ================================== -->
@@ -22,20 +24,322 @@
       </div>
       <div class="collapse navbar-collapse" id="pl-nav">
         <ul class="nav navbar-nav">
-          <li><a href="#">Section One</a></li>
-          <li><a href="#">Section Two</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Section Three <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Sub Section One</a></li>
-              <li><a href="#">Sub Section Two</a></li>
-              <li><a href="#">Sub Section Three</a></li>
-            </ul>
-          </li>
-        </ul>
+          <li><a href="index.html">CSS</a></li>
+          <li><a href="components.html">Components</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="angular.html">Angular</a></li>
       </div>
     </div>
-  </nav> <!-- /navigation -->    <!-- ================================== BOOMTOWN TYPOGRAPHY ================================== -->
+  </nav> <!-- /navigation -->
+  
+  <!-- <div class="container-fluid">
+    <div class="container">
+    <nav>
+      <button class="btn btn-default btn-sm">logo</button>
+      <button class="btn btn-default btn-sm">colors</button>
+      <button class="btn btn-default btn-sm">buttons</button>
+      <button class="btn btn-default btn-sm">typography</button>
+      <button class="btn btn-default btn-sm">tables</button>
+      <button class="btn btn-default btn-sm">forms</button>
+      <button class="btn btn-default btn-sm">images</button>
+      <button class="btn btn-default btn-sm">helper classes</button>
+      <button class="btn btn-default btn-sm">responsive utilities</button>
+    </nav>
+    </div>
+  </div> -->
+
+  <div class="container"><!-- ================================== INSTALLATION ================================== -->
+<section id="" class="pl-section">
+  <h1>Installation</h1>
+  <div class="pl-code">
+    <pre>bower install git://github.com/mcraiganthony/pattern-library.git --save</pre>
+  </div>
+</section>
+<!-- ================================== CSS STYLEGUIDE ================================== -->
+<section id="" class="pl-section">
+  <h1>Markup / CSS Rules</h1>
+  <p class="lead">Please follow these rules when writing markup, CSS/LESS, and when hooking in to Javascript.</p>
+  <article class="pl-article">
+    <h2>Coding Style</h2>
+    <ul>
+    	<li>Use soft-tabs with a two space indent.</li>
+    	<li>Put spaces after <code>:</code> in property declarations.</li>
+    	<li>Put spaces before <code>{</code> in rule declarations.</li>
+      <li>Order properties in alphabetical order.</li>
+  	</ul>
+    <p>Here is an example of good syntax:</p>
+    <div class="pl-code">
+      <pre><code>
+<span class="s">.teen-girl-squad</span> {
+  <span class="t">&amp;</span><span class="s">:extend</span>(<span class="s">.whats-her-face</span>);
+  <span class="nt">color:</span> <span class="t">@danger</span>;
+  <span class="nt">padding:</span> <span class="t">@padding-lg</span>;
+  <span class="s">.text-overflow</span>();
+}
+      </code></pre>
+    </div>
+  </article>
+  <article class="pl-article">
+    <h2>Pixels vs. Ems</h2>
+    <p>Use <code>px</code> for <code>font-size</code>, because it offers absolute control over text. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
+  </article>
+  <article class="pl-article">
+    <h2>Class Naming + JS</h2>
+    <p>Never reference <code>js-</code> prefixed class names from CSS files. <code>js-</code> are used exclusively from JS files.<br>Use the <code>is-</code> prefix for state rules that are shared between CSS and JS.</p>
+  </article>
+  <article class="pl-article">
+    <h2>Specificity (classes vs. ids)</h2>
+    <p>Elements that occur <strong>exactly once</strong> inside a page should use IDs, otherwise, use classes. When in doubt, use a class name.</p>
+    <ul>
+      <li><strong>Good</strong> candidates for ids: header, footer, modal popups.</li>
+      <li><strong>Bad</strong> candidates for ids: navigation, item listings, item view pages (ex: issue view).</li>
+    </ul>
+    <p>When styling a component, start with an element + class namespace (prefer class names over ids),  prefer direct descendant selectors by default, and use as little specificity as possible. Here is a good example:</p>
+  </article>
+</section>
+<!-- ================================== LOGOS ================================== -->
+<section id="" class="pl-section">
+  <h1>Logo</h1>
+  <p>The BoomTown logo is a transparent .png file with an original width of 484px (100%). The <code>.logo-boomtown</code> class sets the max width to 242px (50%) for better rendering on 2x displays.</p>
+  <div class="pl-example">
+  	<img class="logo-boomtown" src="images/logos/boomtown-logo.png">
+  </div>
+  <div class="pl-code">
+  	<pre><code class="html">
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/logos/boomtown-logo.png"</span> <span class="na">alt=</span><span class="s">"Boomtown Logo"</span> <span class="na">class=</span><span class="s">"logo-boomtown"</span><span class="nt">&gt;</span>
+		</code></pre>
+	</div>
+</section>
+    <!-- ================================== BOOMTOWN COLORS ================================== -->
+    <section id="" class="pl-section">
+      <h1>Colors</h1> 
+      <h2>Brand Colors</h2>
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="pl-swatch--bt-blue"></div>
+            <p class="pl-swatch-txt">BT Blue<br>#1581e2</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="thumbnail">
+            <div class="pl-swatch--bt-orange"></div>
+            <p class="pl-swatch-txt">BT Orange<br>#f68a24</p>
+          </div>
+        </div>
+      </div>
+      <h2>Color Options</h2>
+      <div class="row">
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--primary"></div>
+            <p class="pl-swatch-txt">Primary<br>#1581e2</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--attention"></div>
+            <p class="pl-swatch-txt">Attention<br>#f68a24</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--success"></div>
+            <p class="pl-swatch-txt">Success<br>#669900</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--info"></div>
+            <p class="pl-swatch-txt">Info<br>#5bc0de</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--warning"></div>
+            <p class="pl-swatch-txt">Warning<br>#e5ac00</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--danger"></div>
+            <p class="pl-swatch-txt">Danger<br>#ef5959</p>
+          </div>
+        </div>
+      </div>
+      <h2>Grays</h2>
+      <div class="row">
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-darker"></div>
+            <p class="pl-swatch-txt">Gray Darker<br>#444444</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-dark"></div>
+            <p class="pl-swatch-txt">Gray Dark<br>#696969</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray"></div>
+            <p class="pl-swatch-txt">Gray<br>#848484</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-light"></div>
+            <p class="pl-swatch-txt">Gray Light<br>#b4b4b4</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-lighter"></div>
+            <p class="pl-swatch-txt">Gray Lighter<br>#ececec</p>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+          <div class="thumbnail">
+            <div class="pl-swatch--gray-lightest"></div>
+            <p class="pl-swatch-txt">Gray Lightest<br>#ececec</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== BOOMTOWN BUTTONS ================================== -->
+    <section class="pl-section">
+      <h1>Buttons</h1>
+      <article class="pl-article">
+        <h2 id="">Options</h2>
+        <div class="pl-example">
+          <button href="#" class="btn btn-default">Default</button>
+          <button href="#" class="btn btn-primary">Primary</button>
+          <button href="#" class="btn btn-attention">Attention</button>
+          <button href="#" class="btn btn-success">Success</button>
+          <button href="#" class="btn btn-info">Info</button>
+          <button href="#" class="btn btn-warning">Warning</button>
+          <button href="#" class="btn btn-danger">Danger</button>
+          <button href="#" class="btn btn-link">Link</button>
+        </div><!-- /example -->
+        <div class="pl-code">
+          <pre><code>
+<span class="c">&lt;!-- Standard button --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Provides extreme awareness through the use of BoomTown orange --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-attention&quot;</span><span class="nt">&gt;</span>Attention<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Indicates a successful or positive action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-success&quot;</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Contextual button for informational alert messages --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-info&quot;</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Indicates caution should be taken with this action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-warning&quot;</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Indicates a dangerous or potentially negative action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span>
+          </code></pre>
+        </div>
+      </article>
+      <!-- ======= BOOMTOWN BUTTON SIZES ======= -->
+      <article class="pl-article">
+        <h2 id="">Sizes</h2>
+        <div class="pl-example">
+          <button href="#" class="btn btn-default btn-lg">Large Button</button>
+          <button href="#" class="btn btn-default">Default Button</button>
+          <button href="#" class="btn btn-default btn-sm">Small Button</button>
+          <button href="#" class="btn btn-default btn-xs">Extra Small Button</button>
+        </div><!-- /example -->
+        <div class="pl-code">
+          <pre><code class="html">
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-lg"</span><span class="nt">&gt;</span>Large Button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Default Button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-sm"</span><span class="nt">&gt;</span>Small Button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-xs"</span><span class="nt">&gt;</span>Extra Small Button<span class="nt">&lt;/button&gt;</span>
+          </code></pre>
+        </div>
+        <br>
+        <p>Create block level buttons-those that span the full width of a parent- by adding <code>.btn-block</code>.</p>
+        <div class="pl-example">
+          <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+          <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
+        </div><!-- /example -->
+        <div class="pl-code">
+          <pre><code class="html">
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-lg btn-block"</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-lg btn-block"</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span>
+          </code></pre>
+        </div>
+      </article>
+      <!-- ======= BOOMTOWN BUTTON ACTIVE STATE ======= -->
+      <article class="pl-article">
+        <h2 id="pl-button-sizes">Active State</h2>
+        <h3>Button Element</h3>
+        <p>No need to add <code>:active</code> as it's a pseudo-class, but if you need to force the same appearance, go ahead and add <code>.active</code>.</p>
+        <div class="pl-example">
+          <button type="button" class="btn btn-primary active">Primary button</button>
+          <button type="button" class="btn btn-default active">Button</button>
+        </div><!-- /example -->
+        <div class="pl-code">
+          <pre><code class="html">
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary active"</span><span class="nt">&gt;</span>Primary button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+          </code></pre>
+        </div>
+        <h3>Anchor Element</h3>
+        <p>Add the <code>.active</code> class to <code>&lt;a&gt;</code> buttons.</p>
+        <div class="pl-example">
+          <a href="#" class="btn btn-primary active" role="button">Primary link</a>
+          <a href="#" class="btn btn-default active" role="button">Link</a>
+        </div><!-- /example -->
+        <div class="pl-code">
+          <pre><code class="html">
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary active"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Primary link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+          </code></pre>
+        </div>
+      </article>
+      <!-- ======= BOOMTOWN BUTTON DISABLED STATE ======= -->
+      <article class="pl-article">
+        <h2 id="pl-button-sizes">Disabled State</h2>
+        <h3>Button Element</h3>
+        <p>Add the <code>disabled</code> attribute to <code>&lt;button&gt;</code> buttons.</p>
+        <div class="pl-example">
+          <button type="button" class="btn btn-primary disabled">Primary button</button>
+          <button type="button" class="btn btn-default disabled">Button</button>
+        </div><!-- /example -->
+        <div class="pl-code">
+          <pre><code class="html">
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary disabled"</span><span class="nt">&gt;</span>Primary button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default disabled"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+          </code></pre>
+        </div>
+        <h3>Anchor Element</h3>
+        <p>Add the <code>.disabled</code> class to <code>&lt;a&gt;</code> buttons.</p>
+        <div class="pl-example">
+          <a href="#" class="btn btn-primary disabled" role="button">Primary link</a>
+          <a href="#" class="btn btn-default disabled" role="button">Link</a>
+        </div>
+        <div class="pl-code">
+          <pre><code class="html">
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary disabled"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Primary link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-default disabled"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+          </code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- ================================== BOOMTOWN TYPOGRAPHY ================================== -->
     <section id="" class="pl-section">
       <h1>Typography</h1>
       <article class="pl-article">
@@ -142,56 +446,6 @@
           <p>Feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
         </div>
       </article>
-      <!-- ======= BOOMTOWN TYPOGRAPHY CALLOUTS ======= -->
-      <article class="pl-article">
-        <h2>Callouts</h2>
-        <p>Use these to callout important information or display messages.</p>
-        <div class="pl-example">
-          <div class="callout callout-attention">
-            <h4>Callout Attention</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.</p>
-          </div>
-          <div class="callout callout-success">
-            <h4>Callout Success</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.</p>
-          </div>
-          <div class="callout callout-info">
-            <h4>Callout Info</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.</p>
-          </div>
-          <div class="callout callout-warning">
-            <h4>Callout Warning</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.</p>
-          </div>
-          <div class="callout callout-danger">
-            <h4>Callout Danger</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.</p>
-          </div>
-        </div><!-- /example -->
-        <div class="pl-code">
-          <pre><code class="html">
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-attention"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Attention<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-success"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Success<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-info"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Info<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-warning"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Warngin<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-danger"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Danger<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-          </code></pre>
-        </div>
       <!-- ======= BOOMTOWN TYPOGRAPHY LISTS ======= -->
       <article class="pl-article">
         <h2>Lists</h2>
@@ -548,139 +802,572 @@
       </article>
     </section>
 
-
-    <!-- ================================== BOOMTOWN BUTTONS ================================== -->
+		<!-- ================================== BOOMTOWN FORMS ================================== -->
     <section class="pl-section">
-      <h1>Buttons</h1>
+      <h1>Forms</h1>
+      <!-- ======= BOOMTOWN FORM ======= -->
+      <h2 id="">Basic Example</h2>
       <article class="pl-article">
-        <h2 id="">Options</h2>
+        <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
         <div class="pl-example">
-          <button href="#" class="btn btn-default">Default</button>
-          <button href="#" class="btn btn-primary">Primary</button>
-          <button href="#" class="btn btn-attention">Attention</button>
-          <button href="#" class="btn btn-success">Success</button>
-          <button href="#" class="btn btn-info">Info</button>
-          <button href="#" class="btn btn-warning">Warning</button>
-          <button href="#" class="btn btn-danger">Danger</button>
-          <button href="#" class="btn btn-link">Link</button>
-        </div><!-- /example -->
-        <div class="pl-code">
-          <pre><code>
-<span class="c">&lt;!-- Standard button --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Provides extreme awareness through the use of BoomTown orange --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-attention&quot;</span><span class="nt">&gt;</span>Attention<span class="nt">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Indicates a successful or positive action --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-success&quot;</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Contextual button for informational alert messages --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-info&quot;</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Indicates caution should be taken with this action --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-warning&quot;</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Indicates a dangerous or potentially negative action --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
-
-<span class="c">&lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span>
-          </code></pre>
-        </div>
+			    <form role="form">
+			      <div class="form-group">
+			        <label for="exampleInputEmail1">Email address</label>
+			        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			      </div>
+			      <div class="form-group">
+			        <label for="exampleInputPassword1">Password</label>
+			        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			      </div>
+			      <div class="form-group">
+			        <label for="exampleInputFile">File input</label>
+			        <input type="file" id="exampleInputFile">
+			        <p class="help-block">Example block-level help text here.</p>
+			      </div>
+			      <div class="checkbox">
+			        <label>
+			          <input type="checkbox"> Check me out
+			        </label>
+			      </div>
+			      <button type="submit" class="btn btn-default">Submit</button>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;form</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputEmail1"</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputEmail1"</span> <span class="na">placeholder=</span><span class="s">"Enter email"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputPassword1"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputPassword1"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputFile"</span><span class="nt">&gt;</span>File input<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"exampleInputFile"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>Example block-level help text here.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span> Check me out
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+					</code></pre>
+				</div>
+				<div class="callout callout-warning">
+		      <h4>Don't mix form groups with input groups</h4>
+		      <p>Do not mix form groups directly with <a href="/components/#input-groups">input groups</a>. Instead, nest the input group inside of the form group.</p>
+		    </div>
+	    </article>
+	    <!-- ======= BOOMTOWN FORM - INLINE ======= -->
+	    <article class="pl-article">
+      	<h2 id="">Inline Form</h2>
+        <p>Add <code>.form-inline</code> to your <code>&lt;form&gt;</code> for left-aligned and inline-block controls. <strong>This only applies to forms within viewports that are at least 768px wide.</strong></p>
+        <div class="callout callout-danger">
+			    <h4>Requires custom widths</h4>
+			    <p>Inputs, selects, and textareas are 100% wide by default in Bootstrap. To use the inline form, you'll have to set a width on the form controls used within.</p>
+			  </div>
+			  <div class="callout callout-warning">
+			    <h4>Always add labels</h4>
+			    <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class.</p>
+			  </div>
+			  <div class="pl-example">
+			    <form class="form-inline" role="form">
+			      <div class="form-group">
+			        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+			        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+			      </div>
+			      <div class="form-group">
+			        <label class="sr-only" for="exampleInputPassword2">Password</label>
+			        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+			      </div>
+			      <div class="checkbox">
+			        <label>
+			          <input type="checkbox"> Remember me
+			        </label>
+			      </div>
+			      <button type="submit" class="btn btn-default">Sign in</button>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"sr-only"</span> <span class="na">for=</span><span class="s">"exampleInputEmail2"</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputEmail2"</span> <span class="na">placeholder=</span><span class="s">"Enter email"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"sr-only"</span> <span class="na">for=</span><span class="s">"exampleInputPassword2"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputPassword2"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span> Remember me
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+					</code></pre>
+				</div>
       </article>
-      <!-- ======= BOOMTOWN BUTTON SIZES ======= -->
-      <h2 id="">Sizes</h2>
-      <article class="pl-article">
-        <div class="pl-example">
-          <button href="#" class="btn btn-default btn-lg">Large Button</button>
-          <button href="#" class="btn btn-default">Default Button</button>
-          <button href="#" class="btn btn-default btn-sm">Small Button</button>
-          <button href="#" class="btn btn-default btn-xs">Extra Small Button</button>
-        </div><!-- /example -->
-        <div class="pl-code">
-          <pre><code class="html">
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-lg"</span><span class="nt">&gt;</span>Large Button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Default Button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-sm"</span><span class="nt">&gt;</span>Small Button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-xs"</span><span class="nt">&gt;</span>Extra Small Button<span class="nt">&lt;/button&gt;</span>
-          </code></pre>
-        </div>
-        <br>
-        <p>Create block level buttons-those that span the full width of a parent- by adding <code>.btn-block</code>.</p>
-        <div class="pl-example">
-          <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-          <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
-        </div><!-- /example -->
-        <div class="pl-code">
-          <pre><code class="html">
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-lg btn-block"</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-lg btn-block"</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span>
-          </code></pre>
-        </div>
-      </article>
-      <!-- ======= BOOMTOWN BUTTON ACTIVE STATE ======= -->
-      <article class="pl-article">
-        <h2 id="pl-button-sizes">Active State</h2>
-        <h3>Button Element</h3>
-        <p>No need to add <code>:active</code> as it's a pseudo-class, but if you need to force the same appearance, go ahead and add <code>.active</code>.</p>
-        <div class="pl-example">
-          <button type="button" class="btn btn-primary active">Primary button</button>
-          <button type="button" class="btn btn-default active">Button</button>
-        </div><!-- /example -->
-        <div class="pl-code">
-          <pre><code class="html">
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary active"</span><span class="nt">&gt;</span>Primary button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
-          </code></pre>
-        </div>
-        <h3>Anchor Element</h3>
-        <p>Add the <code>.active</code> class to <code>&lt;a&gt;</code> buttons.</p>
-        <div class="pl-example">
-          <a href="#" class="btn btn-primary active" role="button">Primary link</a>
-          <a href="#" class="btn btn-default active" role="button">Link</a>
-        </div><!-- /example -->
-        <div class="pl-code">
-          <pre><code class="html">
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary active"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Primary link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-default active"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
-          </code></pre>
-        </div>
-      </article>
-      <!-- ======= BOOMTOWN BUTTON DISABLED STATE ======= -->
-      <article class="pl-article">
-        <h2 id="pl-button-sizes">Disabled State</h2>
-        <h3>Button Element</h3>
-        <p>Add the <code>disabled</code> attribute to <code>&lt;button&gt;</code> buttons.</p>
-        <div class="pl-example">
-          <button type="button" class="btn btn-primary disabled">Primary button</button>
-          <button type="button" class="btn btn-default disabled">Button</button>
-        </div><!-- /example -->
-        <div class="pl-code">
-          <pre><code class="html">
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary disabled"</span><span class="nt">&gt;</span>Primary button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default disabled"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
-          </code></pre>
-        </div>
-        <h3>Anchor Element</h3>
-        <p>Add the <code>.disabled</code> class to <code>&lt;a&gt;</code> buttons.</p>
-        <div class="pl-example">
-          <a href="#" class="btn btn-primary disabled" role="button">Primary link</a>
-          <a href="#" class="btn btn-default disabled" role="button">Link</a>
-        </div>
-        <div class="pl-code">
-          <pre><code class="html">
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary disabled"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Primary link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-default disabled"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
-          </code></pre>
-        </div>
-      </article>
-    </section>
+      <!-- ======= BOOMTOWN FORM - HORIZONTAL ======= -->
+	    <article class="pl-article">
+	    	<h2>Horizontal Form</h2>
+	    	<p>Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout by adding <code>.form-horizontal</code> to the form. Doing so changes <code>.form-group</code>s to behave as grid rows, so no need for <code>.row</code>.</p>
+	    	<div class="pl-example">
+			    <form class="form-horizontal" role="form">
+			      <div class="form-group">
+			        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+			        <div class="col-sm-10">
+			          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+			        </div>
+			      </div>
+			      <div class="form-group">
+			        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+			        <div class="col-sm-10">
+			          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+			        </div>
+			      </div>
+			      <div class="form-group">
+			        <div class="col-sm-offset-2 col-sm-10">
+			          <div class="checkbox">
+			            <label>
+			              <input type="checkbox"> Remember me
+			            </label>
+			          </div>
+			        </div>
+			      </div>
+			      <div class="form-group">
+			        <div class="col-sm-offset-2 col-sm-10">
+			          <button type="submit" class="btn btn-default">Sign in</button>
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-horizontal"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputEmail3"</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputEmail3"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputPassword3"</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputPassword3"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-offset-2 col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span> Remember me
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-offset-2 col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+					</code></pre>
+				</div>
+	    </article>
+	    <!-- ======= BOOMTOWN FORM - SUPPORTED CONTROLS ======= -->
+	    <article class="pl-article">
+	    	<h2>Supported Controls</h2>
+	    	<p>Examples of standard form controls supported in an example form layout.</p>
+	    	<h3>Inputs</h3>
+	    	<p>Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.</p>
+	    	<div class="callout callout-danger">
+			    <h4>Type declaration required</h4>
+			    <p>Inputs will only be fully styled if their <code>type</code> is properly declared.</p>
+			  </div>
+			  <div class="pl-example">
+			    <form role="form">
+			      <input type="text" class="form-control" placeholder="Text input">
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Text input"</span><span class="nt">&gt;</span>
+					</code></pre>
+				</div>
+				<div class="callout callout-info">
+			    <h4>Input groups</h4>
+			    <p>To add integrated text or buttons before and/or after any text-based <code>&lt;input&gt;</code>, <a href="../components/#input-groups">check out the input group component</a>.</p>
+			  </div>
+			  <h3>Textarea</h3>
+			  <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
+			  <div class="pl-example">
+			    <form role="form">
+			      <textarea class="form-control" rows="3"></textarea>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">rows=</span><span class="s">"3"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+					</code></pre>
+				</div>
+				<h3>Checkboxes and Radios</h3>
+				<p>Checkboxes are for selecting one or several options in a list while radios are for selecting one option from many.</p>
+				<h4>Default (stacked)</h4>
+				<div class="pl-example">
+			    <form role="form">
+			      <div class="checkbox">
+			        <label>
+			          <input type="checkbox" value="">
+			          Option one is this and that—be sure to include why it's great
+			        </label>
+			      </div>
+			      <br>
+			      <div class="radio">
+			        <label>
+			          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+			          Option one is this and that—be sure to include why it's great
+			        </label>
+			      </div>
+			      <div class="radio">
+			        <label>
+			          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			          Option two can be something else and selecting it will deselect option one
+			        </label>
+			      </div>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+    Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"optionsRadios1"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+    Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"optionsRadios2"</span> <span class="na">value=</span><span class="s">"option2"</span><span class="nt">&gt;</span>
+    Option two can be something else and selecting it will deselect option one
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+					</code></pre>
+				</div>
+				<h4>Inline checkboxes</h4>
+				<p>Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line.</p>
+				<div class="pl-example">
+			    <form role="form">
+			      <label class="checkbox-inline">
+			        <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+			      </label>
+			      <label class="checkbox-inline">
+			        <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+			      </label>
+			      <label class="checkbox-inline">
+			        <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+			      </label>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"checkbox-inline"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"inlineCheckbox1"</span> <span class="na">value=</span><span class="s">"option1"</span><span class="nt">&gt;</span> 1
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"checkbox-inline"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"inlineCheckbox2"</span> <span class="na">value=</span><span class="s">"option2"</span><span class="nt">&gt;</span> 2
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"checkbox-inline"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"inlineCheckbox3"</span> <span class="na">value=</span><span class="s">"option3"</span><span class="nt">&gt;</span> 3
+<span class="nt">&lt;/label&gt;</span>
+					</code></pre>
+				</div>
+		    <h3>Selects</h3>
+		    <p>Use the default option, or add <code>multiple</code> to show multiple options at once.</p>
+		    <div class="pl-example">
+			    <form role="form">
+			      <select class="form-control">
+			        <option>1</option>
+			        <option>2</option>
+			        <option>3</option>
+			        <option>4</option>
+			        <option>5</option>
+			      </select>
+			      <br>
+			      <select multiple="" class="form-control">
+			        <option>1</option>
+			        <option>2</option>
+			        <option>3</option>
+			        <option>4</option>
+			        <option>5</option>
+			      </select>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+
+<span class="nt">&lt;select</span> <span class="na">multiple</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+					</code></pre>
+				</div>
+			</article>
+			<!-- ======= BOOMTOWN FORM - STATIC CONTROL ======= -->
+			<article class="pl-article">
+				<h2>Static Control</h2>
+				<p>When you need to place plain text next to a form label within a horizontal form, use the <code>.form-control-static</code> class on a <code>&lt;p&gt;</code>.</p>
+				<div class="pl-example">
+			    <form class="form-horizontal" role="form">
+			      <div class="form-group">
+			        <label class="col-sm-2 control-label">Email</label>
+			        <div class="col-sm-10">
+			          <p class="form-control-static">email@example.com</p>
+			        </div>
+			      </div>
+			      <div class="form-group">
+			        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+			        <div class="col-sm-10">
+			          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-horizontal"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"form-control-static"</span><span class="nt">&gt;</span>email@example.com<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputPassword"</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputPassword"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+					</code></pre>
+				</div>
+			</article>
+			<!-- ======= BOOMTOWN FORM - INPUT FOCUS ======= -->
+			<article class="pl-article">
+				<h2>Input Focus</h2>
+				<p>We remove the default <code>outline</code> styles on some form controls and apply a <code>box-shadow</code> in its place for <code>:focus</code>.</p>
+				<div class="pl-example">
+			    <form role="form">
+			      <input class="form-control" id="focusedInput" type="text" value="Demonstrative focus state">
+			    </form>
+			  </div>
+			  <div class="callout callout-info">
+			    <h4>Demo <code>:focus</code> state</h4>
+			    <p>The above example input uses custom styles in our documentation to demonstrate the <code>:focus</code> state on a <code>.form-control</code>.</p>
+			  </div>
+			</article>
+			<!-- ======= BOOMTOWN FORM - INPUT DISABLED ======= -->
+			<article class="pl-article">
+				<h2>Disabled Inputs</h2>
+				<p>Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</p>
+				<div class="pl-example">
+			    <form role="form">
+			      <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here…" disabled="">
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"disabledInput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Disabled input here..."</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+					</code></pre>
+				</div>
+				<h3 id="forms-disabled-fieldsets">Disabled fieldsets</h3>
+				<p>Add the <code>disabled</code> attribute to a <code>&lt;fieldset&gt;</code> to disable all the controls within the <code>&lt;fieldset&gt;</code> at once.</p>
+				<div class="callout callout-warning">
+			    <h4>Link functionality of <code>&lt;a&gt;</code> not impacted</h4>
+			    <p>This class will only change the appearance of <code>&lt;a class="btn btn-default"&gt;</code> buttons, not their functionality. Use custom JavaScript to disable links here.</p>
+			  </div>
+			  <div class="callout callout-danger">
+			    <h4>Cross-browser compatibility</h4>
+			    <p>While Bootstrap will apply these styles in all browsers, Internet Explorer 9 and below don't actually support the <code>disabled</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p>
+			  </div>
+			  <div class="pl-example">
+			    <form role="form">
+			      <fieldset disabled="">
+			        <div class="form-group">
+			          <label for="disabledTextInput">Disabled input</label>
+			          <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+			        </div>
+			        <div class="form-group">
+			          <label for="disabledSelect">Disabled select menu</label>
+			          <select id="disabledSelect" class="form-control">
+			            <option>Disabled select</option>
+			          </select>
+			        </div>
+			        <div class="checkbox">
+			          <label>
+			            <input type="checkbox"> Can't check this
+			          </label>
+			        </div>
+			        <button type="submit" class="btn btn-primary">Submit</button>
+			      </fieldset>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;form</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"disabledTextInput"</span><span class="nt">&gt;</span>Disabled input<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"disabledTextInput"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Disabled input"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"disabledSelect"</span><span class="nt">&gt;</span>Disabled select menu<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"disabledSelect"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Disabled select<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span> Can't check this
+      <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+					</code></pre>
+				</div>
+			</article>
+			<!-- ======= BOOMTOWN FORM - VALIDATION STATES ======= -->
+			<article class="pl-article">
+				<h2>Validation States</h2>
+				<p>Boomstrap includes validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
+				<div class="pl-example">
+			    <form role="form">
+			      <div class="form-group has-success">
+			        <label class="control-label" for="inputSuccess1">Input with success</label>
+			        <input type="text" class="form-control" id="inputSuccess1">
+			      </div>
+			      <div class="form-group has-warning">
+			        <label class="control-label" for="inputWarning1">Input with warning</label>
+			        <input type="text" class="form-control" id="inputWarning1">
+			      </div>
+			      <div class="form-group has-error">
+			        <label class="control-label" for="inputError1">Input with error</label>
+			        <input type="text" class="form-control" id="inputError1">
+			      </div>
+			    </form>
+			  </div>
+			</article>
+			<!-- ======= BOOMTOWN FORM - CONTROL SIZING ======= -->
+			<article class="pl-article">
+				<h2>Control Sizing</h2>
+				<p>Set heights using classes like <code>.input-lg</code>, and set widths using grid column classes like <code>.col-lg-*</code>.</p>
+				<h3>Height sizing</h3>
+				<p>Create taller or shorter form controls that match button sizes.</p>
+				<div class="pl-example pl-example-control-sizing">
+			    <form role="form">
+			      <div class="controls">
+			        <input class="form-control input-lg" type="text" placeholder=".input-lg">
+			        <input type="text" class="form-control" placeholder="Default input">
+			        <input class="form-control input-sm" type="text" placeholder=".input-sm">
+
+			        <select class="form-control input-lg">
+			          <option value="">.input-lg</option>
+			        </select>
+			        <select class="form-control">
+			          <option value="">Default select</option>
+			        </select>
+			        <select class="form-control input-sm">
+			          <option value="">.input-sm</option>
+			        </select>
+			      </div>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control input-lg"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">".input-lg"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Default input"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control input-sm"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">".input-sm"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control input-lg"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control input-sm"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/select&gt;</span>
+					</code></pre>
+				</div>
+				<h3>Column sizing</h3>
+				<p>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</p>
+				<div class="pl-example">
+			    <form role="form">
+			      <div class="row">
+			        <div class="col-xs-2">
+			          <input type="text" class="form-control" placeholder=".col-xs-2">
+			        </div>
+			        <div class="col-xs-3">
+			          <input type="text" class="form-control" placeholder=".col-xs-3">
+			        </div>
+			        <div class="col-xs-4">
+			          <input type="text" class="form-control" placeholder=".col-xs-4">
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">".col-xs-2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">".col-xs-3"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">".col-xs-4"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+					</code></pre>
+				</div>
+			</article>
+			<!-- ======= BOOMTOWN FORM - HELP TEXT ======= -->
+			<article class="pl-article">
+				<h2>Help Text</h2>
+				<p>Block level help text for form controls.</p>
+				<div class="pl-example">
+			    <form role="form">
+			      <input type="text" class="form-control">
+			      <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+			    </form>
+			  </div>
+			  <div class="pl-code">
+			  	<pre><code class="html">
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>A block of help text that breaks onto a new line and may extend beyond one line.<span class="nt">&lt;/span&gt;</span>
+					</code></pre>
+				</div>
+			</article>
+  	</section>
 
 
 
+</div>
 </body>
 </html>
