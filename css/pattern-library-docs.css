@@ -143,6 +143,9 @@
 .pl-code .s {
   color: #d44950;
 }
+.pl-code .t {
+  color: #b2b300;
+}
 .pl-swatch-txt {
   padding-top: 10px;
   text-align: center;

@@ -6021,3 +6021,6 @@ a.callout-warning:hover {
 .cat-eq-abbr {
   width: 42px;
 }
+.lead {
+  font-weight: 300;
+}
