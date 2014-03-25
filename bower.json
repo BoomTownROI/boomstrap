@@ -4,25 +4,17 @@
   "authors": [
     "Craig Anthony <mcraiganthony@gmail.com>",
     "Craig Anthony <craig@boomtownroi.com>",
-    "Mark Funk <mark@boomtownroi.com>",
-    "David Matheson <dmatheson@boomtownroi.com>",
-    "Sean McCambride <sean@boomtownroi.com>",
-    "Mark Lane <mlane@boomtownroi.com>",
+    "Mark Funk <mark@boomtownroi.com>"
   ],
   "description": "A robust pattern library",
   "main": "index.html",
   "private": false,
   "ignore": [
     "**/.*",
-    "app",
-    "bower_components",
-    "docs",
-    "images",
-    "js",
+    "app/**/*.*",
+    "views/**/*.*",
     "node_modules",
-    "vendor",
-    "views",
-    "docs"
+    "bower_components"
   ],
   "dependencies": {
     "angular": "~1.2.0",
