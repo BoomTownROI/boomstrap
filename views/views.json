@@ -1,13 +1,12 @@
 {
 	"index": [
 		"views/css/installation.html",
-		"views/css/coding-style.html",
 		"views/css/logos.html",
 		"views/css/colors.html",
-		"views/css/buttons.html",
 		"views/css/typography.html",
 		"views/css/tables.html",
 		"views/css/forms.html",
+		"views/css/buttons.html",
 		"views/css/images.html",
 		"views/css/helper-classes.html",
 		"views/css/responsive-utilities.html"
@@ -65,5 +64,8 @@
 		"app/views/table.html",
 		"app/views/chosen.html",
 		"app/index-bottom.html"
+	],
+	"rules": [
+		"views/rules/index.html"
 	]
 }
