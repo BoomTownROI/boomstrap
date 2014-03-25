@@ -12,13 +12,9 @@
   "ignore": [
     "**/.*",
     "app/**/*.*",
-    "bower_components",
-    "docs",
-    "images",
-    "js",
+    "views/**/*.*",
     "node_modules",
-    "vendor",
-    "views/**/*.*"
+    "bower_components"
   ],
   "dependencies": {
     "angular": "~1.2.0",
