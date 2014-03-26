@@ -1,0 +1,466 @@
+<!-- ================================== Using LESS ================================== -->
+<div class="pl-docs-section">
+  <h1 id="less" class="page-header">Using Less</h1>
+
+  <p class="lead">Bootstrap's CSS is built on Less, a preprocessor with additional functionality like variables, mixins, and functions for compiling CSS. Those looking to use the source Less files instead of our compiled CSS files can make use of the numerous variables and mixins we use throughout the framework.</p>
+
+  <p>Grid variables and mixins are covered <a href="#grid-less">within the Grid system section</a>.</p>
+
+
+  <h2 id="less-bootstrap">Compiling Bootstrap</h2>
+  <p>Bootstrap can be used in at least two ways: with the compiled CSS or with the source Less files. To compile the Less files, <a href="https://github.com/twbs/bootstrap#compiling-css-and-javascript">visit the README</a> for how to setup your development environment to run the necessary commands.</p>
+  <p>Third party compilation tools may work with Bootstrap, but they are not supported by our core team.</p>
+
+  <h2 id="less-variables">Variables</h2>
+  <p>Variables are used throughout the entire project as a way to centralize and share commonly used values like colors, spacing, or font stacks. For a complete breakdown, please see <a href="../customize/#less-variables-section">the Customizer</a>.</p>
+
+  <h3 id="less-variables-colors">Colors</h3>
+  <p>Easily make use of two color schemes: grayscale and semantic. Grayscale colors provide quick access to commonly used shades of black while semantic include various colors assigned to meaningful contextual values.</p>
+  <div class="pl-example">
+    <div class="color-swatches">
+      <div class="color-swatch gray-darker"></div>
+      <div class="color-swatch gray-dark"></div>
+      <div class="color-swatch gray"></div>
+      <div class="color-swatch gray-light"></div>
+      <div class="color-swatch gray-lighter"></div>
+    </div>
+  </div>
+<div class="pl-code"><pre><code class="scss"><span class="k">@gray-darker</span><span class="nd">:</span>  <span class="nt">lighten</span><span class="o">(</span><span class="nn">#000</span><span class="o">,</span> <span class="nt">13</span><span class="nc">.5</span><span class="err">%</span><span class="o">);</span> <span class="o">//</span> <span class="nn">#222</span>
+<span class="o">@</span><span class="nt">gray-dark</span><span class="nd">:</span>    <span class="nt">lighten</span><span class="o">(</span><span class="nn">#000</span><span class="o">,</span> <span class="nt">20</span><span class="err">%</span><span class="o">);</span>   <span class="o">//</span> <span class="nn">#333</span>
+<span class="o">@</span><span class="nt">gray</span><span class="nd">:</span>         <span class="nt">lighten</span><span class="o">(</span><span class="nn">#000</span><span class="o">,</span> <span class="nt">33</span><span class="nc">.5</span><span class="err">%</span><span class="o">);</span> <span class="o">//</span> <span class="nn">#555</span>
+<span class="o">@</span><span class="nt">gray-light</span><span class="nd">:</span>   <span class="nt">lighten</span><span class="o">(</span><span class="nn">#000</span><span class="o">,</span> <span class="nt">60</span><span class="err">%</span><span class="o">);</span>   <span class="o">//</span> <span class="nn">#999</span>
+<span class="o">@</span><span class="nt">gray-lighter</span><span class="nd">:</span> <span class="nt">lighten</span><span class="o">(</span><span class="nn">#000</span><span class="o">,</span> <span class="nt">93</span><span class="nc">.5</span><span class="err">%</span><span class="o">);</span> <span class="o">//</span> <span class="nn">#eee</span>
+</code></pre></div>
+
+  <div class="pl-example">
+    <div class="color-swatches">
+      <div class="color-swatch brand-primary"></div>
+      <div class="color-swatch brand-success"></div>
+      <div class="color-swatch brand-info"></div>
+      <div class="color-swatch brand-warning"></div>
+      <div class="color-swatch brand-danger"></div>
+    </div>
+  </div>
+<div class="pl-code"><pre><code class="scss"><span class="k">@brand-primary</span><span class="nd">:</span> <span class="nn">#428bca</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">brand-success</span><span class="nd">:</span> <span class="nn">#5cb85c</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">brand-info</span><span class="nd">:</span>    <span class="nn">#5bc0de</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">brand-warning</span><span class="nd">:</span> <span class="nn">#f0ad4e</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">brand-danger</span><span class="nd">:</span>  <span class="nn">#d9534f</span><span class="o">;</span>
+</code></pre></div>
+
+  <p>Use any of these color variables as they are or reassign them to more meaningful variables for your project.</p>
+<div class="pl-code"><pre><code class="scss"><span class="c1">// Use as-is</span>
+<span class="nc">.masthead</span> <span class="p">{</span>
+  <span class="na">background-color</span><span class="o">:</span> <span class="o">@</span><span class="n">brand-primary</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Reassigned variables in Less</span>
+<span class="k">@alert-message-background</span><span class="nd">:</span> <span class="o">@</span><span class="nt">brand-info</span><span class="o">;</span>
+<span class="nc">.alert</span> <span class="p">{</span>
+  <span class="na">background-color</span><span class="o">:</span> <span class="o">@</span><span class="n">alert-message-background</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-variables-scaffolding">Scaffolding</h3>
+  <p>A handful of variables for quickly customizing key elements of your site's skeleton.</p>
+<div class="pl-code"><pre><code class="scss"><span class="c1">// Scaffolding</span>
+<span class="k">@body-bg</span><span class="nd">:</span>    <span class="nn">#fff</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">text-color</span><span class="nd">:</span> <span class="o">@</span><span class="nt">black-50</span><span class="o">;</span>
+</code></pre></div>
+
+  <h3 id="less-variables-links">Links</h3>
+  <p>Easily style your links with the right color with only one value.</p>
+<div class="pl-code"><pre><code class="scss"><span class="c1">// Variables</span>
+<span class="k">@link-color</span><span class="nd">:</span>       <span class="o">@</span><span class="nt">brand-primary</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">link-color-hover</span><span class="nd">:</span> <span class="nt">darken</span><span class="o">(@</span><span class="nt">link-color</span><span class="o">,</span> <span class="nt">15</span><span class="err">%</span><span class="o">);</span>
+
+<span class="o">//</span> <span class="nt">Usage</span>
+<span class="nt">a</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="o">@</span><span class="n">link-color</span><span class="p">;</span>
+  <span class="na">text-decoration</span><span class="o">:</span> <span class="no">none</span><span class="p">;</span>
+
+  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="o">@</span><span class="n">link-color-hover</span><span class="p">;</span>
+    <span class="na">text-decoration</span><span class="o">:</span> <span class="no">underline</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+  <p>Note that the <code>@link-color-hover</code> uses a function, another awesome tool from Less, to automagically create the right hover color. You can use <code>darken</code>, <code>lighten</code>, <code>saturate</code>, and <code>desaturate</code>.</p>
+
+  <h3 id="less-variables-typography">Typography</h3>
+  <p>Easily set your type face, text size, leading, and more with a few quick variables. Bootstrap makes use of these as well to provide easy typographic mixins.</p>
+<div class="pl-code"><pre><code class="scss"><span class="k">@font-family-sans-serif</span><span class="nd">:</span>  <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">font-family-serif</span><span class="nd">:</span>       <span class="nt">Georgia</span><span class="o">,</span> <span class="s2">&quot;Times New Roman&quot;</span><span class="o">,</span> <span class="nt">Times</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">font-family-monospace</span><span class="nd">:</span>   <span class="nt">Menlo</span><span class="o">,</span> <span class="nt">Monaco</span><span class="o">,</span> <span class="nt">Consolas</span><span class="o">,</span> <span class="s2">&quot;Courier New&quot;</span><span class="o">,</span> <span class="nt">monospace</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">font-family-base</span><span class="nd">:</span>        <span class="o">@</span><span class="nt">font-family-sans-serif</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">font-size-base</span><span class="nd">:</span>          <span class="nt">14px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">font-size-large</span><span class="nd">:</span>         <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">1</span><span class="nc">.25</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">18px</span>
+<span class="o">@</span><span class="nt">font-size-small</span><span class="nd">:</span>         <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">0</span><span class="nc">.85</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">12px</span>
+
+<span class="o">@</span><span class="nt">font-size-h1</span><span class="nd">:</span>            <span class="nt">floor</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">2</span><span class="nc">.6</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">36px</span>
+<span class="o">@</span><span class="nt">font-size-h2</span><span class="nd">:</span>            <span class="nt">floor</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">2</span><span class="nc">.15</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">30px</span>
+<span class="o">@</span><span class="nt">font-size-h3</span><span class="nd">:</span>            <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">1</span><span class="nc">.7</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">24px</span>
+<span class="o">@</span><span class="nt">font-size-h4</span><span class="nd">:</span>            <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">1</span><span class="nc">.25</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">18px</span>
+<span class="o">@</span><span class="nt">font-size-h5</span><span class="nd">:</span>            <span class="o">@</span><span class="nt">font-size-base</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">font-size-h6</span><span class="nd">:</span>            <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">0</span><span class="nc">.85</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">12px</span>
+
+<span class="o">@</span><span class="nt">line-height-base</span><span class="nd">:</span>        <span class="nt">1</span><span class="nc">.428571429</span><span class="o">;</span> <span class="o">//</span> <span class="nt">20</span><span class="o">/</span><span class="nt">14</span>
+<span class="o">@</span><span class="nt">line-height-computed</span><span class="nd">:</span>    <span class="nt">floor</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="o">@</span><span class="nt">line-height-base</span><span class="o">));</span> <span class="o">//</span> <span class="o">~</span><span class="nt">20px</span>
+
+<span class="o">@</span><span class="nt">headings-font-family</span><span class="nd">:</span>    <span class="nt">inherit</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">headings-font-weight</span><span class="nd">:</span>    <span class="nt">500</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">headings-line-height</span><span class="nd">:</span>    <span class="nt">1</span><span class="nc">.1</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">headings-color</span><span class="nd">:</span>          <span class="nt">inherit</span><span class="o">;</span>
+</code></pre></div>
+
+  <h3 id="less-variables-icons">Icons</h3>
+  <p>Two quick variables for customizing the location and filename of your icons.</p>
+<div class="pl-code"><pre><code class="scss"><span class="k">@icon-font-path</span><span class="nd">:</span>          <span class="s2">&quot;../fonts/&quot;</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">icon-font-name</span><span class="nd">:</span>          <span class="s2">&quot;glyphicons-halflings-regular&quot;</span><span class="o">;</span>
+</code></pre></div>
+
+  <h3 id="less-variables-components">Components</h3>
+  <p>Components throughout Bootstrap make use of some default variables for setting common values. Here are the most commonly used.</p>
+<div class="pl-code"><pre><code class="scss"><span class="k">@padding-base-vertical</span><span class="nd">:</span>          <span class="nt">6px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">padding-base-horizontal</span><span class="nd">:</span>        <span class="nt">12px</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">padding-large-vertical</span><span class="nd">:</span>         <span class="nt">10px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">padding-large-horizontal</span><span class="nd">:</span>       <span class="nt">16px</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">padding-small-vertical</span><span class="nd">:</span>         <span class="nt">5px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">padding-small-horizontal</span><span class="nd">:</span>       <span class="nt">10px</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">padding-xs-vertical</span><span class="nd">:</span>            <span class="nt">1px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">padding-xs-horizontal</span><span class="nd">:</span>          <span class="nt">5px</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">line-height-large</span><span class="nd">:</span>              <span class="nt">1</span><span class="nc">.33</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">line-height-small</span><span class="nd">:</span>              <span class="nt">1</span><span class="nc">.5</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">border-radius-base</span><span class="nd">:</span>             <span class="nt">4px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">border-radius-large</span><span class="nd">:</span>            <span class="nt">6px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">border-radius-small</span><span class="nd">:</span>            <span class="nt">3px</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">component-active-color</span><span class="nd">:</span>         <span class="nn">#fff</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">component-active-bg</span><span class="nd">:</span>            <span class="o">@</span><span class="nt">brand-primary</span><span class="o">;</span>
+
+<span class="o">@</span><span class="nt">caret-width-base</span><span class="nd">:</span>               <span class="nt">4px</span><span class="o">;</span>
+<span class="o">@</span><span class="nt">caret-width-large</span><span class="nd">:</span>              <span class="nt">5px</span><span class="o">;</span>
+</code></pre></div>
+
+
+  <h2 id="less-mixins-vendor">Vendor mixins</h2>
+  <p>Vendor mixins are mixins to help support multiple browsers by including all relevant vendor prefixes in your compiled CSS.</p>
+
+
+  <h3 id="less-mixins-box-sizing">Box-sizing</h3>
+  <p>Reset your components' box model with a single mixin. For context, see this <a href="https://developer.mozilla.org/en-US/docs/CSS/box-sizing" target="_blank">helpful article from Mozilla</a>.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.box-sizing</span><span class="o">(@</span><span class="nt">box-model</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-box-sizing</span><span class="o">:</span> <span class="o">@</span><span class="n">box-model</span><span class="p">;</span> <span class="c1">// Safari &lt;= 5</span>
+     <span class="na">-moz-box-sizing</span><span class="o">:</span> <span class="o">@</span><span class="n">box-model</span><span class="p">;</span> <span class="c1">// Firefox &lt;= 19</span>
+          <span class="na">box-sizing</span><span class="o">:</span> <span class="o">@</span><span class="n">box-model</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-rounded-corners">Rounded corners</h3>
+  <p>Today all modern browsers support the non-prefixed <code>border-radius</code> property. As such, there is no <code>.border-radius()</code> mixin, but Bootstrap does include shortcuts for quickly rounding two corners on a particular side of an object.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.border-top-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">border-top-right-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+   <span class="na">border-top-left-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.border-right-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">border-bottom-right-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+     <span class="na">border-top-right-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.border-bottom-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">border-bottom-right-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+   <span class="na">border-bottom-left-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.border-left-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">border-bottom-left-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+     <span class="na">border-top-left-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-box-shadow">Box (Drop) shadows</h3>
+  <p>If your target audience is using the latest and greatest browsers and devices, be sure to just use the <code>box-shadow</code> property on its own. If you need support for older Android (pre-v4) and iOS devices (pre-iOS 5), use the <strong>deprecated</strong> mixin to pick up the required <code>-webkit</code> prefix.</p>
+  <p>The mixin is <strong>deprecated</strong> as of v3.1.0, since Bootstrap doesn't officially support the outdated platforms that don't support the standard property. To preserve backwards-compatibility, Bootstrap will continue to use the mixin internally until Bootstrap v4.</p>
+  <p>Be sure to use <code>rgba()</code> colors in your box shadows so they blend as seamlessly as possible with backgrounds.</p>
+<div class="pl-code"><pre><code class="scss"><span class="na">.box-shadow(@shadow</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">1</span><span class="kt">px</span> <span class="mi">3</span><span class="kt">px</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,.</span><span class="mi">25</span><span class="p">))</span> <span class="p">{</span>
+  <span class="na">-webkit-box-shadow</span><span class="o">:</span> <span class="o">@</span><span class="n">shadow</span><span class="p">;</span> <span class="c1">// iOS &lt;4.3 &amp; Android &lt;4.1</span>
+          <span class="na">box-shadow</span><span class="o">:</span> <span class="o">@</span><span class="n">shadow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-transitions">Transitions</h3>
+  <p>Three mixins for flexibility. Set all transition information with one, or specify a separate delay and duration as needed.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.transition</span><span class="o">(@</span><span class="nt">transition</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transition</span><span class="o">:</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
+          <span class="na">transition</span><span class="o">:</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.transition-property</span><span class="o">(@</span><span class="nt">transition-property</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transition-property</span><span class="o">:</span> <span class="o">@</span><span class="n">transition-property</span><span class="p">;</span>
+          <span class="na">transition-property</span><span class="o">:</span> <span class="o">@</span><span class="n">transition-property</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.transition-delay</span><span class="o">(@</span><span class="nt">transition-delay</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transition-delay</span><span class="o">:</span> <span class="o">@</span><span class="n">transition-delay</span><span class="p">;</span>
+          <span class="na">transition-delay</span><span class="o">:</span> <span class="o">@</span><span class="n">transition-delay</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.transition-duration</span><span class="o">(@</span><span class="nt">transition-duration</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transition-duration</span><span class="o">:</span> <span class="o">@</span><span class="n">transition-duration</span><span class="p">;</span>
+          <span class="na">transition-duration</span><span class="o">:</span> <span class="o">@</span><span class="n">transition-duration</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.transition-transform</span><span class="o">(@</span><span class="nt">transition</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transition</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit-transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
+     <span class="na">-moz-transition</span><span class="o">:</span> <span class="o">-</span><span class="n">moz-transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
+       <span class="na">-o-transition</span><span class="o">:</span> <span class="o">-</span><span class="n">o-transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
+          <span class="na">transition</span><span class="o">:</span> <span class="n">transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-transformations">Transformations</h3>
+  <p>Rotate, scale, translate (move), or skew any object.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.rotate</span><span class="o">(@</span><span class="nt">degrees</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nf">rotate</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
+      <span class="na">-ms-transform</span><span class="o">:</span> <span class="nf">rotate</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span> <span class="c1">// IE9 only</span>
+          <span class="na">transform</span><span class="o">:</span> <span class="nf">rotate</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.scale</span><span class="o">(@</span><span class="nt">ratio</span><span class="o">;</span> <span class="o">@</span><span class="nt">ratio-y</span><span class="nc">...</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nf">scale</span><span class="p">(</span><span class="o">@</span><span class="n">ratio</span><span class="o">,</span> <span class="o">@</span><span class="n">ratio-y</span><span class="p">);</span>
+      <span class="na">-ms-transform</span><span class="o">:</span> <span class="nf">scale</span><span class="p">(</span><span class="o">@</span><span class="n">ratio</span><span class="o">,</span> <span class="o">@</span><span class="n">ratio-y</span><span class="p">);</span> <span class="c1">// IE9 only</span>
+          <span class="na">transform</span><span class="o">:</span> <span class="nf">scale</span><span class="p">(</span><span class="o">@</span><span class="n">ratio</span><span class="o">,</span> <span class="o">@</span><span class="n">ratio-y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.translate</span><span class="o">(@</span><span class="nt">x</span><span class="o">;</span> <span class="o">@</span><span class="nt">y</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nf">translate</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
+      <span class="na">-ms-transform</span><span class="o">:</span> <span class="nf">translate</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span> <span class="c1">// IE9 only</span>
+          <span class="na">transform</span><span class="o">:</span> <span class="nf">translate</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.skew</span><span class="o">(@</span><span class="nt">x</span><span class="o">;</span> <span class="o">@</span><span class="nt">y</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nf">skew</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
+      <span class="na">-ms-transform</span><span class="o">:</span> <span class="nf">skewX</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="p">)</span> <span class="nf">skewY</span><span class="p">(</span><span class="o">@</span><span class="n">y</span><span class="p">);</span> <span class="c1">// See https://github.com/twbs/bootstrap/issues/4885; IE9+</span>
+          <span class="na">transform</span><span class="o">:</span> <span class="nf">skew</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.translate3d</span><span class="o">(@</span><span class="nt">x</span><span class="o">;</span> <span class="o">@</span><span class="nt">y</span><span class="o">;</span> <span class="o">@</span><span class="nt">z</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nf">translate3d</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="o">,</span> <span class="o">@</span><span class="n">z</span><span class="p">);</span>
+          <span class="na">transform</span><span class="o">:</span> <span class="nf">translate3d</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="o">,</span> <span class="o">@</span><span class="n">z</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.rotateX</span><span class="o">(@</span><span class="nt">degrees</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nf">rotateX</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
+      <span class="na">-ms-transform</span><span class="o">:</span> <span class="nf">rotateX</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span> <span class="c1">// IE9 only</span>
+          <span class="na">transform</span><span class="o">:</span> <span class="nf">rotateX</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.rotateY</span><span class="o">(@</span><span class="nt">degrees</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nf">rotateY</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
+      <span class="na">-ms-transform</span><span class="o">:</span> <span class="nf">rotateY</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span> <span class="c1">// IE9 only</span>
+          <span class="na">transform</span><span class="o">:</span> <span class="nf">rotateY</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.perspective</span><span class="o">(@</span><span class="nt">perspective</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-perspective</span><span class="o">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
+     <span class="na">-moz-perspective</span><span class="o">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
+          <span class="na">perspective</span><span class="o">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.perspective-origin</span><span class="o">(@</span><span class="nt">perspective</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-perspective-origin</span><span class="o">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
+     <span class="na">-moz-perspective-origin</span><span class="o">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
+          <span class="na">perspective-origin</span><span class="o">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.transform-origin</span><span class="o">(@</span><span class="nt">origin</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-transform-origin</span><span class="o">:</span> <span class="o">@</span><span class="ow">or</span><span class="n">igin</span><span class="p">;</span>
+     <span class="na">-moz-transform-origin</span><span class="o">:</span> <span class="o">@</span><span class="ow">or</span><span class="n">igin</span><span class="p">;</span>
+      <span class="na">-ms-transform-origin</span><span class="o">:</span> <span class="o">@</span><span class="ow">or</span><span class="n">igin</span><span class="p">;</span> <span class="c1">// IE9 only</span>
+          <span class="na">transform-origin</span><span class="o">:</span> <span class="o">@</span><span class="ow">or</span><span class="n">igin</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-animations">Animations</h3>
+  <p>A single mixin for using all of CSS3's animation properties in one declaration and other mixins for individual properties.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.animation</span><span class="o">(@</span><span class="nt">animation</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-animation</span><span class="o">:</span> <span class="o">@</span><span class="n">animation</span><span class="p">;</span>
+          <span class="na">animation</span><span class="o">:</span> <span class="o">@</span><span class="n">animation</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.animation-name</span><span class="o">(@</span><span class="nt">name</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-animation-name</span><span class="o">:</span> <span class="o">@</span><span class="n">name</span><span class="p">;</span>
+          <span class="na">animation-name</span><span class="o">:</span> <span class="o">@</span><span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.animation-duration</span><span class="o">(@</span><span class="nt">duration</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-animation-duration</span><span class="o">:</span> <span class="o">@</span><span class="n">duration</span><span class="p">;</span>
+          <span class="na">animation-duration</span><span class="o">:</span> <span class="o">@</span><span class="n">duration</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.animation-timing-function</span><span class="o">(@</span><span class="nt">timing-function</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-animation-timing-function</span><span class="o">:</span> <span class="o">@</span><span class="n">timing-function</span><span class="p">;</span>
+          <span class="na">animation-timing-function</span><span class="o">:</span> <span class="o">@</span><span class="n">timing-function</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.animation-delay</span><span class="o">(@</span><span class="nt">delay</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-animation-delay</span><span class="o">:</span> <span class="o">@</span><span class="n">delay</span><span class="p">;</span>
+          <span class="na">animation-delay</span><span class="o">:</span> <span class="o">@</span><span class="n">delay</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.animation-iteration-count</span><span class="o">(@</span><span class="nt">iteration-count</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-animation-iteration-count</span><span class="o">:</span> <span class="o">@</span><span class="n">iteration-count</span><span class="p">;</span>
+          <span class="na">animation-iteration-count</span><span class="o">:</span> <span class="o">@</span><span class="n">iteration-count</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.animation-direction</span><span class="o">(@</span><span class="nt">direction</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-animation-direction</span><span class="o">:</span> <span class="o">@</span><span class="no">direction</span><span class="p">;</span>
+          <span class="na">animation-direction</span><span class="o">:</span> <span class="o">@</span><span class="no">direction</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-opacity">Opacity</h3>
+  <p>Set the opacity for all browsers and provide a <code>filter</code> fallback for IE8.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.opacity</span><span class="o">(@</span><span class="nt">opacity</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">opacity</span><span class="o">:</span> <span class="o">@</span><span class="no">opacity</span><span class="p">;</span>
+  <span class="c1">// IE8 filter</span>
+  <span class="k">@opacity-ie</span><span class="nd">:</span> <span class="o">(@</span><span class="nt">opacity</span> <span class="o">*</span> <span class="nt">100</span><span class="o">);</span>
+  <span class="nt">filter</span><span class="nd">:</span> <span class="o">~</span><span class="s2">&quot;alpha(opacity=@{opacity-ie})&quot;</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-placeholder">Placeholder text</h3>
+  <p>Provide context for form controls within each field.</p>
+<div class="pl-code"><pre><code class="scss"><span class="na">.placeholder(@color</span><span class="o">:</span> <span class="o">@</span><span class="n">input-color-placeholder</span><span class="p">)</span> <span class="p">{</span>
+  <span class="na">&amp;</span><span class="o">:-</span><span class="n">moz-placeholder</span>            <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="o">@</span><span class="no">color</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Firefox 4-18</span>
+  <span class="na">&amp;</span><span class="o">::-</span><span class="n">moz-placeholder</span>           <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="o">@</span><span class="no">color</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Firefox 19+</span>
+  <span class="na">&amp;</span><span class="o">:-</span><span class="n">ms-input-placeholder</span>       <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="o">@</span><span class="no">color</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Internet Explorer 10+</span>
+  <span class="na">&amp;</span><span class="o">::-</span><span class="n">webkit-input-placeholder</span>  <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="o">@</span><span class="no">color</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Safari and Chrome</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-columns">Columns</h3>
+  <p>Generate columns via CSS within a single element.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.content-columns</span><span class="o">(@</span><span class="nt">width</span><span class="o">;</span> <span class="o">@</span><span class="nt">count</span><span class="o">;</span> <span class="o">@</span><span class="nt">gap</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">-webkit-column-width</span><span class="o">:</span> <span class="o">@</span><span class="no">width</span><span class="p">;</span>
+     <span class="na">-moz-column-width</span><span class="o">:</span> <span class="o">@</span><span class="no">width</span><span class="p">;</span>
+          <span class="na">column-width</span><span class="o">:</span> <span class="o">@</span><span class="no">width</span><span class="p">;</span>
+  <span class="na">-webkit-column-count</span><span class="o">:</span> <span class="o">@</span><span class="n">count</span><span class="p">;</span>
+     <span class="na">-moz-column-count</span><span class="o">:</span> <span class="o">@</span><span class="n">count</span><span class="p">;</span>
+          <span class="na">column-count</span><span class="o">:</span> <span class="o">@</span><span class="n">count</span><span class="p">;</span>
+  <span class="na">-webkit-column-gap</span><span class="o">:</span> <span class="o">@</span><span class="n">gap</span><span class="p">;</span>
+     <span class="na">-moz-column-gap</span><span class="o">:</span> <span class="o">@</span><span class="n">gap</span><span class="p">;</span>
+          <span class="na">column-gap</span><span class="o">:</span> <span class="o">@</span><span class="n">gap</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-gradients">Gradients</h3>
+  <p>Easily turn any two colors into a background gradient. Get more advanced and set a direction, use three colors, or use a radial gradient. With a single mixin you get all the prefixed syntaxes you'll need.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.vertical</span><span class="o">(</span><span class="nn">#333</span><span class="o">;</span> <span class="nn">#000</span><span class="o">);</span>
+<span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.horizontal</span><span class="o">(</span><span class="nn">#333</span><span class="o">;</span> <span class="nn">#000</span><span class="o">);</span>
+<span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.radial</span><span class="o">(</span><span class="nn">#333</span><span class="o">;</span> <span class="nn">#000</span><span class="o">);</span>
+</code></pre></div>
+  <p>You can also specify the angle of a standard two-color, linear gradient:</p>
+<div class="pl-code"><pre><code class="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.directional</span><span class="o">(</span><span class="nn">#333</span><span class="o">;</span> <span class="nn">#000</span><span class="o">;</span> <span class="nt">45deg</span><span class="o">);</span>
+</code></pre></div>
+  <p>If you need a barber-stripe style gradient, that's easy, too. Just specify a single color and we'll overlay a translucent white stripe.</p>
+<div class="pl-code"><pre><code class="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.striped</span><span class="o">(</span><span class="nn">#333</span><span class="o">;</span> <span class="nn">#000</span><span class="o">;</span> <span class="nt">45deg</span><span class="o">);</span>
+</code></pre></div>
+  <p>Up the ante and use three colors instead. Set the first color, the second color, the second color's color stop (a decimal value like 0.25), and the third color with these mixins:</p>
+<div class="pl-code"><pre><code class="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.vertical-three-colors</span><span class="o">(</span><span class="nn">#777</span><span class="o">;</span> <span class="nn">#333</span><span class="o">;</span> <span class="nc">.25</span><span class="o">;</span> <span class="nn">#000</span><span class="o">);</span>
+<span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.horizontal-three-colors</span><span class="o">(</span><span class="nn">#777</span><span class="o">;</span> <span class="nn">#333</span><span class="o">;</span> <span class="nc">.25</span><span class="o">;</span> <span class="nn">#000</span><span class="o">);</span>
+</code></pre></div>
+  <p><strong>Heads up!</strong> Should you ever need to remove a gradient, be sure to remove any IE-specific <code>filter</code> you may have added. You can do that by using the <code>.reset-filter()</code> mixin alongside <code>background-image: none;</code>.</p>
+
+
+  <h2 id="less-mixins-utility">Utility mixins</h2>
+  <p>Utility mixins are mixins that combine otherwise unrelated CSS properties to achieve a specific goal or task.</p>
+
+  <h3 id="less-mixins-clearfix">Clearfix</h3>
+  <p>Forget adding <code>class="clearfix"</code> to any element and instead add the <code>.clearfix()</code> mixin where appropriate. Uses the <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clearfix</a> from <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallager</a>.</p>
+<div class="pl-code"><pre><code class="scss"><span class="c1">// Mixin</span>
+<span class="nc">.clearfix</span><span class="o">()</span> <span class="p">{</span>
+  <span class="k">&amp;</span><span class="nd">:before</span><span class="o">,</span>
+  <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="na">content</span><span class="o">:</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+    <span class="na">display</span><span class="o">:</span> <span class="n">table</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="na">clear</span><span class="o">:</span> <span class="no">both</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="nc">.clearfix</span><span class="o">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-centering">Horizontal centering</h3>
+  <p>Quickly center any element within its parent. <strong>Requires <code>width</code> or <code>max-width</code> to be set.</strong></p>
+<div class="pl-code"><pre><code class="scss"><span class="c1">// Mixin</span>
+<span class="nc">.center-block</span><span class="o">()</span> <span class="p">{</span>
+  <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+  <span class="na">margin-left</span><span class="o">:</span> <span class="no">auto</span><span class="p">;</span>
+  <span class="na">margin-right</span><span class="o">:</span> <span class="no">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="nc">.container</span> <span class="p">{</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">940</span><span class="kt">px</span><span class="p">;</span>
+  <span class="nc">.center-block</span><span class="o">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-sizing">Sizing helpers</h3>
+  <p>Specify the dimensions of an object more easily.</p>
+<div class="pl-code"><pre><code class="scss"><span class="c1">// Mixins</span>
+<span class="nc">.size</span><span class="o">(@</span><span class="nt">width</span><span class="o">;</span> <span class="o">@</span><span class="nt">height</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">width</span><span class="o">:</span> <span class="o">@</span><span class="no">width</span><span class="p">;</span>
+  <span class="na">height</span><span class="o">:</span> <span class="o">@</span><span class="no">height</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.square</span><span class="o">(@</span><span class="nt">size</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nc">.size</span><span class="o">(@</span><span class="nt">size</span><span class="o">;</span> <span class="o">@</span><span class="nt">size</span><span class="o">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="nc">.image</span> <span class="p">{</span> <span class="nc">.size</span><span class="o">(</span><span class="nt">400px</span><span class="o">;</span> <span class="nt">300px</span><span class="o">);</span> <span class="p">}</span>
+<span class="nc">.avatar</span> <span class="p">{</span> <span class="nc">.square</span><span class="o">(</span><span class="nt">48px</span><span class="o">);</span> <span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-resizable">Resizable textareas</h3>
+  <p>Easily configure the resize options for any textarea, or any other element. Defaults to normal browser behavior (<code>both</code>).</p>
+<div class="pl-code"><pre><code class="scss"><span class="na">.resizable(@direction</span><span class="o">:</span> <span class="no">both</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Options: horizontal, vertical, both</span>
+  <span class="na">resize</span><span class="o">:</span> <span class="o">@</span><span class="no">direction</span><span class="p">;</span>
+  <span class="c1">// Safari fix</span>
+  <span class="na">overflow</span><span class="o">:</span> <span class="no">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-truncating">Truncating text</h3>
+  <p>Easily truncate text with an ellipsis with a single mixin. <strong>Requires element to be <code>block</code> or <code>inline-block</code> level.</strong></p>
+<div class="pl-code"><pre><code class="scss"><span class="c1">// Mixin</span>
+<span class="nc">.text-overflow</span><span class="o">()</span> <span class="p">{</span>
+  <span class="na">overflow</span><span class="o">:</span> <span class="no">hidden</span><span class="p">;</span>
+  <span class="na">text-overflow</span><span class="o">:</span> <span class="n">ellipsis</span><span class="p">;</span>
+  <span class="na">white-space</span><span class="o">:</span> <span class="no">nowrap</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="nc">.branch-name</span> <span class="p">{</span>
+  <span class="na">display</span><span class="o">:</span> <span class="no">inline</span><span class="o">-</span><span class="no">block</span><span class="p">;</span>
+  <span class="na">max-width</span><span class="o">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+  <span class="nc">.text-overflow</span><span class="o">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+  <h3 id="less-mixins-retina-images">Retina images</h3>
+  <p>Specify two image paths and the @1x image dimensions, and Bootstrap will provide an @2x media query. <strong>If you have many images to serve, consider writing your retina image CSS manually in a single media query.</strong></p>
+<div class="pl-code"><pre><code class="scss"><span class="nc">.img-retina</span><span class="o">(@</span><span class="nt">file-1x</span><span class="o">;</span> <span class="o">@</span><span class="nt">file-2x</span><span class="o">;</span> <span class="o">@</span><span class="nt">width-1x</span><span class="o">;</span> <span class="o">@</span><span class="nt">height-1x</span><span class="o">)</span> <span class="p">{</span>
+  <span class="na">background-image</span><span class="o">:</span> <span class="sx">url(&quot;@{file-1x}&quot;)</span><span class="p">;</span>
+
+  <span class="k">@media</span>
+  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">),</span>
+  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>   <span class="nt">min--moz-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">),</span>
+  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>     <span class="nt">-o-min-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">/</span><span class="nt">1</span><span class="o">),</span>
+  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>        <span class="nt">min-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">),</span>
+  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>                <span class="nt">min-resolution</span><span class="nd">:</span> <span class="nt">192dpi</span><span class="o">),</span>
+  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>                <span class="nt">min-resolution</span><span class="nd">:</span> <span class="nt">2dppx</span><span class="o">)</span> <span class="p">{</span>
+    <span class="na">background-image</span><span class="o">:</span> <span class="sx">url(&quot;@{file-2x}&quot;)</span><span class="p">;</span>
+    <span class="na">background-size</span><span class="o">:</span> <span class="o">@</span><span class="no">width</span><span class="mi">-1</span><span class="kt">x</span> <span class="o">@</span><span class="no">height</span><span class="mi">-1</span><span class="kt">x</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="nc">.jumbotron</span> <span class="p">{</span>
+  <span class="nc">.img-retina</span><span class="o">(</span><span class="s2">&quot;/img/bg-1x.png&quot;</span><span class="o">,</span> <span class="s2">&quot;/img/bg-2x.png&quot;</span><span class="o">,</span> <span class="nt">100px</span><span class="o">,</span> <span class="nt">100px</span><span class="o">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>

@@ -12,14 +12,14 @@
 	}
 }
 
-.pl-section {
+.pl-docs-section {
 	padding: 3em 0;
-	&+.pl-section {
+	/*&+.pl-docs-section {
 		border-top: 1px @gray-light solid;
-	}
+	}*/
 	> h1 { margin-top: 0; }
 	//> h2 { color: @gray-darker; }
-	> h3 { color: @gray-dark; }
+	//> h3 { color: @gray-dark; }
 }
 
 .pl-article {
@@ -54,6 +54,20 @@
 }
 .pl-example > p > .close { float: none; }
 
+.responsive-utilities td.is-visible {
+	.bg-variant(@state-success-bg)!important;
+	color: @brand-success;
+}
+.responsive-utilities th small {
+	display: block;
+	font-weight: 400;
+	color: @gray;
+}
+
+.pl-example>.btn-toolbar+.btn-toolbar {
+	margin-top: 10px;
+}
+
 // Code Snippets
 // -------------------------
 
@@ -64,6 +78,7 @@
 		padding-left: 19px;
 		padding-right: 19px;
 	}
+ .cp { color: #099; }
  .na { color: #4f9fcf; }
  .nc { color: #0A8; }
  .nt { color: #2f6f9f; }

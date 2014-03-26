@@ -3,13 +3,16 @@
 		"views/css/installation.html",
 		"views/css/logos.html",
 		"views/css/colors.html",
+		"views/css/overview.html",
+		"views/css/grid.html",
 		"views/css/typography.html",
 		"views/css/tables.html",
 		"views/css/forms.html",
 		"views/css/buttons.html",
 		"views/css/images.html",
 		"views/css/helper-classes.html",
-		"views/css/responsive-utilities.html"
+		"views/css/responsive-utilities.html",
+		"views/css/using-less.html"
 	],
 	"components": [
 		"views/components/icons.html",
@@ -21,16 +24,16 @@
 		"views/components/labels.html",
 		"views/components/badges.html",
 		"views/components/jumbotron.html",
-		"views/components/cards.html",
-		"views/components/pills.html",
-		"views/components/scores.html",
-		"views/components/forms.html",
+		"views/components/page-header.html",
 		"views/components/thumbnails.html",
 		"views/components/alerts.html",
 		"views/components/list-group.html",
 		"views/components/panels.html",
 		"views/components/wells.html",
-		"views/components/callouts.html"
+		"views/components/callouts.html",
+		"views/components/cards.html",
+		"views/components/pills.html",
+		"views/components/scores.html"
 	],
 	"javascript": [
 		"views/javascript/modals.html",
