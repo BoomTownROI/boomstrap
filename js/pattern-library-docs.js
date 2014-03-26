@@ -43,7 +43,7 @@
       $scope.addSlide();
     }
     slides.push({
-      image: 'images/he-man.jpg',
+      image: 'images/fpo-he-man.jpg',
       text: 'Skeletor!?'
     });
   }]);
