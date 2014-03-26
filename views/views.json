@@ -27,6 +27,7 @@
 		"views/components/page-header.html",
 		"views/components/thumbnails.html",
 		"views/components/alerts.html",
+		"views/components/progress-bars.html",
 		"views/components/list-group.html",
 		"views/components/panels.html",
 		"views/components/wells.html",
