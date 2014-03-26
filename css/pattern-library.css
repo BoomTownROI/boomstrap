@@ -5777,6 +5777,14 @@ button.close {
 .logo-boomtown {
   max-width: 242px;
 }
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.open .dropdown-toggle.btn {
+  -webkit-box-shadow: inset 0 -0.25em 0.25em rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 -0.25em 0.25em rgba(0, 0, 0, 0.05);
+}
 .btn-attention {
   color: #ffffff;
   background-color: #f68a24;
