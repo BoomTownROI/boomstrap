@@ -1,6 +1,18 @@
 // File: buttons.less
 // Note: Extends Bootstrap buttons.less
 
+// Buttons
+// -------------------------
+
+.btn {
+	&:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+   .box-shadow(inset 0 -0.25em 0.25em rgba(0,0,0,.05));
+  }
+}
 
 // Alternate Buttons
 // -------------------------
