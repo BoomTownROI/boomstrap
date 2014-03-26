@@ -9,18 +9,9 @@
   "main": "index.html",
   "private": false,
   "ignore": [
-    ".*",
-    "bower.json",
-    "Gruntfile.js",
-    "index.html",
-    "package.json",
-    "README.md",
-    "app",
-    "bower_components",
-    "docs",
-    "node_modules",
-    "vendor",
-    "views"
+    "*",
+    "!dist/**/*.*",
+    "!less/**/*.*"
   ],
   "dependencies": {
     "angular": "~1.2.0",
