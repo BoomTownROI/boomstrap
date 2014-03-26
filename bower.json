@@ -11,8 +11,8 @@
   "private": false,
   "ignore": [
     "*",
-    "!dist",
-    "!less"
+    "./!(dist)",
+    "./!(less)"
   ],
   "dependencies": {
     "angular": "~1.2.0",
