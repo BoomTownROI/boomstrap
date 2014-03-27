@@ -1,9 +1,12 @@
 {
 	"index": [
-		"views/css/installation.html",
+		"views/intro/installation.html",
+		"views/intro/about.html"
+	],
+	"css": [
+		"views/css/overview.html",
 		"views/css/logos.html",
 		"views/css/colors.html",
-		"views/css/overview.html",
 		"views/css/grid.html",
 		"views/css/typography.html",
 		"views/css/tables.html",
