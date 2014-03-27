@@ -5893,6 +5893,19 @@ a.callout-warning:hover {
 .callout-warning h4 {
   color: #e5ac00;
 }
+.caret-up {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-top: 0;
+  border-bottom: 4px solid;
+  content: "";
+}
 .label,
 .cat {
   font-weight: normal;
@@ -6040,6 +6053,39 @@ a.callout-warning:hover {
 }
 .cat-eq-abbr {
   width: 42px;
+}
+.sortable {
+  cursor: pointer;
+}
+.sortable:hover {
+  background-color: #f9f9f9;
+}
+.sortable.is-sorting {
+  background-color: #ececec;
+}
+.sortable.is-sorting:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.sortable.is-sorting.ascending:after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-top: 0;
+  border-bottom: 4px solid;
+  content: "";
 }
 .lead {
   font-weight: 300;
