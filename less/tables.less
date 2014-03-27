@@ -1,0 +1,30 @@
+// File: tables.less
+// Note: Extends Bootstrap tables.less
+
+
+// Sortable Tables
+// -------------------------
+
+.sortable {
+	cursor: pointer;
+  &:hover { background-color: @gray-lightest; };
+  &.is-sorting {
+    background-color: @gray-lighter;
+    &:after {
+      content: "";
+      .caret;
+    }
+    &.ascending:after {
+      content: "";
+      .caret-up;
+    }
+  }
+}
+
+
+
+
+
+
+
+
