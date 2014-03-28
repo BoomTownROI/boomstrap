@@ -1573,8 +1573,8 @@
   <!-- BoomTown Table Sorting -->
   <h2 id="tables-sorting">Sorting tables</h2>
   <p>Add the <code>.sortable</code> class to <code>&lt;th&gt;</code> (table heading) elements that have sorting functionality. This gives them a hover state and pointer cursor.</p>
-  <h3>Actively sorting</h3>
-  <p>Add the <code>.is-sorting</code> class to <code>&lt;th&gt;</code> elements that are actively in a sorting state. This gives them a gray background and downward pointing caret. By default, sorting is <strong>descending</strong>.</p>
+  <h3>Ascending order</h3>
+  <p>Add the <code>.is-sorting</code> class to <code>&lt;th&gt;</code> elements that are actively in a sorting state. This gives them a gray background and downward pointing caret. By default, sorting is <strong>ascending</strong>.</p>
   <div class="pl-example">
     <table class="table table-bordered">
       <thead>
@@ -1618,15 +1618,15 @@
 <span class="nt">&lt;/thead&gt;</span>
 </code></pre></div>
   
-  <h3>Ascending order</h3>
-  <p>Add the <code>.ascending</code> classs when sorting in ascending order. This will reverse the direction of the caret.</p>
+  <h3>Descending order</h3>
+  <p>Add <code>.is-sorting .descending</code> classes when sorting in descending order. This will reverse the direction of the caret.</p>
   <div class="pl-example">
     <table class="table table-bordered">
       <thead>
         <tr>
           <th class="sortable">#</th>
           <th class="sortable">First Name</th>
-          <th class="sortable is-sorting ascending">Last Name</th>
+          <th class="sortable is-sorting descending">Last Name</th>
           <th class="sortable">Username</th>
         </tr>
       </thead>
@@ -1638,16 +1638,16 @@
           <td>@marzipan</td>
         </tr>
         <tr>
-          <td>3</td>
-          <td>Craig</td>
-          <td>Anthony</td>
-          <td>@strongbad</td>
-        </tr>
-        <tr>
           <td>2</td>
           <td>Mark</td>
           <td>Funk</td>
           <td>@teengirlsquad</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Craig</td>
+          <td>Anthony</td>
+          <td>@strongbad</td>
         </tr>
       </tbody>
     </table>
@@ -1657,7 +1657,7 @@
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;sortable&quot;</span><span class="nt">&gt;</span>#<span class="nt">&lt;/th&gt;</span>
     <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;sortable&quot;</span><span class="nt">&gt;</span>First Name<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;sortable is-sorting ascending&quot;</span><span class="nt">&gt;</span>Last Name<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;sortable is-sorting descending&quot;</span><span class="nt">&gt;</span>Last Name<span class="nt">&lt;/th&gt;</span>
     <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">&quot;sortable&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/th&gt;</span>
   <span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;/thead&gt;</span>

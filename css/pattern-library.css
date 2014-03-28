@@ -6074,7 +6074,7 @@ a.callout-warning:hover {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
-.sortable.is-sorting.ascending:after {
+.sortable.is-sorting.descending:after {
   display: inline-block;
   width: 0;
   height: 0;
