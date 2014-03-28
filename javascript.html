@@ -11,8 +11,8 @@
   <script src="js/pattern-library-docs.min.js"></script>
 </head>
 <body class="pl-body">
-  <!-- ================================== NAVIGATION ================================== -->
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- ================================== Navigation ================================== -->
+  <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
@@ -24,33 +24,18 @@
       </div>
       <div class="collapse navbar-collapse" id="pl-nav">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">Intro</a></li>
-          <li><a href="css.html">CSS</a></li>
+          <li><a href="index.html">Introduction</a></li>
+          <li class="active"><a href="css.html">CSS</a></li>
           <li><a href="components.html">Components</a></li>
           <li><a href="javascript.html">JavaScript</a></li>
           <li><a href="angular.html">Angular</a></li>
-          <li><a href="rules.html">Rules</a></li>
       </div>
     </div>
   </nav> <!-- /navigation -->
   
-  <!-- <div class="container-fluid">
-    <div class="container">
-    <nav>
-      <button class="btn btn-default btn-sm">logo</button>
-      <button class="btn btn-default btn-sm">colors</button>
-      <button class="btn btn-default btn-sm">buttons</button>
-      <button class="btn btn-default btn-sm">typography</button>
-      <button class="btn btn-default btn-sm">tables</button>
-      <button class="btn btn-default btn-sm">forms</button>
-      <button class="btn btn-default btn-sm">images</button>
-      <button class="btn btn-default btn-sm">helper classes</button>
-      <button class="btn btn-default btn-sm">responsive utilities</button>
-    </nav>
-    </div>
-  </div> -->
-
   <div class="container">
+    <div class="row">
+      <div class="col-sm-9" role="main">
 
 
 
@@ -63,6 +48,57 @@ tooltip.html
 
 
 
+		</div> <!-- /column -->
+		<div class="col-sm-3">
+			<div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+				<p class="pl-docs-sidebar-header">CSS</p>
+      	<ul class="nav pl-docs-sidenav">
+      		<li>
+      			<a href="#overview">Overview</a>
+      		</li>
+      		<li>
+      			<a href="#logo">Logo</a>
+      		</li>
+      		<li>
+      			<a href="#colors">Colors</a>
+      		</li>
+      		<li>
+      			<a href="#grid">Grid</a>
+      		</li>
+      		<li>
+      			<a href="#type">Typography</a>
+      		</li>
+      		<li>
+      			<a href="#tables">Tables</a>
+      		</li>
+      		<li>
+      			<a href="#forms">Forms</a>
+      		</li>
+      		<li>
+      			<a href="#buttons">Buttons</a>
+      		</li>
+      		<li>
+      			<a href="#images">Images</a>
+      		</li>
+      		<li>
+      			<a href="#helper-classes">Helper Classes</a>
+      		</li>
+      		<li>
+      			<a href="#responsive-utilities">Responsive Utilities</a>
+      		</li>
+      		<li>
+      			<a href="#less">Using Less</a>
+      		</li>
+      	</ul>
+    	</div>
+    </div>
+	</div> <!-- /row -->
 </div>
+<script>
+	$( document ).ready(function() {
+    $('body').scrollspy({ target: '.pl-docs-sidebar'});
+	});
+</script>
 </body>
 </html>
+

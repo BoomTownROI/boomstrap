@@ -5854,31 +5854,31 @@ a.callout-attention:hover {
   color: #f68a24;
 }
 .callout-danger {
-  background-color: #f2dede;
+  background-color: #f9f0f0;
   border-color: #cb2027;
 }
 a.callout-danger:hover {
-  background-color: #e4b9b9;
+  background-color: #ebcccc;
 }
 .callout-danger h4 {
   color: #cb2027;
 }
 .callout-info {
-  background-color: #d9edf7;
+  background-color: #f2f9fc;
   border-color: #5bc0de;
 }
 a.callout-info:hover {
-  background-color: #afd9ee;
+  background-color: #c8e5f3;
 }
 .callout-info h4 {
   color: #5bc0de;
 }
 .callout-success {
-  background-color: #dff0d8;
+  background-color: #eef7ea;
   border-color: #669900;
 }
 a.callout-success:hover {
-  background-color: #c1e2b3;
+  background-color: #d0e9c6;
 }
 .callout-success h4 {
   color: #669900;
@@ -6089,4 +6089,17 @@ a.callout-warning:hover {
 }
 .lead {
   font-weight: 300;
+}
+.text-attention {
+  color: #f68a24;
+}
+a.text-attention:hover {
+  color: #de7009;
+}
+.bg-attention {
+  background-color: #f68a24;
+  color: #fff;
+}
+a.bg-attention:hover {
+  background-color: #de7009;
 }

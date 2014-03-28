@@ -11,8 +11,8 @@
   <script src="js/pattern-library-docs.min.js"></script>
 </head>
 <body class="pl-body">
-  <!-- ================================== NAVIGATION ================================== -->
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- ================================== Navigation ================================== -->
+  <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
@@ -24,33 +24,18 @@
       </div>
       <div class="collapse navbar-collapse" id="pl-nav">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">Intro</a></li>
-          <li><a href="css.html">CSS</a></li>
+          <li><a href="index.html">Introduction</a></li>
+          <li class="active"><a href="css.html">CSS</a></li>
           <li><a href="components.html">Components</a></li>
           <li><a href="javascript.html">JavaScript</a></li>
           <li><a href="angular.html">Angular</a></li>
-          <li><a href="rules.html">Rules</a></li>
       </div>
     </div>
   </nav> <!-- /navigation -->
   
-  <!-- <div class="container-fluid">
-    <div class="container">
-    <nav>
-      <button class="btn btn-default btn-sm">logo</button>
-      <button class="btn btn-default btn-sm">colors</button>
-      <button class="btn btn-default btn-sm">buttons</button>
-      <button class="btn btn-default btn-sm">typography</button>
-      <button class="btn btn-default btn-sm">tables</button>
-      <button class="btn btn-default btn-sm">forms</button>
-      <button class="btn btn-default btn-sm">images</button>
-      <button class="btn btn-default btn-sm">helper classes</button>
-      <button class="btn btn-default btn-sm">responsive utilities</button>
-    </nav>
-    </div>
-  </div> -->
-
-  <div class="container"><!-- ================================== Global Bootstrap settings ================================== -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9" role="main"><!-- ================================== Overview ================================== -->
 
 <div class="pl-docs-section">
   <h1 id="overview" class="page-header">Overview</h1>
@@ -92,7 +77,7 @@
 </div>
 
 
-<!-- ================================== LOGOS ================================== -->
+<!-- ================================== Logo ================================== -->
 <div class="pl-docs-section">
   <h1 id="logo" class="page-header">Logo</h1>
   <p>The BoomTown logo is a transparent .png file with an original width of 484px (100%). The <code>.logo-boomtown</code> class sets the max width to 242px (50%) for better rendering on 2x displays.</p>
@@ -105,19 +90,20 @@
 		</code></pre>
 	</div>
 </div>
-    <!-- ================================== BOOMTOWN COLORS ================================== -->
+<!-- ================================== Colors ================================== -->
+
 <div class="pl-docs-section">
   <h1 id="colors" class="page-header">Colors</h1>
   <article class="pl-article">
     <h3>Brand Colors</h3>
     <div class="row">
-      <div class="col-sm-6 col-md-3 col-lg-2">
+      <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
           <div class="pl-swatch--bt-blue"></div>
           <p class="pl-swatch-txt">BT Blue<br>#1581e2</p>
         </div>
       </div>
-      <div class="col-sm-6 col-md-3 col-lg-2">
+      <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
           <div class="pl-swatch--bt-orange"></div>
           <p class="pl-swatch-txt">BT Orange<br>#f68a24</p>
@@ -128,37 +114,37 @@
   <article class="pl-article">
     <h3>Color Options</h3>
     <div class="row">
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--primary"></div>
           <p class="pl-swatch-txt">Primary<br>#1581e2</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--attention"></div>
           <p class="pl-swatch-txt">Attention<br>#f68a24</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--success"></div>
           <p class="pl-swatch-txt">Success<br>#669900</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--info"></div>
           <p class="pl-swatch-txt">Info<br>#5bc0de</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--warning"></div>
           <p class="pl-swatch-txt">Warning<br>#e5ac00</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--danger"></div>
           <p class="pl-swatch-txt">Danger<br>#ef5959</p>
@@ -169,37 +155,37 @@
   <article class="pl-article">
     <h3>Grays</h3>
     <div class="row">
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--gray-darker"></div>
           <p class="pl-swatch-txt">Gray Darker<br>#444444</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--gray-dark"></div>
           <p class="pl-swatch-txt">Gray Dark<br>#696969</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--gray"></div>
           <p class="pl-swatch-txt">Gray<br>#848484</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--gray-light"></div>
           <p class="pl-swatch-txt">Gray Light<br>#b4b4b4</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--gray-lighter"></div>
           <p class="pl-swatch-txt">Gray Lighter<br>#ececec</p>
         </div>
       </div>
-      <div class="col-sm-3 col-md-2">
+      <div class="col-sm-3">
         <div class="thumbnail">
           <div class="pl-swatch--gray-lightest"></div>
           <p class="pl-swatch-txt">Gray Lightest<br>#ececec</p>
@@ -740,9 +726,8 @@
 </div>
 
 
-    <!-- ================================== Typography ================================== -->
-<!-- Typography
-================================================== -->
+<!-- ================================== Typography ================================== -->
+
 <div class="pl-docs-section">
   <h1 id="type" class="page-header">Typography</h1>
 
@@ -1455,17 +1440,17 @@
 <div class="pl-code"><pre><code class="html"><span class="c">&lt;!-- On rows --&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;success&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;warning&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;danger&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
-<span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 
 <span class="c">&lt;!-- On cells (`td` or `th`) --&gt;</span>
 <span class="nt">&lt;tr&gt;</span>
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;success&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;warning&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;danger&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
 <span class="nt">&lt;/tr&gt;</span>
 </code></pre></div>
 
@@ -2499,6 +2484,7 @@
     <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
     <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
     <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p class="text-attention">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
   </div>
 <div class="pl-code"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-primary&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
@@ -2506,6 +2492,7 @@
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-info&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-warning&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-danger&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-attention&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 </code></pre></div>
   <div class="callout callout-info">
     <h4>Dealing with specificity</h4>
@@ -2520,12 +2507,14 @@
     <p class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
     <p class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</p>
     <p class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p class="bg-attention">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
   </div>
 <div class="pl-code"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;bg-primary&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;bg-success&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;bg-info&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;bg-warning&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;bg-danger&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;bg-attention&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 </code></pre></div>
 
 
@@ -3265,6 +3254,57 @@
   <span class="nc">.img-retina</span><span class="o">(</span><span class="s2">&quot;/img/bg-1x.png&quot;</span><span class="o">,</span> <span class="s2">&quot;/img/bg-2x.png&quot;</span><span class="o">,</span> <span class="nt">100px</span><span class="o">,</span> <span class="nt">100px</span><span class="o">);</span>
 <span class="p">}</span>
 </code></pre></div>
-</div></div>
+</div>		</div> <!-- /column -->
+		<div class="col-sm-3">
+			<div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+				<p class="pl-docs-sidebar-header">CSS</p>
+      	<ul class="nav pl-docs-sidenav">
+      		<li>
+      			<a href="#overview">Overview</a>
+      		</li>
+      		<li>
+      			<a href="#logo">Logo</a>
+      		</li>
+      		<li>
+      			<a href="#colors">Colors</a>
+      		</li>
+      		<li>
+      			<a href="#grid">Grid</a>
+      		</li>
+      		<li>
+      			<a href="#type">Typography</a>
+      		</li>
+      		<li>
+      			<a href="#tables">Tables</a>
+      		</li>
+      		<li>
+      			<a href="#forms">Forms</a>
+      		</li>
+      		<li>
+      			<a href="#buttons">Buttons</a>
+      		</li>
+      		<li>
+      			<a href="#images">Images</a>
+      		</li>
+      		<li>
+      			<a href="#helper-classes">Helper Classes</a>
+      		</li>
+      		<li>
+      			<a href="#responsive-utilities">Responsive Utilities</a>
+      		</li>
+      		<li>
+      			<a href="#less">Using Less</a>
+      		</li>
+      	</ul>
+    	</div>
+    </div>
+	</div> <!-- /row -->
+</div>
+<script>
+	$( document ).ready(function() {
+    $('body').scrollspy({ target: '.pl-docs-sidebar'});
+	});
+</script>
 </body>
 </html>
+
