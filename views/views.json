@@ -1,7 +1,11 @@
 {
 	"index": [
+		"views/intro/about.html",
 		"views/intro/installation.html",
-		"views/intro/about.html"
+		"views/intro/rules.html"
+	],
+	"rules": [
+		"views/rules/index.html"
 	],
 	"css": [
 		"views/css/overview.html",
@@ -71,8 +75,5 @@
 		"app/views/table.html",
 		"app/views/chosen.html",
 		"app/index-bottom.html"
-	],
-	"rules": [
-		"views/rules/index.html"
 	]
 }

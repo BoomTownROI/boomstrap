@@ -1,6 +1,7 @@
 // File: type.less
 // Note: Extends Bootstrap type.less
 
+
 // Body text
 // -------------------------
 
@@ -8,3 +9,17 @@
   font-weight: 300;
 }
 
+
+// Emphasis & misc
+// -------------------------
+
+// Contextual colors
+.text-attention {
+  .text-emphasis-variant(@brand-attention);
+}
+
+// Contextual backgrounds
+.bg-attention {
+  .bg-variant(@brand-attention);
+  color: #fff;
+}
