@@ -7,90 +7,176 @@
 	"rules": [
 		"views/rules/index.html"
 	],
-	"css": [
-		{ 
-			"source": "views/css/overview.html",
-			"css_id": "#overview",
-			"nav_header": "Overview"
-		},
-		{ 
-			"source": "views/css/logos.html",
-			"css_id": "#logo",
-			"nav_header": "Logo"
-		},
-		{ 
-			"source": "views/css/colors.html",
-			"css_id": "#colors",
-			"nav_header": "Colors"
-		},
-		{ 
-			"source": "views/css/grid.html",
-			"css_id": "#grid",
-			"nav_header": "Grid"
-		},
-		{ 
-			"source": "views/css/typography.html",
-			"css_id": "#type",
-			"nav_header": "Type"
-		},
-		{ 
-			"source": "views/css/tables.html",
-			"css_id": "#tables",
-			"nav_header": "Tables"
-		},
-		{ 
-			"source": "views/css/forms.html",
-			"css_id": "#forms",
-			"nav_header": "Forms"
-		},
-		{ 
-			"source": "views/css/buttons.html",
-			"css_id": "#buttons",
-			"nav_header": "Buttons"
-		},
-		{ 
-			"source": "views/css/images.html",
-			"css_id": "#images",
-			"nav_header": "Images"
-		},
-		{ 
-			"source": "views/css/helper-classes.html",
-			"css_id": "#helper-classes",
-			"nav_header": "Helper Classes"
-		},
-		{ 
-			"source": "views/css/responsive-utilities.html",
-			"css_id": "#responsive-utilities",
-			"nav_header": "Responsive Utilities"
-		},
-		{ 
-			"source": "views/css/using-less.html",
-			"css_id": "#less",
-			"nav_header": "Using Less"
-		}
-	],
-	"components": [
-		"views/components/icons.html",
-		"views/components/dropdowns.html",
-		"views/components/button-groups.html",
-		"views/components/button-dropdowns.html",
-		"views/components/input-groups.html",
-		"views/components/pagination.html",
-		"views/components/labels.html",
-		"views/components/badges.html",
-		"views/components/jumbotron.html",
-		"views/components/page-header.html",
-		"views/components/thumbnails.html",
-		"views/components/alerts.html",
-		"views/components/progress-bars.html",
-		"views/components/list-group.html",
-		"views/components/panels.html",
-		"views/components/wells.html",
-		"views/components/callouts.html",
-		"views/components/cards.html",
-		"views/components/pills.html",
-		"views/components/scores.html"
-	],
+	"css": {
+		"header": "CSS",
+		"sources": [
+			{ 
+				"source": "views/css/overview.html",
+				"css_id": "#overview",
+				"nav_header": "Overview"
+			},
+			{ 
+				"source": "views/css/logos.html",
+				"css_id": "#logo",
+				"nav_header": "Logo"
+			},
+			{ 
+				"source": "views/css/colors.html",
+				"css_id": "#colors",
+				"nav_header": "Colors"
+			},
+			{ 
+				"source": "views/css/grid.html",
+				"css_id": "#grid",
+				"nav_header": "Grid"
+			},
+			{ 
+				"source": "views/css/typography.html",
+				"css_id": "#type",
+				"nav_header": "Type"
+			},
+			{ 
+				"source": "views/css/tables.html",
+				"css_id": "#tables",
+				"nav_header": "Tables"
+			},
+			{ 
+				"source": "views/css/forms.html",
+				"css_id": "#forms",
+				"nav_header": "Forms"
+			},
+			{ 
+				"source": "views/css/buttons.html",
+				"css_id": "#buttons",
+				"nav_header": "Buttons"
+			},
+			{ 
+				"source": "views/css/images.html",
+				"css_id": "#images",
+				"nav_header": "Images"
+			},
+			{ 
+				"source": "views/css/helper-classes.html",
+				"css_id": "#helper-classes",
+				"nav_header": "Helper Classes"
+			},
+			{ 
+				"source": "views/css/responsive-utilities.html",
+				"css_id": "#responsive-utilities",
+				"nav_header": "Responsive Utilities"
+			},
+			{ 
+				"source": "views/css/using-less.html",
+				"css_id": "#less",
+				"nav_header": "Using Less"
+			}
+		]
+	},
+	"components":  {
+		"header": "Components",
+		"sources": [
+			{
+				"source": "views/components/icons.html",
+				"css_id": "#icons",
+				"nav_header": "Icons"
+			},
+			{
+				"source": "views/components/dropdowns.html",
+				"css_id": "#dropdowns",
+				"nav_header": "Dropdowns"
+			},
+			{
+				"source": "views/components/button-groups.html",
+				"css_id": "#btn-groups",
+				"nav_header": "Button groups"
+			},
+			{
+				"source": "views/components/button-dropdowns.html",
+				"css_id": "#btn-dropdowns",
+				"nav_header": "Button dropdowns"
+			},
+			{
+				"source": "views/components/input-groups.html",
+				"css_id": "#input-groups",
+				"nav_header": "Input groups"
+			},
+			{
+				"source": "views/components/pagination.html",
+				"css_id": "#pagination",
+				"nav_header": "Pagination"
+			},
+			{
+				"source": "views/components/labels.html",
+				"css_id": "#labels",
+				"nav_header": "Labels"
+			},
+			{
+				"source": "views/components/badges.html",
+				"css_id": "#badges",
+				"nav_header": "Badges"
+			},
+			{
+				"source": "views/components/jumbotron.html",
+				"css_id": "#jumbotron",
+				"nav_header": "Jumbotron"
+			},
+			{
+				"source": "views/components/page-header.html",
+				"css_id": "#page-header",
+				"nav_header": "Page header"
+			},
+			{
+				"source": "views/components/thumbnails.html",
+				"css_id": "#thumbnails",
+				"nav_header": "Thumbnails"
+			},
+			{
+				"source": "views/components/alerts.html",
+				"css_id": "#alerts",
+				"nav_header": "Alerts"
+			},
+			{
+				"source": "views/components/progress-bars.html",
+				"css_id": "#progress",
+				"nav_header": "Progress bars"
+			},
+			{
+				"source": "views/components/list-group.html",
+				"css_id": "#list-group",
+				"nav_header": "List group"
+			},
+			{
+				"source": "views/components/panels.html",
+				"css_id": "#panels",
+				"nav_header": "Panels"
+			},
+			{
+				"source": "views/components/wells.html",
+				"css_id": "#wells",
+				"nav_header": "Wells"
+			},
+			{
+				"source": "views/components/callouts.html",
+				"css_id": "#callouts",
+				"nav_header": "Callouts"
+			},
+			{
+				"source": "views/components/cards.html",
+				"css_id": "#cards",
+				"nav_header": "Cards"
+			},
+			{
+				"source": "views/components/pills.html",
+				"css_id": "#pills",
+				"nav_header": "Pills"
+			},
+			{
+				"source": "views/components/scores.html",
+				"css_id": "#scores",
+				"nav_header": "Scores"
+			}
+		]
+	},
 	"javascript": [
 		"views/javascript/modals.html",
 		"views/javascript/dropdown.html",

@@ -176,19 +176,19 @@ module.exports = function (grunt) {
         ]
       },
       html: (function() {
-        var copyList = [],
-            idLinks = [];
+        var copyList = [];
 
         Object.keys(views).forEach(function(key) {
           var src = views[key],
-              sources = [];
+              sources = [],
+              idLinks = [];
 
-          // If the first item is an Object
+          // If value is an object
           // Handle the list as a sub_nav list
-          if (isObject(src[0])) {
+          if (!Array.isArray(src)) {
             // Retrieve the ids and Headers
             // for each item we are concatenating
-            src.forEach(function(view) {
+            src.sources.forEach(function(view) {
               idLinks.push({
                 css_id: view.css_id,
                 nav_header: view.nav_header
@@ -209,6 +209,7 @@ module.exports = function (grunt) {
             // Save it to a temporary directory
             // Add it to the sources for concatenation
             var subNav = Mustache.render(navTemplate, {
+              header: src.header,
               link: idLinks
             });
 
