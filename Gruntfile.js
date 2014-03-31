@@ -61,10 +61,11 @@ module.exports = function (grunt) {
       },
       less: {
         files: ['less/*.less'],
-        tasks: docs
+        tasks: ['less']
       },
       gruntfile: {
-        files: ['Gruntfile.js']
+        files: ['Gruntfile.js'],
+        tasks: docs
       }
     },
 
@@ -297,31 +298,31 @@ module.exports = function (grunt) {
 //      }
 //    },
 
-    ngtemplates: {
-      BestFitApp: {
-        cwd: '<%= yeoman.app %>',
-        src: ['template/**/*.html', '!template/bootstrap/**/*.html', 'views/**/*.html'],
-        dest: '<%= yeoman.tmp %>/templates.js',
-        options: {
-          usemin: '/scripts/bestfit/scripts.js', // this comes from BestFitLeads.ascx
-          htmlmin: {
-            collapseWhitespace:             true,
-            removeComments:                 true // Only if you don't use comment directives!
-          }
-        }
-      },
-      'ui.bootstrap': {
-        cwd: '<%= yeoman.app %>/template/bootstrap',
-        src: ['**/*.html'],
-        dest: '<%= yeoman.tmp %>/templatesBootstrap.js',
-        options: {
-          usemin: '/scripts/bestfit/modules.js', // this comes from BestFitLeads.ascx
-          url: function(url) {
-            return 'template/' + url;
-          }
-        }
-      }
-    },
+    // ngtemplates: {
+    //   BestFitApp: {
+    //     cwd: '<%= yeoman.app %>',
+    //     src: ['template/**/*.html', '!template/bootstrap/**/*.html', 'views/**/*.html'],
+    //     dest: '<%= yeoman.tmp %>/templates.js',
+    //     options: {
+    //       usemin: '/scripts/bestfit/scripts.js', // this comes from BestFitLeads.ascx
+    //       htmlmin: {
+    //         collapseWhitespace:             true,
+    //         removeComments:                 true // Only if you don't use comment directives!
+    //       }
+    //     }
+    //   },
+    //   'ui.bootstrap': {
+    //     cwd: '<%= yeoman.app %>/template/bootstrap',
+    //     src: ['**/*.html'],
+    //     dest: '<%= yeoman.tmp %>/templatesBootstrap.js',
+    //     options: {
+    //       usemin: '/scripts/bestfit/modules.js', // this comes from BestFitLeads.ascx
+    //       url: function(url) {
+    //         return 'template/' + url;
+    //       }
+    //     }
+    //   }
+    // },
 
     connect: {
       docs: {
