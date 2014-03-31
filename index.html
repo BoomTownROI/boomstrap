@@ -58,103 +58,11 @@
     <pre>bower install git://github.com/mcraiganthony/pattern-library.git --save</pre>
   </div>
 </div>
-
-<!-- ================================== WE GOTZ RULES YO! ================================== -->
-
-<div class="pl-docs-section">
-  <h1 id="rules" class="page-header">Rules to Follow</h1>
-  <p class="lead">Please follow these rules when writing markup, LESS, and when hooking in to Javascript. If you fail to follow the rules, you will be hunted down and killed.</p>
-  <article class="pl-article">
-    <h3>LESS Syntax</h2>
-    <ul>
-    	<li>Use soft-tabs with a two space indent.</li>
-    	<li>Put spaces after <code>:</code> in property declarations.</li>
-    	<li>Put spaces before <code>{</code> in rule declarations.</li>
-      <li>Order properties in alphabetical order.</li>
-  	</ul>
-    <p>Here is an example of good syntax:</p>
-    <div class="pl-code">
-      <pre><code>
-<span class="s">.teen-girl-squad</span> {
-  <span class="t">&amp;</span><span class="s">:extend</span>(<span class="s">.teen</span>);
-  <span class="t">&amp;+</span><span class="s">.teen-girl-squad</span> {
-    <span class="nt">margin-top:</span> <span class="t">@margin-sm</span>;
-  }
-  <span class="nt">color:</span> <span class="t">@danger</span>;
-  <span class="nt">padding:</span> <span class="t">@padding-lg</span>;
-  <span class="s">.text-overflow</span>();
-}
-      </code></pre>
-    </div>
-  </article>
-  <article class="pl-article">
-    <h3>Pixels vs. Ems</h3>
-    <p>Use <code>px</code> for <code>font-size</code>, because it offers absolute control over text. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
-  </article>
-  <article class="pl-article">
-    <h3>Class Naming + JS</h3>
-    <p>Never reference <code>js-</code> prefixed class names from CSS files. <code>js-</code> are used exclusively from JS files.<br>Use the <code>is-</code> prefix for state rules that are shared between CSS and JS.</p>
-  </article>
-  <article class="pl-article">
-    <h3>Specificity (classes vs. ids)</h3>
-    <p>Elements that occur <strong>exactly once</strong> inside a page should use IDs, otherwise, use classes. When in doubt, use a class name.</p>
-    <ul>
-      <li><strong>Good</strong> candidates for ids: header, footer, modal popups.</li>
-      <li><strong>Bad</strong> candidates for ids: navigation, item listings, item view pages (ex: issue view).</li>
-    </ul>
-    <p>When styling a component, start with an element + class namespace (prefer class names over ids),  prefer direct descendant selectors by default, and use as little specificity as possible. Here is a good example:</p>
-  </article>
-</div>		</div> <!-- /column -->
-		<div class="col-sm-3">
-			<div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
-				<p class="pl-docs-sidebar-header">CSS</p>
-      	<ul class="nav pl-docs-sidenav">
-      		<li>
-      			<a href="#overview">Overview</a>
-      		</li>
-      		<li>
-      			<a href="#logo">Logo</a>
-      		</li>
-      		<li>
-      			<a href="#colors">Colors</a>
-      		</li>
-      		<li>
-      			<a href="#grid">Grid</a>
-      		</li>
-      		<li>
-      			<a href="#type">Typography</a>
-      		</li>
-      		<li>
-      			<a href="#tables">Tables</a>
-      		</li>
-      		<li>
-      			<a href="#forms">Forms</a>
-      		</li>
-      		<li>
-      			<a href="#buttons">Buttons</a>
-      		</li>
-      		<li>
-      			<a href="#images">Images</a>
-      		</li>
-      		<li>
-      			<a href="#helper-classes">Helper Classes</a>
-      		</li>
-      		<li>
-      			<a href="#responsive-utilities">Responsive Utilities</a>
-      		</li>
-      		<li>
-      			<a href="#less">Using Less</a>
-      		</li>
-      	</ul>
-    	</div>
-    </div>
-	</div> <!-- /row -->
 </div>
 <script>
-	$( document ).ready(function() {
+    $( document ).ready(function() {
     $('body').scrollspy({ target: '.pl-docs-sidebar'});
-	});
+    });
 </script>
 </body>
 </html>
-
