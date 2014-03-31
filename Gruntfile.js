@@ -61,7 +61,7 @@ module.exports = function (grunt) {
       },
       less: {
         files: ['less/*.less'],
-        tasks: ['less']
+        tasks: ['less:docs']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
@@ -418,6 +418,7 @@ module.exports = function (grunt) {
   grunt.registerTask('styles', ['less']);
 
   grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
+
   grunt.registerTask('default', [
     'concat:dist',
     'concat:docs',
@@ -427,11 +428,11 @@ module.exports = function (grunt) {
     'less:docs',
     'copy:dist',
     'copy:docs'
-  ]); // Full Monty
+  ]);
 
 
   grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
-  grunt.registerTask('website', docs.concat(['gh-pages']));
+  grunt.registerTask('website', docs.concat(['gh-pages'])); // Build github pages
 
   //grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 //  grunt.registerTask('server', [

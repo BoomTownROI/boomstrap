@@ -26,6 +26,11 @@
 				"nav_header": "Colors"
 			},
 			{ 
+				"source": "views/css/loaders.html",
+				"css_id": "#loaders",
+				"nav_header": "Loaders"
+			},
+			{ 
 				"source": "views/css/grid.html",
 				"css_id": "#grid",
 				"nav_header": "Grid"
