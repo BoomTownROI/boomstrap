@@ -9,6 +9,8 @@
 
 module.exports = function (grunt) {
 
+  var Mustache = require('mustache');
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -16,7 +18,6 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   var fs = require('fs');
-
   var views = grunt.file.readJSON('views/views.json');
 
   var docs = [
@@ -24,8 +25,13 @@ module.exports = function (grunt) {
     'concat:html',
     'uglify:docs',
     'less:docs',
-    'copy:docs'
+    'copy:docs',
+    'clean:docs'
   ];
+
+  var isObject = function(obj) {
+    return obj === Object(obj);
+  };
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -121,7 +127,12 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      docs: {
+        files: [{
+          dot: true,
+          src: ['.tmp']
+        }]
+      },
     },
 
     concat: {
@@ -164,24 +175,67 @@ module.exports = function (grunt) {
           }
         ]
       },
-      html: {
-        files: (function() {
-          var copyList = [];
+      html: (function() {
+        var copyList = [],
+            idLinks = [];
 
-          Object.keys(views).forEach(function(key) {
-            copyList.push({
-              src: views[key],
-              dest: 'docs/' + key + '.html'
+        Object.keys(views).forEach(function(key) {
+          var src = views[key],
+              sources = [];
+
+          // If the first item is an Object
+          // Handle the list as a sub_nav list
+          if (isObject(src[0])) {
+            // Retrieve the ids and Headers
+            // for each item we are concatenating
+            src.forEach(function(view) {
+              idLinks.push({
+                css_id: view.css_id,
+                nav_header: view.nav_header
+              });
+
+              sources.push(view.source);
             });
-          });
 
-          return copyList;
-        })(),
-        options: {
-          banner: grunt.file.read('views/partials/header.html'),
-          footer: grunt.file.read('views/partials/footer.html')
-        }
-      },
+            var navTemplate = grunt.file.read('views/partials/sub_nav.tpl.html');
+            var navSavePath = [
+              '.tmp/footers/', 
+              key,
+              '.html'
+            ].join('');
+
+
+            // Populate the navigation template
+            // Save it to a temporary directory
+            // Add it to the sources for concatenation
+            var subNav = Mustache.render(navTemplate, {
+              link: idLinks
+            });
+
+            grunt.file.write(navSavePath, subNav);
+            sources.push(navSavePath);
+          } else {
+            // Otherwise, handle the array
+            // as a list of strings
+            sources = views[key];
+          }
+
+          copyList.push({
+            src: sources,
+            dest: 'docs/' + key + '.html'
+          });
+        });
+
+        console.log(copyList);
+
+        return {
+          files: copyList,
+          options: {
+            banner: grunt.file.read('views/partials/header.html'),
+            footer: grunt.file.read('views/partials/footer.html')
+          }
+        };
+      })(),
       css: {
         src: ''
       }
