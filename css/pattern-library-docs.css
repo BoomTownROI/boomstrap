@@ -90,8 +90,8 @@
 .pl-docs-sidebar-header {
   background-color: #5bc0de;
   color: #ffffff;
-  padding: 8px 15px;
-  font-size: 16px;
+  padding: 6px 12px;
+  font-size: 15px;
 }
 .pl-docs-sidebar.affix {
   top: 20px;
@@ -100,7 +100,8 @@
 .pl-docs-sidenav > li > a {
   border-left: 2px solid transparent;
   color: #848484;
-  padding: 8px 15px;
+  font-size: 13px;
+  padding: 6px 12px;
 }
 .pl-docs-sidenav > li > a:hover {
   background-color: transparent;
