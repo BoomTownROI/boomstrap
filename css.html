@@ -195,6 +195,46 @@
   </article>
 </div>
 
+<!-- ================================== Loaders ================================== -->
+
+
+<div class="pl-docs-section">
+  <h1 id="loaders" class="page-header">Loaders</h1>
+  <p>Loaders are used to inform users that data is being filtered, retrieved, processed, etc.</p>
+  <div class="pl-example">
+    <div class="loader">
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre><code class="html">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loader"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"loader-pulse"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"loader-pulse"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"loader-pulse"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre>
+  </div>
+  <p>Want to center the loader animation? No hay problemo! Just add the <code>.text-center</code> class.</p>
+  <div class="pl-example">
+    <div class="loader text-center">
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre><code class="html">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loader text-center"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"loader-pulse"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"loader-pulse"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"loader-pulse"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+    </code></pre>
+  </div>
+</div>
 <!-- ================================== Grid system ================================== -->
 
 <div class="pl-docs-section">
@@ -3255,9 +3295,9 @@
 <span class="p">}</span>
 </code></pre></div>
 </div>
-    </div> <!-- /column -->
+    </div> <!-- /column (main content) -->
     <div class="col-sm-3">
-        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
             <p class="pl-docs-sidebar-header">CSS</p>
             <ul class="nav pl-docs-sidenav">
                 <li>
@@ -3268,6 +3308,9 @@
                 </li>
                 <li>
                     <a href="#colors">Colors</a>
+                </li>
+                <li>
+                    <a href="#loaders">Loaders</a>
                 </li>
                 <li>
                     <a href="#grid">Grid</a>
@@ -3298,7 +3341,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> <!-- /column (sidebar) -->
 </div> <!-- /row -->
 </div>
 <script>
