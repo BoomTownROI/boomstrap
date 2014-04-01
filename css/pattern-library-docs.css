@@ -87,6 +87,11 @@
 .pl-docs-section > h3 {
   color: #696969;
 }
+.navbar-brand-logo {
+  display: inline-block;
+  margin-top: -4px;
+  max-width: 110px;
+}
 .pl-docs-sidebar-header {
   background-color: #5bc0de;
   color: #ffffff;
@@ -97,11 +102,16 @@
   top: 20px;
   width: 263px;
 }
+.pl-docs-sidenav {
+  margin-bottom: 6px;
+}
 .pl-docs-sidenav > li > a {
   border-left: 2px solid transparent;
   color: #848484;
   font-size: 13px;
   padding: 6px 12px;
+  text-transform: lowercase;
+  transition: all 0.35s;
 }
 .pl-docs-sidenav > li > a:hover {
   background-color: transparent;
@@ -109,7 +119,15 @@
 }
 .pl-docs-sidenav > li.active > a {
   background-color: #f9f9f9;
-  border-left: 2px solid #5bc0de;
+  border-left: 2px solid #f68a24;
+}
+.pl-docs-sidebar > a {
+  border-left: 2px solid transparent;
+  color: #f68a24;
+  display: inline-block;
+  font-size: 13px;
+  padding: 6px 12px;
+  text-decoration: none;
 }
 .pl-article + article {
   margin-top: 2em;
@@ -189,6 +207,9 @@ a.responsive-utilities td.is-visible:hover {
 }
 .pl-code .t {
   color: #b2b300;
+}
+.pl-code .s1 {
+  color: #C30;
 }
 .pl-swatch-txt {
   padding-top: 10px;
