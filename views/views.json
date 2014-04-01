@@ -1,12 +1,24 @@
 {
-	"index": [
-		"views/intro/about.html",
-		"views/intro/installation.html",
-		"views/intro/rules.html"
-	],
-	"rules": [
-		"views/rules/index.html"
-	],
+	"index": {
+		"header": "Introduction",
+		"sources": [
+			{ 
+				"source": "views/intro/about.html",
+				"css_id": "#about",
+				"nav_header": "About"
+			},
+			{ 
+				"source": "views/intro/installation.html",
+				"css_id": "#installation",
+				"nav_header": "Installation"
+			},
+			{ 
+				"source": "views/intro/rules.html",
+				"css_id": "#rules",
+				"nav_header": "Rules"
+			}
+		]
+	},
 	"css": {
 		"header": "CSS",
 		"sources": [
@@ -182,21 +194,81 @@
 			}
 		]
 	},
-	"javascript": [
-		"views/javascript/modals.html",
-		"views/javascript/dropdown.html",
-		"views/javascript/scrollspy.html",
-		"views/javascript/tabs.html",
-		"views/javascript/tooltip.html",
-		"views/javascript/popover.html",
-		"views/javascript/alert.html",
-		"views/javascript/button.html",
-		"views/javascript/collapse.html",
-		"views/javascript/carousel.html",
-		"views/javascript/affix.html",
-		"views/javascript/tour.html",
-		"views/javascript/table.html"
-	],
+	"javascript":  {
+		"header": "JavaScript",
+		"sources": [
+			{
+				"source": "views/javascript/overview.html",
+				"css_id": "#overview",
+				"nav_header": "overview"
+			},
+			{
+				"source": "views/javascript/modal.html",
+				"css_id": "#modals",
+				"nav_header": "modal"
+			},
+			{
+				"source": "views/javascript/dropdown.html",
+				"css_id": "#dropdowns",
+				"nav_header": "dropdown"
+			},
+			{
+				"source": "views/javascript/scrollspy.html",
+				"css_id": "#scrollspy",
+				"nav_header": "scrollspy"
+			},
+			{
+				"source": "views/javascript/tab.html",
+				"css_id": "#tabs",
+				"nav_header": "tab"
+			},
+			{
+				"source": "views/javascript/tooltip.html",
+				"css_id": "#tooltips",
+				"nav_header": "tooltip"
+			},
+			{
+				"source": "views/javascript/popover.html",
+				"css_id": "#popovers",
+				"nav_header": "popover"
+			},
+			{
+				"source": "views/javascript/alert.html",
+				"css_id": "#alerts",
+				"nav_header": "alert"
+			},
+			{
+				"source": "views/javascript/button.html",
+				"css_id": "#buttons",
+				"nav_header": "button"
+			},
+			{
+				"source": "views/javascript/collapse.html",
+				"css_id": "#collapse",
+				"nav_header": "collapse"
+			},
+			{
+				"source": "views/javascript/carousel.html",
+				"css_id": "#carousel",
+				"nav_header": "carousel"
+			},
+			{
+				"source": "views/javascript/affix.html",
+				"css_id": "#affix",
+				"nav_header": "affix"
+			},
+			{
+				"source": "views/javascript/tour.html",
+				"css_id": "#tour",
+				"nav_header": "tour"
+			},
+			{
+				"source": "views/javascript/table.html",
+				"css_id": "#table",
+				"nav_header": "table"
+			}
+		]
+	},
 	"angular": [
 		"app/index-top.html",
 		"app/views/modals.html",

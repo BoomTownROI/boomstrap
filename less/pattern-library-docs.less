@@ -14,6 +14,13 @@
 	> h3 { color: @gray-dark; }
 }
 
+
+.navbar-brand-logo {
+	display: inline-block;
+	margin-top: -4px;
+	max-width: 110px;
+}
+
 // Sidebar and sidebar nav
 .pl-docs-sidebar-header {
 	background-color: @brand-info;
@@ -25,11 +32,16 @@
 	top: 20px;
 	width: 263px;
 }
+.pl-docs-sidenav {
+	margin-bottom: 6px;
+}
 .pl-docs-sidenav > li > a {
 	border-left: 2px solid transparent;
 	color: @gray;
 	font-size: 13px;
 	padding: 6px 12px;
+	text-transform: lowercase;
+	transition: all 0.35s;
 	&:hover {
 		background-color: transparent;
 		border-left: 2px solid @gray-lighter;
@@ -37,7 +49,16 @@
 }
 .pl-docs-sidenav > li.active > a {
 	background-color: @gray-lightest;
-	border-left: 2px solid @brand-info;
+	border-left: 2px solid @brand-attention;
+}
+
+.pl-docs-sidebar > a {
+	border-left: 2px solid transparent;
+	color: @brand-attention;
+	display: inline-block;
+	font-size: 13px;
+	padding: 6px 12px;
+	text-decoration: none;
 }
 
 .pl-article {
@@ -100,6 +121,7 @@
  .nt { color: #2f6f9f; }
  .s { color: #d44950; }
  .t { color: darken(yellow,15%); }
+ .s1 { color: #C30; }
 }
 
 // Color Swatches

@@ -1,0 +1,147 @@
+<!-- ================================== Buttons ================================== -->
+
+<div class="pl-docs-section">
+  <h1 id="buttons" class="page-header">Buttons <small>button.js</small></h1>
+
+  <h2 id="buttons-examples">Example uses</h2>
+  <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+
+  <h4>Stateful</h4>
+  <p>Add <code>data-loading-text="Loading..."</code> to use a loading state on a button.</p>
+  <div class="pl-example" style="padding-bottom: 24px;">
+    <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">
+      Loading state
+    </button>
+  </div><!-- /example -->
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">id=</span><span class="s">&quot;loading-example-btn&quot;</span> <span class="na">data-loading-text=</span><span class="s">&quot;Loading...&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>
+  Loading state
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loading-example-btn&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="nx">btn</span><span class="p">.</span><span class="nx">button</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(...).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">button</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">)</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+
+  <h4>Single toggle</h4>
+  <p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
+  <div class="pl-example" style="padding-bottom: 24px;">
+    <button type="button" class="btn btn-primary" data-toggle="button">Single toggle</button>
+  </div><!-- /example -->
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Single toggle<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
+
+  <h4>Checkbox</h4>
+  <p>Add <code>data-toggle="buttons"</code> to a group of checkboxes for checkbox style toggling on btn-group.</p>
+  <div class="pl-example" style="padding-bottom: 24px;">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary">
+        <input type="checkbox"> Option 1
+      </label>
+      <label class="btn btn-primary">
+        <input type="checkbox"> Option 2
+      </label>
+      <label class="btn btn-primary">
+        <input type="checkbox"> Option 3
+      </label>
+    </div>
+  </div><!-- /example -->
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;buttons&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Option 1
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Option 2
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Option 3
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+  <h4>Radio</h4>
+  <p>Add <code>data-toggle="buttons"</code> to a group of radio inputs for radio style toggling on btn-group.</p>
+  <div class="pl-example" style="padding-bottom: 24px;">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary">
+        <input type="radio" name="options" id="option1"> Option 1
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="options" id="option2"> Option 2
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="options" id="option3"> Option 3
+      </label>
+    </div>
+  </div><!-- /example -->
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;buttons&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;options&quot;</span> <span class="na">id=</span><span class="s">&quot;option1&quot;</span><span class="nt">&gt;</span> Option 1
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;options&quot;</span> <span class="na">id=</span><span class="s">&quot;option2&quot;</span><span class="nt">&gt;</span> Option 2
+  <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;options&quot;</span> <span class="na">id=</span><span class="s">&quot;option3&quot;</span><span class="nt">&gt;</span> Option 3
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+
+  <h2 id="buttons-usage">Usage</h2>
+  <p>Enable buttons via JavaScript:</p>
+<div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.btn&#39;</span><span class="p">).</span><span class="nx">button</span><span class="p">()</span>
+</code></pre></div>
+
+  <h3>Markup</h3>
+  <p>Data attributes are integral to the button plugin. Check out the example code below for the various markup types.</p>
+
+  <h3>Options</h3>
+  <p><em>None</em></p>
+
+  <h3>Methods</h3>
+
+  <h4>$().button('toggle')</h4>
+  <p>Toggles push state. Gives the button the appearance that it has been activated.</p>
+  <div class="callout callout-info">
+    <h4>Auto toggling</h4>
+    <p>You can enable auto toggling of a button by using the <code>data-toggle</code> attribute.</p>
+  </div>
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
+
+  <h4>$().button('loading')</h4>
+  <p>Sets button state to loading - disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute <code>data-loading-text</code>.
+  </p>
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;loading-example-btn&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">data-loading-text=</span><span class="s">&quot;loading stuff...&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loading-example-btn&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="nx">btn</span><span class="p">.</span><span class="nx">button</span><span class="p">(</span><span class="s1">&#39;loading&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(...).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">button</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">)</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+
+  <div class="callout callout-danger">
+    <h4>Cross-browser compatibility</h4>
+    <p><a href="https://github.com/twbs/bootstrap/issues/793">Firefox persists the disabled state across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>.</p>
+  </div>
+
+  <h4>$().button('reset')</h4>
+  <p>Resets button state - swaps text to original text.</p>
+
+  <h4>$().button(string)</h4>
+  <p>Resets button state - swaps text to any data defined text state.</p>
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">data-complete-text=</span><span class="s">&quot;finished!&quot;</span> <span class="nt">&gt;</span>...<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.btn&#39;</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+</div>

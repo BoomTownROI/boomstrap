@@ -1,0 +1,109 @@
+<!-- ================================== Affix ================================== -->
+
+<div class="pl-docs-section">
+  <h1 id="affix" class="page-header">Affix <small>affix.js</small></h1>
+
+  <h2 id="affix-examples">Example</h2>
+  <p>The subnavigation on the right is a live demo of the affix plugin.</p>
+
+  <hr class="bs-docs-separator">
+
+  <h2 id="affix-usage">Usage</h2>
+  <p>Use the affix plugin via data attributes or manually with your own JavaScript. <strong>In both situations, you must provide CSS for the positioning of your content.</strong></p>
+
+  <h3>Positioning via CSS</h3>
+  <p>The affix plugin toggles between three classes, each representing a particular state: <code>.affix</code>, <code>.affix-top</code>, and <code>.affix-bottom</code>. You must provide the styles for these classes yourself (independent of this plugin) to handle the actual positions.</p>
+  <p>Here's how the affix plugin works:</p>
+  <ol>
+    <li>To start, the plugin adds <code>.affix-top</code> to indicate the element is in its top-most position. At this point no CSS positioning is required.</li>
+    <li>Scrolling past the element you want affixed should trigger the actual affixing. This is where <code>.affix</code> replaces <code>.affix-top</code> and sets <code>position: fixed;</code> (provided by Bootstrap's code CSS).</li>
+    <li>If a bottom offset is defined, scrolling past that should replace <code>.affix</code> with <code>.affix-bottom</code>. Since offsets are optional, setting one requires you to set the appropriate CSS. In this case, add <code>position: absolute;</code> when necessary. The plugin uses the data attribute or JavaScript option to determine where to position the element from there.</li>
+  </ol>
+  <p>Follow the above steps to set your CSS for either of the usage options below.</p>
+
+  <h3>Via data attributes</h3>
+  <p>To easily add affix behavior to any element, just add <code>data-spy="affix"</code> to the element you want to spy on. Use offsets to define when to toggle the pinning of an element.</p>
+
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">data-spy=</span><span class="s">&quot;affix&quot;</span> <span class="na">data-offset-top=</span><span class="s">&quot;60&quot;</span> <span class="na">data-offset-bottom=</span><span class="s">&quot;200&quot;</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+  <h3>Via JavaScript</h3>
+  <p>Call the affix plugin via JavaScript:</p>
+<div class="pl-code"><pre><code class="js">  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#my-affix&#39;</span><span class="p">).</span><span class="nx">affix</span><span class="p">({</span>
+    <span class="nx">offset</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">top</span><span class="o">:</span> <span class="mi">100</span>
+    <span class="p">,</span> <span class="nx">bottom</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.footer&#39;</span><span class="p">).</span><span class="nx">outerHeight</span><span class="p">(</span><span class="kc">true</span><span class="p">))</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+</code></pre></div>
+
+
+  <h3>Options</h3>
+  <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-offset-top="200"</code>.</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 100px;">Name</th>
+         <th style="width: 100px;">type</th>
+         <th style="width: 50px;">default</th>
+         <th>description</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>offset</td>
+         <td>number | function | object</td>
+         <td>10</td>
+         <td>Pixels to offset from screen when calculating position of scroll. If a single number is provided, the offset will be applied in both top and bottom directions. To provide a unique, bottom and top offset just provide an object <code>offset: { top: 10 }</code> or <code>offset: { top: 10, bottom: 5 }</code>. Use a function when you need to dynamically calculate an offset.</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+
+  <h3>Events</h3>
+  <p>Bootstrap's affix class exposes a few events for hooking into affix functionality.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 150px;">Event Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>affix.bs.affix</td>
+          <td>This event fires immediately before the element has been affixed.</td>
+        </tr>
+        <tr>
+          <td>affixed.bs.affix</td>
+          <td>This event is fired after the element has been affixed.</td>
+        </tr>
+        <tr>
+          <td>affix-top.bs.affix</td>
+          <td>This event fires immediately before the element has been affixed-top.</td>
+        </tr>
+        <tr>
+          <td>affixed-top.bs.affix</td>
+          <td>This event is fired after the element has been affixed-top.</td>
+        </tr>
+       <tr>
+        <td>affix-bottom.bs.affix</td>
+          <td>This event fires immediately before the element has been affixed-bottom.</td>
+        </tr>
+        <tr>
+          <td>affixed-bottom.bs.affix</td>
+          <td>This event is fired after the element has been affixed-bottom.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+</div>
