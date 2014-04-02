@@ -352,6 +352,10 @@ module.exports = function (grunt) {
             dest: 'docs/'
           },
           {
+            src: ['fonts/**'],
+            dest: 'docs/css/'
+          },
+          {
             flatten: true,
             src: 'vendor/chosen_v1.1.0/chosen.css',
             dest: 'docs/css/chosen.css'
