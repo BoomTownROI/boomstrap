@@ -5913,27 +5913,6 @@ a.callout-warning:hover {
   border-bottom: 4px solid;
   border-top: 0;
 }
-/*display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top:   @caret-width-base solid;
-  border-right: @caret-width-base solid transparent;
-  border-left:  @caret-width-base solid transparent;
-
-width: 0;
-	height: 0;
-	border-top: 50px solid transparent;
-	border-right: 100px solid red;
-	border-bottom: 50px solid transparent;
-
-width: 0;
-	height: 0;
-	border-top: 50px solid transparent;
-	border-left: 100px solid red;
-	border-bottom: 50px solid transparent;
-  */
 .icon {
   display: inline-block;
   position: relative;
