@@ -87,6 +87,9 @@
 .pl-docs-section > h3 {
   color: #696969;
 }
+h1 {
+  letter-spacing: -1px;
+}
 .navbar-brand-logo {
   display: inline-block;
   margin-top: -4px;
