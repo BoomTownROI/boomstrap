@@ -1,4 +1,5 @@
 // File: icon-font.less
+// Note: Our font icons are built using http://icomoon.io/
 
 
 // Communication status
@@ -10,14 +11,33 @@
 .icon-email-neutral, .icon-phone-neutral {
 	color: @gray-light;
 }
-.icon-email-neutral { top: 2px; }
+
 .icon-email-good, .icon-phone-good {
 	color: #8db23e;
 }
 
-// Our font icons are built using http://icomoon.io/
-// Upadate fonts by loading selection.json into the icomoon app
-// After downloading, copy the generated style.css file and paste below
+// Fine tune positions
+// -------------------------
+
+.icon-email-bad {
+	top: 0px;
+}
+
+.icon-email-neutral {
+	top: 2px;
+}
+
+
+
+
+
+// ------------------------------------------------------------------------------
+// INSTRUCTIONS FOR UPDATING FONT
+// Update fonts by loading selection.json into the icomoon app
+// Make necessary changes to the font library
+// Icomoon preferences: font name is "icon-font" and prefix is "icon"
+// After downloading font, copy generated style.css file and paste below
+// ------------------------------------------------------------------------------
 
 @font-face {
 	font-family: 'icon-font';

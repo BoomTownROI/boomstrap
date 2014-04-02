@@ -4,7 +4,7 @@
   <h1 id="icons" class="page-header">Icons</h1>
   <p class="lead">We have a serious set of icons. Check 'em out below.</p>
   <h3>Icon Font</h3>
-  <p>We built a custom icon set using <a href="http://www.icomoon.io" target="_blank">icomoon</a>. These are used for utility, interface and action icons are combined in one font for extensibility.</p>
+  <p>We built our icon font with <a href="http://www.icomoon.io" target="_blank">icomoon</a>. Below you will find a few examples to demonstrate use and syntax.<br>For additional icons, please <a href="css/fonts/icon-font-docs/demo.html" target="_blank">view the full set</a>.</p>
   <div class="pl-example pl-icons">
     <i class="icon icon-heart"></i>
     <i class="icon icon-eye"></i>
@@ -16,7 +16,26 @@
   </div>
 <div class="pl-code"><pre><code class="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-heart&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-eye&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-chat&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-user&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-cog&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-chevron-left&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-chevron-right&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
 </code></pre></div>
+	<p>Here they are inside of default buttons.</p>
+	<div class="pl-example">
+		<button class="btn btn-default"><i class="icon icon-heart"></i></button>
+		<button class="btn btn-default"><i class="icon icon-eye"></i></button>
+		<button class="btn btn-default"><i class="icon icon-chat"></i></button>
+		<button class="btn btn-default"><i class="icon icon-user"></i></button>
+		<button class="btn btn-default"><i class="icon icon-cog"></i></button>
+		<button class="btn btn-default"><i class="icon icon-chevron-left"></i></button>
+		<button class="btn btn-default"><i class="icon icon-chevron-right"></i></button>
+	</div>
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-heart&quot;</span><span class="nt">&gt;&lt;/i&gt;</span><span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
+
+	<h4>Communication Status</h4>
 	<p>Our icon font also includes custom icons for showing communication status.</p>
 	<div class="pl-example pl-icons">
     <i class="icon icon-email-good"></i>
@@ -26,17 +45,39 @@
     <i class="icon icon-phone-neutral"></i>
     <i class="icon icon-phone-bad"></i>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-email-good&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+<div class="pl-code"><pre><code class="html"><span class="c">&lt;!-- 2-way emailing --&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-email-good&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+<span class="c">&lt;!-- no replies --&gt;</span>
 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-email-neutral&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+<span class="c">&lt;!-- opt-out or invalid --&gt;</span>
 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-email-bad&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+<span class="c">&lt;!-- talking to prospect --&gt;</span>
 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-phone-good&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+<span class="c">&lt;!-- no conversations --&gt;</span>
 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-phone-neutral&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+<span class="c">&lt;!-- opt-out or wrong number --&gt;</span>
 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-phone-bad&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+</code></pre></div>
+	
+	<p>Here they are inside of default buttons.</p>
+	<div class="pl-example">
+		<button class="btn btn-default"><i class="icon icon-email-good"></i></button>
+		<button class="btn btn-default"><i class="icon icon-email-neutral"></i></button>
+		<button class="btn btn-default"><i class="icon icon-email-bad"></i></button>
+		<button class="btn btn-default"><i class="icon icon-phone-good"></i></button>
+		<button class="btn btn-default"><i class="icon icon-phone-neutral"></i></button>
+		<button class="btn btn-default"><i class="icon icon-phone-bad"></i></button>
+	</div>
+<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon icon-email-good&quot;</span><span class="nt">&gt;&lt;/i&gt;</span><span class="nt">&lt;/button&gt;</span>
 </code></pre></div>
 
 
-
-  <p><a href="css/fonts/icon-font-docs/demo.html" target="_blank" class="btn btn-attention">view all font icons</a></p>
+  <p><a href="css/fonts/icon-font-docs/demo.html" target="_blank" class="btn btn-attention">view full set</a></p>
 
 
 </div>
