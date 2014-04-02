@@ -211,6 +211,12 @@ a.responsive-utilities td.is-visible:hover {
 .pl-code .s1 {
   color: #C30;
 }
+.pl-icons .icon {
+  font-size: 32px;
+}
+.pl-icons .icon + .icon {
+  margin-left: 14px;
+}
 .pl-swatch-txt {
   padding-top: 10px;
   text-align: center;

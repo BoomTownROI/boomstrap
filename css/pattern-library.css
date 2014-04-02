@@ -2982,7 +2982,11 @@ input[type="button"].btn-block {
 .glyphicon-tree-deciduous:before {
   content: "\e200";
 }
-.caret {
+.caret,
+.caret-left,
+.caret-right,
+.caret-up,
+.sortable.is-sorting.descending:after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -5893,18 +5897,283 @@ a.callout-warning:hover {
 .callout-warning h4 {
   color: #e5ac00;
 }
+.caret-left {
+  border-bottom: 4px solid transparent;
+  border-left: 0;
+  border-right: 4px solid;
+  border-top: 4px solid transparent;
+}
+.caret-right {
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid;
+  border-right: 0;
+  border-top: 4px solid transparent;
+}
 .caret-up {
-  display: inline-block;
+  border-bottom: 4px solid;
+  border-top: 0;
+}
+/*display: inline-block;
   width: 0;
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top: 4px solid;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  border-top: 0;
-  border-bottom: 4px solid;
-  content: "";
+  border-top:   @caret-width-base solid;
+  border-right: @caret-width-base solid transparent;
+  border-left:  @caret-width-base solid transparent;
+
+width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-right: 100px solid red;
+	border-bottom: 50px solid transparent;
+
+width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-left: 100px solid red;
+	border-bottom: 50px solid transparent;
+  */
+.icon {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+@font-face {
+  font-family: 'icon-font';
+  src: url('fonts/icon-font.eot?-9xb9ty');
+  src: url('fonts/icon-font.eot?#iefix-9xb9ty') format('embedded-opentype'), url('fonts/icon-font.woff?-9xb9ty') format('woff'), url('fonts/icon-font.ttf?-9xb9ty') format('truetype'), url('fonts/icon-font.svg?-9xb9ty#icon-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icon-font';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-ealert:before {
+  content: "\e616";
+}
+.icon-phone-neutral:before {
+  content: "\e604";
+}
+.icon-email-neutral:before {
+  content: "\e607";
+}
+.icon-chat:before {
+  content: "\e030";
+}
+.icon-email-bad:before {
+  content: "\e609";
+}
+.icon-chats:before {
+  content: "\e031";
+}
+.icon-chevron-up:before {
+  content: "\e001";
+}
+.icon-chevron-down:before {
+  content: "\e000";
+}
+.icon-chevron-right:before {
+  content: "\e015";
+}
+.icon-chevron-left:before {
+  content: "\e016";
+}
+.icon-envelope:before {
+  content: "\e003";
+}
+.icon-user:before {
+  content: "\e00b";
+}
+.icon-phone:before {
+  content: "\e009";
+}
+.icon-heart:before {
+  content: "\e01b";
+}
+.icon-cog:before {
+  content: "\e00e";
+}
+.icon-cross-circle:before {
+  content: "\e012";
+}
+.icon-cross:before {
+  content: "\e013";
+}
+.icon-warning:before {
+  content: "\e021";
+}
+.icon-refresh:before {
+  content: "\e007";
+}
+.icon-feed:before {
+  content: "\e00c";
+}
+.icon-checkmark:before {
+  content: "\e00a";
+}
+.icon-fire:before {
+  content: "\e029";
+}
+.icon-users:before {
+  content: "\e01f";
+}
+.icon-plus-circle:before {
+  content: "\e010";
+}
+.icon-info:before {
+  content: "\e025";
+}
+.icon-bell:before {
+  content: "\e006";
+}
+.icon-info-circle:before {
+  content: "\e024";
+}
+.icon-delete:before {
+  content: "\e020";
+}
+.icon-location:before {
+  content: "\e01c";
+}
+.icon-edit:before {
+  content: "\e01e";
+}
+.icon-sort:before {
+  content: "\e01a";
+}
+.icon-filter:before {
+  content: "\e017";
+}
+.icon-arrow-bend-left:before {
+  content: "\e005";
+}
+.icon-arrow-bend-right:before {
+  content: "\e002";
+}
+.icon-arrow-down:before {
+  content: "\e028";
+}
+.icon-external-link:before {
+  content: "\e004";
+}
+.icon-search:before {
+  content: "\e019";
+}
+.icon-bars:before {
+  content: "\e018";
+}
+.icon-plus:before {
+  content: "\e011";
+}
+.icon-minus:before {
+  content: "\e00d";
+}
+.icon-question-circle:before {
+  content: "\f059";
+}
+.icon-question:before {
+  content: "\f128";
+}
+.icon-minus-circle:before {
+  content: "\e00f";
+}
+.icon-justify:before {
+  content: "\f039";
+}
+.icon-calculator:before {
+  content: "\e033";
+}
+.icon-grid:before {
+  content: "\e038";
+}
+.icon-house:before {
+  content: "\f015";
+}
+.icon-email-good:before {
+  content: "\e608";
+}
+.icon-eye:before {
+  content: "\e613";
+}
+.icon-dismiss:before {
+  content: "\e603";
+}
+.icon-phone-good:before {
+  content: "\e605";
+}
+.icon-arrow-up:before {
+  content: "\e600";
+}
+.icon-phone-bad:before {
+  content: "\e606";
+}
+.icon-user-add:before {
+  content: "\e614";
+}
+.icon-printer:before {
+  content: "\e601";
+}
+.icon-doc:before {
+  content: "\e60b";
+}
+.icon-ellipsis:before {
+  content: "\e61a";
+}
+.icon-mobile:before {
+  content: "\e61d";
+}
+.icon-flag:before {
+  content: "\e60a";
+}
+.icon-globe:before {
+  content: "\e60c";
+}
+.icon-like:before {
+  content: "\e615";
+}
+.icon-key:before {
+  content: "\e602";
+}
+.icon-speaker:before {
+  content: "\e60d";
+}
+.icon-droplet:before {
+  content: "\e612";
+}
+.icon-droplet2:before {
+  content: "\e60f";
+}
+.icon-grid2:before {
+  content: "\e60e";
+}
+.icon-transfer:before {
+  content: "\e610";
+}
+.icon-schedule:before {
+  content: "\e61b";
+}
+.icon-play:before {
+  content: "\e625";
+}
+.icon-pause:before {
+  content: "\e626";
+}
+.icon-stop:before {
+  content: "\e627";
+}
+.icon-graph:before {
+  content: "\e611";
 }
 .label,
 .cat {
@@ -6122,17 +6391,9 @@ a.callout-warning:hover {
   border-left: 4px solid transparent;
 }
 .sortable.is-sorting.descending:after {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px solid;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  border-top: 0;
-  border-bottom: 4px solid;
   content: "";
+  border-bottom: 4px solid;
+  border-top: 0;
 }
 .lead {
   font-weight: 300;
