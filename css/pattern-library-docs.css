@@ -102,7 +102,7 @@ h1 {
   font-size: 15px;
 }
 .pl-docs-sidebar.affix {
-  top: 20px;
+  top: 10px;
   width: 263px;
 }
 .pl-docs-sidenav {
@@ -112,13 +112,13 @@ h1 {
   border-left: 2px solid transparent;
   color: #848484;
   font-size: 13px;
-  padding: 6px 12px;
+  padding: 5px 12px;
   text-transform: lowercase;
   transition: all 0.35s;
 }
 .pl-docs-sidenav > li > a:hover {
   background-color: transparent;
-  border-left: 2px solid #ececec;
+  border-left: 2px solid #5bc0de;
 }
 .pl-docs-sidenav > li.active > a {
   background-color: #f9f9f9;
@@ -209,7 +209,7 @@ a.responsive-utilities td.is-visible:hover {
   color: #d44950;
 }
 .pl-code .t {
-  color: #b2b300;
+  color: #5bc0de;
 }
 .pl-code .s1 {
   color: #C30;
@@ -247,7 +247,7 @@ a.responsive-utilities td.is-visible:hover {
   background-color: #5bc0de;
 }
 .pl-swatch--warning {
-  background-color: #e5ac00;
+  background-color: #ffcc33;
 }
 .pl-swatch--danger {
   background-color: #cb2027;

@@ -2375,9 +2375,95 @@
 
 <div class="pl-docs-section">
   <h1 id="scores" class="page-header">Scores</h1>
+  <h2>Options</h2>
+  <p>Color options for ranking / scoring data.</p>
+  <div class="pl-example">
+    <span class="score score-excellent">99</span>
+    <span class="score score-good">75</span>
+    <span class="score score-average">50</span>
+    <span class="score">25</span>
+  </div>
+  <div class="pl-code">
+    <pre><code class="html">
+<span class="c">&lt;!-- Excellent score (99-76) --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
 
-  <p class="lead">Use these when ranking / scoring data.</p>
+<span class="c">&lt;!-- Good score (75-56) --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
 
+<span class="c">&lt;!-- Average score (50-26) --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
+
+<span class="c">&lt;!-- Default score (25-0) --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
+    </code></pre>
+  </div>
+
+  <h2>Sizes</h2>
+  <p>Fancy larger or smaller scores? Add <code>.score-lg</code>, <code>.score-sm</code>, or <code>.score-xs</code> for additional sizes.</p>
+  <div class="pl-example">
+  	<p>
+	    <span class="score score-excellent score-lg">99</span>
+	    <span class="score score-good score-lg">75</span>
+	    <span class="score score-average score-lg">50</span>
+	    <span class="score score-lg">25</span>
+    </p>
+    <p>
+    	<span class="score score-excellent">99</span>
+	    <span class="score score-good">75</span>
+	    <span class="score score-average">50</span>
+	    <span class="score">25</span>
+    </p>
+    <p>
+	    <span class="score score-excellent score-sm">99</span>
+	    <span class="score score-good score-sm">75</span>
+	    <span class="score score-average score-sm">50</span>
+	    <span class="score score-sm">25</span>
+    </p>
+    <p>
+	    <span class="score score-excellent score-xs">99</span>
+	    <span class="score score-good score-xs">75</span>
+	    <span class="score score-average score-xs">50</span>
+	    <span class="score score-xs">25</span>
+    </p>
+  </div>
+  <div class="pl-code">
+    <pre><code class="html">
+<span class="c">&lt;!-- Large score --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent score-lg"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good score-lg"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average score-lg"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-lg"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Default score --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Small score --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent score-sm"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good score-sm"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average score-sm"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-sm"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Extra small score --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent score-xs"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good score-xs"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average score-xs"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-xs"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+    </code></pre>
+  </div>
+
+  <div style="height: 300px;"></div>
 </div>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
@@ -2442,7 +2528,7 @@
                     <a href="#pills">Pills</a>
                 </li>
                 <li>
-                    <a href="#scores">Scores</a>
+                    <a href="#scores">scores</a>
                 </li>
             </ul>
             <a href="#top">back to top</a>
