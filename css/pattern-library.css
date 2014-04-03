@@ -6367,6 +6367,17 @@ a.callout-warning:hover {
     -webkit-transform: scale(1);
   }
 }
+.minimal-pager > .btn {
+  color: #1581e2;
+}
+.minimal-pager > .btn:hover {
+  color: #0e599c;
+}
+.minimal-pager > .btn.disabled {
+  color: #b4b4b4;
+  background-color: #fff;
+  cursor: not-allowed;
+}
 .sortable {
   cursor: pointer;
 }
