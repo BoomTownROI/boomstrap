@@ -23,7 +23,7 @@
         <a class="navbar-brand" href="index.html"><img class="navbar-brand-logo" src="images/fpo-boomstrap-logo.png"></a>
       </div>
       <div class="collapse navbar-collapse" id="pl-nav">
-        <ul class="nav navbar-nav">
+        <ul id="pl-docs-nav" class="nav navbar-nav">
           <li><a href="index.html">Introduction</a></li>
           <li><a href="css.html">CSS</a></li>
           <li><a href="components.html">Components</a></li>
@@ -2454,22 +2454,15 @@
     $( document ).ready(function() {
     	$('body').scrollspy({ target: '.pl-docs-sidebar'});
 
-    	/*if(location.pathname == "/") {
-				$('#site-nav a[href="/"]').addClass('active');
-			} else {
-				$('#site-nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
-			}*/
+    	// active nav
 			var path = location.pathname.split("/");
-			console.log(path);
 			var section = path[path.length-1];
-			console.log(section);
 			if(section == "") {
-				console.log("empty");
+				$('#pl-docs-nav a[href^="index.html"]').closest('li').addClass('active');
+			} else {
+				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
 			}
-			/*var parts = location.pathname.split('/');
-			console.log(parts);
-			var query = parts[parts.length-1].split( '.html' );
-			console.log(query);*/
+			
     });
 </script>
 <!-- scripts to run bootstrap examples -->
