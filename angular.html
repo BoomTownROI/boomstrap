@@ -755,7 +755,17 @@ appendToBody: false
 			} else {
 				$('#site-nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
 			}*/
-			console.log(location.pathname.split("/")[1]);
+			var path = location.pathname.split("/");
+			console.log(path);
+			var section = path[path.length-1];
+			console.log(section);
+			if(section == "") {
+				console.log("empty");
+			}
+			/*var parts = location.pathname.split('/');
+			console.log(parts);
+			var query = parts[parts.length-1].split( '.html' );
+			console.log(query);*/
     });
 </script>
 <!-- scripts to run bootstrap examples -->
