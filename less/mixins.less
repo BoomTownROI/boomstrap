@@ -12,6 +12,7 @@
   background-color: @background;
   border-color: @border;
 
+
   #gradient > .vertical(@background; darken(@background,4%)); // add gradient
 
   &:hover,
@@ -20,9 +21,11 @@
   &.active,
   .open .dropdown-toggle& {
     color: @color;
-    background-color: darken(@background, 8%);
-    border-color: darken(@border, 12%);
+    background-color: darken(@background, 10%);
+    border-color: @border;
+    //background-image: none;
     #gradient > .vertical(darken(@background,4%); darken(@background,10%)); // add gradient
+    //background-position: 0 -15px;
   }
   &:active,
   &.active,
@@ -62,3 +65,21 @@
     color: darken(@text-color, 10%);
   }
 }*/
+
+// Scores
+// -------------------------
+
+.score-size(@padding-vertical; @width; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical 0;
+  width: @width;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+
+
+
+
+
+

@@ -190,7 +190,7 @@
 			{
 				"source": "views/components/scores.html",
 				"css_id": "#scores",
-				"nav_header": "Scores"
+				"nav_header": "scores"
 			}
 		]
 	},
