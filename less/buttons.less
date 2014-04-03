@@ -5,17 +5,27 @@
 // -------------------------
 
 .btn {
+	.box-shadow(inset 0 1px 1px rgba(255,255,255,.25));
 	&:hover,
   &:focus,
   &:active,
   &.active,
   .open .dropdown-toggle& {
-   .box-shadow(inset 0 -0.25em 0.25em rgba(0,0,0,.05));
+   //.box-shadow(inset 0 -0.25em 0.25em rgba(0,0,0,.05));
   }
 }
 
 // Alternate Buttons
 // -------------------------
+
+/*.btn-default {
+	.button-variant(@btn-default-color; @start-color:lighten(@gray-lighter,5%); @end-color:@gray-lighter; @btn-default-border)
+}
+
+.btn-primary {
+	#gradient > .vertical(@start-color: lighten(@brand-primary,5%); @end-color: @brand-primary;);
+}*/
+
 
 .btn-attention {
   .button-variant(@btn-attention-color; @btn-attention-bg; @btn-attention-border);

@@ -1,10 +1,53 @@
 // File: mixins.less
-// Note: Custom BoomTown mixins
+// Note: Custom Boomstrap mixins
 
 
-// 
+// Buttons
 // -------------------------
 
+// Note: Overwrite Boostrap .button-variant mixin to add gradient
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  #gradient > .vertical(@background; darken(@background,4%)); // add gradient
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 8%);
+    border-color: darken(@border, 12%);
+    #gradient > .vertical(darken(@background,4%); darken(@background,10%)); // add gradient
+  }
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+      border-color: @border;
+      #gradient > .vertical(@background; darken(@background,4%)); // add gradient
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
 
 
 // Callouts
