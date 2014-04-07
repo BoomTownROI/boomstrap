@@ -8,10 +8,10 @@
 					"M1023.199 310.299l-1.061 1.038 0.561-1.087-446.051-283.35c-18.023-17.278-41.45-26.070-65.148-26.884v-0.016c-0.050 0.002-0.1 0.006-0.15 0.008-0.050-0.002-0.1-0.006-0.15-0.008v0.016c-23.698 0.814-47.127 9.606-65.15 26.885l-446.050 283.349 0.888 1.72-0.888-0.87v633.55c0 17.95 5.398 33.7 13.1 47.25l340.75-334-299.128-293.169 427.227-272.182c8.161-7.763 18.652-11.562 29.4-12.336 10.748 0.775 21.237 4.574 29.4 12.336l426.971 272.019-299.87 293.332 342.25 335.5c8.25-13.801 13.9-30.102 13.9-48.75l-0.801-634.351z",
 					"M684.107 382.493c0-53.009-14.706-94.576-44.11-124.65-29.411-30.081-70.519-45.118-123.318-45.118-55.266 0-98.547 17.102-129.833 51.294-31.311 34.217-46.953 82.611-46.953 145.207 0 60.824 16.918 107.835 50.797 141.032 33.854 33.204 80.871 49.79 141.026 49.79 29.182 0 53.914-2.167 74.191-6.515 20.258-4.347 39.311-10.964 57.146-19.888v-78.863c-21.845 10.25-42.772 17.708-62.826 22.387s-41.331 7.018-63.833 7.018c-28.965 0-51.46-8.121-67.511-24.395-16.038-16.248-24.618-38.871-25.727-67.842h240.95v-49.457zM445.497 364.109c1.772-25.166 8.797-44.614 21.054-58.312 12.239-13.698 29.182-20.557 50.797-20.557 21.596 0 38.762 6.859 51.466 20.557 12.698 13.698 19.257 33.147 19.716 58.312h-143.033z"
 				],
-				"grid": 0,
 				"tags": [
 					"ealert"
-				]
+				],
+				"grid": 0
 			},
 			"properties": {
 				"order": 1,
@@ -42,8 +42,8 @@
 				"name": "phone-neutral",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 0
+			"setIdx": 0,
+			"iconIdx": 1
 		},
 		{
 			"icon": {
@@ -63,8 +63,8 @@
 				"name": "email-neutral",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 1
+			"setIdx": 0,
+			"iconIdx": 2
 		},
 		{
 			"icon": {
@@ -85,8 +85,8 @@
 				"name": "chat",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 2
+			"setIdx": 0,
+			"iconIdx": 3
 		},
 		{
 			"icon": {
@@ -110,8 +110,8 @@
 				"name": "email-bad",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 3
+			"setIdx": 0,
+			"iconIdx": 4
 		},
 		{
 			"icon": {
@@ -132,8 +132,8 @@
 				"name": "chats",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 4
+			"setIdx": 0,
+			"iconIdx": 5
 		},
 		{
 			"icon": {
@@ -154,8 +154,8 @@
 				"name": "chevron-up",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 5
+			"setIdx": 0,
+			"iconIdx": 6
 		},
 		{
 			"icon": {
@@ -176,8 +176,8 @@
 				"name": "chevron-down",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 6
+			"setIdx": 0,
+			"iconIdx": 7
 		},
 		{
 			"icon": {
@@ -198,8 +198,8 @@
 				"name": "chevron-right",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 7
+			"setIdx": 0,
+			"iconIdx": 8
 		},
 		{
 			"icon": {
@@ -220,8 +220,8 @@
 				"name": "chevron-left",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 8
+			"setIdx": 0,
+			"iconIdx": 9
 		},
 		{
 			"icon": {
@@ -242,8 +242,8 @@
 				"name": "envelope",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 9
+			"setIdx": 0,
+			"iconIdx": 10
 		},
 		{
 			"icon": {
@@ -264,8 +264,8 @@
 				"name": "user",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 10
+			"setIdx": 0,
+			"iconIdx": 11
 		},
 		{
 			"icon": {
@@ -286,8 +286,8 @@
 				"name": "phone",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 11
+			"setIdx": 0,
+			"iconIdx": 12
 		},
 		{
 			"icon": {
@@ -308,8 +308,8 @@
 				"name": "heart",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 12
+			"setIdx": 0,
+			"iconIdx": 13
 		},
 		{
 			"icon": {
@@ -330,8 +330,8 @@
 				"name": "cog",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 13
+			"setIdx": 0,
+			"iconIdx": 14
 		},
 		{
 			"icon": {
@@ -352,8 +352,8 @@
 				"name": "cross-circle",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 14
+			"setIdx": 0,
+			"iconIdx": 15
 		},
 		{
 			"icon": {
@@ -374,8 +374,8 @@
 				"name": "cross",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 15
+			"setIdx": 0,
+			"iconIdx": 16
 		},
 		{
 			"icon": {
@@ -396,8 +396,8 @@
 				"name": "warning",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 16
+			"setIdx": 0,
+			"iconIdx": 17
 		},
 		{
 			"icon": {
@@ -418,8 +418,8 @@
 				"name": "refresh",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 17
+			"setIdx": 0,
+			"iconIdx": 18
 		},
 		{
 			"icon": {
@@ -440,8 +440,8 @@
 				"name": "feed",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 18
+			"setIdx": 0,
+			"iconIdx": 19
 		},
 		{
 			"icon": {
@@ -462,8 +462,8 @@
 				"name": "checkmark",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 19
+			"setIdx": 0,
+			"iconIdx": 20
 		},
 		{
 			"icon": {
@@ -484,8 +484,8 @@
 				"name": "fire",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 20
+			"setIdx": 0,
+			"iconIdx": 21
 		},
 		{
 			"icon": {
@@ -506,8 +506,8 @@
 				"name": "users",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 21
+			"setIdx": 0,
+			"iconIdx": 22
 		},
 		{
 			"icon": {
@@ -528,8 +528,8 @@
 				"name": "plus-circle",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 22
+			"setIdx": 0,
+			"iconIdx": 23
 		},
 		{
 			"icon": {
@@ -550,8 +550,8 @@
 				"name": "info",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 23
+			"setIdx": 0,
+			"iconIdx": 24
 		},
 		{
 			"icon": {
@@ -572,8 +572,8 @@
 				"name": "bell",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 24
+			"setIdx": 0,
+			"iconIdx": 25
 		},
 		{
 			"icon": {
@@ -594,8 +594,8 @@
 				"name": "info-circle",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 25
+			"setIdx": 0,
+			"iconIdx": 26
 		},
 		{
 			"icon": {
@@ -616,8 +616,8 @@
 				"name": "delete",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 26
+			"setIdx": 0,
+			"iconIdx": 27
 		},
 		{
 			"icon": {
@@ -638,8 +638,8 @@
 				"name": "location",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 27
+			"setIdx": 0,
+			"iconIdx": 28
 		},
 		{
 			"icon": {
@@ -660,8 +660,8 @@
 				"name": "edit",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 28
+			"setIdx": 0,
+			"iconIdx": 29
 		},
 		{
 			"icon": {
@@ -682,8 +682,8 @@
 				"name": "sort",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 29
+			"setIdx": 0,
+			"iconIdx": 30
 		},
 		{
 			"icon": {
@@ -704,8 +704,8 @@
 				"name": "filter",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 30
+			"setIdx": 0,
+			"iconIdx": 31
 		},
 		{
 			"icon": {
@@ -726,8 +726,8 @@
 				"name": "arrow-bend-left",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 31
+			"setIdx": 0,
+			"iconIdx": 32
 		},
 		{
 			"icon": {
@@ -748,8 +748,8 @@
 				"name": "arrow-bend-right",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 32
+			"setIdx": 0,
+			"iconIdx": 33
 		},
 		{
 			"icon": {
@@ -770,8 +770,8 @@
 				"name": "arrow-down",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 33
+			"setIdx": 0,
+			"iconIdx": 34
 		},
 		{
 			"icon": {
@@ -792,8 +792,8 @@
 				"name": "external-link",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 34
+			"setIdx": 0,
+			"iconIdx": 35
 		},
 		{
 			"icon": {
@@ -814,8 +814,8 @@
 				"name": "search",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 35
+			"setIdx": 0,
+			"iconIdx": 36
 		},
 		{
 			"icon": {
@@ -836,8 +836,8 @@
 				"name": "bars",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 36
+			"setIdx": 0,
+			"iconIdx": 37
 		},
 		{
 			"icon": {
@@ -858,8 +858,8 @@
 				"name": "plus",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 37
+			"setIdx": 0,
+			"iconIdx": 38
 		},
 		{
 			"icon": {
@@ -880,8 +880,8 @@
 				"name": "minus",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 38
+			"setIdx": 0,
+			"iconIdx": 39
 		},
 		{
 			"icon": {
@@ -903,8 +903,8 @@
 				"name": "question-circle",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 39
+			"setIdx": 0,
+			"iconIdx": 40
 		},
 		{
 			"icon": {
@@ -926,8 +926,8 @@
 				"name": "question",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 40
+			"setIdx": 0,
+			"iconIdx": 41
 		},
 		{
 			"icon": {
@@ -948,8 +948,8 @@
 				"name": "minus-circle",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 41
+			"setIdx": 0,
+			"iconIdx": 42
 		},
 		{
 			"icon": {
@@ -970,8 +970,8 @@
 				"name": "justify",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 42
+			"setIdx": 0,
+			"iconIdx": 43
 		},
 		{
 			"icon": {
@@ -992,8 +992,8 @@
 				"name": "calculator",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 43
+			"setIdx": 0,
+			"iconIdx": 44
 		},
 		{
 			"icon": {
@@ -1014,8 +1014,8 @@
 				"name": "grid",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 44
+			"setIdx": 0,
+			"iconIdx": 45
 		},
 		{
 			"icon": {
@@ -1037,8 +1037,8 @@
 				"name": "house",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 45
+			"setIdx": 0,
+			"iconIdx": 46
 		},
 		{
 			"icon": {
@@ -1060,8 +1060,8 @@
 				"name": "email-good",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 46
+			"setIdx": 0,
+			"iconIdx": 47
 		},
 		{
 			"icon": {
@@ -1081,8 +1081,8 @@
 				"name": "eye",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 47
+			"setIdx": 0,
+			"iconIdx": 48
 		},
 		{
 			"icon": {
@@ -1102,8 +1102,8 @@
 				"name": "dismiss",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 48
+			"setIdx": 0,
+			"iconIdx": 49
 		},
 		{
 			"icon": {
@@ -1126,8 +1126,8 @@
 				"name": "phone-good",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 49
+			"setIdx": 0,
+			"iconIdx": 50
 		},
 		{
 			"icon": {
@@ -1147,8 +1147,8 @@
 				"name": "arrow-up",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 50
+			"setIdx": 0,
+			"iconIdx": 51
 		},
 		{
 			"icon": {
@@ -1169,8 +1169,8 @@
 				"name": "phone-bad",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 51
+			"setIdx": 0,
+			"iconIdx": 52
 		},
 		{
 			"icon": {
@@ -1190,8 +1190,8 @@
 				"name": "user-add",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 52
+			"setIdx": 0,
+			"iconIdx": 53
 		},
 		{
 			"icon": {
@@ -1211,8 +1211,8 @@
 				"name": "printer",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 53
+			"setIdx": 0,
+			"iconIdx": 54
 		},
 		{
 			"icon": {
@@ -1232,8 +1232,8 @@
 				"name": "doc",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 54
+			"setIdx": 0,
+			"iconIdx": 55
 		},
 		{
 			"icon": {
@@ -1253,8 +1253,8 @@
 				"name": "ellipsis",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 55
+			"setIdx": 0,
+			"iconIdx": 56
 		},
 		{
 			"icon": {
@@ -1274,8 +1274,8 @@
 				"name": "mobile",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 56
+			"setIdx": 0,
+			"iconIdx": 57
 		},
 		{
 			"icon": {
@@ -1295,8 +1295,8 @@
 				"name": "flag",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 57
+			"setIdx": 0,
+			"iconIdx": 58
 		},
 		{
 			"icon": {
@@ -1316,8 +1316,8 @@
 				"name": "transfer",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 58
+			"setIdx": 0,
+			"iconIdx": 59
 		},
 		{
 			"icon": {
@@ -1337,8 +1337,8 @@
 				"name": "schedule",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 59
+			"setIdx": 0,
+			"iconIdx": 60
 		},
 		{
 			"icon": {
@@ -1358,8 +1358,8 @@
 				"name": "globe",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 60
+			"setIdx": 0,
+			"iconIdx": 61
 		},
 		{
 			"icon": {
@@ -1379,8 +1379,8 @@
 				"name": "like",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 61
+			"setIdx": 0,
+			"iconIdx": 62
 		},
 		{
 			"icon": {
@@ -1400,8 +1400,8 @@
 				"name": "key",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 62
+			"setIdx": 0,
+			"iconIdx": 63
 		},
 		{
 			"icon": {
@@ -1421,8 +1421,8 @@
 				"name": "play",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 63
+			"setIdx": 0,
+			"iconIdx": 64
 		},
 		{
 			"icon": {
@@ -1442,8 +1442,8 @@
 				"name": "pause",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 64
+			"setIdx": 0,
+			"iconIdx": 65
 		},
 		{
 			"icon": {
@@ -1463,8 +1463,8 @@
 				"name": "stop",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 65
+			"setIdx": 0,
+			"iconIdx": 66
 		},
 		{
 			"icon": {
@@ -1484,8 +1484,8 @@
 				"name": "graph",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 66
+			"setIdx": 0,
+			"iconIdx": 67
 		},
 		{
 			"icon": {
@@ -1505,7 +1505,7 @@
 				"name": "speaker",
 				"ligatures": ""
 			},
-			"setIdx": 1,
+			"setIdx": 0,
 			"iconIdx": 68
 		},
 		{
@@ -1526,7 +1526,7 @@
 				"name": "droplet",
 				"ligatures": ""
 			},
-			"setIdx": 1,
+			"setIdx": 0,
 			"iconIdx": 69
 		},
 		{
@@ -1547,7 +1547,7 @@
 				"name": "droplet2",
 				"ligatures": ""
 			},
-			"setIdx": 1,
+			"setIdx": 0,
 			"iconIdx": 70
 		},
 		{
@@ -1568,21 +1568,21 @@
 				"name": "grid2",
 				"ligatures": ""
 			},
-			"setIdx": 1,
+			"setIdx": 0,
 			"iconIdx": 71
 		}
 	],
 	"height": 1024,
 	"metadata": {
-		"name": "icon-font"
+		"name": "ficon"
 	},
 	"preferences": {
 		"showGlyphs": true,
 		"showQuickUse": true,
 		"fontPref": {
-			"prefix": "icon-",
+			"prefix": "ficon-",
 			"metadata": {
-				"fontFamily": "icon-font",
+				"fontFamily": "ficon",
 				"majorVersion": 1,
 				"minorVersion": 0
 			},
@@ -1595,6 +1595,6 @@
 		"imagePref": {},
 		"historySize": 100,
 		"showCodes": true,
-		"gridSize": 16
+		"search": ""
 	}
 }

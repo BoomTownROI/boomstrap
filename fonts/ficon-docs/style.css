@@ -1,32 +1,16 @@
-// File: fonts.less
-
-
-// Ficon (font icon)
-// -------------------------
-
-.ficon {
-	display: inline-block;
-	position: relative;
-	top: 1px;
-}
-
-// Our font icons are built using http://icomoon.io/
-// Upadate fonts by loading selection.json into the icomoon app
-// After downloading, copy the generated style.css file and paste below
-
 @font-face {
-	font-family: 'font-icons';
-	src:url('fonts/font-icons.eot?-hizyw3');
-	src:url('fonts/font-icons.eot?#iefix-hizyw3') format('embedded-opentype'),
-		url('fonts/font-icons.woff?-hizyw3') format('woff'),
-		url('fonts/font-icons.ttf?-hizyw3') format('truetype'),
-		url('fonts/font-icons.svg?-hizyw3#font-icons') format('svg');
+	font-family: 'ficon';
+	src:url('fonts/ficon.eot?-5q6nq3');
+	src:url('fonts/ficon.eot?#iefix-5q6nq3') format('embedded-opentype'),
+		url('fonts/ficon.woff?-5q6nq3') format('woff'),
+		url('fonts/ficon.ttf?-5q6nq3') format('truetype'),
+		url('fonts/ficon.svg?-5q6nq3#ficon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 [class^="ficon-"], [class*=" ficon-"] {
-	font-family: 'font-icons';
+	font-family: 'ficon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
