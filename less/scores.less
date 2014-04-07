@@ -1,0 +1,52 @@
+// File: scores.less
+
+
+.score {
+	background-color: @score-bg-base;
+	border: 1px solid @score-border-base;
+	color: @score-color-base;
+	display: inline-block;
+	text-align: center;
+	.score-size(@padding-base-vertical; @score-width-base; @font-size-base; @line-height-base; @border-radius-base);
+  .user-select(none);
+}
+
+.score-excellent {
+	background-color: @score-bg-excellent;
+	border-color: @score-border-excellent;
+	color: @score-color-invert;
+}
+
+.score-good {
+	background-color: @score-bg-good;
+	border-color: @score-border-good;
+	color: @score-color-invert;
+}
+
+.score-average {
+	background-color: @score-bg-average;
+	border-color: @score-border-average;
+	color: @score-color-invert;
+}
+
+
+// Score Sizes
+// --------------------------------------------------
+
+.score-lg {
+  .score-size(@padding-large-vertical; @score-width-large; @font-size-large; @line-height-large; @border-radius-large);
+}
+.score-sm {
+  .score-size(@padding-small-vertical; @score-width-small; @font-size-small; @line-height-small; @border-radius-small);
+}
+.score-xs {
+  .score-size(@padding-xs-vertical; @score-width-xs; @font-size-small; @line-height-small; @border-radius-small);
+}
+
+/*.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+.btn-xs {
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}*/
