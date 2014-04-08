@@ -147,7 +147,8 @@ module.exports = function (grunt) {
               'bower_components/angular/angular.min.js',
               'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
               'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-              'bower_components/angular-chosen/angular-chosen.js'
+              'bower_components/angular-chosen/angular-chosen.js',
+              'js/global.js'
             ],
             dest: '<%= yeoman.dist %>/js/pattern-library.js'
           }
@@ -164,7 +165,8 @@ module.exports = function (grunt) {
               'bower_components/angular/angular.min.js',
               'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
               'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-              'bower_components/angular-chosen/angular-chosen.js'
+              'bower_components/angular-chosen/angular-chosen.js',
+              'js/global.js'
             ],
             dest: 'docs/js/pattern-library.js'
           },
