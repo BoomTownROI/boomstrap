@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap-tour",
+  "version": "0.9.1",
+  "main": [
+    "./build/js/bootstrap-tour.js",
+    "./build/css/bootstrap-tour.css"
+  ],
+  "dependencies": {
+    "bootstrap": ">=2.3.2",
+    "jquery": ">=1.9.0"
+  },
+  "homepage": "https://github.com/sorich87/bootstrap-tour",
+  "_release": "0.9.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.1",
+    "commit": "b0596e1dde4e848d21274e6f3200fa640f7c2d92"
+  },
+  "_source": "git://github.com/sorich87/bootstrap-tour.git",
+  "_target": "~0.9.1",
+  "_originalSource": "bootstrap-tour"
+}

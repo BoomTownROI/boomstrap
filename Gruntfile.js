@@ -143,6 +143,7 @@ module.exports = function (grunt) {
             src: [
               'bower_components/jquery/dist/jquery.js',
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
+              'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
               'bower_components/angular/angular.min.js',
               'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
               'vendor/chosen_v1.1.0/chosen.jquery.min.js',
@@ -159,6 +160,7 @@ module.exports = function (grunt) {
             src: [
               'bower_components/jquery/dist/jquery.js',
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
+              'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
               'bower_components/angular/angular.min.js',
               'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
               'vendor/chosen_v1.1.0/chosen.jquery.min.js',

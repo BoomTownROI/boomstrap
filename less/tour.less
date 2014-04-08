@@ -1,0 +1,39 @@
+// File: tour.less
+// Note: Extends third-party bootstrap tour bower_components/bootstrap-tour/src/less/bootstrap-tour.less. Also
+// has dependencies on popover and tooltip
+
+
+// Tour
+// -------------------------
+
+
+.popover[class*="tour-"] {
+   .box-sizing(border-box);
+    min-width: 270px;
+    max-width: 320px;
+   .popover-content {
+      > ul {
+        margin: 0;
+        padding: 0 0 0 18px;
+      }
+    }
+   .popover-navigation {
+      padding: 4px 14px 14px 14px;
+      text-align: right;
+     *[data-role=end]{
+       float: none;
+      }
+     .btn {
+        padding-left: 0;
+        padding-right: 0;
+        width: 50px;
+        &+.btn { margin-left: @line-height-computed*0.5; }
+      }
+    }
+}
+
+
+.tour-backdrop {
+  .opacity(25);
+}
+

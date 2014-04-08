@@ -261,11 +261,6 @@
 				"source": "views/javascript/tour.html",
 				"css_id": "#tour",
 				"nav_header": "tour"
-			},
-			{
-				"source": "views/javascript/table.html",
-				"css_id": "#table",
-				"nav_header": "table"
 			}
 		]
 	},
