@@ -290,9 +290,11 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
 }
 figure {
   margin: 0;
@@ -1670,9 +1672,11 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
 }
 output {
   display: block;
@@ -2005,9 +2009,11 @@ select[multiple].input-lg {
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
 }
 .btn:hover,
 .btn:focus {
@@ -5514,7 +5520,7 @@ button.close {
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  background-color: #000000;
+  background-color: #848484;
   border-radius: 4px;
 }
 .tooltip-arrow {
@@ -5529,52 +5535,52 @@ button.close {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #000000;
+  border-top-color: #848484;
 }
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
   left: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #000000;
+  border-top-color: #848484;
 }
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   right: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #000000;
+  border-top-color: #848484;
 }
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #000000;
+  border-right-color: #848484;
 }
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #000000;
+  border-left-color: #848484;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000000;
+  border-bottom-color: #848484;
 }
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   left: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000000;
+  border-bottom-color: #848484;
 }
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   right: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000000;
+  border-bottom-color: #848484;
 }
 .popover {
   position: absolute;
@@ -5612,8 +5618,8 @@ button.close {
   font-size: 14px;
   font-weight: normal;
   line-height: 18px;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #ebebeb;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px 5px 0 0;
 }
 .popover-content {
@@ -6735,6 +6741,14 @@ a.callout-warning:hover {
   background-color: #fff;
   cursor: not-allowed;
 }
+.popover-content {
+  color: #848484;
+  padding: 10px 14px 14px 14px;
+}
+.popover-title {
+  font-weight: 700;
+  padding: 14px 14px 0 14px;
+}
 .score {
   background-color: #ffffff;
   border: 1px solid #b4b4b4;
@@ -6818,6 +6832,26 @@ a.callout-warning:hover {
   content: "";
   border-bottom: 4px solid;
   border-top: 0;
+}
+.table > thead > tr > td.selected,
+.table > tbody > tr > td.selected,
+.table > tfoot > tr > td.selected,
+.table > thead > tr > th.selected,
+.table > tbody > tr > th.selected,
+.table > tfoot > tr > th.selected,
+.table > thead > tr.selected > td,
+.table > tbody > tr.selected > td,
+.table > tfoot > tr.selected > td,
+.table > thead > tr.selected > th,
+.table > tbody > tr.selected > th,
+.table > tfoot > tr.selected > th {
+  background-color: #fcf8e3;
+}
+.table-hover > tbody > tr > td.selected:hover,
+.table-hover > tbody > tr > th.selected:hover,
+.table-hover > tbody > tr.selected:hover > td,
+.table-hover > tbody > tr.selected:hover > th {
+  background-color: #faf2cc;
 }
 .lead {
   font-weight: 300;
