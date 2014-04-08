@@ -1,5 +1,6 @@
 // File: mixins.less
-// Note: Custom Boomstrap mixins
+// Note: Custom Boomstrap mixins, overwrites, extends
+
 
 
 // Buttons
@@ -65,6 +66,19 @@
     color: darken(@text-color, 10%);
   }
 }*/
+
+
+// Tab focus
+// -------------------------
+
+// Note: Overwrite Boostrap .tab-focus mixin
+
+.tab-focus() {
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
+}
+
 
 // Scores
 // -------------------------

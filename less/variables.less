@@ -1,7 +1,6 @@
 // File: variables.less
 
 
-@text-color:            @gray-darker;
 
 // -------------------------
 // Colors
@@ -34,6 +33,15 @@
 
 @btn-attention-color:     	#fff;
 @btn-attention-bg:        	@brand-attention;
+
+
+// -------------------------
+// Form States & Alerts
+// -------------------------
+
+@state-attention-text:                #31708f;
+@state-attention-bg:                  lighten(@brand-attention,30%);
+@state-attention-border:              @brand-attention;
 @btn-attention-border:    	darken(@btn-attention-bg, 5%);
 
 
@@ -56,21 +64,17 @@
 
 
 // -------------------------
-// Typography
+// Popovers
 // -------------------------
 
-@font-family-sans-serif:	 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
-
-@headings-font-weight:    	600; // Open Sans Semi-Bold
+@popover-title-bg:					transparent;
 
 
 // -------------------------
-// Form States & Alerts
+// Scaffolding
 // -------------------------
 
-@state-attention-text:                #31708f;
-@state-attention-bg:                  lighten(@brand-attention,30%);
-@state-attention-border:              @brand-attention;
+@text-color:            @gray-darker;
 
 
 // -------------------------
@@ -94,6 +98,23 @@
 
 @score-color-base:    			@gray-light;
 @score-color-invert:    		@white;
+
+
+// -------------------------
+// Tooltip
+// -------------------------
+
+@tooltip-bg:								@gray;
+
+
+// -------------------------
+// Typography
+// -------------------------
+
+@font-family-sans-serif:	 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+
+@headings-font-weight:    	600; // Open Sans Semi-Bold
+
 
 
 
