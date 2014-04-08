@@ -15,5 +15,9 @@
     "grunt-gh-pages": "~0.9.1",
     "mustache": "^0.8.1",
     "grunt-contrib-clean": "^0.5.0"
+  },
+  "repository" : { 
+   "type" : "git",
+   "url" : "http://github.com/mcraiganthony/pattern-library.git"
   }
 }
