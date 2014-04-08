@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="css/chosen.css">
   <script src="js/pattern-library.min.js"></script>
   <script src="js/pattern-library-docs.min.js"></script>
+  <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+  
 </head>
 <body class="pl-body">
   <!-- ================================== Navigation ================================== -->
@@ -2463,7 +2465,6 @@
     </code></pre>
   </div>
 
-  <div style="height: 300px;"></div>
 </div>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
@@ -2548,6 +2549,9 @@
 			} else {
 				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
 			}
+
+			// prettify stuff
+			prettyPrint();
 			
     });
 </script>

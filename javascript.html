@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="css/chosen.css">
   <script src="js/pattern-library.min.js"></script>
   <script src="js/pattern-library-docs.min.js"></script>
+  <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+  
 </head>
 <body class="pl-body">
   <!-- ================================== Navigation ================================== -->
@@ -2074,8 +2076,137 @@
   </div><!-- /.table-responsive -->
 
 </div>
+<!-- ================================== Tour ================================== -->
+
+<div class="pl-docs-section">
+  <h1 id="tour" class="page-header">Bootstrap Tour <small>bootstrap-tour.js</small></h1>
+  <p class="lead">Bootstrap Tour is a third-party plugin that can be found at <a href="http://bootstraptour.com" target="_blank">http://bootstraptour.com</a>.</p>
+  <h2>Example</h2>
+
+  <p><a id="bootstrap-tour-btn" class="btn btn-attention">take the tour</a></p>
+  
+  <div class="row">
+      <div class="col-md-6"><h4><i id="stop1" class="ficon ficon-location"></i> First Stop</h4></div>
+      <div class="col-md-6"><h4><i id="stop2" class="ficon ficon-location"></i> Second Stop</h4></div>
+  </div>
+  <div class="row">
+      <div class="col-md-6"><h4><i id="stop3" class="ficon ficon-location"></i> Third Stop</h4></div>
+      <div class="col-md-6"><h4><i id="stop4" class="ficon ficon-location"></i> Fourth Stop</h4></div>
+  </div>
+
+  <div class="pl-code"><pre class="prettyprint"><code>
+
+// Instance the tour
+var doctour = new Tour({
+    name: "example",
+    template: "<div class='popover tour'>" +
+        "<div class='arrow'></div>" +
+        "<div class='popover-close'><i class='ficon ficon-cross' data-role='end'></i></div>" +
+        "<h3 class='popover-title'></h3>" +
+        "<div class='popover-content'></div>" +
+        "<div class='popover-navigation'><button class='btn btn-sm btn-default' data-role='prev'>Prev</button><button class='btn btn-sm btn-primary js-next' data-role='next'>Next</button></div>"+
+        "</div>"
+});
+// Add your steps.
+doctour.addSteps([
+  {
+      element: "#stop1",
+      title: "Welcome to the Bootstrap Tour!",
+      content: "Introduce new users to your product by walking them through it step by step.",
+      placement: "right"
+  },
+  {
+      element: "#stop2",
+      title: "Title of my step",
+      content: "&lt;ul&gt;&lt;li&gt;Lorem ipsum&lt;/li&gt;&lt;li&gt;Dolor sit amet&lt;/li&gt;&lt;/ul&gt;",
+      placement: "top"
+  },
+  {
+      element: "#stop3",
+      title: "Title of my step",
+      content: "Content of my step",
+      placement: "right"
+  },
+  {
+      element: "#stop4",
+      title: "Title of my step",
+      content: "Content of my step",
+      placement: "top",
+      onShown: function () {
+          $('.js-next').attr('data-role', 'end');
+          $('.js-next').removeClass('disabled');
+          $('.js-next').text('Got It! ');
+      }
+  }
+]);
+
+// Initialize the tour
+doctour.init();
+</code></pre></div>
+
+  <div style="height: 200px;"></div>
 
 
+  <script type="text/javascript">
+		$(document).ready(function () {
+      $('#bootstrap-tour-btn').on('click', function () {
+
+      // Instance the tour
+      var doctour = new Tour({
+          name: "example",
+          template: "<div class='popover tour'>" +
+              "<div class='arrow'></div>" +
+              "<div class='popover-close'><i class='ficon ficon-cross' data-role='end'></i></div>" +
+              "<h3 class='popover-title'></h3>" +
+              "<div class='popover-content'></div>" +
+              "<div class='popover-navigation'><button class='btn btn-sm btn-default' data-role='prev'>Prev</button><button class='btn btn-sm btn-primary js-next' data-role='next'>Next</button></div>"+
+              "</div>"
+      });
+      // Add your steps. Not too many, you don't really want to get your users sleepy
+      doctour.addSteps([
+        {
+            element: "#stop1", // string (jQuery selector) - html element next to which the step popover should be shown
+            title: "Welcome to the Bootstrap Tour!", // string - title of the popover
+            //title: "",
+            content: "Introduce new users to your product by walking them through it step by step.", // string - content of the popover
+            placement: "right"
+        },
+        {
+            element: "#stop2",
+            title: "Title of my step",
+            content: "<ul><li>Lorem ipsum</li><li>Dolor sit amet</li></ul>",
+            placement: "top"
+        },
+        {
+            element: "#stop3",
+            title: "Title of my step",
+            content: "Content of my step",
+            placement: "right"
+        },
+        {
+            element: "#stop4",
+            title: "Title of my step",
+            content: "Content of my step",
+            placement: "top",
+            onShown: function () {
+                $('.js-next').attr('data-role', 'end');
+                $('.js-next').removeClass('disabled');
+                $('.js-next').text('Got It! ');
+            }
+        }
+      ]);
+
+      // Initialize the tour
+      doctour.init();
+
+      // Start the tour
+      //hstour.start(true);
+      doctour.restart();
+      });
+  });
+	</script>
+
+</div>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
@@ -2120,9 +2251,6 @@
                 <li>
                     <a href="#tour">tour</a>
                 </li>
-                <li>
-                    <a href="#table">table</a>
-                </li>
             </ul>
             <a href="#top">back to top</a>
         </div>
@@ -2141,6 +2269,9 @@
 			} else {
 				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
 			}
+
+			// prettify stuff
+			prettyPrint();
 			
     });
 </script>
