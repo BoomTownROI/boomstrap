@@ -82,8 +82,7 @@ module.exports = function (grunt) {
           compress: true
         },
         files: {
-          'dist/css/pattern-library.css':'less/pattern-library.less',
-          'dist/css/pattern-library-docs.css':'less/pattern-library-docs.less'
+          'dist/css/pattern-library.css':'less/pattern-library.less'
          }
       },
       docs: {
@@ -345,7 +344,8 @@ module.exports = function (grunt) {
        dist: {
         files: [
           {src: ['images/icons/**'], dest: '<%= yeoman.dist %>/'},
-          {src: ['images/logos/**'], dest: '<%= yeoman.dist %>/'}
+          {src: ['images/logos/**'], dest: '<%= yeoman.dist %>/'},
+          {src: ['fonts/**'], dest: '<%= yeoman.dist %>/css/'},
         ]
        },
       docs: {
