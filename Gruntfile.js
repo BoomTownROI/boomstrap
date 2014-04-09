@@ -342,23 +342,17 @@ module.exports = function (grunt) {
 
 
     copy: {
-      // copy index.html and images directory into two locations
        dist: {
         files: [
-          {src: ['<%= yeoman.app %>/index.html'], dest: '<%= yeoman.dist %>/'},
-          {src: ['images/**'], dest: '<%= yeoman.dist %>/'}
+          {src: ['images/icons/**'], dest: '<%= yeoman.dist %>/'},
+          {src: ['images/logos/**'], dest: '<%= yeoman.dist %>/'}
         ]
        },
       docs: {
         files: [
-          {
-            src: ['images/**'],
-            dest: 'docs/'
-          },
-          {
-            src: ['fonts/**'],
-            dest: 'docs/css/'
-          },
+          {src: ['images/icons/**'], dest: 'docs/'},
+          {src: ['images/logos/**'], dest: 'docs/'},
+          {src: ['fonts/**'], dest: 'docs/css/'},
           {
             flatten: true,
             src: 'vendor/chosen_v1.1.0/chosen.css',
