@@ -75,57 +75,15 @@
     </h1>
   </div>
   <div class="row">
-    <div class="col-md-6 show-grid">
-        <div ng-controller="ChosenDemoCtrl">
-          <select style="width:200px"
-            chosen
-            ng-model="superhero"
-            ng-options="s as s for s in superheroes">
-            <option value=""></option>
-          </select>
-          <label>You have chosen {{ superhero }}!</label>
-        </div>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-offset-md-3">
         <p>Chosen allows for searchable dropdowns.</p>
 
         <p>Provide a <code>chosen</code> attribute with an <code>ng-options</code> attribute to a <code>select</code> tag to search for elements.</p>
     </div>
   </div>
   <hr>
-  <div class="row code">
-    <div class="col-md-12">
-      <tabset>
-        <tab heading="Markup">
-          <div>
-            <pre ng-non-bindable><code data-language="html">&lt;select chosen
-  ng-model=&quot;superhero&quot;
-  ng-options=&quot;s for s in superheroes&quot;&gt;
-&lt;/select&gt;
-&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
-&lt;label&gt;You have chosen {{ superhero }}!&lt;/label&gt;
-            </code></pre>
-          </div>
-        </tab>
-        <tab heading="JavaScript">
-          <div plunker-content="javascript">
-            <pre ng-non-bindable><code data-language="javascript">(function(PatternLibrary) {
-  'use strict';
-  PatternLibrary.controller('ChosenDemoCtrl', ['$scope', function($scope) {
-    $scope.superheroes = [
-      'Batman',
-      'Superman',
-      'Green Arrow',
-      'Wonder Woman'
-    ];
-  }]);
-})(angular.module('PatternLibrary'));
-</code></pre>
-          </div>
-        </tab>
-      </tabset>
-    </div>
-  </div>
+  <p data-height="208" data-theme-id="5592" data-slug-hash="lEbaF" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mfunkie/pen/lEbaF/'>lEbaF</a> by Mark Funk (<a href='http://codepen.io/mfunkie'>@mfunkie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+  <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
 </div></div>
 <script>
