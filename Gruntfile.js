@@ -350,8 +350,8 @@ module.exports = function (grunt) {
        },
       docs: {
         files: [
-          {src: ['images/icons/**'], dest: 'docs/'},
-          {src: ['images/logos/**'], dest: 'docs/'},
+          {src: ['favicon.ico'], dest: 'docs/'},
+          {src: ['images/**'], dest: 'docs/'},
           {src: ['fonts/**'], dest: 'docs/css/'},
           {
             flatten: true,

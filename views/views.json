@@ -178,6 +178,11 @@
 				"nav_header": "Callouts"
 			},
 			{
+				"source": "views/components/sashes.html",
+				"css_id": "#sashes",
+				"nav_header": "Sashes"
+			},
+			{
 				"source": "views/components/cards.html",
 				"css_id": "#cards",
 				"nav_header": "Cards"
