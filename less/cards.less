@@ -11,18 +11,41 @@
   .border();
   border-radius: @border-radius-small;
   max-width: 320px;
+  p {
+  	margin: 0;
+  	.text-overflow();
+  }
   .sash {
     .border-top-radius(@border-radius-small);
   }
 }
 
-.card-info {
-	padding: @padding-base-vertical @padding-base-horizontal;
+.card-container {
+	padding: @padding-large-vertical @padding-xs-horizontal;
 }
 
-.card-info-street {
-	color: @link-color;
-	.text-overflow();
+
+.card-priority {
+	font-size: 16px;
+	font-weight: 600;
 }
+
+.card-stats {
+	font-size: 11px;
+	border-top: @gray-light 1px solid;
+	border-bottom: @gray-light 1px solid;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.card-stat {
+	display: inline-block;
+	padding: @padding-large-vertical @padding-xs-horizontal;
+}
+
+.card-street {
+	color: @link-color;
+}
+
 
 
