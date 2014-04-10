@@ -6962,3 +6962,6 @@ a.text-attention:hover {
 a.bg-attention:hover {
   background-color: #de7009;
 }
+h1 {
+  letter-spacing: -1px;
+}
