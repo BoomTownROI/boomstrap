@@ -9,13 +9,20 @@
 .card {
   background-color: @white;
   .border();
-  border-radius: @border-radius-base;
-  width: 240px;
-  height: 320px;
+  border-radius: @border-radius-small;
+  max-width: 320px;
   .sash {
-    .border-top-radius(@border-radius-base);
+    .border-top-radius(@border-radius-small);
   }
 }
 
+.card-info {
+	padding: @padding-base-vertical @padding-base-horizontal;
+}
+
+.card-info-street {
+	color: @link-color;
+	.text-overflow();
+}
 
 
