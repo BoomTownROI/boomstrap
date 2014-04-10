@@ -287,6 +287,9 @@ a.responsive-utilities td.is-visible:hover {
 .pl-swatch--white {
   background-color: #fff;
 }
+.sash {
+  margin-bottom: 12px;
+}
 .pl-code {
   margin: 1.5em 0;
   /* Put a border around prettyprinted code snippets. */
