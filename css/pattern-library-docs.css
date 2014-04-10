@@ -287,7 +287,7 @@ a.responsive-utilities td.is-visible:hover {
 .pl-swatch--white {
   background-color: #fff;
 }
-.sash {
+.pl-sash .sash {
   margin-bottom: 12px;
 }
 .pl-code {
