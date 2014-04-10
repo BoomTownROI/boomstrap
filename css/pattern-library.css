@@ -6295,24 +6295,41 @@ a.callout-warning:hover {
 }
 .card {
   background-color: #ffffff;
-  border-color: #b4b4b4;
+  border-color: #ececec;
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
   max-width: 320px;
 }
+.card p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .card .sash {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
-.card-info {
-  padding: 6px 12px;
+.card-container {
+  padding: 6px;
 }
-.card-info-street {
+.card-priority {
+  font-size: 16px;
+  font-weight: 600;
+}
+.card-stats {
+  font-size: 85%;
+  border-top: #ececec 1px solid;
+  border-bottom: #ececec 1px solid;
+  text-align: center;
+  text-transform: uppercase;
+}
+.card-stat {
+  display: inline-block;
+}
+.card-street {
   color: #1581e2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .caret-left {
   border-bottom: 4px solid transparent;
