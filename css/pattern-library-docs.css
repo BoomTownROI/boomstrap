@@ -267,7 +267,7 @@ a.responsive-utilities td.is-visible:hover {
   background-color: #848484;
 }
 .pl-swatch--gray-light {
-  background-color: #b4b4b4;
+  background-color: #cccccc;
 }
 .pl-swatch--gray-lighter {
   background-color: #ececec;
@@ -292,9 +292,6 @@ a.responsive-utilities td.is-visible:hover {
 }
 .pl-code {
   margin: 1.5em 0;
-  /* Put a border around prettyprinted code snippets. */
-  /* Specify class=linenums on a pre to get line numbering */
-  /* Alternate shading for lines */
 }
 .pl-code pre {
   border-color: #e3e3e3;
@@ -326,84 +323,4 @@ a.responsive-utilities td.is-visible:hover {
 .pl-code .kd,
 .pl-code .k {
   color: #006699;
-}
-.pl-code .pln {
-  color: #48484C;
-}
-.pl-code .str {
-  color: #DD1144;
-}
-.pl-code .kwd {
-  color: #1E347B;
-}
-.pl-code .com {
-  color: #93A1A1;
-}
-.pl-code .typ {
-  color: teal;
-}
-.pl-code .lit {
-  color: #195F91;
-}
-.pl-code .pun {
-  color: #93A1A1;
-}
-.pl-code .opn {
-  color: #93A1A1;
-}
-.pl-code .clo {
-  color: #93A1A1;
-}
-.pl-code .tag {
-  color: #008;
-}
-.pl-code .atn {
-  color: teal;
-}
-.pl-code .atv {
-  color: #DD1144;
-}
-.pl-code .dec {
-  color: teal;
-}
-.pl-code .var {
-  color: teal;
-}
-.pl-code .fun {
-  color: #DC322F;
-}
-.pl-code pre.prettyprint {
-  background-color: #F7F7F9;
-  padding: 10px;
-  border: 1px solid #E1E1E8;
-}
-.pl-code pre.prettyprint.linenums {
-  box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset;
-}
-.pl-code ol.linenums {
-  color: #1E347B;
-  margin: 0 0 0 40px;
-}
-.pl-code ol.linenums li {
-  color: #BEBEC5;
-  line-height: 18px;
-  padding-left: 12px;
-  text-shadow: 0 1px 0 #FFFFFF;
-}
-.pl-code li.L0,
-.pl-code li.L1,
-.pl-code li.L2,
-.pl-code li.L3,
-.pl-code li.L5,
-.pl-code li.L6,
-.pl-code li.L7,
-.pl-code li.L8 {
-  list-style-type: normal;
-}
-.pl-code li.L1,
-.pl-code li.L3,
-.pl-code li.L5,
-.pl-code li.L7,
-.pl-code li.L9 {
-  background: #eee;
 }
