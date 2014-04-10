@@ -2620,7 +2620,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-xs,
 .btn-group-xs > .btn {
-  padding: 1px 5px;
+  padding: 1px 6px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
@@ -6312,7 +6312,7 @@ a.callout-warning:hover {
   border-top-left-radius: 3px;
 }
 .card-container {
-  padding: 10px 5px;
+  padding: 10px 6px;
 }
 .card-priority {
   font-size: 16px;
@@ -6327,7 +6327,7 @@ a.callout-warning:hover {
 }
 .card-stat {
   display: inline-block;
-  padding: 10px 5px;
+  padding: 10px 6px;
 }
 .card-street {
   color: #1581e2;
@@ -6624,6 +6624,14 @@ a.callout-warning:hover {
 .ficon-graph:before {
   content: "\e611";
 }
+.row-condensed {
+  margin-left: -3px;
+  margin-right: -3px;
+}
+.row-condensed [class*="col-"] {
+  padding-left: 3px;
+  padding-right: 3px;
+}
 .label,
 .cat {
   font-weight: normal;
@@ -6864,7 +6872,7 @@ a.callout-warning:hover {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  padding: 5px 5px;
+  padding: 5px 6px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
   text-transform: uppercase;
 }
