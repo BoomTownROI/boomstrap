@@ -6631,10 +6631,18 @@ a.callout-warning:hover {
   content: "\e611";
 }
 .row-condensed {
+  margin-left: -7px;
+  margin-right: -7px;
+}
+.row-condensed [class*="col-"] {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.row-xcondensed {
   margin-left: -3px;
   margin-right: -3px;
 }
-.row-condensed [class*="col-"] {
+.row-xcondensed [class*="col-"] {
   padding-left: 3px;
   padding-right: 3px;
 }
