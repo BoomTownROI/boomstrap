@@ -9,14 +9,15 @@
 .card {
   background-color: @white;
   .border();
-  border-radius: @border-radius-small;
+  border-radius: @card-border-radius;
+  display: inline-block;
   max-width: 320px;
   p {
   	margin: 0;
   	.text-overflow();
   }
   .sash {
-    .border-top-radius(@border-radius-small);
+    .border-top-radius(@card-border-radius);
   }
 }
 
@@ -32,20 +33,32 @@
 
 .card-stats {
 	font-size: 11px;
-	border-top: @gray-light 1px solid;
-	border-bottom: @gray-light 1px solid;
+	border-top: @gray-lighter 1px solid;
+	border-bottom: @gray-lighter 1px solid;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 .card-stat {
 	display: inline-block;
-	padding: @padding-large-vertical @padding-xs-horizontal;
+	padding: @padding-large-vertical 0;
+	&+.card-stat {
+		padding-left: @padding-small-horizontal;
+	}
 }
 
 .card-street {
 	color: @link-color;
 }
 
+.card-more {
+	background-color: @gray-lightest;
+	border-top: @gray-lighter 1px solid;
+	.border-bottom-radius(@card-border-radius);
+	cursor: pointer;
+	font-size: 12px;
+	padding: @padding-small-vertical 0;
+	text-align: center;
+}
 
 
