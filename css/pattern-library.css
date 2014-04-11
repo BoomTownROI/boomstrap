@@ -6127,11 +6127,11 @@ button.close {
     color: darken(@text-color, 10%);
   }
 }*/
-img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
+/*img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}*/
 .btn {
   -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
@@ -6299,6 +6299,7 @@ a.callout-warning:hover {
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
+  display: inline-block;
   max-width: 320px;
 }
 .card p {
@@ -6320,17 +6321,30 @@ a.callout-warning:hover {
 }
 .card-stats {
   font-size: 11px;
-  border-top: #cccccc 1px solid;
-  border-bottom: #cccccc 1px solid;
+  border-top: #ececec 1px solid;
+  border-bottom: #ececec 1px solid;
   text-align: center;
   text-transform: uppercase;
 }
 .card-stat {
   display: inline-block;
-  padding: 10px 6px;
+  padding: 10px 0;
+}
+.card-stat + .card-stat {
+  padding-left: 10px;
 }
 .card-street {
   color: #1581e2;
+}
+.card-more {
+  background-color: #f6f6f6;
+  border-top: #ececec 1px solid;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px 0;
+  text-align: center;
 }
 .caret-left {
   border-bottom: 4px solid transparent;
@@ -6986,7 +7000,7 @@ a.callout-warning:hover {
   cursor: pointer;
 }
 .sortable:hover {
-  background-color: #f9f9f9;
+  background-color: #f6f6f6;
 }
 .sortable.is-sorting {
   background-color: #ececec;

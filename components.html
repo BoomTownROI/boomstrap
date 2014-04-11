@@ -2392,10 +2392,119 @@
 <div class="pl-docs-section">
   <h1 id="cards" class="page-header">Cards</h1>
   <p class="lead">Cards are modular components for property listings.</p>
-  <div class="pl-example">
+  <h3>Default card</h3>
+  <p>The default listing card has a max-width of 320px. When used in a fluid grid, be aware that the card's layout begins to break down below a width of 250px.</p>
+  <div class="pl-example pl-cards">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (&lt;1%) <span class="sash-time">10 mins ago</span></div>
+                <img class="img-responsive" src="images/fpo-carousel-1.jpg">
+                <div class="card-container">
+                    <div class="row row-xcondensed">
+                        <div class="col-xs-7">
+                            <p class="card-priority card-street"><a href="" target="_blank">227 Palmetto Islands Trail</a></p>
+                            <p class="small">Mount Pleasant, SC</p>
+                            <p class="small">Grassy Creek</p>
+                        </div>
+                        <div class="col-xs-5 text-right">
+                            <p class="card-priority card-price">$1,250,000</p>
+                            <p class="small">$250/SQFT</p>
+                        </div>
+                    </div>
+                </div> <!-- /card-container -->
+                <div class="card-stats">
+                    <span class="card-stat">3 Beds</span>
+                    <span class="card-stat">3 Baths</span>
+                    <span class="card-stat">2800 sqft</span>
+                    <span class="card-stat">0.35 Acres</span>
+                </div>
+                <div class="card-container">
+                    <div class="row row-xcondensed">
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> 1220 Best-Fit</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> 11 Favs</button>
+                        </div>
+                    </div>
+                </div> <!-- /card-container -->
+            </div> <!-- /card -->
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="sash sash-back">Back <span class="sash-time">2 days ago</span></div>
+                <img class="img-responsive" src="images/fpo-carousel-2.jpg">
+                <div class="card-container">
+                    <div class="row row-xcondensed">
+                        <div class="col-xs-7">
+                            <p class="card-priority card-street"><a href="" target="_blank">227 Palmetto Islands Trail</a></p>
+                            <p class="small">Mount Pleasant, SC</p>
+                            <p class="small">Grassy Creek</p>
+                        </div>
+                        <div class="col-xs-5 text-right">
+                            <p class="card-priority card-price">$1,250,000</p>
+                            <p class="small">$250/SQFT</p>
+                        </div>
+                    </div>
+                </div> <!-- /card-container -->
+                <div class="card-stats">
+                    <span class="card-stat">3 Beds</span>
+                    <span class="card-stat">3 Baths</span>
+                    <span class="card-stat">2800 sqft</span>
+                    <span class="card-stat">0.35 Acres</span>
+                </div>
+                <div class="card-container">
+                    <div class="row row-xcondensed">
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> 20 Best-Fit</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-block btn-sm disabled"><i class="ficon ficon-heart"></i> 0 Favs</button>
+                        </div>
+                    </div>
+                </div> <!-- /card-container -->
+            </div> <!-- /card -->
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="sash sash-new">New <span class="sash-time">2 hours ago</span></div>
+                <img class="img-responsive" src="images/fpo-carousel-3.jpg">
+                <div class="card-container">
+                    <div class="row row-xcondensed">
+                        <div class="col-xs-7">
+                            <p class="card-priority card-street"><a href="" target="_blank">227 Palmetto Islands Trail</a></p>
+                            <p class="small">Mount Pleasant, SC</p>
+                            <p class="small">Grassy Creek</p>
+                        </div>
+                        <div class="col-xs-5 text-right">
+                            <p class="card-priority card-price">$1,250,000</p>
+                            <p class="small">$250/SQFT</p>
+                        </div>
+                    </div>
+                </div> <!-- /card-container -->
+                <div class="card-stats">
+                    <span class="card-stat">3 Beds</span>
+                    <span class="card-stat">3 Baths</span>
+                    <span class="card-stat">2800 sqft</span>
+                    <span class="card-stat">0.35 Acres</span>
+                </div>
+                <div class="card-container">
+                    <div class="row row-xcondensed">
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> 300 Best-Fit</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> 6 Favs</button>
+                        </div>
+                    </div>
+                </div> <!-- /card-container -->
+            </div> <!-- /card -->
+        </div>
+    </div>
     <div class="card">
     	<div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
-    	<img src="images/fpo-carousel-1.jpg">
+    	<img class="img-responsive" src="images/fpo-carousel-1.jpg">
     	<div class="card-container">
 	    	<div class="row">
 	    		<div class="col-xs-7">
@@ -2418,16 +2527,19 @@
     	<div class="card-container">
     		<div class="row row-xcondensed">
     			<div class="col-md-6">
-    				<button class="btn btn-default btn-block"><i class="ficon ficon-star"></i> 20 Best-Fit</button>
+    				<button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> 20 Best-Fit</button>
     			</div>
     			<div class="col-md-6">
-    				<button class="btn btn-default btn-block"><i class="ficon ficon-heart"></i> 20 Favs</button>
+    				<button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> 20 Favs</button>
     			</div>
     		</div>
     	</div> <!-- /card-container -->
+        <div class="card-more js-card-more">
+            <span class="card-more-btn"><i class="ficon ficon-chevron-down"></i> More Detail</span>
+            <!-- <span class="card-reveal-btn-less"><i class="ficon ficon-chevron-up"></i> less detail</span> -->
+        </div>
     </div> <!-- /card -->
   </div>
-  
 
 </div>
 <!-- ================================== Pills ================================== -->

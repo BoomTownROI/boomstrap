@@ -127,7 +127,7 @@ h1 {
   border-left: 2px solid #5bc0de;
 }
 .pl-docs-sidenav > li.active > a {
-  background-color: #f9f9f9;
+  background-color: #f6f6f6;
   border-left: 2px solid #f68a24;
 }
 .pl-docs-sidebar > a {
@@ -273,7 +273,7 @@ a.responsive-utilities td.is-visible:hover {
   background-color: #ececec;
 }
 .pl-swatch--gray-lightest {
-  background-color: #f9f9f9;
+  background-color: #f6f6f6;
 }
 .pl-swatch--gray-dark {
   background-color: #696969;
@@ -288,7 +288,10 @@ a.responsive-utilities td.is-visible:hover {
   background-color: #fff;
 }
 .pl-sashes .sash {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+}
+.pl-cards .card {
+  margin-bottom: 20px;
 }
 .pl-code {
   margin: 1.5em 0;
