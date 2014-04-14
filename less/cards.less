@@ -16,6 +16,7 @@
   	margin: 0;
   	.text-overflow();
   }
+  .btn { .text-overflow(); }
   .sash {
     .border-top-radius(@card-border-radius);
   }
@@ -66,8 +67,8 @@
 // -------------------------
 
 .card-sm {
-	max-width: 240px;
-	min-width: 220px;
+	max-width: 250px;
+	min-width: 216px;
 	padding: @padding-small-vertical @padding-xs-horizontal;
 	p {
 		line-height: @line-height-computed - 5px;
@@ -112,7 +113,10 @@
 
 
 
-
+.btn-group-two {
+	width: 100%;
+	.btn { width: 50%;}
+}
 
 
 
