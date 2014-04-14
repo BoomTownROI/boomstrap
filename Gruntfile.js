@@ -24,6 +24,7 @@ module.exports = function (grunt) {
     'concat:docs',
     'concat:html',
     'uglify:docs',
+    'copy:css',
     'less:docs',
     'copy:docs',
     'clean:docs'
@@ -341,23 +342,27 @@ module.exports = function (grunt) {
 
 
     copy: {
-       dist: {
+      css: {
+        files: [
+          {
+            flatten: true,
+            src: 'vendor/chosen_v1.1.0/chosen.css',
+            dest: 'vendor/chosen_v1.1.0/chosen.less'
+          }
+        ]
+      },
+      dist: {
         files: [
           {src: ['images/icons/**'], dest: '<%= yeoman.dist %>/'},
           {src: ['images/logos/**'], dest: '<%= yeoman.dist %>/'},
-          {src: ['fonts/**'], dest: '<%= yeoman.dist %>/css/'},
+          {src: ['fonts/**'], dest: '<%= yeoman.dist %>/css/'}
         ]
-       },
+      },
       docs: {
         files: [
           {src: ['favicon.ico'], dest: 'docs/'},
           {src: ['images/**'], dest: 'docs/'},
-          {src: ['fonts/**'], dest: 'docs/css/'},
-          {
-            flatten: true,
-            src: 'vendor/chosen_v1.1.0/chosen.css',
-            dest: 'docs/css/chosen.css'
-          }
+          {src: ['fonts/**'], dest: 'docs/css/'}
         ]
       }
     }
@@ -426,6 +431,7 @@ module.exports = function (grunt) {
     'concat:docs',
     'uglify:dist',
     'uglify:docs',
+    'copy:css',
     'less:dist',
     'less:docs',
     'copy:dist',
