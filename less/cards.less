@@ -62,3 +62,59 @@
 }
 
 
+// Small Card
+// -------------------------
+
+.card-sm {
+	max-width: 240px;
+	min-width: 220px;
+	padding: @padding-small-vertical @padding-xs-horizontal;
+	p {
+		line-height: @line-height-computed - 5px;
+	}
+	.sash {
+		font-size: 11px;
+		padding: 0 0 @padding-xs-vertical 0;
+	}
+}
+
+.card-sm-container {
+	padding: @padding-small-vertical 0;
+}
+
+.card-sm-priority {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.card-sm-stats {
+	//color: @gray;
+	border-top: @gray-lighter 1px solid;
+	font-size: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.card-sm-stat {
+	display: inline-block;
+	padding: @padding-base-vertical 0;
+	&+.card-sm-stat {
+		padding-left: 4px;
+	}
+}
+
+.card-sm-street {
+	color: @link-color;
+}
+
+
+
+
+
+
+
+
+
+
+
+
