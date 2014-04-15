@@ -6746,12 +6746,16 @@ a.callout-warning:hover {
   border-radius: 3px;
   display: inline-block;
   max-width: 320px;
+  position: relative;
 }
 .card p {
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.card strong {
+  font-weight: 600;
 }
 .card .btn {
   overflow: hidden;
@@ -6764,6 +6768,32 @@ a.callout-warning:hover {
 }
 .card-container {
   padding: 10px 6px;
+}
+.card-detail {
+  background-color: #ffffff;
+  border-top: #ececec 1px solid;
+  display: none;
+  width: 100% !important;
+}
+.card-intro {
+  height: 76px;
+}
+.card-more {
+  background-color: #f6f6f6;
+  border-top: #ececec 1px solid;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px 0;
+  text-align: center;
+}
+.card-price-history {
+  padding-bottom: 0;
+}
+.card-price-history-change {
+  color: #669900;
+  text-align: center;
 }
 .card-priority {
   font-size: 16px;
@@ -6786,15 +6816,13 @@ a.callout-warning:hover {
 .card-street {
   color: #1581e2;
 }
-.card-more {
+.card-title {
   background-color: #f6f6f6;
+  border-bottom: #ececec 1px solid;
   border-top: #ececec 1px solid;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  cursor: pointer;
-  font-size: 12px;
-  padding: 5px 0;
-  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 6px;
 }
 .card-sm {
   max-width: 250px;
