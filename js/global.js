@@ -30,3 +30,27 @@ $.fn.extend({
 $(function () {
     $('[data-toggle="popover"]').popoverClosable();
 });
+
+
+// Add icons to Bootstrap collpase
+
+$( document ).ready(function() {
+  $('.panel-collapse.collapse').prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
+  $('.panel-collapse.collapse.in').prev().find(".ficon").removeClass("ficon-chevron-down").addClass("ficon-chevron-up");
+
+  $('.panel-collapse').on('shown.bs.collapse', function () {
+      $(this).prev().find(".ficon").removeClass("ficon-chevron-down").addClass("ficon-chevron-up");
+  });
+
+  $('.panel-collapse').on('hidden.bs.collapse', function () {
+      $(this).prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
+  });
+});
+
+
+
+
+
+
+
+
