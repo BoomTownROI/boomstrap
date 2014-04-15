@@ -32,7 +32,7 @@ $(function () {
 });
 
 
-// Add icons to Bootstrap collpase
+// Add icons to Bootstrap collpase.js
 
 $( document ).ready(function() {
   $('.panel-collapse.collapse').prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
@@ -46,6 +46,30 @@ $( document ).ready(function() {
       $(this).prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
   });
 });
+
+// Card toggle (hot sheet)
+
+$( document ).ready(function() {
+  $('.js-card-more').off('click').on('click', function (e) {
+    e.preventDefault();
+    var btn = $(this);
+    detail = $(this).next(".js-card-detail");
+    console.log(detail);
+    if(detail.hasClass('is-open')){
+      detail.removeClass('is-open');
+      detail.hide('fast');
+      btn.find(".card-more-btn").html("<i class='ficon ficon-chevron-down'></i> More Detail");
+    } else {
+        //$(".js-card-detail").removeClass('is-open'); // close all instances
+        //$(".js-card-detail").hide();
+        //$('.js-card-more').find(".card-more-btn").html("<i class='ficon ficon-chevron-down'></i> More Detail");
+        detail.addClass('is-open');
+        detail.show('fast');
+        btn.find(".card-more-btn").html("<i class='ficon ficon-chevron-up'></i> Less Detail");
+    }
+  });
+});
+
 
 
 
