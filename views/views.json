@@ -269,9 +269,23 @@
 			}
 		]
 	},
+
 	"angular": [
 		"app/index-top.html",
 		"app/views/ui-bootstrap.html",
+		"app/views/modals.html",
+		"app/views/dropdown.html",
+		"app/views/scrollspy.html",
+		"app/views/tabs.html",
+		"app/views/tooltip.html",
+		"app/views/popover.html",
+		"app/views/alert.html",
+		"app/views/button.html",
+		"app/views/collapse.html",
+		"app/views/carousel.html",
+		"app/views/affix.html",
+		"app/views/tour.html",
+		"app/views/table.html",
 		"app/views/chosen.html",
 		"app/index-bottom.html"
 	]
