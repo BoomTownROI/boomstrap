@@ -7354,6 +7354,14 @@ a.callout-warning:hover {
   background-color: #fff;
   cursor: not-allowed;
 }
+.panel-title > a[data-toggle="collapse"] {
+  display: block;
+  position: relative;
+}
+.panel-title > a[data-toggle="collapse"] .ficon {
+  position: absolute;
+  right: 0;
+}
 .popover-close {
   color: #cccccc;
   cursor: pointer;
