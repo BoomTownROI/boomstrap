@@ -31,15 +31,13 @@
 .card-detail {
 	background-color: @white;
 	border-top: @gray-lighter 1px solid;
-	display: none;
-	width: 100% !important; // to keep jquery hide from scaling content
 }
 
 .card-intro {
 	height: 76px; // to keep consistent height when no hood value
 }
 
-.card-more {
+.card-toggle {
 	background-color: @gray-lightest;
 	border-top: @gray-lighter 1px solid;
 	.border-bottom-radius(@card-border-radius);
@@ -47,6 +45,13 @@
 	font-size: 12px;
 	padding: @padding-small-vertical 0;
 	text-align: center;
+	.card-toggle-more {
+		display: none;
+	}
+	&.collapsed {
+		.card-toggle-less { display: none; }
+		.card-toggle-more { display: inline-block; }
+	}
 }
 
 .card-price-history {
