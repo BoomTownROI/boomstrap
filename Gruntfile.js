@@ -232,8 +232,6 @@ module.exports = function (grunt) {
           });
         });
 
-        console.log(copyList);
-
         return {
           files: copyList,
           options: {
@@ -385,45 +383,6 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('build', [
-//    'clean:dist',
-//    'useminPrepare',
-    'ngtemplates',
-    'concat',
-    'ngmin:tmp',
-    //'styles',
-    'cssmin',
-    'copy:dist',
-    'uglify',
-    'rev',
-    'usemin',
-    'staticHost',
-    'clean:lms',
-    'copy:lms'
-  ]);
-
-  grunt.registerTask('build:debug', [
-    'clean:dist',
-    'useminPrepare',
-    'ngtemplates',
-    'concat',
-    'ngmin:tmp',
-    'styles',
-    'cssmin',
-    'copy:dist',
-    'rev',
-    'usemin',
-    'clean:lms',
-    'copy:lms'
-  ]);
-
-  grunt.registerTask('default', [
-    'jshint',
-    'build'
-  ]);
-
-  grunt.registerTask('styles', ['less']);
-
   grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 
   grunt.registerTask('default', [
@@ -437,18 +396,6 @@ module.exports = function (grunt) {
     'copy:dist',
     'copy:docs'
   ]);
-
-
   grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
   grunt.registerTask('website', docs.concat(['gh-pages'])); // Build github pages
-
-  //grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
-//  grunt.registerTask('server', [
-//    'build',
-//    'less:docs',
-//    'connect'
-//  ]);
-
-//  grunt.registerTask('default', ['concat:dist','concat:docs','uglify:dist','uglify:docs','less:dist',
-//    'less:docs','copy:dist','copy:docs']); // Full Monty
 };
