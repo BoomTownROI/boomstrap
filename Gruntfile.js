@@ -232,8 +232,6 @@ module.exports = function (grunt) {
           });
         });
 
-        console.log(copyList);
-
         return {
           files: copyList,
           options: {
