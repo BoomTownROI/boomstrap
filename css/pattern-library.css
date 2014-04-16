@@ -6772,13 +6772,11 @@ a.callout-warning:hover {
 .card-detail {
   background-color: #ffffff;
   border-top: #ececec 1px solid;
-  display: none;
-  width: 100% !important;
 }
 .card-intro {
   height: 76px;
 }
-.card-more {
+.card-toggle {
   background-color: #f6f6f6;
   border-top: #ececec 1px solid;
   border-bottom-right-radius: 3px;
@@ -6787,6 +6785,15 @@ a.callout-warning:hover {
   font-size: 12px;
   padding: 5px 0;
   text-align: center;
+}
+.card-toggle .card-toggle-more {
+  display: none;
+}
+.card-toggle.collapsed .card-toggle-less {
+  display: none;
+}
+.card-toggle.collapsed .card-toggle-more {
+  display: inline-block;
 }
 .card-price-history {
   padding-bottom: 0;
@@ -7389,6 +7396,18 @@ a.callout-warning:hover {
 .panel-title > a[data-toggle="collapse"] .ficon {
   position: absolute;
   right: 0;
+}
+.panel-title > a[data-toggle="collapse"] .panel-collapse-less {
+  display: inline-block;
+}
+.panel-title > a[data-toggle="collapse"] .panel-collapse-more {
+  display: none;
+}
+.panel-title > a[data-toggle="collapse"].collapsed .panel-collapse-less {
+  display: none;
+}
+.panel-title > a[data-toggle="collapse"].collapsed .panel-collapse-more {
+  display: inline-block;
 }
 .popover-close {
   color: #cccccc;
