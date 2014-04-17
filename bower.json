@@ -1,7 +1,7 @@
 {
   "name": "pattern-library",
   "description": "A robust pattern library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     "Craig Anthony <craig@boomtownroi.com>",
     "Mark Funk <mark@boomtownroi.com>"
@@ -17,8 +17,8 @@
     "angular": "~1.2.0",
     "jquery": ">= 1.9.0",
     "angular-bootstrap": "~0.10.0",
-    "angular-chosen": "*",
-    "bootstrap-tour": "~0.9.1"
+    "bootstrap-tour": "~0.9.1",
+    "angular-chosen": "*"
   },
   "dependencies": {
     "bootstrap": "~3.1.1"
