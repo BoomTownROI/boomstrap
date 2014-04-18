@@ -64,7 +64,15 @@
     <p data-height="360" data-theme-id="5675" data-slug-hash="qGlcA" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/qGlcA/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
-
+<section id="tabs">
+    <div class="page-header">
+        <h2>Tabs<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/tabs">ui.bootstrap.tabs</a>)
+        </small></h2>
+    </div>
+    <p data-height="570" data-theme-id="5675" data-slug-hash="Ghmlf" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/Ghmlf/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+</section>
 
 <section id="tooltip">
     <div class="page-header">
@@ -84,65 +92,15 @@
     <p data-height="360" data-theme-id="5675" data-slug-hash="aempi" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/aempi/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
-                    <section id="alert">
-                        <div class="page-header">
-                          <h1>Alert<small>
-                              (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/alert">ui.bootstrap.alert</a>)
-                          </small></h1>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6 show-grid">
-                                <div ng-controller="AlertDemoCtrl">
-  <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
-  <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
-</div>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p>Alert is an AngularJS-version of bootstrap's alert.</p>
-
-<p>This directive can be used to generate alerts from the dynamic model data (using the ng-repeat directive);</p>
-
-<p>The presence of the "close" attribute determines if a close button is displayed</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row code">
-                            <div class="col-md-12">
-                                <tabset>
-                                    <tab heading="Markup">
-                                        <div plunker-content="markup">
-                                            <pre ng-non-bindable><code data-language="html">&lt;div ng-controller=&quot;AlertDemoCtrl&quot;&gt;
-  &lt;alert ng-repeat=&quot;alert in alerts&quot; type=&quot;alert.type&quot; close=&quot;closeAlert($index)&quot;&gt;{{alert.msg}}&lt;/alert&gt;
-  &lt;button class=&#x27;btn btn-default&#x27; ng-click=&quot;addAlert()&quot;&gt;Add Alert&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-                                        </div>
-                                    </tab>
-                                    <tab heading="JavaScript">
-                                        <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">function AlertDemoCtrl($scope) {
-  $scope.alerts = [
-    { type: &#x27;danger&#x27;, msg: &#x27;Oh snap! Change a few things up and try submitting again.&#x27; },
-    { type: &#x27;success&#x27;, msg: &#x27;Well done! You successfully read this important alert message.&#x27; }
-  ];
-
-  $scope.addAlert = function() {
-    $scope.alerts.push({msg: &quot;Another alert!&quot;});
-  };
-
-  $scope.closeAlert = function(index) {
-    $scope.alerts.splice(index, 1);
-  };
-
-}</code></pre>
-                                        </div>
-                                    </tab>
-                                </tabset>
-                            </div>
-                        </div>
-                    </section>
-
+<section id="alert">
+    <div class="page-header">
+        <h2>Alert<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/alert">ui.bootstrap.alert</a>)
+        </small></h2>
+    </div>
+    <p data-height="360" data-theme-id="5675" data-slug-hash="dCLlE" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/dCLlE/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+</section>
 
 
                     <section id="carousel">
@@ -273,9 +231,6 @@
                 </li>
                 <li>
                     <a href="#dropdown">Dropdown</a>
-                </li>
-                <li>
-                    <a href="#scrollspy">Scrollspy</a>
                 </li>
                 <li>
                     <a href="#tabs">Tabs</a>

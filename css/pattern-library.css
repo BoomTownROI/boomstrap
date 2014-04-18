@@ -7192,13 +7192,13 @@ a.callout-warning:hover {
   width: 1em;
 }
 .bticon-buyer {
-  background-image: url(../images/icons/buyer.svg);
+  background-image: url(icons/buyer.svg);
 }
 .bticon-buyer-seller {
-  background-image: url(../images/icons/buyer-seller.svg);
+  background-image: url(icons/buyer-seller.svg);
 }
 .bticon-seller {
-  background-image: url(../images/icons/seller.svg);
+  background-image: url(icons/seller.svg);
 }
 .label,
 .cat {
