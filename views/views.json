@@ -290,11 +290,6 @@
 				"nav_header": "Dropdown"
 			},
 			{
-				"source": "app/views/scrollspy.html",
-				"css_id": "#scrollspy",
-				"nav_header": "Scrollspy"
-			},
-			{
 				"source": "app/views/tabs.html",
 				"css_id": "#tabs",
 				"nav_header": "Tabs"
