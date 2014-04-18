@@ -28,11 +28,6 @@
 				"nav_header": "Overview"
 			},
 			{ 
-				"source": "views/css/logos.html",
-				"css_id": "#logo",
-				"nav_header": "Logo"
-			},
-			{ 
 				"source": "views/css/colors.html",
 				"css_id": "#colors",
 				"nav_header": "Colors"
