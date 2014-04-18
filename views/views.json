@@ -270,23 +270,86 @@
 		]
 	},
 
-	"angular": [
-		"app/index-top.html",
-		"app/views/ui-bootstrap.html",
-		"app/views/modals.html",
-		"app/views/dropdown.html",
-		"app/views/scrollspy.html",
-		"app/views/tabs.html",
-		"app/views/tooltip.html",
-		"app/views/popover.html",
-		"app/views/alert.html",
-		"app/views/button.html",
-		"app/views/collapse.html",
-		"app/views/carousel.html",
-		"app/views/affix.html",
-		"app/views/tour.html",
-		"app/views/table.html",
-		"app/views/chosen.html",
-		"app/index-bottom.html"
-	]
+	"angular": {
+		"header": "Angular",
+		"sources": [
+			{ "source": "app/views/angular-header.html" },
+			{
+				"source": "app/views/overview.html",
+				"css_id": "#overview",
+				"nav_header": "Overview"
+			},
+			{
+				"source": "app/views/modals.html",
+				"css_id": "#modals",
+				"nav_header": "Modals"
+			},
+			{
+				"source": "app/views/dropdown.html",
+				"css_id": "#dropdown",
+				"nav_header": "Dropdown"
+			},
+			{
+				"source": "app/views/scrollspy.html",
+				"css_id": "#scrollspy",
+				"nav_header": "Scrollspy"
+			},
+			{
+				"source": "app/views/tabs.html",
+				"css_id": "#tabs",
+				"nav_header": "Tabs"
+			},
+			{
+				"source": "app/views/tooltip.html",
+				"css_id": "#tooltip",
+				"nav_header": "Tooltip"
+			},
+			{
+				"source": "app/views/popover.html",
+				"css_id": "#popover",
+				"nav_header": "Popover"
+			},
+			{
+				"source": "app/views/alert.html",
+				"css_id": "#alert",
+				"nav_header": "Alert"
+			},
+			{
+				"source": "app/views/button.html",
+				"css_id": "#button",
+				"nav_header": "Button"
+			},
+			{
+				"source": "app/views/collapse.html",
+				"css_id": "#collapse",
+				"nav_header": "Collapse"
+			},
+			{
+				"source": "app/views/carousel.html",
+				"css_id": "#carousel",
+				"nav_header": "Carousel"
+			},
+			{
+				"source": "app/views/affix.html",
+				"css_id": "#affix",
+				"nav_header": "Affix"
+			},
+			{
+				"source": "app/views/tour.html",
+				"css_id": "#tour",
+				"nav_header": "Tour"
+			},
+			{
+				"source": "app/views/table.html",
+				"css_id": "#table",
+				"nav_header": "Table"
+			},
+			{
+				"source": "app/views/chosen.html",
+				"css_id": "#chosen",
+				"nav_header": "Chosen"
+			},
+			{ "source": "app/views/angular-footer.html" }
+		]
+	}
 }
