@@ -7180,6 +7180,26 @@ a.callout-warning:hover {
   padding-left: 3px;
   padding-right: 3px;
 }
+.bticon {
+  background: transparent 0 0;
+  background-size: 100%;
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  position: relative;
+  top: 1;
+  vertical-align: top;
+  width: 1em;
+}
+.bticon-buyer {
+  background-image: url(/images/icons/buyer.svg);
+}
+.bticon-buyer-seller {
+  background-image: url(/images/icons/buyer-seller.svg);
+}
+.bticon-seller {
+  background-image: url(/images/icons/seller.svg);
+}
 .label,
 .cat {
   font-weight: normal;

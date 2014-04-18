@@ -50,198 +50,26 @@
                             
             
 
-<section id="tooltip">
+<section id="modals">
     <div class="page-header">
-        <h1>Modal<small>
+        <h2>Modal<small>
             (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/modal">ui.bootstrap.modal</a>)
-        </small></h1>
+        </small></h2>
     </div>
-    <p data-height="266" data-theme-id="5675" data-slug-hash="jvftq" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/jvftq/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <p data-height="360" data-theme-id="5675" data-slug-hash="jvftq" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/jvftq/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+</section>
+<section id="popover">
+    <div class="page-header">
+        <h2>Dropdown<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/dropdownToggle">ui.bootstrap.dropdownToggle</a>)
+        </small></h2>
+    </div>
+    <p data-height="360" data-theme-id="5675" data-slug-hash="qGlcA" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/qGlcA/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
 
 
-<section id="tabs">
-    <div class="page-header">
-        <h1>Tabs<small>
-            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/tabs">ui.bootstrap.tabs</a>)
-        </small></h1>
-    </div>
-    <div class="row">
-        <div class="col-md-6 show-grid">
-            <div ng-controller="TabsDemoCtrl">
-                <p>Select a tab by setting active binding to true:</p>
-                <p>
-                    <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
-                    <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
-                </p>
-                <p>
-                    <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
-                </p>
-                <hr />
-
-                <tabset>
-                    <tab heading="Static title">Static content</tab>
-                    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
-                        {{tab.content}}
-                    </tab>
-                    <tab select="alertMe()">
-                        <tab-heading>
-                            <i class="glyphicon glyphicon-bell"></i> Alert!
-                        </tab-heading>
-                        I've got an HTML heading, and a select callback. Pretty cool!
-                    </tab>
-                </tabset>
-
-                <hr />
-
-                <tabset vertical="true" type="navType">
-                    <tab heading="Vertical 1">Vertical content 1</tab>
-                    <tab heading="Vertical 2">Vertical content 2</tab>
-                </tabset>
-
-                <hr />
-
-                <tabset justified="true">
-                    <tab heading="Justified">Justified content</tab>
-                    <tab heading="SJ">Short Labeled Justified content</tab>
-                    <tab heading="Long Justified">Long Labeled Justified content</tab>
-                </tabset>
-            </div>
-
-        </div>
-        <div class="col-md-6">
-            <p>AngularJS version of the tabs directive.</p>
-
-            <h3>Settings</h3>
-
-            <h4><code>&lt;tabset&gt;</code></h4>
-
-            <ul>
-                <li><p><code>vertical</code>
-                    <em>(Defaults: false)</em> :
-                    Whether tabs appear vertically stacked.</p></li>
-                <li><p><code>justified</code>
-                    <em>(Defaults: false)</em> :
-                    Whether tabs fill the container and have a consistent width.</p></li>
-                <li><p><code>type</code>
-                    <em>(Defaults: 'tabs')</em> :
-                    Navigation type. Possible values are 'tabs' and 'pills'.</p></li>
-            </ul>
-
-            <h4><code>&lt;tab&gt;</code></h4>
-
-            <ul>
-                <li><p><code>heading</code> or <code>&lt;tab-heading&gt;</code>
-                    :
-                    Heading text or HTML markup.</p></li>
-                <li><p><code>active</code> <i class="glyphicon glyphicon-eye-open"></i>
-                    <em>(Defaults: false)</em> :
-                    Whether tab is currently selected.</p></li>
-                <li><p><code>disabled</code> <i class="glyphicon glyphicon-eye-open"></i>
-                    <em>(Defaults: false)</em> :
-                    Whether tab is clickable and can be activated.</p></li>
-                <li><p><code>select()</code>
-                    <em>(Defaults: null)</em> :
-                    An optional expression called when tab is activated.</p></li>
-                <li><p><code>deselect()</code>
-                    <em>(Defaults: null)</em> :
-                    An optional expression called when tab is deactivated.</p></li>
-            </ul>
-        </div>
-    </div>
-    <hr>
-    <div class="row code">
-        <div class="col-md-12">
-            <tabset>
-                <tab heading="Markup">
-                    <div plunker-content="markup">
-<pre ng-non-bindable><code data-language="html">
-&lt;div ng-controller=&quot;TabsDemoCtrl&quot;&gt;
-&lt;p&gt;Select a tab by setting active binding to true:&lt;/p&gt;
-&lt;p&gt;
-    &lt;button class=&quot;btn btn-default btn-sm&quot; ng-click=&quot;tabs[0].active = true&quot;&gt;Select second tab&lt;/button&gt;
-    &lt;button class=&quot;btn btn-default btn-sm&quot; ng-click=&quot;tabs[1].active = true&quot;&gt;Select third tab&lt;/button&gt;
-&lt;/p&gt;
-&lt;p&gt;
-    &lt;button class=&quot;btn btn-default btn-sm&quot; ng-click=&quot;tabs[1].disabled = ! tabs[1].disabled&quot;&gt;Enable / Disable third tab&lt;/button&gt;
-&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;tabset&gt;
-    &lt;tab heading=&quot;Static title&quot;&gt;Static content&lt;/tab&gt;
-    &lt;tab ng-repeat=&quot;tab in tabs&quot; heading=&quot;{{tab.title}}&quot; active=&quot;tab.active&quot; disabled=&quot;tab.disabled&quot;&gt;
-    {{tab.content}}
-    &lt;/tab&gt;
-    &lt;tab select=&quot;alertMe()&quot;&gt;
-        &lt;tab-heading&gt;
-        &lt;i class=&quot;glyphicon glyphicon-bell&quot;&gt;&lt;/i&gt; Alert!
-        &lt;/tab-heading&gt;
-        I&#x27;ve got an HTML heading, and a select callback. Pretty cool!
-    &lt;/tab&gt;
-&lt;/tabset&gt;
-
-&lt;hr /&gt;
-
-&lt;tabset vertical=&quot;true&quot; type=&quot;navType&quot;&gt;
-    &lt;tab heading=&quot;Vertical 1&quot;&gt;Vertical content 1&lt;/tab&gt;
-    &lt;tab heading=&quot;Vertical 2&quot;&gt;Vertical content 2&lt;/tab&gt;
-&lt;/tabset&gt;
-
-&lt;hr /&gt;
-
-&lt;tabset justified=&quot;true&quot;&gt;
-    &lt;tab heading=&quot;Justified&quot;&gt;Justified content&lt;/tab&gt;
-    &lt;tab heading=&quot;SJ&quot;&gt;Short Labeled Justified content&lt;/tab&gt;
-    &lt;tab heading=&quot;Long Justified&quot;&gt;Long Labeled Justified content&lt;/tab&gt;
-&lt;/tabset&gt;
-&lt;/div&gt;
-</code></pre>
-                    </div>
-                </tab>
-                <tab heading="JavaScript">
-                    <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">
-(function(PatternLibrary) {
-    'use strict';
-    PatternLibrary.controller('TabsDemoCtrl', ['$scope', function TabsDemoCtrl($scope) {
-        $scope.tabs = [
-        { title:"Dynamic Title 1", content:"Dynamic content 1" },
-        { title:"Dynamic Title 2", content:"Dynamic content 2", disabled: true }
-        ];
-
-        $scope.alertMe = function() {
-        setTimeout(function() {
-        alert("You've selected the alert tab!");
-        });
-        };
-
-        $scope.navType = 'pills';
-    }]);
-})(angular.module('PatternLibrary'));
-
-                                            </code></pre>
-                    </div>
-                </tab>
-            </tabset>
-        </div>
-    </div>
-</section>
-<script>var TabsDemoCtrl = function ($scope) {
-    $scope.tabs = [
-        { title:"Dynamic Title 1", content:"Dynamic content 1" },
-        { title:"Dynamic Title 2", content:"Dynamic content 2", disabled: true }
-    ];
-
-    $scope.alertMe = function() {
-        setTimeout(function() {
-            alert("You've selected the alert tab!");
-        });
-    };
-
-    $scope.navType = 'pills';
-};
-</script>
 <section id="tooltip">
     <div class="page-header">
         <h1>Tooltip<small>
@@ -257,130 +85,9 @@
             (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/popover">ui.bootstrap.popover</a>)
         </small></h1>
     </div>
-    <div class="row">
-        <div class="col-md-6 show-grid">
-            <div ng-controller="PopoverDemoCtrl">
-                <h4>Dynamic</h4>
-                <div class="form-group">
-                    <label>Popup Text:</label>
-                    <input type="text" ng-model="dynamicPopover" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Popup Title:</label>
-                    <input type="text" ng-model="dynamicPopoverTitle" class="form-control">
-                </div>
-                <button popover="{{dynamicPopover}}" popover-title="{{dynamicPopoverTitle}}" class="btn btn-default">Dynamic Popover</button>
-
-                <hr />
-                <h4>Positional</h4>
-                <button popover-placement="top" popover="On the Top!" class="btn btn-default">Top</button>
-                <button popover-placement="left" popover="On the Left!" class="btn btn-default">Left</button>
-                <button popover-placement="right" popover="On the Right!" class="btn btn-default">Right</button>
-                <button popover-placement="bottom" popover="On the Bottom!" class="btn btn-default">Bottom</button>
-
-                <hr />
-                <h4>Triggers</h4>
-                <p>
-                    <button popover="I appeared on mouse enter!" popover-trigger="mouseenter" class="btn btn-default">Mouseenter</button>
-                </p>
-                <input type="text" value="Click me!" popover="I appeared on focus! Click away and I'll vanish..."  popover-trigger="focus" class="form-control">
-
-                <hr />
-                <h4>Other</h4>
-                <button Popover-animation="true" popover="I fade in and out!" class="btn btn-default">fading</button>
-                <button popover="I have a title!" popover-title="The title." class="btn btn-default">title</button>
-            </div>
-
-        </div>
-        <div class="col-md-6">
-            <p>A lightweight, extensible directive for fancy popover creation. The popover
-                directive supports multiple placements, optional transition animation, and more.</p>
-
-            <p>Like the Bootstrap jQuery plugin, the popover <strong>requires</strong> the tooltip
-                module.</p>
-
-            <p>The popover directives provides several optional attributes to control how it
-                will display:</p>
-
-            <ul>
-                <li><code>popover-title</code>: A string to display as a fancy title.</li>
-                <li><code>popover-placement</code>: Where to place it? Defaults to "top", but also accepts
-                    "bottom", "left", "right".</li>
-                <li><code>popover-animation</code>: Should it fade in and out? Defaults to "true".</li>
-                <li><code>popover-popup-delay</code>: For how long should the user have to have the mouse
-                    over the element before the popover shows (in milliseconds)? Defaults to 0.</li>
-                <li><code>popover-trigger</code>: What should trigger the show of the popover? See the
-                    <code>tooltip</code> directive for supported values.</li>
-                <li><code>popover-append-to-body</code>: Should the tooltip be appended to <code>$body</code> instead of
-                    the parent element?</li>
-            </ul>
-
-            <p>The popover directives require the <code>$position</code> service.</p>
-
-            <p>The popover directive also supports various default configurations through the
-                $tooltipProvider. See the <a href="#tooltip">tooltip</a> section for more information.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="row code">
-        <div class="col-md-12">
-            <tabset>
-                <tab heading="Markup">
-                    <div plunker-content="markup">
-                                            <pre ng-non-bindable><code data-language="html">
-&lt;div ng-controller=&quot;PopoverDemoCtrl&quot;&gt;
-&lt;h4&gt;Dynamic&lt;/h4&gt;
-&lt;div class=&quot;form-group&quot;&gt;
-    &lt;label&gt;Popup Text:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;dynamicPopover&quot; class=&quot;form-control&quot;&gt;
-&lt;/div&gt;
-&lt;div class=&quot;form-group&quot;&gt;
-    &lt;label&gt;Popup Title:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;dynamicPopoverTitle&quot; class=&quot;form-control&quot;&gt;
-&lt;/div&gt;
-&lt;button popover=&quot;{{dynamicPopover}}&quot; popover-title=&quot;{{dynamicPopoverTitle}}&quot; class=&quot;btn btn-default&quot;&gt;Dynamic Popover&lt;/button&gt;
-
-&lt;hr /&gt;
-&lt;h4&gt;Positional&lt;/h4&gt;
-&lt;button popover-placement=&quot;top&quot; popover=&quot;On the Top!&quot; class=&quot;btn btn-default&quot;&gt;Top&lt;/button&gt;
-&lt;button popover-placement=&quot;left&quot; popover=&quot;On the Left!&quot; class=&quot;btn btn-default&quot;&gt;Left&lt;/button&gt;
-&lt;button popover-placement=&quot;right&quot; popover=&quot;On the Right!&quot; class=&quot;btn btn-default&quot;&gt;Right&lt;/button&gt;
-&lt;button popover-placement=&quot;bottom&quot; popover=&quot;On the Bottom!&quot; class=&quot;btn btn-default&quot;&gt;Bottom&lt;/button&gt;
-
-&lt;hr /&gt;
-&lt;h4&gt;Triggers&lt;/h4&gt;
-&lt;p&gt;
-    &lt;button popover=&quot;I appeared on mouse enter!&quot; popover-trigger=&quot;mouseenter&quot; class=&quot;btn btn-default&quot;&gt;Mouseenter&lt;/button&gt;
-&lt;/p&gt;
-&lt;input type=&quot;text&quot; value=&quot;Click me!&quot; popover=&quot;I appeared on focus! Click away and I&#x27;ll vanish...&quot;  popover-trigger=&quot;focus&quot; class=&quot;form-control&quot;&gt;
-
-&lt;hr /&gt;
-&lt;h4&gt;Other&lt;/h4&gt;
-&lt;button Popover-animation=&quot;true&quot; popover=&quot;I fade in and out!&quot; class=&quot;btn btn-default&quot;&gt;fading&lt;/button&gt;
-&lt;button popover=&quot;I have a title!&quot; popover-title=&quot;The title.&quot; class=&quot;btn btn-default&quot;&gt;title&lt;/button&gt;
-&lt;/div&gt;
-                                            </code></pre>
-                    </div>
-                </tab>
-                <tab heading="JavaScript">
-                    <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">var PopoverDemoCtrl = function ($scope) {
-                                                $scope.dynamicPopover = &quot;Hello, World!&quot;;
-                                                $scope.dynamicPopoverTitle = &quot;Title&quot;;
-                                                };
-                                            </code></pre>
-                    </div>
-                </tab>
-            </tabset>
-        </div>
-    </div>
+    <p data-height="360" data-theme-id="5675" data-slug-hash="aempi" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/aempi/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
-<script>var PopoverDemoCtrl = function ($scope) {
-    $scope.dynamicPopover = "Hello, World!";
-    $scope.dynamicPopoverTitle = "Title";
-};
-</script>
-
                     <section id="alert">
                         <div class="page-header">
                           <h1>Alert<small>
