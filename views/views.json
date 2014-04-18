@@ -320,6 +320,11 @@
 				"nav_header": "Progressbar"
 			},
 			{
+				"source": "app/views/pagination.html",
+				"css_id": "#pagination",
+				"nav_header": "Pagination"
+			},
+			{
 				"source": "app/views/affix.html",
 				"css_id": "#affix",
 				"nav_header": "Affix"
