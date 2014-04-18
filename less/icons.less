@@ -1,6 +1,32 @@
 // File: icons.less
 
 
-.icon {
+@icon-size-default: 1em;
 
+.bticon {
+	background: transparent 0 0;
+	background-size: 100%;
+	display: inline-block;
+	height: @icon-size-default;
+	line-height: 1;
+	position: relative;
+	top: 1;
+	vertical-align: top;
+	width: @icon-size-default;
+}
+
+
+// Lead Type Icons
+// ------------------------------
+
+.bticon-buyer {
+	background-image: url(/images/icons/buyer.svg);
+}
+
+.bticon-buyer-seller {
+	background-image: url(/images/icons/buyer-seller.svg);
+}
+
+.bticon-seller {
+	background-image: url(/images/icons/seller.svg);
 }

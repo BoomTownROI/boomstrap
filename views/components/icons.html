@@ -6,7 +6,7 @@
   <h1 id="icons" class="page-header">Icons</h1>
   <p class="lead">We have a serious set of icons. Check 'em out below.</p>
   <h3>Icon Font</h3>
-  <p>We built our icon font (lovingly referred to as "ficon") with <a href="http://www.icomoon.io" target="_blank">icomoon</a>. Below you will find a few examples to demonstrate use and syntax.</p>
+  <p>We built our icon font, lovingly referred to as "ficon", using <a href="http://www.icomoon.io" target="_blank">icomoon</a>. Below you will find a few examples to demonstrate use and syntax.</p>
   <p><a href="css/fonts/ficon-docs/demo.html" target="_blank" class="btn btn-attention">view full set</a></p><br>
   <h4>Utility, Interface, Action</h4>
   <div class="pl-example pl-icons">
@@ -79,5 +79,35 @@
 	</div>
 <div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;ficon ficon-email-good&quot;</span><span class="nt">&gt;&lt;/i&gt;</span><span class="nt">&lt;/button&gt;</span>
 </code></pre></div>
+
+	<h3>Custom Icons</h3>
+	<p>Our custom icons, lovingly referred to as "bticon", are used when mulitple colors are necessary within the icon. These are icons with an <code>svg</code> background image.</p>
+	<h4>Lead Type</h4>
+  <div class="pl-example pl-icons">
+    <i class="bticon bticon-buyer"></i>
+    <i class="bticon bticon-seller"></i>
+    <i class="bticon bticon-buyer-seller"></i>
+  </div>
+<div class="pl-code"><pre><code class="html"><span class="c">&lt;!-- buyer --&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;bticon bticon-buyer&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+<span class="c">&lt;!-- seller --&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;bticon bticon-seler&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+<span class="c">&lt;!-- buyer-seller --&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;bticon bticon-buyer-seller&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+</code></pre></div>
+
+  <div class="callout callout-danger">
+    <h4>Icon Sizing</h4>
+    <p>All icons are sized via <code>font-size</code>. This allows greater control, flexibility, and consistency. By default, all icons will inherit font-size from their parent. <strong>DO NOT</strong> try to size via width and height!</p>
+  </div>
+  <div class="callout callout-info">
+    <h4>Icon Naming</h4>
+    <p>We intentionally refrained from using <code>icon</code> in our icon class naming convention as <code>icon</code> is a popular class name in third-party iconography frameworks. Should we choose to move toward a third-party solution in the future, we won't have to worry about class name collisions.</p>
+  </div>
+
+
 
 </div>
