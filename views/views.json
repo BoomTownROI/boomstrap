@@ -310,11 +310,6 @@
 				"nav_header": "Alert"
 			},
 			{
-				"source": "app/views/button.html",
-				"css_id": "#button",
-				"nav_header": "Button"
-			},
-			{
 				"source": "app/views/collapse.html",
 				"css_id": "#collapse",
 				"nav_header": "Collapse"
@@ -323,6 +318,11 @@
 				"source": "app/views/carousel.html",
 				"css_id": "#carousel",
 				"nav_header": "Carousel"
+			},
+			{
+				"source": "app/views/progressbar.html",
+				"css_id": "#progressbar",
+				"nav_header": "Progressbar"
 			},
 			{
 				"source": "app/views/affix.html",
