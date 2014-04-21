@@ -101,9 +101,6 @@ h1 {
   padding: 6px 12px;
   font-size: 15px;
 }
-.pl-docs-sidebar-header > a {
-  color: #ffffff;
-}
 .pl-docs-sidebar.affix {
   top: 10px;
   width: 263px;
