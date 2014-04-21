@@ -353,7 +353,7 @@ module.exports = function (grunt) {
         options: {
           hostname: 'localhost',
           port: 9000,
-          open: true,
+          open: false,
           base: 'docs',
           keepalive: false
         }
