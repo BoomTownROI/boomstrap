@@ -23,6 +23,15 @@
   .sash {
     .border-top-radius(@card-border-radius);
   }
+  .carousel-inner {
+  	padding-top: @card-image-padding;
+  }
+  .carousel-inner > .item {
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 }
 
 .card-container {
@@ -37,7 +46,7 @@
 
 .card-photo {
 	overflow: hidden;
-	padding-top: 72%;
+	padding-top: @card-image-padding;
 	position: relative;
 	width: auto;
 }

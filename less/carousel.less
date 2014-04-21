@@ -8,28 +8,31 @@
 
 .carousel-control {
   cursor: pointer;
-
-  // Toggles
   .ficon {
+    background-color: @gray-darker;
     display: inline-block;
     font-size: 28px;
+    margin-top: -18px;
+    padding: 4px;
     position: absolute;
     top: 50%;
     z-index: 5;
   }
-  .ficon-chevron-left {
-    left: 50%;
-    margin-left: -28px;
+  &.left {
+    background: transparent; // overwrite bootstrap's grandient
+    .ficon {
+      //left: 50%;
+      //margin-left: -14px;
+      left: 0;
+    }
   }
-  .ficon-chevron-right {
-    right: 50%;
-    margin-right: -28px;
-  }
-  .ficon {
-    margin-top: -14px;
-  }
-  .icon-next {
-    right: auto;
+  &.right {
+    background: transparent; // overwrite bootstrap's grandient
+    .ficon {
+      //right: 50%;
+      //margin-right: -14px;
+      right: 0;
+    }
   }
 
 }

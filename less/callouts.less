@@ -9,36 +9,35 @@
 		margin-top: 0;
 	}
 	p:last-child { margin-bottom: 0; }
+	// Provide class for links that match alerts
+  .callout-link {
+    font-weight: @callout-link-font-weight;
+  }
 }
 
-.callout-attention {
-  .bg-variant(lighten(@state-attention-bg,10%));
-	border-color: @brand-attention;
-	h4 { color: @brand-attention; }
-}
 
-.callout-danger {
-  .bg-variant(lighten(@state-danger-bg,5%));
-	border-color: @brand-danger;
-	h4 { color: @brand-danger; }
-}
 
-.callout-info {
-  .bg-variant(lighten(@state-info-bg,6%));
-	border-color: @brand-info;
-	h4 { color: @brand-info; }
-}
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the callout.
 
 .callout-success {
-  .bg-variant(lighten(@state-success-bg,5%));
-	border-color: @brand-success;
-	h4 { color: @brand-success; }
+  .callout-variant(@callout-success-bg; @callout-success-color; @callout-success-txt);
+}
+.callout-info {
+  .callout-variant(@callout-info-bg; @callout-info-color; @callout-info-txt);
+}
+.callout-warning {
+  .callout-variant(@callout-warning-bg; @callout-warning-color; @callout-warning-txt);
+}
+.callout-danger {
+  .callout-variant(@callout-danger-bg; @callout-danger-color; @callout-danger-txt);
+}
+.callout-attention {
+  .callout-variant(@callout-attention-bg; @callout-attention-color; @callout-attention-txt);
 }
 
-.callout-warning {
-  .bg-variant(@state-warning-bg);
-	border-color: @brand-warning;
-	h4 { color: @brand-warning; }
-}
+
+
 
 

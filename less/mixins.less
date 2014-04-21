@@ -70,15 +70,22 @@
 // Callouts
 // -------------------------
 
-
-/*.callout-variant(@background; @border; @text-color) {
+.callout-variant(@background; @color; @text-color) {
   background-color: @background;
-  border-color: @border;
+  border-color: @color;
   color: @text-color;
-  a {
-    color: darken(@text-color, 10%);
+  h1,h2,h3,h4,h5 {
+    color: darken(@color,5%);
   }
-}*/
+  hr {
+    border-top-color: @color;
+  }
+  .callout-link {
+    color: @color;
+  }
+}
+
+
 
 
 // Tab focus
