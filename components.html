@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Boomstrap Pattern Library</title>
+  <title>Components | Boomstrap Pattern Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -37,7 +37,8 @@
   
   <div class="container">
     <div class="row">
-      <div class="col-sm-9" role="main"><!-- ================================== Icons ================================== -->
+      <div class="col-sm-9" role="main">
+<!-- ================================== Icons ================================== -->
 
 
 <!-- Icons (Boomstrap Custom) -->
@@ -2471,7 +2472,11 @@
       <div class="col-md-6">
           <div class="card">
             <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (&lt;1%) <span class="sash-time">10 mins ago</span></div>
-            <img class="img-responsive" src="images/fpo-carousel-1.jpg">
+            <div class="card-photo">
+              <div class="card-photo-inner">
+                <img class="card-img" src="images/fpo-carousel-1.jpg">
+              </div>
+            </div>
             <div class="card-container card-intro">
               <div class="row row-xcondensed">
                 <div class="col-xs-7">
@@ -2558,7 +2563,11 @@
       <div class="col-md-6">
         <div class="card">
           <div class="sash sash-back">Back <span class="sash-time">2 days ago</span></div>
-          <img class="img-responsive" src="images/fpo-carousel-2.jpg">
+          <div class="card-photo">
+            <div class="card-photo-inner">
+              <img class="card-img" src="images/fpo-carousel-2.jpg">
+            </div>
+          </div>
           <div class="card-container card-intro">
             <div class="row row-xcondensed">
               <div class="col-xs-7">
@@ -2647,7 +2656,11 @@
       <div class="col-md-6">
         <div class="card">
           <div class="sash sash-new">New <span class="sash-time">2 hours ago</span></div>
-          <img class="img-responsive" src="images/fpo-carousel-3.jpg">
+          <div class="card-photo">
+            <div class="card-photo-inner">
+              <img class="card-img" src="images/fpo-carousel-3.jpg">
+            </div>
+          </div>
           <div class="card-container card-intro">
             <div class="row row-xcondensed">
               <div class="col-xs-7">
@@ -2734,7 +2747,11 @@
       <div class="col-md-6">
         <div class="card">
             <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
-            <img class="img-responsive" src="images/fpo-carousel-1.jpg">
+            <div class="card-photo">
+              <div class="card-photo-inner">
+                <img class="card-img" src="images/fpo-carousel-1.jpg">
+              </div>
+            </div>
             <div class="card-container card-intro">
               <div class="row row-xcondensed">
                 <div class="col-xs-7">
@@ -2822,7 +2839,11 @@
   </div>
 <div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;card&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-new"</span><span class="nt">&gt;</span>New <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>2 hours ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img-responsive"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;card-photo&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;card-photo-inner&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"card-img"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;card-container&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row row-xcondensed&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-7&quot;</span><span class="nt">&gt;</span>
@@ -2861,39 +2882,13 @@
   <h3>Small card</h3>
   <p>The small listing card has a min-width of 216px and a max width of 250px.</p>
   <div class="pl-example pl-cards">
-    <div class="card card-sm" style="width: 216px;">
+    <div class="card card-sm">
       <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
-      <img class="img-responsive" src="images/fpo-carousel-1.jpg">
-      <div class="card-sm-container">
-        <div class="row row-xcondensed">
-          <div class="col-xs-8">
-            <p class="card-sm-priority card-sm-street"><a href="" target="_blank">227 Palmetto Islands Trail</a></p>
-            <p class="xsmall">Mount Pleasant, SC</p>
-            <p class="xsmall">Grassy Creek</p>
-          </div>
-          <div class="col-xs-4 text-right">
-            <p class="card-sm-priority card-sm-price">$1,250,000</p>
-            <p class="xsmall">$250/SQFT</p>
-          </div>
+      <div class="card-photo">
+        <div class="card-photo-inner">
+          <img class="card-img" src="images/fpo-carousel-3.jpg">
         </div>
       </div>
-      <div class="card-sm-stats">
-        <span class="card-sm-stat">3 Beds</span>
-        <span class="card-sm-stat">3 Baths</span>
-        <span class="card-sm-stat">2800 sqft</span>
-        <span class="card-sm-stat">0.35 Acres</span>
-      </div>
-      <div class="card-sm-container">
-        <div class="btn-group btn-group-sm  btn-group-alt-two">
-          <button class="btn btn-default"><i class="ficon ficon-star"></i> 2335 Best-Fit</button>
-          <button class="btn btn-default"><i class="ficon ficon-heart"></i> 12 Favs</button>
-        </div>
-      </div>
-    </div> <!-- /card small -->
-    <br>
-    <div class="card card-sm" style="width: 250px;">
-      <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
-      <img class="img-responsive" src="images/fpo-carousel-1.jpg">
       <div class="card-sm-container">
         <div class="row row-xcondensed">
           <div class="col-xs-8">
@@ -2921,7 +2916,6 @@
       </div>
     </div> <!-- /card small -->
   </div>
-
 </div>
 
 

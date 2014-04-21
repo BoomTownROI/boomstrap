@@ -6747,6 +6747,7 @@ a.callout-warning:hover {
   display: inline-block;
   max-width: 320px;
   position: relative;
+  width: 100%;
 }
 .card p {
   margin: 0;
@@ -6772,6 +6773,28 @@ a.callout-warning:hover {
 .card-detail {
   background-color: #ffffff;
   border-top: #ececec 1px solid;
+}
+.card-photo {
+  overflow: hidden;
+  padding-top: 72%;
+  position: relative;
+  width: auto;
+}
+.card-photo-inner {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.card-img {
+  border: none;
+  height: auto;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 .card-intro {
   height: 76px;
@@ -6882,6 +6905,9 @@ a.callout-warning:hover {
   border-bottom: 4px solid;
   border-top: 0;
 }
+.carousel-control {
+  cursor: pointer;
+}
 .carousel-control .ficon {
   display: inline-block;
   font-size: 28px;
@@ -6891,13 +6917,17 @@ a.callout-warning:hover {
 }
 .carousel-control .ficon-chevron-left {
   left: 50%;
+  margin-left: -28px;
 }
 .carousel-control .ficon-chevron-right {
   right: 50%;
+  margin-right: -28px;
 }
 .carousel-control .ficon {
-  margin-top: -20px;
-  margin-left: -20px;
+  margin-top: -14px;
+}
+.carousel-control .icon-next {
+  right: auto;
 }
 .ficon {
   display: inline-block;
