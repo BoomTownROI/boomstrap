@@ -4,7 +4,8 @@
   "version": "1.0.4",
   "authors": [
     "Craig Anthony <craig@boomtownroi.com>",
-    "Mark Funk <mark@boomtownroi.com>"
+    "Mark Funk <mark@boomtownroi.com>",
+    "Sean McCambridge <sean@boomtownroi.com>"
   ],
   "main": "index.html",
   "private": false,
