@@ -190,6 +190,26 @@ module.exports = function (grunt) {
           // If value is an object
           // Handle the list as a sub_nav list
           if (!Array.isArray(src)) {
+          // create headers with their own titles
+
+            var headerTemplate = grunt.file.read('views/partials/header.html');
+            var headerSavePath = [
+              '.tmp/headers/', 
+              key,
+              '.html'
+            ].join('');
+
+
+            // Populate the navigation template
+            // Save it to a temporary directory
+            // Add it to the sources for concatenation
+            var pageHeader = Mustache.render(headerTemplate, {
+              page_title: src.header
+            });
+
+            grunt.file.write(headerSavePath, pageHeader);
+            sources.push(headerSavePath);
+
             // Retrieve the ids and Headers
             // for each item we are concatenating
             src.sources.forEach(function(view) {
@@ -202,6 +222,8 @@ module.exports = function (grunt) {
 
               sources.push(view.source);
             });
+
+            // create custom subnav per page
 
             var navTemplate = grunt.file.read('views/partials/sub_nav.tpl.html');
             var navSavePath = [
@@ -236,7 +258,6 @@ module.exports = function (grunt) {
         return {
           files: copyList,
           options: {
-            banner: grunt.file.read('views/partials/header.html'),
             footer: grunt.file.read('views/partials/footer.html')
           }
         };
@@ -332,7 +353,7 @@ module.exports = function (grunt) {
         options: {
           hostname: 'localhost',
           port: 9000,
-          open: true,
+          open: false,
           base: 'docs',
           keepalive: false
         }
