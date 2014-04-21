@@ -13,6 +13,7 @@
   display: inline-block;
   max-width: 320px;
   position: relative;
+  width: 100%;
   p {
   	margin: 0;
   	.text-overflow();
@@ -31,6 +32,32 @@
 .card-detail {
 	background-color: @white;
 	border-top: @gray-lighter 1px solid;
+}
+
+
+.card-photo {
+	overflow: hidden;
+	padding-top: 72%;
+	position: relative;
+	width: auto;
+}
+
+.card-photo-inner {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.card-img {
+	border: none;
+	height: auto;
+	margin: 0;
+	max-width: 100%;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 
 .card-intro {
