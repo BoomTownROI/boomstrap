@@ -193,9 +193,6 @@
                   tour.onDismiss();
                 }
               }
-
-              // The tour is not in a transitionary state
-              tour.dismissTour();
             }
 
             tour.currentStep = -1;
@@ -241,10 +238,6 @@
       },
       endTour: function(skipDismiss) {
         tourRef.end();
-        if (!tour.isHidden && !skipDismiss) {
-          // The tour is not in a transitionary state
-          tour.dismissTour();
-        }
       }
     };
 
