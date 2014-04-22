@@ -112,9 +112,9 @@
     };
   }]);
 })(angular.module('PatternLibrary'));
-(function(BestFitApp, Tour) {
+(function(PatternLibrary, Tour) {
   'use strict';
-  BestFitApp.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'FEATURE_INTRO_TYPE', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, FEATURE_INTRO_TYPE, AUTO_START_TOUR) {
+  PatternLibrary.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'FEATURE_INTRO_TYPE', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, FEATURE_INTRO_TYPE, AUTO_START_TOUR) {
     var tourRef;
 
     var tour = {
@@ -264,7 +264,7 @@
 
     return tour;
   }]);
-})(angular.module('BestFitApp'), window.Tour);
+})(angular.module('PatternLibrary'), window.Tour);
 /* GLOBAL JS */
 
 
