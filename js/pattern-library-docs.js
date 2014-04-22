@@ -113,7 +113,7 @@
 })(angular.module('PatternLibrary'));
 (function(PatternLibrary, Tour) {
   'use strict';
-  PatternLibrary.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'FEATURE_INTRO_TYPE', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, FEATURE_INTRO_TYPE, AUTO_START_TOUR) {
+  PatternLibrary.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, AUTO_START_TOUR) {
     var tourRef;
 
     var tour = {
