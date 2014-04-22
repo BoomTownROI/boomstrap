@@ -5,9 +5,8 @@
     'ui.bootstrap',
     'angular-chosen'
   ])
-  .constant('FEATURE_INTRO_TYPE', bestFitGlobal.featureIntroType)
   .value('AUTO_START_TOUR', {
-    value: bestFitGlobal.autoStartTour
+    value: false
   });
 })();
 
@@ -246,19 +245,6 @@
           // The tour is not in a transitionary state
           tour.dismissTour();
         }
-      },
-      dismissTour: function() {
-        AUTO_START_TOUR.value = false;
-        return $http({
-          url: '/services.asmx/DismissFeatureIntro',
-          data: {
-            feature: FEATURE_INTRO_TYPE
-          },
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json; charset=utf-8'
-          }
-        });
       }
     };
 
