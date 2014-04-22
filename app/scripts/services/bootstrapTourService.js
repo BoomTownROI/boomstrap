@@ -1,6 +1,6 @@
 (function(PatternLibrary, Tour) {
   'use strict';
-  PatternLibrary.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'FEATURE_INTRO_TYPE', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, FEATURE_INTRO_TYPE, AUTO_START_TOUR) {
+  PatternLibrary.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, AUTO_START_TOUR) {
     var tourRef;
 
     var tour = {
@@ -80,9 +80,6 @@
                   tour.onDismiss();
                 }
               }
-
-              // The tour is not in a transitionary state
-              tour.dismissTour();
             }
 
             tour.currentStep = -1;
@@ -128,23 +125,6 @@
       },
       endTour: function(skipDismiss) {
         tourRef.end();
-        if (!tour.isHidden && !skipDismiss) {
-          // The tour is not in a transitionary state
-          tour.dismissTour();
-        }
-      },
-      dismissTour: function() {
-        AUTO_START_TOUR.value = false;
-        return $http({
-          url: '/services.asmx/DismissFeatureIntro',
-          data: {
-            feature: FEATURE_INTRO_TYPE
-          },
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json; charset=utf-8'
-          }
-        });
       }
     };
 
