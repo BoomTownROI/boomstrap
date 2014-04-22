@@ -244,6 +244,20 @@
     return tour;
   }]);
 })(angular.module('PatternLibrary'), window.Tour);
+angular.module('PatternLibrary').run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('template/nav.html',
+    "<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\"><div class=\"container-fluid\"><div class=\"navbar-header\"><button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#pl-nav\"><span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span></button> <a class=\"navbar-brand\" href=\"#\">PL</a></div><div class=\"collapse navbar-collapse\" id=\"pl-nav\"><ul class=\"nav navbar-nav\"><li class=\"active\"><a href=\"#pl-colors\">Colors</a></li><li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Buttons <b class=\"caret\"></b></a><ul class=\"dropdown-menu\"><li><a href=\"#pl-button-options\">Options</a></li><li><a href=\"#pl-button-sizes\">Sizes</a></li><li><a href=\"#pl-button-active\">Active State</a></li><li><a href=\"#pl-button-disabled\">Disabled State</a></li><li><a href=\"#pl-button-tags\">Button Tags</a></li></ul></li><li><a href=\"#pl-labels\">Labels</a></li><li><a href=\"#pl-typography\">Typography</a></li></ul></div></div></nav><div class=\"container\"></div>"
+  );
+
+
+  $templateCache.put('template/popover/popover-bootstrap-tour.html',
+    "<div class=\"popover tour-best-fit-leads\"><div class=\"arrow\"></div><div class=\"popover-close\"><i data-role=\"end\" class=\"ficon ficon-cross property-close\"></i></div><h3 class=\"popover-title\">New Best-Fit Leads Tour</h3><div class=\"tour-popover popover-content\"></div><div class=\"popover-navigation\"><button class=\"btn\" data-role=\"prev\">Prev</button> <button class=\"btn btn-action\" data-role=\"next\"><span>Next</span></button></div></div>"
+  );
+
+}]);
+
 /* GLOBAL JS */
 
 
