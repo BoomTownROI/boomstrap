@@ -18,7 +18,7 @@
       border-radius: 0;
       color: @link-color;
       margin-right: -1px;
-      transition: all linear 0.25s;
+      .transition(all linear 0.25s);
       &:hover,&:focus {
         box-shadow: none;
         background-color: #fefefe;
@@ -28,22 +28,37 @@
       &,
       &:hover,
       &:focus {
-        border-top-color: @brand-attention;
+        border-top-color: @nav-tabs-active-link-hover-border-color-top;
       }
     }
     &.open > a {
-    &,
-    &:hover,
-    &:focus {
-      background-color: #fefefe;
-      border-color: @nav-tabs-border-color;
+      &,
+      &:hover,
+      &:focus {
+        background-color: #fefefe;
+        border-color: @nav-tabs-border-color;
+      }
     }
   }
-  }
-
 }
 
+.nav-tabs.nav-justified > li > a {
+  border-bottom: 1px solid @nav-tabs-justified-link-border-color;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: -1px;
+  border-radius: 0;
+}
+.nav-tabs.nav-justified > li:first-child > a {
+  margin-left: 0;
+}
 
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border-top-color: @nav-tabs-active-link-hover-border-color-top;
+  border-bottom-color: @white;
+}
 
 
 
