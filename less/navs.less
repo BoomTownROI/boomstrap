@@ -1,0 +1,54 @@
+// File: navs.less
+// Note: Extends Bootstrap navs.less
+
+
+
+
+
+
+
+// Tabs
+// -------------------------
+
+.nav-tabs {
+  margin-bottom: 10px;
+  > li {
+    // Actual tabs (as links)
+    > a {
+      border-radius: 0;
+      color: @link-color;
+      margin-right: -1px;
+      transition: all linear 0.25s;
+      &:hover,&:focus {
+        box-shadow: none;
+        background-color: #fefefe;
+      }
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        border-top-color: @brand-attention;
+      }
+    }
+    &.open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: #fefefe;
+      border-color: @nav-tabs-border-color;
+    }
+  }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -113,6 +113,11 @@
 				"nav_header": "Input groups"
 			},
 			{
+				"source": "views/components/navs.html",
+				"css_id": "#nav",
+				"nav_header": "navs"
+			},
+			{
 				"source": "views/components/pagination.html",
 				"css_id": "#pagination",
 				"nav_header": "Pagination"
@@ -183,9 +188,9 @@
 				"nav_header": "Cards"
 			},
 			{
-				"source": "views/components/pills.html",
-				"css_id": "#pills",
-				"nav_header": "Pills"
+				"source": "views/components/tags.html",
+				"css_id": "#tags",
+				"nav_header": "tags"
 			},
 			{
 				"source": "views/components/scores.html",
