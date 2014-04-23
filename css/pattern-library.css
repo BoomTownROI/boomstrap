@@ -7490,6 +7490,7 @@ fieldset[disabled] .btn-attention.active {
   border-radius: 0;
   color: #1581e2;
   margin-right: -1px;
+  -webkit-transition: all linear 0.25s;
   transition: all linear 0.25s;
 }
 .nav-tabs > li > a:hover,
@@ -7507,6 +7508,22 @@ fieldset[disabled] .btn-attention.active {
 .nav-tabs > li.open > a:focus {
   background-color: #fefefe;
   border-color: #cccccc;
+}
+.nav-tabs.nav-justified > li > a {
+  border-bottom: 1px solid #cccccc;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: -1px;
+  border-radius: 0;
+}
+.nav-tabs.nav-justified > li:first-child > a {
+  margin-left: 0;
+}
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border-top-color: #f68a24;
+  border-bottom-color: #ffffff;
 }
 .panel-title > a[data-toggle="collapse"] {
   display: block;
