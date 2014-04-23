@@ -253,7 +253,7 @@ angular.module('PatternLibrary').run(['$templateCache', function($templateCache)
 
 
   $templateCache.put('template/popover/popover-bootstrap-tour.html',
-    "<div class=\"popover tour-best-fit-leads\"><div class=\"arrow\"></div><div class=\"popover-close\"><i data-role=\"end\" class=\"ficon ficon-cross property-close\"></i></div><h3 class=\"popover-title\">New Best-Fit Leads Tour</h3><div class=\"tour-popover popover-content\"></div><div class=\"popover-navigation\"><button class=\"btn\" data-role=\"prev\">Prev</button> <button class=\"btn btn-action\" data-role=\"next\"><span>Next</span></button></div></div>"
+    "<div class=\"popover tour-best-fit-leads\"><div class=\"arrow\"></div><div class=\"popover-close\"><i data-role=\"end\" class=\"ficon ficon-cross property-close\"></i></div><h3 class=\"popover-title\">New Best-Fit Leads Tour</h3><div class=\"tour-popover popover-content\"></div><div class=\"popover-navigation\"><button class=\"btn\" data-role=\"prev\">Prev</button> <button class=\"btn btn-action\" data-role=\"next\"><span>Next</span></button> <button class=\"btn btn-default\" data-role=\"end\">Got it!</button></div></div>"
   );
 
 }]);
