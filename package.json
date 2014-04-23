@@ -27,7 +27,8 @@
     "gulp-connect": "^2.0.4",
     "gulp-jshint": "^1.5.3",
     "gulp-less": "^1.2.3",
-    "gulp-util": "^2.2.14"
+    "gulp-util": "^2.2.14",
+    "grunt-angular-templates": "^0.5.4"
   },
   "repository": {
     "type": "git",

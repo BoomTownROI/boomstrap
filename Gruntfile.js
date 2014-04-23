@@ -21,6 +21,7 @@ module.exports = function (grunt) {
   var views = grunt.file.readJSON('views/views.json');
 
   var docs = [
+    'ngtemplates',
     'concat:docs',
     'concat:html',
     'uglify:docs',
@@ -172,7 +173,8 @@ module.exports = function (grunt) {
           {
             src: [
               '<%= yeoman.app %>/app.js',
-              '<%= yeoman.app %>/scripts/**/{,*/}*.js',
+              '<%= yeoman.app %>/scripts/**/*.js',
+              '<%= yeoman.tmp %>/templates.js',
               'js/**/{,*/}*.js'
             ],
             dest: 'docs/js/pattern-library-docs.js'
@@ -322,31 +324,19 @@ module.exports = function (grunt) {
 //      }
 //    },
 
-    // ngtemplates: {
-    //   BestFitApp: {
-    //     cwd: '<%= yeoman.app %>',
-    //     src: ['template/**/*.html', '!template/bootstrap/**/*.html', 'views/**/*.html'],
-    //     dest: '<%= yeoman.tmp %>/templates.js',
-    //     options: {
-    //       usemin: '/scripts/bestfit/scripts.js', // this comes from BestFitLeads.ascx
-    //       htmlmin: {
-    //         collapseWhitespace:             true,
-    //         removeComments:                 true // Only if you don't use comment directives!
-    //       }
-    //     }
-    //   },
-    //   'ui.bootstrap': {
-    //     cwd: '<%= yeoman.app %>/template/bootstrap',
-    //     src: ['**/*.html'],
-    //     dest: '<%= yeoman.tmp %>/templatesBootstrap.js',
-    //     options: {
-    //       usemin: '/scripts/bestfit/modules.js', // this comes from BestFitLeads.ascx
-    //       url: function(url) {
-    //         return 'template/' + url;
-    //       }
-    //     }
-    //   }
-    // },
+    ngtemplates: {
+      'PatternLibrary': {
+        cwd: '<%= yeoman.app %>',
+        src: ['template/**/*.html'],
+        dest: '<%= yeoman.tmp %>/templates.js',
+        options: {
+          htmlmin: {
+            collapseWhitespace:             true,
+            removeComments:                 true // Only if you don't use comment directives!
+          }
+        }
+      }
+    },
 
     connect: {
       docs: {
