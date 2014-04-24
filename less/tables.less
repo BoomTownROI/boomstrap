@@ -1,6 +1,23 @@
 // File: tables.less
 // Note: Extends Bootstrap tables.less
 
+// Table
+// -------------------------
+
+.table {
+  background-color: @white;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        vertical-align: middle; // overwrite BS vertical-align top
+      }
+    }
+  }
+}
 
 // Sortable tables
 // -------------------------
