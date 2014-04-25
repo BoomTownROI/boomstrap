@@ -266,6 +266,11 @@
 				"source": "views/javascript/tour.html",
 				"css_id": "#tour",
 				"nav_header": "tour"
+			},
+			{
+				"source": "views/javascript/selects.html",
+				"css_id": "#selects",
+				"nav_header": "selects"
 			}
 		]
 	},
