@@ -1,4 +1,3 @@
-// Generated on 2014-02-03 using generator-angular 0.7.1
 'use strict';
 
 // # Globbing
@@ -20,19 +19,104 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var views = grunt.file.readJSON('views/views.json');
 
-  var docs = [
-    'ngtemplates',
-    'concat:docs',
-    'concat:html',
-    'uglify:docs',
-    'less:docs',
-    'copy:docs',
-    'clean:docs'
-  ];
-
   var isObject = function(obj) {
     return obj === Object(obj);
   };
+
+  var docs = [
+    'ngtemplates',
+    'concat:PatternLibrary',
+    'concat:html',
+    'ngmin',
+    'uglify',
+    'less:docs',
+    'copy:docs',
+    'clean:tmp'
+  ];
+
+  var htmlConcat = function() {
+    var copyList = [];
+
+    Object.keys(views).forEach(function(key) {
+      var src = views[key],
+          sources = [],
+          idLinks = [];
+
+      // If value is an object
+      // Handle the list as a sub_nav list
+      if (!Array.isArray(src)) {
+      // create headers with their own titles
+
+        var headerTemplate = grunt.file.read('views/partials/header.html');
+        var headerSavePath = [
+          '.tmp/headers/', 
+          key,
+          '.html'
+        ].join('');
+
+
+        // Populate the navigation template
+        // Save it to a temporary directory
+        // Add it to the sources for concatenation
+        var pageHeader = Mustache.render(headerTemplate, {
+          page_title: src.header
+        });
+
+        grunt.file.write(headerSavePath, pageHeader);
+        sources.push(headerSavePath);
+
+        // Retrieve the ids and Headers
+        // for each item we are concatenating
+        src.sources.forEach(function(view) {
+          if (view.css_id && view.nav_header) {
+            idLinks.push({
+              css_id: view.css_id,
+              nav_header: view.nav_header
+            });
+          }
+
+          sources.push(view.source);
+        });
+
+        // create custom subnav per page
+
+        var navTemplate = grunt.file.read('views/partials/sub_nav.tpl.html');
+        var navSavePath = [
+          '.tmp/footers/', 
+          key,
+          '.html'
+        ].join('');
+
+
+        // Populate the navigation template
+        // Save it to a temporary directory
+        // Add it to the sources for concatenation
+        var subNav = Mustache.render(navTemplate, {
+          header: src.header,
+          link: idLinks
+        });
+
+        grunt.file.write(navSavePath, subNav);
+        sources.push(navSavePath);
+      } else {
+        // Otherwise, handle the array
+        // as a list of strings
+        sources = views[key];
+      }
+
+      copyList.push({
+        src: sources,
+        dest: 'docs/' + key + '.html'
+      });
+    });
+
+    return {
+      files: copyList,
+      options: {
+        footer: grunt.file.read('views/partials/footer.html')
+      }
+    };
+  }
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -42,6 +126,7 @@ module.exports = function (grunt) {
       // configurable paths
       app: 'app',
       dist: 'dist',
+      docs: 'docs',
       tmp: '.tmp'
     },
 
@@ -83,7 +168,7 @@ module.exports = function (grunt) {
           compress: true
         },
         files: {
-          'dist/css/pattern-library.css':'less/pattern-library.less'
+          '<%= yeoman.dist %>/css/pattern-library.css':'less/pattern-library.less'
          }
       },
       docs: {
@@ -91,8 +176,8 @@ module.exports = function (grunt) {
           compress: false
         },
         files: {
-          'docs/css/pattern-library.css':'less/pattern-library.less',
-          'docs/css/pattern-library-docs.css':'less/pattern-library-docs.less'
+          '<%= yeoman.docs %>/css/pattern-library.css':'less/pattern-library.less',
+          '<%= yeoman.docs %>/css/pattern-library-docs.css':'less/pattern-library-docs.less'
         }
       }
     },
@@ -100,7 +185,7 @@ module.exports = function (grunt) {
     csso: {
       compress: {
         files: {
-            'dist/css/pattern-library.css': ['dist/css/pattern-library.css']
+            '<%= yeoman.dist %>/css/pattern-library.css': ['<%= yeoman.dist %>/css/pattern-library.css']
         }
       }
     },
@@ -130,22 +215,21 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
             '<%= yeoman.dist %>/*',
             '!<%= yeoman.dist %>/.git*'
           ]
         }]
       },
-      docs: {
+      tmp: {
         files: [{
           dot: true,
           src: ['.tmp']
         }]
-      },
+      }
     },
 
     concat: {
-      dist: {
+      'PatternLibrary': {
         files: [
           {
             src: [
@@ -158,179 +242,55 @@ module.exports = function (grunt) {
               'bower_components/angular-chosen/angular-chosen.js',
               'js/global.js'
             ],
-            dest: '<%= yeoman.dist %>/js/pattern-library.js'
-          }
-        ]
-
-      },
-      docs: {
-        files: [
-          {
-            src: [
-              'bower_components/jquery/dist/jquery.js',
-              'bower_components/bootstrap/dist/js/bootstrap.min.js',
-              'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
-              'bower_components/angular/angular.min.js',
-              'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-              'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-              'bower_components/angular-chosen/angular-chosen.js',
-              'js/global.js'
-            ],
-            dest: 'docs/js/pattern-library.js'
+            dest: '<%= yeoman.tmp %>/js/pattern-library.js'
           },
           {
             src: [
               '<%= yeoman.app %>/app.js',
               '<%= yeoman.app %>/scripts/**/*.js',
-              '<%= yeoman.tmp %>/templates.js',
-              'js/**/{,*/}*.js'
+              '<%= yeoman.tmp %>/templates.js'
             ],
-            dest: 'docs/js/pattern-library-docs.js'
+            dest: '<%= yeoman.tmp %>/js/pattern-library-angular.js'
           }
         ]
       },
-      html: (function() {
-        var copyList = [];
-
-        Object.keys(views).forEach(function(key) {
-          var src = views[key],
-              sources = [],
-              idLinks = [];
-
-          // If value is an object
-          // Handle the list as a sub_nav list
-          if (!Array.isArray(src)) {
-          // create headers with their own titles
-
-            var headerTemplate = grunt.file.read('views/partials/header.html');
-            var headerSavePath = [
-              '.tmp/headers/', 
-              key,
-              '.html'
-            ].join('');
-
-
-            // Populate the navigation template
-            // Save it to a temporary directory
-            // Add it to the sources for concatenation
-            var pageHeader = Mustache.render(headerTemplate, {
-              page_title: src.header
-            });
-
-            grunt.file.write(headerSavePath, pageHeader);
-            sources.push(headerSavePath);
-
-            // Retrieve the ids and Headers
-            // for each item we are concatenating
-            src.sources.forEach(function(view) {
-              if (view.css_id && view.nav_header) {
-                idLinks.push({
-                  css_id: view.css_id,
-                  nav_header: view.nav_header
-                });
-              }
-
-              sources.push(view.source);
-            });
-
-            // create custom subnav per page
-
-            var navTemplate = grunt.file.read('views/partials/sub_nav.tpl.html');
-            var navSavePath = [
-              '.tmp/footers/', 
-              key,
-              '.html'
-            ].join('');
-
-
-            // Populate the navigation template
-            // Save it to a temporary directory
-            // Add it to the sources for concatenation
-            var subNav = Mustache.render(navTemplate, {
-              header: src.header,
-              link: idLinks
-            });
-
-            grunt.file.write(navSavePath, subNav);
-            sources.push(navSavePath);
-          } else {
-            // Otherwise, handle the array
-            // as a list of strings
-            sources = views[key];
-          }
-
-          copyList.push({
-            src: sources,
-            dest: 'docs/' + key + '.html'
-          });
-        });
-
-        return {
-          files: copyList,
-          options: {
-            footer: grunt.file.read('views/partials/footer.html')
-          }
-        };
-      })(),
-      css: {
-        src: ''
-      }
+      html: htmlConcat()
     },
 
     uglify: {
       options: {
         mangle: false
       },
-      dist: {
-        src: '<%= yeoman.dist %>/js/pattern-library.js',
-        dest: '<%= yeoman.dist %>/js/pattern-library.min.js'
-      },
-      docs: {
+      'PatternLibrary': {
         files: [
           {
-            src: 'docs/js/pattern-library.js',
-            dest: 'docs/js/pattern-library.min.js'
+            src: '<%= yeoman.tmp %>/js/pattern-library.js',
+            dest: '<%= yeoman.tmp %>/js/pattern-library.min.js'
           },
           {
-            src: 'docs/js/pattern-library-docs.js',
-            dest: 'docs/js/pattern-library-docs.min.js'
+            src: '<%= yeoman.tmp %>/js/pattern-library-docs.js',
+            dest: '<%= yeoman.tmp %>/js/pattern-library-docs.min.js'
+          },
+          {
+            src: '<%= yeoman.tmp %>/js/pattern-library-angular.js',
+            dest: '<%= yeoman.tmp %>/js/pattern-library-angular.min.js',
           }
         ]
       }
     },
 
-//    // Renames files for browser caching purposes
-//    rev: {
-//      dist: {
-//        files: {
-//          src: [
-//            '<%= yeoman.dist %>/scripts/bestfit/{,*/}*.js',
-//            '<%= yeoman.dist %>/stylesheets/{,*/}*.css'
-//          ]
-//        }
-//      }
-//    },
-
-//    // Allow the use of non-minsafe AngularJS files. Automatically makes it
-//    // minsafe compatible so Uglify does not destroy the ng references
-//    ngmin: {
-//      tmp: {
-//        files: [{
-//          expand: true,
-//          cwd: '<%= yeoman.tmp %>/concat/scripts/',
-//          src: ['scripts.js'],
-//          dest: '<%= yeoman.tmp %>/concat/scripts/'
-//        }]
-//      },
-//      dist: {
-//        files: [{
-//          expand: true,
-//          cwd: '<%= yeoman.dist %>/scripts/bestfit',
-//          src: ['scripts.js'],
-//          dest: '<%= yeoman.dist %>/scripts/bestfit'
-//        }]
-//      }
-//    },
+    // Allow the use of non-minsafe AngularJS files. Automatically makes it
+    // minsafe compatible so Uglify does not destroy the ng references
+    ngmin: {
+      'PatternLibrary': {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.tmp %>/js/',
+          src: ['pattern-library-angular.js'],
+          dest: '<%= yeoman.tmp %>/js/'
+        }]
+      },
+    },
 
     ngtemplates: {
       'PatternLibrary': {
@@ -339,8 +299,8 @@ module.exports = function (grunt) {
         dest: '<%= yeoman.tmp %>/templates.js',
         options: {
           htmlmin: {
-            collapseWhitespace:             true,
-            removeComments:                 true // Only if you don't use comment directives!
+            collapseWhitespace: true,
+            removeComments:     true // Only if you don't use comment directives!
           }
         }
       }
@@ -358,54 +318,53 @@ module.exports = function (grunt) {
       }
     },
 
-
     copy: {
       dist: {
         files: [
           {src: ['icons/**'], dest: '<%= yeoman.dist %>/css/'},
-          {src: ['fonts/**'], dest: '<%= yeoman.dist %>/css/'}
+          {src: ['fonts/**'], dest: '<%= yeoman.dist %>/css/'},
+          {
+            dot: true,
+            expand: true,
+            cwd: '<%= yeoman.tmp %>/js/',
+            src: ['*.js'],
+            dest: '<%= yeoman.dist %>/js/'
+          }
         ]
       },
       docs: {
         files: [
-          {src: ['favicon.ico'], dest: 'docs/'},
-          {src: ['images/**'], dest: 'docs/'},
-          {src: ['fonts/**'], dest: 'docs/css/'},
-          {src: ['icons/**'], dest: 'docs/css/'}
+          {src: ['favicon.ico'], dest: '<%= yeoman.docs %>/'},
+          {src: ['images/**'], dest: '<%= yeoman.docs %>/'},
+          {src: ['fonts/**'], dest: '<%= yeoman.docs %>/css/'},
+          {src: ['icons/**'], dest: '<%= yeoman.docs %>/css/'},
+          {
+            dot: true,
+            expand: true,
+            cwd: '<%= yeoman.tmp %>/js/',
+            src: ['*.js'],
+            dest: '<%= yeoman.docs %>/js/'
+          }
         ]
       }
     }
-
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   lms: {
-    //     files: {
-    //       '<%= yeoman.lms %>/stylesheets/master.css': [
-    //         '<%= yeoman.lms %>/stylesheets/master.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
 
   });
 
   grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 
   grunt.registerTask('default', [
-    'concat:dist',
-    'concat:docs',
-    'uglify:dist',
-    'uglify:docs',
+    'clean:dist',
+    'ngtemplates',
+    'concat:PatternLibrary',
+    'ngmin',
+    'uglify',
     'less:dist',
     'less:docs',
     'csso:compress',
     'copy:dist',
-    'copy:docs'
+    'copy:docs',
+    'clean:tmp'
   ]);
   grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
   grunt.registerTask('website', docs.concat(['gh-pages'])); // Build github pages
