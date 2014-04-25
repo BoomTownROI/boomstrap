@@ -19,7 +19,8 @@
     "jquery": ">= 1.9.0",
     "angular-bootstrap": "~0.10.0",
     "bootstrap-tour": "~0.9.1",
-    "angular-chosen": "*"
+    "angular-chosen": "*",
+    "bootstrap-select": "~1.5.2"
   },
   "dependencies": {
     "bootstrap": "~3.1.1"
