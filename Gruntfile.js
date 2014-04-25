@@ -97,6 +97,14 @@ module.exports = function (grunt) {
       }
     },
 
+    csso: {
+      compress: {
+        files: {
+            'dist/css/pattern-library.css': ['dist/css/pattern-library.css']
+        }
+      }
+    },
+
 
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
@@ -395,6 +403,7 @@ module.exports = function (grunt) {
     'uglify:docs',
     'less:dist',
     'less:docs',
+    'csso:compress',
     'copy:dist',
     'copy:docs'
   ]);

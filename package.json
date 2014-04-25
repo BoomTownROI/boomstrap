@@ -28,7 +28,8 @@
     "gulp-jshint": "^1.5.3",
     "gulp-less": "^1.2.3",
     "gulp-util": "^2.2.14",
-    "grunt-angular-templates": "^0.5.4"
+    "grunt-angular-templates": "^0.5.4",
+    "grunt-csso": "^0.6.1"
   },
   "repository": {
     "type": "git",
