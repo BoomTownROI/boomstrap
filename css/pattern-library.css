@@ -7422,6 +7422,12 @@ fieldset[disabled] .btn-attention.active {
 .cat-eq-abbr {
   width: 42px;
 }
+/*.cat {
+  background-color: transparent;
+  border: 1px solid @brand-success;
+  color: @gray;
+}
+*/
 .loader {
   display: block;
   height: 18px;
