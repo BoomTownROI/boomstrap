@@ -8,7 +8,7 @@
     "Sean McCambridge <sean@boomtownroi.com>"
   ],
   "main": "index.html",
-  "private": false,
+  "private": true,
   "ignore": [
     "*",
     "!dist/**/*.*",
