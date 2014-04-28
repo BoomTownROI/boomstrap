@@ -1,6 +1,6 @@
-(function(PatternLibrary) {
+(function(boomstrap) {
   'use strict';
-  PatternLibrary.controller('CarouselDemoCtrl', ['$scope', function($scope) {
+  boomstrap.controller('CarouselDemoCtrl', ['$scope', function($scope) {
     $scope.myInterval = 5000;
     var slides = $scope.slides = [];
     $scope.addSlide = function() {
@@ -19,4 +19,4 @@
       text: 'Skeletor!?'
     });
   }]);
-})(angular.module('PatternLibrary'));
+})(angular.module('boomstrap'));
