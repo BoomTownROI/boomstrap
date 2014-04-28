@@ -15,6 +15,30 @@ css transitions.</p>
 <h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>btAddClassOnLoad</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btaddclassonload-page"><p>The string representation of the class to add to the image</p>
 </div></td></tr></tbody></table></div>
 <h2 id="example">Example</h2>
-<div class="example"><div class="boomstrap-directive-page boomstrap-directive-btaddclassonload-page"><p><img src="bob.jpg" bt-add-class-on-load="loaded" class="my-img"/></p>
+<div class="example"><div class="boomstrap-directive-page boomstrap-directive-btaddclassonload-page"><h4 id="example_source">Source</h4>
+<div source-edit="boomstrap" source-edit-deps="angular.js script.js" source-edit-html="index.html" source-edit-css="" source-edit-js="script.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html" ng-html-wrap-loaded="boomstrap angular.js script.js"></pre>
+<script type="text/ng-template" id="index.html">
+  
+  <style type="text/css">
+    .my-img {
+      opacity: 0;
+      transition: opacity 5.0s linear;
+    }
+    .loaded {
+      opacity: 1;
+    }
+  </style>
+  <img src="/images/fpo-he-man.jpg" bt-add-class-on-load="loaded" class="my-img"/>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js"></pre>
+<script type="text/ng-template" id="script.js">
+  </script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="boomstrap" ng-set-html="index.html" ng-eval-javascript="script.js"></div>
 </div></div>
 </div>
