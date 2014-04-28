@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 
   var docs = [
     'ngtemplates',
-    'concat:PatternLibrary',
+    'concat:Boomstrap',
     'concat:html',
     'ngmin',
     'uglify',
@@ -168,7 +168,7 @@ module.exports = function (grunt) {
           compress: true
         },
         files: {
-          '<%= yeoman.dist %>/css/pattern-library.css':'less/pattern-library.less'
+          '<%= yeoman.dist %>/css/boomstrap.css':'less/boomstrap.less'
          }
       },
       docs: {
@@ -176,8 +176,8 @@ module.exports = function (grunt) {
           compress: false
         },
         files: {
-          '<%= yeoman.docs %>/css/pattern-library.css':'less/pattern-library.less',
-          '<%= yeoman.docs %>/css/pattern-library-docs.css':'less/pattern-library-docs.less'
+          '<%= yeoman.docs %>/css/boomstrap.css':'less/boomstrap.less',
+          '<%= yeoman.docs %>/css/boomstrap-docs.css':'less/boomstrap-docs.less'
         }
       }
     },
@@ -185,7 +185,7 @@ module.exports = function (grunt) {
     csso: {
       compress: {
         files: {
-            '<%= yeoman.dist %>/css/pattern-library.css': ['<%= yeoman.dist %>/css/pattern-library.css']
+            '<%= yeoman.dist %>/css/boomstrap.css': ['<%= yeoman.dist %>/css/boomstrap.css']
         }
       }
     },
@@ -229,7 +229,7 @@ module.exports = function (grunt) {
     },
 
     concat: {
-      'PatternLibrary': {
+      'Boomstrap': {
         files: [
           {
             src: [
@@ -244,7 +244,7 @@ module.exports = function (grunt) {
               'bower_components/angular-chosen/angular-perfect-scrollbar.js',
               'js/global.js'
             ],
-            dest: '<%= yeoman.tmp %>/js/pattern-library.js'
+            dest: '<%= yeoman.tmp %>/js/boomstrap.js'
           },
           {
             src: [
@@ -252,7 +252,7 @@ module.exports = function (grunt) {
               '<%= yeoman.app %>/scripts/**/*.js',
               '<%= yeoman.tmp %>/templates.js'
             ],
-            dest: '<%= yeoman.tmp %>/js/pattern-library-angular.js'
+            dest: '<%= yeoman.tmp %>/js/boomstrap-angular.js'
           }
         ]
       },
@@ -266,16 +266,16 @@ module.exports = function (grunt) {
       'PatternLibrary': {
         files: [
           {
-            src: '<%= yeoman.tmp %>/js/pattern-library.js',
-            dest: '<%= yeoman.tmp %>/js/pattern-library.min.js'
+            src: '<%= yeoman.tmp %>/js/boomstrap.js',
+            dest: '<%= yeoman.tmp %>/js/boomstrap.min.js'
           },
           {
-            src: '<%= yeoman.tmp %>/js/pattern-library-docs.js',
-            dest: '<%= yeoman.tmp %>/js/pattern-library-docs.min.js'
+            src: '<%= yeoman.tmp %>/js/boomstrap-docs.js',
+            dest: '<%= yeoman.tmp %>/js/boomstrap-docs.min.js'
           },
           {
-            src: '<%= yeoman.tmp %>/js/pattern-library-angular.js',
-            dest: '<%= yeoman.tmp %>/js/pattern-library-angular.min.js',
+            src: '<%= yeoman.tmp %>/js/boomstrap-angular.js',
+            dest: '<%= yeoman.tmp %>/js/boomstrap-angular.min.js',
           }
         ]
       }
@@ -284,18 +284,18 @@ module.exports = function (grunt) {
     // Allow the use of non-minsafe AngularJS files. Automatically makes it
     // minsafe compatible so Uglify does not destroy the ng references
     ngmin: {
-      'PatternLibrary': {
+      'Boomstrap': {
         files: [{
           expand: true,
           cwd: '<%= yeoman.tmp %>/js/',
-          src: ['pattern-library-angular.js'],
+          src: ['boomstrap-angular.js'],
           dest: '<%= yeoman.tmp %>/js/'
         }]
       },
     },
 
     ngtemplates: {
-      'PatternLibrary': {
+      'Boomstrap': {
         cwd: '<%= yeoman.app %>',
         src: ['template/**/*.html'],
         dest: '<%= yeoman.tmp %>/templates.js',
@@ -358,7 +358,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'clean:dist',
     'ngtemplates',
-    'concat:PatternLibrary',
+    'concat:Boomstrap',
     'ngmin',
     'uglify',
     'less:dist',
