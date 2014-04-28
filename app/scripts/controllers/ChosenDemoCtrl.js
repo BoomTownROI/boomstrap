@@ -1,6 +1,6 @@
-(function(PatternLibrary) {
+(function(boomstrap) {
   'use strict';
-  PatternLibrary.controller('ChosenDemoCtrl', ['$scope', function($scope) {
+  boomstrap.controller('ChosenDemoCtrl', ['$scope', function($scope) {
     $scope.superheroes = [
       'Batman',
       'Superman',
@@ -9,4 +9,4 @@
     ];
     $scope.superhero = 'Spiderman';
   }]);
-})(angular.module('PatternLibrary'));
+})(angular.module('boomstrap'));

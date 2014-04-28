@@ -284,19 +284,19 @@
         },
       },
 
-      ngtemplates: {
-        'Boomstrap': {
-          cwd: '<%= yeoman.app %>',
-          src: ['template/**/*.html'],
-          dest: '<%= yeoman.tmp %>/templates.js',
-          options: {
-            htmlmin: {
-              collapseWhitespace: true,
-              removeComments:     true // Only if you don't use comment directives!
-            }
+    ngtemplates: {
+      'boomstrap': {
+        cwd: '<%= yeoman.app %>',
+        src: ['template/**/*.html'],
+        dest: '<%= yeoman.tmp %>/templates.js',
+        options: {
+          htmlmin: {
+            collapseWhitespace: true,
+            removeComments:     true // Only if you don't use comment directives!
           }
         }
-      },
+      }
+    },
 
       connect: {
         docs: {
@@ -368,19 +368,18 @@
 
     grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 
-    grunt.registerTask('default', [
-      'clean:dist',
-      'jshint:all',
-      'ngtemplates',
-      'concat:Boomstrap',
-      'ngmin',
-      'uglify',
-      'concurrent:less',
-      'csso:compress',
-      'concurrent:copy',
-      'clean:tmp'
-    ]);
-    grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
-    grunt.registerTask('website', docs.concat(['gh-pages'])); // Build github pages
-  };
-})();
+  grunt.registerTask('default', [
+    'clean:dist',
+    'ngtemplates',
+    'concat:Boomstrap',
+    'ngmin',
+    'uglify',
+    'less:dist',
+    'less:docs',
+    'copy:dist',
+    'copy:docs',
+    'clean:tmp'
+  ]);
+  grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
+  grunt.registerTask('website', docs.concat(['gh-pages'])); // Build github pages
+};
