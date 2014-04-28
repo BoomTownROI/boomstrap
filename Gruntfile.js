@@ -292,7 +292,7 @@ module.exports = function (grunt) {
     },
 
     ngtemplates: {
-      'Boomstrap': {
+      'boomstrap': {
         cwd: '<%= yeoman.app %>',
         src: ['template/**/*.html'],
         dest: '<%= yeoman.tmp %>/templates.js',
