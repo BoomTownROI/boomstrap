@@ -237,7 +237,7 @@ module.exports = function (grunt) {
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
               'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
               'bower_components/bootstrap-select/bootstrap-select.js',
-              'bower_components/angular/angular.min.js',
+              'bower_components/angular/angular.js',
               'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
               'vendor/chosen_v1.1.0/chosen.jquery.min.js',
               'bower_components/angular-chosen/angular-chosen.js',
@@ -261,17 +261,14 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        mangle: false
+        mangle: false,
+        sourceMap: true
       },
       'PatternLibrary': {
         files: [
           {
             src: '<%= yeoman.tmp %>/js/boomstrap.js',
             dest: '<%= yeoman.tmp %>/js/boomstrap.min.js'
-          },
-          {
-            src: '<%= yeoman.tmp %>/js/boomstrap-docs.js',
-            dest: '<%= yeoman.tmp %>/js/boomstrap-docs.min.js'
           },
           {
             src: '<%= yeoman.tmp %>/js/boomstrap-angular.js',
@@ -329,7 +326,7 @@ module.exports = function (grunt) {
             dot: true,
             expand: true,
             cwd: '<%= yeoman.tmp %>/js/',
-            src: ['*.js'],
+            src: ['*.js', '*.map'],
             dest: '<%= yeoman.dist %>/js/'
           }
         ]
@@ -344,7 +341,7 @@ module.exports = function (grunt) {
             dot: true,
             expand: true,
             cwd: '<%= yeoman.tmp %>/js/',
-            src: ['*.js'],
+            src: ['*.js', '*.map'],
             dest: '<%= yeoman.docs %>/js/'
           }
         ]
@@ -363,7 +360,6 @@ module.exports = function (grunt) {
     'uglify',
     'less:dist',
     'less:docs',
-    'csso:compress',
     'copy:dist',
     'copy:docs',
     'clean:tmp'
