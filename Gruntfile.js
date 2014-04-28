@@ -343,11 +343,12 @@
 
       ngdocs: {
         options: {
-          dest: 'docs/boomstrap/',
+          dest: 'docs/angularapi',
           scripts: ['docs/js/boomstrap.js', 'bower_components/angular-animate/angular-animate.min.js'],
           styles: ['docs/css/boomstrap.css', 'docs/css/boomstrap-docs.css'],
           html5Mode: false,
           animate: false,
+          startPage: '/boomstrap',
           image: 'docs/images/fpo-boomstrap-logo.png',
           imageLink: '/index.html',
           navTemplate: 'views/partials/ngdocs-nav.html'
@@ -368,18 +369,17 @@
 
     grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 
-  grunt.registerTask('default', [
-    'clean:dist',
-    'ngtemplates',
-    'concat:Boomstrap',
-    'ngmin',
-    'uglify',
-    'less:dist',
-    'less:docs',
-    'copy:dist',
-    'copy:docs',
-    'clean:tmp'
-  ]);
-  grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
-  grunt.registerTask('website', docs.concat(['gh-pages'])); // Build github pages
-};
+    grunt.registerTask('default', [
+      'clean:dist',
+      'ngtemplates',
+      'concat:Boomstrap',
+      'ngmin',
+      'uglify',
+      'concurrent:less',
+      'concurrent:copy',
+      'clean:tmp'
+    ]);
+    grunt.registerTask('server', docs.concat(['connect', 'watch'])); // Run server
+    grunt.registerTask('website', docs.concat(['gh-pages'])); // Build github pages
+  };
+})();

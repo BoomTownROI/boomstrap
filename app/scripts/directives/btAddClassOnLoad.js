@@ -3,7 +3,7 @@
 
   /**
    * @ngdoc directive
-   * @name  btAddClassOnLoad
+   * @name  boomstrap.directive:btAddClassOnLoad
    * @restrict A
    * 
    * @param {string} btAddClassOnLoad The string representation of the class to add to the image

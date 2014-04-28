@@ -131,7 +131,7 @@
    * @name  btAddClassOnLoad
    * @restrict A
    * 
-   * @param {string} btAddClassOnLoad The string representation of the class to load
+   * @param {string} btAddClassOnLoad The string representation of the class to add to the image
    *
    * @description
    * The `btAddClassOnLoad` directive adds a class to an img tag

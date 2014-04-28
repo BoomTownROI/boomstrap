@@ -3,3 +3,4 @@ docs/
 .grunt/
 .DS_Store
 .tmp
+.orig
