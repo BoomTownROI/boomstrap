@@ -154,7 +154,7 @@
               opacity: 1;
             }
           </style>
-          <img src="/images/fpo-he-man.jpg" bt-add-class-on-load="loaded" class="my-img"/>
+          <img src="images/fpo-he-man.jpg" bt-add-class-on-load="loaded" class="my-img"/>
         </doc:source>
       </doc:example>
    * 
@@ -173,6 +173,34 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btAffix
+   * @requires  $window
+   * @restrict A
+   *
+   * @description The `btAffix` element allows a user to affix an element at a given scroll point.
+   * Another element with the same height and width will take the place of the element to ensure
+   * that the page layout does not break upon affixing.
+   *
+   * @param {Number} offset Number of pixels to add to scroll before element is affixed
+   * @param {bool} scroll Indicates if the affixed element is allowed to scroll
+   * @param {bool} fullHeight Indicates that the affixed element spans the entire height of the page
+   * @param {bool} pinnedHeader Indicates that the affixed element spans the entire width of the page and is affixed to the top left
+   *
+   * @example
+     <doc:example module="boomstrap">
+        <doc:source>
+          <div bt-affix offset="500">
+            <img src="images/fpo-he-man.jpg"/>
+          </div>
+            <img src="images/fpo-he-man.jpg"/>
+            <img src="images/fpo-he-man.jpg"/>
+            <img src="images/fpo-he-man.jpg"/>
+            <img src="images/fpo-he-man.jpg"/>
+        </doc:source>
+      </doc:example>
+   */
   Boomstrap.directive('btAffix', function ($window) {
     return {
       template: '<div class="bt-affix" ng-transclude></div>',
@@ -184,12 +212,6 @@
             'top': $element.css('top'),
             'overflow-y': $element.css('overflow-y')
           };
-        // jQuery 1.9 feature and above, not using
-        //$element.css(['position', 'top', 'overflow-y']);
-        // Not attaching these to scope makes the last fromTop/isAffixed
-        //   declared shared across all directives
-        // Referencing $element directly.  Revisit if different affixes on the page become an issue
-        //scope.fromTop      = $element.offset().top;
         scope.isAffixed = false;
         defaults.width = 'auto';
         scope.offset = 0;
