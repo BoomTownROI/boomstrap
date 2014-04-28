@@ -1,7 +1,7 @@
-(function(PatternLibrary) {
+(function(boomstrap) {
   'use strict';
-  PatternLibrary.controller('PopoverDemoCtrl', ['$scope', function PopoverDemoCtrl($scope) {
+  boomstrap.controller('PopoverDemoCtrl', ['$scope', function PopoverDemoCtrl($scope) {
     $scope.dynamicPopover = 'Hello, World!';
     $scope.dynamicPopoverTitle = 'Title';
   }]);
-})(angular.module('PatternLibrary'));
+})(angular.module('boomstrap'));
