@@ -5,9 +5,9 @@
     'angular-chosen'
   ]).value('AUTO_START_TOUR', { value: false });
 }());
-(function (boomstrap) {
+(function (PatternLibrary) {
   'use strict';
-  boomstrap.controller('AlertDemoCtrl', [
+  PatternLibrary.controller('AlertDemoCtrl', [
     '$scope',
     function AlertDemoCtrl($scope) {
       $scope.alerts = [
@@ -28,10 +28,10 @@
       };
     }
   ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
+}(angular.module('PatternLibrary')));
+(function (PatternLibrary) {
   'use strict';
-  boomstrap.controller('CarouselDemoCtrl', [
+  PatternLibrary.controller('CarouselDemoCtrl', [
     '$scope',
     function ($scope) {
       $scope.myInterval = 5000;
@@ -62,10 +62,10 @@
       });
     }
   ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
+}(angular.module('PatternLibrary')));
+(function (PatternLibrary) {
   'use strict';
-  boomstrap.controller('ChosenDemoCtrl', [
+  PatternLibrary.controller('ChosenDemoCtrl', [
     '$scope',
     function ($scope) {
       $scope.superheroes = [
@@ -77,20 +77,20 @@
       $scope.superhero = 'Spiderman';
     }
   ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
+}(angular.module('PatternLibrary')));
+(function (PatternLibrary) {
   'use strict';
-  boomstrap.controller('PopoverDemoCtrl', [
+  PatternLibrary.controller('PopoverDemoCtrl', [
     '$scope',
     function PopoverDemoCtrl($scope) {
       $scope.dynamicPopover = 'Hello, World!';
       $scope.dynamicPopoverTitle = 'Title';
     }
   ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
+}(angular.module('PatternLibrary')));
+(function (PatternLibrary) {
   'use strict';
-  boomstrap.controller('TabsDemoCtrl', [
+  PatternLibrary.controller('TabsDemoCtrl', [
     '$scope',
     function TabsDemoCtrl($scope) {
       $scope.tabs = [
@@ -112,10 +112,10 @@
       $scope.navType = 'pills';
     }
   ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
+}(angular.module('PatternLibrary')));
+(function (PatternLibrary) {
   'use strict';
-  boomstrap.controller('TooltipDemoCtrl', [
+  PatternLibrary.controller('TooltipDemoCtrl', [
     '$scope',
     function TooltipDemoCtrl($scope) {
       $scope.dynamicTooltip = 'Hello, World!';
@@ -123,7 +123,7 @@
       $scope.htmlTooltip = 'I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!';
     }
   ]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (Boomstrap) {
   'use strict';
   Boomstrap.directive('btAddClassOnLoad', function () {
