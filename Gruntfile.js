@@ -360,7 +360,6 @@ module.exports = function (grunt) {
     'uglify',
     'less:dist',
     'less:docs',
-    'csso:compress',
     'copy:dist',
     'copy:docs',
     'clean:tmp'
