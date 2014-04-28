@@ -27,6 +27,7 @@
       'concurrent:stylescripts',
       'copy:docs',
       'ngdocs',
+      'copy:ngdocs',
       'clean:tmp'
     ];
 
@@ -338,6 +339,12 @@
               dest: '<%= yeoman.docs %>/js/'
             }
           ]
+        },
+        ngdocs: {
+          files: [{
+            src: ['images/**'],
+            dest: '<%= yeoman.docs %>/angularapi/'
+          }]
         }
       },
 
