@@ -6,10 +6,10 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-  <link rel="stylesheet" href="css/pattern-library.css">
-  <link rel="stylesheet" href="css/pattern-library-docs.css">
-  <script src="js/pattern-library.min.js"></script>
-  <script src="js/pattern-library-docs.min.js"></script>
+  <link rel="stylesheet" href="css/boomstrap.css">
+  <link rel="stylesheet" href="css/boomstrap-docs.css">
+  <script src="js/boomstrap.min.js"></script>
+  <script src="js/boomstrap-docs.min.js"></script>
   
 </head>
 <body class="pl-body">
@@ -2153,8 +2153,6 @@ doctour.addSteps([
 doctour.init();
 </code></pre></div>
 
-  <div style="height: 200px;"></div>
-
 
   <script type="text/javascript">
 		$(document).ready(function () {
@@ -2216,6 +2214,20 @@ doctour.init();
 	</script>
 
 </div>
+<!-- ================================== Selects ================================== -->
+
+<!-- Selects (Boomstrap Custom) -->
+<div class="pl-docs-section">
+  <h1 id="selects" class="page-header">Selects <small>bootstrap-select.js</small></h1>
+  <p class="lead">Custom select using button dropdown.</p>
+  <div class="pl-example">
+    <select class="selectpicker">
+	    <option>Mustard</option>
+	    <option>Ketchup</option>
+	    <option>Relish</option>
+	  </select>
+  </div>
+</div>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
@@ -2260,6 +2272,9 @@ doctour.init();
                 <li>
                     <a href="#tour">tour</a>
                 </li>
+                <li>
+                    <a href="#selects">selects</a>
+                </li>
             </ul>
             <a href="#top">back to top</a>
         </div>
@@ -2279,7 +2294,7 @@ doctour.init();
 				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
 			}
 			$("[data-toggle=popover]").popover();
-
+			$('.selectpicker').selectpicker();
     });
 
 
