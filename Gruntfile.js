@@ -344,7 +344,11 @@
       ngdocs: {
         options: {
           dest: 'docs/angularapi',
-          scripts: ['docs/js/boomstrap.js', 'bower_components/angular-animate/angular-animate.min.js'],
+          scripts: [
+            'docs/js/boomstrap.js',
+            'docs/js/boomstrap-angular.js',
+            'bower_components/angular-animate/angular-animate.min.js'
+          ],
           styles: ['docs/css/boomstrap.css', 'docs/css/boomstrap-docs.css'],
           html5Mode: false,
           animate: false,

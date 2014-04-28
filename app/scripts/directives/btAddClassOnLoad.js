@@ -16,7 +16,22 @@
    * @element img
    *
    * @example
-      <img src="bob.jpg" bt-add-class-on-load="loaded" class="my-img"/>
+      <doc:example module="boomstrap">
+        <doc:source>
+          <script>
+          </script>
+          <style type="text/css">
+            .my-img {
+              opacity: 0;
+              transition: opacity 5.0s linear;
+            }
+            .loaded {
+              opacity: 1;
+            }
+          </style>
+          <img src="/images/fpo-he-man.jpg" bt-add-class-on-load="loaded" class="my-img"/>
+        </doc:source>
+      </doc:example>
    * 
    */
   Boomstrap.directive('btAddClassOnLoad', function () {
