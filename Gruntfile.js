@@ -27,6 +27,7 @@
       'concurrent:stylescripts',
       'copy:docs',
       'ngdocs',
+      'copy:ngdocs',
       'clean:tmp'
     ];
 
@@ -284,19 +285,19 @@
         },
       },
 
-    ngtemplates: {
-      'boomstrap': {
-        cwd: '<%= yeoman.app %>',
-        src: ['template/**/*.html'],
-        dest: '<%= yeoman.tmp %>/templates.js',
-        options: {
-          htmlmin: {
-            collapseWhitespace: true,
-            removeComments:     true // Only if you don't use comment directives!
+      ngtemplates: {
+        'boomstrap': {
+          cwd: '<%= yeoman.app %>',
+          src: ['template/**/*.html'],
+          dest: '<%= yeoman.tmp %>/templates.js',
+          options: {
+            htmlmin: {
+              collapseWhitespace: true,
+              removeComments:     true // Only if you don't use comment directives!
+            }
           }
         }
-      }
-    },
+      },
 
       connect: {
         docs: {
@@ -338,22 +339,36 @@
               dest: '<%= yeoman.docs %>/js/'
             }
           ]
+        },
+        ngdocs: {
+          files: [{
+            src: ['images/**'],
+            dest: '<%= yeoman.docs %>/angularapi/'
+          }]
         }
       },
 
       ngdocs: {
         options: {
           dest: 'docs/angularapi',
-          scripts: ['docs/js/boomstrap.js', 'bower_components/angular-animate/angular-animate.min.js'],
-          styles: ['docs/css/boomstrap.css', 'docs/css/boomstrap-docs.css'],
+          scripts: [
+            'docs/js/boomstrap.js',
+            'docs/js/boomstrap-angular.js',
+            'bower_components/angular-animate/angular-animate.min.js'
+          ],
+          styles: [
+            '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
+            'docs/css/boomstrap.css',
+            'docs/css/boomstrap-docs.css'
+          ],
           html5Mode: false,
           animate: false,
-          startPage: '/boomstrap',
+          startPage: '/ngboomstrap',
           image: 'docs/images/fpo-boomstrap-logo.png',
           imageLink: '/index.html',
           navTemplate: 'views/partials/ngdocs-nav.html'
         },
-        boomstrap: {
+        ngboomstrap: {
           src: ['docs/js/boomstrap-angular.js'],
           title: 'boomstrap'
         }
