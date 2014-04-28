@@ -7,33 +7,31 @@
                           <div class="row">
                             <div class="col-md-6 show-grid">
                                 <div ng-controller="CarouselDemoCtrl">
-  <div style="height: 305px">
-    <carousel interval="myInterval">
-      <slide ng-repeat="slide in slides" active="slide.active">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-        <div class="carousel-caption">
-          <h4>Slide {{$index}}</h4>
-          <p>{{slide.text}}</p>
-        </div>
-      </slide>
-    </carousel>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <a class="btn btn-info" ng-click="addSlide()">Add Slide</a>
-    </div>
-    <div class="col-md-6">
-      Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
-      <br />Enter a negative number to stop the interval.
-    </div>
-  </div>
-</div>
-
+                                <div style="height: 305px">
+                                  <carousel interval="myInterval">
+                                    <slide ng-repeat="slide in slides" active="slide.active">
+                                      <img ng-src="{{slide.image}}" style="margin:auto;">
+                                      <div class="carousel-caption">
+                                        <h4>Slide {{$index}}</h4>
+                                        <p>{{slide.text}}</p>
+                                      </div>
+                                    </slide>
+                                  </carousel>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <a class="btn btn-info" ng-click="addSlide()">Add Slide</a>
+                                  </div>
+                                  <div class="col-md-6">
+                                    Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
+                                    <br />Enter a negative number to stop the interval.
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                             <div class="col-md-6">
                                 <p>Carousel creates a carousel similar to bootstrap's image carousel.</p>
-
-<p>Use a <code>&lt;carousel&gt;</code> element with <code>&lt;slide&gt;</code> elements inside it.  It will automatically cycle through the slides at a given rate, and a current-index variable will be kept in sync with the currently visible slide.</p>
+                                <p>Use a <code>&lt;carousel&gt;</code> element with <code>&lt;slide&gt;</code> elements inside it.  It will automatically cycle through the slides at a given rate, and a current-index variable will be kept in sync with the currently visible slide.</p>
                             </div>
                         </div>
                         <hr>
