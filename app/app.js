@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('PatternLibrary', [
+  angular.module('boomstrap', [
     'ui.bootstrap',
     'angular-chosen'
   ])

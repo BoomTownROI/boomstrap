@@ -1,6 +1,6 @@
 (function(Boomstrap) {
   'use strict';
-  
+
   Boomstrap.directive('btFormatMoney', function($filter) {
     return {
       restrict: 'A',
@@ -47,4 +47,4 @@
       }
     };
   });
-})(angular.module('Boomstrap'));
+})(angular.module('boomstrap'));

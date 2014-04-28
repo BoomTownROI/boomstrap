@@ -9,4 +9,4 @@
       }
     };
   });
-})(angular.module('Boomstrap'));
+})(angular.module('boomstrap'));

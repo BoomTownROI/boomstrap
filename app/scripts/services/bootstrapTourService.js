@@ -1,6 +1,6 @@
-(function(PatternLibrary, Tour) {
+(function(Boomstrap, Tour) {
   'use strict';
-  PatternLibrary.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, AUTO_START_TOUR) {
+  Boomstrap.service('bootstrapTourService', function($templateCache, $rootScope, $http, AUTO_START_TOUR) {
     var tourRef;
 
     var tour = {
@@ -129,5 +129,5 @@
     };
 
     return tour;
-  }]);
-})(angular.module('PatternLibrary'), window.Tour);
+  });
+})(angular.module('boomstrap'), window.Tour);
