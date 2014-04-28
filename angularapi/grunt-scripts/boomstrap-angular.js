@@ -154,7 +154,7 @@
               opacity: 1;
             }
           </style>
-          <img src="/images/fpo-he-man.jpg" bt-add-class-on-load="loaded" class="my-img"/>
+          <img src="images/fpo-he-man.jpg" bt-add-class-on-load="loaded" class="my-img"/>
         </doc:source>
       </doc:example>
    * 

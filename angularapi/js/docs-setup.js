@@ -10,7 +10,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "boomstrap",
       "shortDescription": "The btAddClassOnLoad directive adds a class to an img tag",
-      "keywords": "add adds boomstrap bt-add-class-on-load btaddclassonload class css directive event fires image img jpg linear load loaded module my-img ngboomstrap opacity representation src string tag text transition transitions type"
+      "keywords": "add adds boomstrap bt-add-class-on-load btaddclassonload class css directive event fires image images img jpg linear load loaded module my-img ngboomstrap opacity representation src string tag text transition transitions type"
     }
   ],
   "apis": {
