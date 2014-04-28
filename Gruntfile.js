@@ -284,19 +284,19 @@
         },
       },
 
-    ngtemplates: {
-      'boomstrap': {
-        cwd: '<%= yeoman.app %>',
-        src: ['template/**/*.html'],
-        dest: '<%= yeoman.tmp %>/templates.js',
-        options: {
-          htmlmin: {
-            collapseWhitespace: true,
-            removeComments:     true // Only if you don't use comment directives!
+      ngtemplates: {
+        'boomstrap': {
+          cwd: '<%= yeoman.app %>',
+          src: ['template/**/*.html'],
+          dest: '<%= yeoman.tmp %>/templates.js',
+          options: {
+            htmlmin: {
+              collapseWhitespace: true,
+              removeComments:     true // Only if you don't use comment directives!
+            }
           }
         }
-      }
-    },
+      },
 
       connect: {
         docs: {
@@ -348,12 +348,12 @@
           styles: ['docs/css/boomstrap.css', 'docs/css/boomstrap-docs.css'],
           html5Mode: false,
           animate: false,
-          startPage: '/boomstrap',
+          startPage: '/ngboomstrap',
           image: 'docs/images/fpo-boomstrap-logo.png',
           imageLink: '/index.html',
           navTemplate: 'views/partials/ngdocs-nav.html'
         },
-        boomstrap: {
+        ngboomstrap: {
           src: ['docs/js/boomstrap-angular.js'],
           title: 'boomstrap'
         }
