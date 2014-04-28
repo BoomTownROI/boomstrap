@@ -8094,3 +8094,6 @@ a.text-attention:hover {
 h1 {
   letter-spacing: -1px;
 }
+.pointer {
+  cursor: pointer;
+}
