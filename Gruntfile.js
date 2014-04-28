@@ -356,7 +356,11 @@
             'docs/js/boomstrap-angular.js',
             'bower_components/angular-animate/angular-animate.min.js'
           ],
-          styles: ['docs/css/boomstrap.css', 'docs/css/boomstrap-docs.css'],
+          styles: [
+            '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
+            'docs/css/boomstrap.css',
+            'docs/css/boomstrap-docs.css'
+          ],
           html5Mode: false,
           animate: false,
           startPage: '/ngboomstrap',
