@@ -7,42 +7,67 @@
 
 .label {
 	font-weight: normal;
+  padding: 0.1em 0.5em 0.2em;
 }
 
 .label-attention{
   .label-variant(@label-attention-bg);
 }
 
-// Lead Category Labels
+
+// Lead Category
 // -------------------------
 
-
-.label-archive {
-	.label-variant(@label-archive-bg);
-}
-.label-closed {
-	.label-variant(@label-closed-bg);
-}
-.label-hot {
-  .label-variant(@label-hot-bg);
-}
-.label-new {
-  .label-variant(@label-new-bg);
-}
-.label-nurture {
-  .label-variant(@label-nurture-bg);
-}
-.label-pending {
-  .label-variant(@label-pending-bg);
-}
-.label-qualify {
-  .label-variant(@label-qualify-bg);
-}
-.label-trash {
-  .label-variant(@label-trash-bg);
-}
-.label-watch {
-  .label-variant(@label-watch-bg);
+.cat {
+  &:extend(.label);
+  text-transform: lowercase;
 }
 
+
+// Lead Category Options
+// -------------------------
+
+.cat-archive {
+  //.label-variant(@label-archive-bg);
+  .category-variant(@label-archive-bg);
+}
+.cat-closed {
+  .category-variant(@label-closed-bg);
+}
+.cat-hot {
+  .category-variant(@label-hot-bg);
+}
+.cat-new {
+  .category-variant(@label-new-bg);
+}
+.cat-nurture {
+  .category-variant(@label-nurture-bg);
+}
+.cat-pending {
+  .category-variant(@label-pending-bg);
+}
+.cat-qualify {
+  .category-variant(@label-qualify-bg);
+}
+.cat-trash {
+  .category-variant(@label-trash-bg);
+}
+.cat-watch {
+  .category-variant(@label-watch-bg);
+}
+
+// Lead Category Equal Width
+// -------------------------
+
+.cat-eq,.cat-eq-abbr {
+  display: inline-block;
+  line-height: 1.3;
+  padding-left: 0;
+  padding-right: 0;
+  width: 56px;
+}
+
+.cat-eq-abbr {
+  width: 42px;
+}
 

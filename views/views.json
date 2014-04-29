@@ -125,7 +125,7 @@
 			{
 				"source": "views/components/labels.html",
 				"css_id": "#labels",
-				"nav_header": "Labels"
+				"nav_header": "Labels and Lead Cats"
 			},
 			{
 				"source": "views/components/badges.html",
