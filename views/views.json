@@ -335,19 +335,9 @@
 				"nav_header": "Pagination"
 			},
 			{
-				"source": "app/views/affix.html",
-				"css_id": "#affix",
-				"nav_header": "Affix"
-			},
-			{
 				"source": "app/views/tour.html",
 				"css_id": "#tour",
 				"nav_header": "Tour"
-			},
-			{
-				"source": "app/views/table.html",
-				"css_id": "#table",
-				"nav_header": "Table"
 			},
 			{
 				"source": "app/views/chosen.html",
