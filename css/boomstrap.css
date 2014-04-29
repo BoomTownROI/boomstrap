@@ -7591,7 +7591,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .label,
 .cat {
-  font-weight: normal;
+  font-weight: 600;
   padding: 0.1em 0.5em 0.2em;
 }
 .label-attention {
