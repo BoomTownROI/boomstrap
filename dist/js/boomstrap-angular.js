@@ -331,6 +331,49 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name boomstrap.directive:btAutoSubmit
+   * @restrict A
+   *
+   * @description `btAutoSubmit` allows you to auto submit a form whenever the model of a form-field changes.
+   * This directive requires the `ngForm` directive to also be present on the element.
+   * 
+   *
+   * @requires $timeout
+   * @requires ngForm
+   * @param {expression} ngSubmit Fires upon timeout completion
+   * @param {expression} btAutoSubmit If the `expression` is truthy then the `ngSubmit` expression will fire upon timeout
+   * @param {Number} submitTimeout Number of milliseconds to wait after a model change before firing the `ngSubmit`
+   * @param {expression} willLoad This directive will set the value supplied here to true when it has scheduled the timeout, but not fired it
+   *
+   * @example
+     <doc:example module="boomstrap">
+        <doc:source>
+          <script>
+            angular.module('boomstrap')
+              .controller('subTest', function($scope) {
+                $scope.willLoad = {
+                  value: false
+                };
+                $scope.inputValue = 'Type here!';
+                $scope.submit = function() {
+                  $scope.delayedValue = $scope.inputValue;
+                }
+              });
+          </script>
+          <div ng-app="autoSubmitTest">
+            <div ng-controller="subTest">
+              <ng-form ng-submit="submit()" bt-auto-submit="true" submit-timeout="3000" will-load="willLoad">
+                <input name="myName" ng-model="inputValue">
+              </ng-form>
+              <label ng-show="willLoad.value">I'm thinking...</label>
+              <label ng-bind="delayedValue"></label>
+            </div>
+          </div>
+        </doc:source>
+      </doc:example> 
+   */
   Boomstrap.directive('btAutoSubmit', function ($timeout) {
     return {
       require: 'form',
@@ -370,17 +413,7 @@
           } else {
             iCtrl.$setPristine();
           }
-        });  // If we've updated our focus to a new field, cancel the timeout
-             // scope.$on('formField:inFocus', function() {
-             //   scope.$apply(function() {
-             //     // Remove willLoad state
-             //     if (loadingService.willLoad.value) loadingService.willLoad.value = false;
-             //     // Cancel any existing form submissions
-             //     $timeout.cancel(submitTimeout);
-             //     // Set pristine again so the next field that dirties will re-trigger timeout
-             //     iCtrl.$setPristine();
-             //   });
-             // });
+        });
       }
     };
   });
@@ -1090,6 +1123,7 @@ angular.module('boomstrap').run([
   '$templateCache',
   function ($templateCache) {
     'use strict';
+    $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel"><ol class="carousel-indicators" ng-show="slides().length > 1"><li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li></ol><div class="carousel-inner" ng-transclude=""></div><a class="left carousel-control" ng-click="prev()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-left"></span></a> <a class="right carousel-control" ng-click="next()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-right"></span></a></div>');
     $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">PL</a></div><div class="collapse navbar-collapse" id="pl-nav"><ul class="nav navbar-nav"><li class="active"><a href="#pl-colors">Colors</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#pl-button-options">Options</a></li><li><a href="#pl-button-sizes">Sizes</a></li><li><a href="#pl-button-active">Active State</a></li><li><a href="#pl-button-disabled">Disabled State</a></li><li><a href="#pl-button-tags">Button Tags</a></li></ul></li><li><a href="#pl-labels">Labels</a></li><li><a href="#pl-typography">Typography</a></li></ul></div></div></nav><div class="container"></div>');
     $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads"><div class="arrow"></div><div class="popover-close"><i data-role="end" class="ficon ficon-cross property-close"></i></div><h3 class="popover-title">New Best-Fit Leads Tour</h3><div class="tour-popover popover-content"></div><div class="popover-navigation"><button class="btn btn-default" data-role="prev">Prev</button> <button class="btn btn-default" data-role="next"><span>Next</span></button></div></div>');
   }
