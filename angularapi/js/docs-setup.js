@@ -29,6 +29,15 @@ NG_DOCS={
       "moduleName": "boomstrap",
       "shortDescription": "btAutoSubmit allows you to auto submit a form whenever the model of a form-field changes.",
       "keywords": "$scope $timeout allows angular auto autosubmittest boomstrap bt-auto-submit btautosubmit change changes completion controller delayedvalue directive element expression false fire fired fires firing form form-field function inputvalue milliseconds model module myname ng-app ng-bind ng-controller ng-model ng-show ng-submit ngboomstrap ngform ngsubmit number requires scheduled set submit submit-timeout submittimeout subtest supplied thinking timeout true truthy type wait will-load willload"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btScore",
+      "shortName": "btScore",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btScore directive represents a score component from Boomstrap.  It will keep the color",
+      "keywords": "average based boomstrap btscore classes color component default directive element excellent extrasmall good high include large low medium module myscore ng-init ng-model ngboomstrap reflected represents score size sizes small tags valid"
     }
   ],
   "apis": {
