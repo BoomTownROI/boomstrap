@@ -7603,6 +7603,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .cat {
   display: inline-block;
+  line-height: 1.1;
   text-transform: lowercase;
 }
 .cat-archive {
@@ -7688,8 +7689,6 @@ fieldset[disabled] .btn-attention.active {
 }
 .cat-eq,
 .cat-eq-abbr {
-  display: inline-block;
-  line-height: 1.1;
   padding-left: 0;
   padding-right: 0;
   width: 56px;
