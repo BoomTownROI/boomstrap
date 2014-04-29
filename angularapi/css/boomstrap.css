@@ -7602,6 +7602,7 @@ fieldset[disabled] .btn-attention.active {
   background-color: #de7009;
 }
 .cat {
+  display: inline-block;
   text-transform: lowercase;
 }
 .cat-archive {
@@ -7688,7 +7689,7 @@ fieldset[disabled] .btn-attention.active {
 .cat-eq,
 .cat-eq-abbr {
   display: inline-block;
-  line-height: 1.3;
+  line-height: 1.1;
   padding-left: 0;
   padding-right: 0;
   width: 56px;
