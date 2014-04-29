@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('boomstrap', [
+  angular.module('PatternLibrary', [
     'ui.bootstrap',
     'angular-chosen'
   ])
@@ -27,7 +27,7 @@
     };
 
   }]);
-})(angular.module('boomstrap'));
+})(angular.module('PatternLibrary'));
 
 (function(PatternLibrary) {
   'use strict';
@@ -50,7 +50,7 @@
       text: 'Skeletor!?'
     });
   }]);
-})(angular.module('boomstrap'));
+})(angular.module('PatternLibrary'));
 (function(PatternLibrary) {
   'use strict';
   PatternLibrary.controller('ChosenDemoCtrl', ['$scope', function($scope) {
@@ -62,14 +62,14 @@
     ];
     $scope.superhero = 'Spiderman';
   }]);
-})(angular.module('boomstrap'));
+})(angular.module('PatternLibrary'));
 (function(PatternLibrary) {
   'use strict';
   PatternLibrary.controller('PopoverDemoCtrl', ['$scope', function PopoverDemoCtrl($scope) {
     $scope.dynamicPopover = 'Hello, World!';
     $scope.dynamicPopoverTitle = 'Title';
   }]);
-})(angular.module('boomstrap'));
+})(angular.module('PatternLibrary'));
 (function(PatternLibrary) {
   'use strict';
   PatternLibrary.controller('TabsDemoCtrl', ['$scope', function TabsDemoCtrl($scope) {
@@ -86,7 +86,7 @@
 
     $scope.navType = 'pills';
   }]);
-})(angular.module('boomstrap'));
+})(angular.module('PatternLibrary'));
 
 (function(PatternLibrary) {
   'use strict';
@@ -95,7 +95,7 @@
     $scope.dynamicTooltipText = 'dynamic';
     $scope.htmlTooltip = 'I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!';
   }]);
-})(angular.module('boomstrap'));
+})(angular.module('PatternLibrary'));
 
 (function(app) {
   'use strict';
@@ -110,7 +110,7 @@
       }
     };
   }]);
-})(angular.module('boomstrap'));
+})(angular.module('PatternLibrary'));
 (function(PatternLibrary, Tour) {
   'use strict';
   PatternLibrary.service('bootstrapTourService', ['$templateCache', '$rootScope', '$http', 'AUTO_START_TOUR', function($templateCache, $rootScope, $http, AUTO_START_TOUR) {
@@ -243,8 +243,8 @@
 
     return tour;
   }]);
-})(angular.module('boomstrap'), window.Tour);
-angular.module('boomstrap').run(['$templateCache', function($templateCache) {
+})(angular.module('PatternLibrary'), window.Tour);
+angular.module('PatternLibrary').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('template/nav.html',

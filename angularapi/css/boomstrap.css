@@ -6972,6 +6972,12 @@ fieldset[disabled] .btn-attention.active {
   color: #f68a24;
   background-color: #ffffff;
 }
+.btn-lg-condensed {
+  padding: 4px 8px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 3px;
+}
 .callout {
   margin: 20px 0;
   padding: 20px;
@@ -7586,6 +7592,7 @@ fieldset[disabled] .btn-attention.active {
 .label,
 .cat {
   font-weight: normal;
+  padding: 0.1em 0.5em 0.2em;
 }
 .label-attention {
   background-color: #f68a24;
@@ -7594,131 +7601,89 @@ fieldset[disabled] .btn-attention.active {
 .label-attention[href]:focus {
   background-color: #de7009;
 }
-.label-archive {
-  background-color: #cccccc;
-}
-.label-archive[href]:hover,
-.label-archive[href]:focus {
-  background-color: #b3b3b3;
-}
-.label-closed {
-  background-color: #a4c16b;
-}
-.label-closed[href]:hover,
-.label-closed[href]:focus {
-  background-color: #8daf4a;
-}
-.label-hot {
-  background-color: #f68a24;
-}
-.label-hot[href]:hover,
-.label-hot[href]:focus {
-  background-color: #de7009;
-}
-.label-new {
-  background-color: #ffcc33;
-}
-.label-new[href]:hover,
-.label-new[href]:focus {
-  background-color: #ffbf00;
-}
-.label-nurture {
-  background-color: #1581e2;
-}
-.label-nurture[href]:hover,
-.label-nurture[href]:focus {
-  background-color: #1166b3;
-}
-.label-pending {
-  background-color: #a9c49b;
-}
-.label-pending[href]:hover,
-.label-pending[href]:focus {
-  background-color: #8db17b;
-}
-.label-qualify {
-  background-color: #669900;
-}
-.label-qualify[href]:hover,
-.label-qualify[href]:focus {
-  background-color: #446600;
-}
-.label-trash {
-  background-color: #848484;
-}
-.label-trash[href]:hover,
-.label-trash[href]:focus {
-  background-color: #6b6b6b;
-}
-.label-watch {
-  background-color: #e5ac00;
-}
-.label-watch[href]:hover,
-.label-watch[href]:focus {
-  background-color: #b38600;
+.cat {
+  text-transform: lowercase;
 }
 .cat-archive {
-  background-color: #cccccc;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  color: #cccccc;
 }
 .cat-archive[href]:hover,
 .cat-archive[href]:focus {
-  background-color: #b3b3b3;
+  color: #b3b3b3;
 }
 .cat-closed {
-  background-color: #a4c16b;
+  background-color: transparent;
+  border: 1px solid #a4c16b;
+  color: #a4c16b;
 }
 .cat-closed[href]:hover,
 .cat-closed[href]:focus {
-  background-color: #8daf4a;
+  color: #8daf4a;
 }
 .cat-hot {
-  background-color: #f68a24;
+  background-color: transparent;
+  border: 1px solid #f68a24;
+  color: #f68a24;
 }
 .cat-hot[href]:hover,
 .cat-hot[href]:focus {
-  background-color: #de7009;
+  color: #de7009;
 }
 .cat-new {
-  background-color: #ffcc33;
+  background-color: transparent;
+  border: 1px solid #ffcc33;
+  color: #ffcc33;
 }
 .cat-new[href]:hover,
 .cat-new[href]:focus {
-  background-color: #ffbf00;
+  color: #ffbf00;
 }
 .cat-nurture {
-  background-color: #1581e2;
+  background-color: transparent;
+  border: 1px solid #1581e2;
+  color: #1581e2;
 }
 .cat-nurture[href]:hover,
 .cat-nurture[href]:focus {
-  background-color: #1166b3;
+  color: #1166b3;
 }
 .cat-pending {
-  background-color: #a9c49b;
+  background-color: transparent;
+  border: 1px solid #a9c49b;
+  color: #a9c49b;
 }
 .cat-pending[href]:hover,
 .cat-pending[href]:focus {
-  background-color: #8db17b;
+  color: #8db17b;
 }
 .cat-qualify {
-  background-color: #669900;
+  background-color: transparent;
+  border: 1px solid #669900;
+  color: #669900;
 }
 .cat-qualify[href]:hover,
 .cat-qualify[href]:focus {
-  background-color: #446600;
+  color: #446600;
 }
 .cat-trash {
-  background-color: #848484;
+  background-color: transparent;
+  border: 1px solid #848484;
+  color: #848484;
 }
 .cat-trash[href]:hover,
 .cat-trash[href]:focus {
-  background-color: #6b6b6b;
+  color: #6b6b6b;
 }
 .cat-watch {
-  background-color: #e5ac00;
+  background-color: transparent;
+  border: 1px solid #e5ac00;
+  color: #e5ac00;
 }
 .cat-watch[href]:hover,
 .cat-watch[href]:focus {
-  background-color: #b38600;
+  color: #b38600;
 }
 .cat-eq,
 .cat-eq-abbr {
@@ -7731,12 +7696,6 @@ fieldset[disabled] .btn-attention.active {
 .cat-eq-abbr {
   width: 42px;
 }
-/*.cat {
-  background-color: transparent;
-  border: 1px solid @brand-success;
-  color: @gray;
-}
-*/
 .loader {
   display: block;
   height: 18px;

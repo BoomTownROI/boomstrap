@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('boomstrap', [
+  angular.module('PatternLibrary', [
     'ui.bootstrap',
     'angular-chosen'
   ]).value('AUTO_START_TOUR', { value: false });
@@ -28,7 +28,7 @@
       };
     }
   ]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (PatternLibrary) {
   'use strict';
   PatternLibrary.controller('CarouselDemoCtrl', [
@@ -62,7 +62,7 @@
       });
     }
   ]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (PatternLibrary) {
   'use strict';
   PatternLibrary.controller('ChosenDemoCtrl', [
@@ -77,7 +77,7 @@
       $scope.superhero = 'Spiderman';
     }
   ]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (PatternLibrary) {
   'use strict';
   PatternLibrary.controller('PopoverDemoCtrl', [
@@ -87,7 +87,7 @@
       $scope.dynamicPopoverTitle = 'Title';
     }
   ]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (PatternLibrary) {
   'use strict';
   PatternLibrary.controller('TabsDemoCtrl', [
@@ -112,7 +112,7 @@
       $scope.navType = 'pills';
     }
   ]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (PatternLibrary) {
   'use strict';
   PatternLibrary.controller('TooltipDemoCtrl', [
@@ -123,7 +123,7 @@
       $scope.htmlTooltip = 'I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!';
     }
   ]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (app) {
   'use strict';
   app.directive('plNav', [function () {
@@ -136,7 +136,7 @@
         }
       };
     }]);
-}(angular.module('boomstrap')));
+}(angular.module('PatternLibrary')));
 (function (PatternLibrary, Tour) {
   'use strict';
   PatternLibrary.service('bootstrapTourService', [
@@ -260,8 +260,8 @@
       return tour;
     }
   ]);
-}(angular.module('boomstrap'), window.Tour));
-angular.module('boomstrap').run([
+}(angular.module('PatternLibrary'), window.Tour));
+angular.module('PatternLibrary').run([
   '$templateCache',
   function ($templateCache) {
     'use strict';

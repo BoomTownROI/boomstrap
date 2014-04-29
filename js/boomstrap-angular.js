@@ -413,17 +413,7 @@
           } else {
             iCtrl.$setPristine();
           }
-        });  // If we've updated our focus to a new field, cancel the timeout
-             // scope.$on('formField:inFocus', function() {
-             //   scope.$apply(function() {
-             //     // Remove willLoad state
-             //     if (loadingService.willLoad.value) loadingService.willLoad.value = false;
-             //     // Cancel any existing form submissions
-             //     $timeout.cancel(submitTimeout);
-             //     // Set pristine again so the next field that dirties will re-trigger timeout
-             //     iCtrl.$setPristine();
-             //   });
-             // });
+        });
       }
     };
   });

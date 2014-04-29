@@ -1,18 +1,8 @@
 NG_DOCS={
   "sections": {
-    "boomstrap": "boomstrap",
     "ngboomstrap": "boomstrap"
   },
   "pages": [
-    {
-      "section": "boomstrap",
-      "id": "boomstrap.directive:btAddClassOnLoad",
-      "shortName": "btAddClassOnLoad",
-      "type": "directive",
-      "moduleName": "boomstrap",
-      "shortDescription": "The btAddClassOnLoad directive adds a class to an img tag",
-      "keywords": "add adds bob boomstrap bt-add-class-on-load btaddclassonload class css directive event fires image img jpg load loaded my-img representation src string tag transitions"
-    },
     {
       "section": "ngboomstrap",
       "id": "boomstrap.directive:btAddClassOnLoad",
@@ -42,7 +32,6 @@ NG_DOCS={
     }
   ],
   "apis": {
-    "boomstrap": false,
     "ngboomstrap": false
   },
   "html5Mode": false,
