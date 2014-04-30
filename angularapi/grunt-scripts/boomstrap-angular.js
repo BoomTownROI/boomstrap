@@ -104,54 +104,90 @@
   boomstrap.controller('PropertyCardDemoCtrl', [
     '$scope',
     function PropertyCardDemoCtrl($scope) {
-      $scope.property = {};
-      // this would be populated from a service/API call in the wild
-      // dummy data for the pattern library
-      $scope.property.imageSrc = 'http://placebear.com/800/600';
-      $scope.property.defaultImageSrc = 'http://placekitten.com/800/600';
-      $scope.property.listPrice = '$2,250,000';
-      $scope.property.listingUrl = 'https://www.google.com/search?q=quaint+shack&tbm=isch';
-      $scope.property.offMarket = false;
-      // only populated for off market listings (triggers sash)
-      $scope.property.newProperty = '6 hours ago';
-      // only populated for new listings (triggers sash)
-      $scope.property.reduced = false;
-      // only populated for reductions (triggers sash)
-      // $scope.property.reduced = {
-      //     'when': '5 hrs ago',
-      //     'change': '-$250,000',
-      //     'changePercent': '2%',
-      //     'price': '$2,250,000'
-      // }
-      $scope.property.backOnMarket = false;
-      // only populated for back on market (triggers sash)
-      $scope.property.bestFits = '1444';
-      $scope.property.favs = '33';
-      $scope.property.mls = '1324961';
-      $scope.property.listed = '6 months ago';
-      $scope.property.pricePerSqft = '$1.99';
-      $scope.property.beds = '5';
-      $scope.property.baths = '3.5';
-      $scope.property.sqft = '4,195';
-      $scope.property.acres = '2.75';
-      $scope.property.type = 'Frat House';
-      $scope.property.address = {};
-      $scope.property.address.street = '123 Fourth St.';
-      $scope.property.address.city = 'Charleston';
-      $scope.property.address.state = 'SC';
-      $scope.property.address.neighborhood = 'Craig\'s Landing';
-      $scope.property.history = [
+      $scope.properties = [
         {
-          'when': '5 hrs ago',
-          'change': '-$250,000',
-          'changePercent': '2%',
-          'price': '$2,250,000'
+          imageSrc: 'http://placebear.com/800/600',
+          defaultImageSrc: 'http://placekitten.com/800/600',
+          listPrice: '$2,250,000',
+          listingUrl: 'https://www.google.com/search?q=quaint+shack&tbm=isch',
+          offMarket: false,
+          newProperty: '6 hrs ago',
+          reduced: false,
+          backOnMarket: false,
+          bestFits: '1444',
+          favs: '33',
+          mls: '1324961',
+          listed: '6 days ago',
+          pricePerSqft: '$1.99',
+          beds: '5',
+          baths: '3.5',
+          sqft: '4,195',
+          acres: '2.75',
+          type: 'Frat House',
+          address: {
+            street: '123 Fourth St.',
+            city: 'Charleston',
+            state: 'SC',
+            neighborhood: 'Craig\'s Landing'
+          },
+          history: [
+            {
+              'when': '5 hrs ago',
+              'change': '-$250,000',
+              'changePercent': '2%',
+              'price': '$2,250,000'
+            },
+            {
+              'when': '6 hrs ago',
+              'change': '-$500,000',
+              'changePercent': '5%',
+              'price': '$2,500,000'
+            }
+          ]
         },
         {
-          'when': '6 weeks ago',
-          'change': '-$500,000',
-          'changePercent': '5%',
-          'price': '$2,500,000'
+          imageSrc: 'http://placekitten.com/800/600',
+          defaultImageSrc: 'http://placebear.com/800/600',
+          listPrice: '$1,500,000',
+          listingUrl: 'https://www.google.com/search?q=quaint+shanty&tbm=isch',
+          offMarket: false,
+          newProperty: false,
+          reduced: {
+            'when': '5 hrs ago',
+            'change': '-$250,000',
+            'changePercent': '5%'
+          },
+          backOnMarket: false,
+          bestFits: '991',
+          favs: '21',
+          mls: '1325961',
+          listed: '11 days ago',
+          pricePerSqft: '$3.99',
+          beds: '4',
+          baths: '3',
+          sqft: '3,825',
+          acres: '0.75',
+          type: 'Crash Pad',
+          address: {
+            street: '321 Contact Pl.',
+            city: 'Over Yonder',
+            state: 'NY',
+            neighborhood: 'Funk Crossing'
+          },
+          history: [
+            {
+              'when': '5 hrs ago',
+              'change': '-$250,000',
+              'changePercent': '5%',
+              'price': '$1,500,000'
+            },
+            {
+              'when': '6 hrs ago',
+              'change': '-$1,000,000',
+              'changePercent': '10%',
+              'price': '$2,750,000'
+            }
+          ]
         }
       ];
     }
@@ -975,6 +1011,7 @@
   Boomstrap.directive('btPropertyCard', function () {
     return {
       restrict: 'E',
+      replace: true,
       scope: { property: '=' },
       templateUrl: 'template/property-card/bt-property-card.tpl.html',
       link: function (scope, element, attrs) {
@@ -1345,6 +1382,6 @@ angular.module('boomstrap').run([
     $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">PL</a></div><div class="collapse navbar-collapse" id="pl-nav"><ul class="nav navbar-nav"><li class="active"><a href="#pl-colors">Colors</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#pl-button-options">Options</a></li><li><a href="#pl-button-sizes">Sizes</a></li><li><a href="#pl-button-active">Active State</a></li><li><a href="#pl-button-disabled">Disabled State</a></li><li><a href="#pl-button-tags">Button Tags</a></li></ul></li><li><a href="#pl-labels">Labels</a></li><li><a href="#pl-typography">Typography</a></li></ul></div></div></nav><div class="container"></div>');
     $templateCache.put('template/pagination/bt-pager.html', '<ul class="pagination"><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)"><i ng-show="$first" class="ficon ficon-chevron-left"></i><i ng-show="$last" class="ficon ficon-chevron-right"></i></a></li></ul>');
     $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads"><div class="arrow"></div><div class="popover-close"><i data-role="end" class="ficon ficon-cross property-close"></i></div><h3 class="popover-title">New Best-Fit Leads Tour</h3><div class="tour-popover popover-content"></div><div class="popover-navigation"><button class="btn btn-default" data-role="prev">Prev</button> <button class="btn btn-default" data-role="next"><span>Next</span></button></div></div>');
-    $templateCache.put('template/property-card/bt-property-card.tpl.html', '<div class="card"><div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div><div ng-if="property.offMarket" class="sash sash-off-market">Off Market <span class="sash-time">{{ property.offMarket }}</span></div><div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}%) <span class="sash-time">{{ property.reduced.when }}</span></div><div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div><div class="card-photo"><div class="card-photo-inner"><img class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}"></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-7"><p class="card-priority card-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="small">{{ property.address.city }}, {{ property.address.state }}</p><p class="small">{{ property.address.neighborhood }}</p></div><div class="col-xs-5 text-right"><p class="card-priority card-price">{{ property.listPrice }}</p><p class="small">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-stats"><span class="card-stat">{{ property.beds }} BEDS</span> <span class="card-stat">{{ property.baths }} BATHS</span> <span class="card-stat">{{ property.sqft }} SQFT</span> <span class="card-stat">{{ property.acres }} ACRES</span></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div><div class="card-toggle"><span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span> <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span></div><div collapse="!isExpanded" class="card-detail"><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-6"><p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p></div><div class="col-xs-6 text-right"><p class="small"><strong>LISTED:</strong> {{ property.listed }}</p></div></div><p class="small"><strong>TYPE:</strong> {{ property.type }}</p></div><p class="card-title">Price History</p><div class="card-container card-price-history"><div ng-repeat="history in property.history" class="row row-xcondensed"><div class="col-xs-4"><p class="small">{{ history.when }}</p></div><div class="col-xs-4"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p></div><div class="col-xs-4 text-right"><p class="small">{{ history.price }}</p></div></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button></div><div class="col-md-6"><button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i></button></div></div></div></div></div>');
+    $templateCache.put('template/property-card/bt-property-card.tpl.html', '<div class="col-md-6"><div class="card"><div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div><div ng-if="property.offMarket" class="sash sash-off-market">Off Market <span class="sash-time">{{ property.offMarket }}</span></div><div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div><div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div><div class="card-photo"><div class="card-photo-inner"><img class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}"></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-7"><p class="card-priority card-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="small">{{ property.address.city }}, {{ property.address.state }}</p><p class="small">{{ property.address.neighborhood }}</p></div><div class="col-xs-5 text-right"><p class="card-priority card-price">{{ property.listPrice }}</p><p class="small">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-stats"><span class="card-stat">{{ property.beds }} BEDS</span> <span class="card-stat">{{ property.baths }} BATHS</span> <span class="card-stat">{{ property.sqft }} SQFT</span> <span class="card-stat">{{ property.acres }} ACRES</span></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div><div class="card-toggle"><span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span> <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span></div><div collapse="!isExpanded" class="card-detail"><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-6"><p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p></div><div class="col-xs-6 text-right"><p class="small"><strong>LISTED:</strong> {{ property.listed }}</p></div></div><p class="small"><strong>TYPE:</strong> {{ property.type }}</p></div><p class="card-title">Price History</p><div class="card-container card-price-history"><div ng-repeat="history in property.history" class="row row-xcondensed"><div class="col-xs-3"><p class="small">{{ history.when }}</p></div><div class="col-xs-6"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p></div><div class="col-xs-3 text-right"><p class="small">{{ history.price }}</p></div></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button></div><div class="col-md-6"><button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i></button></div></div></div></div></div></div>');
   }
 ]);
