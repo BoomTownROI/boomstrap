@@ -1,87 +1,89 @@
-<div class="card">
-  <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div>
-  <div ng-if="property.offMarket" class="sash sash-off-market">Off Market <span class="sash-time">{{ property.offMarket }}</span></div>
-  <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}%) <span class="sash-time">{{ property.reduced.when }}</span></div>
-  <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div>
-  <!-- ///////////////////////////////////////////////// -->
-  <!-- Optional: replace "card-photo" div with carousel -->
-  <!-- ///////////////////////////////////////////////// -->
-  <div class="card-photo">
-    <div class="card-photo-inner">
-      <img class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}">
-    </div>
-  </div>
-  <!-- ///////////////////////////////////////////////// -->
-  <div class="card-container">
-     <div class="row row-xcondensed">
-      <div class="col-xs-7">
-        <p class="card-priority card-street">
-          <a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a>
-        </p>
-        <p class="small">{{ property.address.city }}, {{ property.address.state }}</p>
-        <p class="small">{{ property.address.neighborhood }}</p>
-      </div>
-      <div class="col-xs-5 text-right">
-        <p class="card-priority card-price">{{ property.listPrice }}</p>
-        <p class="small">{{ property.pricePerSqft }}/SQFT</p>
-      </div>
-     </div>
-  </div>
-  <div class="card-stats">
-    <span class="card-stat">{{ property.beds }} BEDS</span>
-    <span class="card-stat">{{ property.baths }} BATHS</span>
-    <span class="card-stat">{{ property.sqft }} SQFT</span>
-    <span class="card-stat">{{ property.acres }} ACRES</span>
-  </div>
-  <div class="card-container">
-    <div class="row row-xcondensed">
-      <div class="col-md-6">
-        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>
-      </div>
-      <div class="col-md-6">
-        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>
+<div class="col-md-6">
+  <div class="card">
+    <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div>
+    <div ng-if="property.offMarket" class="sash sash-off-market">Off Market <span class="sash-time">{{ property.offMarket }}</span></div>
+    <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div>
+    <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div>
+    <!-- ///////////////////////////////////////////////// -->
+    <!-- Optional: replace "card-photo" div with carousel -->
+    <!-- ///////////////////////////////////////////////// -->
+    <div class="card-photo">
+      <div class="card-photo-inner">
+        <img class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}">
       </div>
     </div>
-  </div> <!-- /card-container -->
-  <div class="card-toggle">
-      <span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span>
-      <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span>
-  </div>
-  <div collapse="!isExpanded" class="card-detail">
+    <!-- ///////////////////////////////////////////////// -->
     <div class="card-container">
-      <div class="row row-xcondensed">
-        <div class="col-xs-6">
-          <p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p>
+       <div class="row row-xcondensed">
+        <div class="col-xs-7">
+          <p class="card-priority card-street">
+            <a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a>
+          </p>
+          <p class="small">{{ property.address.city }}, {{ property.address.state }}</p>
+          <p class="small">{{ property.address.neighborhood }}</p>
         </div>
-        <div class="col-xs-6 text-right">
-          <p class="small"><strong>LISTED:</strong> {{ property.listed }}</p>
+        <div class="col-xs-5 text-right">
+          <p class="card-priority card-price">{{ property.listPrice }}</p>
+          <p class="small">{{ property.pricePerSqft }}/SQFT</p>
         </div>
-      </div>
-      <p class="small"><strong>TYPE:</strong> {{ property.type }}</p>
-    </div> <!-- /card-container -->
-    <p class="card-title">Price History</p>
-    <div class="card-container card-price-history">
-      <div ng-repeat="history in property.history" class="row row-xcondensed">
-        <div class="col-xs-4">
-          <p class="small">{{ history.when }}</p>
-        </div>
-        <div class="col-xs-4">
-          <p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p>
-        </div>
-        <div class="col-xs-4 text-right">
-          <p class="small">{{ history.price }}</p>
-        </div>
-      </div>
-    </div> <!-- /card-price-history -->
+       </div>
+    </div>
+    <div class="card-stats">
+      <span class="card-stat">{{ property.beds }} BEDS</span>
+      <span class="card-stat">{{ property.baths }} BATHS</span>
+      <span class="card-stat">{{ property.sqft }} SQFT</span>
+      <span class="card-stat">{{ property.acres }} ACRES</span>
+    </div>
     <div class="card-container">
       <div class="row row-xcondensed">
         <div class="col-md-6">
-          <button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button>
+          <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>
         </div>
         <div class="col-md-6">
-          <button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i> </button>
+          <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>
         </div>
       </div>
     </div> <!-- /card-container -->
-  </div> <!-- /card-detail -->
+    <div class="card-toggle">
+        <span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span>
+        <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span>
+    </div>
+    <div collapse="!isExpanded" class="card-detail">
+      <div class="card-container">
+        <div class="row row-xcondensed">
+          <div class="col-xs-6">
+            <p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p>
+          </div>
+          <div class="col-xs-6 text-right">
+            <p class="small"><strong>LISTED:</strong> {{ property.listed }}</p>
+          </div>
+        </div>
+        <p class="small"><strong>TYPE:</strong> {{ property.type }}</p>
+      </div> <!-- /card-container -->
+      <p class="card-title">Price History</p>
+      <div class="card-container card-price-history">
+        <div ng-repeat="history in property.history" class="row row-xcondensed">
+          <div class="col-xs-3">
+            <p class="small">{{ history.when }}</p>
+          </div>
+          <div class="col-xs-6">
+            <p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p>
+          </div>
+          <div class="col-xs-3 text-right">
+            <p class="small">{{ history.price }}</p>
+          </div>
+        </div>
+      </div> <!-- /card-price-history -->
+      <div class="card-container">
+        <div class="row row-xcondensed">
+          <div class="col-md-6">
+            <button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i> </button>
+          </div>
+        </div>
+      </div> <!-- /card-container -->
+    </div> <!-- /card-detail -->
+  </div>
 </div>
