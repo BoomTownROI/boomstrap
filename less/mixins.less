@@ -13,9 +13,6 @@
 }
 
 
-
-
-
 // Buttons
 // -------------------------
 
@@ -25,7 +22,6 @@
   color: @color;
   background-color: @background;
   border-color: @border;
-
 
   #gradient > .vertical(@background; darken(@background,4%)); // add gradient
 
@@ -85,18 +81,19 @@
   }
 }
 
-
-
-
-// Tab focus
+// Labels - Lead Categories
 // -------------------------
 
-// Note: Override Boostrap .tab-focus mixin
-
-.tab-focus() {
-  outline: thin dotted;
-  outline: 2px auto -webkit-focus-ring-color;
-  outline-offset: -3px;
+.category-variant(@color) {
+  background-color: transparent;
+  border: 1px solid @color;
+  color: @color;
+  &[href] {
+    &:hover,
+    &:focus {
+      color: darken(@color, 10%);
+    }
+  }
 }
 
 
@@ -111,8 +108,28 @@
   border-radius: @border-radius;
 }
 
+// Tab focus
+// -------------------------
+
+// Note: Override Boostrap .tab-focus mixin
+
+.tab-focus() {
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
+}
 
 
+// Vertical align
+// -------------------------
+
+.vertical-align() {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 
 
