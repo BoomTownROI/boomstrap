@@ -1,6 +1,6 @@
 (function(boomstrap) {
   'use strict';
-  boomstrap.controller('PropertyCardDemoCtrl', ['$scope', function PropertyCardDemoCtrl ($scope) {
+  boomstrap.controller('MultipleCardDemoCtrl', ['$scope', function MultipleCardDemoCtrl ($scope) {
     $scope.properties = [
         { // this would be populated from a service/API call
             // dummy data for the pattern library
@@ -93,6 +93,52 @@
                     'change': '-$1,000,000',
                     'changePercent': '10%',
                     'price': '$2,750,000'
+                }
+            ]
+        },
+        {
+            imageSrc: 'http://lorempixel.com/output/animals-q-c-800-600-6.jpg',
+            defaultImageSrc: 'http://lorempixel.com/output/animals-q-c-800-600-6.jpg',
+            listPrice: '$500,000',
+            listingUrl: 'https://www.google.com/search?q=quaint+doghouse&tbm=isch',
+            offMarket: false, // only populated for off market listings (triggers sash)
+            newProperty: false, // only populated for new listings (triggers sash)
+            reduced: {
+                'when': '9 hrs ago',
+                'change': '-$50,000',
+                'changePercent': '5%'
+            },
+            backOnMarket: false, // only populated for back on market (triggers sash)
+            bestFits: '43',
+            favs: '4',
+            mls: '1325961',
+            listed: '12 days ago',
+            pricePerSqft: '$8.99',
+            beds: '3',
+            baths: '2',
+            sqft: '1,225',
+            acres: '0.1',
+            type: 'Quaint Shanty',
+
+            address: {
+                street: '666 Scary Alley',
+                city: 'Down Under',
+                state: 'FL',
+                neighborhood: 'Sean\'s Ferry'
+            },
+
+            history: [
+                {
+                    'when': '3 hrs ago',
+                    'change': '-$50,000',
+                    'changePercent': '5%',
+                    'price': '$500,000'
+                },
+                {
+                    'when': '9 hrs ago',
+                    'change': '-$1,000,000',
+                    'changePercent': '100%',
+                    'price': '$1,000,000'
                 }
             ]
         }

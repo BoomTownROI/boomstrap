@@ -1,8 +1,19 @@
 <section id="cards">
     <div class="page-header">
-        <h2>Cards</h2>
-        <div class="row" ng-controller="PropertyCardDemoCtrl">
-            <bt-property-card property="property" ng-repeat="property in properties"></bt-property-card>
+        <h1>Cards</h1>
+        <div class="callout callout-attention">
+            <h4>Data Requirement</h4>
+            <p>Property cards rely on an object called <code>property</code>, passed via the controller or ng-repeat.</p>
+        </div>
+        <h2>Single Card</h2>
+        <div ng-controller="SingleCardDemoCtrl">
+            <bt-property-card property="property"></bt-property-card>
+        </div>
+        <h2>Multiple Cards</h2>
+        <div class="row" ng-controller="MultipleCardDemoCtrl">
+            <div class="col-md-4" ng-repeat="property in properties">
+                <bt-property-card property="property"></bt-property-card>
+            </div>
         </div>
     </div>
     <!-- <p data-height="360" data-theme-id="5675" data-slug-hash="dCLlE" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/dCLlE/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
