@@ -344,6 +344,11 @@
 				"css_id": "#chosen",
 				"nav_header": "Chosen"
 			},
+			{
+				"source": "app/views/cards.html",
+				"css_id": "#cards",
+				"nav_header": "Cards"
+			},
 			{ "source": "app/views/angular-footer.html" }
 		]
 	}
