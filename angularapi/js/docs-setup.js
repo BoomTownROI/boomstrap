@@ -37,7 +37,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "boomstrap",
       "shortDescription": "The btScore directive represents a score component from Boomstrap.  It will keep the color",
-      "keywords": "average based boomstrap btscore classes color component default directive element excellent extrasmall good high include large low medium module myscore ng-init ng-model ngboomstrap reflected represents score size sizes small tags valid"
+      "keywords": "average based boomstrap btscore classes color component default directive element excellent good high include lg low medium module myscore ng-init ng-model ngboomstrap reflected represents score size sizes sm tags valid xs"
     }
   ],
   "apis": {
