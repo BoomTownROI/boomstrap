@@ -244,7 +244,8 @@
               src: [
                 '<%= yeoman.app %>/app.js',
                 '<%= yeoman.app %>/scripts/**/*.js',
-                '<%= yeoman.tmp %>/templates.js'
+                '<%= yeoman.tmp %>/templates.js',
+                '<%= yeoman.tmp %>/bootstrap-templates.js'
               ],
               dest: '<%= yeoman.tmp %>/js/boomstrap-angular.js'
             }
@@ -288,7 +289,7 @@
       ngtemplates: {
         'boomstrap': {
           cwd: '<%= yeoman.app %>',
-          src: ['template/**/*.html'],
+          src: ['template/**/*.html', '!template/pagination/**/*'],
           dest: '<%= yeoman.tmp %>/templates.js',
           options: {
             htmlmin: {
@@ -296,6 +297,18 @@
               removeComments:     true // Only if you don't use comment directives!
             }
           }
+        },
+        'ui.bootstrap.pagination': {
+          cwd: '<%= yeoman.app %>',
+          src: ['template/pagination/*.html'],
+          dest: '<%= yeoman.tmp %>/bootstrap-templates.js',
+          options: {
+            htmlmin: {
+              collapseWhitespace: true,
+              removeComments:     true // Only if you don't use comment directives!
+            }
+          }
+
         }
       },
 
