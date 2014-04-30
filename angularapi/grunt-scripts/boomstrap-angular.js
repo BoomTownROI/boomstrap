@@ -4,7 +4,7 @@
     'ui.bootstrap',
     'angular-chosen'
   ]).value('AUTO_START_TOUR', { value: false });
-  angular.module('ui.bootstrap.pagination').config([
+  angular.module('boomstrap').config([
     '$provide',
     function ($provide) {
       $provide.decorator('paginationDirective', function ($delegate) {
