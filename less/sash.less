@@ -3,15 +3,20 @@
 
 
 .sash {
-	background-color: @white;
+	background-color: rgba(255,255,255,0.9);
 	border-bottom: 4px solid @gray;
 	.clearfix;
 	display: block;
 	font-size: 12px;
 	font-weight: 600;
+	left: 0;
 	padding: @padding-small-vertical @padding-xs-horizontal;
+	position: absolute;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
 	text-transform: uppercase;
+	top: -1px;
+	width: 100%;
+	z-index: 100;
 }
 
 .sash-back {
@@ -22,6 +27,11 @@
 .sash-new {
 	border-color: @sash-new-color;
 	color: @sash-new-color;
+}
+
+.sash-off {
+	border-color: @sash-off-color;
+	color: @sash-off-color;
 }
 
 .sash-reduced {

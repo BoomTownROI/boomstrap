@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'ficon';
-	src:url('fonts/ficon.eot?-iirrp4');
-	src:url('fonts/ficon.eot?#iefix-iirrp4') format('embedded-opentype'),
-		url('fonts/ficon.woff?-iirrp4') format('woff'),
-		url('fonts/ficon.ttf?-iirrp4') format('truetype'),
-		url('fonts/ficon.svg?-iirrp4#ficon') format('svg');
+	src:url('fonts/ficon.eot?wkqr11');
+	src:url('fonts/ficon.eot?#iefixwkqr11') format('embedded-opentype'),
+		url('fonts/ficon.woff?wkqr11') format('woff'),
+		url('fonts/ficon.ttf?wkqr11') format('truetype'),
+		url('fonts/ficon.svg?wkqr11#ficon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,17 +23,26 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.ficon-question-circle:before {
+	content: "\e619";
+}
+.ficon-question:before {
+	content: "\e61c";
+}
+.ficon-buyer-seller:before {
+	content: "\e61e";
+}
 .ficon-star2:before {
 	content: "\e617";
-}
-.ficon-star:before {
-	content: "\e618";
 }
 .ficon-ealert:before {
 	content: "\e616";
 }
 .ficon-phone-neutral:before {
 	content: "\e604";
+}
+.ficon-star:before {
+	content: "\e618";
 }
 .ficon-email-neutral:before {
 	content: "\e607";
@@ -149,11 +158,8 @@
 .ficon-minus:before {
 	content: "\e00d";
 }
-.ficon-question-circle:before {
+.ficon-question-circle2:before {
 	content: "\f059";
-}
-.ficon-question:before {
-	content: "\f128";
 }
 .ficon-minus-circle:before {
 	content: "\e00f";

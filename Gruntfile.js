@@ -344,6 +344,10 @@
           files: [{
             src: ['images/**'],
             dest: '<%= yeoman.docs %>/angularapi/'
+          },
+          {
+            src: ['fonts/**', 'icons/**'],
+            dest: '<%= yeoman.docs %>/angularapi/css/'
           }]
         }
       },
