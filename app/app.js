@@ -7,5 +7,16 @@
   ])
   .value('AUTO_START_TOUR', {
     value: false
+  })
+  .config(function($provide) {
+    $provide.decorator('paginationDirective', function($delegate) {
+      var defaultURL = $delegate[0].templateUrl;
+      
+      $delegate[0].templateUrl = function(tElement, tAttrs) {
+        return tAttrs.btPager ? 'template/pagination/bt-pager.html' : defaultURL;
+      };
+
+      return $delegate;
+    })
   });
 })();

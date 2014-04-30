@@ -1,0 +1,5 @@
+<ul class="pagination">
+  <li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)"><i
+  	ng-show="$first" class="ficon ficon-chevron-left"></i><i
+  	ng-show="$last" class="ficon ficon-chevron-right"></i></a></li>
+</ul>
