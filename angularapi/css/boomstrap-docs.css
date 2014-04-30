@@ -298,6 +298,7 @@ a.responsive-utilities td.is-visible:hover {
 }
 .pl-sashes .sash {
   margin-bottom: 20px;
+  position: static;
 }
 .pl-cards .card {
   margin-bottom: 20px;

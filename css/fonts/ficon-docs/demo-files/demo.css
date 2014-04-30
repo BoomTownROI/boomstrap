@@ -130,7 +130,7 @@ p {
 .clearfix:after {
 	clear: both;
 }
-.noLiga-true {
+.hidden-true {
 	display: none;
 }
 .textbox0 {
@@ -150,8 +150,5 @@ p {
 	font-size: 32px;
 }
 .fs2 {
-	font-size: 32px;
-}
-.fs3 {
 	font-size: 20px;
 }

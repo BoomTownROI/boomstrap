@@ -90,37 +90,6 @@
 }(angular.module('boomstrap')));
 (function (boomstrap) {
   'use strict';
-  boomstrap.controller('PropertyCardDemoCtrl', [
-    '$scope',
-    function PropertyCardDemoCtrl($scope) {
-      $scope.property = {};
-      // this would be populated from a service/API call in the wild
-      // dummy data for the pattern library
-      $scope.property.imageSrc = 'http://placebear.com/800/600';
-      $scope.property.defaultImageSrc = 'http://placekitten.com/800/600';
-      $scope.property.listPrice = '$2,250,000';
-      $scope.property.listingUrl = 'https://www.google.com/search?q=quaint+shack&tbm=isch';
-      $scope.property.offMarket = false;
-      $scope.property.bestFits = '1444';
-      $scope.property.favs = '33';
-      $scope.property.mls = '1324961';
-      $scope.property.listed = '6 days ago';
-      $scope.property.pricePerSqft = '$1.99';
-      $scope.property.beds = '5';
-      $scope.property.baths = '3.5';
-      $scope.property.sqft = '4,195';
-      $scope.property.acres = '2.75';
-      $scope.property.type = 'Frat House';
-      $scope.property.address = {};
-      $scope.property.address.street = '123 Fourth St.';
-      $scope.property.address.city = 'Charleston';
-      $scope.property.address.state = 'SC';
-      $scope.property.address.neighborhood = 'Craig\'s Landing';
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
   boomstrap.controller('TabsDemoCtrl', [
     '$scope',
     function TabsDemoCtrl($scope) {
@@ -873,18 +842,6 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  Boomstrap.directive('btPropertyCard', function () {
-    return {
-      restrict: 'E',
-      scope: { property: '=' },
-      templateUrl: 'template/property-card/bt-property-card.tpl.html',
-      link: function (scope, element, attrs) {
-      }
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
   Boomstrap.directive('btRange', function ($analytics, $window, $timeout) {
     var DEFAULT_DROPMIN = -1;
     var DEFAULT_DROPMAX = -1;
@@ -1044,81 +1001,6 @@
     };
   });
 }(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  /**
-   * @ngdoc directive
-   * @name  boomstrap.directive:btScore
-   * @restrict E
-   * @replace
-   * 
-   * @param {Number} score The score to present in the component.  Classes will be added to the element to
-   * color a score element based on how high or low the score is.  Excellent score (99-76); Good score (75-56);
-   * Average score (50-26); Default score (25-0)
-   * @param {string} [size=''] The size of the score. Valid sizes include: `xs` (extrasmall), `sm` (small), and `lg` (large).
-   * If no size is specified, the score will be of medium size.
-   *
-   * @description
-   * The `btScore` directive represents a score component from Boomstrap.  It will keep the color
-   * and size up to date based on what is specified.
-   *
-   *
-   * @example
-      <doc:example module="boomstrap">
-        <doc:source>
-          <div ng-init="myScore=20">
-            <label>Input a score here to see it reflected in the tags :</label>
-            <input ng-model="myScore">
-            <p><bt-score score="myScore" size="xs"></bt-score></p>
-            <p><bt-score score="myScore" size="sm"></bt-score></p>
-            <p><bt-score score="myScore"></bt-score></p>
-            <p><bt-score score="myScore" size="lg"></bt-score></p>
-          </div>
-        </doc:source>
-      </doc:example>
-   * 
-   */
-  Boomstrap.directive('btScore', function () {
-    return {
-      restrict: 'E',
-      replace: true,
-      template: '<span class="score {{ scoreSize }} {{ scoreType }}">{{ score }}</span>',
-      scope: {
-        score: '=',
-        size: '@'
-      },
-      link: function (scope, iElement, iAttrs) {
-        var translateScore = function (score) {
-          var scoreType, scoreTranslation;
-          // Translate string value into a Number
-          scoreTranslation = parseInt(score, 10);
-          if (!isNaN(scoreTranslation)) {
-            if (scoreTranslation >= 76) {
-              scoreType = 'score-excellent';
-            } else if (scoreTranslation >= 56) {
-              scoreType = 'score-good';
-            } else if (scoreTranslation >= 26) {
-              scoreType = 'score-average';
-            }
-          }
-          scope.scoreType = scoreType || '';
-        };
-        scope.scoreSize = scope.size && 'score-' + scope.size || '';
-        scope.scoreType = translateScore(scope.score);
-        scope.$watch('score', function (newScore, oldScore) {
-          if (newScore !== oldScore) {
-            translateScore(newScore);
-          }
-        });
-        scope.$watch('size', function (newSize, oldSize) {
-          if (newSize !== oldSize) {
-            scope.scoreSize = newSize && 'score-' + newSize || '';
-          }
-        });
-      }
-    };
-  });
-}(angular.module('boomstrap')));
 (function (Boomstrap, Tour) {
   'use strict';
   Boomstrap.service('bootstrapTourService', function ($templateCache, $rootScope, $http, AUTO_START_TOUR) {
@@ -1244,6 +1126,5 @@ angular.module('boomstrap').run([
     $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel"><ol class="carousel-indicators" ng-show="slides().length > 1"><li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li></ol><div class="carousel-inner" ng-transclude=""></div><a class="left carousel-control" ng-click="prev()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-left"></span></a> <a class="right carousel-control" ng-click="next()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-right"></span></a></div>');
     $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">PL</a></div><div class="collapse navbar-collapse" id="pl-nav"><ul class="nav navbar-nav"><li class="active"><a href="#pl-colors">Colors</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#pl-button-options">Options</a></li><li><a href="#pl-button-sizes">Sizes</a></li><li><a href="#pl-button-active">Active State</a></li><li><a href="#pl-button-disabled">Disabled State</a></li><li><a href="#pl-button-tags">Button Tags</a></li></ul></li><li><a href="#pl-labels">Labels</a></li><li><a href="#pl-typography">Typography</a></li></ul></div></div></nav><div class="container"></div>');
     $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads"><div class="arrow"></div><div class="popover-close"><i data-role="end" class="ficon ficon-cross property-close"></i></div><h3 class="popover-title">New Best-Fit Leads Tour</h3><div class="tour-popover popover-content"></div><div class="popover-navigation"><button class="btn btn-default" data-role="prev">Prev</button> <button class="btn btn-default" data-role="next"><span>Next</span></button></div></div>');
-    $templateCache.put('template/property-card/bt-property-card.tpl.html', '<div class="card"><div class="sash sash-new">New <span class="sash-time">2 hours ago</span></div><div class="card-photo"><div class="card-photo-inner"><img class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}"></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-7"><p class="card-priority card-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="small">{{ property.address.city }}, {{ property.address.state }}</p><p class="small">{{ property.address.neighborhood }}</p></div><div class="col-xs-5 text-right"><p class="card-priority card-price">{{ property.listPrice }}</p><p class="small">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-stats"><span class="card-stat">{{ property.beds }} BEDS</span> <span class="card-stat">{{ property.baths }} BATHS</span> <span class="card-stat">{{ property.sqft }} SQFT</span> <span class="card-stat">{{ property.acres }} ACRES</span></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div><div class="card-toggle"><span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span> <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span></div><div collapse="!isExpanded" class="card-detail"><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-6"><p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p></div><div class="col-xs-6 text-right"><p class="small"><strong>LISTED:</strong> {{ property.listed }}</p></div></div><p class="small"><strong>TYPE:</strong> {{ property.type }}</p></div><p class="card-title">Price History</p><div class="card-container card-price-history"><div class="row row-xcondensed"><div class="col-xs-4"><p class="small">5 hrs ago</p></div><div class="col-xs-4"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> -$500 (10%)</p></div><div class="col-xs-4 text-right"><p class="small">$350,000</p></div></div><div class="row row-xcondensed"><div class="col-xs-4"><p class="small">6 hrs ago</p></div><div class="col-xs-4"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> -$800 (12%)</p></div><div class="col-xs-4 text-right"><p class="small">$450,000</p></div></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button></div><div class="col-md-6"><button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i></button></div></div></div></div></div>');
   }
 ]);

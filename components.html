@@ -2650,6 +2650,7 @@
   <div class="pl-example pl-sashes">
     <div class="sash sash-back">Back <span class="sash-time">10 mins ago</span></div>
     <div class="sash sash-new">New <span class="sash-time">10 mins ago</span></div>
+    <div class="sash sash-off">Off <span class="sash-time">14 days ago</span></div>
     <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
   </div>
   <div class="pl-code">
@@ -2659,6 +2660,9 @@
 
 <span class="c">&lt;!-- New on the market --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-new"</span><span class="nt">&gt;</span>New <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>10 mins ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Off the market --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-off"</span><span class="nt">&gt;</span>Off <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>14 days ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
 
 <span class="c">&lt;!-- Priced reduced --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-reduced"</span><span class="nt">&gt;</span>$35,000 (10%) <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>10 mins ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
@@ -3112,9 +3116,47 @@
   <p>The small listing card has a min-width of 216px and a max width of 250px.</p>
   <div class="pl-example pl-cards">
     <div class="card card-sm">
-      <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
       <div class="card-photo">
         <div class="card-photo-inner">
+        <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
+          <img class="card-img" src="images/fpo-carousel-3.jpg">
+        </div>
+      </div>
+      <div class="card-sm-container">
+        <div class="row row-xcondensed">
+          <div class="col-xs-8">
+            <p class="card-sm-priority card-sm-street"><a href="" target="_blank">227 Palmetto Islands Trail</a></p>
+            <p class="xsmall">Mount Pleasant, SC</p>
+            <p class="xsmall">Grassy Creek</p>
+          </div>
+          <div class="col-xs-4 text-right">
+            <p class="card-sm-priority card-sm-price">$1,250,000</p>
+            <p class="xsmall">$250/SQFT</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-sm-stats">
+        <span class="card-sm-stat">3 Beds</span>
+        <span class="card-sm-stat">3 Baths</span>
+        <span class="card-sm-stat">2800 sqft</span>
+        <span class="card-sm-stat">0.35 Acres</span>
+      </div>
+      <div class="card-sm-container">
+        <div class="row row-xcondensed">
+          <div class="col-md-6">
+            <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> 1220 Best-Fit</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> 11 Favs</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /card small -->
+    <br>
+    <div class="card card-sm">
+      <div class="card-photo">
+        <div class="card-photo-inner">
+        <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
           <img class="card-img" src="images/fpo-carousel-3.jpg">
         </div>
       </div>
@@ -3145,6 +3187,10 @@
       </div>
     </div> <!-- /card small -->
   </div>
+
+  <div class="pl-code"><pre><code class="html">
+  </code></pre></div>
+
 </div>
 
 
