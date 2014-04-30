@@ -90,6 +90,37 @@
 }(angular.module('boomstrap')));
 (function (boomstrap) {
   'use strict';
+  boomstrap.controller('PropertyCardDemoCtrl', [
+    '$scope',
+    function PropertyCardDemoCtrl($scope) {
+      $scope.property = {};
+      // this would be populated from a service/API call in the wild
+      // dummy data for the pattern library
+      $scope.property.imageSrc = 'http://placebear.com/800/600';
+      $scope.property.defaultImageSrc = 'http://placekitten.com/800/600';
+      $scope.property.listPrice = '$2,250,000';
+      $scope.property.listingUrl = 'https://www.google.com/search?q=quaint+shack&tbm=isch';
+      $scope.property.offMarket = false;
+      $scope.property.bestFits = '1444';
+      $scope.property.favs = '33';
+      $scope.property.mls = '1324961';
+      $scope.property.listed = '6 days ago';
+      $scope.property.pricePerSqft = '$1.99';
+      $scope.property.beds = '5';
+      $scope.property.baths = '3.5';
+      $scope.property.sqft = '4,195';
+      $scope.property.acres = '2.75';
+      $scope.property.type = 'Frat House';
+      $scope.property.address = {};
+      $scope.property.address.street = '123 Fourth St.';
+      $scope.property.address.city = 'Charleston';
+      $scope.property.address.state = 'SC';
+      $scope.property.address.neighborhood = 'Craig\'s Landing';
+    }
+  ]);
+}(angular.module('boomstrap')));
+(function (boomstrap) {
+  'use strict';
   boomstrap.controller('TabsDemoCtrl', [
     '$scope',
     function TabsDemoCtrl($scope) {
@@ -443,6 +474,75 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name boomstrap.directive:btDropdown
+   * @restrict A
+   *
+   * @description `btDropdown` allows you to create a dropdown based on an object. The keys of the object
+   * are what is stored in the ngModel and the values are the visual representations in the dropdown.
+   * 
+   *
+   * @requires ngModel
+   * @param {Object} values Object containing the values for the dropdown.
+   * @param {Boolean} keysAreNumbers Indicates that the keys of the `values` object are `Number`s.
+   * This is used for sorting because by default iterating over an object will sort based on the string representation.
+   * Thus, 10 will come before 2, etc...
+   * @param {expression} onAssign Expression to call when a value is chosen from the dropdown.
+   *
+   * @example
+     <doc:example module="boomstrap">
+        <doc:source>
+          <style>
+            .dropdown-test .btn.dropdown-toggle {
+              width: 140px;
+            }
+
+            .dropdown-test > div {
+              margin-bottom: 30px;
+            }
+
+            .doc-example-live {
+              background-color: #FFFFFF;
+              margin-bottom: 100px;
+            }
+          </style>
+          <script>
+            angular.module('boomstrap')
+              .controller('dropTest', function($scope) {
+                $scope.stringValues = {
+                  'A': 'Aardvark',
+                  'B': 'Bear',
+                  'C': 'Cat'
+                };
+
+                $scope.numValues = {
+                  '-1': 'Sean',
+                  '0': 'Mark',
+                  '1': 'Christian',
+                  '10': 'Craig',
+                  '2': 'David'
+                }
+
+                $scope.numValue = '1';
+                $scope.stringValue = 'A';
+
+
+                $scope.assigned = function(value, translation) {
+                  alert('The value is ' + value + ' and the translation is ' + translation);
+                } 
+              });
+          </script>
+          <div ng-controller="dropTest" class="dropdown-test">
+            <div bt-dropdown values="stringValues" ng-model="stringValue"></div>
+            <div bt-dropdown values="numValues" ng-model="numValue" keys-are-numbers="true"></div>
+            <p>The next dropdown will throw an alert on save</p>
+            <div bt-dropdown values="stringValues"
+                ng-model="stringValue" on-assign="assigned(ddValue, ddTranslation)" ></div>
+          </div>
+        </doc:source>
+      </doc:example> 
+   */
   Boomstrap.directive('btDropdown', function ($window) {
     return {
       restrict: 'A',
@@ -451,23 +551,22 @@
       replace: true,
       scope: {
         values: '=',
-        numberValues: '=',
+        keysAreNumbers: '=',
         onAssign: '&'
       },
       link: function (scope, iElement, iAttrs, ngModel) {
-        scope.dropdownChanged = false;
         var windowEl = angular.element($window);
         /* Because angular will only sort objects by their key and our key is
          * always a string representation, if we want to sort by numbers as a key
          * we need to transform the object into an array of objects in which the item we are sorting on
          * is the parseInt value of the key
          */
-        var sortNumberValues = function (objectValues) {
+        var sortNumberKeys = function (objectValues) {
           var sortedArray = [];
-          angular.forEach(objectValues, function (item, key) {
+          Object.keys(objectValues).forEach(function (key) {
             sortedArray.push({
               'key': key,
-              'value': item
+              'value': objectValues[key]
             });
           });
           sortedArray.sort(function (a, b) {
@@ -475,20 +574,20 @@
           });
           return sortedArray;
         };
-        scope.arrayValues = sortNumberValues(scope.values);
-        if (scope.numberValues) {
+        if (scope.keysAreNumbers) {
+          scope.arrayValues = sortNumberKeys(scope.values);
           scope.$watch('values', function (newValues, oldValues) {
             if (newValues && oldValues && newValues.length !== oldValues.length) {
-              scope.arrayValues = sortNumberValues(scope.values);
+              scope.arrayValues = sortNumberKeys(scope.values);
             }
           });
         }
         scope.assignValue = function (value) {
           scope.selectedValue = scope.values[value];
+          // Trigger $dirty for ngModel
           ngModel.$setViewValue(value);
-          // Trigger dirty
-          scope.dropdownChanged = true;
-          // Trigger bt-dirty
+          // If the user has provided an `onAssign` expression
+          // call it with the value, and the view representation
           if (scope.onAssign) {
             scope.onAssign({
               ddValue: value,
@@ -497,36 +596,29 @@
           }
         };
         scope.valuesLength = function () {
-          return scope.values && _.keys(scope.values).length || 0;
+          return scope.values && Object.keys(scope.values).length || 0;
         };
+        // Handle setting the width of the dropdown based on the width
+        // of the overall box
         var setDropdownWidth = function () {
-          scope.dropdownWidth = angular.element(iElement[0].children[0].children[0]).width();
+          // Woo jQuery dependency because of border-box, yeah!
+          scope.dropdownWidth = angular.element(iElement[0].children[0]).outerWidth();
         };
         setDropdownWidth();
         windowEl.on('resize.dropdown', function () {
           scope.$apply(setDropdownWidth);
         });
+        scope.$watch(function () {
+          return ngModel.$modelValue;
+        }, function (newVal, oldVal) {
+          if (newVal !== oldVal || angular.isUndefined(scope.selectedValue)) {
+            scope.selectedValue = scope.values[newVal] || '';
+          }
+        });
+        // Deconstruction
         scope.$on('$destroy', function () {
           windowEl.off('resize.dropdown');
         });
-        var initialized = scope.$watch(function () {
-            return ngModel.$modelValue;
-          }, function (newVal, oldVal) {
-            // Sometimes two $modelValue changes happen before a digest loop occurs
-            // If we have yet to set a selectedValue, but newVal is truthy, go ahead and set it
-            if (newVal !== oldVal || angular.isUndefined(scope.selectedValue) && (newVal || newVal === '')) {
-              scope.selectedValue = scope.values[ngModel.$modelValue];
-              initialized();
-              // Now we can set up the watch for when an external force changes the model
-              scope.$watch(function () {
-                return ngModel.$modelValue;
-              }, function (newVal, oldVal) {
-                if (newVal !== oldVal && newVal && !angular.isUndefined(scope.selectedValue) && newVal !== scope.selectedValue) {
-                  scope.selectedValue = scope.values[newVal];
-                }
-              });
-            }
-          });
       }
     };
   });
@@ -842,6 +934,18 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.directive('btPropertyCard', function () {
+    return {
+      restrict: 'E',
+      scope: { property: '=' },
+      templateUrl: 'template/property-card/bt-property-card.tpl.html',
+      link: function (scope, element, attrs) {
+      }
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
   Boomstrap.directive('btRange', function ($analytics, $window, $timeout) {
     var DEFAULT_DROPMIN = -1;
     var DEFAULT_DROPMAX = -1;
@@ -1001,6 +1105,81 @@
     };
   });
 }(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btScore
+   * @restrict E
+   * @replace
+   * 
+   * @param {Number} score The score to present in the component.  Classes will be added to the element to
+   * color a score element based on how high or low the score is.  Excellent score (99-76); Good score (75-56);
+   * Average score (50-26); Default score (25-0)
+   * @param {string} [size=''] The size of the score. Valid sizes include: `xs` (extrasmall), `sm` (small), and `lg` (large).
+   * If no size is specified, the score will be of medium size.
+   *
+   * @description
+   * The `btScore` directive represents a score component from Boomstrap.  It will keep the color
+   * and size up to date based on what is specified.
+   *
+   *
+   * @example
+      <doc:example module="boomstrap">
+        <doc:source>
+          <div ng-init="myScore=20">
+            <label>Input a score here to see it reflected in the tags :</label>
+            <input ng-model="myScore">
+            <p><bt-score score="myScore" size="xs"></bt-score></p>
+            <p><bt-score score="myScore" size="sm"></bt-score></p>
+            <p><bt-score score="myScore"></bt-score></p>
+            <p><bt-score score="myScore" size="lg"></bt-score></p>
+          </div>
+        </doc:source>
+      </doc:example>
+   * 
+   */
+  Boomstrap.directive('btScore', function () {
+    return {
+      restrict: 'E',
+      replace: true,
+      template: '<span class="score {{ scoreSize }} {{ scoreType }}">{{ score }}</span>',
+      scope: {
+        score: '=',
+        size: '@'
+      },
+      link: function (scope, iElement, iAttrs) {
+        var translateScore = function (score) {
+          var scoreType, scoreTranslation;
+          // Translate string value into a Number
+          scoreTranslation = parseInt(score, 10);
+          if (!isNaN(scoreTranslation)) {
+            if (scoreTranslation >= 76) {
+              scoreType = 'score-excellent';
+            } else if (scoreTranslation >= 56) {
+              scoreType = 'score-good';
+            } else if (scoreTranslation >= 26) {
+              scoreType = 'score-average';
+            }
+          }
+          scope.scoreType = scoreType || '';
+        };
+        scope.scoreSize = scope.size && 'score-' + scope.size || '';
+        scope.scoreType = translateScore(scope.score);
+        scope.$watch('score', function (newScore, oldScore) {
+          if (newScore !== oldScore) {
+            translateScore(newScore);
+          }
+        });
+        scope.$watch('size', function (newSize, oldSize) {
+          if (newSize !== oldSize) {
+            scope.scoreSize = newSize && 'score-' + newSize || '';
+          }
+        });
+      }
+    };
+  });
+}(angular.module('boomstrap')));
 (function (Boomstrap, Tour) {
   'use strict';
   Boomstrap.service('bootstrapTourService', function ($templateCache, $rootScope, $http, AUTO_START_TOUR) {
@@ -1124,7 +1303,9 @@ angular.module('boomstrap').run([
   function ($templateCache) {
     'use strict';
     $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel"><ol class="carousel-indicators" ng-show="slides().length > 1"><li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li></ol><div class="carousel-inner" ng-transclude=""></div><a class="left carousel-control" ng-click="prev()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-left"></span></a> <a class="right carousel-control" ng-click="next()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-right"></span></a></div>');
+    $templateCache.put('template/dropdown/bt-dropdown.tpl.html', '<div class="dropdown"><button class="btn btn-default dropdown-toggle" type="button"><span class="pull-left" ng-bind="selectedValue"></span> <span class="caret"></span> </button><ul class="dropdown-menu" role="menu" ng-style="{ \'min-width\': dropdownWidth + \'px\'}"><li ng-repeat="value in arrayValues" ng-if="keysAreNumbers"><a ng-click="assignValue(value.key)">{{ value.value }}</a></li><li ng-repeat="(choiceValue, choiceName) in values" ng-if="!keysAreNumbers"><a ng-click="assignValue(choiceValue)">{{choiceName}}</a></li></ul></div>');
     $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">PL</a></div><div class="collapse navbar-collapse" id="pl-nav"><ul class="nav navbar-nav"><li class="active"><a href="#pl-colors">Colors</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#pl-button-options">Options</a></li><li><a href="#pl-button-sizes">Sizes</a></li><li><a href="#pl-button-active">Active State</a></li><li><a href="#pl-button-disabled">Disabled State</a></li><li><a href="#pl-button-tags">Button Tags</a></li></ul></li><li><a href="#pl-labels">Labels</a></li><li><a href="#pl-typography">Typography</a></li></ul></div></div></nav><div class="container"></div>');
     $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads"><div class="arrow"></div><div class="popover-close"><i data-role="end" class="ficon ficon-cross property-close"></i></div><h3 class="popover-title">New Best-Fit Leads Tour</h3><div class="tour-popover popover-content"></div><div class="popover-navigation"><button class="btn btn-default" data-role="prev">Prev</button> <button class="btn btn-default" data-role="next"><span>Next</span></button></div></div>');
+    $templateCache.put('template/property-card/bt-property-card.tpl.html', '<div class="card"><div class="sash sash-new">New <span class="sash-time">2 hours ago</span></div><div class="card-photo"><div class="card-photo-inner"><img class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}"></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-7"><p class="card-priority card-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="small">{{ property.address.city }}, {{ property.address.state }}</p><p class="small">{{ property.address.neighborhood }}</p></div><div class="col-xs-5 text-right"><p class="card-priority card-price">{{ property.listPrice }}</p><p class="small">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-stats"><span class="card-stat">{{ property.beds }} BEDS</span> <span class="card-stat">{{ property.baths }} BATHS</span> <span class="card-stat">{{ property.sqft }} SQFT</span> <span class="card-stat">{{ property.acres }} ACRES</span></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-md-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div><div class="card-toggle"><span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span> <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span></div><div collapse="!isExpanded" class="card-detail"><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-6"><p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p></div><div class="col-xs-6 text-right"><p class="small"><strong>LISTED:</strong> {{ property.listed }}</p></div></div><p class="small"><strong>TYPE:</strong> {{ property.type }}</p></div><p class="card-title">Price History</p><div class="card-container card-price-history"><div class="row row-xcondensed"><div class="col-xs-4"><p class="small">5 hrs ago</p></div><div class="col-xs-4"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> -$500 (10%)</p></div><div class="col-xs-4 text-right"><p class="small">$350,000</p></div></div><div class="row row-xcondensed"><div class="col-xs-4"><p class="small">6 hrs ago</p></div><div class="col-xs-4"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> -$800 (12%)</p></div><div class="col-xs-4 text-right"><p class="small">$450,000</p></div></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-md-6"><button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button></div><div class="col-md-6"><button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i></button></div></div></div></div></div>');
   }
 ]);
