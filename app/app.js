@@ -3,10 +3,14 @@
 
   angular.module('boomstrap', [
     'ui.bootstrap',
+    'ui.select',
     'angular-chosen'
   ])
   .value('AUTO_START_TOUR', {
     value: false
+  })
+  .config(function(uiSelectConfig) {
+    uiSelectConfig.theme = 'bootstrap';
   });
 
   angular.module('ui.bootstrap.pagination')
