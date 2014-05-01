@@ -41,6 +41,15 @@ NG_DOCS={
     },
     {
       "section": "ngboomstrap",
+      "id": "boomstrap.directive:btErrorImg",
+      "shortName": "btErrorImg",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btErrorImg directive will replace the src of an img tag if the original src fails to load.",
+      "keywords": "backup boomstrap bt-error-img bterrorimg directive fails image images img jpg load module ngboomstrap original properties replace src tag url"
+    },
+    {
+      "section": "ngboomstrap",
       "id": "boomstrap.directive:btScore",
       "shortName": "btScore",
       "type": "directive",
