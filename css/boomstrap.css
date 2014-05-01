@@ -6433,10 +6433,27 @@ fieldset[disabled] .btn-attention.active {
   font-size: 14px;
   margin: 2px 2px 0 -2px;
 }
+.btn-block > i {
+  display: inline-block;
+  float: none;
+  margin: 0;
+}
+.btn-icon {
+  padding-left: 8px;
+  padding-right: 8px;
+}
 .btn-icon i {
   display: block;
   margin: 0;
   padding: 2px;
+}
+.btn-icon.btn-lg {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.btn-icon.btn-xs {
+  padding-left: 4px;
+  padding-right: 4px;
 }
 .callout {
   margin: 20px 0;
@@ -6762,11 +6779,9 @@ fieldset[disabled] .btn-attention.active {
 .ficon-phone-good {
   color: #8db23e;
 }
+.ficon-email-good,
 .ficon-email-bad {
   top: 0px;
-}
-.ficon-email-neutral {
-  top: 2px;
 }
 @font-face {
   font-family: 'ficon';
