@@ -1305,7 +1305,7 @@
             scope.maximum.value = ngModel.$modelValue.maximum;
           }
         });
-        scope.$watch('minimum', function (newMin, oldMin) {
+        scope.$watch('minimum.value', function (newMin, oldMin) {
           if (newMin !== oldMin) {
             validateMinMax(function () {
               // Pass in the flipping function if the min/max order is invalid.
@@ -1316,7 +1316,7 @@
             ngModel.$setViewValue(ngModel.$viewValue);
           }
         });
-        scope.$watch('maximum', function (newMax, oldMax) {
+        scope.$watch('maximum.value', function (newMax, oldMax) {
           if (newMax !== oldMax) {
             validateMinMax(function () {
               // Pass in the flipping function if the min/max order is invalid.
