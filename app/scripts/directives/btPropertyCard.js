@@ -5,11 +5,14 @@
       restrict: 'E',
       replace: true,
       scope: {
-        property: '='
+        property: '=',
+        size: '@'
       },
       templateUrl: 'template/property-card/bt-property-card.tpl.html',
       link: function(scope, element, attrs) {
-        
+        if (scope.size === 'sm') {
+          scope.isSmall = true;
+        }
       }
     };
   });
