@@ -1,8 +1,18 @@
 NG_DOCS={
   "sections": {
+    "boomstrap": "boomstrap",
     "ngboomstrap": "boomstrap"
   },
   "pages": [
+    {
+      "section": "boomstrap",
+      "id": "boomstrap.directive:btAddClassOnLoad",
+      "shortName": "btAddClassOnLoad",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btAddClassOnLoad directive adds a class to an img tag",
+      "keywords": "add adds bob boomstrap bt-add-class-on-load btaddclassonload class css directive event fires image img jpg load loaded my-img representation src string tag transitions"
+    },
     {
       "section": "ngboomstrap",
       "id": "boomstrap.directive:btAddClassOnLoad",
@@ -41,6 +51,15 @@ NG_DOCS={
     },
     {
       "section": "ngboomstrap",
+      "id": "boomstrap.directive:btErrorImg",
+      "shortName": "btErrorImg",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btErrorImg directive will replace the src of an img tag if the original src fails to load.",
+      "keywords": "backup boomstrap bt-error-img bterrorimg directive fails image images img jpg load module ngboomstrap original properties replace src tag url"
+    },
+    {
+      "section": "ngboomstrap",
       "id": "boomstrap.directive:btScore",
       "shortName": "btScore",
       "type": "directive",
@@ -50,6 +69,7 @@ NG_DOCS={
     }
   ],
   "apis": {
+    "boomstrap": false,
     "ngboomstrap": false
   },
   "html5Mode": false,
