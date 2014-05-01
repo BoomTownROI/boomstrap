@@ -5,7 +5,6 @@
         { // this would be populated from a service/API call
             // dummy data for the pattern library
             imageSrc: 'http://placebear.com/800/600',
-            defaultImageSrc: 'http://placekitten.com/800/600',
             listPrice: '$2,250,000',
             listingUrl: 'https://www.google.com/search?q=quaint+shack&tbm=isch',
             offMarket: false, // only populated for off market listings (triggers sash)
@@ -52,7 +51,6 @@
         },
         {
             imageSrc: 'http://placekitten.com/800/600',
-            defaultImageSrc: 'http://placebear.com/800/600',
             listPrice: '$1,500,000',
             listingUrl: 'https://www.google.com/search?q=quaint+shanty&tbm=isch',
             offMarket: false, // only populated for off market listings (triggers sash)
@@ -98,7 +96,6 @@
         },
         {
             imageSrc: 'http://lorempixel.com/output/animals-q-c-800-600-6.jpg',
-            defaultImageSrc: 'http://lorempixel.com/output/animals-q-c-800-600-6.jpg',
             listPrice: '$500,000',
             listingUrl: 'https://www.google.com/search?q=quaint+doghouse&tbm=isch',
             offMarket: false, // only populated for off market listings (triggers sash)
