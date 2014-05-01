@@ -2354,6 +2354,7 @@ fieldset[disabled] .btn {
   background-image: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff5f5f5', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -2403,6 +2404,7 @@ fieldset[disabled] .btn-default.active {
   background-image: linear-gradient(to bottom, #f5f5f5 0%, #e6e6e6 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe6e6e6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-default:active,
 .btn-default.active,
@@ -2430,6 +2432,7 @@ fieldset[disabled] .btn-default.active {
   background-image: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff5f5f5', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-default .badge {
   color: #ffffff;
@@ -2443,6 +2446,7 @@ fieldset[disabled] .btn-default.active {
   background-image: linear-gradient(to bottom, #1581e2 0%, #1376cf 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1581e2', endColorstr='#ff1376cf', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2492,6 +2496,7 @@ fieldset[disabled] .btn-primary.active {
   background-image: linear-gradient(to bottom, #1376cf 0%, #1166b3 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1376cf', endColorstr='#ff1166b3', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -2519,6 +2524,7 @@ fieldset[disabled] .btn-primary.active {
   background-image: linear-gradient(to bottom, #1581e2 0%, #1376cf 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1581e2', endColorstr='#ff1376cf', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary .badge {
   color: #1581e2;
@@ -2532,6 +2538,7 @@ fieldset[disabled] .btn-primary.active {
   background-image: linear-gradient(to bottom, #669900 0%, #588500 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff669900', endColorstr='#ff588500', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -2581,6 +2588,7 @@ fieldset[disabled] .btn-success.active {
   background-image: linear-gradient(to bottom, #588500 0%, #446600 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff588500', endColorstr='#ff446600', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-success:active,
 .btn-success.active,
@@ -2608,6 +2616,7 @@ fieldset[disabled] .btn-success.active {
   background-image: linear-gradient(to bottom, #669900 0%, #588500 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff669900', endColorstr='#ff588500', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-success .badge {
   color: #669900;
@@ -2621,6 +2630,7 @@ fieldset[disabled] .btn-success.active {
   background-image: linear-gradient(to bottom, #5bc0de 0%, #4ab9db 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff4ab9db', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -2670,6 +2680,7 @@ fieldset[disabled] .btn-info.active {
   background-image: linear-gradient(to bottom, #4ab9db 0%, #31b0d5 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4ab9db', endColorstr='#ff31b0d5', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-info:active,
 .btn-info.active,
@@ -2697,6 +2708,7 @@ fieldset[disabled] .btn-info.active {
   background-image: linear-gradient(to bottom, #5bc0de 0%, #4ab9db 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff4ab9db', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-info .badge {
   color: #5bc0de;
@@ -2710,6 +2722,7 @@ fieldset[disabled] .btn-info.active {
   background-image: linear-gradient(to bottom, #ffcc33 0%, #ffc71f 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffcc33', endColorstr='#ffffc71f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -2759,6 +2772,7 @@ fieldset[disabled] .btn-warning.active {
   background-image: linear-gradient(to bottom, #ffc71f 0%, #ffbf00 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffc71f', endColorstr='#ffffbf00', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -2786,6 +2800,7 @@ fieldset[disabled] .btn-warning.active {
   background-image: linear-gradient(to bottom, #ffcc33 0%, #ffc71f 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffcc33', endColorstr='#ffffc71f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-warning .badge {
   color: #ffcc33;
@@ -2799,6 +2814,7 @@ fieldset[disabled] .btn-warning.active {
   background-image: linear-gradient(to bottom, #cb2027 0%, #b91d24 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcb2027', endColorstr='#ffb91d24', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -2848,6 +2864,7 @@ fieldset[disabled] .btn-danger.active {
   background-image: linear-gradient(to bottom, #b91d24 0%, #9f191f 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb91d24', endColorstr='#ff9f191f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-danger:active,
 .btn-danger.active,
@@ -2875,6 +2892,7 @@ fieldset[disabled] .btn-danger.active {
   background-image: linear-gradient(to bottom, #cb2027 0%, #b91d24 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcb2027', endColorstr='#ffb91d24', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-danger .badge {
   color: #cb2027;
@@ -6270,6 +6288,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   background-image: linear-gradient(to bottom, #f68a24 0%, #f58010 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff68a24', endColorstr='#fff58010', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-attention:hover,
 .btn-attention:focus,
@@ -6319,6 +6338,7 @@ fieldset[disabled] .btn-attention.active {
   background-image: linear-gradient(to bottom, #f58010 0%, #de7009 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff58010', endColorstr='#ffde7009', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-attention:active,
 .btn-attention.active,
@@ -6346,6 +6366,7 @@ fieldset[disabled] .btn-attention.active {
   background-image: linear-gradient(to bottom, #f68a24 0%, #f58010 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff68a24', endColorstr='#fff58010', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-attention .badge {
   color: #f68a24;
