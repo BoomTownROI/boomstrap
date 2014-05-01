@@ -9,6 +9,7 @@
 	border-radius: @border-radius-small;
 }
 
+
 // Alternate Buttons
 // -------------------------
 
@@ -16,14 +17,49 @@
   .button-variant(@btn-attention-color; @btn-attention-bg; @btn-attention-border);
 }
 
-// Button Sizes - Condensed
-// --------------------------------------------------
 
-// Use condensed buttons with caution. They don't use global padding variables and therefore won't play nice (heights won't
-// match) when paired with other elements such as form inputs.
+// Button Icons
+// -------------------------
 
-
-.btn-lg-condensed {
-  // line-height: ensure even-numbered height of button next to large input
-  .button-size(@padding-base-vertical - 2px; @padding-small-horizontal - 2px; @font-size-large; @line-height-large; @border-radius-small);
+.btn {
+	> i {
+		float: left;
+		font-size: @font-size-base + 2px;
+		margin: 1px 4px 0 -2px;
+	}
 }
+
+.btn-lg {
+	> i {
+		font-size: @font-size-large + 2px;
+		margin: 1px 6px 0 -2px;
+	}
+}
+
+.btn-sm {
+	> i {
+		font-size: @font-size-small + 2px;
+	}
+}
+
+.btn-xs {
+	> i {
+		font-size: @font-size-small + 2px;
+		margin: 2px 2px 0 -2px;
+	}
+}
+
+// Icon-only buttons
+
+.btn-icon {
+	i {
+		display: block;
+		margin: 0;
+		padding: 2px;
+	}
+	/*&.btn-xs {
+		i { margin-top: 2px; }
+	}*/
+}
+
+
