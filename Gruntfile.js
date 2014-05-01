@@ -20,6 +20,7 @@
     };
 
     var docs = [
+      'bower:install',
       'ngtemplates',
       'jshint:all',
       'concurrent:concatjs',
@@ -396,6 +397,18 @@
         }
       },
 
+      bower: {
+        install: {
+          options: {
+            targetDir: 'bower_components',
+            copy: false,
+            install: true,
+            verbose: true
+           //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+          }
+        }
+      },
+
       concurrent: {
         less: ['less:dist', 'less:docs'],
         copy: ['copy:dist', 'copy:docs'],
@@ -409,6 +422,7 @@
     grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 
     grunt.registerTask('default', [
+      'bower:install',
       'clean:dist',
       'ngtemplates',
       'concurrent:concatjs',
