@@ -13,13 +13,15 @@
         maxPlaceholder: '@'
       },
       link: function(scope, iElement, iAttrs, ngModel) {
+        /*
+         * Set default values for minimum, maximum, and placeholders.
+         */
         scope.minimum = {
           value: ngModel.$modelValue.minimum
         };
         scope.maximum = {
           value: ngModel.$modelValue.maximum
         };
-
         scope.minPlaceholder = scope.minPlaceholder || 'Select a minimum value';
         scope.maxPlaceholder = scope.maxPLaceholder || 'Select a maximum value';
 
@@ -38,11 +40,17 @@
         };
 
         var addValueToValues = function(value, collection) {
-          if (value) {
-            var parsedValue = value.replace(/[^0-9\.]+/, '');
-            parsedValue = parseInt(parsedValue, 10);
-            if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
-              collection.unshift(parsedValue);
+          if (value && collection) {
+
+            // First, remove all non-number or decimal characters from string
+            var parsedValue = value.toString().replace(/[^0-9\.]+/, '');
+
+            // If the string is not completely empty, we likely have a number
+            if (parsedValue) {
+              parsedValue = parseFloat(parseFloat(parsedValue).toFixed(2));
+              if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
+                collection.unshift(parsedValue);
+              }
             }
           }
         };
@@ -59,23 +67,27 @@
         }
 
         scope.translateValue = function(value, defaultText) {
-          var translatedValue;
-
-          if (angular.isNumber(value)) {
-            translatedValue = translateValidValue(value);
-          } else {
-            translatedValue = defaultText;
-          }
-
-          return translatedValue;
+          return angular.isNumber(value) ? translateValidValue(value) : defaultText;
         };
 
-        scope.getValues = function(value) {
-          var newValues = scope.values.slice();
-          addValueToValues(value, newValues);
-
-          return newValues;
-        };
+        (function() {
+          /*
+           * getValues uses modifiedValues and previousValue
+           * to avoid modifying the collection and value
+           * each digest loop.  If the user has provided
+           * new input, then we transform the value and return
+           * a modified collection.
+           */
+          var modifiedValues, previousValue;
+          scope.getValues = function(value) {
+            if (value !== previousValue) {
+              previousValue = value;
+              modifiedValues = scope.values.slice();
+              addValueToValues(value, modifiedValues);
+            }
+            return modifiedValues;
+          };
+        })();
 
         scope.$watch(function() { return ngModel.$modelValue.minimum; }, function(newVal, oldVal) {
           if (scope.minimum.value !== ngModel.$modelValue.minimum) {
@@ -95,8 +107,11 @@
               // Pass in the flipping function if the min/max order is invalid.
               scope.maximum.value = scope.minimum.value;
             });
+
+            // Add the value to the list of potential values
             addValueToValues(scope.minimum.value, scope.values);
 
+            // Update the ngModel
             ngModel.$modelValue.minimum = scope.minimum.value;
             ngModel.$setViewValue(ngModel.$viewValue);
           }
@@ -108,8 +123,11 @@
               // Pass in the flipping function if the min/max order is invalid.
               scope.minimum.value = scope.maximum.value;
             });
+
+            // Add the value to the list of potential values
             addValueToValues(scope.maximum.value, scope.values);
 
+            // Update the ngModel
             ngModel.$modelValue.maximum = scope.maximum.value;
             ngModel.$setViewValue(ngModel.$viewValue);
           }
