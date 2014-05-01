@@ -88,7 +88,7 @@
           }
         });
 
-        scope.getValues = function(newValue) {
+        scope.getValues = function(value) {
           var newValues = scope.values.slice();
           var parsedValue;
 
