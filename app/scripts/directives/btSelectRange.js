@@ -42,11 +42,13 @@
           }
         };
 
-        var addValueToValues = function(value) {
-          var parsedValue = value.replace(/[^0-9\.]+/, '');
-          parsedValue = parseInt(parsedValue, 10);
-          if (!isNaN(parsedValue) && scope.values.indexOf(parsedValue) === -1) {
-            scope.values.unshift(parsedValue);
+        var addValueToValues = function(value, collection) {
+          if (value) {
+            var parsedValue = value.replace(/[^0-9\.]+/, '');
+            parsedValue = parseInt(parsedValue, 10);
+            if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
+              collection.unshift(parsedValue);
+            }
           }
         };
 
@@ -62,7 +64,7 @@
           }
         });
 
-        scope.$watch('minimum', function(newMin, oldMin) {
+        scope.$watch('minimum.value', function(newMin, oldMin) {
           if (newMin !== oldMin) {
             validateMinMax(function() {
               // Pass in the flipping function if the min/max order is invalid.
@@ -75,7 +77,7 @@
           }
         });
 
-        scope.$watch('maximum', function(newMax, oldMax) {
+        scope.$watch('maximum.value', function(newMax, oldMax) {
           if (newMax !== oldMax) {
             validateMinMax(function() {
               // Pass in the flipping function if the min/max order is invalid.
@@ -92,13 +94,7 @@
           var newValues = scope.values.slice();
           var parsedValue;
 
-          if (value) {
-            parsedValue = value.replace(/[^0-9]+/, '');
-            parsedValue = parseInt(parsedValue, 10);
-            if (!isNaN(parsedValue) && newValues.indexOf(parsedValue) === -1) {
-              newValues.unshift(parsedValue);
-            }
-          }
+          addValueToValues(value, newValues);
 
           return newValues;
         };
