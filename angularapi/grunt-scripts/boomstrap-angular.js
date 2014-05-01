@@ -25,30 +25,6 @@
 }());
 (function (boomstrap) {
   'use strict';
-  boomstrap.controller('AlertDemoCtrl', [
-    '$scope',
-    function AlertDemoCtrl($scope) {
-      $scope.alerts = [
-        {
-          type: 'danger',
-          msg: 'Oh snap! Change a few things up and try submitting again.'
-        },
-        {
-          type: 'success',
-          msg: 'Well done! You successfully read this important alert message.'
-        }
-      ];
-      $scope.addAlert = function () {
-        $scope.alerts.push({ msg: 'Another alert!' });
-      };
-      $scope.closeAlert = function (index) {
-        $scope.alerts.splice(index, 1);
-      };
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
   boomstrap.controller('CarouselDemoCtrl', [
     '$scope',
     function ($scope) {
@@ -78,114 +54,6 @@
         image: 'images/fpo-he-man.jpg',
         text: 'Skeletor!?'
       });
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
-  boomstrap.controller('ChosenDemoCtrl', [
-    '$scope',
-    function ($scope) {
-      $scope.superheroes = [
-        'Batman',
-        'Superman',
-        'Green Arrow',
-        'Wonder Woman'
-      ];
-      $scope.superhero = 'Spiderman';
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
-  boomstrap.controller('PopoverDemoCtrl', [
-    '$scope',
-    function PopoverDemoCtrl($scope) {
-      $scope.dynamicPopover = 'Hello, World!';
-      $scope.dynamicPopoverTitle = 'Title';
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
-  boomstrap.controller('SingleCardDemoCtrl', [
-    '$scope',
-    function SingleCardDemoCtrl($scope) {
-      $scope.property = {};
-      // this would normally be populated from a service/API call
-      // the following can be specified individually or via object notation {}
-      $scope.property.imageSrc = 'http://lorempixel.com/output/animals-q-g-800-600-3.jpg';
-      $scope.property.defaultImageSrc = 'http://placekitten.com/800/600';
-      $scope.property.listPrice = '$2,250,000';
-      $scope.property.listingUrl = 'https://www.google.com/search?q=quaint+outhouse&tbm=isch';
-      $scope.property.backOnMarket = '6 hrs ago';
-      // only populated for new listings (triggers sash)
-      $scope.property.bestFits = '1444';
-      $scope.property.favs = '33';
-      $scope.property.mls = '1324961';
-      $scope.property.listed = '6 days ago';
-      $scope.property.pricePerSqft = '$1.99';
-      $scope.property.beds = '5';
-      $scope.property.baths = '3.5';
-      $scope.property.sqft = '4,195';
-      $scope.property.acres = '2.75';
-      $scope.property.type = 'Frat House';
-      $scope.property.address = {
-        street: '123 Fourth St.',
-        city: 'Charleston',
-        state: 'SC',
-        neighborhood: 'Craig\'s Landing'
-      };
-      $scope.property.history = [
-        {
-          'when': '5 hrs ago',
-          'change': '-$250,000',
-          'changePercent': '2%',
-          'price': '$2,250,000'
-        },
-        {
-          'when': '6 hrs ago',
-          'change': '-$500,000',
-          'changePercent': '5%',
-          'price': '$2,500,000'
-        }
-      ];
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
-  boomstrap.controller('TabsDemoCtrl', [
-    '$scope',
-    function TabsDemoCtrl($scope) {
-      $scope.tabs = [
-        {
-          title: 'Dynamic Title 1',
-          content: 'Dynamic content 1'
-        },
-        {
-          title: 'Dynamic Title 2',
-          content: 'Dynamic content 2',
-          disabled: true
-        }
-      ];
-      $scope.alertMe = function () {
-        setTimeout(function () {
-          alert('You\'ve selected the alert tab!');
-        });
-      };
-      $scope.navType = 'pills';
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
-  boomstrap.controller('TooltipDemoCtrl', [
-    '$scope',
-    function TooltipDemoCtrl($scope) {
-      $scope.dynamicTooltip = 'Hello, World!';
-      $scope.dynamicTooltipText = 'dynamic';
-      $scope.htmlTooltip = 'I&#x27;ve been made &lt;b&gt;bold&lt;/b&gt;!';
     }
   ]);
 }(angular.module('boomstrap')));
@@ -1256,22 +1124,18 @@
     return {
       restrict: 'E',
       require: 'ngModel',
-      templateUrl: function (tElement, tAttrs) {
-        // Set the template to number by default
-        var templateUrl = 'template/select-range/number.tpl.html';
-        if (tAttrs && tAttrs.rangeType) {
-          var rangeType = tAttrs.rangeType;
-          if (rangeType === 'money') {
-            templateUrl = 'template/select-range/money.tpl.html';
-          }
-        }
-        return templateUrl;
-      },
+      templateUrl: 'template/select-range/range.tpl.html',
       replace: true,
-      scope: { values: '=' },
+      scope: {
+        values: '=',
+        minPlaceholder: '@',
+        maxPlaceholder: '@'
+      },
       link: function (scope, iElement, iAttrs, ngModel) {
         scope.minimum = { value: ngModel.$modelValue.minimum };
         scope.maximum = { value: ngModel.$modelValue.maximum };
+        scope.minPlaceholder = scope.minPlaceholder || 'Select a minimum value';
+        scope.maxPlaceholder = scope.maxPLaceholder || 'Select a maximum value';
         var validateMinMax = function (flippingFn) {
           // Normalize values first
           if (!angular.isNumber(scope.minimum.value)) {
@@ -1293,17 +1157,31 @@
             }
           }
         };
+        scope.translateValue = function (value, defaultText) {
+          var rangeType = iAttrs.rangeType, translatedValue;
+          if (rangeType === 'money') {
+            translatedValue = (value || value === 0) && $filter('currency')(value) || defaultText;
+          } else {
+            translatedValue = value || value === 0 || defaultText;
+          }
+          return translatedValue;
+        };
+        scope.getValues = function (value) {
+          var newValues = scope.values.slice();
+          addValueToValues(value, newValues);
+          return newValues;
+        };
         scope.$watch(function () {
           return ngModel.$modelValue.minimum;
         }, function (newVal, oldVal) {
-          if (newVal !== oldVal) {
+          if (scope.minimum.value !== ngModel.$modelValue.minimum) {
             scope.minimum.value = ngModel.$modelValue.minimum;
           }
         });
         scope.$watch(function () {
           return ngModel.$modelValue.maximum;
         }, function (newVal, oldVal) {
-          if (newVal !== oldVal) {
+          if (scope.maximum.value !== ngModel.$modelValue.maximum) {
             scope.maximum.value = ngModel.$modelValue.maximum;
           }
         });
@@ -1313,7 +1191,7 @@
               // Pass in the flipping function if the min/max order is invalid.
               scope.maximum.value = scope.minimum.value;
             });
-            addValueToValues(scope.minimum.value);
+            addValueToValues(scope.minimum.value, scope.values);
             ngModel.$modelValue.minimum = scope.minimum.value;
             ngModel.$setViewValue(ngModel.$viewValue);
           }
@@ -1324,17 +1202,11 @@
               // Pass in the flipping function if the min/max order is invalid.
               scope.minimum.value = scope.maximum.value;
             });
-            addValueToValues(scope.maximum.value);
+            addValueToValues(scope.maximum.value, scope.values);
             ngModel.$modelValue.maximum = scope.maximum.value;
             ngModel.$setViewValue(ngModel.$viewValue);
           }
         });
-        scope.getValues = function (value) {
-          var newValues = scope.values.slice();
-          var parsedValue;
-          addValueToValues(value, newValues);
-          return newValues;
-        };
       }
     };
   });
@@ -1467,8 +1339,7 @@ angular.module('boomstrap').run([
     $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads"><div class="arrow"></div><div class="popover-close"><i data-role="end" class="ficon ficon-cross property-close"></i></div><h3 class="popover-title">New Best-Fit Leads Tour</h3><div class="tour-popover popover-content"></div><div class="popover-navigation"><button class="btn btn-default" data-role="prev">Prev</button> <button class="btn btn-default" data-role="next"><span>Next</span></button></div></div>');
     $templateCache.put('template/property-card/bt-property-card-sm.tpl.html', '<div class="card card-sm"><div class="card-photo"><div class="card-photo-inner"><div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div><div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div><div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div><div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div><img bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}"></div></div><div class="card-sm-container"><div class="row row-xcondensed"><div class="col-xs-8"><p class="card-sm-priority card-sm-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="xsmall">{{ property.address.city }}, {{ property.address.state }}</p><p class="xsmall">{{ property.address.neighborhood }}</p></div><div class="col-xs-4 text-right"><p class="card-sm-priority card-sm-price">{{ property.listPrice }}</p><p class="xsmall">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-sm-stats"><span class="card-sm-stat">{{ property.beds }} BEDS</span> <span class="card-sm-stat">{{ property.baths }} BATHS</span> <span class="card-sm-stat">{{ property.sqft }} SQFT</span> <span class="card-sm-stat">{{ property.acres }} ACRES</span></div><div class="card-sm-container"><div class="row row-xcondensed"><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div></div>');
     $templateCache.put('template/property-card/bt-property-card.tpl.html', '<div class="card" ng-class="{ \'card-sm\': size === \'sm\' }"><div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div><div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div><div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div><div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div><div class="card-photo"><div class="card-photo-inner"><img bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}"></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-7"><p class="card-priority card-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="small">{{ property.address.city }}, {{ property.address.state }}</p><p class="small">{{ property.address.neighborhood }}</p></div><div class="col-xs-5 text-right"><p class="card-priority card-price">{{ property.listPrice }}</p><p class="small">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-stats"><span class="card-stat">{{ property.beds }} BEDS</span> <span class="card-stat">{{ property.baths }} BATHS</span> <span class="card-stat">{{ property.sqft }} SQFT</span> <span class="card-stat">{{ property.acres }} ACRES</span></div><div class="card-container"><div class="row row-xcondensed"><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div><div ng-if="!isSmall"><div class="card-toggle"><span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span> <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span></div><div collapse="!isExpanded" class="card-detail"><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-6"><p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p></div><div class="col-xs-6 text-right"><p class="small"><strong>LISTED:</strong> {{ property.listed }}</p></div></div><p class="small"><strong>TYPE:</strong> {{ property.type }}</p></div><p class="card-title">Price History</p><div class="card-container card-price-history"><div ng-repeat="history in property.history" class="row row-xcondensed"><div class="col-xs-3"><p class="small">{{ history.when }}</p></div><div class="col-xs-6"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p></div><div class="col-xs-3 text-right"><p class="small">{{ history.price }}</p></div></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-sm-6"><button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button></div><div class="col-sm-6"><button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i></button></div></div></div></div></div></div>');
-    $templateCache.put('template/select-range/money.tpl.html', '<div class="row"><div class="col-md-5"><ui-select ng-model="minimum.value"><match placeholder="Select a minimum price">{{$select.selected | currency}}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{value | currency}}</div></choices></ui-select></div><div class="col-md-2"><i class="ficon ficon-minus"></i></div><div class="col-md-5"><ui-select ng-model="maximum.value"><match placeholder="Select a maximum price">{{$select.selected | currency}}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{ value | currency }}</div></choices></ui-select></div></div>');
-    $templateCache.put('template/select-range/number.tpl.html', '<div class="row"><div class="col-md-5"><ui-select ng-model="minimum.value"><match placeholder="Select a minimum value">{{$select.selected}}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{value}}</div></choices></ui-select></div><div class="col-md-2"><i class="ficon ficon-minus"></i></div><div class="col-md-5"><ui-select ng-model="maximum.value"><match placeholder="Select a maximum value">{{$select.selected}}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{ value}}</div></choices></ui-select></div></div>');
+    $templateCache.put('template/select-range/range.tpl.html', '<div class="row"><div class="col-md-5"><ui-select ng-model="minimum.value"><match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected) }}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{ translateValue(value) }}</div></choices></ui-select></div><div class="col-md-2"><i class="ficon ficon-minus"></i></div><div class="col-md-5"><ui-select ng-model="maximum.value"><match placeholder="{{ maxPlaceholder }}">{{ translateValue($select.selected) }}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{ translateValue(value) }}</div></choices></ui-select></div></div>');
   }
 ]);
 angular.module('ui.bootstrap.pagination').run([
