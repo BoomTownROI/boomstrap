@@ -22,10 +22,10 @@
       },
       link: function(scope, iElement, iAttrs, ngModel) {
         scope.minimum = {
-          value: iCtrl.$modelValue.minimum
+          value: ngModel.$modelValue.minimum
         };
         scope.maximum = {
-          value: iCtrl.$modelValue.maximum
+          value: ngModel.$modelValue.maximum
         };
 
         var validateMinMax = function(flippingFn) {
@@ -50,15 +50,15 @@
           }
         };
 
-        scope.$watch(function() { return iCtrl.$modelValue.minimum; }, function(newVal, oldVal) {
+        scope.$watch(function() { return ngModel.$modelValue.minimum; }, function(newVal, oldVal) {
           if (newVal !== oldVal) {
-            scope.minimum.value = iCtrl.$modelValue.minimum;
+            scope.minimum.value = ngModel.$modelValue.minimum;
           }
         });
 
-        scope.$watch(function() { return iCtrl.$modelValue.maximum; }, function(newVal, oldVal) {
+        scope.$watch(function() { return ngModel.$modelValue.maximum; }, function(newVal, oldVal) {
           if (newVal !== oldVal) {
-            scope.maximum.value = iCtrl.$modelValue.maximum;
+            scope.maximum.value = ngModel.$modelValue.maximum;
           }
         });
 
@@ -70,8 +70,8 @@
             });
             addValueToValues(scope.minimum.value);
 
-            iCtrl.$modelValue.minimum = scope.minimum.value;
-            iCtrl.$setViewValue(iCtrl.$viewValue);
+            ngModel.$modelValue.minimum = scope.minimum.value;
+            ngModel.$setViewValue(ngModel.$viewValue);
           }
         });
 
@@ -83,8 +83,8 @@
             });
             addValueToValues(scope.maximum.value);
 
-            iCtrl.$modelValue.maximum = scope.maximum.value;
-            iCtrl.$setViewValue(iCtrl.$viewValue);
+            ngModel.$modelValue.maximum = scope.maximum.value;
+            ngModel.$setViewValue(ngModel.$viewValue);
           }
         });
 
