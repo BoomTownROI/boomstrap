@@ -18,7 +18,9 @@
       },
       replace: true,
       scope: {
-        values: '='
+        values: '=',
+        minPlaceholder: '@',
+        maxPlaceholder: '@'
       },
       link: function(scope, iElement, iAttrs, ngModel) {
         scope.minimum = {
@@ -27,6 +29,9 @@
         scope.maximum = {
           value: ngModel.$modelValue.maximum
         };
+
+        scope.minPlaceholder = scope.minPlaceholder || 'Select a minimum value';
+        scope.maxPlaceholder = scope.maxPLaceholder || 'Select a maximum value';
 
         var validateMinMax = function(flippingFn) {
           // Normalize values first
@@ -53,13 +58,13 @@
         };
 
         scope.$watch(function() { return ngModel.$modelValue.minimum; }, function(newVal, oldVal) {
-          if (newVal !== oldVal) {
+          if (scope.minimum.value !== ngModel.$modelValue.minimum) {
             scope.minimum.value = ngModel.$modelValue.minimum;
           }
         });
 
         scope.$watch(function() { return ngModel.$modelValue.maximum; }, function(newVal, oldVal) {
-          if (newVal !== oldVal) {
+          if (scope.maximum.value !== ngModel.$modelValue.maximum) {
             scope.maximum.value = ngModel.$modelValue.maximum;
           }
         });
