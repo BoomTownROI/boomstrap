@@ -1120,7 +1120,7 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  Boomstrap.directive('btSelectRange', function () {
+  Boomstrap.directive('btSelectRange', function ($filter) {
     return {
       restrict: 'E',
       require: 'ngModel',
