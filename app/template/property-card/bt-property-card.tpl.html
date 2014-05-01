@@ -9,6 +9,11 @@
   <div class="card-photo">
     <div class="card-photo-inner">
       <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">
+      <carousel ng-if="property.imageSrc.length > 1">
+        <slide ng-repeat="slide in property.imageSrc" active="slide.active">
+          <img ng-src="{{ slide }}" style="margin: auto">
+        </slide>
+      </carousel>
     </div>
   </div>
   <!-- ///////////////////////////////////////////////// -->
