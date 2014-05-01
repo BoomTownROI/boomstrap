@@ -1170,7 +1170,7 @@
         scope.translateValue = function (value, defaultText) {
           var translatedValue;
           if (value || value === 0) {
-            translatedValue = translateValidValue($filter('currency')(value));
+            translatedValue = translateValidValue(value);
           } else {
             translatedValue = defaultText;
           }
