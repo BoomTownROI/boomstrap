@@ -1,7 +1,7 @@
 (function(Boomstrap) {
   'use strict';
 
-  Boomstrap.directive('btSelectRange', function($window, $timeout, $filter) {
+  Boomstrap.directive('btSelectRange', function() {
     return {
       restrict: 'E',
       require: 'ngModel',
@@ -43,10 +43,10 @@
         };
 
         var addValueToValues = function(value) {
-          var parsedValue = value.replace(/[^0-9]+/, '');
+          var parsedValue = value.replace(/[^0-9\.]+/, '');
           parsedValue = parseInt(parsedValue, 10);
-          if (!isNaN(parsedValue) && $scope.values.indexOf(parsedValue) === -1) {
-            $scope.values.unshift(parsedValue);
+          if (!isNaN(parsedValue) && scope.values.indexOf(parsedValue) === -1) {
+            scope.values.unshift(parsedValue);
           }
         };
 
@@ -89,7 +89,7 @@
         });
 
         scope.getValues = function(newValue) {
-          var newValues = $scope.values.slice();
+          var newValues = scope.values.slice();
           var parsedValue;
 
           if (value) {
