@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-5">
+    <ui-select ng-model="minimum.value">
+      <match placeholder="Select a minimum price">{{$select.selected | currency}}</match>
+      <choices repeat="value in getValues($select.search) | filter: $select.search">
+        <div>{{value | currency}}</div>
+      </choices>
+    </ui-select>
+  </div>
+  <div class="col-md-2">
+    <i class="ficon ficon-minus"></i>
+  </div>
+  <div class="col-md-5">
+    <ui-select ng-model="maximum.value">
+      <match placeholder="Select a maximum price">{{$select.selected | currency}}</match>
+      <choices repeat="value in getValues($select.search) | filter: $select.search">
+        <div>{{ value | currency }}</div>
+      </choices>
+    </ui-select>
+  </div>
+</div>

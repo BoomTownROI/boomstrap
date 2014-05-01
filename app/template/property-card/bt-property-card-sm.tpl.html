@@ -1,0 +1,46 @@
+<div class="card card-sm">
+  <!-- ///////////////////////////////////////////////// -->
+  <!-- Optional: replace "card-photo" div with carousel -->
+  <!-- ///////////////////////////////////////////////// -->
+  <div class="card-photo">
+    <div class="card-photo-inner">
+      <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div>
+      <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div>
+      <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div>
+      <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div>
+      <img bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc }}" alt="{{ property.fullAddress }}">
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////// -->
+  <div class="card-sm-container">
+     <div class="row row-xcondensed">
+      <div class="col-xs-8">
+        <p class="card-sm-priority card-sm-street">
+          <a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a>
+        </p>
+        <p class="xsmall">{{ property.address.city }}, {{ property.address.state }}</p>
+        <p class="xsmall">{{ property.address.neighborhood }}</p>
+      </div>
+      <div class="col-xs-4 text-right">
+        <p class="card-sm-priority card-sm-price">{{ property.listPrice }}</p>
+        <p class="xsmall">{{ property.pricePerSqft }}/SQFT</p>
+      </div>
+     </div>
+  </div>
+  <div class="card-sm-stats">
+    <span class="card-sm-stat">{{ property.beds }} BEDS</span>
+    <span class="card-sm-stat">{{ property.baths }} BATHS</span>
+    <span class="card-sm-stat">{{ property.sqft }} SQFT</span>
+    <span class="card-sm-stat">{{ property.acres }} ACRES</span>
+  </div>
+  <div class="card-sm-container">
+    <div class="row row-xcondensed">
+      <div class="col-sm-6">
+        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>
+      </div>
+      <div class="col-sm-6">
+        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>
+      </div>
+    </div>
+  </div> <!-- /card-container -->
+</div>

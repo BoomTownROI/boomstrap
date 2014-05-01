@@ -20,9 +20,10 @@
     };
 
     var docs = [
+      'bower:install',
       'ngtemplates',
       'jshint:all',
-      'concat:Boomstrap',
+      'concurrent:concatjs',
       'ngmin',
       'concurrent:stylescripts',
       'copy:docs',
@@ -222,33 +223,35 @@
       },
 
       concat: {
-        'Boomstrap': {
-          files: [
-            {
-              src: [
-                'bower_components/jquery/dist/jquery.js',
-                'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
-                'bower_components/bootstrap-select/bootstrap-select.js',
-                'bower_components/angular/angular.js',
-                'bower_components/angular/angular-animate.js',
-                'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-                'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-                'bower_components/angular-chosen/angular-chosen.js',
-                'bower_components/angular-chosen/angular-perfect-scrollbar.js',
-                'js/global.js'
-              ],
-              dest: '<%= yeoman.tmp %>/js/boomstrap.js'
-            },
-            {
-              src: [
-                '<%= yeoman.app %>/app.js',
-                '<%= yeoman.app %>/scripts/**/*.js',
-                '<%= yeoman.tmp %>/templates.js'
-              ],
-              dest: '<%= yeoman.tmp %>/js/boomstrap-angular.js'
-            }
-          ]
+        'BoomstrapLib': {
+          files: [{
+            src: [
+              'bower_components/jquery/dist/jquery.js',
+              'bower_components/bootstrap/dist/js/bootstrap.min.js',
+              'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
+              'bower_components/bootstrap-select/bootstrap-select.js',
+              'bower_components/angular/angular.js',
+              'bower_components/angular/angular-animate.js',
+              'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+              'vendor/chosen_v1.1.0/chosen.jquery.min.js',
+              'bower_components/angular-chosen/angular-chosen.js',
+              'bower_components/angular-ui-select/dist/select.js',
+              'bower_components/angular-chosen/angular-perfect-scrollbar.js',
+              'js/global.js'
+            ],
+            dest: '<%= yeoman.tmp %>/js/boomstrap.js'
+          }]
+        },
+        'BoomstrapAngular': {
+          files: [{
+            src: [
+              '<%= yeoman.app %>/app.js',
+              '<%= yeoman.app %>/scripts/**/*.js',
+              '<%= yeoman.tmp %>/templates.js',
+              '<%= yeoman.tmp %>/bootstrap-templates.js'
+            ],
+            dest: '<%= yeoman.tmp %>/js/boomstrap-angular.js'
+          }]
         },
         html: htmlConcat()
       },
@@ -258,12 +261,16 @@
           mangle: false,
           sourceMap: true
         },
-        'Boomstrap': {
+        'BoomstrapLib': {
           files: [
             {
               src: '<%= yeoman.tmp %>/js/boomstrap.js',
               dest: '<%= yeoman.tmp %>/js/boomstrap.min.js'
-            },
+            }
+          ]
+        },
+        'BoomstrapAngular': {
+          files: [
             {
               src: '<%= yeoman.tmp %>/js/boomstrap-angular.js',
               dest: '<%= yeoman.tmp %>/js/boomstrap-angular.min.js',
@@ -288,7 +295,7 @@
       ngtemplates: {
         'boomstrap': {
           cwd: '<%= yeoman.app %>',
-          src: ['template/**/*.html'],
+          src: ['template/**/*.html', '!template/pagination/**/*'],
           dest: '<%= yeoman.tmp %>/templates.js',
           options: {
             htmlmin: {
@@ -296,6 +303,18 @@
               removeComments:     true // Only if you don't use comment directives!
             }
           }
+        },
+        'ui.bootstrap.pagination': {
+          cwd: '<%= yeoman.app %>',
+          src: ['template/pagination/*.html'],
+          dest: '<%= yeoman.tmp %>/bootstrap-templates.js',
+          options: {
+            htmlmin: {
+              collapseWhitespace: true,
+              removeComments:     true // Only if you don't use comment directives!
+            }
+          }
+
         }
       },
 
@@ -378,10 +397,24 @@
         }
       },
 
+      bower: {
+        install: {
+          options: {
+            targetDir: 'bower_components',
+            copy: false,
+            install: true,
+            verbose: true
+           //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+          }
+        }
+      },
+
       concurrent: {
         less: ['less:dist', 'less:docs'],
         copy: ['copy:dist', 'copy:docs'],
-        stylescripts: ['uglify', 'less:docs', 'concat:html']
+        uglify: ['uglify:BoomstrapLib', 'uglify:BoomstrapAngular'],
+        stylescripts: ['concurrent:uglify', 'less:docs', 'concat:html'],
+        concatjs: ['concat:BoomstrapLib', 'concat:BoomstrapAngular']
       }
 
     });
@@ -389,11 +422,12 @@
     grunt.registerTask('css', ['less:dist','less:docs']); // Just output the CSS
 
     grunt.registerTask('default', [
+      'bower:install',
       'clean:dist',
       'ngtemplates',
-      'concat:Boomstrap',
+      'concurrent:concatjs',
       'ngmin',
-      'uglify',
+      'concurrent:uglify',
       'concurrent:less',
       'concurrent:copy',
       'clean:tmp'
