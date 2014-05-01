@@ -6381,10 +6381,13 @@ fieldset[disabled] .btn-attention.active {
 .btn-icon i {
   display: block;
   margin: 0;
-  padding: 2px;
 }
 .btn-icon.btn-lg {
-  padding: 10px 10px 9px;
+  padding: 12px 10px 12px;
+  padding: 9px 10px 8px;
+}
+.btn-icon.btn-lg .ficon {
+  line-height: 1.33;
 }
 .btn-icon.btn-sm {
   padding: 7px;
