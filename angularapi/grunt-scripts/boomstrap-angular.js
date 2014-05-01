@@ -1513,6 +1513,6 @@ angular.module('ui.bootstrap.pagination').run([
   '$templateCache',
   function ($templateCache) {
     'use strict';
-    $templateCache.put('template/pagination/bt-pager.html', '<ul class="pagination"><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)"><i ng-show="$first" class="ficon ficon-chevron-left"></i><i ng-show="$last" class="ficon ficon-chevron-right"></i></a></li></ul>');
+    $templateCache.put('template/pagination/bt-pager.html', '<ul class="pagination"><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)" ng-show="$first"><i class="ficon ficon-chevron-left"></i></a><a ng-click="selectPage(page.number)" ng-show="$last"><i class="ficon ficon-chevron-right"></i></a></li></ul>');
   }
 ]);
