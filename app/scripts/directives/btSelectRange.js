@@ -41,10 +41,16 @@
 
         var addValueToValues = function(value, collection) {
           if (value && collection) {
+
+            // First, remove all non-number or decimal characters from string
             var parsedValue = value.toString().replace(/[^0-9\.]+/, '');
-            parsedValue = parseFloat(parseFloat(parsedValue).toFixed(2));
-            if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
-              collection.unshift(parsedValue);
+
+            // If the string is not completely empty, we likely have a number
+            if (parsedValue) {
+              parsedValue = parseFloat(parseFloat(parsedValue).toFixed(2));
+              if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
+                collection.unshift(parsedValue);
+              }
             }
           }
         };
