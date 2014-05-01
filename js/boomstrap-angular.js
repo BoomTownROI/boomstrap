@@ -1284,11 +1284,13 @@
             flippingFn();
           }
         };
-        var addValueToValues = function (value) {
-          var parsedValue = value.replace(/[^0-9\.]+/, '');
-          parsedValue = parseInt(parsedValue, 10);
-          if (!isNaN(parsedValue) && scope.values.indexOf(parsedValue) === -1) {
-            scope.values.unshift(parsedValue);
+        var addValueToValues = function (value, collection) {
+          if (value) {
+            var parsedValue = value.replace(/[^0-9\.]+/, '');
+            parsedValue = parseInt(parsedValue, 10);
+            if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
+              collection.unshift(parsedValue);
+            }
           }
         };
         scope.$watch(function () {
@@ -1330,13 +1332,7 @@
         scope.getValues = function (value) {
           var newValues = scope.values.slice();
           var parsedValue;
-          if (value) {
-            parsedValue = value.replace(/[^0-9]+/, '');
-            parsedValue = parseInt(parsedValue, 10);
-            if (!isNaN(parsedValue) && newValues.indexOf(parsedValue) === -1) {
-              newValues.unshift(parsedValue);
-            }
-          }
+          addValueToValues(value, newValues);
           return newValues;
         };
       }
