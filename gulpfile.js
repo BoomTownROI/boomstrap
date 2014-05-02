@@ -15,6 +15,10 @@ var es = require('event-stream'),
   ngmin = require('gulp-ngmin'),
   templateCache = require('gulp-angular-templatecache');
 
+require('gulp-grunt')(gulp, {
+  prefix: 'grunt-tasks-'
+});
+
 var htmlList = function(key, src) {
   var sources = [],
       idLinks = [],
@@ -207,8 +211,9 @@ gulp.task('server', ['boomstrapcommon'], function() {
 
 // Deploy to our github pages page
 gulp.task('website', ['boomstrapcommon'], function() {
-  return gulp.src("docs/**")
-    .pipe(ghPages('https://github.com/BoomTownROI/boomstrap.git'));
+  return gulp.run('grunt-tasks-gh-pages');
+  // return gulp.src("docs/**")
+  //   .pipe(ghPages('https://github.com/BoomTownROI/boomstrap.git'));
 });
 
 
