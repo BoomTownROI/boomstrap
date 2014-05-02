@@ -204,7 +204,6 @@ gulp.task('server', ['boomstrapcommon'], function() {
   connect.server({
     hostname: 'localhost',
     port: 9000,
-    open: true,
     root: 'docs',
     keepalive: false,
     livereload: true
