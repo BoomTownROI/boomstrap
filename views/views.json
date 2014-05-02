@@ -367,7 +367,7 @@
 			{
 				"source": "app/views/btSelectRange.html",
 				"css_id": "#btSelectRange",
-				"nav_header": "#bt-select-range"
+				"nav_header": "bt-select-range"
 			},
 			{ "source": "app/views/angular-footer.html" }
 		]
