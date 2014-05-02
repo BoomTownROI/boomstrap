@@ -253,33 +253,126 @@
   <p data-height="266" data-theme-id="5675" data-slug-hash="drpum" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/drpum/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
   <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
-<section id="cards">
+<section id="cards" class="pl-docs-section">
     <div class="page-header">
         <h1>Cards</h1>
-        <div class="callout callout-attention">
-            <h4>Data Requirement</h4>
-            <p>Property cards rely on an object called <code>property</code>, passed via the controller or ng-repeat.</p>
-        </div>
-        <div>
-            <h2>Single Card</h2>
-            <p data-height="555" data-theme-id="5675" data-slug-hash="iLwht" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/iLwht/'>Single Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div>
-            <h2>Multiple Cards</h2>
-            <p data-height="555" data-theme-id="5675" data-slug-hash="tlxCA" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/tlxCA/'>Multiple Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div>
-            <h2>Small Card</h2>
-            <p data-height="444" data-theme-id="5675" data-slug-hash="qoAef" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/qoAef/'>Small Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div>
-            <h2>Cards With Carousels</h2>
-            <p data-height="555" data-theme-id="5675" data-slug-hash="zjuBH" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/zjuBH/'>Carousel Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
+    </div>
+    <div class="callout callout-attention">
+        <h4>Data Requirement</h4>
+        <p>Property cards rely on an object passed as the <code>property</code> attribute. See the shape of the data <a href="#card-data">here</a>.</p>
+    </div><!-- /callout -->
+    <div>
+        <h2>Single Card</h2>
+        <p data-height="555" data-theme-id="5675" data-slug-hash="iLwht" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/iLwht/'>Single Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div>
+        <h2>Multiple Cards</h2>
+        <p data-height="555" data-theme-id="5675" data-slug-hash="tlxCA" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/tlxCA/'>Multiple Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div>
+        <h2>Small Card</h2>
+        <p data-height="444" data-theme-id="5675" data-slug-hash="qoAef" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/qoAef/'>Small Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div>
+        <h2>Cards With Carousels</h2>
+        <p data-height="555" data-theme-id="5675" data-slug-hash="zjuBH" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/zjuBH/'>Carousel Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div id="card-data">
+        <h2>Card Data</h2>
+        <p>Each card expects a data object. The data is described as follows.</p>
+        <pre class="prettyprint">
+
+    /* YourCardCtrl.js */
+
+    $scope.property = {
+       imageSrc: ['/images/some/path/to-img.jpg'], // must be array. one renders image; multiple renders carousel.
+       listPrice: '$2,250,000',
+       listingUrl: 'http://www.superhellaawesomerealestate.com/listing/12345/',
+
+       /* only choose one of the following!
+        * the others don't have to be explicitly false;
+        * just skip the ones you don't want. */
+
+       offMarket: '2 days ago', // only populated for off market listings (triggers sash)
+       newProperty: '6 hrs ago', // only populated for new listings (triggers sash)
+       reduced: '30 mins ago', // only for reductions (triggers sash). when present, an object:
+       // reduced: {
+       //     'when': '5 hrs ago',
+       //     'change': '-$250,000',
+       //     'changePercent': '2%'
+       // },
+       backOnMarket: '1 hr ago', // only populated for back on market (triggers sash)
+
+       /* ^^^ only choose one of those */
+
+       bestFits: '1444',
+       favs: '33',
+       mls: '1324961',
+       listed: '6 days ago',
+       pricePerSqft: '$1.99',
+       beds: '5',
+       baths: '3.5',
+       sqft: '4,195',
+       acres: '2.75',
+       type: 'Frat House',
+       address: {
+           street: '123 Fourth St.',
+           city: 'Charleston',
+           state: 'SC',
+           neighborhood: 'Craig\'s Landing'
+       },
+       history: [
+           {
+               'when': '5 hrs ago',
+               'change': '-$250,000',
+               'changePercent': '2%',
+               'price': '$2,250,000'
+           },
+           {
+               'when': '6 hrs ago',
+               'change': '-$500,000',
+               'changePercent': '5%',
+               'price': '$2,500,000'
+           }
+       ]
+   }
+
+        </pre>
+        <p class="pl-spacious">Then just pass the data from your controller to the view. The property attribute takes the property object.</p>
+        <pre class="prettyprint">
+
+    /* your-view.html */
+
+    &lt;bt-property-card property="property"&gt;&lt;/bt-property-card&gt;
+
+        </pre>
+        <h2>Single Image vs. Carousel</h2>
+        <pre class="prettyprint">
+    
+    /* SomeCtrlCtrl.js */
+
+    /* single item in imageSrc array is rendered as an image */
+    property = {
+        imageSrc: ['/images/im/just-a/poor-boy-nobody-loves-me.jpg'],
+        etc: 'and the rest of the property object...'
+    }
+
+    /* multiple items in imageSrc array are rendered in a carousel */
+    property = {
+        imageSrc: [
+            '/images/musketeers/athos.jpg',
+            '/images/musketeers/aramis.jpg',
+            '/images/musketeers/porthos.jpg'
+        ],
+        etc: 'and the rest...'
+    }
+
+        </pre>
+
     </div>
     <!-- <p data-height="360" data-theme-id="5675" data-slug-hash="dCLlE" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/dCLlE/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script> -->
@@ -294,6 +387,139 @@
     <p data-height="350" data-theme-id="5592" data-slug-hash="bKAaI" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mfunkie/pen/bKAaI/'>ui-select Example</a> by Mark Funk (<a href='http://codepen.io/mfunkie'>@mfunkie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
+<!-- ================================== btScore ================================== -->
+
+<!-- btScore (Boomstrap Custom) -->
+<script type="text/javascript">
+      angular.module('boomstrap').controller('btScoreTest', function($scope) {
+        $scope.scores = {
+          excellent: 99,
+          good: 75,
+          average: 50,
+          meh: 25
+        };
+      });
+</script>
+<div class="pl-docs-section" id="btScore" ng-controller="btScoreTest">
+  <h1 id="scores" class="page-header">btScore</h1>
+  <h2>Options</h2>
+  <p>Color options for ranking / scoring data.</p>
+  <div class="pl-example">
+    <bt-score score="scores.excellent"></bt-score>
+    <bt-score score="scores.good"></bt-score>
+    <bt-score score="scores.average"></bt-score>
+    <bt-score score="scores.meh"></bt-score>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint">
+
+      &lt;script type="text/javascript"&gt;
+        angular.module('boomstrap').controller('btScoreTest', function($scope) {
+          $scope.scores {
+            excellent: 99,
+            good: 75,
+            average: 50,
+            meh: 25
+          };
+        });
+      &lt;/script&gt;
+      &lt;bt-score score="scores.excellent"/&gt;
+      &lt;bt-score score="scores.good"/&gt;
+      &lt;bt-score score="scores.average"/&gt;
+      &lt;bt-score score="scores.meh"/&gt;
+    </pre>
+  </div>
+
+  <h2>Sizes</h2>
+  <p>Fancy larger or smaller scores? Add <code>size='lg'</code>, <code>size='sm'</code>, or <code>size='xs'</code> to the directive for additional sizes.</p>
+  <div class="pl-example">
+  	<p>
+      <bt-score score="scores.excellent" size="lg"></bt-score>
+      <bt-score score="scores.good" size="lg"></bt-score>
+      <bt-score score="scores.average" size="lg"></bt-score>
+      <bt-score score="scores.meh" size="lg"></bt-score>
+    </p>
+    <p>
+      <bt-score score="scores.excellent"></bt-score>
+      <bt-score score="scores.good"></bt-score>
+      <bt-score score="scores.average"></bt-score>
+      <bt-score score="scores.meh"></bt-score>
+    </p>
+    <p>
+      <bt-score score="scores.excellent" size="sm"></bt-score>
+      <bt-score score="scores.good" size="sm"></bt-score>
+      <bt-score score="scores.average" size="sm"></bt-score>
+      <bt-score score="scores.meh" size="sm"></bt-score>
+    </p>
+    <p>
+      <bt-score score="scores.excellent" size="xs"></bt-score>
+      <bt-score score="scores.good" size="xs"></bt-score>
+      <bt-score score="scores.average" size="xs"></bt-score>
+      <bt-score score="scores.meh" size="xs"></bt-score>
+    </p>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint">
+      
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    </pre>
+  </div>
+
+</div>
+<!-- ================================== btPager ================================== -->
+
+<!-- btPager (Boomstrap Custom) -->
+<script type="text/javascript">
+  angular.module('boomstrap').controller('btPagerTest', function($scope) {
+    $scope.currentPage = 2;
+    $scope.totalItems = 90;
+    $scope.itemsPerPage = 10;
+  });
+</script>
+<div class="pl-docs-section" id="btPager" ng-controller="btPagerTest">
+  <h1 id="scores" class="page-header">btPager</h1>
+  <div class="pl-example">
+    <bt-pager current-page="currentPage" total-items="totalItems" items-per-page="itemsPerPage"></bt-pager>
+    <pre>Page: {{currentPage}} / {{totalItems / itemsPerPage}}</pre>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint">
+
+      &lt;script type="text/javascript"&gt;
+        angular.module(&#39;boomstrap&#39;).controller(&#39;btPagerTest&#39;, function($scope) {
+          $scope.currentPage = 2;
+          $scope.totalItems = 90;
+          $scope.itemsPerPage = 10;
+        })
+      &lt;/script&gt;
+      &lt;bt-pager current-page=&quot;currentPage&quot; total-items=&quot;totalItems&quot; items-per-page=&quot;itemsPerPage&quot;&gt;&lt;/bt-pager&gt;
+      &lt;pre&gt;Page: {{currentPage}} / {{totalItems / itemsPerPage}}&lt;/pre&gt;
+    </pre>
+  </div>
+</div>
 </div>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
@@ -349,6 +575,12 @@
                     <a href="#ui-select">ui-select</a>
                 </li>
                 <li>
+                    <a href="#btScore">bt-Score</a>
+                </li>
+                <li>
+                    <a href="#btPager">bt-Pager</a>
+                </li>
+                <li>
                     <a href=""></a>
                 </li>
             </ul>
@@ -378,6 +610,10 @@
 
 
 </script>
+
+<!-- prettify code examples; use class="prettyprint" on your pre blocks -->
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
 <!-- scripts to run bootstrap examples -->
 <script>
   !function(a){a(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var b=document.createElement("style");b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.querySelector("head").appendChild(b)}{var c=a(window),d=a(document.body);a(".navbar").outerHeight(!0)+10}d.scrollspy({target:".pl-docs-sidebar"}),c.on("load",function(){d.scrollspy("refresh")}),a(".pl-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".pl-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".pl-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".pl-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".pl-top").affix()},100),a(".tooltip-demo").tooltip({selector:"[data-toggle=tooltip]",container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".pl-docs-navbar").tooltip({selector:"a[data-toggle=tooltip]",container:".pl-docs-navbar .nav"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)})})}(jQuery);

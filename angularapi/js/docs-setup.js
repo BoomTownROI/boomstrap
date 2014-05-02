@@ -50,12 +50,21 @@ NG_DOCS={
     },
     {
       "section": "ngboomstrap",
+      "id": "boomstrap.directive:btPager",
+      "shortName": "btPager",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btPager directive is a wrapper of the ui-bootstrap pagination directive that keeps",
+      "keywords": "allowed based boomstrap btpager current currentpage directive disable enable items itemsperpage ngboomstrap number paginate pagination programmatically provide template totalitems track ui-bootstrap wrapper wrapping"
+    },
+    {
+      "section": "ngboomstrap",
       "id": "boomstrap.directive:btScore",
       "shortName": "btScore",
       "type": "directive",
       "moduleName": "boomstrap",
       "shortDescription": "The btScore directive represents a score component from Boomstrap.  It will keep the color",
-      "keywords": "average based boomstrap btscore classes color component default directive element excellent good high include lg low medium module myscore ng-init ng-model ngboomstrap reflected represents score size sizes sm tags valid xs"
+      "keywords": "average based boomstrap btscore classes color component default directive element excellent good high include lg low medium ngboomstrap represents score size sizes sm valid xs"
     }
   ],
   "apis": {

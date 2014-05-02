@@ -78,6 +78,10 @@
 .modal-footer:after {
   clear: both;
 }
+h1,
+h2 {
+  margin: 24px 0 10px;
+}
 .pl-docs-section {
   padding: 2em 0;
 }
@@ -193,6 +197,9 @@ a.responsive-utilities td.is-visible:hover {
 }
 .pl-example > .btn-toolbar + .btn-toolbar {
   margin-top: 10px;
+}
+.pl-spacious {
+  margin: 24px 0;
 }
 .pl-code {
   margin: 1.5em 0;
