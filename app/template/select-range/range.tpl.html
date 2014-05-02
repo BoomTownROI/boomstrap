@@ -1,4 +1,4 @@
-<div class="ui-select-range">
+<div class="ui-select-range clearfix">
   <ui-select ng-model="minimum.value">
     <match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected, 'No min') }}</match>
     <choices repeat="value in getValues($select.search) | filter: $select.search">

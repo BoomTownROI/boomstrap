@@ -1,1 +1,1 @@
-fromNow.js
+//fromNow.js
