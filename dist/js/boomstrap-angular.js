@@ -23,6 +23,24 @@
     }
   ]);
 }());
+angular.module('ui.bootstrap.pagination').run([
+  '$templateCache',
+  function ($templateCache) {
+    $templateCache.put('template/pagination/bt-pager.html', '<ul class="pagination">\n  <li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)" ng-show="$first"><i class="ficon ficon-chevron-left"></i></a><a ng-click="selectPage(page.number)" ng-show="$last"><i class="ficon ficon-chevron-right"></i></a></li>\n</ul>');
+  }
+]);
+angular.module('boomstrap').run([
+  '$templateCache',
+  function ($templateCache) {
+    $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">\r\n  <div class="container-fluid">\r\n    <div class="navbar-header">\r\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">\r\n        <span class="icon-bar"></span>\r\n        <span class="icon-bar"></span>\r\n        <span class="icon-bar"></span>\r\n      </button>\r\n      <a class="navbar-brand" href="#">PL</a>\r\n    </div>\r\n    <div class="collapse navbar-collapse" id="pl-nav">\r\n      <ul class="nav navbar-nav">\r\n        <li class="active"><a href="#pl-colors">Colors</a></li>\r\n        <li class="dropdown">\r\n          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a>\r\n          <ul class="dropdown-menu">\r\n            <li><a href="#pl-button-options">Options</a></li>\r\n            <li><a href="#pl-button-sizes">Sizes</a></li>\r\n            <li><a href="#pl-button-active">Active State</a></li>\r\n            <li><a href="#pl-button-disabled">Disabled State</a></li>\r\n            <li><a href="#pl-button-tags">Button Tags</a></li>\r\n          </ul>\r\n        </li>\r\n        <li><a href="#pl-labels">Labels</a></li>\r\n        <li><a href="#pl-typography">Typography</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n<div class="container">');
+    $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel">\r\n    <ol class="carousel-indicators" ng-show="slides().length > 1">\r\n        <li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>\r\n    </ol>\r\n    <div class="carousel-inner" ng-transclude></div>\r\n    <a class="left carousel-control" ng-click="prev()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-left"></span></a>\r\n    <a class="right carousel-control" ng-click="next()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-right"></span></a>\r\n</div>');
+    $templateCache.put('template/dropdown/bt-dropdown.tpl.html', '<div class="dropdown">\r\n    <button class="btn btn-default dropdown-toggle" type="button">\r\n        <span class="pull-left" ng-bind="selectedValue"></span>\r\n        <span class="caret"></span>\r\n        <!-- <i class="ficon ficon-chevron-down pull-right"></i> -->\r\n    </button>\r\n    <ul class="dropdown-menu" role="menu" ng-style="{ \'min-width\': dropdownWidth + \'px\'}">\r\n        <li ng-repeat="value in arrayValues" ng-if="keysAreNumbers">\r\n            <a ng-click="assignValue(value.key)">{{ value.value }}</a>\r\n        </li>\r\n        <li ng-repeat="(choiceValue, choiceName) in values" ng-if="!keysAreNumbers">\r\n            <a ng-click="assignValue(choiceValue)">{{choiceName}}</a>\r\n        </li>\r\n    </ul>\r\n</div>');
+    $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads">\r\n    <div class="arrow"></div>\r\n    <div class="popover-close">\r\n        <i data-role=\'end\' class="ficon ficon-cross property-close"></i>\r\n    </div>\r\n    <h3 class="popover-title">New Best-Fit Leads Tour</h3>\r\n    <div class="tour-popover popover-content"></div>\r\n    <div class="popover-navigation">\r\n        <button class="btn btn-default" data-role="prev">Prev</button>\r\n        <button class="btn btn-default" data-role="next"><span>Next</span></button>\r\n    </div>\r\n</div>');
+    $templateCache.put('template/property-card/bt-property-card-sm.tpl.html', '<div class="card card-sm">\r\n  <!-- ///////////////////////////////////////////////// -->\r\n  <!-- Optional: replace "card-photo" div with carousel -->\r\n  <!-- ///////////////////////////////////////////////// -->\r\n  <div class="card-photo">\r\n    <div class="card-photo-inner">\r\n      <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div>\r\n      <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div>\r\n      <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div>\r\n      <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div>\r\n      <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">\r\n      <carousel ng-if="property.imageSrc.length > 1">\r\n        <slide ng-repeat="slide in property.imageSrc">\r\n          <img ng-src="{{ slide }}" style="margin: auto">\r\n        </slide>\r\n      </carousel>\r\n    </div>\r\n  </div>\r\n  <!-- ///////////////////////////////////////////////// -->\r\n  <div class="card-sm-container">\r\n     <div class="row row-xcondensed">\r\n      <div class="col-xs-8">\r\n        <p class="card-sm-priority card-sm-street">\r\n          <a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a>\r\n        </p>\r\n        <p class="xsmall">{{ property.address.city }}, {{ property.address.state }}</p>\r\n        <p class="xsmall">{{ property.address.neighborhood }}</p>\r\n      </div>\r\n      <div class="col-xs-4 text-right">\r\n        <p class="card-sm-priority card-sm-price">{{ property.listPrice }}</p>\r\n        <p class="xsmall">{{ property.pricePerSqft }}/SQFT</p>\r\n      </div>\r\n     </div>\r\n  </div>\r\n  <div class="card-sm-stats">\r\n    <span class="card-sm-stat">{{ property.beds }} BEDS</span>\r\n    <span class="card-sm-stat">{{ property.baths }} BATHS</span>\r\n    <span class="card-sm-stat">{{ property.sqft }} SQFT</span>\r\n    <span class="card-sm-stat">{{ property.acres }} ACRES</span>\r\n  </div>\r\n  <div class="card-sm-container">\r\n    <div class="row row-xcondensed">\r\n      <div class="col-sm-6">\r\n        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>\r\n      </div>\r\n      <div class="col-sm-6">\r\n        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>\r\n      </div>\r\n    </div>\r\n  </div> <!-- /card-container -->\r\n</div>');
+    $templateCache.put('template/property-card/bt-property-card.tpl.html', '<div class="card" ng-class="{ \'card-sm\': size === \'sm\' }">\r\n  <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div>\r\n  <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div>\r\n  <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div>\r\n  <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div>\r\n  <!-- ///////////////////////////////////////////////// -->\r\n  <!-- Optional: replace "card-photo" div with carousel -->\r\n  <!-- ///////////////////////////////////////////////// -->\r\n  <div class="card-photo">\r\n    <div class="card-photo-inner">\r\n      <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">\r\n      <carousel ng-if="property.imageSrc.length > 1">\r\n        <slide ng-repeat="slide in property.imageSrc">\r\n          <img ng-src="{{ slide }}" style="margin: auto">\r\n        </slide>\r\n      </carousel>\r\n    </div>\r\n  </div>\r\n  <!-- ///////////////////////////////////////////////// -->\r\n  <div class="card-container">\r\n     <div class="row row-xcondensed">\r\n      <div class="col-xs-7">\r\n        <p class="card-priority card-street">\r\n          <a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a>\r\n        </p>\r\n        <p class="small">{{ property.address.city }}, {{ property.address.state }}</p>\r\n        <p class="small">{{ property.address.neighborhood }}</p>\r\n      </div>\r\n      <div class="col-xs-5 text-right">\r\n        <p class="card-priority card-price">{{ property.listPrice }}</p>\r\n        <p class="small">{{ property.pricePerSqft }}/SQFT</p>\r\n      </div>\r\n     </div>\r\n  </div>\r\n  <div class="card-stats">\r\n    <span class="card-stat">{{ property.beds }} BEDS</span>\r\n    <span class="card-stat">{{ property.baths }} BATHS</span>\r\n    <span class="card-stat">{{ property.sqft }} SQFT</span>\r\n    <span class="card-stat">{{ property.acres }} ACRES</span>\r\n  </div>\r\n  <div class="card-container">\r\n    <div class="row row-xcondensed">\r\n      <div class="col-sm-6">\r\n        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>\r\n      </div>\r\n      <div class="col-sm-6">\r\n        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>\r\n      </div>\r\n    </div>\r\n  </div> <!-- /card-container -->\r\n  <div ng-if="!isSmall">\r\n    <div class="card-toggle">\r\n        <span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span>\r\n        <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span>\r\n    </div>\r\n    <div collapse="!isExpanded" class="card-detail">\r\n      <div class="card-container">\r\n        <div class="row row-xcondensed">\r\n          <div class="col-xs-6">\r\n            <p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p>\r\n          </div>\r\n          <div class="col-xs-6 text-right">\r\n            <p class="small"><strong>LISTED:</strong> {{ property.listed }}</p>\r\n          </div>\r\n        </div>\r\n        <p class="small"><strong>TYPE:</strong> {{ property.type }}</p>\r\n      </div> <!-- /card-container -->\r\n      <p class="card-title">Price History</p>\r\n      <div class="card-container card-price-history">\r\n        <div ng-repeat="history in property.history" class="row row-xcondensed">\r\n          <div class="col-xs-3">\r\n            <p class="small">{{ history.when }}</p>\r\n          </div>\r\n          <div class="col-xs-6">\r\n            <p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p>\r\n          </div>\r\n          <div class="col-xs-3 text-right">\r\n            <p class="small">{{ history.price }}</p>\r\n          </div>\r\n        </div>\r\n      </div> <!-- /card-price-history -->\r\n      <div class="card-container">\r\n        <div class="row row-xcondensed">\r\n          <div class="col-sm-6">\r\n            <button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button>\r\n          </div>\r\n          <div class="col-sm-6">\r\n            <button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i> </button>\r\n          </div>\r\n        </div>\r\n      </div> <!-- /card-container -->\r\n    </div> <!-- /card-detail -->\r\n  </div>\r\n</div>');
+    $templateCache.put('template/select-range/range.tpl.html', '<div class="row">\n  <div class="col-md-5">\n    <ui-select ng-model="minimum.value">\n      <match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected, \'No min\') }}</match>\n      <choices repeat="value in getValues($select.search) | filter: $select.search">\n        <div>{{ translateValue(value, \'No min\') }}</div>\n      </choices>\n    </ui-select>\n  </div>\n  <div class="col-md-1">\n    <i class="ficon ficon-minus"></i>\n  </div>\n  <div class="col-md-5">\n    <ui-select ng-model="maximum.value">\n      <match placeholder="{{ maxPlaceholder }}">{{ translateValue($select.selected, \'No max\') }}</match>\n      <choices repeat="value in getValues($select.search) | filter: $select.search">\n        <div>{{ translateValue(value, \'No max\') }}</div>\n      </choices>\n    </ui-select>\n  </div>\n</div>');
+  }
+]);
 (function (boomstrap) {
   'use strict';
   boomstrap.controller('CarouselDemoCtrl', [
@@ -1132,6 +1150,9 @@
         maxPlaceholder: '@'
       },
       link: function (scope, iElement, iAttrs, ngModel) {
+        /*
+         * Set default values for minimum, maximum, and placeholders.
+         */
         scope.minimum = { value: ngModel.$modelValue.minimum };
         scope.maximum = { value: ngModel.$modelValue.maximum };
         scope.minPlaceholder = scope.minPlaceholder || 'Select a minimum value';
@@ -1149,11 +1170,15 @@
           }
         };
         var addValueToValues = function (value, collection) {
-          if (value) {
-            var parsedValue = value.replace(/[^0-9\.]+/, '');
-            parsedValue = parseInt(parsedValue, 10);
-            if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
-              collection.unshift(parsedValue);
+          if (value && collection) {
+            // First, remove all non-number or decimal characters from string
+            var parsedValue = value.toString().replace(/[^0-9\.]+/, '');
+            // If the string is not completely empty, we likely have a number
+            if (parsedValue) {
+              parsedValue = parseFloat(parseFloat(parsedValue).toFixed(2));
+              if (!isNaN(parsedValue) && collection.indexOf(parsedValue) === -1) {
+                collection.unshift(parsedValue);
+              }
             }
           }
         };
@@ -1168,19 +1193,26 @@
           };
         }
         scope.translateValue = function (value, defaultText) {
-          var translatedValue;
-          if (angular.isNumber(value)) {
-            translatedValue = translateValidValue(value);
-          } else {
-            translatedValue = defaultText;
-          }
-          return translatedValue;
+          return angular.isNumber(value) ? translateValidValue(value) : defaultText;
         };
-        scope.getValues = function (value) {
-          var newValues = scope.values.slice();
-          addValueToValues(value, newValues);
-          return newValues;
-        };
+        (function () {
+          /*
+           * getValues uses modifiedValues and previousValue
+           * to avoid modifying the collection and value
+           * each digest loop.  If the user has provided
+           * new input, then we transform the value and return
+           * a modified collection.
+           */
+          var modifiedValues, previousValue;
+          scope.getValues = function (value) {
+            if (value !== previousValue) {
+              previousValue = value;
+              modifiedValues = scope.values.slice();
+              addValueToValues(value, modifiedValues);
+            }
+            return modifiedValues;
+          };
+        }());
         scope.$watch(function () {
           return ngModel.$modelValue.minimum;
         }, function (newVal, oldVal) {
@@ -1201,7 +1233,9 @@
               // Pass in the flipping function if the min/max order is invalid.
               scope.maximum.value = scope.minimum.value;
             });
+            // Add the value to the list of potential values
             addValueToValues(scope.minimum.value, scope.values);
+            // Update the ngModel
             ngModel.$modelValue.minimum = scope.minimum.value;
             ngModel.$setViewValue(ngModel.$viewValue);
           }
@@ -1212,7 +1246,9 @@
               // Pass in the flipping function if the min/max order is invalid.
               scope.minimum.value = scope.maximum.value;
             });
+            // Add the value to the list of potential values
             addValueToValues(scope.maximum.value, scope.values);
+            // Update the ngModel
             ngModel.$modelValue.maximum = scope.maximum.value;
             ngModel.$setViewValue(ngModel.$viewValue);
           }
@@ -1339,23 +1375,3 @@
     return tour;
   });
 }(angular.module('boomstrap'), window.Tour));
-angular.module('boomstrap').run([
-  '$templateCache',
-  function ($templateCache) {
-    'use strict';
-    $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel"><ol class="carousel-indicators" ng-show="slides().length > 1"><li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li></ol><div class="carousel-inner" ng-transclude=""></div><a class="left carousel-control" ng-click="prev()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-left"></span></a> <a class="right carousel-control" ng-click="next()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-right"></span></a></div>');
-    $templateCache.put('template/dropdown/bt-dropdown.tpl.html', '<div class="dropdown"><button class="btn btn-default dropdown-toggle" type="button"><span class="pull-left" ng-bind="selectedValue"></span> <span class="caret"></span> </button><ul class="dropdown-menu" role="menu" ng-style="{ \'min-width\': dropdownWidth + \'px\'}"><li ng-repeat="value in arrayValues" ng-if="keysAreNumbers"><a ng-click="assignValue(value.key)">{{ value.value }}</a></li><li ng-repeat="(choiceValue, choiceName) in values" ng-if="!keysAreNumbers"><a ng-click="assignValue(choiceValue)">{{choiceName}}</a></li></ul></div>');
-    $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="#">PL</a></div><div class="collapse navbar-collapse" id="pl-nav"><ul class="nav navbar-nav"><li class="active"><a href="#pl-colors">Colors</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#pl-button-options">Options</a></li><li><a href="#pl-button-sizes">Sizes</a></li><li><a href="#pl-button-active">Active State</a></li><li><a href="#pl-button-disabled">Disabled State</a></li><li><a href="#pl-button-tags">Button Tags</a></li></ul></li><li><a href="#pl-labels">Labels</a></li><li><a href="#pl-typography">Typography</a></li></ul></div></div></nav><div class="container"></div>');
-    $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads"><div class="arrow"></div><div class="popover-close"><i data-role="end" class="ficon ficon-cross property-close"></i></div><h3 class="popover-title">New Best-Fit Leads Tour</h3><div class="tour-popover popover-content"></div><div class="popover-navigation"><button class="btn btn-default" data-role="prev">Prev</button> <button class="btn btn-default" data-role="next"><span>Next</span></button></div></div>');
-    $templateCache.put('template/property-card/bt-property-card-sm.tpl.html', '<div class="card card-sm"><div class="card-photo"><div class="card-photo-inner"><div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div><div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div><div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div><div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div><img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}"></div></div><div class="card-sm-container"><div class="row row-xcondensed"><div class="col-xs-8"><p class="card-sm-priority card-sm-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="xsmall">{{ property.address.city }}, {{ property.address.state }}</p><p class="xsmall">{{ property.address.neighborhood }}</p></div><div class="col-xs-4 text-right"><p class="card-sm-priority card-sm-price">{{ property.listPrice }}</p><p class="xsmall">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-sm-stats"><span class="card-sm-stat">{{ property.beds }} BEDS</span> <span class="card-sm-stat">{{ property.baths }} BATHS</span> <span class="card-sm-stat">{{ property.sqft }} SQFT</span> <span class="card-sm-stat">{{ property.acres }} ACRES</span></div><div class="card-sm-container"><div class="row row-xcondensed"><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div></div>');
-    $templateCache.put('template/property-card/bt-property-card.tpl.html', '<div class="card" ng-class="{ \'card-sm\': size === \'sm\' }"><div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div><div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div><div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div><div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div><div class="card-photo"><div class="card-photo-inner"><img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}"></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-7"><p class="card-priority card-street"><a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a></p><p class="small">{{ property.address.city }}, {{ property.address.state }}</p><p class="small">{{ property.address.neighborhood }}</p></div><div class="col-xs-5 text-right"><p class="card-priority card-price">{{ property.listPrice }}</p><p class="small">{{ property.pricePerSqft }}/SQFT</p></div></div></div><div class="card-stats"><span class="card-stat">{{ property.beds }} BEDS</span> <span class="card-stat">{{ property.baths }} BATHS</span> <span class="card-stat">{{ property.sqft }} SQFT</span> <span class="card-stat">{{ property.acres }} ACRES</span></div><div class="card-container"><div class="row row-xcondensed"><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button></div><div class="col-sm-6"><button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button></div></div></div><div ng-if="!isSmall"><div class="card-toggle"><span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span> <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span></div><div collapse="!isExpanded" class="card-detail"><div class="card-container"><div class="row row-xcondensed"><div class="col-xs-6"><p class="small"><strong>MLS#:</strong> <a target="_blank" href="">{{ property.mls }}</a></p></div><div class="col-xs-6 text-right"><p class="small"><strong>LISTED:</strong> {{ property.listed }}</p></div></div><p class="small"><strong>TYPE:</strong> {{ property.type }}</p></div><p class="card-title">Price History</p><div class="card-container card-price-history"><div ng-repeat="history in property.history" class="row row-xcondensed"><div class="col-xs-3"><p class="small">{{ history.when }}</p></div><div class="col-xs-6"><p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p></div><div class="col-xs-3 text-right"><p class="small">{{ history.price }}</p></div></div></div><div class="card-container"><div class="row row-xcondensed"><div class="col-sm-6"><button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button></div><div class="col-sm-6"><button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i></button></div></div></div></div></div></div>');
-    $templateCache.put('template/select-range/range.tpl.html', '<div class="row"><div class="col-md-5"><ui-select ng-model="minimum.value"><match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected, \'No min\') }}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{ translateValue(value, \'No min\') }}</div></choices></ui-select></div><div class="col-md-2"><i class="ficon ficon-minus"></i></div><div class="col-md-5"><ui-select ng-model="maximum.value"><match placeholder="{{ maxPlaceholder }}">{{ translateValue($select.selected, \'No max\') }}</match><choices repeat="value in getValues($select.search) | filter: $select.search"><div>{{ translateValue(value, \'No max\') }}</div></choices></ui-select></div></div>');
-  }
-]);
-angular.module('ui.bootstrap.pagination').run([
-  '$templateCache',
-  function ($templateCache) {
-    'use strict';
-    $templateCache.put('template/pagination/bt-pager.html', '<ul class="pagination"><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)" ng-show="$first"><i class="ficon ficon-chevron-left"></i></a><a ng-click="selectPage(page.number)" ng-show="$last"><i class="ficon ficon-chevron-right"></i></a></li></ul>');
-  }
-]);
