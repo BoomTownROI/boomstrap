@@ -1,5 +1,3 @@
-// cache(maybe for staticHost in ng)
-
 var es = require('event-stream'),
   gulp = require('gulp'),
   concat = require('gulp-concat'),
@@ -7,27 +5,18 @@ var es = require('event-stream'),
   less = require('gulp-less'),
   uglify = require('gulp-uglify'),
   jshint = require('gulp-jshint'),
+  jshintstylish = require('jshint-stylish')
   watch = require('gulp-watch'),
   connect = require('gulp-connect'),
   livereload = require('gulp-livereload'),
   ghPages = require('gulp-gh-pages'),
   mustache = require('gulp-mustache'),
   views = require('./views/views'),
-  gutil = require('gulp-util');
-
-gulp.task('default', function() {
-  // 'concat:dist',
-  // 'concat:docs',
-  // 'uglify:dist',
-  // 'uglify:docs',
-  // 'less:dist',
-  // 'less:docs',
-  // 'copy:dist',
-  // 'copy:docs'
-});
+  ngmin = require('gulp-ngmin'),
+  templateCache = require('gulp-angular-templatecache');
 
 var htmlList = function(key, src) {
-  var sources = ['views/partials/header.html'],
+  var sources = [],
       idLinks = [],
       returnEvents;
 
@@ -46,6 +35,11 @@ var htmlList = function(key, src) {
     });
 
     returnEvents = es.concat(
+      // Populate the navigation template
+      gulp.src('views/partials/header.html')
+        .pipe(mustache({
+          page_title: src.header
+        })),
       gulp.src(sources),
       gulp.src('views/partials/sub_nav.tpl.html')
         .pipe(mustache({
@@ -66,33 +60,55 @@ var htmlList = function(key, src) {
   return returnEvents;
 };
 
-gulp.task('docsJs', function() {
+gulp.task('boomstrapjs', function() {
   gulp.src([
     'bower_components/jquery/dist/jquery.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
-    'bower_components/angular/angular.min.js',
+    'bower_components/bootstrap-select/bootstrap-select.js',
+    'bower_components/angular/angular.js',
+    'bower_components/angular/angular-animate.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     'vendor/chosen_v1.1.0/chosen.jquery.min.js',
     'bower_components/angular-chosen/angular-chosen.js',
+    'bower_components/angular-ui-select/dist/select.js',
+    'bower_components/angular-chosen/angular-perfect-scrollbar.js',
     'js/global.js'
   ])
-  .pipe(concat('pattern-library.js'))
+  .pipe(concat('boomstrap.js'))
   .pipe(gulp.dest('docs/js/'))
+  .pipe(gulp.dest('dist/js/'))
   .pipe(rename({ suffix:'.min' }))
-  .pipe(uglify())
-  .pipe(gulp.dest('docs/js/'));
+  .pipe(uglify({ mangle: false, outSourceMap: true }))
+  .pipe(gulp.dest('docs/js/'))
+  .pipe(gulp.dest('dist/js/'));
 
-  gulp.src([
-    'app/app.js',
-    'app/scripts/**/{,*/}*.js',
-    'js/**/{,*/}*.js'
-  ])
-  .pipe(concat('pattern-library-docs.js'))
-  .pipe(gulp.dest('docs/js'))
+  es.concat(
+    gulp.src([
+      'app/app.js',
+      'app/scripts/**/*.js'
+    ]),
+    gulp.src(['app/template/**/*.html', '!app/template/pagination/*.html'])
+      .pipe(templateCache({
+        module: 'boomstrap',
+        root: 'template'
+      })),
+    gulp.src('app/template/pagination/*.html')
+      .pipe(templateCache({
+        module: 'ui.bootstrap.pagination',
+        root: 'template/pagination'
+      }))
+  )
+  .pipe(jshint())
+  .pipe(jshint.reporter(jshintstylish))
+  .pipe(concat('boomstrap-angular.js'))
+  .pipe(ngmin())
+  .pipe(gulp.dest('docs/js/'))
+  .pipe(gulp.dest('dist/js/'))
   .pipe(rename({ suffix:'.min' }))
-  .pipe(uglify({ mangle: false }))
-  .pipe(gulp.dest('docs/js/'));
+  .pipe(uglify({ mangle: false, outSourceMap: true  }))
+  .pipe(gulp.dest('docs/js/'))
+  .pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('reloadDocsJs', function() {
@@ -100,6 +116,9 @@ gulp.task('reloadDocsJs', function() {
     .pipe(connect.reload());
 });
 
+/*
+ * Create html files
+ */
 gulp.task('docsHtml', function() {
   Object.keys(views).forEach(function(key) {
     var concatHtmlTask = htmlList(key, views[key]);
@@ -109,38 +128,58 @@ gulp.task('docsHtml', function() {
   });
 });
 
+/*
+ * Dynamically reload connect website when html changes
+ */
 gulp.task('reloadDocsHtml', function() {
   gulp.src('docs/**/*.html')
     .pipe(connect.reload());
 });
 
-gulp.task('docsLess', function() {
-  return gulp.src([
+/*
+ * Compile less files
+ */
+gulp.task('boomstrapLessDocs', function() {
+  gulp.src([
     'less/pattern-library.less',
     'less/pattern-library-docs.less'
-    ])
-    .pipe(less({ compress: false }))
-    .pipe(gulp.dest('docs/css'));
+  ])
+  .pipe(less({ compress: false }))
+  .pipe(gulp.dest('docs/css'));
+
 });
 
+gulp.task('boomstrapLessDist', function() {
+  gulp.src([
+    'less/pattern-library.less'
+  ])
+  .pipe(less({ compress: true }))
+  .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('boomstrapLess', ['boomstrapLessDocs', 'boomstrapLessDist']);
 gulp.task('reloadDocsLess', function() {
   gulp.src('docs/css/**/*.css')
     .pipe(connect.reload());
 });
 
-gulp.task('docsCommon', ['docsJs', 'docsHtml', 'docsLess'], function() {
+/*
+ * Common build task run by all tasks
+ */
+gulp.task('boomstrapcommon', ['boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
   gulp.src('images/**/*.*')
     .pipe(gulp.dest('docs/images'));
 
   gulp.src('fonts/**/*.*')
-    .pipe(gulp.dest('docs/fonts'));
-    
-  gulp.src('vendor/chosen_v1.1.0/chosen.css')
-    .pipe(gulp.dest('docs/css/'));
+    .pipe(gulp.dest('docs/css/fonts'))
+    .pipe(gulp.dest('docs/css/fonts'));
 });
 
-gulp.task('server', ['docsCommon'], function() {
-  
+// Just run compilation by default
+gulp.task('default', ['boomstrapcommon']);
+
+// Run a server with a watch with gulp server
+gulp.task('server', ['boomstrapcommon'], function() {
   connect.server({
     hostname: 'localhost',
     port: 9000,
@@ -150,28 +189,27 @@ gulp.task('server', ['docsCommon'], function() {
     livereload: true
   });
 
-  gulp.watch(['less/**/*.less'], ['docsLess', 'reloadDocsLess']);
+  // Watch Less files
+  gulp.watch(['less/**/*.less'], ['boomstrapLessDocs', 'reloadDocsLess']);
 
+  // Watch Javascript Files and Templates
   gulp.watch([
-    'bower_components/jquery/dist/jquery.js',
-    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
-    'bower_components/angular/angular.min.js',
-    'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-    'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-    'bower_components/angular-chosen/angular-chosen.js',
-    'js/global.js',
-    'app/app.js',
-    'app/scripts/**/{,*/}*.js',
-    'js/**/{,*/}*.js'
-  ], ['docsJs', 'reloadDocsJs']);
+    'bower_components/**/*.js',
+    'js/**/*.js',
+    'app/**/*.js',
+    'app/template/**/*.html'
+  ], ['boomstrapjs', 'reloadDocsJs']);
 
-  gulp.watch(['app/**/*.html', 'views/**/*.html'], ['docsHtml', 'reloadDocsHtml']);
+  // Watch html files
+  gulp.watch(['app/views/*.html', 'views/**/*.html'], ['docsHtml', 'reloadDocsHtml']);
 });
 
-gulp.task('website', function() {
-  docsCommon();
-  //'gh-pages';
+// Deploy to our github pages page
+gulp.task('website', ['boomstrapcommon'], function() {
+  gulp.src("./docs/**/*")
+    .pipe(deploy({
+      remoteUrl: 'https://github.com/BoomTownROI/boomstrap.git'
+    }));
 });
 
 
