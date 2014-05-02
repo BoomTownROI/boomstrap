@@ -1,4 +1,4 @@
-<section id="cards">
+<section id="cards" class="pl-docs-section">
     <div class="page-header">
         <h1>Cards</h1>
     </div>
@@ -27,7 +27,7 @@
         <script async src="//codepen.io/assets/embed/ei.js"></script>
     </div>
     <div id="card-data">
-        <h3>Card Data</h3>
+        <h2>Card Data</h2>
         <p>Each card expects a data object. The data is described as follows.</p>
         <pre class="prettyprint">
 
@@ -87,7 +87,7 @@
    }
 
         </pre>
-        <p>Then just pass the data from your controller to the view. The property attribute takes the property object.</p>
+        <p class="pl-spacious">Then just pass the data from your controller to the view. The property attribute takes the property object.</p>
         <pre class="prettyprint">
 
     /* your-view.html */
@@ -95,17 +95,19 @@
     &lt;bt-property-card property="property"&gt;&lt;/bt-property-card&gt;
 
         </pre>
-        <h3>Cards With Carousels</h3>
+        <h2>Single Image vs. Carousel</h2>
         <pre class="prettyprint">
     
     /* SomeCtrlCtrl.js */
 
-    property = { /* single item in array is rendered as an image */
+    /* single item in imageSrc array is rendered as an image */
+    property = {
         imageSrc: ['/images/im/just-a/poor-boy-nobody-loves-me.jpg'],
         etc: 'and the rest of the property object...'
     }
 
-    property = { /* multiple items in array are rendered in a carousel */
+    /* multiple items in imageSrc array are rendered in a carousel */
+    property = {
         imageSrc: [
             '/images/musketeers/athos.jpg',
             '/images/musketeers/aramis.jpg',
