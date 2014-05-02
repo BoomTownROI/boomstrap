@@ -13,7 +13,9 @@ var es = require('event-stream'),
   mustache = require('gulp-mustache'),
   views = require('./views/views'),
   ngmin = require('gulp-ngmin'),
-  templateCache = require('gulp-angular-templatecache');
+  templateCache = require('gulp-angular-templatecache'),
+  bower = require('gulp-bower'),
+  clean = require('gulp-clean');
 
 require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
@@ -146,8 +148,8 @@ gulp.task('reloadDocsHtml', function() {
  */
 gulp.task('boomstrapLessDocs', function() {
   return gulp.src([
-    'less/pattern-library.less',
-    'less/pattern-library-docs.less'
+    'less/boomstrap.less',
+    'less/boomstrap-docs.less'
   ])
   .pipe(less({ compress: false }))
   .pipe(gulp.dest('docs/css'));
@@ -156,7 +158,7 @@ gulp.task('boomstrapLessDocs', function() {
 
 gulp.task('boomstrapLessDist', function() {
   return gulp.src([
-    'less/pattern-library.less'
+    'less/boomstrap.less'
   ])
   .pipe(less({ compress: true }))
   .pipe(gulp.dest('dist/css'));
@@ -168,16 +170,29 @@ gulp.task('reloadDocsLess', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('clean', function() {
+  return gulp.src(['docs/', 'dist/'], { read: false })
+    .pipe(clean());
+})
+
+gulp.task('installBower', function() {
+  return bower();
+})
+
 /*
  * Common build task run by all tasks
  */
-gulp.task('boomstrapcommon', ['boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
+gulp.task('boomstrapcommon', ['installBower', 'boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
   gulp.src('images/**/*.*')
     .pipe(gulp.dest('docs/images'));
 
   gulp.src('fonts/**/*.*')
     .pipe(gulp.dest('docs/css/fonts'))
-    .pipe(gulp.dest('docs/css/fonts'));
+    .pipe(gulp.dest('dist/css/fonts'));
+
+  gulp.src('icons/**/*.*')
+    .pipe(gulp.dest('docs/css/icons'))
+    .pipe(gulp.dest('dist/css/icons'))
 });
 
 // Just run compilation by default
@@ -215,8 +230,6 @@ gulp.task('website', ['boomstrapcommon'], function() {
   // Run our gulp tasks
   gulp.run('grunt-tasks-ngdocs');
   return gulp.run('grunt-tasks-gh-pages');
-  // return gulp.src("docs/**")
-  //   .pipe(ghPages('https://github.com/BoomTownROI/boomstrap.git'));
 });
 
 
