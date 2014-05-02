@@ -31,6 +31,8 @@
         <p>Each card expects a data object. The data is described as follows.</p>
         <pre class="prettyprint">
 
+    /* YourCardCtrl.js */
+
     $scope.property = {
        imageSrc: ['/images/some/path/to-img.jpg'], // must be array. one renders image; multiple renders carousel.
        listPrice: '$2,250,000',
@@ -85,6 +87,35 @@
    }
 
         </pre>
+        <p>Then just pass the data from your controller to the view. The property attribute takes the property object.</p>
+        <pre class="prettyprint">
+
+    /* your-view.html */
+
+    &lt;bt-property-card property="property"&gt;&lt;/bt-property-card&gt;
+
+        </pre>
+        <h3>Cards With Carousels</h3>
+        <pre class="prettyprint">
+    
+    /* SomeCtrlCtrl.js */
+
+    property = { /* single item in array is rendered as an image */
+        imageSrc: ['/images/im/just-a/poor-boy-nobody-loves-me.jpg'],
+        etc: 'and the rest of the property object...'
+    }
+
+    property = { /* multiple items in array are rendered in a carousel */
+        imageSrc: [
+            '/images/musketeers/athos.jpg',
+            '/images/musketeers/aramis.jpg',
+            '/images/musketeers/porthos.jpg'
+        ],
+        etc: 'and the rest...'
+    }
+
+        </pre>
+
     </div>
     <!-- <p data-height="360" data-theme-id="5675" data-slug-hash="dCLlE" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/dCLlE/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script> -->
