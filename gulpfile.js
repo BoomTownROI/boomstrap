@@ -175,14 +175,14 @@ gulp.task('clean', function() {
     .pipe(clean());
 })
 
-gulp.task('installBower', function() {
+gulp.task('bower', function() {
   return bower();
 })
 
 /*
  * Common build task run by all tasks
  */
-gulp.task('boomstrapcommon', ['installBower', 'boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
+gulp.task('boomstrapcommon', ['bower', 'boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
   gulp.src('images/**/*.*')
     .pipe(gulp.dest('docs/images'));
 
