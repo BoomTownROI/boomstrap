@@ -27,6 +27,7 @@
         <script async src="//codepen.io/assets/embed/ei.js"></script>
     </div>
     <div id="card-data">
+        <h3>Card Data</h3>
         <p>Each card expects a data object. The data is described as follows.</p>
         <pre class="prettyprint">
 
@@ -34,17 +35,23 @@
        imageSrc: ['/images/some/path/to-img.jpg'], // must be array. one renders image; multiple renders carousel.
        listPrice: '$2,250,000',
        listingUrl: 'http://www.superhellaawesomerealestate.com/listing/12345/',
-       /* only choose one of these! */
-       offMarket: false, // only populated for off market listings (triggers sash)
+
+       /* only choose one of the following!
+        * the others don't have to be explicitly false;
+        * just skip the ones you don't want. */
+
+       offMarket: '2 days ago', // only populated for off market listings (triggers sash)
        newProperty: '6 hrs ago', // only populated for new listings (triggers sash)
-       reduced: false, // only for reductions (triggers sash). when present, an object:
+       reduced: '30 mins ago', // only for reductions (triggers sash). when present, an object:
        // reduced: {
        //     'when': '5 hrs ago',
        //     'change': '-$250,000',
        //     'changePercent': '2%'
        // },
-       backOnMarket: false, // only populated for back on market (triggers sash)
+       backOnMarket: '1 hr ago', // only populated for back on market (triggers sash)
+
        /* ^^^ only choose one of those */
+
        bestFits: '1444',
        favs: '33',
        mls: '1324961',
