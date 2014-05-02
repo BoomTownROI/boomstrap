@@ -1,30 +1,83 @@
 <section id="cards">
     <div class="page-header">
         <h1>Cards</h1>
-        <div class="callout callout-attention">
-            <h4>Data Requirement</h4>
-            <p>Property cards rely on an object called <code>property</code>, passed via the controller or ng-repeat.</p>
-        </div>
-        <div>
-            <h2>Single Card</h2>
-            <p data-height="555" data-theme-id="5675" data-slug-hash="iLwht" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/iLwht/'>Single Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div>
-            <h2>Multiple Cards</h2>
-            <p data-height="555" data-theme-id="5675" data-slug-hash="tlxCA" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/tlxCA/'>Multiple Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div>
-            <h2>Small Card</h2>
-            <p data-height="444" data-theme-id="5675" data-slug-hash="qoAef" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/qoAef/'>Small Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div>
-            <h2>Cards With Carousels</h2>
-            <p data-height="555" data-theme-id="5675" data-slug-hash="zjuBH" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/zjuBH/'>Carousel Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
-        </div>
+    </div>
+    <div class="callout callout-attention">
+        <h4>Data Requirement</h4>
+        <p>Property cards rely on an object passed as the <code>property</code> attribute. See the shape of the data <a href="#card-data">here</a>.</p>
+    </div><!-- /callout -->
+    <div>
+        <h2>Single Card</h2>
+        <p data-height="555" data-theme-id="5675" data-slug-hash="iLwht" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/iLwht/'>Single Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div>
+        <h2>Multiple Cards</h2>
+        <p data-height="555" data-theme-id="5675" data-slug-hash="tlxCA" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/tlxCA/'>Multiple Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div>
+        <h2>Small Card</h2>
+        <p data-height="444" data-theme-id="5675" data-slug-hash="qoAef" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/qoAef/'>Small Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div>
+        <h2>Cards With Carousels</h2>
+        <p data-height="555" data-theme-id="5675" data-slug-hash="zjuBH" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/zjuBH/'>Carousel Card Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//codepen.io/assets/embed/ei.js"></script>
+    </div>
+    <div id="card-data">
+        <p>Each card expects a data object. The data is described as follows.</p>
+        <pre class="prettyprint">
+
+    $scope.property = {
+       imageSrc: ['/images/some/path/to-img.jpg'], // must be array. one renders image; multiple renders carousel.
+       listPrice: '$2,250,000',
+       listingUrl: 'http://www.superhellaawesomerealestate.com/listing/12345/',
+       /* only choose one of these! */
+       offMarket: false, // only populated for off market listings (triggers sash)
+       newProperty: '6 hrs ago', // only populated for new listings (triggers sash)
+       reduced: false, // only for reductions (triggers sash). when present, an object:
+       // reduced: {
+       //     'when': '5 hrs ago',
+       //     'change': '-$250,000',
+       //     'changePercent': '2%'
+       // },
+       backOnMarket: false, // only populated for back on market (triggers sash)
+       /* ^^^ only choose one of those */
+       bestFits: '1444',
+       favs: '33',
+       mls: '1324961',
+       listed: '6 days ago',
+       pricePerSqft: '$1.99',
+       beds: '5',
+       baths: '3.5',
+       sqft: '4,195',
+       acres: '2.75',
+       type: 'Frat House',
+       address: {
+           street: '123 Fourth St.',
+           city: 'Charleston',
+           state: 'SC',
+           neighborhood: 'Craig\'s Landing'
+       },
+       history: [
+           {
+               'when': '5 hrs ago',
+               'change': '-$250,000',
+               'changePercent': '2%',
+               'price': '$2,250,000'
+           },
+           {
+               'when': '6 hrs ago',
+               'change': '-$500,000',
+               'changePercent': '5%',
+               'price': '$2,500,000'
+           }
+       ]
+   }
+
+        </pre>
     </div>
     <!-- <p data-height="360" data-theme-id="5675" data-slug-hash="dCLlE" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/dCLlE/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script> -->
