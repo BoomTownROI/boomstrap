@@ -16,6 +16,7 @@ var es = require('event-stream'),
   templateCache = require('gulp-angular-templatecache'),
   bower = require('gulp-bower'),
   clean = require('gulp-clean');
+  // dgeni = require('dgeni');
 
 require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
@@ -98,10 +99,10 @@ gulp.task('boomstrapjsAngular', function() {
         module: 'boomstrap',
         root: 'template'
       })),
-    gulp.src('app/template/pagination/*.html')
+    gulp.src('app/template/bootstrap/**/*.html')
       .pipe(templateCache({
-        module: 'ui.bootstrap.pagination',
-        root: 'template/pagination'
+        module: 'ui.bootstrap',
+        root: 'template/'
       }))
   )
   .pipe(jshint())
@@ -157,11 +158,9 @@ gulp.task('boomstrapLessDocs', function() {
 });
 
 gulp.task('boomstrapLessDist', function() {
-  return gulp.src([
-    'less/boomstrap.less'
-  ])
-  .pipe(less({ compress: true }))
-  .pipe(gulp.dest('dist/css'));
+  return gulp.src(['less/boomstrap.less'])
+    .pipe(less({ compress: true }))
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('boomstrapLess', ['boomstrapLessDocs', 'boomstrapLessDist']);
@@ -195,12 +194,21 @@ gulp.task('boomstrapcommon', ['bower', 'boomstrapjs', 'boomstrapLess', 'docsHtml
   );
 });
 
+// gulp.task('angularAPI', function() {
+//   var generateDocs = dgeni.generator('apiDocs/dgeni.conf.js').generateDocs();
+//   return generateDocs()
+//     .catch(function(error) {
+//       process.exit(1);
+//     });
+// });
+
 // Just run compilation by default
 gulp.task('default', ['boomstrapcommon']);
 
 // Run a server with a watch with gulp server
 gulp.task('server', ['boomstrapcommon'], function() {
   gulp.run('grunt-tasks-ngdocs');
+  // gulp.run('angularAPI');
   connect.server({
     hostname: 'localhost',
     port: 9000,
