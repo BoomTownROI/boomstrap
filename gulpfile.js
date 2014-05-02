@@ -127,12 +127,12 @@ gulp.task('reloadDocsJs', function() {
  * Create html files
  */
 gulp.task('docsHtml', function() {
-  Object.keys(views).forEach(function(key) {
-    var concatHtmlTask = htmlList(key, views[key]);
-    concatHtmlTask
-      .pipe(concat(key + '.html'))
-      .pipe(gulp.dest('docs/'));
-  });
+  return es.concat.apply(es,
+    Object.keys(views).map(function(key) {
+      var concatHtmlTask = htmlList(key, views[key]);
+      return concatHtmlTask.pipe(concat(key + '.html'));
+    })
+  ).pipe(gulp.dest('docs/'));
 });
 
 /*
@@ -183,16 +183,16 @@ gulp.task('bower', function() {
  * Common build task run by all tasks
  */
 gulp.task('boomstrapcommon', ['bower', 'boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
-  gulp.src('images/**/*.*')
-    .pipe(gulp.dest('docs/images'));
-
-  gulp.src('fonts/**/*.*')
-    .pipe(gulp.dest('docs/css/fonts'))
-    .pipe(gulp.dest('dist/css/fonts'));
-
-  gulp.src('icons/**/*.*')
-    .pipe(gulp.dest('docs/css/icons'))
-    .pipe(gulp.dest('dist/css/icons'))
+  return es.concat(
+    gulp.src('images/**/*.*')
+      .pipe(gulp.dest('docs/images')),
+    gulp.src('fonts/**/*.*')
+      .pipe(gulp.dest('docs/css/fonts'))
+      .pipe(gulp.dest('dist/css/fonts')),
+    gulp.src('icons/**/*.*')
+      .pipe(gulp.dest('docs/css/icons'))
+      .pipe(gulp.dest('dist/css/icons'))
+  );
 });
 
 // Just run compilation by default
