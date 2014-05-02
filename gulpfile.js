@@ -185,6 +185,7 @@ gulp.task('default', ['boomstrapcommon']);
 
 // Run a server with a watch with gulp server
 gulp.task('server', ['boomstrapcommon'], function() {
+  gulp.run('grunt-tasks-ngdocs');
   connect.server({
     hostname: 'localhost',
     port: 9000,
@@ -211,6 +212,8 @@ gulp.task('server', ['boomstrapcommon'], function() {
 
 // Deploy to our github pages page
 gulp.task('website', ['boomstrapcommon'], function() {
+  // Run our gulp tasks
+  gulp.run('grunt-tasks-ngdocs');
   return gulp.run('grunt-tasks-gh-pages');
   // return gulp.src("docs/**")
   //   .pipe(ghPages('https://github.com/BoomTownROI/boomstrap.git'));
