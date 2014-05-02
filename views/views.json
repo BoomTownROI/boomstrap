@@ -354,6 +354,16 @@
 				"css_id": "#ui-select",
 				"nav_header": "ui-select"
 			},
+			{
+				"source": "app/views/btScore.html",
+				"css_id": "#btScore",
+				"nav_header": "bt-Score"
+			},
+			{
+				"source": "app/views/btPager.html",
+				"css_id": "#btPager",
+				"nav_header": "bt-Pager"
+			},
 			{ "source": "app/views/angular-footer.html" }
 		]
 	}

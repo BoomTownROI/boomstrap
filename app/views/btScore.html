@@ -1,0 +1,102 @@
+<!-- ================================== btScore ================================== -->
+
+<!-- btScore (Boomstrap Custom) -->
+<script type="text/javascript">
+      angular.module('boomstrap').controller('btScoreTest', function($scope) {
+        $scope.scores = {
+          excellent: 99,
+          good: 75,
+          average: 50,
+          meh: 25
+        };
+      });
+</script>
+<div class="pl-docs-section" id="btScore" ng-controller="btScoreTest">
+  <h1 id="scores" class="page-header">btScore</h1>
+  <h2>Options</h2>
+  <p>Color options for ranking / scoring data.</p>
+  <div class="pl-example">
+    <bt-score score="scores.excellent"></bt-score>
+    <bt-score score="scores.good"></bt-score>
+    <bt-score score="scores.average"></bt-score>
+    <bt-score score="scores.meh"></bt-score>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint">
+
+      &lt;script type="text/javascript"&gt;
+        angular.module('boomstrap').controller('btScoreTest', function($scope) {
+          $scope.scores {
+            excellent: 99,
+            good: 75,
+            average: 50,
+            meh: 25
+          };
+        });
+      &lt;/script&gt;
+      &lt;bt-score score="scores.excellent"/&gt;
+      &lt;bt-score score="scores.good"/&gt;
+      &lt;bt-score score="scores.average"/&gt;
+      &lt;bt-score score="scores.meh"/&gt;
+    </pre>
+  </div>
+
+  <h2>Sizes</h2>
+  <p>Fancy larger or smaller scores? Add <code>size='lg'</code>, <code>size='sm'</code>, or <code>size='xs'</code> to the directive for additional sizes.</p>
+  <div class="pl-example">
+  	<p>
+      <bt-score score="scores.excellent" size="lg"></bt-score>
+      <bt-score score="scores.good" size="lg"></bt-score>
+      <bt-score score="scores.average" size="lg"></bt-score>
+      <bt-score score="scores.meh" size="lg"></bt-score>
+    </p>
+    <p>
+      <bt-score score="scores.excellent"></bt-score>
+      <bt-score score="scores.good"></bt-score>
+      <bt-score score="scores.average"></bt-score>
+      <bt-score score="scores.meh"></bt-score>
+    </p>
+    <p>
+      <bt-score score="scores.excellent" size="sm"></bt-score>
+      <bt-score score="scores.good" size="sm"></bt-score>
+      <bt-score score="scores.average" size="sm"></bt-score>
+      <bt-score score="scores.meh" size="sm"></bt-score>
+    </p>
+    <p>
+      <bt-score score="scores.excellent" size="xs"></bt-score>
+      <bt-score score="scores.good" size="xs"></bt-score>
+      <bt-score score="scores.average" size="xs"></bt-score>
+      <bt-score score="scores.meh" size="xs"></bt-score>
+    </p>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint">
+      
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot; size=&quot;lg&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot; size=&quot;sm&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;bt-score score=&quot;scores.excellent&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.good&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.average&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+      &lt;bt-score score=&quot;scores.meh&quot; size=&quot;xs&quot;&gt;&lt;/bt-score&gt;
+    &lt;/p&gt;
+    </pre>
+  </div>
+
+</div>
