@@ -13,7 +13,9 @@ var es = require('event-stream'),
   mustache = require('gulp-mustache'),
   views = require('./views/views'),
   ngmin = require('gulp-ngmin'),
-  templateCache = require('gulp-angular-templatecache');
+  templateCache = require('gulp-angular-templatecache'),
+  bower = require('gulp-bower'),
+  clean = require('gulp-clean');
 
 require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
@@ -125,12 +127,12 @@ gulp.task('reloadDocsJs', function() {
  * Create html files
  */
 gulp.task('docsHtml', function() {
-  Object.keys(views).forEach(function(key) {
-    var concatHtmlTask = htmlList(key, views[key]);
-    concatHtmlTask
-      .pipe(concat(key + '.html'))
-      .pipe(gulp.dest('docs/'));
-  });
+  return es.concat.apply(es,
+    Object.keys(views).map(function(key) {
+      var concatHtmlTask = htmlList(key, views[key]);
+      return concatHtmlTask.pipe(concat(key + '.html'));
+    })
+  ).pipe(gulp.dest('docs/'));
 });
 
 /*
@@ -146,8 +148,8 @@ gulp.task('reloadDocsHtml', function() {
  */
 gulp.task('boomstrapLessDocs', function() {
   return gulp.src([
-    'less/pattern-library.less',
-    'less/pattern-library-docs.less'
+    'less/boomstrap.less',
+    'less/boomstrap-docs.less'
   ])
   .pipe(less({ compress: false }))
   .pipe(gulp.dest('docs/css'));
@@ -156,7 +158,7 @@ gulp.task('boomstrapLessDocs', function() {
 
 gulp.task('boomstrapLessDist', function() {
   return gulp.src([
-    'less/pattern-library.less'
+    'less/boomstrap.less'
   ])
   .pipe(less({ compress: true }))
   .pipe(gulp.dest('dist/css'));
@@ -168,16 +170,29 @@ gulp.task('reloadDocsLess', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('clean', function() {
+  return gulp.src(['docs/', 'dist/'], { read: false })
+    .pipe(clean());
+})
+
+gulp.task('bower', function() {
+  return bower();
+})
+
 /*
  * Common build task run by all tasks
  */
-gulp.task('boomstrapcommon', ['boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
-  gulp.src('images/**/*.*')
-    .pipe(gulp.dest('docs/images'));
-
-  gulp.src('fonts/**/*.*')
-    .pipe(gulp.dest('docs/css/fonts'))
-    .pipe(gulp.dest('docs/css/fonts'));
+gulp.task('boomstrapcommon', ['bower', 'boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
+  return es.concat(
+    gulp.src('images/**/*.*')
+      .pipe(gulp.dest('docs/images')),
+    gulp.src('fonts/**/*.*')
+      .pipe(gulp.dest('docs/css/fonts'))
+      .pipe(gulp.dest('dist/css/fonts')),
+    gulp.src('icons/**/*.*')
+      .pipe(gulp.dest('docs/css/icons'))
+      .pipe(gulp.dest('dist/css/icons'))
+  );
 });
 
 // Just run compilation by default
@@ -185,10 +200,10 @@ gulp.task('default', ['boomstrapcommon']);
 
 // Run a server with a watch with gulp server
 gulp.task('server', ['boomstrapcommon'], function() {
+  gulp.run('grunt-tasks-ngdocs');
   connect.server({
     hostname: 'localhost',
     port: 9000,
-    open: true,
     root: 'docs',
     keepalive: false,
     livereload: true
@@ -211,9 +226,9 @@ gulp.task('server', ['boomstrapcommon'], function() {
 
 // Deploy to our github pages page
 gulp.task('website', ['boomstrapcommon'], function() {
+  // Run our gulp tasks
+  gulp.run('grunt-tasks-ngdocs');
   return gulp.run('grunt-tasks-gh-pages');
-  // return gulp.src("docs/**")
-  //   .pipe(ghPages('https://github.com/BoomTownROI/boomstrap.git'));
 });
 
 
