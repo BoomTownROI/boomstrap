@@ -7321,6 +7321,16 @@ fieldset[disabled] .btn-attention.active {
   margin-bottom: -10px;
   padding: 14px 24px 0 14px;
 }
+.ui-select-range .ui-select-bootstrap {
+  float: left;
+  width: 46%;
+}
+.ui-select-range .ficon {
+  float: left;
+  text-align: center;
+  top: 10px;
+  width: 6%;
+}
 .sash {
   background-color: #ffffff;
   border-bottom: 4px solid #848484;
