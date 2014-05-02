@@ -15,29 +15,13 @@
    * @description
    * The `btScore` directive represents a score component from Boomstrap.  It will keep the color
    * and size up to date based on what is specified.
-   *
-   *
-   * @example
-      <doc:example module="boomstrap">
-        <doc:source>
-          <div ng-init="myScore=20">
-            <label>Input a score here to see it reflected in the tags :</label>
-            <input ng-model="myScore">
-            <p><bt-score score="myScore" size="xs"></bt-score></p>
-            <p><bt-score score="myScore" size="sm"></bt-score></p>
-            <p><bt-score score="myScore"></bt-score></p>
-            <p><bt-score score="myScore" size="lg"></bt-score></p>
-          </div>
-        </doc:source>
-      </doc:example>
-   * 
    */
   Boomstrap.directive('btScore', function() {
 
     return {
       restrict: 'E',
       replace: true,
-      template: '<span class="score {{ scoreSize }} {{ scoreType }}">{{ score }}</span>',
+      template: '<span class="score" ng-class="getScoreClasses()">{{ score }}</span>',
       scope: {
         score: '=',
         size: '@'
@@ -65,16 +49,16 @@
         scope.scoreSize = scope.size && 'score-' + scope.size || '';
         scope.scoreType = translateScore(scope.score);
 
+        scope.getScoreClasses = function() {
+          return [scope.scoreSize, scope.scoreType];
+        };
+
         scope.$watch('score', function(newScore, oldScore) {
-          if (newScore !== oldScore) {
-            translateScore(newScore);
-          }
+          translateScore(newScore);
         });
 
         scope.$watch('size', function(newSize, oldSize) {
-          if (newSize !== oldSize) {
-            scope.scoreSize = newSize && 'score-' + newSize || '';
-          }
+          scope.scoreSize = newSize && 'score-' + newSize || '';
         });
 
       }
