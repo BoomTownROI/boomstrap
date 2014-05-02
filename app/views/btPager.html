@@ -8,14 +8,14 @@
     $scope.itemsPerPage = 10;
   });
 </script>
-<div class="pl-docs-section" id="btPager" ng-controller="btPagerTest">
+<div class="pl-docs-section" id="btPager">
   <h1 id="scores" class="page-header">btPager</h1>
-  <div class="pl-example">
+  <div class="pl-example" ng-controller="btPagerTest">
     <bt-pager current-page="currentPage" total-items="totalItems" items-per-page="itemsPerPage"></bt-pager>
     <pre>Page: {{currentPage}} / {{totalItems / itemsPerPage}}</pre>
   </div>
   <div class="pl-code">
-    <pre class="prettyprint">
+    <pre class="prettyprint" ng-non-bindable>
 
       &lt;script type="text/javascript"&gt;
         angular.module(&#39;boomstrap&#39;).controller(&#39;btPagerTest&#39;, function($scope) {

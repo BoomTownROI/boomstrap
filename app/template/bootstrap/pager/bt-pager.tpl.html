@@ -1,5 +1,5 @@
 <ul class="pagination">
-  <li unselectable ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a 
+  <li onselectstart="return false;" ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a 
   	ng-click="selectPage(page.number)" ng-show="$first"><i class="ficon ficon-chevron-left"></i></a><a 
   	ng-click="selectPage(page.number)" ng-show="$last"><i class="ficon ficon-chevron-right"></i></a>
   </li>
