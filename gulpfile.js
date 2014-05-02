@@ -60,8 +60,8 @@ var htmlList = function(key, src) {
   return returnEvents;
 };
 
-gulp.task('boomstrapjs', function() {
-  gulp.src([
+gulp.task('boomstrapjsLib', function() {
+  return gulp.src([
     'bower_components/jquery/dist/jquery.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
@@ -82,12 +82,11 @@ gulp.task('boomstrapjs', function() {
   .pipe(uglify({ mangle: false, outSourceMap: true }))
   .pipe(gulp.dest('docs/js/'))
   .pipe(gulp.dest('dist/js/'));
+});
 
-  es.concat(
-    gulp.src([
-      'app/app.js',
-      'app/scripts/**/*.js'
-    ]),
+gulp.task('boomstrapjsAngular', function() {
+  return es.concat(
+    gulp.src(['app/app.js', 'app/scripts/**/*.js']),
     gulp.src(['app/template/**/*.html', '!app/template/pagination/*.html'])
       .pipe(templateCache({
         module: 'boomstrap',
@@ -110,6 +109,8 @@ gulp.task('boomstrapjs', function() {
   .pipe(gulp.dest('docs/js/'))
   .pipe(gulp.dest('dist/js/'));
 });
+
+gulp.task('boomstrapjs', ['boomstrapjsLib', 'boomstrapjsAngular']);
 
 gulp.task('reloadDocsJs', function() {
   gulp.src('docs/js/*.js')
@@ -140,7 +141,7 @@ gulp.task('reloadDocsHtml', function() {
  * Compile less files
  */
 gulp.task('boomstrapLessDocs', function() {
-  gulp.src([
+  return gulp.src([
     'less/pattern-library.less',
     'less/pattern-library-docs.less'
   ])
@@ -150,7 +151,7 @@ gulp.task('boomstrapLessDocs', function() {
 });
 
 gulp.task('boomstrapLessDist', function() {
-  gulp.src([
+  return gulp.src([
     'less/pattern-library.less'
   ])
   .pipe(less({ compress: true }))
@@ -206,10 +207,8 @@ gulp.task('server', ['boomstrapcommon'], function() {
 
 // Deploy to our github pages page
 gulp.task('website', ['boomstrapcommon'], function() {
-  gulp.src("./docs/**/*")
-    .pipe(deploy({
-      remoteUrl: 'https://github.com/BoomTownROI/boomstrap.git'
-    }));
+  return gulp.src("docs/**")
+    .pipe(ghPages('https://github.com/BoomTownROI/boomstrap.git'));
 });
 
 
