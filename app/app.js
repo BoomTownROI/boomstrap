@@ -13,12 +13,12 @@
     uiSelectConfig.theme = 'bootstrap';
   });
 
-  angular.module('ui.bootstrap.pagination')
+  angular.module('ui.bootstrap')
   .config(function($provide) {
-    $provide.decorator('paginationDirective', function($delegate) {
-      var defaultURL = $delegate[0].templateUrl;
+    $provide.decorator('pagerDirective', function($delegate) {
+      var defaultUrl = $delegate[0].templateUrl;
       $delegate[0].templateUrl = function(tElement, tAttrs) {
-        return angular.isDefined(tAttrs.btPager) ? 'template/pagination/bt-pager.html' : defaultURL;
+        return tAttrs.pagerTemplateUrl || defaultUrl;
       };
 
       return $delegate;
