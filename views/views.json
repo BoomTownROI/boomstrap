@@ -268,9 +268,9 @@
 				"nav_header": "tour"
 			},
 			{
-				"source": "views/javascript/selects.html",
-				"css_id": "#selects",
-				"nav_header": "selects"
+				"source": "views/javascript/select.html",
+				"css_id": "#select",
+				"nav_header": "select"
 			}
 		]
 	},
