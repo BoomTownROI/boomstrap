@@ -61,9 +61,7 @@
             return $filter('currency')(value);
           };
         } else {
-          translateValidValue = function(value) {
-            return value;
-          };
+          translateValidValue = angular.identity;
         }
 
         scope.translateValue = function(value, defaultText) {

@@ -1,0 +1,31 @@
+<!-- ================================== btPager ================================== -->
+
+<!-- btPager (Boomstrap Custom) -->
+<script type="text/javascript">
+  angular.module('boomstrap').controller('btPagerTest', function($scope) {
+    $scope.currentPage = 2;
+    $scope.totalItems = 90;
+    $scope.itemsPerPage = 10;
+  });
+</script>
+<div class="pl-docs-section" id="btPager">
+  <h1 class="page-header">btPager</h1>
+  <div class="pl-example" ng-controller="btPagerTest">
+    <bt-pager current-page="currentPage" total-items="totalItems" items-per-page="itemsPerPage"></bt-pager>
+    <pre>Page: {{currentPage}} / {{totalItems / itemsPerPage}}</pre>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint" ng-non-bindable>
+
+      &lt;script type="text/javascript"&gt;
+        angular.module(&#39;boomstrap&#39;).controller(&#39;btPagerTest&#39;, function($scope) {
+          $scope.currentPage = 2;
+          $scope.totalItems = 90;
+          $scope.itemsPerPage = 10;
+        })
+      &lt;/script&gt;
+      &lt;bt-pager current-page=&quot;currentPage&quot; total-items=&quot;totalItems&quot; items-per-page=&quot;itemsPerPage&quot;&gt;&lt;/bt-pager&gt;
+      &lt;pre&gt;Page: {{currentPage}} / {{totalItems / itemsPerPage}}&lt;/pre&gt;
+    </pre>
+  </div>
+</div>
