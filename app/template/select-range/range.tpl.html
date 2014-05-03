@@ -1,21 +1,15 @@
-<div class="row">
-  <div class="col-sm-5">
-    <ui-select ng-model="minimum.value">
-      <match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected, 'No min') }}</match>
-      <choices repeat="value in getValues($select.search) | filter: $select.search">
-        <div>{{ translateValue(value, 'No min') }}</div>
-      </choices>
-    </ui-select>
-  </div>
-  <div class="col-sm-1">
-    <i class="ficon ficon-minus"></i>
-  </div>
-  <div class="col-sm-5">
-    <ui-select ng-model="maximum.value">
-      <match placeholder="{{ maxPlaceholder }}">{{ translateValue($select.selected, 'No max') }}</match>
-      <choices repeat="value in getValues($select.search) | filter: $select.search">
-        <div>{{ translateValue(value, 'No max') }}</div>
-      </choices>
-    </ui-select>
-  </div>
+<div class="ui-select-range clearfix">
+  <ui-select ng-model="minimum.value">
+    <match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected, 'No min') }}</match>
+    <choices repeat="value in getValues($select.search) | filter: $select.search">
+      <div>{{ translateValue(value, 'No min') }}</div>
+    </choices>
+  </ui-select>
+  <i class="ficon ficon-minus"></i>
+  <ui-select ng-model="maximum.value">
+    <match placeholder="{{ maxPlaceholder }}">{{ translateValue($select.selected, 'No max') }}</match>
+    <choices repeat="value in getValues($select.search) | filter: $select.search">
+      <div>{{ translateValue(value, 'No max') }}</div>
+    </choices>
+  </ui-select>
 </div>
