@@ -222,7 +222,37 @@
         </small></h1>
     </div>
     <p data-height="660" data-theme-id="5675" data-slug-hash="xjpfs" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/xjpfs/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//codepen.io/assets/embed/ei.js"></script>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+    
+    <!-- btPager (Angular Custom) -->
+    <script type="text/javascript">
+      angular.module('boomstrap').controller('btPagerTest', function($scope) {
+        $scope.currentPage = 2;
+        $scope.totalItems = 90;
+        $scope.itemsPerPage = 10;
+      });
+    </script>
+    <div class="pl-docs-section" id="btPager">
+      <h1 class="page-header">Minimal Pagination</h1>
+      <div class="pl-example" ng-controller="btPagerTest">
+        <bt-pager current-page="currentPage" total-items="totalItems" items-per-page="itemsPerPage"></bt-pager>
+        <pre>Page: {{currentPage}} / {{totalItems / itemsPerPage}}</pre>
+      </div>
+      <div class="pl-code">
+        <pre class="prettyprint" ng-non-bindable>
+
+    &lt;script type="text/javascript"&gt;
+    angular.module(&#39;boomstrap&#39;).controller(&#39;btPagerTest&#39;, function($scope) {
+      $scope.currentPage = 2;
+      $scope.totalItems = 90;
+      $scope.itemsPerPage = 10;
+    })
+    &lt;/script&gt;
+    &lt;bt-pager current-page=&quot;currentPage&quot; total-items=&quot;totalItems&quot; items-per-page=&quot;itemsPerPage&quot;&gt;&lt;/bt-pager&gt;
+    &lt;pre&gt;Page: {{currentPage}} / {{totalItems / itemsPerPage}}&lt;/pre&gt;
+        </pre>
+      </div>
+    </div>
 </section>
 
 
@@ -379,18 +409,18 @@
     <script async src="//codepen.io/assets/embed/ei.js"></script> -->
 </section>
 
-<section id="ui-select">
+<section id="select">
     <div class="page-header">
-        <h1>ui-select<small>
+        <h1>Select<small>
             (<a target="_blank" href="https://github.com/angular-ui/ui-select">ui-select</a>)
         </small></h1>
     </div>
     <p data-height="350" data-theme-id="5592" data-slug-hash="bKAaI" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mfunkie/pen/bKAaI/'>ui-select Example</a> by Mark Funk (<a href='http://codepen.io/mfunkie'>@mfunkie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
-<!-- ================================== btScore ================================== -->
+<!-- ================================== Scores (Angular) ================================== -->
 
-<!-- btScore (Boomstrap Custom) -->
+<!-- Scores (Angular Custom) -->
 <script type="text/javascript">
       angular.module('boomstrap').controller('btScoreTest', function($scope) {
         $scope.scores = {
@@ -401,8 +431,8 @@
         };
       });
 </script>
-<div class="pl-docs-section" id="btScore" ng-controller="btScoreTest">
-  <h1 class="page-header">btScore</h1>
+<div class="pl-docs-section" id="scores" ng-controller="btScoreTest">
+  <h1 class="page-header">Scores</h1>
   <h2>Options</h2>
   <p>Color options for ranking / scoring data.</p>
   <div class="pl-example">
@@ -490,43 +520,12 @@
   </div>
 
 </div>
-<!-- ================================== btPager ================================== -->
+<!-- ================================== Ranges ================================== -->
 
-<!-- btPager (Boomstrap Custom) -->
-<script type="text/javascript">
-  angular.module('boomstrap').controller('btPagerTest', function($scope) {
-    $scope.currentPage = 2;
-    $scope.totalItems = 90;
-    $scope.itemsPerPage = 10;
-  });
-</script>
-<div class="pl-docs-section" id="btPager">
-  <h1 class="page-header">btPager</h1>
-  <div class="pl-example" ng-controller="btPagerTest">
-    <bt-pager current-page="currentPage" total-items="totalItems" items-per-page="itemsPerPage"></bt-pager>
-    <pre>Page: {{currentPage}} / {{totalItems / itemsPerPage}}</pre>
-  </div>
-  <div class="pl-code">
-    <pre class="prettyprint" ng-non-bindable>
+<!-- btSelectRange (Angular Custom) -->
 
-      &lt;script type="text/javascript"&gt;
-        angular.module(&#39;boomstrap&#39;).controller(&#39;btPagerTest&#39;, function($scope) {
-          $scope.currentPage = 2;
-          $scope.totalItems = 90;
-          $scope.itemsPerPage = 10;
-        })
-      &lt;/script&gt;
-      &lt;bt-pager current-page=&quot;currentPage&quot; total-items=&quot;totalItems&quot; items-per-page=&quot;itemsPerPage&quot;&gt;&lt;/bt-pager&gt;
-      &lt;pre&gt;Page: {{currentPage}} / {{totalItems / itemsPerPage}}&lt;/pre&gt;
-    </pre>
-  </div>
-</div>
-<!-- ================================== btSelectRange ================================== -->
-
-<!-- btSelectRange (Boomstrap Custom) -->
-
-<div class="pl-docs-section" id="btSelectRange">
-  <h1 class="page-header">btSelectRange</h1>
+<div class="pl-docs-section" id="ranges">
+  <h1 class="page-header">Ranges</h1>
   <p data-height="268" data-theme-id="5592" data-slug-hash="gDCuj" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mfunkie/pen/gDCuj/'>bt-select-range Example</a> by Mark Funk (<a href='http://codepen.io/mfunkie'>@mfunkie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
   <script async src="//codepen.io/assets/embed/ei.js"></script>
 </div>
@@ -583,16 +582,13 @@
                     <a href="#cards">Cards</a>
                 </li>
                 <li>
-                    <a href="#ui-select">ui-select</a>
+                    <a href="#select">Select</a>
                 </li>
                 <li>
-                    <a href="#btScore">bt-Score</a>
+                    <a href="#scores">Scores</a>
                 </li>
                 <li>
-                    <a href="#btPager">bt-Pager</a>
-                </li>
-                <li>
-                    <a href="#btSelectRange">bt-select-range</a>
+                    <a href="#ranges">ranges</a>
                 </li>
                 <li>
                     <a href=""></a>
