@@ -1,6 +1,25 @@
 (function(Boomstrap) {
   'use strict';
 
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btSelectRange
+   * @requires $filter
+   * @restrict E
+   *
+   * @param {Array} values Array of values to display in the select dropdowns.
+   * @param {string} minPlaceholder String to show when the user is selecting an item from the minimum dropdown
+   * @param {string} maxPlaceholder String to show when the user is selecting an item from the maximum dropdown
+   * @param {string} rangeType If the range type is 'money', format the Number values as currency.
+   *
+   * @description The `btSelectRange` element directive wraps the AngularUI's uiSelect directive.
+   * It allows the user to change the placeholder text for the range, and ensures that the minimum will always
+   * be less than the maximum.  It also provides a way for the user to select 'No minimum' or 'No maximum' if
+   * the array provided has a non-number value in it.  This directive will add the users input to the current
+   * list of items shown as the user types, and if the user enters a non-provided value, that value will be added
+   * to the values Array provided.
+   *
+   */
   Boomstrap.directive('btSelectRange', function($filter) {
     return {
       restrict: 'E',

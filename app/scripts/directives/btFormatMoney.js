@@ -1,7 +1,7 @@
 (function(Boomstrap) {
   'use strict';
 
-/**
+  /**
    * @ngdoc directive
    * @name  boomstrap.directive:btFormatMoney
    * @requires  $window
