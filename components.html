@@ -2632,115 +2632,6 @@
     </code></pre>
   </div>
 </div>
-    </div> <!-- /column (main content) -->
-    <div class="col-sm-3">
-        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
-            <p class="pl-docs-sidebar-header"><a href="#top">Components</a></p>
-            <ul class="nav pl-docs-sidenav">
-                <li>
-                    <a href="#icons">Icons</a>
-                </li>
-                <li>
-                    <a href="#dropdowns">Dropdowns</a>
-                </li>
-                <li>
-                    <a href="#btn-groups">Button groups</a>
-                </li>
-                <li>
-                    <a href="#btn-dropdowns">Button dropdowns</a>
-                </li>
-                <li>
-                    <a href="#input-groups">Input groups</a>
-                </li>
-                <li>
-                    <a href="#nav">navs</a>
-                </li>
-                <li>
-                    <a href="#pagination">Pagination</a>
-                </li>
-                <li>
-                    <a href="#labels">Labels and Lead Cats</a>
-                </li>
-                <li>
-                    <a href="#badges">Badges</a>
-                </li>
-                <li>
-                    <a href="#jumbotron">Jumbotron</a>
-                </li>
-                <li>
-                    <a href="#page-header">Page header</a>
-                </li>
-                <li>
-                    <a href="#thumbnails">Thumbnails</a>
-                </li>
-                <li>
-                    <a href="#alerts">Alerts</a>
-                </li>
-                <li>
-                    <a href="#progress">Progress bars</a>
-                </li>
-                <li>
-                    <a href="#list-group">List group</a>
-                </li>
-                <li>
-                    <a href="#panels">Panels</a>
-                </li>
-                <li>
-                    <a href="#wells">Wells</a>
-                </li>
-                <li>
-                    <a href="#callouts">Callouts</a>
-                </li>
-                <li>
-                    <a href="#sashes">Sashes</a>
-                </li>
-                <li>
-                    <a href="#cards">Cards</a>
-                </li>
-                <li>
-                    <a href="#tags">tags</a>
-                </li>
-                <li>
-                    <a href="#scores">scores</a>
-                </li>
-            </ul>
-            <a href="#top">back to top</a>
-        </div>
-    </div> <!-- /column (sidebar) -->
-</div> <!-- /row -->
-
-</div>
-<script>
-    $( document ).ready(function() {
-    	$('body').scrollspy({ target: '.pl-docs-sidebar'});
-
-    	// active nav
-			var path = location.pathname.split("/");
-			var section = path[path.length-1];
-			if(section == "") {
-				$('#pl-docs-nav a[href^="index.html"]').closest('li').addClass('active');
-			} else {
-				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
-			}
-			$("[data-toggle=popover]").popover();
-			$('.selectpicker').selectpicker();
-    });
-
-
-
-
-</script>
-
-<!-- prettify code examples; use class="prettyprint" on your pre blocks -->
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-
-<!-- scripts to run bootstrap examples -->
-<script>
-  !function(a){a(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var b=document.createElement("style");b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.querySelector("head").appendChild(b)}{var c=a(window),d=a(document.body);a(".navbar").outerHeight(!0)+10}d.scrollspy({target:".pl-docs-sidebar"}),c.on("load",function(){d.scrollspy("refresh")}),a(".pl-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".pl-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".pl-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".pl-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".pl-top").affix()},100),a(".tooltip-demo").tooltip({selector:"[data-toggle=tooltip]",container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".pl-docs-navbar").tooltip({selector:"a[data-toggle=tooltip]",container:".pl-docs-navbar .nav"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)})})}(jQuery);
-</script>
-
-</body>
-</html>
 <!-- ================================== Sashes ================================== -->
 
 
@@ -3369,3 +3260,112 @@
   </div>
 
 </div>
+    </div> <!-- /column (main content) -->
+    <div class="col-sm-3">
+        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
+            <p class="pl-docs-sidebar-header"><a href="#top">Components</a></p>
+            <ul class="nav pl-docs-sidenav">
+                <li>
+                    <a href="#icons">Icons</a>
+                </li>
+                <li>
+                    <a href="#dropdowns">Dropdowns</a>
+                </li>
+                <li>
+                    <a href="#btn-groups">Button groups</a>
+                </li>
+                <li>
+                    <a href="#btn-dropdowns">Button dropdowns</a>
+                </li>
+                <li>
+                    <a href="#input-groups">Input groups</a>
+                </li>
+                <li>
+                    <a href="#nav">navs</a>
+                </li>
+                <li>
+                    <a href="#pagination">Pagination</a>
+                </li>
+                <li>
+                    <a href="#labels">Labels and Lead Cats</a>
+                </li>
+                <li>
+                    <a href="#badges">Badges</a>
+                </li>
+                <li>
+                    <a href="#jumbotron">Jumbotron</a>
+                </li>
+                <li>
+                    <a href="#page-header">Page header</a>
+                </li>
+                <li>
+                    <a href="#thumbnails">Thumbnails</a>
+                </li>
+                <li>
+                    <a href="#alerts">Alerts</a>
+                </li>
+                <li>
+                    <a href="#progress">Progress bars</a>
+                </li>
+                <li>
+                    <a href="#list-group">List group</a>
+                </li>
+                <li>
+                    <a href="#panels">Panels</a>
+                </li>
+                <li>
+                    <a href="#wells">Wells</a>
+                </li>
+                <li>
+                    <a href="#callouts">Callouts</a>
+                </li>
+                <li>
+                    <a href="#sashes">Sashes</a>
+                </li>
+                <li>
+                    <a href="#cards">Cards</a>
+                </li>
+                <li>
+                    <a href="#tags">tags</a>
+                </li>
+                <li>
+                    <a href="#scores">scores</a>
+                </li>
+            </ul>
+            <a href="#top">back to top</a>
+        </div>
+    </div> <!-- /column (sidebar) -->
+</div> <!-- /row -->
+
+</div>
+<script>
+    $( document ).ready(function() {
+    	$('body').scrollspy({ target: '.pl-docs-sidebar'});
+
+    	// active nav
+			var path = location.pathname.split("/");
+			var section = path[path.length-1];
+			if(section == "") {
+				$('#pl-docs-nav a[href^="index.html"]').closest('li').addClass('active');
+			} else {
+				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
+			}
+			$("[data-toggle=popover]").popover();
+			$('.selectpicker').selectpicker();
+    });
+
+
+
+
+</script>
+
+<!-- prettify code examples; use class="prettyprint" on your pre blocks -->
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+<!-- scripts to run bootstrap examples -->
+<script>
+  !function(a){a(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var b=document.createElement("style");b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.querySelector("head").appendChild(b)}{var c=a(window),d=a(document.body);a(".navbar").outerHeight(!0)+10}d.scrollspy({target:".pl-docs-sidebar"}),c.on("load",function(){d.scrollspy("refresh")}),a(".pl-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".pl-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".pl-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".pl-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".pl-top").affix()},100),a(".tooltip-demo").tooltip({selector:"[data-toggle=tooltip]",container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".pl-docs-navbar").tooltip({selector:"a[data-toggle=tooltip]",container:".pl-docs-navbar .nav"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)})})}(jQuery);
+</script>
+
+</body>
+</html>
