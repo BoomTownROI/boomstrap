@@ -8,6 +8,7 @@
    *
    * @description `btDropdown` allows you to create a dropdown based on an object. The keys of the object
    * are what is stored in the ngModel and the values are the visual representations in the dropdown.
+   * In most cases, prefer the ui-select directive over this.
    * 
    *
    * @requires ngModel
