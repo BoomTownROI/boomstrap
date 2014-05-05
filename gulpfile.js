@@ -15,7 +15,8 @@ var es = require('event-stream'),
   ngmin = require('gulp-ngmin'),
   templateCache = require('gulp-angular-templatecache'),
   bower = require('gulp-bower'),
-  clean = require('gulp-clean');
+  clean = require('gulp-clean'),
+  order = require('gulp-order');
   // dgeni = require('dgeni');
 
 require('gulp-grunt')(gulp, {
@@ -24,47 +25,45 @@ require('gulp-grunt')(gulp, {
 
 var htmlList = function(key, src) {
   var sources = [],
-      idLinks = [],
-      returnEvents;
-
-  // If value is an object
-  // Handle the list as a sub_nav list
-  if (!Array.isArray(src)) {
-    // Retrieve the ids and Headers
-    // for each item we are concatenating
-    src.sources.forEach(function(view) {
-      idLinks.push({
-        css_id: view.css_id,
-        nav_header: view.nav_header
-      });
-
-      sources.push(view.source);
+      idLinks = [];
+  
+  // Retrieve the ids and Headers
+  // for each item we are concatenating
+  src.sources.forEach(function(view) {
+    idLinks.push({
+      css_id: view.css_id,
+      nav_header: view.nav_header
     });
 
-    returnEvents = es.concat(
-      // Populate the navigation template
-      gulp.src('views/partials/header.html')
-        .pipe(mustache({
-          page_title: src.header
-        })),
-      gulp.src(sources),
-      gulp.src('views/partials/sub_nav.tpl.html')
-        .pipe(mustache({
-          header: src.header,
-          link: idLinks
-        })),
-      gulp.src('views/partials/footer.html')
-    );
+    sources.push(view.source);
+  });
 
-  } else {
-    // Otherwise, handle the array
-    // as a list of strings
-    src = sources.concat(src);
-    src.push('views/partials/footer.html');
-    returnEvents = gulp.src(src);
-  }
+  var orderedOutput = sources.slice();
+  orderedOutput.unshift('views/partials/header.html');
+  orderedOutput.push('views/partials/sub_nav.tpl.html');
+  orderedOutput.push('views/partials/footer.html');
 
-  return returnEvents;
+  // Remove fully qualified path except for file name
+  // Because gulp-order only uses the file name and not the path.
+  orderedOutput = orderedOutput.map(function(file) {
+    var splitFile = file.split('/');
+    return splitFile[splitFile.length - 1];
+  });
+
+  return es.concat(
+    // Populate the navigation template
+    gulp.src('views/partials/header.html')
+      .pipe(mustache({
+        page_title: src.header
+      })),
+    gulp.src(sources),
+    gulp.src('views/partials/sub_nav.tpl.html')
+      .pipe(mustache({
+        header: src.header,
+        link: idLinks
+      })),
+    gulp.src('views/partials/footer.html')
+  ).pipe(order(orderedOutput));
 };
 
 gulp.task('boomstrapjsLib', function() {
@@ -238,8 +237,3 @@ gulp.task('website', ['boomstrapcommon'], function() {
   gulp.run('grunt-tasks-ngdocs');
   return gulp.run('grunt-tasks-gh-pages');
 });
-
-
-
-
-
