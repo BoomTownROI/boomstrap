@@ -23,6 +23,15 @@ NG_DOCS={
     },
     {
       "section": "ngboomstrap",
+      "id": "boomstrap.directive:btArrowScroll",
+      "shortName": "btArrowScroll",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btArrowScroll attribute directive will direct all arrow key events to a specific element.",
+      "keywords": "$window activated arrow attribute boomstrap browsers btarrowscroll careful combine direct directive element events exists functionality key kill long modals ng-if ngboomstrap programmatically specific"
+    },
+    {
+      "section": "ngboomstrap",
       "id": "boomstrap.directive:btAutoSubmit",
       "shortName": "btAutoSubmit",
       "type": "directive",
@@ -32,12 +41,21 @@ NG_DOCS={
     },
     {
       "section": "ngboomstrap",
+      "id": "boomstrap.directive:btCenterOnPage",
+      "shortName": "btCenterOnPage",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btCenterOnPage attribute directive will add a top and left to an element",
+      "keywords": "$timeout $window absolutely add attribute boomstrap btcenteronpage centered directive element left modals ngboomstrap top"
+    },
+    {
+      "section": "ngboomstrap",
       "id": "boomstrap.directive:btDropdown",
       "shortName": "btDropdown",
       "type": "directive",
       "moduleName": "boomstrap",
       "shortDescription": "btDropdown allows you to create a dropdown based on an object. The keys of the object",
-      "keywords": "$scope aardvark alert allows angular assigned background-color based bear boomstrap bt-dropdown btdropdown btn call cat chosen christian class controller craig create david ddtranslation default directive div doc-example-live dropdown dropdown-test dropdown-toggle droptest expression ffffff function indicates iterating keys-are-numbers keysarenumbers margin-bottom mark module ng-controller ng-model ngboomstrap ngmodel number numvalue numvalues object on-assign onassign representation representations save sean sort sorting stored string stringvalue stringvalues throw translation true values visual width"
+      "keywords": "$scope aardvark alert allows angular assigned background-color based bear boomstrap bt-dropdown btdropdown btn call cases cat chosen christian class controller craig create david ddtranslation default directive div doc-example-live dropdown dropdown-test dropdown-toggle droptest expression ffffff function indicates iterating keys-are-numbers keysarenumbers margin-bottom mark module ng-controller ng-model ngboomstrap ngmodel number numvalue numvalues object on-assign onassign prefer representation representations save sean sort sorting stored string stringvalue stringvalues throw translation true ui-select values visual width"
     },
     {
       "section": "ngboomstrap",
@@ -47,6 +65,33 @@ NG_DOCS={
       "moduleName": "boomstrap",
       "shortDescription": "The btErrorImg directive will replace the src of an img tag if the original src fails to load.",
       "keywords": "backup boomstrap bt-error-img bterrorimg directive fails image images img jpg load module ngboomstrap original properties replace src tag url"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btFocusOn",
+      "shortName": "btFocusOn",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btFocusOn attribute directive will focus on an input when the expression provided",
+      "keywords": "$timeout attribute boomstrap btfocuson directive element evaluated expression false falsey focus guiding helpful input ngboomstrap provided true truthy user"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btFormatMoney",
+      "shortName": "btFormatMoney",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btFormatMoney attribute directive will format the ngModel of the element it",
+      "keywords": "$window $xxx attribute boomstrap btformatmoney currency decimal directive element format model ngboomstrap ngmodel number stored view xxx"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btIFrame",
+      "shortName": "btIFrame",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btIFrame attribute directive allows the user to embed an iFrame with the ability",
+      "keywords": "$window ability allows angular argument attribute boomstrap btiframe call called calling close closed closeframe closing code communicate directive domain embed expression function global height iframe implement intended internally ngboomstrap number registerclose representing sets src takes uri user width wishes"
     },
     {
       "section": "ngboomstrap",

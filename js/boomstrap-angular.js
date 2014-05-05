@@ -231,6 +231,17 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btArrowScroll
+   * @requires  $window
+   * @restrict A
+   *
+   * @description The `btArrowScroll` attribute directive will direct all arrow key events to a specific element.
+   * This is useful for modals in certain browsers.  Be careful using this as it will always be activated
+   * so long as the element exists on the page.  Combine with ng-if to programmatically kill this functionality.
+   *
+   */
   Boomstrap.directive('btArrowScroll', function ($window) {
     return {
       restrict: 'A',
@@ -359,6 +370,16 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btCenterOnPage
+   * @requires  $window
+   * @requires  $timeout
+   * @restrict A
+   *
+   * @description The `btCenterOnPage` attribute directive will add a top and left to an element
+   * such that it is absolutely centered on the page.  This is mostly used for Modals.
+   */
   Boomstrap.directive('btCenterOnPage', function ($window, $timeout) {
     return {
       restrict: 'A',
@@ -389,6 +410,7 @@ angular.module('ui.bootstrap').run([
    *
    * @description `btDropdown` allows you to create a dropdown based on an object. The keys of the object
    * are what is stored in the ngModel and the values are the visual representations in the dropdown.
+   * In most cases, prefer the ui-select directive over this.
    * 
    *
    * @requires ngModel
@@ -566,6 +588,18 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btFocusOn
+   * @requires  $timeout
+   * @restrict A
+   *
+   * @param {expression} btFocusOn Expression that will be evaluated to truthy or falsey.
+   * If this expression goes from falsey to truthy, focus will be placed on the element
+   *
+   * @description The `btFocusOn` attribute directive will focus on an input when the expression provided
+   * goes from false to true.  This is helpful when guiding the user through a page.
+   */
   Boomstrap.directive('btFocusOn', function ($timeout) {
     return {
       restrict: 'A',
@@ -592,6 +626,17 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btFormatMoney
+   * @requires  $window
+   * @requires  ngModel
+   * @restrict A
+   *
+   * @description The `btFormatMoney` attribute directive will format the ngModel of the element it
+   * is placed on.  The view will be in currency format $XXX,XXX with no decimal, and the model will
+   * be stored as a Number.
+   */
   Boomstrap.directive('btFormatMoney', function ($filter) {
     return {
       restrict: 'A',
@@ -638,6 +683,24 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btIFrame
+   * @requires  $window
+   * @restrict A
+   *
+   * @param {string} width Number value representing the width of the iFrame
+   * @param {string} height Number value representing the height of the iFrame
+   * @param {string} src The uri to the iFrame
+   * @param {expression} closeFrame Expression to call when the iFrame has been closed internally.
+   *
+   * @description The `btIFrame` attribute directive allows the user to embed an iFrame with the ability
+   * to communicate the iFrame closing back to Angular.  The iFrame must be on the same domain as
+   * the calling code, and must implement a global function called registerClose, which takes a function
+   * as an argument and sets a function internally to that function.  It is intended that that function
+   * will be called when the iFrame wishes to close.
+   *
+   */
   Boomstrap.directive('btIFrame', function ($window) {
     $window.iFrameCloseRegister = function () {
     };
