@@ -95,6 +95,42 @@ NG_DOCS={
     },
     {
       "section": "ngboomstrap",
+      "id": "boomstrap.directive:btInfiniteScrollElement",
+      "shortName": "btInfiniteScrollElement",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btInfiniteScrollElement attribute directive allows the user to trigger an expression",
+      "keywords": "$rootscope $timeout allows attribute boomstrap bottom btinfinitescrollelement close directive element evaluate expression illusion infinite infinitescrolldistance ngboomstrap number representing scroll scrolled trigger triggered user"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btLockBody",
+      "shortName": "btLockBody",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btLockBody attribute directive will prevent the body from scrolling whenever",
+      "keywords": "$document $window angular attached attribute body boomstrap bootstrap btlockbody directive element exists invoking lock locked modal ng-if ngboomstrap older prevent scrolling time version"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btNgModelOnBlur",
+      "shortName": "btNgModelOnBlur",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btNgModelOnBlur attribute directive when used with an input will only update the",
+      "keywords": "angular attribute boomstrap btngmodelonblur directive enter focus input key left ngboomstrap ngmodel ngmodeloptions pressed redundant update user"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btNumber",
+      "shortName": "btNumber",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btNumber attribute directive formats the ngModel&#39;s data to only",
+      "keywords": "allow attribute boomstrap btnumber data directive don formats good inputs ngboomstrap ngmodel number numbers type user"
+    },
+    {
+      "section": "ngboomstrap",
       "id": "boomstrap.directive:btPager",
       "shortName": "btPager",
       "type": "directive",
@@ -110,6 +146,15 @@ NG_DOCS={
       "moduleName": "boomstrap",
       "shortDescription": "The btScore directive represents a score component from Boomstrap.  It will keep the color",
       "keywords": "average based boomstrap btscore classes color component default directive element excellent good high include lg low medium ngboomstrap represents score size sizes sm valid xs"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:btSelectRange",
+      "shortName": "btSelectRange",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "The btSelectRange element directive wraps the AngularUI&#39;s uiSelect directive.",
+      "keywords": "$filter add allows angularui array boomstrap btselectrange change currency current directive display dropdown dropdowns element ensures enters format input item items list maximum maxplaceholder minimum minplaceholder money ngboomstrap non-number non-provided number placeholder provided range rangetype select selecting string text type types uiselect user users values wraps"
     }
   ],
   "apis": {
