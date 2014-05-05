@@ -1,5 +1,22 @@
 (function(Boomstrap) {
   'use strict';
+
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btInfiniteScrollElement
+   * @requires  $rootScope
+   * @requires  $timeout
+   * @restrict A
+   *
+   * @param {expression} btInfiniteScrollElement Expression to evaluate when the bottom of the element
+   * has been scrolled to.
+   * @param {string} infiniteScrollDistance Number value representing how far from the bottom of the element
+   * should the btInfiniteScrollElement expression be triggered.
+   *
+   * @description The `btInfiniteScrollElement` attribute directive allows the user to trigger an expression
+   * when the user has scrolled to the bottom or close to the bottom of an element.  This causes the illusion
+   * of infinite scroll.
+   */
   Boomstrap.directive('btInfiniteScrollElement', function($rootScope, $timeout) {
     return {
       link: function(scope, elem, attrs) {

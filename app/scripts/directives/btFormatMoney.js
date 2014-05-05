@@ -1,6 +1,17 @@
 (function(Boomstrap) {
   'use strict';
 
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btFormatMoney
+   * @requires  $window
+   * @requires  ngModel
+   * @restrict A
+   *
+   * @description The `btFormatMoney` attribute directive will format the ngModel of the element it
+   * is placed on.  The view will be in currency format $XXX,XXX with no decimal, and the model will
+   * be stored as a Number.
+   */
   Boomstrap.directive('btFormatMoney', function($filter) {
     return {
       restrict: 'A',

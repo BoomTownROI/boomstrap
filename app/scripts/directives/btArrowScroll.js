@@ -1,5 +1,17 @@
 (function(Boomstrap) {
   'use strict';
+
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btArrowScroll
+   * @requires  $window
+   * @restrict A
+   *
+   * @description The `btArrowScroll` attribute directive will direct all arrow key events to a specific element.
+   * This is useful for modals in certain browsers.  Be careful using this as it will always be activated
+   * so long as the element exists on the page.  Combine with ng-if to programmatically kill this functionality.
+   *
+   */
   Boomstrap.directive('btArrowScroll', function($window){
     return {
       restrict: 'A',

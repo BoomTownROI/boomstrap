@@ -231,6 +231,17 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btArrowScroll
+   * @requires  $window
+   * @restrict A
+   *
+   * @description The `btArrowScroll` attribute directive will direct all arrow key events to a specific element.
+   * This is useful for modals in certain browsers.  Be careful using this as it will always be activated
+   * so long as the element exists on the page.  Combine with ng-if to programmatically kill this functionality.
+   *
+   */
   Boomstrap.directive('btArrowScroll', function ($window) {
     return {
       restrict: 'A',
@@ -359,6 +370,16 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btCenterOnPage
+   * @requires  $window
+   * @requires  $timeout
+   * @restrict A
+   *
+   * @description The `btCenterOnPage` attribute directive will add a top and left to an element
+   * such that it is absolutely centered on the page.  This is mostly used for Modals.
+   */
   Boomstrap.directive('btCenterOnPage', function ($window, $timeout) {
     return {
       restrict: 'A',
@@ -389,6 +410,7 @@ angular.module('ui.bootstrap').run([
    *
    * @description `btDropdown` allows you to create a dropdown based on an object. The keys of the object
    * are what is stored in the ngModel and the values are the visual representations in the dropdown.
+   * In most cases, prefer the ui-select directive over this.
    * 
    *
    * @requires ngModel
@@ -566,6 +588,18 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btFocusOn
+   * @requires  $timeout
+   * @restrict A
+   *
+   * @param {expression} btFocusOn Expression that will be evaluated to truthy or falsey.
+   * If this expression goes from falsey to truthy, focus will be placed on the element
+   *
+   * @description The `btFocusOn` attribute directive will focus on an input when the expression provided
+   * goes from false to true.  This is helpful when guiding the user through a page.
+   */
   Boomstrap.directive('btFocusOn', function ($timeout) {
     return {
       restrict: 'A',
@@ -592,6 +626,17 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btFormatMoney
+   * @requires  $window
+   * @requires  ngModel
+   * @restrict A
+   *
+   * @description The `btFormatMoney` attribute directive will format the ngModel of the element it
+   * is placed on.  The view will be in currency format $XXX,XXX with no decimal, and the model will
+   * be stored as a Number.
+   */
   Boomstrap.directive('btFormatMoney', function ($filter) {
     return {
       restrict: 'A',
@@ -638,6 +683,24 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btIFrame
+   * @requires  $window
+   * @restrict A
+   *
+   * @param {string} width Number value representing the width of the iFrame
+   * @param {string} height Number value representing the height of the iFrame
+   * @param {string} src The uri to the iFrame
+   * @param {expression} closeFrame Expression to call when the iFrame has been closed internally.
+   *
+   * @description The `btIFrame` attribute directive allows the user to embed an iFrame with the ability
+   * to communicate the iFrame closing back to Angular.  The iFrame must be on the same domain as
+   * the calling code, and must implement a global function called registerClose, which takes a function
+   * as an argument and sets a function internally to that function.  It is intended that that function
+   * will be called when the iFrame wishes to close.
+   *
+   */
   Boomstrap.directive('btIFrame', function ($window) {
     $window.iFrameCloseRegister = function () {
     };
@@ -668,6 +731,22 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btInfiniteScrollElement
+   * @requires  $rootScope
+   * @requires  $timeout
+   * @restrict A
+   *
+   * @param {expression} btInfiniteScrollElement Expression to evaluate when the bottom of the element
+   * has been scrolled to.
+   * @param {string} infiniteScrollDistance Number value representing how far from the bottom of the element
+   * should the btInfiniteScrollElement expression be triggered.
+   *
+   * @description The `btInfiniteScrollElement` attribute directive allows the user to trigger an expression
+   * when the user has scrolled to the bottom or close to the bottom of an element.  This causes the illusion
+   * of infinite scroll.
+   */
   Boomstrap.directive('btInfiniteScrollElement', function ($rootScope, $timeout) {
     return {
       link: function (scope, elem, attrs) {
@@ -726,6 +805,19 @@ angular.module('ui.bootstrap').run([
    * btLockBody will add overflow: hidden to the body when this element exists.
    * It will also remove it when the element is destroyed.
    */
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btLockBody
+   * @requires $document
+   * @requires $window
+   * @restrict A
+   *
+   * @description The `btLockBody` attribute directive will prevent the body from scrolling whenever
+   * the element this directive is attached to exists.  This is used for an older version of Angular
+   * Bootstrap in which invoking a modal would not lock the body from scrolling.  Use ng-if with this
+   * directive to make sure the body is not locked all of the time.
+   *
+   */
   Boomstrap.directive('btLockBody', function ($document, $window) {
     return {
       link: function (scope, element) {
@@ -765,24 +857,24 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  // http://stackoverflow.com/questions/19488884/angularjs-update-model-only-on-blur
-  // http://plnkr.co/edit/mZyWw8?p=preview
-  Boomstrap.directive('btNgModelOnblur', function ($analytics) {
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btNgModelOnBlur
+   * @requires ngModel
+   * @restrict A
+   *
+   * @description The `btNgModelOnBlur` attribute directive when used with an input will only update the
+   * ngModel when the user has left focus of the input or pressed the enter key. This directive will be
+   * made redundant with the ngModelOptions directive in Angular 1.3
+   *
+   */
+  Boomstrap.directive('btNgModelOnblur', function () {
     return {
       restrict: 'A',
       require: 'ngModel',
       priority: 1,
       link: function (scope, element, attrs, ngModel) {
         var analyticsName = '';
-        var reportAnalyticsChange = function (value) {
-          if (!value && value !== 0) {
-            value = 'Empty';
-          }
-          $analytics.eventTrack(value, {
-            category: 'BestFitLeads2.0',
-            label: analyticsName + ' manual entry'
-          });
-        };
         var update = function (alwaysUpdate) {
           scope.$apply(function () {
             var elementValue = element.val().trim();
@@ -806,7 +898,6 @@ angular.module('ui.bootstrap').run([
             }
             ngModel.$setViewValue(elementValue);
             ngModel.$render();
-            reportAnalyticsChange(ngModel.$modelValue);
           });
         };
         element.off('input').off('keydown').off('change').on('blur', function () {
@@ -814,17 +905,6 @@ angular.module('ui.bootstrap').run([
         }).on('keydown', function (e) {
           if (e.keyCode === 13) {
             update(true);
-          }
-        });
-        // Code to set pristine on focus
-        // .on('focus', function () {
-        //   scope.$apply(function () {
-        //     ngModel.$setPristine();
-        //   });
-        // })
-        attrs.$observe('btNgModelOnblur', function (newVal, oldVal) {
-          if (newVal !== oldVal) {
-            analyticsName = newVal;
           }
         });
         // Remove bindings when the scope is destroyed
@@ -836,6 +916,16 @@ angular.module('ui.bootstrap').run([
   });
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btNumber
+   * @requires ngModel
+   * @restrict A
+   *
+   * @description The `btNumber` attribute directive formats the ngModel's data to only
+   * allow numbers.  This is good for inputs where you don't want the user to type anything but a number.
+   *
+   */
   Boomstrap.directive('btNumber', function () {
     return {
       require: 'ngModel',
@@ -919,167 +1009,6 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  Boomstrap.directive('btRange', function ($analytics, $window, $timeout) {
-    var DEFAULT_DROPMIN = -1;
-    var DEFAULT_DROPMAX = -1;
-    return {
-      restrict: 'E',
-      require: 'ngModel',
-      templateUrl: function (tElement, tAttrs) {
-        // Set the template to number by default
-        var templateUrl = 'template/range/bt-range-number.tpl.html';
-        if (tAttrs && tAttrs.rangeType) {
-          var rangeType = tAttrs.rangeType;
-          if (rangeType === 'money') {
-            templateUrl = 'template/range/bt-range-money.tpl.html';
-          }
-        }
-        return templateUrl;
-      },
-      replace: true,
-      scope: {
-        header: '@',
-        values: '='
-      },
-      link: function (scope, iElement, iAttrs, iCtrl) {
-        scope.dropdown = {
-          dropmin: DEFAULT_DROPMIN,
-          dropmax: DEFAULT_DROPMAX
-        };
-        scope.minimum = iCtrl.$modelValue.minimum;
-        scope.maximum = iCtrl.$modelValue.maximum;
-        var $element = angular.element(iElement), windowEl = angular.element($window);
-        var validateMinMax = function (flippingFn) {
-          var valid = true;
-          // Normalize values first
-          if (!angular.isNumber(scope.minimum)) {
-            scope.minimum = null;
-          }
-          if (!angular.isNumber(scope.maximum)) {
-            scope.maximum = null;
-          }
-          if (scope.maximum !== null && scope.minimum !== null && scope.maximum < scope.minimum && flippingFn) {
-            flippingFn();
-          }
-          // Ranges would formerly be invalid
-          // if the minimum was greater than the maximum or if either was null
-          // this is no longer the case
-          return valid;  // return valid && scope.minimum <= scope.maximum;
-        };
-        var setDropdownWidths = function () {
-          scope.minDropdownWidth = $element.find('.range-min').outerWidth(true);
-          scope.maxDropdownWidth = $element.find('.range-max').outerWidth(true);
-          scope.inputWidth = $element.find('input').outerWidth(true);
-        };
-        setDropdownWidths();
-        windowEl.on('resize.range', function () {
-          scope.$apply(setDropdownWidths);
-        });
-        scope.$on('$destroy', function () {
-          windowEl.off('resize.range');
-        });
-        scope.$watch(function () {
-          return iCtrl.$modelValue.minimum;
-        }, function (newVal, oldVal) {
-          if (newVal !== oldVal) {
-            scope.minimum = iCtrl.$modelValue.minimum;
-          }
-        });
-        scope.$watch(function () {
-          return iCtrl.$modelValue.maximum;
-        }, function (newVal, oldVal) {
-          if (newVal !== oldVal) {
-            scope.maximum = iCtrl.$modelValue.maximum;
-          }
-        });
-        // Do minimum and maximum validation here
-        // We are separating minimum and maximum from the range object
-        // So that we can have any watches on the range object fire only once
-        scope.$watch('minimum', function (min, oldMin) {
-          if (min !== oldMin) {
-            iCtrl.$valid = validateMinMax(function () {
-              // Pass in the flipping function if the min/max order is invalid.
-              scope.maximum = scope.minimum;
-            });
-            iCtrl.$modelValue.minimum = scope.minimum;
-            iCtrl.$setValidity('range', iCtrl.$valid);
-            // Updating the view value will programmatically make this dirty
-            // Only do this if we've just selected an item in the dropdown
-            //  because typing in the field will set the dirty flag for us.
-            if (angular.isDefined(oldMin) || scope.dropdown.dropmin !== DEFAULT_DROPMIN) {
-              iCtrl.$setViewValue(iCtrl.$viewValue);
-            }
-          }
-        });
-        scope.$watch('maximum', function (max, oldMax) {
-          if (max !== oldMax) {
-            iCtrl.$valid = validateMinMax(function () {
-              // Pass in the flipping function if the min/max order is invalid.
-              scope.minimum = scope.maximum;
-            });
-            iCtrl.$modelValue.maximum = scope.maximum;
-            iCtrl.$setValidity('range', iCtrl.$valid);
-            // Updating the view value will programmatically make this dirty
-            // Only do this if we've just selected an item in the dropdown
-            //  because typing in the field will set the dirty flag for us.
-            if (angular.isDefined(oldMax) || scope.dropdown.dropmax !== DEFAULT_DROPMAX) {
-              iCtrl.$setViewValue(iCtrl.$viewValue);
-            }
-          }
-        });
-        scope.setDropMin = function (val) {
-          var dropDownUsedBefore = scope.dropMinChanged;
-          scope.dropMinChanged = true;
-          scope.dropdown.dropmin = val;
-          var updateValue = function () {
-            var analyticsValue = 'No min';
-            if (val === -1) {
-              scope.minimum = null;
-            } else {
-              scope.minimum = /\./.test(val) ? parseFloat(val, 10) : parseInt(val, 10);
-            }
-            $analytics.eventTrack(analyticsValue, {
-              category: 'BestFitLeads2.0',
-              label: (scope.header || '') + ' min selection'
-            });
-          };
-          // Timeout the first time so that bt-dirty triggers on change
-          if (!dropDownUsedBefore) {
-            $timeout(updateValue);
-          } else {
-            updateValue();
-          }
-        };
-        scope.setDropMax = function (val) {
-          var dropDownUsedBefore = scope.dropMaxChanged;
-          scope.dropMaxChanged = true;
-          scope.dropdown.dropmax = val;
-          var updateValue = function () {
-            var analyticsValue = 'No max';
-            if (val === -1) {
-              scope.maximum = null;
-            } else {
-              scope.maximum = /\./.test(val) ? parseFloat(val, 10) : parseInt(val, 10);
-              analyticsValue = scope.maximum.toString();
-            }
-            $analytics.eventTrack(analyticsValue, {
-              category: 'BestFitLeads2.0',
-              label: (scope.header || '') + ' max selection'
-            });
-          };
-          // Timeout the first time so that bt-dirty triggers on change
-          if (!dropDownUsedBefore) {
-            $timeout(updateValue);
-          } else {
-            updateValue();
-          }
-        };
-      }
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btScore
@@ -1141,6 +1070,25 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btSelectRange
+   * @requires $filter
+   * @restrict E
+   *
+   * @param {Array} values Array of values to display in the select dropdowns.
+   * @param {string} minPlaceholder String to show when the user is selecting an item from the minimum dropdown
+   * @param {string} maxPlaceholder String to show when the user is selecting an item from the maximum dropdown
+   * @param {string} rangeType If the range type is 'money', format the Number values as currency.
+   *
+   * @description The `btSelectRange` element directive wraps the AngularUI's uiSelect directive.
+   * It allows the user to change the placeholder text for the range, and ensures that the minimum will always
+   * be less than the maximum.  It also provides a way for the user to select 'No minimum' or 'No maximum' if
+   * the array provided has a non-number value in it.  This directive will add the users input to the current
+   * list of items shown as the user types, and if the user enters a non-provided value, that value will be added
+   * to the values Array provided.
+   *
+   */
   Boomstrap.directive('btSelectRange', function ($filter) {
     return {
       restrict: 'E',

@@ -4,6 +4,19 @@
    * btLockBody will add overflow: hidden to the body when this element exists.
    * It will also remove it when the element is destroyed.
    */
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btLockBody
+   * @requires $document
+   * @requires $window
+   * @restrict A
+   *
+   * @description The `btLockBody` attribute directive will prevent the body from scrolling whenever
+   * the element this directive is attached to exists.  This is used for an older version of Angular
+   * Bootstrap in which invoking a modal would not lock the body from scrolling.  Use ng-if with this
+   * directive to make sure the body is not locked all of the time.
+   *
+   */
   Boomstrap.directive('btLockBody', function($document, $window) {
     return {
       link: function(scope, element) {

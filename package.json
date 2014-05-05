@@ -24,7 +24,8 @@
     "gulp-connect": "^2.0.4",
     "gulp-grunt": "^0.4.1",
     "gulp-bower": "0.0.4",
-    "gulp-clean": "^0.2.4"
+    "gulp-clean": "^0.2.4",
+    "gulp-order": "^1.0.6"
   },
   "repository": {
     "type": "git",

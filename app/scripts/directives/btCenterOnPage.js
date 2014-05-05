@@ -1,5 +1,16 @@
 (function(Boomstrap) {
   'use strict';
+
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btCenterOnPage
+   * @requires  $window
+   * @requires  $timeout
+   * @restrict A
+   *
+   * @description The `btCenterOnPage` attribute directive will add a top and left to an element
+   * such that it is absolutely centered on the page.  This is mostly used for Modals.
+   */
   Boomstrap.directive('btCenterOnPage', function($window, $timeout) {
     return {
       restrict: 'A',

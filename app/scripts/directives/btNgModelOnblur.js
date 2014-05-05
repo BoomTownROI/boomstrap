@@ -1,26 +1,24 @@
 (function(Boomstrap) {
   'use strict';
 
-  // http://stackoverflow.com/questions/19488884/angularjs-update-model-only-on-blur
-  // http://plnkr.co/edit/mZyWw8?p=preview
-  Boomstrap.directive('btNgModelOnblur', function ($analytics) {
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btNgModelOnBlur
+   * @requires ngModel
+   * @restrict A
+   *
+   * @description The `btNgModelOnBlur` attribute directive when used with an input will only update the
+   * ngModel when the user has left focus of the input or pressed the enter key. This directive will be
+   * made redundant with the ngModelOptions directive in Angular 1.3
+   *
+   */
+  Boomstrap.directive('btNgModelOnblur', function () {
     return {
       restrict: 'A',
       require: 'ngModel',
       priority: 1,
       link: function (scope, element, attrs, ngModel) {
         var analyticsName = '';
-
-        var reportAnalyticsChange = function(value) {
-          if (!value && value !== 0) {
-            value = 'Empty';
-          }
-
-          $analytics.eventTrack(value, {
-            category: 'BestFitLeads2.0',
-            label: analyticsName + ' manual entry'
-          });
-        };
 
         var update = function (alwaysUpdate) {
           scope.$apply(function () {
@@ -49,8 +47,6 @@
 
             ngModel.$setViewValue(elementValue);
             ngModel.$render();
-            reportAnalyticsChange(ngModel.$modelValue);
-
           });
         };
         element.off('input').off('keydown').off('change').on('blur', function() {
@@ -58,19 +54,6 @@
         }).on('keydown', function (e) {
           if (e.keyCode === 13) {
             update(true);
-          }
-        });
-
-        // Code to set pristine on focus
-        // .on('focus', function () {
-        //   scope.$apply(function () {
-        //     ngModel.$setPristine();
-        //   });
-        // })
-
-        attrs.$observe('btNgModelOnblur', function(newVal, oldVal) {
-          if (newVal !== oldVal) {
-            analyticsName = newVal;
           }
         });
 
