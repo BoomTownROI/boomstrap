@@ -1,0 +1,30 @@
+<h1><code ng:non-bindable="">btSelectRange</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">boomstrap</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="boomstrap-directive-page boomstrap-directive-btselectrange-page"><p>The <code>btSelectRange</code> element directive wraps the AngularUI&#39;s uiSelect directive.
+It allows the user to change the placeholder text for the range, and ensures that the minimum will always
+be less than the maximum.  It also provides a way for the user to select &#39;No minimum&#39; or &#39;No maximum&#39; if
+the array provided has a non-number value in it.  This directive will add the users input to the current
+list of items shown as the user types, and if the user enters a non-provided value, that value will be added
+to the values Array provided.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/ngboomstrap/ng.$filter">$filter</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bt-select-range
+       values="{Array}"
+       min-placeholder="{string}"
+       max-placeholder="{string}"
+       range-type="{string}"&gt;
+&lt;/bt-select-range&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>values</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btselectrange-page"><p>Array of values to display in the select dropdowns.</p>
+</div></td></tr><tr><td>minPlaceholder</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btselectrange-page"><p>String to show when the user is selecting an item from the minimum dropdown</p>
+</div></td></tr><tr><td>maxPlaceholder</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btselectrange-page"><p>String to show when the user is selecting an item from the maximum dropdown</p>
+</div></td></tr><tr><td>rangeType</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btselectrange-page"><p>If the range type is &#39;money&#39;, format the Number values as currency.</p>
+</div></td></tr></tbody></table></div>
+</div>

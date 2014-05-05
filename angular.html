@@ -418,6 +418,106 @@
     <p data-height="350" data-theme-id="5592" data-slug-hash="bKAaI" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mfunkie/pen/bKAaI/'>ui-select Example</a> by Mark Funk (<a href='http://codepen.io/mfunkie'>@mfunkie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
+    </div> <!-- /column (main content) -->
+    <div class="col-sm-3">
+        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
+            <p class="pl-docs-sidebar-header"><a href="#top">Angular</a></p>
+            <ul class="nav pl-docs-sidenav">
+                <li>
+                    <a href=""></a>
+                </li>
+                <li>
+                    <a href="#overview">Overview</a>
+                </li>
+                <li>
+                    <a href="#modals">Modals</a>
+                </li>
+                <li>
+                    <a href="#dropdown">Dropdown</a>
+                </li>
+                <li>
+                    <a href="#tabs">Tabs</a>
+                </li>
+                <li>
+                    <a href="#tooltip">Tooltip</a>
+                </li>
+                <li>
+                    <a href="#popover">Popover</a>
+                </li>
+                <li>
+                    <a href="#alert">Alert</a>
+                </li>
+                <li>
+                    <a href="#collapse">Collapse</a>
+                </li>
+                <li>
+                    <a href="#carousel">Carousel</a>
+                </li>
+                <li>
+                    <a href="#progressbar">Progressbar</a>
+                </li>
+                <li>
+                    <a href="#pagination">Pagination</a>
+                </li>
+                <li>
+                    <a href="#tour">Tour</a>
+                </li>
+                <li>
+                    <a href="#chosen">Chosen</a>
+                </li>
+                <li>
+                    <a href="#cards">Cards</a>
+                </li>
+                <li>
+                    <a href="#select">Select</a>
+                </li>
+                <li>
+                    <a href="#scores">Scores</a>
+                </li>
+                <li>
+                    <a href="#ranges">ranges</a>
+                </li>
+                <li>
+                    <a href=""></a>
+                </li>
+            </ul>
+            <a href="#top">back to top</a>
+        </div>
+    </div> <!-- /column (sidebar) -->
+</div> <!-- /row -->
+
+</div>
+<script>
+    $( document ).ready(function() {
+    	$('body').scrollspy({ target: '.pl-docs-sidebar'});
+
+    	// active nav
+			var path = location.pathname.split("/");
+			var section = path[path.length-1];
+			if(section == "") {
+				$('#pl-docs-nav a[href^="index.html"]').closest('li').addClass('active');
+			} else {
+				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
+			}
+			$("[data-toggle=popover]").popover();
+			$('.selectpicker').selectpicker();
+    });
+
+
+
+
+</script>
+
+<!-- prettify code examples; use class="prettyprint" on your pre blocks -->
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+<!-- scripts to run bootstrap examples -->
+<script>
+  !function(a){a(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var b=document.createElement("style");b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.querySelector("head").appendChild(b)}{var c=a(window),d=a(document.body);a(".navbar").outerHeight(!0)+10}d.scrollspy({target:".pl-docs-sidebar"}),c.on("load",function(){d.scrollspy("refresh")}),a(".pl-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".pl-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".pl-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".pl-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".pl-top").affix()},100),a(".tooltip-demo").tooltip({selector:"[data-toggle=tooltip]",container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".pl-docs-navbar").tooltip({selector:"a[data-toggle=tooltip]",container:".pl-docs-navbar .nav"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)})})}(jQuery);
+</script>
+
+</body>
+</html>
 <!-- ================================== Scores (Angular) ================================== -->
 
 <!-- Scores (Angular Custom) -->
@@ -531,103 +631,3 @@
 </div>
 
 </div>
-    </div> <!-- /column (main content) -->
-    <div class="col-sm-3">
-        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
-            <p class="pl-docs-sidebar-header"><a href="#top">Angular</a></p>
-            <ul class="nav pl-docs-sidenav">
-                <li>
-                    <a href=""></a>
-                </li>
-                <li>
-                    <a href="#overview">Overview</a>
-                </li>
-                <li>
-                    <a href="#modals">Modals</a>
-                </li>
-                <li>
-                    <a href="#dropdown">Dropdown</a>
-                </li>
-                <li>
-                    <a href="#tabs">Tabs</a>
-                </li>
-                <li>
-                    <a href="#tooltip">Tooltip</a>
-                </li>
-                <li>
-                    <a href="#popover">Popover</a>
-                </li>
-                <li>
-                    <a href="#alert">Alert</a>
-                </li>
-                <li>
-                    <a href="#collapse">Collapse</a>
-                </li>
-                <li>
-                    <a href="#carousel">Carousel</a>
-                </li>
-                <li>
-                    <a href="#progressbar">Progressbar</a>
-                </li>
-                <li>
-                    <a href="#pagination">Pagination</a>
-                </li>
-                <li>
-                    <a href="#tour">Tour</a>
-                </li>
-                <li>
-                    <a href="#chosen">Chosen</a>
-                </li>
-                <li>
-                    <a href="#cards">Cards</a>
-                </li>
-                <li>
-                    <a href="#select">Select</a>
-                </li>
-                <li>
-                    <a href="#scores">Scores</a>
-                </li>
-                <li>
-                    <a href="#ranges">ranges</a>
-                </li>
-                <li>
-                    <a href=""></a>
-                </li>
-            </ul>
-            <a href="#top">back to top</a>
-        </div>
-    </div> <!-- /column (sidebar) -->
-</div> <!-- /row -->
-
-</div>
-<script>
-    $( document ).ready(function() {
-    	$('body').scrollspy({ target: '.pl-docs-sidebar'});
-
-    	// active nav
-			var path = location.pathname.split("/");
-			var section = path[path.length-1];
-			if(section == "") {
-				$('#pl-docs-nav a[href^="index.html"]').closest('li').addClass('active');
-			} else {
-				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
-			}
-			$("[data-toggle=popover]").popover();
-			$('.selectpicker').selectpicker();
-    });
-
-
-
-
-</script>
-
-<!-- prettify code examples; use class="prettyprint" on your pre blocks -->
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-
-<!-- scripts to run bootstrap examples -->
-<script>
-  !function(a){a(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var b=document.createElement("style");b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.querySelector("head").appendChild(b)}{var c=a(window),d=a(document.body);a(".navbar").outerHeight(!0)+10}d.scrollspy({target:".pl-docs-sidebar"}),c.on("load",function(){d.scrollspy("refresh")}),a(".pl-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".pl-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".pl-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".pl-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".pl-top").affix()},100),a(".tooltip-demo").tooltip({selector:"[data-toggle=tooltip]",container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".pl-docs-navbar").tooltip({selector:"a[data-toggle=tooltip]",container:".pl-docs-navbar .nav"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)})})}(jQuery);
-</script>
-
-</body>
-</html>
