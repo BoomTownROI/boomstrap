@@ -28,7 +28,10 @@ $.fn.extend({
 });
 
 $(function () {
-    $('[data-toggle="popover"]').popoverClosable();
+    var popovers = $('[data-toggle="popover"]');
+    if (popovers) {
+      popovers.popoverClosable();
+    }
 });
 
 
