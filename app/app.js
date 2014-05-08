@@ -15,7 +15,7 @@
 
   angular.module('ui.bootstrap')
   .config(function($provide) {
-    $provide.decorator('paginationDirective', function($delegate) {
+    $provide.decorator('pagerDirective', function($delegate) {
       var defaultUrl = $delegate[0].templateUrl;
       $delegate[0].templateUrl = function(tElement, tAttrs) {
         return tAttrs.templateUrl || defaultUrl;

@@ -1,4 +1,15 @@
 (function(Boomstrap) {
+
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btNumber
+   * @requires ngModel
+   * @restrict A
+   *
+   * @description The `btNumber` attribute directive formats the ngModel's data to only
+   * allow numbers.  This is good for inputs where you don't want the user to type anything but a number.
+   *
+   */
   Boomstrap.directive('btNumber', function() {
     return {
       require: 'ngModel',

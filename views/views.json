@@ -268,9 +268,9 @@
 				"nav_header": "tour"
 			},
 			{
-				"source": "views/javascript/selects.html",
-				"css_id": "#selects",
-				"nav_header": "selects"
+				"source": "views/javascript/select.html",
+				"css_id": "#select",
+				"nav_header": "select"
 			}
 		]
 	},
@@ -350,24 +350,19 @@
 				"nav_header": "Cards"
 			},
 			{
-				"source": "app/views/ui-select.html",
-				"css_id": "#ui-select",
-				"nav_header": "ui-select"
+				"source": "app/views/select.html",
+				"css_id": "#select",
+				"nav_header": "Select"
 			},
 			{
-				"source": "app/views/btScore.html",
-				"css_id": "#btScore",
-				"nav_header": "bt-Score"
+				"source": "app/views/scores.html",
+				"css_id": "#scores",
+				"nav_header": "Scores"
 			},
 			{
-				"source": "app/views/btPager.html",
-				"css_id": "#btPager",
-				"nav_header": "bt-Pager"
-			},
-			{
-				"source": "app/views/btSelectRange.html",
-				"css_id": "#btSelectRange",
-				"nav_header": "bt-select-range"
+				"source": "app/views/ranges.html",
+				"css_id": "#ranges",
+				"nav_header": "ranges"
 			},
 			{
 				"source": "app/views/relative-time.html",

@@ -1,6 +1,10 @@
-<ul class="pagination">
-  <li onselectstart="return false;" ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a 
-  	ng-click="selectPage(page.number)" ng-show="$first"><i class="ficon ficon-chevron-left"></i></a><a 
-  	ng-click="selectPage(page.number)" ng-show="$last"><i class="ficon ficon-chevron-right"></i></a>
-  </li>
-</ul>
+<div class="btn-group minimal-pager">
+    <button
+        type="button"
+        class="btn btn-default btn-icon"
+        ng-repeat="page in pages"
+        ng-class="{ 'disabled': page.disabled, 'active': page.active }"
+        ng-click="selectPage(page.number)"><i
+            class="ficon"
+            ng-class="{ 'ficon-chevron-left': page.previous, 'ficon-chevron-right': page.next }"></i></button>
+</div>
