@@ -369,6 +369,11 @@
 				"css_id": "#btSelectRange",
 				"nav_header": "bt-select-range"
 			},
+			{
+				"source": "app/views/relative-time.html",
+				"css_id": "#relative-time",
+				"nav_header": "Relative Time"
+			},
 			{ "source": "app/views/angular-footer.html" }
 		]
 	}
