@@ -7085,12 +7085,12 @@ fieldset[disabled] .btn-attention.active {
 }
 .cat-archive {
   background-color: transparent;
-  border: 1px solid #cccccc;
-  color: #cccccc;
+  border: 1px solid #9b9b9b;
+  color: #9b9b9b;
 }
 .cat-archive[href]:hover,
 .cat-archive[href]:focus {
-  color: #b3b3b3;
+  color: #828282;
 }
 .cat-closed {
   background-color: transparent;
@@ -7112,12 +7112,12 @@ fieldset[disabled] .btn-attention.active {
 }
 .cat-new {
   background-color: transparent;
-  border: 1px solid #ffcc33;
-  color: #ffcc33;
+  border: 1px solid #e9b929;
+  color: #e9b929;
 }
 .cat-new[href]:hover,
 .cat-new[href]:focus {
-  color: #ffbf00;
+  color: #ca9d15;
 }
 .cat-nurture {
   background-color: transparent;
@@ -7130,39 +7130,39 @@ fieldset[disabled] .btn-attention.active {
 }
 .cat-pending {
   background-color: transparent;
-  border: 1px solid #a9c49b;
-  color: #a9c49b;
+  border: 1px solid #e1a5a6;
+  color: #e1a5a6;
 }
 .cat-pending[href]:hover,
 .cat-pending[href]:focus {
-  color: #8db17b;
+  color: #d47f80;
 }
 .cat-qualify {
   background-color: transparent;
-  border: 1px solid #669900;
-  color: #669900;
+  border: 1px solid #5b8801;
+  color: #5b8801;
 }
 .cat-qualify[href]:hover,
 .cat-qualify[href]:focus {
-  color: #446600;
+  color: #395501;
 }
 .cat-trash {
   background-color: transparent;
-  border: 1px solid #848484;
-  color: #848484;
+  border: 1px solid #636363;
+  color: #636363;
 }
 .cat-trash[href]:hover,
 .cat-trash[href]:focus {
-  color: #6b6b6b;
+  color: #4a4a4a;
 }
 .cat-watch {
   background-color: transparent;
-  border: 1px solid #e5ac00;
-  color: #e5ac00;
+  border: 1px solid #be7810;
+  color: #be7810;
 }
 .cat-watch[href]:hover,
 .cat-watch[href]:focus {
-  color: #b38600;
+  color: #8f5a0c;
 }
 .cat-eq,
 .cat-eq-abbr {

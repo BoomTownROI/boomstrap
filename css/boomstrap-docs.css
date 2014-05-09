@@ -344,3 +344,9 @@ a.responsive-utilities td.is-visible:hover {
 .pl-code .k {
   color: #006699;
 }
+.pl-body pre.prettyprint {
+  border-color: #e3e3e3;
+  padding: 9.5px 19px;
+  /*.atv { color: #d44950; }
+	.atn,.pun { color: #4f9fcf; }*/
+}
