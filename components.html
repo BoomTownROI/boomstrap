@@ -141,15 +141,9 @@
     <i class="bticon bticon-seller"></i>
     <i class="bticon bticon-buyer-seller"></i>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="c">&lt;!-- buyer --&gt;</span>
-<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;bticon bticon-buyer&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-
-<span class="c">&lt;!-- seller --&gt;</span>
-<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;bticon bticon-seler&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-
-<span class="c">&lt;!-- buyer-seller --&gt;</span>
-<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;bticon bticon-buyer-seller&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-
+<div class="pl-code"><pre class="prettyprint"><code>&lt;i class="bticon bticon-buyer"&gt;&lt;/i&gt;
+&lt;i class="bticon bticon-seller"&gt;&lt;/i&gt;
+&lt;i class="bticon bticon-buyer-seller"&gt;&lt;/i&gt;
 </code></pre></div>
 
   <div class="callout callout-danger">
@@ -520,39 +514,46 @@
   <h3 id="btn-groups-alt">Alternative button groups</h3>
   <p>Alternative button groups are used to create even width buttons across the full width of the button group (set at 100% width). Alternative button groups handle button borders better than justified button groups but they are less flexible in usage.</p>
   <div class="pl-example">
-    <div class="btn-group btn-group-alt-two">
-      <button type="button" class="btn btn-default">One</button>
-      <button type="button" class="btn btn-default">Two</button>
-    </div>
-    <br><br>
-    <div class="btn-group btn-group-alt-three">
-      <button type="button" class="btn btn-default">One</button>
-      <button type="button" class="btn btn-default">Two</button>
-      <button type="button" class="btn btn-default">Three</button>
-    </div>
-    <br><br>
-    <div class="btn-group btn-group-alt-four">
-      <button type="button" class="btn btn-default">One</button>
-      <button type="button" class="btn btn-default">Two</button>
-      <button type="button" class="btn btn-default">Three</button>
-      <button type="button" class="btn btn-default">Four</button>
-    </div>
+    <p>
+      <div class="btn-group btn-group-alt-two">
+        <button type="button" class="btn btn-default">One</button>
+        <button type="button" class="btn btn-default">Two</button>
+      </div>
+    </p>
+    <p>
+      <div class="btn-group btn-group-alt-three">
+        <button type="button" class="btn btn-default">One</button>
+        <button type="button" class="btn btn-default">Two</button>
+        <button type="button" class="btn btn-default">Three</button>
+      </div>
+    </p>
+    <p>
+      <div class="btn-group btn-group-alt-four">
+        <button type="button" class="btn btn-default">One</button>
+        <button type="button" class="btn btn-default">Two</button>
+        <button type="button" class="btn btn-default">Three</button>
+        <button type="button" class="btn btn-default">Four</button>
+      </div>
+    </p>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group btn-group-alt-two&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>One<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Two<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="btn-group btn-group-alt-two"&gt;
+  &lt;button type="button" class="btn btn-default"&gt;One&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default"&gt;Two&lt;/button&gt;
+&lt;/div&gt;
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group btn-group-alt-three&quot;</span><span class="nt">&gt;</span>
-  ...
-<span class="nt">&lt;/div&gt;</span>
+&lt;div class="btn-group btn-group-alt-three"&gt;
+  &lt;button type="button" class="btn btn-default"&gt;One&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default"&gt;Two&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default"&gt;Three&lt;/button&gt;
+&lt;/div&gt;
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group btn-group-alt-four&quot;</span><span class="nt">&gt;</span>
-  ...
-<span class="nt">&lt;/div&gt;</span>
+&lt;div class="btn-group btn-group-alt-four"&gt;
+  &lt;button type="button" class="btn btn-default"&gt;One&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default"&gt;Two&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default"&gt;Three&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default"&gt;Four&lt;/button&gt;
+&lt;/div&gt;
 </code></pre></div>
-
-
 
 
 </div>
@@ -1519,10 +1520,10 @@
       <button type="button" class="btn btn-default btn-icon"><i class="ficon ficon-chevron-right"></i></button>
     </div>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-icon&quot;</span><span class="nt">&gt;</span><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;ficon ficon-chevron-left&quot;</span><span class="nt">&gt;&lt;/i&gt;</span><span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-icon&quot;</span><span class="nt">&gt;</span><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;ficon ficon-chevron-right&quot;</span><span class="nt">&gt;&lt;/i&gt;</span><span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="btn-group minimal-pager"&gt;
+  &lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-chevron-left"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-chevron-right"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;
 </code></pre></div>
 
   <h3>Disabled</h3>
@@ -1533,10 +1534,10 @@
       <button type="button" class="btn btn-default btn-icon"><i class="ficon ficon-chevron-right"></i></button>
     </div>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-icon disabled&quot;</span><span class="nt">&gt;</span><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;ficon ficon-chevron-left&quot;</span><span class="nt">&gt;&lt;/i&gt;</span><span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-icon&quot;</span><span class="nt">&gt;</span><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;ficon ficon-chevron-right&quot;</span><span class="nt">&gt;&lt;/i&gt;</span><span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="btn-group minimal-pager"&gt;
+  &lt;button type="button" class="btn btn-default btn-icon disabled"&gt;&lt;i class="ficon ficon-chevron-left"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-chevron-right"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;
 </code></pre></div>
 
 
@@ -1594,16 +1595,15 @@
     <span class="cat cat-trash">trash</span>
     <span class="cat cat-watch">watch</span>
   </div><!-- /example -->
-<div class="pl-code"><pre><code class="html">
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-archive"</span><span class="nt">&gt;</span>archive<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-closed"</span><span class="nt">&gt;</span>closed<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-hot"</span><span class="nt">&gt;</span>hot<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-new"</span><span class="nt">&gt;</span>new<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-nurture"</span><span class="nt">&gt;</span>nurture<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-pending"</span><span class="nt">&gt;</span>pending<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-qualify"</span><span class="nt">&gt;</span>qualify<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-trash"</span><span class="nt">&gt;</span>trash<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-watch"</span><span class="nt">&gt;</span>watch<span class="nt">&lt;/span&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;span class="cat cat-archive"&gt;archive&lt;/span&gt;
+&lt;span class="cat cat-closed"&gt;closed&lt;/span&gt;
+&lt;span class="cat cat-hot"&gt;hot&lt;/span&gt;
+&lt;span class="cat cat-new"&gt;new&lt;/span&gt;
+&lt;span class="cat cat-nurture"&gt;nurture&lt;/span&gt;
+&lt;span class="cat cat-pending"&gt;pending&lt;/span&gt;
+&lt;span class="cat cat-qualify"&gt;qualify&lt;/span&gt;
+&lt;span class="cat cat-trash"&gt;trash&lt;/span&gt;
+&lt;span class="cat cat-watch"&gt;watch&lt;/span&gt;
 </code></pre></div>
 
   <h4>Equal width</h4>
@@ -1619,16 +1619,15 @@
     <span class="cat cat-eq cat-trash">trash</span>
     <span class="cat cat-eq cat-watch">watch</span>
   </div><!-- /example -->
-<div class="pl-code"><pre><code class="html">
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-archive"</span><span class="nt">&gt;</span>archive<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-closed"</span><span class="nt">&gt;</span>closed<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-hot"</span><span class="nt">&gt;</span>hot<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-new"</span><span class="nt">&gt;</span>new<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-nurture"</span><span class="nt">&gt;</span>nurture<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-pending"</span><span class="nt">&gt;</span>pending<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-qualify"</span><span class="nt">&gt;</span>qualify<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-trash"</span><span class="nt">&gt;</span>trash<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq cat-watch"</span><span class="nt">&gt;</span>watch<span class="nt">&lt;/span&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;span class="cat cat-eq cat-archive"&gt;archive&lt;/span&gt;
+&lt;span class="cat cat-eq cat-closed"&gt;closed&lt;/span&gt;
+&lt;span class="cat cat-eq cat-hot"&gt;hot&lt;/span&gt;
+&lt;span class="cat cat-eq cat-new"&gt;new&lt;/span&gt;
+&lt;span class="cat cat-eq cat-nurture"&gt;nurture&lt;/span&gt;
+&lt;span class="cat cat-eq cat-pending"&gt;pending&lt;/span&gt;
+&lt;span class="cat cat-eq cat-qualify"&gt;qualify&lt;/span&gt;
+&lt;span class="cat cat-eq cat-trash"&gt;trash&lt;/span&gt;
+&lt;span class="cat cat-eq cat-watch"&gt;watch&lt;/span&gt;
 </code></pre></div>
 
   <h4>Equal width abbreviated</h4>
@@ -1644,16 +1643,15 @@
     <span class="cat cat-eq-abbr cat-trash">trash</span>
     <span class="cat cat-eq-abbr cat-watch">watch</span>
   </div><!-- /example -->
-<div class="pl-code"><pre><code class="html">
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-archive"</span><span class="nt">&gt;</span>arch<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-closed"</span><span class="nt">&gt;</span>close<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-hot"</span><span class="nt">&gt;</span>hot<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-new"</span><span class="nt">&gt;</span>new<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-nurture"</span><span class="nt">&gt;</span>nurt<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-pending"</span><span class="nt">&gt;</span>pend<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-qualify"</span><span class="nt">&gt;</span>qual<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-trash"</span><span class="nt">&gt;</span>trash<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"cat cat-eq-abbr cat-watch"</span><span class="nt">&gt;</span>watch<span class="nt">&lt;/span&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;span class="cat cat-eq-abbr cat-archive"&gt;arch&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-closed"&gt;close&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-hot"&gt;hot&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-new"&gt;new&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-nurture"&gt;nurt&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-pending"&gt;pend&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-qualify"&gt;qual&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-trash"&gt;trash&lt;/span&gt;
+&lt;span class="cat cat-eq-abbr cat-watch"&gt;watch&lt;/span&gt;
 </code></pre></div>
 
 </div>
@@ -2600,29 +2598,30 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.</p>
     </div>
   </div><!-- /example -->
-  <div class="pl-code">
-    <pre><code class="html">
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-attention"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Attention<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-success"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Success<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-info"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Info<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-warning"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Warngin<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-danger"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Danger<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-    </code></pre>
+  <div class="pl-code"><pre class="prettyprint"><code>&lt;div class="callout callout-attention"&gt;
+  &lt;h4&gt;Callout Attention&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="callout callout-success"&gt;
+  &lt;h4&gt;Callout Success&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="callout callout-info"&gt;
+  &lt;h4&gt;Callout Info&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="callout callout-warning"&gt;
+  &lt;h4&gt;Callout Warning&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="callout callout-danger"&gt;
+  &lt;h4&gt;Callout Danger&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
   </div>
 
   <h2 id="callout-links">Links in callouts</h2>
@@ -2634,12 +2633,10 @@
     </div>
   </div><!-- /example -->
   <div class="pl-code">
-    <pre><code class="html">
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"callout callout-danger"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>Callout Danger<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor...<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;callout-link&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-    </code></pre>
+    <pre class="prettyprint"><code>&lt;div class="callout callout-danger"&gt;
+  &lt;h4&gt;Callout Danger&lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus neque vel felis vehicula gravida. Aenean massa velit, bibendum nec convallis eu, imperdiet eu ante. &lt;a href="#" class="callout-link"&gt;I'm a callout link&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
   </div>
 </div>
 <!-- ================================== Sashes ================================== -->
@@ -2656,19 +2653,17 @@
     <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (10%) <span class="sash-time">10 mins ago</span></div>
   </div>
   <div class="pl-code">
-    <pre><code class="html">
-<span class="c">&lt;!-- Back on the market --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-back"</span><span class="nt">&gt;</span>Back<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>10 mins ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
+    <pre class="prettyprint"><code>&lt;!-- Back on the market --&gt;
+&lt;div class="sash sash-back"&gt;Back &lt;span class="sash-time"&gt;10 mins ago&lt;/span&gt;&lt;/div&gt;
 
-<span class="c">&lt;!-- New on the market --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-new"</span><span class="nt">&gt;</span>New <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>10 mins ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
+&lt;!-- New on the market --&gt;
+&lt;div class="sash sash-new"&gt;New &lt;span class="sash-time"&gt;10 mins ago&lt;/span&gt;&lt;/div&gt;
 
-<span class="c">&lt;!-- Off the market --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-off"</span><span class="nt">&gt;</span>Off <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>14 days ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
+&lt;!-- Off the market --&gt;
+&lt;div class="sash sash-off"&gt;Off &lt;span class="sash-time"&gt;14 days ago&lt;/span&gt;&lt;/div&gt;
 
-<span class="c">&lt;!-- Priced reduced --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sash sash-reduced"</span><span class="nt">&gt;</span>$35,000 (10%) <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sash-time"</span><span class="nt">&gt;</span>10 mins ago<span class="nt">&lt;/span&gt;</span><span class="nt">&lt;/div&gt;</span>
-    </code></pre>
+&lt;!-- Priced reduced --&gt;
+&lt;div class="sash sash-reduced"&gt;&lt;i class="ficon ficon-arrow-down"&gt;&lt;/i&gt; $35,000 (10%) &lt;span class="sash-time"&gt;10 mins ago&lt;/span&gt;&lt;/div&gt;</code></pre>
   </div>
 
 </div>
@@ -3064,8 +3059,7 @@
       </div> <!-- /column -->
     </div> <!-- /row -->
   </div> <!-- /pl-example -->
-<div class="pl-code"><pre class="prettyprint"><code>
-&lt;div class="card"&gt;
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="card"&gt;
   &lt;div class="sash sash-reduced"&gt;&lt;i class="ficon ficon-arrow-down"&gt;&lt;/i&gt; $35,000 (&lt;1%) &lt;span class="sash-time"&gt;10 mins ago&lt;/span&gt;&lt;/div&gt;
   &lt;!-- ///////////////////////////////////////////////// --&gt;
   &lt;!-- Optional: replace "card-photo" div with carousel  --&gt;
@@ -3157,8 +3151,8 @@
       &lt;/div&gt;
     &lt;/div&gt; &lt;!-- /card-container --&gt;
   &lt;/div&gt; &lt;!-- /card-detail --&gt;
-&lt;/div&gt; &lt;!-- /card --&gt;
-</code></pre></div>
+&lt;/div&gt; &lt;!-- /card --&gt;</code></pre>
+  </div>
 
   <div class="callout callout-info">
     <h4>Card Carousels</h4>
@@ -3207,8 +3201,7 @@
     </div> <!-- /card small -->
   </div>
 
-  <div class="pl-code"><pre class="prettyprint"><code>
-&lt;div class="card card-sm"&gt;
+  <div class="pl-code"><pre class="prettyprint"><code>&lt;div class="card card-sm"&gt;
   &lt;div class="card-photo"&gt;
     &lt;div class="card-photo-inner"&gt;
     &lt;div class="sash sash-reduced"&gt;&lt;i class="ficon ficon-arrow-down"&gt;&lt;/i&gt; $35,000 (10%) &lt;span class="sash-time"&gt;10 mins ago&lt;/span&gt;&lt;/div&gt;
@@ -3244,8 +3237,8 @@
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-  </code></pre></div>
+&lt;/div&gt;</code></pre>
+  </div>
 
 </div>
 
@@ -3278,19 +3271,10 @@
     <span class="score">25</span>
   </div>
   <div class="pl-code">
-    <pre><code class="html">
-<span class="c">&lt;!-- Excellent score (99-76) --&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
-
-<span class="c">&lt;!-- Good score (75-56) --&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
-
-<span class="c">&lt;!-- Average score (50-26) --&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
-
-<span class="c">&lt;!-- Default score (25-0) --&gt;</span>
-<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
-    </code></pre>
+    <pre class="prettyprint"><code>&lt;span class="score score-excellent"&gt;99&lt;/span&gt;
+&lt;span class="score score-good"&gt;75&lt;/span&gt;
+&lt;span class="score score-average"&gt;50&lt;/span&gt;
+&lt;span class="score"&gt;25&lt;/span&gt;</code></pre>
   </div>
 
   <h2>Sizes</h2>
@@ -3322,39 +3306,37 @@
     </p>
   </div>
   <div class="pl-code">
-    <pre><code class="html">
-<span class="c">&lt;!-- Large score --&gt;</span>
-<span class="nt">&lt;p&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent score-lg"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good score-lg"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average score-lg"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-lg"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
+    <pre class="prettyprint"><code>&lt;!-- Large score --&gt;
+&lt;p&gt;
+  &lt;span class="score score-excellent score-lg"&gt;99&lt;/span&gt;
+  &lt;span class="score score-good score-lg"&gt;75&lt;/span&gt;
+  &lt;span class="score score-average score-lg"&gt;50&lt;/span&gt;
+  &lt;span class="score score-lg"&gt;25&lt;/span&gt;
+&lt;/p&gt;
 
-<span class="c">&lt;!-- Default score --&gt;</span>
-<span class="nt">&lt;p&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
+&lt;!-- Default score --&gt;
+&lt;p&gt;
+  &lt;span class="score score-excellent"&gt;99&lt;/span&gt;
+  &lt;span class="score score-good"&gt;75&lt;/span&gt;
+  &lt;span class="score score-average"&gt;50&lt;/span&gt;
+  &lt;span class="score"&gt;25&lt;/span&gt;
+&lt;/p&gt;
 
-<span class="c">&lt;!-- Small score --&gt;</span>
-<span class="nt">&lt;p&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent score-sm"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good score-sm"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average score-sm"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-sm"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
+&lt;!-- Small score --&gt;
+&lt;p&gt;
+  &lt;span class="score score-excellent score-sm"&gt;99&lt;/span&gt;
+  &lt;span class="score score-good score-sm"&gt;75&lt;/span&gt;
+  &lt;span class="score score-average score-sm"&gt;50&lt;/span&gt;
+  &lt;span class="score score-sm"&gt;25&lt;/span&gt;
+&lt;/p&gt;
 
-<span class="c">&lt;!-- Extra small score --&gt;</span>
-<span class="nt">&lt;p&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-excellent score-xs"</span><span class="nt">&gt;</span>99<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-good score-xs"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-average score-xs"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"score score-xs"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
-    </code></pre>
+&lt;!-- Extra small score --&gt;
+&lt;p&gt;
+  &lt;span class="score score-excellent score-xs"&gt;99&lt;/span&gt;
+  &lt;span class="score score-good score-xs"&gt;75&lt;/span&gt;
+  &lt;span class="score score-average score-xs"&gt;50&lt;/span&gt;
+  &lt;span class="score score-xs"&gt;25&lt;/span&gt;
+&lt;/p&gt;</code></pre>
   </div>
 
 </div>
