@@ -344,20 +344,3 @@ a.responsive-utilities td.is-visible:hover {
 .pl-code .k {
   color: #006699;
 }
-.pl-body pre.prettyprint {
-  border-color: #e3e3e3;
-  padding: 9.5px 19px;
-}
-.pl-body pre.prettyprint .atv {
-  color: #d44950;
-}
-.pl-body pre.prettyprint .atn,
-.pl-body pre.prettyprint .pun {
-  color: #4f9fcf;
-}
-.pl-body pre.prettyprint .com {
-  color: inherit;
-}
-.pl-body pre.prettyprint .tag {
-  color: #2f6f9f;
-}
