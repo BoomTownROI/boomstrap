@@ -7,15 +7,14 @@
 
 // Change outline badge based on containing button
 
-.badge-outline-variant (@a) when (saturation(@a) >= 50%) {
-  border-color: @gray-lightest;
-  color: @gray-lightest;
-}
-.badge-outline-variant (@a) when (saturation(@a) < 50%) {
+.badge-outline-variant (@a) when (lightness(@a) >= 30%) {
   .border();
   color: @gray-dark;
 }
-
+.badge-outline-variant (@a) when (lightness(@a) < 70%) {
+  border-color: @gray-lightest;
+  color: @gray-lightest;
+}
 
 
 // Borders
