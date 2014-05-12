@@ -310,6 +310,12 @@ a.responsive-utilities td.is-visible:hover {
 .pl-cards .card {
   margin-bottom: 20px;
 }
+.pl-badge-outline > button {
+  margin-bottom: 6px;
+}
+.pl-badge-outline button:last-child {
+  margin-bottom: 0;
+}
 .pl-code {
   margin: 1.5em 0;
 }
