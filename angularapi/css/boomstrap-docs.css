@@ -101,12 +101,12 @@ h1 {
 }
 .pl-docs-sidebar-header {
   background-color: #5bc0de;
-  color: #ffffff;
+  color: #fefefe;
   padding: 6px 12px;
   font-size: 15px;
 }
 .pl-docs-sidebar-header > a {
-  color: #ffffff;
+  color: #fefefe;
 }
 .pl-docs-sidebar.affix {
   top: 10px;
@@ -155,7 +155,7 @@ h1 {
   color: #696969;
 }
 .pl-example {
-  background-color: #ffffff;
+  background-color: #fefefe;
   margin-bottom: 0;
 }
 .pl-example + .pl-code {
@@ -297,11 +297,14 @@ a.responsive-utilities td.is-visible:hover {
 .pl-swatch--gray-darker {
   background-color: #444444;
 }
-.pl-swatch--black {
-  background-color: #000;
+.pl-swatch--blue {
+  background-color: #49565c;
 }
-.pl-swatch--white {
-  background-color: #fff;
+.pl-swatch--blue-light {
+  background-color: #5f7f8e;
+}
+.pl-swatch--blue-dark {
+  background-color: #222c32;
 }
 .pl-sashes .sash {
   margin-bottom: 20px;
