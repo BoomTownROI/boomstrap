@@ -73,8 +73,8 @@
   }
 
   .badge-outline {
-    background-color: transparent;
-    .badge-outline-variant(@background); // Change badge based on containing button's color
+    background-color: transparent; // override default badge's background within a button
+    .badge-outline-variant(@background); // change badge based on containing button's color
   }
 }
 
