@@ -7435,6 +7435,9 @@ fieldset[disabled] .btn-attention.active {
   font-weight: 400;
   text-transform: lowercase;
 }
+.ui-select-match.form-control {
+  height: auto;
+}
 .score {
   background-color: #fefefe;
   border: 1px solid #cccccc;
