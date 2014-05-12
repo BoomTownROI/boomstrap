@@ -16,119 +16,119 @@
   position: relative;
   width: 100%;
   p {
-  	margin: 0;
-  	.text-overflow();
+    margin: 0;
+    .text-overflow();
   }
   strong { font-weight: 600; }
   .btn { .text-overflow(); }
   .carousel-inner {
-  	padding-top: @card-image-padding;
+    padding-top: @card-image-padding;
   }
   .carousel-inner > .item {
-		height: 100%;
-		position: absolute;
-		top: 0;
-		width: 100%;
-	}
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .card-container {
-	padding: @padding-large-vertical @padding-xs-horizontal;
+  padding: @padding-large-vertical @padding-xs-horizontal;
 }
 
 .card-detail {
-	background-color: @white;
-	border-top: @gray-lighter 1px solid;
+  background-color: @white;
+  border-top: @gray-lighter 1px solid;
 }
 
 
 .card-photo {
-	overflow: hidden;
-	padding-top: @card-image-padding;
-	position: relative;
-	width: auto;
+  overflow: hidden;
+  padding-top: @card-image-padding;
+  position: relative;
+  width: auto;
 }
 
 .card-photo-inner {
-	height: 100%;
-	position: absolute;
-	top: 0;
-	width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .card-img {
-	border: none;
-	height: auto;
-	margin: 0;
-	max-width: 100%;
-	padding: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
+  border: none;
+  height: auto;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .card-intro {
-	height: 76px; // to keep consistent height when no hood value
+  height: 76px; // to keep consistent height when no hood value
 }
 
 .card-toggle {
-	background-color: @gray-lightest;
-	border-top: @gray-lighter 1px solid;
-	.border-bottom-radius(@card-border-radius);
-	cursor: pointer;
-	font-size: 12px;
-	padding: @padding-small-vertical 0;
-	text-align: center;
-	.card-toggle-more {
-		display: none;
-	}
-	&.collapsed {
-		.card-toggle-less { display: none; }
-		.card-toggle-more { display: inline-block; }
-	}
+  background-color: @gray-lightest;
+  border-top: @gray-lighter 1px solid;
+  .border-bottom-radius(@card-border-radius);
+  cursor: pointer;
+  font-size: 12px;
+  padding: @padding-small-vertical 0;
+  text-align: center;
+  .card-toggle-more {
+    display: none;
+  }
+  &.collapsed {
+    .card-toggle-less { display: none; }
+    .card-toggle-more { display: inline-block; }
+  }
 }
 
 .card-price-history {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .card-price-history-change {
-	color: @brand-success;
-	text-align: center;
+  color: @brand-success;
+  text-align: center;
 }
 
 .card-priority {
-	font-size: 16px;
-	font-weight: 600;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .card-stats {
-	font-size: 11px;
-	border-top: @gray-lighter 1px solid;
-	border-bottom: @gray-lighter 1px solid;
-	text-align: center;
-	text-transform: uppercase;
+  font-size: 11px;
+  border-top: @gray-lighter 1px solid;
+  border-bottom: @gray-lighter 1px solid;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .card-stat {
-	display: inline-block;
-	padding: @padding-large-vertical 0;
-	&+.card-stat {
-		padding-left: @padding-small-horizontal;
-	}
+  display: inline-block;
+  padding: @padding-large-vertical 0;
+  &+.card-stat {
+    padding-left: @padding-small-horizontal;
+  }
 }
 
 .card-street {
-	color: @link-color;
+  color: @link-color;
 }
 
 .card-title {
-	background-color: @gray-lightest;
-	border-bottom: @gray-lighter 1px solid;
-	border-top: @gray-lighter 1px solid;
-	font-size: 13px;
-	font-weight: 600;
-	padding: @padding-small-vertical @padding-xs-horizontal;
+  background-color: @gray-lightest;
+  border-bottom: @gray-lighter 1px solid;
+  border-top: @gray-lighter 1px solid;
+  font-size: 13px;
+  font-weight: 600;
+  padding: @padding-small-vertical @padding-xs-horizontal;
 }
 
 
@@ -137,45 +137,45 @@
 // -------------------------
 
 .card-sm {
-	max-width: 250px;
-	min-width: 216px;
-	padding: @padding-small-vertical @padding-xs-horizontal;
-	p {
-		line-height: @line-height-computed - 5px;
-	}
-	.sash {
-		font-size: 11px;
-		//padding: 0 0 @padding-xs-vertical 0;
-	}
+  max-width: 250px;
+  min-width: 216px;
+  padding: @padding-small-vertical @padding-xs-horizontal;
+  p {
+    line-height: @line-height-computed - 5px;
+  }
+  .sash {
+    font-size: 11px;
+    //padding: 0 0 @padding-xs-vertical 0;
+  }
 }
 
 .card-sm-container {
-	padding: @padding-small-vertical 0;
+  padding: @padding-small-vertical 0;
 }
 
 .card-sm-priority {
-	font-size: 13px;
-	font-weight: 600;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .card-sm-stats {
-	//color: @gray;
-	border-top: @gray-lighter 1px solid;
-	font-size: 10px;
-	text-align: center;
-	text-transform: uppercase;
+  //color: @gray;
+  border-top: @gray-lighter 1px solid;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .card-sm-stat {
-	display: inline-block;
-	padding: @padding-base-vertical 0;
-	&+.card-sm-stat {
-		padding-left: 4px;
-	}
+  display: inline-block;
+  padding: @padding-base-vertical 0;
+  &+.card-sm-stat {
+    padding-left: 4px;
+  }
 }
 
 .card-sm-street {
-	color: @link-color;
+  color: @link-color;
 }
 
 
