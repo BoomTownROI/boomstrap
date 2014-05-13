@@ -68,7 +68,6 @@ var htmlList = function(key, src) {
 
 gulp.task('boomstrapjsLib', function() {
   return gulp.src([
-    'bower_components/momentjs/min/moment.min.js',
     'bower_components/jquery/dist/jquery.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
@@ -80,7 +79,10 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/angular-chosen/angular-chosen.js',
     'bower_components/angular-ui-select/dist/select.js',
     'bower_components/angular-chosen/angular-perfect-scrollbar.js',
-    'js/global.js'
+    'bower_components/momentjs/min/moment.min.js',
+    'bower_components/angular-moment/angular-moment.js',
+    'js/global.js',
+    'js/vendor-config.js'
   ])
   .pipe(concat('boomstrap.js'))
   .pipe(gulp.dest('docs/js/'))
@@ -93,7 +95,7 @@ gulp.task('boomstrapjsLib', function() {
 
 gulp.task('boomstrapjsAngular', function() {
   return es.concat(
-    gulp.src(['app/app.js', 'app/scripts/**/*.js']),
+    gulp.src(['app/app.js', 'app/constants.js', 'app/scripts/**/*.js']),
     gulp.src(['app/template/**/*.html', '!app/template/pagination/*.html'])
       .pipe(templateCache({
         module: 'boomstrap',
