@@ -1,0 +1,17 @@
+// File: badges.less
+// Note: Extends Bootstrap badges.less
+
+.badge {
+  padding: @badge-vertical-padding @badge-horizontal-padding;
+  .btn-xs & {
+    padding: 1px @padding-xsmall;
+  }
+}
+
+.badge-outline {
+  background-color: transparent;
+  .border();
+  color: @gray;
+  // reduce padding by 1px to account for border that doesn't exist on regular badges
+  padding: @badge-vertical-padding - 1px @badge-horizontal-padding - 1px;
+}

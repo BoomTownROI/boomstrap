@@ -2,6 +2,20 @@
 // Note: Custom Boomstrap mixins, overrides, extends
 
 
+// Badges - outline badges
+// -------------------------
+
+// Change outline badge based on containing button
+
+.badge-outline-variant (@a) when (lightness(@a) >= 30%) {
+  .border();
+  color: @gray-dark;
+}
+.badge-outline-variant (@a) when (lightness(@a) < 70%) {
+  border-color: @gray-lightest;
+  color: @gray-lightest;
+}
+
 
 // Borders
 // -------------------------
@@ -57,15 +71,13 @@
     }
   }
 
-  .badge {
-    color: @background;
-    background-color: @color;
+  .badge-outline {
+    background-color: transparent; // override default badge's background within a button
+    .badge-outline-variant(@background); // change badge based on containing button's color
   }
 }
 
 
-// Callouts
-// -------------------------
 
 .callout-variant(@background; @color; @text-color) {
   background-color: @background;
