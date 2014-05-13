@@ -3,7 +3,8 @@
   angular.module('boomstrap', [
     'ui.bootstrap',
     'ui.select',
-    'angular-chosen'
+    'angular-chosen',
+    'angularMoment'
   ]).value('AUTO_START_TOUR', { value: false }).config([
     'uiSelectConfig',
     function (uiSelectConfig) {
@@ -29,6 +30,9 @@ angular.module('ui.bootstrap').run([
     $templateCache.put('template/pager/bt-pager.tpl.html', '<div class="btn-group minimal-pager">\n    <button\n        type="button"\n        class="btn btn-default btn-icon"\n        ng-repeat="page in pages"\n        ng-class="{ \'disabled\': page.disabled, \'active\': page.active }"\n        ng-click="selectPage(page.number)"><i\n            class="ficon"\n            ng-class="{ \'ficon-chevron-left\': page.previous, \'ficon-chevron-right\': page.next }"></i></button>\n</div>');
   }
 ]);
+(function (Boomstrap) {
+  'use strict';
+}(angular.module('boomstrap')));
 (function (boomstrap) {
   'use strict';
   boomstrap.controller('CarouselDemoCtrl', [
@@ -60,6 +64,18 @@ angular.module('ui.bootstrap').run([
         image: 'images/fpo-he-man.jpg',
         text: 'Skeletor!?'
       });
+    }
+  ]);
+}(angular.module('boomstrap')));
+(function (boomstrap) {
+  'use strict';
+  boomstrap.controller('RelativeTimeCtrl', [
+    '$scope',
+    function ($scope) {
+      $scope.theDate = {
+        timeString: moment(new Date()).subtract('days', 700),
+        time: new Date()
+      };
     }
   ]);
 }(angular.module('boomstrap')));

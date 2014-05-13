@@ -4,7 +4,8 @@
   angular.module('boomstrap', [
     'ui.bootstrap',
     'ui.select',
-    'angular-chosen'
+    'angular-chosen',
+    'angularMoment'
   ])
   .value('AUTO_START_TOUR', {
     value: false
