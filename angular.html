@@ -524,56 +524,16 @@
 
 <!-- btSelectRange (Angular Custom) -->
 
-<div class="pl-docs-section" id="ranges">
+<section class="pl-docs-section" id="ranges">
   <h1 class="page-header">Ranges</h1>
-  <style type="text/css">
-  .this-range {
-    max-width: 400px;
-  }
-  </style>
-  <script type="text/javascript">
-    angular.module('boomstrap').controller('btSelectRangeTest', function($scope) {
-      $scope.priceRange = {
-        minimum: 0,
-        maximum: 300
-      };
-      
-      $scope.sqFtRange = {
-        minimum: 2,
-        maximum: null
-      }
-      
-      $scope.prices = ['noMin', 0, 25000, 50000, 75000, 100000, 125000, 150000, 175000, 200000, 225000, 250000, 275000, 300000, 325000, 350000, 375000, 400000, 425000, 450000, 475000, 500000, 550000, 600000, 650000, 700000, 750000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000, 1500000, 1600000, 1800000, 2000000, 2200000, 2400000, 2600000, 2800000, 3000000, 3200000, 3400000, 3600000, 3800000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 10000000];
-      
-      $scope.sqFts = ['No min', 0,500,1000,1500,2000,2500,3000,3500,4000,4500,5000];
-    });
-  </script>
-  <div class="pl-example" ng-controller="btSelectRangeTest">
-    <div class="this-range">
-      Price: <bt-select-range
-              ng-model="priceRange"
-              values="prices"
-              min-placeholder="Min price"
-              max-placeholder="Max price"
-              range-type="money"></bt-select-range>
-    </div>
-    <div> You selected {{ priceRange.minimum }} and {{ priceRange.maximum }}</div>
-    <div class="this-range">
-      SqFt: <bt-select-range ng-model="sqFtRange"
-              values="sqFts"
-              min-placeholder="Min acres"
-              max-placeholder="Max acres"></bt-select-range>
-    </div>
-    <span> You selected {{ sqFtRange.minimum }} and {{ sqFtRange.maximum }}</span>
-  </div>
   <p data-height="268" data-theme-id="5592" data-slug-hash="gDCuj" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mfunkie/pen/gDCuj/'>bt-select-range Example</a> by Mark Funk (<a href='http://codepen.io/mfunkie'>@mfunkie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
   <script async src="//codepen.io/assets/embed/ei.js"></script>
-</div>
+</section>
 
-<section id="cards" class="pl-docs-section">
+<section id="relative-time" class="pl-docs-section" ng-controller="RelativeTimeCtrl">
     <div class="page-header">
         <h1>Relative Time</h1>
-        <p>The relative time directive takes a Date object and translates it to a relative time between the supplied time and the <bt-from-now date="1198908717056-0700">current time</bt-from-now>.</p>
+        <p>The relative time directive takes a date and translates it to a relative time between the supplied time and the current time. Like this: <span am-time-ago="theDate.timeString"></span> and this: <span am-time-ago="theDate.time"></span>.</p>
     </div>
 </section>
 </div>
