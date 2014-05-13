@@ -370,3 +370,10 @@ a.responsive-utilities td.is-visible:hover {
 .pl-body pre.prettyprint .tag {
   color: #2f6f9f;
 }
+.pl-example .ui-select-range .ui-select-bootstrap {
+  float: left;
+  width: 45%;
+}
+.pl-example .ui-select-range .ui-select-bootstrap + .ui-select-bootstrap {
+  margin-left: 15px;
+}

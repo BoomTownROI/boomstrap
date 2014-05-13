@@ -5685,9 +5685,7 @@ button.close {
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after,
-.ui-select-range:before,
-.ui-select-range:after {
+.modal-footer:after {
   content: " ";
   display: table;
 }
@@ -5704,8 +5702,7 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after,
-.ui-select-range:after {
+.modal-footer:after {
   clear: both;
 }
 .center-block {
@@ -7368,21 +7365,6 @@ fieldset[disabled] .btn-attention.active {
   margin-bottom: -10px;
   padding: 14px 24px 0 14px;
 }
-.ui-select-range {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.ui-select-range .ui-select-bootstrap {
-  position: relative;
-  float: left;
-  width: 50%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.ui-select-range .ui-select-bootstrap .caret {
-  margin-right: 15px;
-}
 .sash {
   background-color: #fefefe;
   border-bottom: 4px solid #848484;
@@ -7434,9 +7416,6 @@ fieldset[disabled] .btn-attention.active {
   float: right;
   font-weight: 400;
   text-transform: lowercase;
-}
-.ui-select-match.form-control {
-  height: auto;
 }
 .score {
   background-color: #fefefe;
