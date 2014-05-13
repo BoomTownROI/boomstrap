@@ -4,10 +4,10 @@
   <!-- ///////////////////////////////////////////////// -->
   <div class="card-photo">
     <div class="card-photo-inner">
-      <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time">{{ property.newProperty }}</span></div>
-      <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time">{{ property.offMarket }}</span></div>
-      <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time">{{ property.reduced.when }}</span></div>
-      <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time">{{ property.backOnMarket }}</span></div>
+      <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time" am-time-ago="{{ property.newProperty }}"></span></div>
+      <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time" am-time-ago="{{ property.offMarket }}"></span></div>
+      <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time" am-time-ago="{{ property.reduced.when }}"></span></div>
+      <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time" am-time-ago="{{ property.backOnMarket }}"></span></div>
       <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">
       <carousel ng-if="property.imageSrc.length > 1">
         <slide ng-repeat="slide in property.imageSrc">

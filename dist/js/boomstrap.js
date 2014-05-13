@@ -32528,7 +32528,7 @@ $(function () {
 
 
 (function() {
-  // configure moment langs to display relative time our way
+  // configure momentjs langs to display relative time our way
   moment.lang('en', {
     relativeTime: {
         future: "in %s",
