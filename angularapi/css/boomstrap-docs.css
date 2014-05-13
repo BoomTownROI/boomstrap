@@ -101,12 +101,12 @@ h1 {
 }
 .pl-docs-sidebar-header {
   background-color: #5bc0de;
-  color: #fefefe;
+  color: #ffffff;
   padding: 6px 12px;
   font-size: 15px;
 }
 .pl-docs-sidebar-header > a {
-  color: #fefefe;
+  color: #ffffff;
 }
 .pl-docs-sidebar.affix {
   top: 10px;
@@ -155,7 +155,7 @@ h1 {
   color: #696969;
 }
 .pl-example {
-  background-color: #fefefe;
+  background-color: #ffffff;
   margin-bottom: 0;
 }
 .pl-example + .pl-code {
