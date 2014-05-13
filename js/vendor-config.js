@@ -23,20 +23,8 @@
         },
         M:  "1 mo",
         MM: "%d mos",
-        //y:  "1 yr",
-        y: function(number) {
-          var daysPast365 = number % 365;
-          if (daysPast365 < 90) {
-            return "1 yr";
-          } else {
-            return "1 and a half yrs";
-          }
-        },
-        //yy: "%d yrs"
-        yy: function(number) {
-          console.log(number);
-          return "%d yrs"
-        }
+        y:  "1 yr",
+        yy: "%d yrs"
     }
   });
 })();
