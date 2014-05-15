@@ -32517,16 +32517,6 @@ $(function () {
   });
 });*/
 
-
-
-
-
-
-
-
-
-
-
 (function() {
   // configure momentjs langs to display relative time our way
   moment.lang('en', {
