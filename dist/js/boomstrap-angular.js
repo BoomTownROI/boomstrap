@@ -383,7 +383,7 @@ angular.module('ui.bootstrap').run([
         width: '@'
       },
       template: '<span class="cat cat-{{ category | lowercase }}">{{ category | capitalize }}</span>',
-      link: function (scope, eement, attrs) {
+      link: function (scope, element, attrs) {
       }
     };
   });

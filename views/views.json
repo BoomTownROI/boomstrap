@@ -285,39 +285,9 @@
 				"nav_header": "Overview"
 			},
 			{
-				"source": "app/views/modals.html",
-				"css_id": "#modals",
-				"nav_header": "Modals"
-			},
-			{
-				"source": "app/views/dropdown.html",
-				"css_id": "#dropdown",
-				"nav_header": "Dropdown"
-			},
-			{
-				"source": "app/views/tabs.html",
-				"css_id": "#tabs",
-				"nav_header": "Tabs"
-			},
-			{
-				"source": "app/views/tooltip.html",
-				"css_id": "#tooltip",
-				"nav_header": "Tooltip"
-			},
-			{
-				"source": "app/views/popover.html",
-				"css_id": "#popover",
-				"nav_header": "Popover"
-			},
-			{
 				"source": "app/views/alert.html",
 				"css_id": "#alert",
 				"nav_header": "Alert"
-			},
-			{
-				"source": "app/views/collapse.html",
-				"css_id": "#collapse",
-				"nav_header": "Collapse"
 			},
 			{
 				"source": "app/views/carousel.html",
@@ -325,19 +295,9 @@
 				"nav_header": "Carousel"
 			},
 			{
-				"source": "app/views/progressbar.html",
-				"css_id": "#progressbar",
-				"nav_header": "Progressbar"
-			},
-			{
-				"source": "app/views/pagination.html",
-				"css_id": "#pagination",
-				"nav_header": "Pagination"
-			},
-			{
-				"source": "app/views/tour.html",
-				"css_id": "#tour",
-				"nav_header": "Tour"
+				"source": "app/views/cards.html",
+				"css_id": "#cards",
+				"nav_header": "Cards"
 			},
 			{
 				"source": "app/views/chosen.html",
@@ -345,9 +305,44 @@
 				"nav_header": "Chosen"
 			},
 			{
-				"source": "app/views/cards.html",
-				"css_id": "#cards",
-				"nav_header": "Cards"
+				"source": "app/views/collapse.html",
+				"css_id": "#collapse",
+				"nav_header": "Collapse"
+			},
+			{
+				"source": "app/views/dropdown.html",
+				"css_id": "#dropdown",
+				"nav_header": "Dropdown"
+			},
+			{
+				"source": "app/views/modals.html",
+				"css_id": "#modals",
+				"nav_header": "Modals"
+			},
+			{
+				"source": "app/views/pagination.html",
+				"css_id": "#pagination",
+				"nav_header": "Pagination"
+			},
+			{
+				"source": "app/views/popover.html",
+				"css_id": "#popover",
+				"nav_header": "Popover"
+			},
+			{
+				"source": "app/views/progressbar.html",
+				"css_id": "#progressbar",
+				"nav_header": "Progressbar"
+			},
+			{
+				"source": "app/views/ranges.html",
+				"css_id": "#ranges",
+				"nav_header": "ranges"
+			},
+			{
+				"source": "app/views/relative-time.html",
+				"css_id": "#relative-time",
+				"nav_header": "Relative Time"
 			},
 			{
 				"source": "app/views/select.html",
@@ -360,14 +355,19 @@
 				"nav_header": "Scores"
 			},
 			{
-				"source": "app/views/ranges.html",
-				"css_id": "#ranges",
-				"nav_header": "ranges"
+				"source": "app/views/tabs.html",
+				"css_id": "#tabs",
+				"nav_header": "Tabs"
 			},
 			{
-				"source": "app/views/relative-time.html",
-				"css_id": "#relative-time",
-				"nav_header": "Relative Time"
+				"source": "app/views/tooltip.html",
+				"css_id": "#tooltip",
+				"nav_header": "Tooltip"
+			},
+			{
+				"source": "app/views/tour.html",
+				"css_id": "#tour",
+				"nav_header": "Tour"
 			},
 			{
 				"source": "app/views/category.html",
