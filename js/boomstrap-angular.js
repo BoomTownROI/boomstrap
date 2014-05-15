@@ -32,6 +32,53 @@ angular.module('ui.bootstrap').run([
 ]);
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.constant('leadCategories', [
+    {
+      value: 0,
+      name: 'new',
+      abbr: 'new'
+    },
+    {
+      value: 3,
+      name: 'qualify',
+      abbr: 'qual'
+    },
+    {
+      value: 5,
+      name: 'hot',
+      abbr: 'hot'
+    },
+    {
+      value: 4,
+      name: 'nurture',
+      abbr: 'nurt'
+    },
+    {
+      value: 2,
+      name: 'watch',
+      abbr: 'watch'
+    },
+    {
+      value: 11,
+      name: 'pending',
+      abbr: 'pend'
+    },
+    {
+      value: 10,
+      name: 'closed',
+      abbr: 'close'
+    },
+    {
+      value: 6,
+      name: 'archive',
+      abbr: 'arch'
+    },
+    {
+      value: 1,
+      name: 'trash',
+      abbr: 'trash'
+    }
+  ]);
 }(angular.module('boomstrap')));
 (function (boomstrap) {
   'use strict';
@@ -368,22 +415,6 @@ angular.module('ui.bootstrap').run([
             iCtrl.$setPristine();
           }
         });
-      }
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.directive('btCategory', function () {
-    return {
-      restrict: 'E',
-      replace: true,
-      scope: {
-        category: '@',
-        width: '@'
-      },
-      template: '<span class="cat cat-{{ category | lowercase }}">{{ category | capitalize }}</span>',
-      link: function (scope, element, attrs) {
       }
     };
   });
@@ -818,6 +849,42 @@ angular.module('ui.bootstrap').run([
       }
     };
   });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.directive('btLeadCategory', [
+    'leadCategories',
+    function (leadCategories) {
+      return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+          category: '@',
+          width: '@'
+        },
+        template: function (el, attrs) {
+          var html;
+          if (attrs.width === 'equal') {
+            html = '<span class="cat cat-eq cat-{{ cat | lowercase }}">{{ cat }}</span>';
+          } else if (attrs.width === 'abbreviated') {
+            html = '<span class="cat cat-eq-abbr cat-{{ cat | lowercase }}">{{ abbr }}</span>';
+          } else {
+            html = '<span class="cat cat-{{ cat | lowercase }}">{{ cat }}</span>';
+          }
+          return html;
+        },
+        link: function (scope, element, attrs) {
+          var categories = {}, abbrs = {};
+          leadCategories.forEach(function (category) {
+            categories[category.value.toString()] = category.name;
+            abbrs[category.value.toString()] = category.abbr;
+          });
+          scope.cat = categories[scope.category];
+          scope.abbr = abbrs[scope.category];
+        }
+      };
+    }
+  ]);
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';

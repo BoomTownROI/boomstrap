@@ -318,6 +318,40 @@
     <p data-height="360" data-theme-id="5675" data-slug-hash="qGlcA" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/qGlcA/'>Chosen Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
+<section id="lead-category" class="pl-docs-section">
+    <div class="page-header">
+      <h1>Lead Category</h1>
+    </div>
+    <h2>Usage</h2>
+    <pre class="prettyprint">&lt;bt-lead-category category="[<em>number</em> (required)]" width="[equal||abbreviated (optional)]"&gt;&lt;/bt-lead-category&gt;</pre>
+    <p>This is a category: <bt-lead-category category="4"></bt-lead-category></p>
+    <p>This is a category: <bt-lead-category width="equal" category="10"></bt-lead-category></p>
+    <p>This is a category: <bt-lead-category width="abbreviated" category="11"></bt-lead-category></p>
+
+    <h2>Default</h2>
+
+    <h2>Equal Width</h2>
+
+    <h2>Equal Width Abbreviated</h2>
+
+    <h2>Values</h2>
+    <pre class="prettyprint">
+/* Lead category values:
+ * just provide the value
+ * to the category attribute. */
+
+{ value: 0,  name: 'new'     },
+{ value: 3,  name: 'qualify' },
+{ value: 5,  name: 'hot'     },
+{ value: 4,  name: 'nurture' },
+{ value: 2,  name: 'watch'   },
+{ value: 11, name: 'pending' },
+{ value: 10, name: 'closed'  },
+{ value: 6,  name: 'archive' },
+{ value: 1,  name: 'trash'   }
+    </pre>
+
+</section>
 <section id="modals">
     <div class="page-header">
         <h1>Modal<small>
@@ -545,13 +579,6 @@
     <p data-height="360" data-theme-id="5675" data-slug-hash="FIspt" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/FIspt/'>FIspt</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
 </section>
-<section id="category" class="pl-docs-section">
-    <div class="page-header">
-      <h1>Category</h1>
-    </div>
-    <p>This is a category: <bt-category category="hot"></bt-category></p>
-</section>
-
 </div>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
@@ -581,6 +608,9 @@
                 </li>
                 <li>
                     <a href="#dropdown">Dropdown</a>
+                </li>
+                <li>
+                    <a href="#lead-category">Lead Category</a>
                 </li>
                 <li>
                     <a href="#modals">Modals</a>
@@ -614,9 +644,6 @@
                 </li>
                 <li>
                     <a href="#tour">Tour</a>
-                </li>
-                <li>
-                    <a href="#category">Category</a>
                 </li>
                 <li>
                     <a href=""></a>
