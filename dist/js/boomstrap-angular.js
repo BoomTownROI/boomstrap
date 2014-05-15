@@ -67,18 +67,6 @@ angular.module('ui.bootstrap').run([
     }
   ]);
 }(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
-  boomstrap.controller('RelativeTimeCtrl', [
-    '$scope',
-    function ($scope) {
-      $scope.theDate = {
-        timeString: moment(new Date()).subtract('days', 700),
-        time: new Date()
-      };
-    }
-  ]);
-}(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
   /**
@@ -380,6 +368,22 @@ angular.module('ui.bootstrap').run([
             iCtrl.$setPristine();
           }
         });
+      }
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.directive('btCategory', function () {
+    return {
+      restrict: 'E',
+      replace: true,
+      scope: {
+        category: '@',
+        width: '@'
+      },
+      template: '<span class="cat cat-{{ category | lowercase }}">{{ category | capitalize }}</span>',
+      link: function (scope, eement, attrs) {
       }
     };
   });
@@ -693,20 +697,6 @@ angular.module('ui.bootstrap').run([
           }
           return formatCurrency(data);  //converted value goes to the view
         });
-      }
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.directive('btFromNow', function () {
-    return {
-      restrict: 'E',
-      scope: { date: '=' },
-      replace: true,
-      template: '<span class="bt-from-now">{{ fromNow }}</span>',
-      link: function (scope, element, attrs) {
-        scope.fromNow = moment(scope.date).fromNow();
       }
     };
   });
@@ -1236,7 +1226,14 @@ angular.module('ui.bootstrap').run([
     };
   });
 }(angular.module('boomstrap')));
-//fromNow.js
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
 (function (Boomstrap, Tour) {
   'use strict';
   Boomstrap.service('bootstrapTourService', function ($templateCache, $rootScope, $http, AUTO_START_TOUR) {

@@ -369,6 +369,11 @@
 				"css_id": "#relative-time",
 				"nav_header": "Relative Time"
 			},
+			{
+				"source": "app/views/category.html",
+				"css_id": "#category",
+				"nav_header": "Category"
+			},
 			{ "source": "app/views/angular-footer.html" }
 		]
 	}
