@@ -315,6 +315,11 @@
 				"nav_header": "Dropdown"
 			},
 			{
+				"source": "app/views/lead-category.html",
+				"css_id": "#lead-category",
+				"nav_header": "Lead Category"
+			},
+			{
 				"source": "app/views/modals.html",
 				"css_id": "#modals",
 				"nav_header": "Modals"

@@ -32,6 +32,53 @@ angular.module('ui.bootstrap').run([
 ]);
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.constant('leadCategories', [
+    {
+      value: 0,
+      name: 'new',
+      abbr: 'new'
+    },
+    {
+      value: 3,
+      name: 'qualify',
+      abbr: 'qual'
+    },
+    {
+      value: 5,
+      name: 'hot',
+      abbr: 'hot'
+    },
+    {
+      value: 4,
+      name: 'nurture',
+      abbr: 'nurt'
+    },
+    {
+      value: 2,
+      name: 'watch',
+      abbr: 'watch'
+    },
+    {
+      value: 11,
+      name: 'pending',
+      abbr: 'pend'
+    },
+    {
+      value: 10,
+      name: 'closed',
+      abbr: 'close'
+    },
+    {
+      value: 6,
+      name: 'archive',
+      abbr: 'arch'
+    },
+    {
+      value: 1,
+      name: 'trash',
+      abbr: 'trash'
+    }
+  ]);
 }(angular.module('boomstrap')));
 (function (boomstrap) {
   'use strict';
@@ -64,18 +111,6 @@ angular.module('ui.bootstrap').run([
         image: 'images/fpo-he-man.jpg',
         text: 'Skeletor!?'
       });
-    }
-  ]);
-}(angular.module('boomstrap')));
-(function (boomstrap) {
-  'use strict';
-  boomstrap.controller('RelativeTimeCtrl', [
-    '$scope',
-    function ($scope) {
-      $scope.theDate = {
-        timeString: moment(new Date()).subtract('days', 700),
-        time: new Date()
-      };
     }
   ]);
 }(angular.module('boomstrap')));
@@ -699,20 +734,6 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  Boomstrap.directive('btFromNow', function () {
-    return {
-      restrict: 'E',
-      scope: { date: '=' },
-      replace: true,
-      template: '<span class="bt-from-now">{{ fromNow }}</span>',
-      link: function (scope, element, attrs) {
-        scope.fromNow = moment(scope.date).fromNow();
-      }
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btIFrame
@@ -828,6 +849,42 @@ angular.module('ui.bootstrap').run([
       }
     };
   });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.directive('btLeadCategory', [
+    'leadCategories',
+    function (leadCategories) {
+      return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+          category: '@',
+          width: '@'
+        },
+        template: function (el, attrs) {
+          var html;
+          if (attrs.width === 'equal') {
+            html = '<span class="cat cat-eq cat-{{ cat | lowercase }}">{{ cat }}</span>';
+          } else if (attrs.width === 'abbreviated') {
+            html = '<span class="cat cat-eq-abbr cat-{{ cat | lowercase }}">{{ abbr }}</span>';
+          } else {
+            html = '<span class="cat cat-{{ cat | lowercase }}">{{ cat }}</span>';
+          }
+          return html;
+        },
+        link: function (scope, element, attrs) {
+          var categories = {}, abbrs = {};
+          leadCategories.forEach(function (category) {
+            categories[category.value.toString()] = category.name;
+            abbrs[category.value.toString()] = category.abbr;
+          });
+          scope.cat = categories[scope.category];
+          scope.abbr = abbrs[scope.category];
+        }
+      };
+    }
+  ]);
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
@@ -1236,7 +1293,14 @@ angular.module('ui.bootstrap').run([
     };
   });
 }(angular.module('boomstrap')));
-//fromNow.js
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
 (function (Boomstrap, Tour) {
   'use strict';
   Boomstrap.service('bootstrapTourService', function ($templateCache, $rootScope, $http, AUTO_START_TOUR) {

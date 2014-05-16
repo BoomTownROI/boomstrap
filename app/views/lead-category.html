@@ -1,0 +1,31 @@
+<section id="lead-category" class="pl-docs-section">
+    <div class="page-header">
+      <h1>Lead Category</h1>
+    </div>
+    <h2>Usage</h2>
+    <pre class="prettyprint">&lt;bt-lead-category category="[<em>number</em> (required)]" width="[equal||abbreviated (optional)]"&gt;&lt;/bt-lead-category&gt;</pre>
+    <p><code>bt-lead-category</code> simply takes a <code>category</code> attribute (see values below) and, optionally, a <code>width</code> attribute (either <code>equal</code> or <code>abbreviated</code>). Angular creates the necessary HTML, CSS and text based on the category value. Setting <code>width</code> to <code>equal</code> renders all category labels the same width. Setting <code>width</code> to <code>abbreviated</code> renders all category labels the same width with abbreviated names (e.g. 'nurt' instead of 'nurture').</p>
+
+    <h2>Examples</h2>
+    
+    <p data-height="266" data-theme-id="5675" data-slug-hash="yHhcz" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/seanboom/pen/yHhcz/'>Lead Category Default Example</a> by Sean McCambridge (<a href='http://codepen.io/seanboom'>@seanboom</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+
+    <h2>Values</h2>
+    <pre class="prettyprint">
+/* Lead category values:
+ * just provide the value
+ * to the category attribute. */
+
+{ value: 0,  name: 'new'     },
+{ value: 3,  name: 'qualify' },
+{ value: 5,  name: 'hot'     },
+{ value: 4,  name: 'nurture' },
+{ value: 2,  name: 'watch'   },
+{ value: 11, name: 'pending' },
+{ value: 10, name: 'closed'  },
+{ value: 6,  name: 'archive' },
+{ value: 1,  name: 'trash'   }
+    </pre>
+
+</section>

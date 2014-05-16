@@ -34,56 +34,62 @@
     /* YourCardCtrl.js */
 
     $scope.property = {
-       imageSrc: ['/images/some/path/to-img.jpg'], // must be array. one renders image; multiple renders carousel.
-       listPrice: '$2,250,000',
-       listingUrl: 'http://www.superhellaawesomerealestate.com/listing/12345/',
+      imageSrc: ['/images/some/path/to-img.jpg'], // must be array. one renders image; multiple renders carousel.
+      listPrice: '$2,250,000',
+      listingUrl: 'http://www.superhellaawesomerealestate.com/listing/12345/',
 
-       /* only choose one of the following!
-        * the others don't have to be explicitly false;
-        * just skip the ones you don't want. */
+      /* only choose one of the following!
+      * the others don't have to be explicitly false;
+      * just skip the ones you don't want. */
 
-       offMarket: '2 days ago', // only populated for off market listings (triggers sash)
-       newProperty: '6 hrs ago', // only populated for new listings (triggers sash)
-       reduced: '30 mins ago', // only for reductions (triggers sash). when present, an object:
-       // reduced: {
-       //     'when': '5 hrs ago',
-       //     'change': '-$250,000',
-       //     'changePercent': '2%'
-       // },
-       backOnMarket: '1 hr ago', // only populated for back on market (triggers sash)
+      // a note about relative dates (2 days ago, 1 yr ago, etc.)
+      // given a date string from the server, e.g. '2014-04-26T18:27:19'
+      // wrap your date in a JS date object.  like this:
+      // new Date('1979-01-16T00:00:00')
+      // the am-time-ago directive will take it from there
 
-       /* ^^^ only choose one of those */
+      offMarket: new Date('2014-04-27T18:27:19'), // only populated for off market listings (triggers sash)
+      newProperty: new Date('2014-04-26T18:27:19'), // only populated for new listings (triggers sash)
+      reduced: '30 mins ago', // only for reductions (triggers sash). when present, an object:
+      // reduced: {
+      //     'when': new Date('2014-04-29T18:27:19'),
+      //     'change': '-$250,000',
+      //     'changePercent': '2%'
+      // },
+      backOnMarket: new Date('2014-05-26T18:27:19'), // only populated for back on market (triggers sash)
 
-       bestFits: '1444',
-       favs: '33',
-       mls: '1324961',
-       listed: '6 days ago',
-       pricePerSqft: '$1.99',
-       beds: '5',
-       baths: '3.5',
-       sqft: '4,195',
-       acres: '2.75',
-       type: 'Frat House',
-       address: {
-           street: '123 Fourth St.',
-           city: 'Charleston',
-           state: 'SC',
-           neighborhood: 'Craig\'s Landing'
-       },
-       history: [
-           {
-               'when': '5 hrs ago',
-               'change': '-$250,000',
-               'changePercent': '2%',
-               'price': '$2,250,000'
-           },
-           {
-               'when': '6 hrs ago',
-               'change': '-$500,000',
-               'changePercent': '5%',
-               'price': '$2,500,000'
-           }
-       ]
+      /* ^^^ only choose one of those */
+
+      bestFits: '1444',
+      favs: '33',
+      mls: '1324961',
+      listed: '6 days ago',
+      pricePerSqft: '$1.99',
+      beds: '5',
+      baths: '3.5',
+      sqft: '4,195',
+      acres: '2.75',
+      type: 'Frat House',
+      address: {
+         street: '123 Fourth St.',
+         city: 'Charleston',
+         state: 'SC',
+         neighborhood: 'Craig\'s Landing'
+      },
+      history: [
+         {
+             'when': '5 hrs ago',
+             'change': '-$250,000',
+             'changePercent': '2%',
+             'price': '$2,250,000'
+         },
+         {
+             'when': '6 hrs ago',
+             'change': '-$500,000',
+             'changePercent': '5%',
+             'price': '$2,500,000'
+         }
+      ]
    }
 
         </pre>

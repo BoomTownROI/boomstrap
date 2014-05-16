@@ -49,13 +49,3 @@ $(function () {
       $(this).prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
   });
 });*/
-
-
-
-
-
-
-
-
-
-
