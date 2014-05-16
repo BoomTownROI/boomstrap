@@ -6703,7 +6703,6 @@ fieldset[disabled] .btn-attention.active {
 }
 .card-price-history-change {
   color: #669900;
-  text-align: center;
 }
 .card-priority {
   font-size: 16px;
@@ -7416,6 +7415,9 @@ fieldset[disabled] .btn-attention.active {
   float: right;
   font-weight: 400;
   text-transform: lowercase;
+}
+.ui-select-match.form-control {
+  height: auto;
 }
 .score {
   background-color: #ffffff;
