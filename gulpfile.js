@@ -69,6 +69,7 @@ var htmlList = function(key, src) {
 gulp.task('boomstrapjsLib', function() {
   return gulp.src([
     'bower_components/jquery/dist/jquery.js',
+    'bower_components/perfect-scrollbar/src/jquery.mousewheel.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
     'bower_components/bootstrap-select/bootstrap-select.js',
@@ -81,6 +82,9 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/angular-chosen/angular-perfect-scrollbar.js',
     'bower_components/momentjs/min/moment.min.js',
     'bower_components/angular-moment/angular-moment.js',
+    'bower_components/perfect-scrollbar/src/perfect-scrollbar.js',
+    'bower_components/angular-perfect-scrollbar/dependencies/perfect-scrollbar.js',
+    'bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js',
     'js/global.js',
     'js/vendor-config.js'
   ])
@@ -160,7 +164,11 @@ gulp.task('boomstrapLessDocs', function() {
 });
 
 gulp.task('boomstrapLessDist', function() {
-  return gulp.src(['less/boomstrap.less'])
+  return gulp.src([
+    'less/boomstrap.less',
+    'bower_components/perfect-scrollbar/src/perfect-scrollbar.css',
+    'bower_components/angular-perfect-scrollbar/dependencies/perfect-scrollbar.css',
+  ])
     .pipe(less({ compress: true }))
     .pipe(gulp.dest('dist/css'));
 });
