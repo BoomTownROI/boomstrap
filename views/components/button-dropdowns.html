@@ -88,6 +88,194 @@
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 
+  <!-- Button dropdown variations (Boomstrap Custom) -->
+  <h3 id="btn-dropdowns-icons">Single button dropdown variations</h3>
+  <p>Some variations showing single button dropdowns with icons and icon-only dropdowns.</p>
+  <div class="pl-example">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Default <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Default <i class="ficon ficon-heart"></i> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-info btn-icon dropdown-toggle" data-toggle="dropdown">
+        <i class="ficon ficon-cog"></i> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-attention btn-icon dropdown-toggle" data-toggle="dropdown">
+        <i class="ficon ficon-user"></i> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+        No caret
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action</a></li>
+      </ul>
+    </div>
+  </div><!-- /example -->
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"&gt;
+    Default &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"&gt;
+    Default &lt;i class="ficon ficon-heart"&gt;&lt;/i&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-info btn-icon dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;i class="ficon ficon-cog"&gt;&lt;/i&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-attention btn-icon dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;i class="ficon ficon-user"&gt;&lt;/i&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"&gt;
+    No caret
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></div>
+
+
+  <!-- Communication status dropdowns (Boomstrap Custom) -->
+  <h3 id="btn-dropdowns-icons">Custom dropdowns</h3>
+  <p>Communication status dropdowns.</p>
+  <div class="pl-example">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default btn-icon dropdown-toggle" data-toggle="dropdown">
+        <i class="ficon ficon-email-bad"></i> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><i class="ficon ficon-email-good"></i> 2-way emailing</a></li>
+        <li><a href="#"><i class="ficon ficon-email-neutral"></i> No replies</a></li>
+        <li><a href="#"><i class="ficon ficon-email-bad"></i> Opt-out</a></li>
+        <li><a href="#"><i class="ficon ficon-email-bad"></i> Invalid</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown">
+        <i class="ficon ficon-email-good"></i> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><i class="ficon ficon-email-good"></i> 2-way emailing</a></li>
+        <li><a href="#"><i class="ficon ficon-email-neutral"></i> No replies</a></li>
+        <li><a href="#"><i class="ficon ficon-email-bad"></i> Opt-out</a></li>
+        <li><a href="#"><i class="ficon ficon-email-bad"></i> Invalid</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default btn-icon dropdown-toggle" data-toggle="dropdown">
+        <i class="ficon ficon-phone-bad"></i> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><i class="ficon ficon-phone-good"></i> Talking to prospect</a></li>
+        <li><a href="#"><i class="ficon ficon-phone-neutral"></i> No conversations</a></li>
+        <li><a href="#"><i class="ficon ficon-phone-bad"></i> Opt-out</a></li>
+        <li><a href="#"><i class="ficon ficon-phone-bad"></i> Wrong number</a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown">
+        <i class="ficon ficon-phone-neutral"></i> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><i class="ficon ficon-phone-good"></i> Talking to prospect</a></li>
+        <li><a href="#"><i class="ficon ficon-phone-neutral"></i> No conversations</a></li>
+        <li><a href="#"><i class="ficon ficon-phone-bad"></i> Opt-out</a></li>
+        <li><a href="#"><i class="ficon ficon-phone-bad"></i> Wrong number</a></li>
+      </ul>
+    </div>
+  </div><!-- /example -->
+<div class="pl-code"><pre class="prettyprint"><code>
+
+</code></pre></div>
+
+  <p>Lead category dropdowns.</p>
+  <div class="pl-example">
+    <div class="btn-group">
+      <button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown">
+        <span class="cat cat-archive">archive</span> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#"><span class="cat cat-archive">archive</span></a></li>
+        <li><a href="#"><span class="cat cat-closed">closed</span></a></li>
+        <li><a href="#"><span class="cat cat-hot">hot</span></a></li>
+        <li><a href="#"><span class="cat cat-new">new</span></a></li>
+        <li><a href="#"><span class="cat cat-nurture">nurture</span></a></li>
+        <li><a href="#"><span class="cat cat-pending">pending</span></a></li>
+        <li><a href="#"><span class="cat cat-qualify">qualify</span></a></li>
+        <li><a href="#"><span class="cat cat-trash">trash</span></a></li>
+        <li><a href="#"><span class="cat cat-watch">watch</span></a></li>
+      </ul>
+    </div>
+  </div><!-- /example -->
+<div class="pl-code"><pre class="prettyprint"><code>
+
+</code></pre></div>
+
   <h3 id="btn-dropdowns-split">Split button dropdowns</h3>
   <p>Similarly, create split button dropdowns with the same markup changes, only with a separate button.</p>
   <div class="pl-example">
@@ -176,6 +364,7 @@
       </ul>
     </div><!-- /btn-group -->
   </div>
+
 <div class="pl-code"><pre><code class="html"><span class="c">&lt;!-- Split button --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/button&gt;</span>
