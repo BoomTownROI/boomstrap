@@ -6,4 +6,10 @@
     // white-space: pre-line; << this was recommended by the docs, but it seems to cause extra white space
     overflow-y: hidden;
     position: relative;
+    .ps-scrollbar-x, .ps-scrollbar-y {
+      background-color: #444;
+    }
+    &:hover .ps-scrollbar-x, &:hover .ps-scrollbar-y {
+      opacity: 0.65;
+    }
 }
