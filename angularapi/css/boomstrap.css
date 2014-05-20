@@ -6808,6 +6808,27 @@ fieldset[disabled] .btn-attention.active {
 .carousel-control.right .ficon {
   right: 0;
 }
+.dropdown-menu .divider {
+  margin: 4px 0;
+}
+.dropdown-toggle.btn-link {
+  padding: 0;
+  text-decoration: none;
+}
+.dropdown-toggle.btn-link .caret {
+  color: #696969;
+}
+.dropdown-menu-cat {
+  min-width: 50px;
+}
+.dropdown-menu-cat > li > a {
+  padding: 3px 8px 6px;
+}
+.dropdown-menu-cat .cat {
+  padding-left: 0;
+  padding-right: 0;
+  width: 56px;
+}
 .ficon {
   display: inline-block;
   position: relative;

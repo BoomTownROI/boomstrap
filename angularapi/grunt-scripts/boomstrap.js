@@ -1,5 +1,5 @@
 /*!
- * jQuery JavaScript Library v2.1.0
+ * jQuery JavaScript Library v2.1.1
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -9,7 +9,7 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2014-01-23T21:10Z
+ * Date: 2014-05-01T17:11Z
  */
 
 (function( global, factory ) {
@@ -59,8 +59,6 @@ var toString = class2type.toString;
 
 var hasOwn = class2type.hasOwnProperty;
 
-var trim = "".trim;
-
 var support = {};
 
 
@@ -69,7 +67,7 @@ var
 	// Use the correct document accordingly with window argument (sandbox)
 	document = window.document,
 
-	version = "2.1.0",
+	version = "2.1.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -77,6 +75,10 @@ var
 		// Need init if jQuery is called (just allow error to be thrown if not included)
 		return new jQuery.fn.init( selector, context );
 	},
+
+	// Support: Android<4.1
+	// Make sure we trim BOM and NBSP
+	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
 	// Matches dashed string for camelizing
 	rmsPrefix = /^-ms-/,
@@ -108,10 +110,10 @@ jQuery.fn = jQuery.prototype = {
 	get: function( num ) {
 		return num != null ?
 
-			// Return a 'clean' array
+			// Return just the one element from the set
 			( num < 0 ? this[ num + this.length ] : this[ num ] ) :
 
-			// Return just the object
+			// Return all the elements in a clean array
 			slice.call( this );
 	},
 
@@ -267,7 +269,7 @@ jQuery.extend({
 		// parseFloat NaNs numeric-cast false positives (null|true|false|"")
 		// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
 		// subtraction forces infinities to NaN
-		return obj - parseFloat( obj ) >= 0;
+		return !jQuery.isArray( obj ) && obj - parseFloat( obj ) >= 0;
 	},
 
 	isPlainObject: function( obj ) {
@@ -279,16 +281,8 @@ jQuery.extend({
 			return false;
 		}
 
-		// Support: Firefox <20
-		// The try/catch suppresses exceptions thrown when attempting to access
-		// the "constructor" property of certain host objects, ie. |window.location|
-		// https://bugzilla.mozilla.org/show_bug.cgi?id=814622
-		try {
-			if ( obj.constructor &&
-					!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
-				return false;
-			}
-		} catch ( e ) {
+		if ( obj.constructor &&
+				!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
 			return false;
 		}
 
@@ -398,8 +392,11 @@ jQuery.extend({
 		return obj;
 	},
 
+	// Support: Android<4.1
 	trim: function( text ) {
-		return text == null ? "" : trim.call( text );
+		return text == null ?
+			"" :
+			( text + "" ).replace( rtrim, "" );
 	},
 
 	// results is for internal usage only
@@ -551,14 +548,14 @@ function isArraylike( obj ) {
 }
 var Sizzle =
 /*!
- * Sizzle CSS Selector Engine v1.10.16
+ * Sizzle CSS Selector Engine v1.10.19
  * http://sizzlejs.com/
  *
  * Copyright 2013 jQuery Foundation, Inc. and other contributors
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2014-01-13
+ * Date: 2014-04-18
  */
 (function( window ) {
 
@@ -567,7 +564,9 @@ var i,
 	Expr,
 	getText,
 	isXML,
+	tokenize,
 	compile,
+	select,
 	outermostContext,
 	sortInput,
 	hasDuplicate,
@@ -634,17 +633,23 @@ var i,
 	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
 
-	// Acceptable operators http://www.w3.org/TR/selectors/#attribute-selectors
-	attributes = "\\[" + whitespace + "*(" + characterEncoding + ")" + whitespace +
-		"*(?:([*^$|!~]?=)" + whitespace + "*(?:(['\"])((?:\\\\.|[^\\\\])*?)\\3|(" + identifier + ")|)|)" + whitespace + "*\\]",
+	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
+	attributes = "\\[" + whitespace + "*(" + characterEncoding + ")(?:" + whitespace +
+		// Operator (capture 2)
+		"*([*^$|!~]?=)" + whitespace +
+		// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
+		"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
+		"*\\]",
 
-	// Prefer arguments quoted,
-	//   then not containing pseudos/brackets,
-	//   then attribute selectors/non-parenthetical expressions,
-	//   then anything else
-	// These preferences are here to reduce the number of selectors
-	//   needing tokenize in the PSEUDO preFilter
-	pseudos = ":(" + characterEncoding + ")(?:\\(((['\"])((?:\\\\.|[^\\\\])*?)\\3|((?:\\\\.|[^\\\\()[\\]]|" + attributes.replace( 3, 8 ) + ")*)|.*)\\)|)",
+	pseudos = ":(" + characterEncoding + ")(?:\\((" +
+		// To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
+		// 1. quoted (capture 3; capture 4 or capture 5)
+		"('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|" +
+		// 2. simple (capture 6)
+		"((?:\\\\.|[^\\\\()[\\]]|" + attributes + ")*)|" +
+		// 3. anything else (capture 2)
+		".*" +
+		")\\)|)",
 
 	// Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
 	rtrim = new RegExp( "^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$", "g" ),
@@ -689,7 +694,7 @@ var i,
 	funescape = function( _, escaped, escapedWhitespace ) {
 		var high = "0x" + escaped - 0x10000;
 		// NaN means non-codepoint
-		// Support: Firefox
+		// Support: Firefox<24
 		// Workaround erroneous numeric interpretation of +"0x"
 		return high !== high || escapedWhitespace ?
 			escaped :
@@ -1085,7 +1090,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				var m = context.getElementById( id );
 				// Check parentNode to catch when Blackberry 4.6 returns
 				// nodes that are no longer in the document #6963
-				return m && m.parentNode ? [m] : [];
+				return m && m.parentNode ? [ m ] : [];
 			}
 		};
 		Expr.filter["ID"] = function( id ) {
@@ -1165,11 +1170,13 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// http://bugs.jquery.com/ticket/12359
-			div.innerHTML = "<select t=''><option selected=''></option></select>";
+			div.innerHTML = "<select msallowclip=''><option selected=''></option></select>";
 
-			// Support: IE8, Opera 10-12
+			// Support: IE8, Opera 11-12.16
 			// Nothing should be selected when empty strings follow ^= or $= or *=
-			if ( div.querySelectorAll("[t^='']").length ) {
+			// The test attribute must be unknown in Opera but "safe" for WinRT
+			// http://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
+			if ( div.querySelectorAll("[msallowclip^='']").length ) {
 				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
 			}
 
@@ -1212,7 +1219,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 		});
 	}
 
-	if ( (support.matchesSelector = rnative.test( (matches = docElem.webkitMatchesSelector ||
+	if ( (support.matchesSelector = rnative.test( (matches = docElem.matches ||
+		docElem.webkitMatchesSelector ||
 		docElem.mozMatchesSelector ||
 		docElem.oMatchesSelector ||
 		docElem.msMatchesSelector) )) ) {
@@ -1393,7 +1401,7 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		} catch(e) {}
 	}
 
-	return Sizzle( expr, document, null, [elem] ).length > 0;
+	return Sizzle( expr, document, null, [ elem ] ).length > 0;
 };
 
 Sizzle.contains = function( context, elem ) {
@@ -1522,7 +1530,7 @@ Expr = Sizzle.selectors = {
 			match[1] = match[1].replace( runescape, funescape );
 
 			// Move the given value to match[3] whether quoted or unquoted
-			match[3] = ( match[4] || match[5] || "" ).replace( runescape, funescape );
+			match[3] = ( match[3] || match[4] || match[5] || "" ).replace( runescape, funescape );
 
 			if ( match[2] === "~=" ) {
 				match[3] = " " + match[3] + " ";
@@ -1565,15 +1573,15 @@ Expr = Sizzle.selectors = {
 
 		"PSEUDO": function( match ) {
 			var excess,
-				unquoted = !match[5] && match[2];
+				unquoted = !match[6] && match[2];
 
 			if ( matchExpr["CHILD"].test( match[0] ) ) {
 				return null;
 			}
 
 			// Accept quoted arguments as-is
-			if ( match[3] && match[4] !== undefined ) {
-				match[2] = match[4];
+			if ( match[3] ) {
+				match[2] = match[4] || match[5] || "";
 
 			// Strip excess characters from unquoted arguments
 			} else if ( unquoted && rpseudo.test( unquoted ) &&
@@ -1978,7 +1986,7 @@ function setFilters() {}
 setFilters.prototype = Expr.filters = Expr.pseudos;
 Expr.setFilters = new setFilters();
 
-function tokenize( selector, parseOnly ) {
+tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 	var matched, match, tokens, type,
 		soFar, groups, preFilters,
 		cached = tokenCache[ selector + " " ];
@@ -2043,7 +2051,7 @@ function tokenize( selector, parseOnly ) {
 			Sizzle.error( selector ) :
 			// Cache the tokens
 			tokenCache( selector, groups ).slice( 0 );
-}
+};
 
 function toSelector( tokens ) {
 	var i = 0,
@@ -2120,6 +2128,15 @@ function elementMatcher( matchers ) {
 			return true;
 		} :
 		matchers[0];
+}
+
+function multipleContexts( selector, contexts, results ) {
+	var i = 0,
+		len = contexts.length;
+	for ( ; i < len; i++ ) {
+		Sizzle( selector, contexts[i], results );
+	}
+	return results;
 }
 
 function condense( unmatched, map, filter, context, xml ) {
@@ -2390,7 +2407,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 		superMatcher;
 }
 
-compile = Sizzle.compile = function( selector, group /* Internal Use Only */ ) {
+compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 	var i,
 		setMatchers = [],
 		elementMatchers = [],
@@ -2398,12 +2415,12 @@ compile = Sizzle.compile = function( selector, group /* Internal Use Only */ ) {
 
 	if ( !cached ) {
 		// Generate a function of recursive functions that can be used to check each element
-		if ( !group ) {
-			group = tokenize( selector );
+		if ( !match ) {
+			match = tokenize( selector );
 		}
-		i = group.length;
+		i = match.length;
 		while ( i-- ) {
-			cached = matcherFromTokens( group[i] );
+			cached = matcherFromTokens( match[i] );
 			if ( cached[ expando ] ) {
 				setMatchers.push( cached );
 			} else {
@@ -2413,74 +2430,83 @@ compile = Sizzle.compile = function( selector, group /* Internal Use Only */ ) {
 
 		// Cache the compiled function
 		cached = compilerCache( selector, matcherFromGroupMatchers( elementMatchers, setMatchers ) );
+
+		// Save selector and tokenization
+		cached.selector = selector;
 	}
 	return cached;
 };
 
-function multipleContexts( selector, contexts, results ) {
-	var i = 0,
-		len = contexts.length;
-	for ( ; i < len; i++ ) {
-		Sizzle( selector, contexts[i], results );
-	}
-	return results;
-}
-
-function select( selector, context, results, seed ) {
+/**
+ * A low-level selection function that works with Sizzle's compiled
+ *  selector functions
+ * @param {String|Function} selector A selector or a pre-compiled
+ *  selector function built with Sizzle.compile
+ * @param {Element} context
+ * @param {Array} [results]
+ * @param {Array} [seed] A set of elements to match against
+ */
+select = Sizzle.select = function( selector, context, results, seed ) {
 	var i, tokens, token, type, find,
-		match = tokenize( selector );
+		compiled = typeof selector === "function" && selector,
+		match = !seed && tokenize( (selector = compiled.selector || selector) );
 
-	if ( !seed ) {
-		// Try to minimize operations if there is only one group
-		if ( match.length === 1 ) {
+	results = results || [];
 
-			// Take a shortcut and set the context if the root selector is an ID
-			tokens = match[0] = match[0].slice( 0 );
-			if ( tokens.length > 2 && (token = tokens[0]).type === "ID" &&
-					support.getById && context.nodeType === 9 && documentIsHTML &&
-					Expr.relative[ tokens[1].type ] ) {
+	// Try to minimize operations if there is no seed and only one group
+	if ( match.length === 1 ) {
 
-				context = ( Expr.find["ID"]( token.matches[0].replace(runescape, funescape), context ) || [] )[0];
-				if ( !context ) {
-					return results;
-				}
-				selector = selector.slice( tokens.shift().value.length );
+		// Take a shortcut and set the context if the root selector is an ID
+		tokens = match[0] = match[0].slice( 0 );
+		if ( tokens.length > 2 && (token = tokens[0]).type === "ID" &&
+				support.getById && context.nodeType === 9 && documentIsHTML &&
+				Expr.relative[ tokens[1].type ] ) {
+
+			context = ( Expr.find["ID"]( token.matches[0].replace(runescape, funescape), context ) || [] )[0];
+			if ( !context ) {
+				return results;
+
+			// Precompiled matchers will still verify ancestry, so step up a level
+			} else if ( compiled ) {
+				context = context.parentNode;
 			}
 
-			// Fetch a seed set for right-to-left matching
-			i = matchExpr["needsContext"].test( selector ) ? 0 : tokens.length;
-			while ( i-- ) {
-				token = tokens[i];
+			selector = selector.slice( tokens.shift().value.length );
+		}
 
-				// Abort if we hit a combinator
-				if ( Expr.relative[ (type = token.type) ] ) {
-					break;
-				}
-				if ( (find = Expr.find[ type ]) ) {
-					// Search, expanding context for leading sibling combinators
-					if ( (seed = find(
-						token.matches[0].replace( runescape, funescape ),
-						rsibling.test( tokens[0].type ) && testContext( context.parentNode ) || context
-					)) ) {
+		// Fetch a seed set for right-to-left matching
+		i = matchExpr["needsContext"].test( selector ) ? 0 : tokens.length;
+		while ( i-- ) {
+			token = tokens[i];
 
-						// If seed is empty or no tokens remain, we can return early
-						tokens.splice( i, 1 );
-						selector = seed.length && toSelector( tokens );
-						if ( !selector ) {
-							push.apply( results, seed );
-							return results;
-						}
+			// Abort if we hit a combinator
+			if ( Expr.relative[ (type = token.type) ] ) {
+				break;
+			}
+			if ( (find = Expr.find[ type ]) ) {
+				// Search, expanding context for leading sibling combinators
+				if ( (seed = find(
+					token.matches[0].replace( runescape, funescape ),
+					rsibling.test( tokens[0].type ) && testContext( context.parentNode ) || context
+				)) ) {
 
-						break;
+					// If seed is empty or no tokens remain, we can return early
+					tokens.splice( i, 1 );
+					selector = seed.length && toSelector( tokens );
+					if ( !selector ) {
+						push.apply( results, seed );
+						return results;
 					}
+
+					break;
 				}
 			}
 		}
 	}
 
-	// Compile and execute a filtering function
+	// Compile and execute a filtering function if one is not provided
 	// Provide `match` to avoid retokenization if we modified the selector above
-	compile( selector, match )(
+	( compiled || compile( selector, match ) )(
 		seed,
 		context,
 		!documentIsHTML,
@@ -2488,7 +2514,7 @@ function select( selector, context, results, seed ) {
 		rsibling.test( selector ) && testContext( context.parentNode ) || context
 	);
 	return results;
-}
+};
 
 // One-time assignments
 
@@ -3365,8 +3391,9 @@ jQuery.extend({
 		readyList.resolveWith( document, [ jQuery ] );
 
 		// Trigger any bound ready events
-		if ( jQuery.fn.trigger ) {
-			jQuery( document ).trigger("ready").off("ready");
+		if ( jQuery.fn.triggerHandler ) {
+			jQuery( document ).triggerHandler( "ready" );
+			jQuery( document ).off( "ready" );
 		}
 	}
 });
@@ -3738,11 +3765,15 @@ jQuery.fn.extend({
 				if ( elem.nodeType === 1 && !data_priv.get( elem, "hasDataAttrs" ) ) {
 					i = attrs.length;
 					while ( i-- ) {
-						name = attrs[ i ].name;
 
-						if ( name.indexOf( "data-" ) === 0 ) {
-							name = jQuery.camelCase( name.slice(5) );
-							dataAttr( elem, name, data[ name ] );
+						// Support: IE11+
+						// The attrs elements can be null (#14894)
+						if ( attrs[ i ] ) {
+							name = attrs[ i ].name;
+							if ( name.indexOf( "data-" ) === 0 ) {
+								name = jQuery.camelCase( name.slice(5) );
+								dataAttr( elem, name, data[ name ] );
+							}
 						}
 					}
 					data_priv.set( elem, "hasDataAttrs", true );
@@ -3972,10 +4003,17 @@ var rcheckableType = (/^(?:checkbox|radio)$/i);
 
 (function() {
 	var fragment = document.createDocumentFragment(),
-		div = fragment.appendChild( document.createElement( "div" ) );
+		div = fragment.appendChild( document.createElement( "div" ) ),
+		input = document.createElement( "input" );
 
 	// #11217 - WebKit loses check when the name is after the checked attribute
-	div.innerHTML = "<input type='radio' checked='checked' name='t'/>";
+	// Support: Windows Web Apps (WWA)
+	// `name` and `type` need .setAttribute for WWA
+	input.setAttribute( "type", "radio" );
+	input.setAttribute( "checked", "checked" );
+	input.setAttribute( "name", "t" );
+
+	div.appendChild( input );
 
 	// Support: Safari 5.1, iOS 5.1, Android 4.x, Android 2.3
 	// old WebKit doesn't clone checked state correctly in fragments
@@ -3995,7 +4033,7 @@ support.focusinBubbles = "onfocusin" in window;
 
 var
 	rkeyEvent = /^key/,
-	rmouseEvent = /^(?:mouse|contextmenu)|click/,
+	rmouseEvent = /^(?:mouse|pointer|contextmenu)|click/,
 	rfocusMorph = /^(?:focusinfocus|focusoutblur)$/,
 	rtypenamespace = /^([^.]*)(?:\.(.+)|)$/;
 
@@ -4564,7 +4602,7 @@ jQuery.event = {
 
 				// Support: Firefox 20+
 				// Firefox doesn't alert if the returnValue field is not set.
-				if ( event.result !== undefined ) {
+				if ( event.result !== undefined && event.originalEvent ) {
 					event.originalEvent.returnValue = event.result;
 				}
 			}
@@ -4615,9 +4653,9 @@ jQuery.Event = function( src, props ) {
 		// Events bubbling up the document may have been marked as prevented
 		// by a handler lower down the tree; reflect the correct value.
 		this.isDefaultPrevented = src.defaultPrevented ||
-				// Support: Android < 4.0
 				src.defaultPrevented === undefined &&
-				src.getPreventDefault && src.getPreventDefault() ?
+				// Support: Android < 4.0
+				src.returnValue === false ?
 			returnTrue :
 			returnFalse;
 
@@ -4664,7 +4702,14 @@ jQuery.Event.prototype = {
 		}
 	},
 	stopImmediatePropagation: function() {
+		var e = this.originalEvent;
+
 		this.isImmediatePropagationStopped = returnTrue;
+
+		if ( e && e.stopImmediatePropagation ) {
+			e.stopImmediatePropagation();
+		}
+
 		this.stopPropagation();
 	}
 };
@@ -4673,7 +4718,9 @@ jQuery.Event.prototype = {
 // Support: Chrome 15+
 jQuery.each({
 	mouseenter: "mouseover",
-	mouseleave: "mouseout"
+	mouseleave: "mouseout",
+	pointerenter: "pointerover",
+	pointerleave: "pointerout"
 }, function( orig, fix ) {
 	jQuery.event.special[ orig ] = {
 		delegateType: fix,
@@ -5098,7 +5145,7 @@ jQuery.extend({
 	},
 
 	cleanData: function( elems ) {
-		var data, elem, events, type, key, j,
+		var data, elem, type, key,
 			special = jQuery.event.special,
 			i = 0;
 
@@ -5107,9 +5154,8 @@ jQuery.extend({
 				key = elem[ data_priv.expando ];
 
 				if ( key && (data = data_priv.cache[ key ]) ) {
-					events = Object.keys( data.events || {} );
-					if ( events.length ) {
-						for ( j = 0; (type = events[j]) !== undefined; j++ ) {
+					if ( data.events ) {
+						for ( type in data.events ) {
 							if ( special[ type ] ) {
 								jQuery.event.remove( elem, type );
 
@@ -5412,14 +5458,15 @@ var iframe,
  */
 // Called only from within defaultDisplay
 function actualDisplay( name, doc ) {
-	var elem = jQuery( doc.createElement( name ) ).appendTo( doc.body ),
+	var style,
+		elem = jQuery( doc.createElement( name ) ).appendTo( doc.body ),
 
 		// getDefaultComputedStyle might be reliably used only on attached element
-		display = window.getDefaultComputedStyle ?
+		display = window.getDefaultComputedStyle && ( style = window.getDefaultComputedStyle( elem[ 0 ] ) ) ?
 
 			// Use of this method is a temporary fix (more like optmization) until something better comes along,
 			// since it was removed from specification and supported only in FF
-			window.getDefaultComputedStyle( elem[ 0 ] ).display : jQuery.css( elem[ 0 ], "display" );
+			style.display : jQuery.css( elem[ 0 ], "display" );
 
 	// We don't have any data stored on the element,
 	// so use "detach" method as fast way to get rid of the element
@@ -5542,28 +5589,32 @@ function addGetHookIf( conditionFn, hookFn ) {
 
 (function() {
 	var pixelPositionVal, boxSizingReliableVal,
-		// Support: Firefox, Android 2.3 (Prefixed box-sizing versions).
-		divReset = "padding:0;margin:0;border:0;display:block;-webkit-box-sizing:content-box;" +
-			"-moz-box-sizing:content-box;box-sizing:content-box",
 		docElem = document.documentElement,
 		container = document.createElement( "div" ),
 		div = document.createElement( "div" );
+
+	if ( !div.style ) {
+		return;
+	}
 
 	div.style.backgroundClip = "content-box";
 	div.cloneNode( true ).style.backgroundClip = "";
 	support.clearCloneStyle = div.style.backgroundClip === "content-box";
 
-	container.style.cssText = "border:0;width:0;height:0;position:absolute;top:0;left:-9999px;" +
-		"margin-top:1px";
+	container.style.cssText = "border:0;width:0;height:0;top:0;left:-9999px;margin-top:1px;" +
+		"position:absolute";
 	container.appendChild( div );
 
 	// Executing both pixelPosition & boxSizingReliable tests require only one layout
 	// so they're executed at the same time to save the second computation.
 	function computePixelPositionAndBoxSizingReliable() {
-		// Support: Firefox, Android 2.3 (Prefixed box-sizing versions).
-		div.style.cssText = "-webkit-box-sizing:border-box;-moz-box-sizing:border-box;" +
-			"box-sizing:border-box;padding:1px;border:1px;display:block;width:4px;margin-top:1%;" +
-			"position:absolute;top:1%";
+		div.style.cssText =
+			// Support: Firefox<29, Android 2.3
+			// Vendor-prefix box-sizing
+			"-webkit-box-sizing:border-box;-moz-box-sizing:border-box;" +
+			"box-sizing:border-box;display:block;margin-top:1%;top:1%;" +
+			"border:1px;padding:1px;width:4px;position:absolute";
+		div.innerHTML = "";
 		docElem.appendChild( container );
 
 		var divStyle = window.getComputedStyle( div, null );
@@ -5573,9 +5624,10 @@ function addGetHookIf( conditionFn, hookFn ) {
 		docElem.removeChild( container );
 	}
 
-	// Use window.getComputedStyle because jsdom on node.js will break without it.
+	// Support: node.js jsdom
+	// Don't assume that getComputedStyle is a property of the global object
 	if ( window.getComputedStyle ) {
-		jQuery.extend(support, {
+		jQuery.extend( support, {
 			pixelPosition: function() {
 				// This test is executed only once but we still do memoizing
 				// since we can use the boxSizingReliable pre-computing.
@@ -5597,7 +5649,13 @@ function addGetHookIf( conditionFn, hookFn ) {
 				// This support function is only executed once so no memoizing is needed.
 				var ret,
 					marginDiv = div.appendChild( document.createElement( "div" ) );
-				marginDiv.style.cssText = div.style.cssText = divReset;
+
+				// Reset CSS: box-sizing; display; margin; border; padding
+				marginDiv.style.cssText = div.style.cssText =
+					// Support: Firefox<29, Android 2.3
+					// Vendor-prefix box-sizing
+					"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;" +
+					"box-sizing:content-box;display:block;margin:0;border:0;padding:0";
 				marginDiv.style.marginRight = marginDiv.style.width = "0";
 				div.style.width = "1px";
 				docElem.appendChild( container );
@@ -5605,9 +5663,6 @@ function addGetHookIf( conditionFn, hookFn ) {
 				ret = !parseFloat( window.getComputedStyle( marginDiv, null ).marginRight );
 
 				docElem.removeChild( container );
-
-				// Clean up the div for other support tests.
-				div.innerHTML = "";
 
 				return ret;
 			}
@@ -5647,8 +5702,8 @@ var
 
 	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
 	cssNormalTransform = {
-		letterSpacing: 0,
-		fontWeight: 400
+		letterSpacing: "0",
+		fontWeight: "400"
 	},
 
 	cssPrefixes = [ "Webkit", "O", "Moz", "ms" ];
@@ -5795,13 +5850,10 @@ function showHide( elements, show ) {
 				values[ index ] = data_priv.access( elem, "olddisplay", defaultDisplay(elem.nodeName) );
 			}
 		} else {
+			hidden = isHidden( elem );
 
-			if ( !values[ index ] ) {
-				hidden = isHidden( elem );
-
-				if ( display && display !== "none" || !hidden ) {
-					data_priv.set( elem, "olddisplay", hidden ? display : jQuery.css(elem, "display") );
-				}
+			if ( display !== "none" || !hidden ) {
+				data_priv.set( elem, "olddisplay", hidden ? display : jQuery.css( elem, "display" ) );
 			}
 		}
 	}
@@ -5840,6 +5892,8 @@ jQuery.extend({
 	cssNumber: {
 		"columnCount": true,
 		"fillOpacity": true,
+		"flexGrow": true,
+		"flexShrink": true,
 		"fontWeight": true,
 		"lineHeight": true,
 		"opacity": true,
@@ -5904,9 +5958,6 @@ jQuery.extend({
 
 			// If a hook was provided, use that value, otherwise just set the specified value
 			if ( !hooks || !("set" in hooks) || (value = hooks.set( elem, value, extra )) !== undefined ) {
-				// Support: Chrome, Safari
-				// Setting style to blank string required to delete "style: x !important;"
-				style[ name ] = "";
 				style[ name ] = value;
 			}
 
@@ -5962,7 +6013,7 @@ jQuery.each([ "height", "width" ], function( i, name ) {
 			if ( computed ) {
 				// certain elements can have dimension info if we invisibly show them
 				// however, it must have a current display style that would benefit from this
-				return elem.offsetWidth === 0 && rdisplayswap.test( jQuery.css( elem, "display" ) ) ?
+				return rdisplayswap.test( jQuery.css( elem, "display" ) ) && elem.offsetWidth === 0 ?
 					jQuery.swap( elem, cssShow, function() {
 						return getWidthOrHeight( elem, name, extra );
 					}) :
@@ -6283,7 +6334,7 @@ function createTween( value, prop, animation ) {
 
 function defaultPrefilter( elem, props, opts ) {
 	/* jshint validthis: true */
-	var prop, value, toggle, tween, hooks, oldfire, display,
+	var prop, value, toggle, tween, hooks, oldfire, display, checkDisplay,
 		anim = this,
 		orig = {},
 		style = elem.style,
@@ -6327,13 +6378,12 @@ function defaultPrefilter( elem, props, opts ) {
 		// Set display property to inline-block for height/width
 		// animations on inline elements that are having width/height animated
 		display = jQuery.css( elem, "display" );
-		// Get default display if display is currently "none"
-		if ( display === "none" ) {
-			display = defaultDisplay( elem.nodeName );
-		}
-		if ( display === "inline" &&
-				jQuery.css( elem, "float" ) === "none" ) {
 
+		// Test default display if display is currently "none"
+		checkDisplay = display === "none" ?
+			data_priv.get( elem, "olddisplay" ) || defaultDisplay( elem.nodeName ) : display;
+
+		if ( checkDisplay === "inline" && jQuery.css( elem, "float" ) === "none" ) {
 			style.display = "inline-block";
 		}
 	}
@@ -6363,6 +6413,10 @@ function defaultPrefilter( elem, props, opts ) {
 				}
 			}
 			orig[ prop ] = dataShow && dataShow[ prop ] || jQuery.style( elem, prop );
+
+		// Any non-fx value stops us from restoring the original display value
+		} else {
+			display = undefined;
 		}
 	}
 
@@ -6405,6 +6459,10 @@ function defaultPrefilter( elem, props, opts ) {
 				}
 			}
 		}
+
+	// If this is a noop like .hide().hide(), restore an overwritten display value
+	} else if ( (display === "none" ? defaultDisplay( elem.nodeName ) : display) === "inline" ) {
+		style.display = display;
 	}
 }
 
@@ -7297,6 +7355,16 @@ jQuery.fn.extend({
 
 jQuery.extend({
 	valHooks: {
+		option: {
+			get: function( elem ) {
+				var val = jQuery.find.attr( elem, "value" );
+				return val != null ?
+					val :
+					// Support: IE10-11+
+					// option.text throws exceptions (#14686, #14858)
+					jQuery.trim( jQuery.text( elem ) );
+			}
+		},
 		select: {
 			get: function( elem ) {
 				var value, option,
@@ -7343,7 +7411,7 @@ jQuery.extend({
 
 				while ( i-- ) {
 					option = options[ i ];
-					if ( (option.selected = jQuery.inArray( jQuery(option).val(), values ) >= 0) ) {
+					if ( (option.selected = jQuery.inArray( option.value, values ) >= 0) ) {
 						optionSet = true;
 					}
 				}
@@ -8550,10 +8618,15 @@ jQuery.ajaxTransport(function( options ) {
 				// Create the abort callback
 				callback = xhrCallbacks[ id ] = callback("abort");
 
-				// Do send the request
-				// This may raise an exception which is actually
-				// handled in jQuery.ajax (so no try/catch here)
-				xhr.send( options.hasContent && options.data || null );
+				try {
+					// Do send the request (this may raise an exception)
+					xhr.send( options.hasContent && options.data || null );
+				} catch ( e ) {
+					// #14683: Only rethrow if this hasn't been notified as an error yet
+					if ( callback ) {
+						throw e;
+					}
+				}
 			},
 
 			abort: function() {
@@ -8760,7 +8833,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		off = url.indexOf(" ");
 
 	if ( off >= 0 ) {
-		selector = url.slice( off );
+		selector = jQuery.trim( url.slice( off ) );
 		url = url.slice( 0, off );
 	}
 
@@ -9068,6 +9141,12 @@ jQuery.fn.andSelf = jQuery.fn.addBack;
 // derived from file names, and jQuery is normally delivered in a lowercase
 // file name. Do this after creating the global so that if an AMD module wants
 // to call noConflict to hide this version of jQuery, it will work.
+
+// Note that for maximum portability, libraries that are not jQuery should
+// declare themselves as anonymous modules, and avoid setting a global if an
+// AMD loader is present. jQuery is a special case. For more information, see
+// https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
+
 if ( typeof define === "function" && define.amd ) {
 	define( "jquery", [], function() {
 		return jQuery;
@@ -9107,6 +9186,208 @@ if ( typeof noGlobal === strundefined ) {
 
 
 return jQuery;
+
+}));
+
+/*! Copyright (c) 2013 Brandon Aaron (http://brandon.aaron.sh)
+ * Licensed under the MIT License (LICENSE.txt).
+ *
+ * Version: 3.1.9
+ *
+ * Requires: jQuery 1.2.2+
+ */
+
+(function (factory) {
+    if ( typeof define === 'function' && define.amd ) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node/CommonJS style for Browserify
+        module.exports = factory;
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
+
+    var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
+        toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
+                    ['wheel'] : ['mousewheel', 'DomMouseScroll', 'MozMousePixelScroll'],
+        slice  = Array.prototype.slice,
+        nullLowestDeltaTimeout, lowestDelta;
+
+    if ( $.event.fixHooks ) {
+        for ( var i = toFix.length; i; ) {
+            $.event.fixHooks[ toFix[--i] ] = $.event.mouseHooks;
+        }
+    }
+
+    var special = $.event.special.mousewheel = {
+        version: '3.1.9',
+
+        setup: function() {
+            if ( this.addEventListener ) {
+                for ( var i = toBind.length; i; ) {
+                    this.addEventListener( toBind[--i], handler, false );
+                }
+            } else {
+                this.onmousewheel = handler;
+            }
+            // Store the line height and page height for this particular element
+            $.data(this, 'mousewheel-line-height', special.getLineHeight(this));
+            $.data(this, 'mousewheel-page-height', special.getPageHeight(this));
+        },
+
+        teardown: function() {
+            if ( this.removeEventListener ) {
+                for ( var i = toBind.length; i; ) {
+                    this.removeEventListener( toBind[--i], handler, false );
+                }
+            } else {
+                this.onmousewheel = null;
+            }
+        },
+
+        getLineHeight: function(elem) {
+            return parseInt($(elem)['offsetParent' in $.fn ? 'offsetParent' : 'parent']().css('fontSize'), 10);
+        },
+
+        getPageHeight: function(elem) {
+            return $(elem).height();
+        },
+
+        settings: {
+            adjustOldDeltas: true
+        }
+    };
+
+    $.fn.extend({
+        mousewheel: function(fn) {
+            return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
+        },
+
+        unmousewheel: function(fn) {
+            return this.unbind('mousewheel', fn);
+        }
+    });
+
+
+    function handler(event) {
+        var orgEvent   = event || window.event,
+            args       = slice.call(arguments, 1),
+            delta      = 0,
+            deltaX     = 0,
+            deltaY     = 0,
+            absDelta   = 0;
+        event = $.event.fix(orgEvent);
+        event.type = 'mousewheel';
+
+        // Old school scrollwheel delta
+        if ( 'detail'      in orgEvent ) { deltaY = orgEvent.detail * -1;      }
+        if ( 'wheelDelta'  in orgEvent ) { deltaY = orgEvent.wheelDelta;       }
+        if ( 'wheelDeltaY' in orgEvent ) { deltaY = orgEvent.wheelDeltaY;      }
+        if ( 'wheelDeltaX' in orgEvent ) { deltaX = orgEvent.wheelDeltaX * -1; }
+
+        // Firefox < 17 horizontal scrolling related to DOMMouseScroll event
+        if ( 'axis' in orgEvent && orgEvent.axis === orgEvent.HORIZONTAL_AXIS ) {
+            deltaX = deltaY * -1;
+            deltaY = 0;
+        }
+
+        // Set delta to be deltaY or deltaX if deltaY is 0 for backwards compatabilitiy
+        delta = deltaY === 0 ? deltaX : deltaY;
+
+        // New school wheel delta (wheel event)
+        if ( 'deltaY' in orgEvent ) {
+            deltaY = orgEvent.deltaY * -1;
+            delta  = deltaY;
+        }
+        if ( 'deltaX' in orgEvent ) {
+            deltaX = orgEvent.deltaX;
+            if ( deltaY === 0 ) { delta  = deltaX * -1; }
+        }
+
+        // No change actually happened, no reason to go any further
+        if ( deltaY === 0 && deltaX === 0 ) { return; }
+
+        // Need to convert lines and pages to pixels if we aren't already in pixels
+        // There are three delta modes:
+        //   * deltaMode 0 is by pixels, nothing to do
+        //   * deltaMode 1 is by lines
+        //   * deltaMode 2 is by pages
+        if ( orgEvent.deltaMode === 1 ) {
+            var lineHeight = $.data(this, 'mousewheel-line-height');
+            delta  *= lineHeight;
+            deltaY *= lineHeight;
+            deltaX *= lineHeight;
+        } else if ( orgEvent.deltaMode === 2 ) {
+            var pageHeight = $.data(this, 'mousewheel-page-height');
+            delta  *= pageHeight;
+            deltaY *= pageHeight;
+            deltaX *= pageHeight;
+        }
+
+        // Store lowest absolute delta to normalize the delta values
+        absDelta = Math.max( Math.abs(deltaY), Math.abs(deltaX) );
+
+        if ( !lowestDelta || absDelta < lowestDelta ) {
+            lowestDelta = absDelta;
+
+            // Adjust older deltas if necessary
+            if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
+                lowestDelta /= 40;
+            }
+        }
+
+        // Adjust older deltas if necessary
+        if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
+            // Divide all the things by 40!
+            delta  /= 40;
+            deltaX /= 40;
+            deltaY /= 40;
+        }
+
+        // Get a whole, normalized value for the deltas
+        delta  = Math[ delta  >= 1 ? 'floor' : 'ceil' ](delta  / lowestDelta);
+        deltaX = Math[ deltaX >= 1 ? 'floor' : 'ceil' ](deltaX / lowestDelta);
+        deltaY = Math[ deltaY >= 1 ? 'floor' : 'ceil' ](deltaY / lowestDelta);
+
+        // Add information to the event object
+        event.deltaX = deltaX;
+        event.deltaY = deltaY;
+        event.deltaFactor = lowestDelta;
+        // Go ahead and set deltaMode to 0 since we converted to pixels
+        // Although this is a little odd since we overwrite the deltaX/Y
+        // properties with normalized deltas.
+        event.deltaMode = 0;
+
+        // Add event and delta to the front of the arguments
+        args.unshift(event, delta, deltaX, deltaY);
+
+        // Clearout lowestDelta after sometime to better
+        // handle multiple device types that give different
+        // a different lowestDelta
+        // Ex: trackpad = 3 and mouse wheel = 120
+        if (nullLowestDeltaTimeout) { clearTimeout(nullLowestDeltaTimeout); }
+        nullLowestDeltaTimeout = setTimeout(nullLowestDelta, 200);
+
+        return ($.event.dispatch || $.event.handle).apply(this, args);
+    }
+
+    function nullLowestDelta() {
+        lowestDelta = null;
+    }
+
+    function shouldAdjustOldDeltas(orgEvent, absDelta) {
+        // If this is an older event and the delta is divisable by 120,
+        // then we are assuming that the browser is treating this as an
+        // older mouse wheel event and that we should divide the deltas
+        // by 40 to try and get a more usable deltaFactor.
+        // Side note, this actually impacts the reported scroll distance
+        // in older browsers and can cause scrolling to be slower than native.
+        // Turn this off by setting $.event.special.mousewheel.settings.adjustOldDeltas to false.
+        return special.settings.adjustOldDeltas && orgEvent.type === 'mousewheel' && absDelta % 120 === 0;
+    }
 
 }));
 
@@ -32465,6 +32746,1027 @@ angular.module('ui.select').run(['$templateCache', function ($templateCache) {
 	}
 })();
 
+/* Copyright (c) 2012, 2014 Hyeonje Alex Jun and other contributors
+ * Licensed under the MIT License
+ */
+(function (factory) {
+  'use strict';
+
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    factory(require('jquery'));
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
+  'use strict';
+
+  // The default settings for the plugin
+  var defaultSettings = {
+    wheelSpeed: 10,
+    wheelPropagation: false,
+    minScrollbarLength: null,
+    useBothWheelAxes: false,
+    useKeyboard: true,
+    suppressScrollX: false,
+    suppressScrollY: false,
+    scrollXMarginOffset: 0,
+    scrollYMarginOffset: 0,
+    includePadding: false
+  };
+
+  var getEventClassName = (function () {
+    var incrementingId = 0;
+    return function () {
+      var id = incrementingId;
+      incrementingId += 1;
+      return '.perfect-scrollbar-' + id;
+    };
+  }());
+
+  $.fn.perfectScrollbar = function (suppliedSettings, option) {
+
+    return this.each(function () {
+      // Use the default settings
+      var settings = $.extend(true, {}, defaultSettings),
+          $this = $(this);
+
+      if (typeof suppliedSettings === "object") {
+        // But over-ride any supplied
+        $.extend(true, settings, suppliedSettings);
+      } else {
+        // If no settings were supplied, then the first param must be the option
+        option = suppliedSettings;
+      }
+
+      // Catch options
+
+      if (option === 'update') {
+        if ($this.data('perfect-scrollbar-update')) {
+          $this.data('perfect-scrollbar-update')();
+        }
+        return $this;
+      }
+      else if (option === 'destroy') {
+        if ($this.data('perfect-scrollbar-destroy')) {
+          $this.data('perfect-scrollbar-destroy')();
+        }
+        return $this;
+      }
+
+      if ($this.data('perfect-scrollbar')) {
+        // if there's already perfect-scrollbar
+        return $this.data('perfect-scrollbar');
+      }
+
+
+      // Or generate new perfectScrollbar
+
+      // Set class to the container
+      $this.addClass('ps-container');
+
+      var $scrollbarXRail = $("<div class='ps-scrollbar-x-rail'></div>").appendTo($this),
+          $scrollbarYRail = $("<div class='ps-scrollbar-y-rail'></div>").appendTo($this),
+          $scrollbarX = $("<div class='ps-scrollbar-x'></div>").appendTo($scrollbarXRail),
+          $scrollbarY = $("<div class='ps-scrollbar-y'></div>").appendTo($scrollbarYRail),
+          scrollbarXActive,
+          scrollbarYActive,
+          containerWidth,
+          containerHeight,
+          contentWidth,
+          contentHeight,
+          scrollbarXWidth,
+          scrollbarXLeft,
+          scrollbarXBottom = parseInt($scrollbarXRail.css('bottom'), 10),
+          isScrollbarXUsingBottom = scrollbarXBottom === scrollbarXBottom, // !isNaN
+          scrollbarXTop = isScrollbarXUsingBottom ? null : parseInt($scrollbarXRail.css('top'), 10),
+          scrollbarYHeight,
+          scrollbarYTop,
+          scrollbarYRight = parseInt($scrollbarYRail.css('right'), 10),
+          isScrollbarYUsingRight = scrollbarYRight === scrollbarYRight, // !isNaN
+          scrollbarYLeft = isScrollbarYUsingRight ? null: parseInt($scrollbarYRail.css('left'), 10),
+          isRtl = $this.css('direction') === "rtl",
+          eventClassName = getEventClassName();
+
+      var updateContentScrollTop = function (currentTop, deltaY) {
+        var newTop = currentTop + deltaY,
+            maxTop = containerHeight - scrollbarYHeight;
+
+        if (newTop < 0) {
+          scrollbarYTop = 0;
+        }
+        else if (newTop > maxTop) {
+          scrollbarYTop = maxTop;
+        }
+        else {
+          scrollbarYTop = newTop;
+        }
+
+        var scrollTop = parseInt(scrollbarYTop * (contentHeight - containerHeight) / (containerHeight - scrollbarYHeight), 10);
+        $this.scrollTop(scrollTop);
+
+        if (isScrollbarXUsingBottom) {
+          $scrollbarXRail.css({bottom: scrollbarXBottom - scrollTop});
+        } else {
+          $scrollbarXRail.css({top: scrollbarXTop + scrollTop});
+        }
+      };
+
+      var updateContentScrollLeft = function (currentLeft, deltaX) {
+        var newLeft = currentLeft + deltaX,
+            maxLeft = containerWidth - scrollbarXWidth;
+
+        if (newLeft < 0) {
+          scrollbarXLeft = 0;
+        }
+        else if (newLeft > maxLeft) {
+          scrollbarXLeft = maxLeft;
+        }
+        else {
+          scrollbarXLeft = newLeft;
+        }
+
+        var scrollLeft = parseInt(scrollbarXLeft * (contentWidth - containerWidth) / (containerWidth - scrollbarXWidth), 10);
+        $this.scrollLeft(scrollLeft);
+
+        if (isScrollbarYUsingRight) {
+          $scrollbarYRail.css({right: scrollbarYRight - scrollLeft});
+        } else {
+          $scrollbarYRail.css({left: scrollbarYLeft + scrollLeft});
+        }
+      };
+
+      var getSettingsAdjustedThumbSize = function (thumbSize) {
+        if (settings.minScrollbarLength) {
+          thumbSize = Math.max(thumbSize, settings.minScrollbarLength);
+        }
+        return thumbSize;
+      };
+
+      var updateScrollbarCss = function () {
+        var scrollbarXStyles = {width: containerWidth, display: scrollbarXActive ? "inherit": "none"};
+        if (isRtl) {
+          scrollbarXStyles.left = $this.scrollLeft() + containerWidth - contentWidth;
+        } else {
+          scrollbarXStyles.left = $this.scrollLeft();
+        }
+        if (isScrollbarXUsingBottom) {
+          scrollbarXStyles.bottom = scrollbarXBottom - $this.scrollTop();
+        } else {
+          scrollbarXStyles.top = scrollbarXTop + $this.scrollTop();
+        }
+        $scrollbarXRail.css(scrollbarXStyles);
+
+        var scrollbarYStyles = {top: $this.scrollTop(), height: containerHeight, display: scrollbarYActive ? "inherit": "none"};
+
+        if (isScrollbarYUsingRight) {
+          if (isRtl) {
+            scrollbarYStyles.right = contentWidth - $this.scrollLeft() - scrollbarYRight - $scrollbarY.outerWidth();
+          } else {
+            scrollbarYStyles.right = scrollbarYRight - $this.scrollLeft();
+          }
+        } else {
+          if (isRtl) {
+            scrollbarYStyles.left = $this.scrollLeft() + containerWidth * 2 - contentWidth - scrollbarYLeft - $scrollbarY.outerWidth();
+          } else {
+            scrollbarYStyles.left = scrollbarYLeft + $this.scrollLeft();
+          }
+        }
+        $scrollbarYRail.css(scrollbarYStyles);
+
+        $scrollbarX.css({left: scrollbarXLeft, width: scrollbarXWidth});
+        $scrollbarY.css({top: scrollbarYTop, height: scrollbarYHeight});
+      };
+
+      var updateBarSizeAndPosition = function () {
+        containerWidth = settings.includePadding ? $this.innerWidth() : $this.width();
+        containerHeight = settings.includePadding ? $this.innerHeight() : $this.height();
+        contentWidth = $this.prop('scrollWidth');
+        contentHeight = $this.prop('scrollHeight');
+
+        if (!settings.suppressScrollX && containerWidth + settings.scrollXMarginOffset < contentWidth) {
+          scrollbarXActive = true;
+          scrollbarXWidth = getSettingsAdjustedThumbSize(parseInt(containerWidth * containerWidth / contentWidth, 10));
+          scrollbarXLeft = parseInt($this.scrollLeft() * (containerWidth - scrollbarXWidth) / (contentWidth - containerWidth), 10);
+        }
+        else {
+          scrollbarXActive = false;
+          scrollbarXWidth = 0;
+          scrollbarXLeft = 0;
+          $this.scrollLeft(0);
+        }
+
+        if (!settings.suppressScrollY && containerHeight + settings.scrollYMarginOffset < contentHeight) {
+          scrollbarYActive = true;
+          scrollbarYHeight = getSettingsAdjustedThumbSize(parseInt(containerHeight * containerHeight / contentHeight, 10));
+          scrollbarYTop = parseInt($this.scrollTop() * (containerHeight - scrollbarYHeight) / (contentHeight - containerHeight), 10);
+        }
+        else {
+          scrollbarYActive = false;
+          scrollbarYHeight = 0;
+          scrollbarYTop = 0;
+          $this.scrollTop(0);
+        }
+
+        if (scrollbarYTop >= containerHeight - scrollbarYHeight) {
+          scrollbarYTop = containerHeight - scrollbarYHeight;
+        }
+        if (scrollbarXLeft >= containerWidth - scrollbarXWidth) {
+          scrollbarXLeft = containerWidth - scrollbarXWidth;
+        }
+
+        updateScrollbarCss();
+      };
+
+      var bindMouseScrollXHandler = function () {
+        var currentLeft,
+            currentPageX;
+
+        $scrollbarX.bind('mousedown' + eventClassName, function (e) {
+          currentPageX = e.pageX;
+          currentLeft = $scrollbarX.position().left;
+          $scrollbarXRail.addClass('in-scrolling');
+          e.stopPropagation();
+          e.preventDefault();
+        });
+
+        $(document).bind('mousemove' + eventClassName, function (e) {
+          if ($scrollbarXRail.hasClass('in-scrolling')) {
+            updateContentScrollLeft(currentLeft, e.pageX - currentPageX);
+            e.stopPropagation();
+            e.preventDefault();
+          }
+        });
+
+        $(document).bind('mouseup' + eventClassName, function (e) {
+          if ($scrollbarXRail.hasClass('in-scrolling')) {
+            $scrollbarXRail.removeClass('in-scrolling');
+          }
+        });
+
+        currentLeft =
+        currentPageX = null;
+      };
+
+      var bindMouseScrollYHandler = function () {
+        var currentTop,
+            currentPageY;
+
+        $scrollbarY.bind('mousedown' + eventClassName, function (e) {
+          currentPageY = e.pageY;
+          currentTop = $scrollbarY.position().top;
+          $scrollbarYRail.addClass('in-scrolling');
+          e.stopPropagation();
+          e.preventDefault();
+        });
+
+        $(document).bind('mousemove' + eventClassName, function (e) {
+          if ($scrollbarYRail.hasClass('in-scrolling')) {
+            updateContentScrollTop(currentTop, e.pageY - currentPageY);
+            e.stopPropagation();
+            e.preventDefault();
+          }
+        });
+
+        $(document).bind('mouseup' + eventClassName, function (e) {
+          if ($scrollbarYRail.hasClass('in-scrolling')) {
+            $scrollbarYRail.removeClass('in-scrolling');
+          }
+        });
+
+        currentTop =
+        currentPageY = null;
+      };
+
+      // check if the default scrolling should be prevented.
+      var shouldPreventDefault = function (deltaX, deltaY) {
+        var scrollTop = $this.scrollTop();
+        if (deltaX === 0) {
+          if (!scrollbarYActive) {
+            return false;
+          }
+          if ((scrollTop === 0 && deltaY > 0) || (scrollTop >= contentHeight - containerHeight && deltaY < 0)) {
+            return !settings.wheelPropagation;
+          }
+        }
+
+        var scrollLeft = $this.scrollLeft();
+        if (deltaY === 0) {
+          if (!scrollbarXActive) {
+            return false;
+          }
+          if ((scrollLeft === 0 && deltaX < 0) || (scrollLeft >= contentWidth - containerWidth && deltaX > 0)) {
+            return !settings.wheelPropagation;
+          }
+        }
+        return true;
+      };
+
+      // bind handlers
+      var bindMouseWheelHandler = function () {
+        // FIXME: Backward compatibility.
+        // After e.deltaFactor applied, wheelSpeed should have smaller value.
+        // Currently, there's no way to change the settings after the scrollbar initialized.
+        // But if the way is implemented in the future, wheelSpeed should be reset.
+        settings.wheelSpeed /= 10;
+
+        var shouldPrevent = false;
+        $this.bind('mousewheel' + eventClassName, function (e, deprecatedDelta, deprecatedDeltaX, deprecatedDeltaY) {
+          var deltaX = e.deltaX * e.deltaFactor || deprecatedDeltaX,
+              deltaY = e.deltaY * e.deltaFactor || deprecatedDeltaY;
+
+          shouldPrevent = false;
+          if (!settings.useBothWheelAxes) {
+            // deltaX will only be used for horizontal scrolling and deltaY will
+            // only be used for vertical scrolling - this is the default
+            $this.scrollTop($this.scrollTop() - (deltaY * settings.wheelSpeed));
+            $this.scrollLeft($this.scrollLeft() + (deltaX * settings.wheelSpeed));
+          } else if (scrollbarYActive && !scrollbarXActive) {
+            // only vertical scrollbar is active and useBothWheelAxes option is
+            // active, so let's scroll vertical bar using both mouse wheel axes
+            if (deltaY) {
+              $this.scrollTop($this.scrollTop() - (deltaY * settings.wheelSpeed));
+            } else {
+              $this.scrollTop($this.scrollTop() + (deltaX * settings.wheelSpeed));
+            }
+            shouldPrevent = true;
+          } else if (scrollbarXActive && !scrollbarYActive) {
+            // useBothWheelAxes and only horizontal bar is active, so use both
+            // wheel axes for horizontal bar
+            if (deltaX) {
+              $this.scrollLeft($this.scrollLeft() + (deltaX * settings.wheelSpeed));
+            } else {
+              $this.scrollLeft($this.scrollLeft() - (deltaY * settings.wheelSpeed));
+            }
+            shouldPrevent = true;
+          }
+
+          // update bar position
+          updateBarSizeAndPosition();
+
+          shouldPrevent = (shouldPrevent || shouldPreventDefault(deltaX, deltaY));
+          if (shouldPrevent) {
+            e.stopPropagation();
+            e.preventDefault();
+          }
+        });
+
+        // fix Firefox scroll problem
+        $this.bind('MozMousePixelScroll' + eventClassName, function (e) {
+          if (shouldPrevent) {
+            e.preventDefault();
+          }
+        });
+      };
+
+      var bindKeyboardHandler = function () {
+        var hovered = false;
+        $this.bind('mouseenter' + eventClassName, function (e) {
+          hovered = true;
+        });
+        $this.bind('mouseleave' + eventClassName, function (e) {
+          hovered = false;
+        });
+
+        var shouldPrevent = false;
+        $(document).bind('keydown' + eventClassName, function (e) {
+          if (!hovered || $(document.activeElement).is(":input,[contenteditable]")) {
+            return;
+          }
+
+          var deltaX = 0,
+              deltaY = 0;
+
+          switch (e.which) {
+          case 37: // left
+            deltaX = -30;
+            break;
+          case 38: // up
+            deltaY = 30;
+            break;
+          case 39: // right
+            deltaX = 30;
+            break;
+          case 40: // down
+            deltaY = -30;
+            break;
+          case 33: // page up
+            deltaY = 90;
+            break;
+          case 32: // space bar
+          case 34: // page down
+            deltaY = -90;
+            break;
+          case 35: // end
+            deltaY = -containerHeight;
+            break;
+          case 36: // home
+            deltaY = containerHeight;
+            break;
+          default:
+            return;
+          }
+
+          $this.scrollTop($this.scrollTop() - deltaY);
+          $this.scrollLeft($this.scrollLeft() + deltaX);
+
+          shouldPrevent = shouldPreventDefault(deltaX, deltaY);
+          if (shouldPrevent) {
+            e.preventDefault();
+          }
+        });
+      };
+
+      var bindRailClickHandler = function () {
+        var stopPropagation = function (e) { e.stopPropagation(); };
+
+        $scrollbarY.bind('click' + eventClassName, stopPropagation);
+        $scrollbarYRail.bind('click' + eventClassName, function (e) {
+          var halfOfScrollbarLength = parseInt(scrollbarYHeight / 2, 10),
+              positionTop = e.pageY - $scrollbarYRail.offset().top - halfOfScrollbarLength,
+              maxPositionTop = containerHeight - scrollbarYHeight,
+              positionRatio = positionTop / maxPositionTop;
+
+          if (positionRatio < 0) {
+            positionRatio = 0;
+          } else if (positionRatio > 1) {
+            positionRatio = 1;
+          }
+
+          $this.scrollTop((contentHeight - containerHeight) * positionRatio);
+        });
+
+        $scrollbarX.bind('click' + eventClassName, stopPropagation);
+        $scrollbarXRail.bind('click' + eventClassName, function (e) {
+          var halfOfScrollbarLength = parseInt(scrollbarXWidth / 2, 10),
+              positionLeft = e.pageX - $scrollbarXRail.offset().left - halfOfScrollbarLength,
+              maxPositionLeft = containerWidth - scrollbarXWidth,
+              positionRatio = positionLeft / maxPositionLeft;
+
+          if (positionRatio < 0) {
+            positionRatio = 0;
+          } else if (positionRatio > 1) {
+            positionRatio = 1;
+          }
+
+          $this.scrollLeft((contentWidth - containerWidth) * positionRatio);
+        });
+      };
+
+      // bind mobile touch handler
+      var bindMobileTouchHandler = function () {
+        var applyTouchMove = function (differenceX, differenceY) {
+          $this.scrollTop($this.scrollTop() - differenceY);
+          $this.scrollLeft($this.scrollLeft() - differenceX);
+
+          // update bar position
+          updateBarSizeAndPosition();
+        };
+
+        var startCoords = {},
+            startTime = 0,
+            speed = {},
+            breakingProcess = null,
+            inGlobalTouch = false;
+
+        $(window).bind("touchstart" + eventClassName, function (e) {
+          inGlobalTouch = true;
+        });
+        $(window).bind("touchend" + eventClassName, function (e) {
+          inGlobalTouch = false;
+        });
+
+        $this.bind("touchstart" + eventClassName, function (e) {
+          var touch = e.originalEvent.targetTouches[0];
+
+          startCoords.pageX = touch.pageX;
+          startCoords.pageY = touch.pageY;
+
+          startTime = (new Date()).getTime();
+
+          if (breakingProcess !== null) {
+            clearInterval(breakingProcess);
+          }
+
+          e.stopPropagation();
+        });
+        $this.bind("touchmove" + eventClassName, function (e) {
+          if (!inGlobalTouch && e.originalEvent.targetTouches.length === 1) {
+            var touch = e.originalEvent.targetTouches[0];
+
+            var currentCoords = {};
+            currentCoords.pageX = touch.pageX;
+            currentCoords.pageY = touch.pageY;
+
+            var differenceX = currentCoords.pageX - startCoords.pageX,
+              differenceY = currentCoords.pageY - startCoords.pageY;
+
+            applyTouchMove(differenceX, differenceY);
+            startCoords = currentCoords;
+
+            var currentTime = (new Date()).getTime();
+
+            var timeGap = currentTime - startTime;
+            if (timeGap > 0) {
+              speed.x = differenceX / timeGap;
+              speed.y = differenceY / timeGap;
+              startTime = currentTime;
+            }
+
+            e.preventDefault();
+          }
+        });
+        $this.bind("touchend" + eventClassName, function (e) {
+          clearInterval(breakingProcess);
+          breakingProcess = setInterval(function () {
+            if (Math.abs(speed.x) < 0.01 && Math.abs(speed.y) < 0.01) {
+              clearInterval(breakingProcess);
+              return;
+            }
+
+            applyTouchMove(speed.x * 30, speed.y * 30);
+
+            speed.x *= 0.8;
+            speed.y *= 0.8;
+          }, 10);
+        });
+      };
+
+      var bindScrollHandler = function () {
+        $this.bind('scroll' + eventClassName, function (e) {
+          updateBarSizeAndPosition();
+        });
+      };
+
+      var destroy = function () {
+        $this.unbind(eventClassName);
+        $(window).unbind(eventClassName);
+        $(document).unbind(eventClassName);
+        $this.data('perfect-scrollbar', null);
+        $this.data('perfect-scrollbar-update', null);
+        $this.data('perfect-scrollbar-destroy', null);
+        $scrollbarX.remove();
+        $scrollbarY.remove();
+        $scrollbarXRail.remove();
+        $scrollbarYRail.remove();
+
+        // clean all variables
+        $scrollbarXRail =
+        $scrollbarYRail =
+        $scrollbarX =
+        $scrollbarY =
+        scrollbarXActive =
+        scrollbarYActive =
+        containerWidth =
+        containerHeight =
+        contentWidth =
+        contentHeight =
+        scrollbarXWidth =
+        scrollbarXLeft =
+        scrollbarXBottom =
+        isScrollbarXUsingBottom =
+        scrollbarXTop =
+        scrollbarYHeight =
+        scrollbarYTop =
+        scrollbarYRight =
+        isScrollbarYUsingRight =
+        scrollbarYLeft =
+        isRtl =
+        eventClassName = null;
+      };
+
+      var ieSupport = function (version) {
+        $this.addClass('ie').addClass('ie' + version);
+
+        var bindHoverHandlers = function () {
+          var mouseenter = function () {
+            $(this).addClass('hover');
+          };
+          var mouseleave = function () {
+            $(this).removeClass('hover');
+          };
+          $this.bind('mouseenter' + eventClassName, mouseenter).bind('mouseleave' + eventClassName, mouseleave);
+          $scrollbarXRail.bind('mouseenter' + eventClassName, mouseenter).bind('mouseleave' + eventClassName, mouseleave);
+          $scrollbarYRail.bind('mouseenter' + eventClassName, mouseenter).bind('mouseleave' + eventClassName, mouseleave);
+          $scrollbarX.bind('mouseenter' + eventClassName, mouseenter).bind('mouseleave' + eventClassName, mouseleave);
+          $scrollbarY.bind('mouseenter' + eventClassName, mouseenter).bind('mouseleave' + eventClassName, mouseleave);
+        };
+
+        var fixIe6ScrollbarPosition = function () {
+          updateScrollbarCss = function () {
+            var scrollbarXStyles = {left: scrollbarXLeft + $this.scrollLeft(), width: scrollbarXWidth};
+            if (isScrollbarXUsingBottom) {
+              scrollbarXStyles.bottom = scrollbarXBottom;
+            } else {
+              scrollbarXStyles.top = scrollbarXTop;
+            }
+            $scrollbarX.css(scrollbarXStyles);
+
+            var scrollbarYStyles = {top: scrollbarYTop + $this.scrollTop(), height: scrollbarYHeight};
+            if (isScrollbarYUsingRight) {
+              scrollbarYStyles.right = scrollbarYRight;
+            } else {
+              scrollbarYStyles.left = scrollbarYLeft;
+            }
+
+            $scrollbarY.css(scrollbarYStyles);
+            $scrollbarX.hide().show();
+            $scrollbarY.hide().show();
+          };
+        };
+
+        if (version === 6) {
+          bindHoverHandlers();
+          fixIe6ScrollbarPosition();
+        }
+      };
+
+      var supportsTouch = (('ontouchstart' in window) || window.DocumentTouch && document instanceof window.DocumentTouch);
+
+      var initialize = function () {
+        var ieMatch = navigator.userAgent.toLowerCase().match(/(msie) ([\w.]+)/);
+        if (ieMatch && ieMatch[1] === 'msie') {
+          // must be executed at first, because 'ieSupport' may addClass to the container
+          ieSupport(parseInt(ieMatch[2], 10));
+        }
+
+        updateBarSizeAndPosition();
+        bindScrollHandler();
+        bindMouseScrollXHandler();
+        bindMouseScrollYHandler();
+        bindRailClickHandler();
+        if (supportsTouch) {
+          bindMobileTouchHandler();
+        }
+        if ($this.mousewheel) {
+          bindMouseWheelHandler();
+        }
+        if (settings.useKeyboard) {
+          bindKeyboardHandler();
+        }
+        $this.data('perfect-scrollbar', $this);
+        $this.data('perfect-scrollbar-update', updateBarSizeAndPosition);
+        $this.data('perfect-scrollbar-destroy', destroy);
+      };
+
+      // initialize
+      initialize();
+
+      return $this;
+    });
+  };
+}));
+
+/* Copyright (c) 2012 HyeonJe Jun (http://github.com/noraesae)
+ * Licensed under the MIT License
+ */
+((function ($) {
+
+  // The default settings for the plugin
+  var defaultSettings = {
+    wheelSpeed: 10,
+    wheelPropagation: false
+  };
+
+  $.fn.perfectScrollbar = function (suppliedSettings, option) {
+
+    return this.each(function() {
+      // Use the default settings
+      var settings = $.extend(true, {}, defaultSettings);
+      if (typeof suppliedSettings === "object") {
+        // But over-ride any supplied
+        $.extend(true, settings, suppliedSettings);
+      } else {
+        // If no settings were supplied, then the first param must be the option
+        option = suppliedSettings;
+      }
+
+      if (option === 'update') {
+        if ($(this).data('perfect-scrollbar-update')) {
+          $(this).data('perfect-scrollbar-update')();
+        }
+        return $(this);
+      }
+      else if (option === 'destroy') {
+        if ($(this).data('perfect-scrollbar-destroy')) {
+          $(this).data('perfect-scrollbar-destroy')();
+        }
+        return $(this);
+      }
+
+      if ($(this).data('perfect-scrollbar')) {
+        // if there's already perfect-scrollbar
+        return $(this).data('perfect-scrollbar');
+      }
+
+      var $this = $(this).addClass('ps-container'),
+          $content = $(this).children(),
+          $scrollbarX = $("<div class='ps-scrollbar-x'></div>").appendTo($this),
+          $scrollbarY = $("<div class='ps-scrollbar-y'></div>").appendTo($this),
+          containerWidth,
+          containerHeight,
+          contentWidth,
+          contentHeight,
+          scrollbarXWidth,
+          scrollbarXLeft,
+          scrollbarXBottom = parseInt($scrollbarX.css('bottom'), 10),
+          scrollbarYHeight,
+          scrollbarYTop,
+          scrollbarYRight = parseInt($scrollbarY.css('right'), 10);
+
+      var updateContentScrollTop = function () {
+        var scrollTop = parseInt(scrollbarYTop * contentHeight / containerHeight, 10);
+        $this.scrollTop(scrollTop);
+        $scrollbarX.css({bottom: scrollbarXBottom - scrollTop});
+      };
+
+      var updateContentScrollLeft = function () {
+        var scrollLeft = parseInt(scrollbarXLeft * contentWidth / containerWidth, 10);
+        $this.scrollLeft(scrollLeft);
+        $scrollbarY.css({right: scrollbarYRight - scrollLeft});
+      };
+
+      var updateBarSizeAndPosition = function () {
+        containerWidth = $this.width();
+        containerHeight = $this.height();
+        contentWidth = $content.outerWidth(false);
+        contentHeight = $content.outerHeight(false);
+        if (containerWidth < contentWidth) {
+          scrollbarXWidth = parseInt(containerWidth * containerWidth / contentWidth, 10);
+          scrollbarXLeft = parseInt($this.scrollLeft() * containerWidth / contentWidth, 10);
+        }
+        else {
+          scrollbarXWidth = 0;
+          scrollbarXLeft = 0;
+          $this.scrollLeft(0);
+        }
+        if (containerHeight < contentHeight) {
+          scrollbarYHeight = parseInt(containerHeight * containerHeight / contentHeight, 10);
+          scrollbarYTop = parseInt($this.scrollTop() * containerHeight / contentHeight, 10);
+        }
+        else {
+          scrollbarYHeight = 0;
+          scrollbarYTop = 0;
+          $this.scrollTop(0);
+        }
+
+        if (scrollbarYTop >= containerHeight - scrollbarYHeight) {
+          scrollbarYTop = containerHeight - scrollbarYHeight;
+        }
+        if (scrollbarXLeft >= containerWidth - scrollbarXWidth) {
+          scrollbarXLeft = containerWidth - scrollbarXWidth;
+        }
+
+        $scrollbarX.css({left: scrollbarXLeft + $this.scrollLeft(), bottom: scrollbarXBottom - $this.scrollTop(), width: scrollbarXWidth});
+        $scrollbarY.css({top: scrollbarYTop + $this.scrollTop(), right: scrollbarYRight - $this.scrollLeft(), height: scrollbarYHeight});
+      };
+
+      var moveBarX = function (currentLeft, deltaX) {
+        var newLeft = currentLeft + deltaX,
+            maxLeft = containerWidth - scrollbarXWidth;
+
+        if (newLeft < 0) {
+          scrollbarXLeft = 0;
+        }
+        else if (newLeft > maxLeft) {
+          scrollbarXLeft = maxLeft;
+        }
+        else {
+          scrollbarXLeft = newLeft;
+        }
+        $scrollbarX.css({left: scrollbarXLeft + $this.scrollLeft()});
+      };
+
+      var moveBarY = function (currentTop, deltaY) {
+        var newTop = currentTop + deltaY,
+            maxTop = containerHeight - scrollbarYHeight;
+
+        if (newTop < 0) {
+          scrollbarYTop = 0;
+        }
+        else if (newTop > maxTop) {
+          scrollbarYTop = maxTop;
+        }
+        else {
+          scrollbarYTop = newTop;
+        }
+        $scrollbarY.css({top: scrollbarYTop + $this.scrollTop()});
+      };
+
+      var bindMouseScrollXHandler = function () {
+        var currentLeft,
+            currentPageX;
+
+        $scrollbarX.bind('mousedown.perfect-scroll', function (e) {
+          currentPageX = e.pageX;
+          currentLeft = $scrollbarX.position().left;
+          $scrollbarX.addClass('in-scrolling');
+          e.stopPropagation();
+          e.preventDefault();
+        });
+
+        $(document).bind('mousemove.perfect-scroll', function (e) {
+          if ($scrollbarX.hasClass('in-scrolling')) {
+            updateContentScrollLeft();
+            moveBarX(currentLeft, e.pageX - currentPageX);
+            e.stopPropagation();
+            e.preventDefault();
+          }
+        });
+
+        $(document).bind('mouseup.perfect-scroll', function (e) {
+          if ($scrollbarX.hasClass('in-scrolling')) {
+            $scrollbarX.removeClass('in-scrolling');
+          }
+        });
+      };
+
+      var bindMouseScrollYHandler = function () {
+        var currentTop,
+            currentPageY;
+
+        $scrollbarY.bind('mousedown.perfect-scroll', function (e) {
+          currentPageY = e.pageY;
+          currentTop = $scrollbarY.position().top;
+          $scrollbarY.addClass('in-scrolling');
+          e.stopPropagation();
+          e.preventDefault();
+        });
+
+        $(document).bind('mousemove.perfect-scroll', function (e) {
+          if ($scrollbarY.hasClass('in-scrolling')) {
+             updateContentScrollTop();
+             moveBarY(currentTop, e.pageY - currentPageY);
+            e.stopPropagation();
+            e.preventDefault();
+          }
+        });
+
+        $(document).bind('mouseup.perfect-scroll', function (e) {
+          if ($scrollbarY.hasClass('in-scrolling')) {
+            $scrollbarY.removeClass('in-scrolling');
+          }
+        });
+      };
+
+      // bind handlers
+      var bindMouseWheelHandler = function () {
+        var shouldPreventDefault = function (deltaX, deltaY) {
+          var scrollTop = $this.scrollTop();
+          if (scrollTop === 0 && deltaY > 0 && deltaX === 0) {
+            return !settings.wheelPropagation;
+          }
+          else if (scrollTop >= contentHeight - containerHeight && deltaY < 0 && deltaX === 0) {
+            return !settings.wheelPropagation;
+          }
+
+          var scrollLeft = $this.scrollLeft();
+          if (scrollLeft === 0 && deltaX < 0 && deltaY === 0) {
+            return !settings.wheelPropagation;
+          }
+          else if (scrollLeft >= contentWidth - containerWidth && deltaX > 0 && deltaY === 0) {
+            return !settings.wheelPropagation;
+          }
+          return true;
+        };
+
+        $this.bind('mousewheel.perfect-scroll', function (e, delta, deltaX, deltaY) {
+          $this.scrollTop($this.scrollTop() - (deltaY * settings.wheelSpeed));
+          $this.scrollLeft($this.scrollLeft() + (deltaX * settings.wheelSpeed));
+
+          // update bar position
+          updateBarSizeAndPosition();
+
+          if (shouldPreventDefault(deltaX, deltaY)) {
+            e.preventDefault();
+          }
+        });
+      };
+
+      // bind mobile touch handler
+      var bindMobileTouchHandler = function () {
+        var applyTouchMove = function (differenceX, differenceY) {
+          $this.scrollTop($this.scrollTop() - differenceY);
+          $this.scrollLeft($this.scrollLeft() - differenceX);
+
+          // update bar position
+          updateBarSizeAndPosition();
+        };
+
+        var startCoords = {},
+            startTime = 0,
+            speed = {},
+            breakingProcess = null;
+
+        $this.bind("touchstart.perfect-scroll", function (e) {
+          var touch = e.originalEvent.targetTouches[0];
+
+          startCoords.pageX = touch.pageX;
+          startCoords.pageY = touch.pageY;
+
+          startTime = (new Date()).getTime();
+
+          if (breakingProcess !== null) {
+            clearInterval(breakingProcess);
+          }
+        });
+        $this.bind("touchmove.perfect-scroll", function (e) {
+          var touch = e.originalEvent.targetTouches[0];
+
+          var currentCoords = {};
+          currentCoords.pageX = touch.pageX;
+          currentCoords.pageY = touch.pageY;
+
+          var differenceX = currentCoords.pageX - startCoords.pageX,
+            differenceY = currentCoords.pageY - startCoords.pageY;
+
+          applyTouchMove(differenceX, differenceY);
+          startCoords = currentCoords;
+
+          var currentTime = (new Date()).getTime();
+          speed.x = differenceX / (currentTime - startTime);
+          speed.y = differenceY / (currentTime - startTime);
+          startTime = currentTime;
+
+          e.preventDefault();
+        });
+        $this.bind("touchend.perfect-scroll", function (e) {
+          breakingProcess = setInterval(function () {
+            if (Math.abs(speed.x) < 0.01 && Math.abs(speed.y) < 0.01) {
+              clearInterval(breakingProcess);
+              return;
+            }
+
+            applyTouchMove(speed.x * 30, speed.y * 30);
+
+            speed.x *= 0.8;
+            speed.y *= 0.8;
+          }, 10);
+        });
+      };
+
+      var destroy = function () {
+        $scrollbarX.remove();
+        $scrollbarY.remove();
+        $this.unbind('.perfect-scroll');
+        $(window).unbind('.perfect-scroll');
+        $this.data('perfect-scrollbar', null);
+        $this.data('perfect-scrollbar-update', null);
+        $this.data('perfect-scrollbar-destroy', null);
+      };
+
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+
+      var initialize = function () {
+        updateBarSizeAndPosition();
+        bindMouseScrollXHandler();
+        bindMouseScrollYHandler();
+        if (isMobile) {
+          bindMobileTouchHandler();
+        }
+        if ($this.mousewheel) {
+          bindMouseWheelHandler();
+        }
+        $this.data('perfect-scrollbar', $this);
+        $this.data('perfect-scrollbar-update', updateBarSizeAndPosition);
+        $this.data('perfect-scrollbar-destroy', destroy);
+      };
+
+      // initialize
+      initialize();
+
+      return $this;
+    });
+  };
+})(jQuery));
+
+angular.module('perfect_scrollbar', []).directive('perfectScrollbar', function($parse) {
+	return {
+		restrict: 'E',
+		transclude: true,
+		template:  '<div><div ng-transclude></div></div>',
+		replace: true,
+		link: function($scope, $elem, $attr) {
+		    $elem.perfectScrollbar({
+				wheelSpeed: $parse($attr.wheelSpeed)() || 50,
+				wheelPropagation: $parse($attr.wheelPropagation)() || false,
+				minScrollbarLength: $parse($attr.minScrollbarLength)() || false,
+			});
+
+			if ($attr.refreshOnChange) {
+				$scope.$watchCollection($attr.refreshOnChange, function(newNames, oldNames) {
+					// I'm not crazy about setting timeouts but it sounds like thie is unavoidable per
+					// http://stackoverflow.com/questions/11125078/is-there-a-post-render-callback-for-angular-js-directive
+					setTimeout(function() { $elem.perfectScrollbar('update'); }, 10);
+				});
+			}
+		}
+	}
+});
 /* GLOBAL JS */
 
 
