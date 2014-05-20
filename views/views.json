@@ -360,6 +360,11 @@
 				"nav_header": "Scores"
 			},
 			{
+				"source": "app/views/scrollbar.html",
+				"css_id": "#scrollbar",
+				"nav_header": "Scrollbar"
+			},
+			{
 				"source": "app/views/tabs.html",
 				"css_id": "#tabs",
 				"nav_header": "Tabs"

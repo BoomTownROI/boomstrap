@@ -5,7 +5,8 @@
     'ui.bootstrap',
     'ui.select',
     'angular-chosen',
-    'angularMoment'
+    'angularMoment',
+    'perfect_scrollbar'
   ])
   .value('AUTO_START_TOUR', {
     value: false
