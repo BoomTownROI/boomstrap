@@ -28,8 +28,7 @@
           ],
           styles: [
             '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
-            'docs/css/boomstrap.css',
-            'docs/css/boomstrap-docs.css'
+            'docs/css/boomstrap.css'
           ],
           html5Mode: false,
           animate: false,

@@ -19,7 +19,7 @@
 
   // The default settings for the plugin
   var defaultSettings = {
-    wheelSpeed: 10,
+    wheelSpeed: 0.5,
     wheelPropagation: false,
     minScrollbarLength: null,
     useBothWheelAxes: false,

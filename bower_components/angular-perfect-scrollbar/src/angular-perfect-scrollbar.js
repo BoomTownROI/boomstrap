@@ -6,7 +6,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', function($
 		replace: true,
 		link: function($scope, $elem, $attr) {
 		    $elem.perfectScrollbar({
-				wheelSpeed: $parse($attr.wheelSpeed)() || 50,
+				wheelSpeed: $parse($attr.wheelSpeed)() || 0.5,
 				wheelPropagation: $parse($attr.wheelPropagation)() || false,
 				minScrollbarLength: $parse($attr.minScrollbarLength)() || false,
 			});
