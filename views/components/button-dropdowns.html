@@ -215,6 +215,7 @@
         <li><a href="#"><i class="ficon ficon-email-bad"></i> Invalid</a></li>
       </ul>
     </div>
+    &nbsp;
     <div class="btn-group">
       <button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown">
         <i class="ficon ficon-email-good"></i> <span class="caret"></span>
@@ -226,6 +227,7 @@
         <li><a href="#"><i class="ficon ficon-email-bad"></i> Invalid</a></li>
       </ul>
     </div>
+    &nbsp;
     <div class="btn-group">
       <button type="button" class="btn btn-default btn-icon dropdown-toggle" data-toggle="dropdown">
         <i class="ficon ficon-phone-bad"></i> <span class="caret"></span>
@@ -237,6 +239,7 @@
         <li><a href="#"><i class="ficon ficon-phone-bad"></i> Wrong number</a></li>
       </ul>
     </div>
+    &nbsp;
     <div class="btn-group">
       <button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown">
         <i class="ficon ficon-phone-neutral"></i> <span class="caret"></span>
@@ -248,18 +251,81 @@
         <li><a href="#"><i class="ficon ficon-phone-bad"></i> Wrong number</a></li>
       </ul>
     </div>
+    &nbsp;
   </div><!-- /example -->
-<div class="pl-code"><pre class="prettyprint"><code>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-default btn-icon dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;i class="ficon ficon-email-bad"&gt;&lt;/i&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-good"&gt;&lt;/i&gt; 2-way emailing&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-neutral"&gt;&lt;/i&gt; No replies&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-bad"&gt;&lt;/i&gt; Opt-out&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-bad"&gt;&lt;/i&gt; Invalid&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
 
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;i class="ficon ficon-email-good"&gt;&lt;/i&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-good"&gt;&lt;/i&gt; 2-way emailing&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-neutral"&gt;&lt;/i&gt; No replies&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-bad"&gt;&lt;/i&gt; Opt-out&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-email-bad"&gt;&lt;/i&gt; Invalid&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-default btn-icon dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talking to prospect&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; No conversations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opt-out&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Wrong number&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talking to prospect&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; No conversations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opt-out&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Wrong number&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
 </code></pre></div>
 
   <p>Lead category dropdowns.</p>
   <div class="pl-example">
     <div class="btn-group">
-      <button type="button" class="btn btn-link btn-icon dropdown-toggle" data-toggle="dropdown">
-        <span class="cat cat-archive">archive</span> <span class="caret"></span>
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+        <span class="cat cat-nurture">nurture</span> <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu dropdown-menu-cat" role="menu">
+        <li><a href="#"><span class="cat cat-archive">archive</span></a></li>
+        <li><a href="#"><span class="cat cat-closed">closed</span></a></li>
+        <li><a href="#"><span class="cat cat-hot">hot</span></a></li>
+        <li><a href="#"><span class="cat cat-new">new</span></a></li>
+        <li><a href="#"><span class="cat cat-nurture">nurture</span></a></li>
+        <li><a href="#"><span class="cat cat-pending">pending</span></a></li>
+        <li><a href="#"><span class="cat cat-qualify">qualify</span></a></li>
+        <li><a href="#"><span class="cat cat-trash">trash</span></a></li>
+        <li><a href="#"><span class="cat cat-watch">watch</span></a></li>
+      </ul>
+    </div>
+    &nbsp;&nbsp;
+    <div class="btn-group">
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+        <span class="cat cat-eq-abbr cat-qualify">qual</span> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-cat" role="menu">
         <li><a href="#"><span class="cat cat-archive">archive</span></a></li>
         <li><a href="#"><span class="cat cat-closed">closed</span></a></li>
         <li><a href="#"><span class="cat cat-hot">hot</span></a></li>
@@ -272,8 +338,39 @@
       </ul>
     </div>
   </div><!-- /example -->
-<div class="pl-code"><pre class="prettyprint"><code>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;span class="cat cat-nurture"&gt;nurture&lt;/span&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu dropdown-menu-cat" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-archive"&gt;archive&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-closed"&gt;closed&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-hot"&gt;hot&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-new"&gt;new&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-nurture"&gt;nurture&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-pending"&gt;pending&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-qualify"&gt;qualify&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-trash"&gt;trash&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-watch"&gt;watch&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
 
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;span class="cat cat-eq-abbr cat-qualify"&gt;qual&lt;/span&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu dropdown-menu-cat" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-archive"&gt;archive&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-closed"&gt;closed&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-hot"&gt;hot&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-new"&gt;new&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-nurture"&gt;nurture&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-pending"&gt;pending&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-qualify"&gt;qualify&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-trash"&gt;trash&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="cat cat-watch"&gt;watch&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
 </code></pre></div>
 
   <h3 id="btn-dropdowns-split">Split button dropdowns</h3>
