@@ -2254,22 +2254,29 @@ doctour.init();</code></pre>
             width: 816px;
         }
     </style>
+    <script>
+        (function($) {
+            $(document).ready(function() {
+                $('.perfect-scrollbar').perfectScrollbar({ wheelSpeed: 0.5 });
+            });
+        })(jQuery);
+    </script>
     <div class="page-header">
       <h1>Scrollbar<small>
-            (<a target="_blank" href="https://github.com/itsdrewmiller/angular-perfect-scrollbar">angular-perfect-scrollbar</a>)
+            (<a target="_blank" href="https://github.com/noraesae/perfect-scrollbar">perfect-scrollbar</a>)
         </small></h1>
     </div>
     <p>The image below sits in a <code>&lt;perfect-scrollbar&gt;</code> tag. If the inner content is wider or taller than the <code>perfect-scrollbar</code> container, scrollbars will be triggered.</p>
-    <perfect-scrollbar class="ps-example">
+    <div class="perfect-scrollbar ps-example">
         <img src="http://boomtownroi.com/assets/images/site/bg.gif" alt="">
-    </perfect-scrollbar>
+    </div>
     <h2>Usage</h2>
     <p>Create a <code>perfect-scrollbar</code> container with a class to hook up some CSS.</p>
     <p>HTML</p>
     <pre class="prettyprint">
-&lt;perfect-scrollbar class="awesome-clizzass"&gt;
+&lt;div class="perfect-scrollbar awesome-clizzass"&gt;
     &lt;p&gt;So Snoopy!&lt;/p&gt;
-&lt;/perfect-scrollbar&gt;
+&lt;/div&gt;
     </pre>
     <p>CSS</p>
     <pre class="prettyprint">
@@ -2280,6 +2287,19 @@ doctour.init();</code></pre>
     height: 816px;
 }
     </pre>
+    <p>JavaScript</p>
+    <pre class="prettyprint">
+/* init */
+
+(function($) {
+    $(document).ready(function() {
+        $('.perfect-scrollbar').perfectScrollbar({ wheelSpeed: 0.5 });
+    });
+})(jQuery);
+
+/* for more options, see the perfect-scrollbar docs */
+    </pre>
+    <p>If your scrollbar container changes size (e.g. after an AJAX call), call <code>$('.perfect-scrollbar').perfectScrollbar('update');</code> to reinitialize the container.</p>
 </section>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
