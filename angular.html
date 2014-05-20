@@ -7,7 +7,6 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="css/boomstrap.css">
-  <link rel="stylesheet" href="css/boomstrap-docs.css">
   <script src="js/boomstrap.min.js"></script>
   <script src="js/boomstrap-angular.min.js"></script>
 
@@ -550,34 +549,37 @@
 </div>
 <section id="scrollbar" class="pl-docs-section">
     <style>
-        .perfect-scrollbar {
-            white-space: pre-line;
+        .ps-example {
             height: 300px;
-            width: 480px;
-            overflow-y: hidden;
-            position: relative;
+            width: 816px;
         }
     </style>
     <div class="page-header">
-      <h1>Scrollbar</h1>
+      <h1>Scrollbar<small>
+            (<a target="_blank" href="https://github.com/itsdrewmiller/angular-perfect-scrollbar">angular-perfect-scrollbar</a>)
+        </small></h1>
     </div>
-    <perfect-scrollbar class="perfect-scrollbar" wheel-propagation="true" wheel-speed="0.5">
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
-        <p>lala</p>
+    <p>The image below sits in a <code>&lt;perfect-scrollbar&gt;</code> tag. If the inner content is wider or taller than the <code>perfect-scrollbar</code> container, scrollbars will be triggered.</p>
+    <perfect-scrollbar class="ps-example">
+        <img src="http://boomtownroi.com/assets/images/site/bg.gif" alt="">
     </perfect-scrollbar>
+    <h2>Usage</h2>
+    <p>Create a <code>perfect-scrollbar</code> container with a class to hook up some CSS.</p>
+    <p>HTML</p>
+    <pre class="prettyprint">
+&lt;perfect-scrollbar class="awesome-clizzass"&gt;
+    &lt;p&gt;So Snoopy!&lt;/p&gt;
+&lt;/perfect-scrollbar&gt;
+    </pre>
+    <p>CSS</p>
+    <pre class="prettyprint">
+/* set a width and height in your CSS */
+
+.awesome-clizzass {
+    width: 300px;
+    height: 816px;
+}
+    </pre>
 </section>
 <section id="tabs">
     <div class="page-header">
