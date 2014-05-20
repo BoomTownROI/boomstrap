@@ -2247,6 +2247,40 @@ doctour.init();</code></pre>
 </div>
 
 
+<section id="scrollbar" class="pl-docs-section">
+    <style>
+        .ps-example {
+            height: 300px;
+            width: 816px;
+        }
+    </style>
+    <div class="page-header">
+      <h1>Scrollbar<small>
+            (<a target="_blank" href="https://github.com/itsdrewmiller/angular-perfect-scrollbar">angular-perfect-scrollbar</a>)
+        </small></h1>
+    </div>
+    <p>The image below sits in a <code>&lt;perfect-scrollbar&gt;</code> tag. If the inner content is wider or taller than the <code>perfect-scrollbar</code> container, scrollbars will be triggered.</p>
+    <perfect-scrollbar class="ps-example">
+        <img src="http://boomtownroi.com/assets/images/site/bg.gif" alt="">
+    </perfect-scrollbar>
+    <h2>Usage</h2>
+    <p>Create a <code>perfect-scrollbar</code> container with a class to hook up some CSS.</p>
+    <p>HTML</p>
+    <pre class="prettyprint">
+&lt;perfect-scrollbar class="awesome-clizzass"&gt;
+    &lt;p&gt;So Snoopy!&lt;/p&gt;
+&lt;/perfect-scrollbar&gt;
+    </pre>
+    <p>CSS</p>
+    <pre class="prettyprint">
+/* set a width and height in your CSS */
+
+.awesome-clizzass {
+    width: 300px;
+    height: 816px;
+}
+    </pre>
+</section>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
@@ -2293,6 +2327,9 @@ doctour.init();</code></pre>
                 </li>
                 <li>
                     <a href="#select">select</a>
+                </li>
+                <li>
+                    <a href="#scrollbar">scrollbar</a>
                 </li>
             </ul>
             <a href="#top">back to top</a>
