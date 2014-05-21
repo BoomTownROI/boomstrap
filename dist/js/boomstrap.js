@@ -32767,7 +32767,7 @@ angular.module('ui.select').run(['$templateCache', function ($templateCache) {
 
   // The default settings for the plugin
   var defaultSettings = {
-    wheelSpeed: 10,
+    wheelSpeed: 0.5,
     wheelPropagation: false,
     minScrollbarLength: null,
     useBothWheelAxes: false,
@@ -33752,7 +33752,7 @@ angular.module('perfect_scrollbar', []).directive('perfectScrollbar', function($
 		replace: true,
 		link: function($scope, $elem, $attr) {
 		    $elem.perfectScrollbar({
-				wheelSpeed: $parse($attr.wheelSpeed)() || 50,
+				wheelSpeed: $parse($attr.wheelSpeed)() || 0.5,
 				wheelPropagation: $parse($attr.wheelPropagation)() || false,
 				minScrollbarLength: $parse($attr.minScrollbarLength)() || false,
 			});

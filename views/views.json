@@ -271,6 +271,11 @@
 				"source": "views/javascript/select.html",
 				"css_id": "#select",
 				"nav_header": "select"
+			},
+			{
+				"source": "views/javascript/scrollbar.html",
+				"css_id": "#scrollbar",
+				"nav_header": "scrollbar"
 			}
 		]
 	},

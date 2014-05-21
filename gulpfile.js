@@ -158,6 +158,7 @@ gulp.task('boomstrapLessDocs', function() {
     'less/boomstrap.less',
     'less/boomstrap-docs.less'
   ])
+  .pipe(concat('boomstrap.less'))
   .pipe(less({ compress: false }))
   .pipe(gulp.dest('docs/css'));
 
@@ -165,10 +166,9 @@ gulp.task('boomstrapLessDocs', function() {
 
 gulp.task('boomstrapLessDist', function() {
   return gulp.src([
-    'less/boomstrap.less',
-    'bower_components/perfect-scrollbar/src/perfect-scrollbar.css',
-    'bower_components/angular-perfect-scrollbar/dependencies/perfect-scrollbar.css',
+    'less/boomstrap.less'
   ])
+    .pipe(concat('boomstrap.less'))
     .pipe(less({ compress: true }))
     .pipe(gulp.dest('dist/css'));
 });
