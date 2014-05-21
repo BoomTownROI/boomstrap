@@ -853,6 +853,33 @@ angular.module('ui.bootstrap').run([
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:lazyPen
+   * @restrict E
+   *
+   * @description Lazy loads a CodePen iframe
+   */
+  Boomstrap.directive('btLazyPen', function () {
+    return {
+      restrict: 'E',
+      replace: true,
+      scope: {
+        height: '@',
+        themeId: '@',
+        slug: '@',
+        userId: '@',
+        author: '@'
+      },
+      templateUrl: 'template/btLazyPen/btLazyPen.tpl.html',
+      link: function (scope, element) {
+        scope.showingPen = { value: false };
+      }
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
   Boomstrap.directive('btLeadCategory', [
     'leadCategories',
     function (leadCategories) {
@@ -1424,6 +1451,7 @@ angular.module('boomstrap').run([
   '$templateCache',
   function ($templateCache) {
     $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">\n  <div class="container-fluid">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n      <a class="navbar-brand" href="#">PL</a>\n    </div>\n    <div class="collapse navbar-collapse" id="pl-nav">\n      <ul class="nav navbar-nav">\n        <li class="active"><a href="#pl-colors">Colors</a></li>\n        <li class="dropdown">\n          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a>\n          <ul class="dropdown-menu">\n            <li><a href="#pl-button-options">Options</a></li>\n            <li><a href="#pl-button-sizes">Sizes</a></li>\n            <li><a href="#pl-button-active">Active State</a></li>\n            <li><a href="#pl-button-disabled">Disabled State</a></li>\n            <li><a href="#pl-button-tags">Button Tags</a></li>\n          </ul>\n        </li>\n        <li><a href="#pl-labels">Labels</a></li>\n        <li><a href="#pl-typography">Typography</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n<div class="container">');
+    $templateCache.put('template/btLazyPen/btLazyPen.tpl.html', '<div class="bt-lazy-pen">\n  <span class="btn btn-attention" ng-if="!showingPen.value" ng-click="showingPen.value = !showingPen.value">Load CodePen</span>\n  <div ng-if="showingPen.value">\n    <p data-height="{{ height }}" data-theme-id="{{ themeId }}" data-slug-hash="{{ slug }}" data-default-tab="result" class=\'codepen\'>See the Pen <a href=\'http://codepen.io/{{ user }}/pen/{{ slug }}/\'>{{ title }}</a> by {{ author }} (<a href=\'http://codepen.io/{{ user }}\'>@{{ userId }}</a>) on <a href=\'http://codepen.io\'>CodePen</a>.</p>\n    <script async src="//codepen.io/assets/embed/ei.js"></script>\n  </div>\n</div>');
     $templateCache.put('template/btPager/bt-pager.tpl.html', '<pager\n\ttemplate-url="template/pager/bt-pager.tpl.html"\n\ttotal-items="totalItems"\n\titems-per-page="itemsPerPage"\n\tpage="currentPage">\n</pager>');
     $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel">\n    <ol class="carousel-indicators" ng-show="slides().length > 1">\n        <li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>\n    </ol>\n    <div class="carousel-inner" ng-transclude></div>\n    <a class="left carousel-control" ng-click="prev()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-left"></span></a>\n    <a class="right carousel-control" ng-click="next()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-right"></span></a>\n</div>');
     $templateCache.put('template/dropdown/bt-dropdown.tpl.html', '<div class="dropdown">\n    <button class="btn btn-default dropdown-toggle" type="button">\n        <span class="pull-left" ng-bind="selectedValue"></span>\n        <span class="caret"></span>\n        <!-- <i class="ficon ficon-chevron-down pull-right"></i> -->\n    </button>\n    <ul class="dropdown-menu" role="menu" ng-style="{ \'min-width\': dropdownWidth + \'px\'}">\n        <li ng-repeat="value in arrayValues" ng-if="keysAreNumbers">\n            <a ng-click="assignValue(value.key)">{{ value.value }}</a>\n        </li>\n        <li ng-repeat="(choiceValue, choiceName) in values" ng-if="!keysAreNumbers">\n            <a ng-click="assignValue(choiceValue)">{{choiceName}}</a>\n        </li>\n    </ul>\n</div>');

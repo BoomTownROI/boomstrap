@@ -155,6 +155,15 @@ NG_DOCS={
       "moduleName": "boomstrap",
       "shortDescription": "The btSelectRange element directive wraps the AngularUI&#39;s uiSelect directive.",
       "keywords": "$filter add allows angularui array boomstrap btselectrange change currency current directive display dropdown dropdowns element ensures enters format input item items list maximum maxplaceholder minimum minplaceholder money ngboomstrap non-number non-provided number placeholder provided range rangetype select selecting string text type types uiselect user users values wraps"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "boomstrap.directive:lazyPen",
+      "shortName": "lazyPen",
+      "type": "directive",
+      "moduleName": "boomstrap",
+      "shortDescription": "Lazy loads a CodePen iframe",
+      "keywords": "boomstrap codepen directive iframe lazy loads ngboomstrap"
     }
   ],
   "apis": {
