@@ -7041,8 +7041,8 @@ fieldset[disabled] .btn-attention.active {
 }
 @font-face {
   font-family: 'ficon';
-  src: url('fonts/ficon.eot?wkqr11');
-  src: url('fonts/ficon.eot?#iefixwkqr11') format('embedded-opentype'), url('fonts/ficon.woff?wkqr11') format('woff'), url('fonts/ficon.ttf?wkqr11') format('truetype'), url('fonts/ficon.svg?wkqr11#ficon') format('svg');
+  src: url('fonts/ficon.eot?-s4z721');
+  src: url('fonts/ficon.eot?#iefix-s4z721') format('embedded-opentype'), url('fonts/ficon.woff?-s4z721') format('woff'), url('fonts/ficon.ttf?-s4z721') format('truetype'), url('fonts/ficon.svg?-s4z721#ficon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -7059,14 +7059,11 @@ fieldset[disabled] .btn-attention.active {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.ficon-question-circle:before {
-  content: "\e619";
+.ficon-bell:before {
+  content: "\e61f";
 }
 .ficon-question:before {
   content: "\e61c";
-}
-.ficon-buyer-seller:before {
-  content: "\e61e";
 }
 .ficon-star2:before {
   content: "\e617";
@@ -7074,8 +7071,14 @@ fieldset[disabled] .btn-attention.active {
 .ficon-ealert:before {
   content: "\e616";
 }
+.ficon-buyer-seller:before {
+  content: "\e61e";
+}
 .ficon-phone-neutral:before {
   content: "\e604";
+}
+.ficon-question-circle:before {
+  content: "\e619";
 }
 .ficon-star:before {
   content: "\e618";
@@ -7149,9 +7152,6 @@ fieldset[disabled] .btn-attention.active {
 .ficon-info:before {
   content: "\e025";
 }
-.ficon-bell:before {
-  content: "\e006";
-}
 .ficon-info-circle:before {
   content: "\e024";
 }
@@ -7170,8 +7170,11 @@ fieldset[disabled] .btn-attention.active {
 .ficon-filter:before {
   content: "\e017";
 }
-.ficon-arrow-bend-left:before {
+.ficon-arrow-bend-down-left:before {
   content: "\e005";
+}
+.ficon-arrow-bend-left:before {
+  content: "\e006";
 }
 .ficon-arrow-bend-right:before {
   content: "\e002";
@@ -7193,9 +7196,6 @@ fieldset[disabled] .btn-attention.active {
 }
 .ficon-minus:before {
   content: "\e00d";
-}
-.ficon-question-circle2:before {
-  content: "\f059";
 }
 .ficon-minus-circle:before {
   content: "\e00f";
