@@ -1,5 +1,5 @@
 <div class="bt-lazy-pen">
-  <span class="btn btn-attention" ng-if="!showingPen.value" ng-click="showingPen.value = !showingPen.value">Load CodePen</span>
+  <span class="btn btn-attention" ng-if="!showingPen.value" ng-click="showingPen.value = !showingPen.value">Load CodePen Example</span>
   <div ng-if="showingPen.value">
     <p data-height="{{ height }}" data-theme-id="{{ themeId }}" data-slug-hash="{{ slug }}" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/{{ user }}/pen/{{ slug }}/'>{{ title }}</a> by {{ author }} (<a href='http://codepen.io/{{ user }}'>@{{ userId }}</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//codepen.io/assets/embed/ei.js"></script>
