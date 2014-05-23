@@ -69,7 +69,7 @@ var htmlList = function(key, src) {
 gulp.task('boomstrapjsLib', function() {
   return gulp.src([
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/perfect-scrollbar/src/jquery.mousewheel.js',
+    'bower_components/jquery-mousewheel/jquery.mousewheel.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
     'bower_components/bootstrap-select/bootstrap-select.js',
