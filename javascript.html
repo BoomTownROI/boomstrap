@@ -2257,7 +2257,7 @@ doctour.init();</code></pre>
     <script>
         (function($) {
             $(document).ready(function() {
-                $('.perfect-scrollbar').perfectScrollbar({ wheelSpeed: 0.5 });
+                $('.perfect-scrollbar').perfectScrollbar({ wheelSpeed: 20 });
             });
         })(jQuery);
     </script>
@@ -2267,14 +2267,18 @@ doctour.init();</code></pre>
         </small></h1>
     </div>
     <p>The image below sits in a <code>&lt;div&gt;</code> tag with class <code>perfect-scrollbar</code>. If the inner content is wider or taller than the <code>.perfect-scrollbar</code> container, scrollbars will be triggered.</p>
-    <div class="perfect-scrollbar ps-example">
-        <img src="http://boomtownroi.com/assets/images/site/bg.gif" alt="">
+    <div class="perfect-scrollbar ps-example" style="background-color: #fff; margin-bottom: 12px;">
+        <div style="background: url('http://boomtownroi.com/assets/images/site/bg.gif'); opacity: 0.5; height: 900px;"></div>
+    </div>
+    <p>On dark backgrounds, use <code>class="inverted"</code></p>
+    <div class="perfect-scrollbar ps-example inverted" style="background-color: #03a;">
+        <div style="background: url('http://boomtownroi.com/assets/images/site/bg.gif'); opacity: 0.3; height: 900px;"></div>
     </div>
     <h2>Usage</h2>
     <p>Create a <code>perfect-scrollbar</code> container with a class to hook up some CSS.</p>
     <p>HTML</p>
     <pre class="prettyprint">
-&lt;div class="perfect-scrollbar awesome-clizzass"&gt;
+&lt;div class="perfect-scrollbar awesome-clizzass"&gt;&lt;!-- optionally, add class <em>inverted</em> --&gt;
     &lt;p&gt;So Snoopy!&lt;/p&gt;
 &lt;/div&gt;
     </pre>
