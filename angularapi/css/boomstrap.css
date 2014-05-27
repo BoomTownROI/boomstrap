@@ -6591,6 +6591,41 @@ fieldset[disabled] .btn-attention.active {
   padding-right: 0;
   width: 56px;
 }
+.fauxbox {
+  display: none;
+}
+.fauxbox + label {
+  font-size: 1em;
+  cursor: pointer;
+  margin-bottom: 0 !important;
+}
+.fauxbox + label:before {
+  content: "";
+  background-color: #ffffff;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #848484;
+  vertical-align: middle;
+  color: #1581e2;
+  padding: 1px;
+  text-align: center;
+  font-size: 16px;
+  margin: 1px 4px 1px 3px;
+  font-family: 'ficon';
+  font-weight: normal;
+  speak: none;
+  line-height: 13px;
+  text-indent: -2px;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  top: -1px;
+}
+.fauxbox:checked + label:before {
+  content: "\e00a";
+  background: #ffffff;
+  border: 1px solid #1581e2;
+}
 .ficon {
   display: inline-block;
   position: relative;

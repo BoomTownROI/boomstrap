@@ -7,8 +7,8 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="css/boomstrap.css">
-  <script src="js/boomstrap.min.js"></script>
-  <script src="js/boomstrap-angular.min.js"></script>
+  <script src="js/boomstrap.js"></script>
+  <script src="js/boomstrap-angular.js"></script>
 
   
 </head>
@@ -297,8 +297,8 @@
       <h1>Lead Category</h1>
     </div>
     <h2>Usage</h2>
-    <pre class="prettyprint">&lt;bt-lead-category category="[<em>number</em> (required)]" width="[equal||abbreviated (optional)]"&gt;&lt;/bt-lead-category&gt;</pre>
-    <p><code>bt-lead-category</code> simply takes a <code>category</code> attribute (see values below) and, optionally, a <code>width</code> attribute (either <code>equal</code> or <code>abbreviated</code>). Angular creates the necessary HTML, CSS and text based on the category value. Setting <code>width</code> to <code>equal</code> renders all category labels the same width. Setting <code>width</code> to <code>abbreviated</code> renders all category labels the same width with abbreviated names (e.g. 'nurt' instead of 'nurture').</p>
+    <pre class="prettyprint">&lt;bt-lead-category category="[<em>number</em> (required)]" abbreviated (optional) equal (optional)&gt;&lt;/bt-lead-category&gt;</pre>
+    <p><code>bt-lead-category</code> simply takes a <code>category</code> attribute (see values below) and, optionally, a sizing attribute (either <code>equal</code>, <code>abbreviated</code> or both). Angular creates the necessary HTML, CSS and text based on the category value. Setting <code>width</code> to <code>equal</code> renders all category labels the same width. Setting <code>width</code> to <code>abbreviated</code> renders all category labels the same width with abbreviated names (e.g. 'nurt' instead of 'nurture').</p>
 
     <h2>Examples</h2>
     
