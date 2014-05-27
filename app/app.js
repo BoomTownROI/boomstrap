@@ -4,7 +4,6 @@
   angular.module('boomstrap', [
     'ui.bootstrap',
     'ui.select',
-    'angular-chosen',
     'angularMoment',
     'perfect_scrollbar'
   ])

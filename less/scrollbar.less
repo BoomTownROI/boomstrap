@@ -1,4 +1,4 @@
-// File: labels.less
+// File: scrollbar.less
 // Note: Extends bower_components/perfect-scrollbar/src/perfect-scrollbar.css
 // and bower_components/angular-perfect-scrollbar/dependencies/perfect-scrollbar.css
 
@@ -7,14 +7,14 @@
     overflow-y: hidden;
     position: relative;
     .ps-scrollbar-x-rail, .ps-scrollbar-y-rail, .ps-scrollbar-x, .ps-scrollbar-y {
-      background-color: #444;
+      background-color: @gray-darker;
     }
     &:hover .ps-scrollbar-x-rail, &:hover .ps-scrollbar-y-rail, &:hover .ps-scrollbar-x, &:hover .ps-scrollbar-y {
       opacity: 0.65;
     }
     &.inverted {
       .ps-scrollbar-x-rail, .ps-scrollbar-y-rail, .ps-scrollbar-x, .ps-scrollbar-y {
-        background-color: #eee;
+        background-color: @gray-lightest;
       }
     }
 }
