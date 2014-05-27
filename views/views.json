@@ -305,11 +305,6 @@
 				"nav_header": "Cards"
 			},
 			{
-				"source": "app/views/chosen.html",
-				"css_id": "#chosen",
-				"nav_header": "Chosen"
-			},
-			{
 				"source": "app/views/collapse.html",
 				"css_id": "#collapse",
 				"nav_header": "Collapse"
