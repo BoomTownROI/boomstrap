@@ -14,8 +14,24 @@
   Boomstrap.directive('btScrollBar', function() {
     return function(scope, element, attrs) {
       var $element = angular.element(element);
-      $element.addClass('scroller');
-      $element.baron();
+      $element.addClass('scroller baron');
+      $element.append('<div class="scroller__track"><div class="scroller__bar"></div></div>');
+      console.log(element[0]);
+      var scroller = baron({
+        root: element[0],
+        scroller: '.scroller',
+        bar: '.scroller__bar',
+        track: '.scroller__track',
+        $: angular.element
+      });
+
+      $element.bind('resize', function() {
+        scroller.update();
+      });
+
+      scope.$on('$destroy', function() {
+        scroller.dispose();
+      })
     };
   })
-})(angular.module('Boomstrap'), window.baron);
+})(angular.module('boomstrap'), window.baron);
