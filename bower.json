@@ -22,7 +22,7 @@
     "angular-chosen": "*",
     "bootstrap-select": "~1.5.2",
     "angular-animate": "~1.2.16",
-    "angular-ui-select": "~0.2.0"
+    "angular-ui-select": "~0.2.1"
   },
   "dependencies": {
     "bootstrap": "~3.1.1",
