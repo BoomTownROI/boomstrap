@@ -79,7 +79,7 @@ gulp.task('boomstrapjsLib', function() {
     'vendor/chosen_v1.1.0/chosen.jquery.min.js',
     'bower_components/angular-chosen/angular-chosen.js',
     'bower_components/angular-ui-select/dist/select.js',
-    'bower_components/angular-chosen/angular-perfect-scrollbar.js',
+    'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
     'bower_components/angular-moment/angular-moment.js',
     'bower_components/perfect-scrollbar/src/perfect-scrollbar.js',
