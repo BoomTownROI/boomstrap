@@ -21,7 +21,7 @@
       link: function(scope, element) {
         var $windowEl = angular.element($window);
         var DEFAULT_SCROLL_DISTANCE = 50;
-        var scrollDistance = parseScroll(scope.distance);
+        var scrollDistance;
 
         var parseScroll = function(value) {
           var parsed;
@@ -32,7 +32,9 @@
           } else {
             return DEFAULT_SCROLL_DISTANCE;
           }
-        }
+        };
+
+        scrollDistance = parseScroll(scope.distance);
 
         scope.$watch('distance', function(newVal) {
           if (angular.isDefined(newVal) && newVal !== scrollDistance) {
