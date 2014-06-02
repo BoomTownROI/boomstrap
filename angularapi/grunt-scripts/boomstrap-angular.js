@@ -296,9 +296,26 @@ angular.module('ui.bootstrap').run([
   Boomstrap.directive('btArrowScroll', function ($window) {
     return {
       restrict: 'A',
+      scope: { distance: '@btArrowScroll' },
       link: function (scope, element) {
         var $windowEl = angular.element($window);
-        var scrollDistance = 50;
+        var DEFAULT_SCROLL_DISTANCE = 50;
+        var scrollDistance;
+        var parseScroll = function (value) {
+          var parsed;
+          if (angular.isDefined(value)) {
+            parsed = parseInt(value, 10);
+            return isNaN(parsed) ? DEFAULT_SCROLL_DISTANCE : parsed;
+          } else {
+            return DEFAULT_SCROLL_DISTANCE;
+          }
+        };
+        scrollDistance = parseScroll(scope.distance);
+        scope.$watch('distance', function (newVal) {
+          if (angular.isDefined(newVal) && newVal !== scrollDistance) {
+            scrollDistance = parseScroll(newVal);
+          }
+        });
         $windowEl.on('keydown.arrowscroll', function (e) {
           var scroll;
           // Handle down key
@@ -1181,6 +1198,41 @@ angular.module('ui.bootstrap').run([
     };
   });
 }(angular.module('boomstrap')));
+(function (Boomstrap, baron) {
+  /**
+   * @ngdoc directive
+   * @name  boomstrap.directive:btScrollBar
+   * @restrict A
+   * 
+   * @param {Number} totalItems The number of items to paginate through.
+   * @param {Number} currentPage The number of the current page we are on.
+   * @param {Number} itemsPerPage How many items are allowed on each page.
+   *
+   * @description
+   * The `btScrollBar` directive adds a simulated scroll-bar to any element.  It wraps the jQuery baron library.
+   */
+  Boomstrap.directive('btScrollBar', function () {
+    return function (scope, element, attrs) {
+      var $element = angular.element(element);
+      $element.addClass('scroller baron');
+      $element.append('<div class="scroller__track"><div class="scroller__bar"></div></div>');
+      console.log(element[0]);
+      var scroller = baron({
+          root: element[0],
+          scroller: '.scroller',
+          bar: '.scroller__bar',
+          track: '.scroller__track',
+          $: angular.element
+        });
+      $element.bind('resize', function () {
+        scroller.update();
+      });
+      scope.$on('$destroy', function () {
+        scroller.dispose();
+      });
+    };
+  });
+}(angular.module('boomstrap'), window.baron));
 (function (Boomstrap) {
   'use strict';
   /**
@@ -1451,7 +1503,7 @@ angular.module('boomstrap').run([
     $templateCache.put('template/nav.html', '<nav class="navbar navbar-default navbar-fixed-top" role="navigation">\n  <div class="container-fluid">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n      <a class="navbar-brand" href="#">PL</a>\n    </div>\n    <div class="collapse navbar-collapse" id="pl-nav">\n      <ul class="nav navbar-nav">\n        <li class="active"><a href="#pl-colors">Colors</a></li>\n        <li class="dropdown">\n          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Buttons <b class="caret"></b></a>\n          <ul class="dropdown-menu">\n            <li><a href="#pl-button-options">Options</a></li>\n            <li><a href="#pl-button-sizes">Sizes</a></li>\n            <li><a href="#pl-button-active">Active State</a></li>\n            <li><a href="#pl-button-disabled">Disabled State</a></li>\n            <li><a href="#pl-button-tags">Button Tags</a></li>\n          </ul>\n        </li>\n        <li><a href="#pl-labels">Labels</a></li>\n        <li><a href="#pl-typography">Typography</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n<div class="container">');
     $templateCache.put('template/btLazyPen/btLazyPen.tpl.html', '<div class="bt-lazy-pen">\n  <span class="btn btn-attention" ng-if="!showingPen.value" ng-click="showingPen.value = !showingPen.value">Load CodePen Example</span>\n  <div ng-if="showingPen.value">\n    <p data-height="{{ height }}" data-theme-id="{{ themeId }}" data-slug-hash="{{ slug }}" data-default-tab="result" class=\'codepen\'>See the Pen <a href=\'http://codepen.io/{{ user }}/pen/{{ slug }}/\'>{{ title }}</a> by {{ author }} (<a href=\'http://codepen.io/{{ user }}\'>@{{ userId }}</a>) on <a href=\'http://codepen.io\'>CodePen</a>.</p>\n    <script async src="//codepen.io/assets/embed/ei.js"></script>\n  </div>\n</div>');
     $templateCache.put('template/btPager/bt-pager.tpl.html', '<pager\n\ttemplate-url="template/pager/bt-pager.tpl.html"\n\ttotal-items="totalItems"\n\titems-per-page="itemsPerPage"\n\tpage="currentPage">\n</pager>');
-    $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel">\n    <ol class="carousel-indicators" ng-show="slides().length > 1">\n        <li ng-repeat="slide in slides()" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>\n    </ol>\n    <div class="carousel-inner" ng-transclude></div>\n    <a class="left carousel-control" ng-click="prev()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-left"></span></a>\n    <a class="right carousel-control" ng-click="next()" ng-show="slides().length > 1"><span class="ficon ficon-chevron-right"></span></a>\n</div>');
+    $templateCache.put('template/carousel/carousel.html', '<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel">\n    <ol class="carousel-indicators" ng-show="slides.length > 1">\n        <li ng-repeat="slide in slides" ng-class="{active: isActive(slide)}" ng-click="select(slide)"></li>\n    </ol>\n    <div class="carousel-inner" ng-transclude></div>\n    <a class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1"><span class="ficon ficon-chevron-left"></span></a>\n    <a class="right carousel-control" ng-click="next()" ng-show="slides.length > 1"><span class="ficon ficon-chevron-right"></span></a>\n</div>');
     $templateCache.put('template/dropdown/bt-dropdown.tpl.html', '<div class="dropdown">\n    <button class="btn btn-default dropdown-toggle" type="button">\n        <span class="pull-left" ng-bind="selectedValue"></span>\n        <span class="caret"></span>\n        <!-- <i class="ficon ficon-chevron-down pull-right"></i> -->\n    </button>\n    <ul class="dropdown-menu" role="menu" ng-style="{ \'min-width\': dropdownWidth + \'px\'}">\n        <li ng-repeat="value in arrayValues" ng-if="keysAreNumbers">\n            <a ng-click="assignValue(value.key)">{{ value.value }}</a>\n        </li>\n        <li ng-repeat="(choiceValue, choiceName) in values" ng-if="!keysAreNumbers">\n            <a ng-click="assignValue(choiceValue)">{{choiceName}}</a>\n        </li>\n    </ul>\n</div>');
     $templateCache.put('template/popover/popover-bootstrap-tour.html', '<div class="popover tour-best-fit-leads">\n    <div class="arrow"></div>\n    <div class="popover-close">\n        <i data-role=\'end\' class="ficon ficon-cross property-close"></i>\n    </div>\n    <h3 class="popover-title">New Best-Fit Leads Tour</h3>\n    <div class="tour-popover popover-content"></div>\n    <div class="popover-navigation">\n        <button class="btn btn-default" data-role="prev">Prev</button>\n        <button class="btn btn-default" data-role="next"><span>Next</span></button>\n    </div>\n</div>');
     $templateCache.put('template/property-card/bt-property-card-sm.tpl.html', '<div class="card card-sm">\n  <!-- ///////////////////////////////////////////////// -->\n  <!-- Optional: replace "card-photo" div with carousel -->\n  <!-- ///////////////////////////////////////////////// -->\n  <div class="card-photo">\n    <div class="card-photo-inner">\n      <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time" am-time-ago="{{ property.newProperty }}"></span></div>\n      <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time" am-time-ago="{{ property.offMarket }}"></span></div>\n      <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time" am-time-ago="{{ property.reduced.when }}"></span></div>\n      <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time" am-time-ago="{{ property.backOnMarket }}"></span></div>\n      <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">\n      <carousel ng-if="property.imageSrc.length > 1">\n        <slide ng-repeat="slide in property.imageSrc">\n          <img ng-src="{{ slide }}" style="margin: auto">\n        </slide>\n      </carousel>\n    </div>\n  </div>\n  <!-- ///////////////////////////////////////////////// -->\n  <div class="card-sm-container">\n     <div class="row row-xcondensed">\n      <div class="col-xs-8">\n        <p class="card-sm-priority card-sm-street">\n          <a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a>\n        </p>\n        <p class="xsmall">{{ property.address.city }}, {{ property.address.state }}</p>\n        <p class="xsmall">{{ property.address.neighborhood }}</p>\n      </div>\n      <div class="col-xs-4 text-right">\n        <p class="card-sm-priority card-sm-price">{{ property.listPrice }}</p>\n        <p class="xsmall">{{ property.pricePerSqft }}/SQFT</p>\n      </div>\n     </div>\n  </div>\n  <div class="card-sm-stats">\n    <span class="card-sm-stat">{{ property.beds }} BEDS</span>\n    <span class="card-sm-stat">{{ property.baths }} BATHS</span>\n    <span class="card-sm-stat">{{ property.sqft }} SQFT</span>\n    <span class="card-sm-stat">{{ property.acres }} ACRES</span>\n  </div>\n  <div class="card-sm-container">\n    <div class="row row-xcondensed">\n      <div class="col-sm-6">\n        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>\n      </div>\n      <div class="col-sm-6">\n        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>\n      </div>\n    </div>\n  </div> <!-- /card-container -->\n</div>');

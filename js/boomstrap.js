@@ -31864,7 +31864,7 @@ angular.module('ui.select', [])
   ctrl.open = false;
   ctrl.disabled = undefined; // Initialized inside uiSelect directive link function
   ctrl.resetSearchInput = undefined; // Initialized inside uiSelect directive link function
-  ctrl.refreshDelay = undefined; // Initialized inside choices directive link function
+  ctrl.refreshDelay = undefined; // Initialized inside uiSelectChoices directive link function
 
   var _searchInput = $element.querySelectorAll('input.ui-select-search');
   if (_searchInput.length !== 1) {
@@ -31924,15 +31924,14 @@ angular.module('ui.select', [])
   ctrl.refresh = function(refreshAttr) {
     if (refreshAttr !== undefined) {
 
-      // Throttle / debounce
-      //
+      // Debounce
       // See https://github.com/angular-ui/bootstrap/blob/0.10.0/src/typeahead/typeahead.js#L155
       // FYI AngularStrap typeahead does not have debouncing: https://github.com/mgcrea/angular-strap/blob/v2.0.0-rc.4/src/typeahead/typeahead.js#L177
       if (_refreshDelayPromise) {
         $timeout.cancel(_refreshDelayPromise);
       }
       _refreshDelayPromise = $timeout(function() {
-        $scope.$apply(refreshAttr);
+        $scope.$eval(refreshAttr);
       }, ctrl.refreshDelay);
     }
   };
@@ -31983,7 +31982,6 @@ angular.module('ui.select', [])
   }
 
   // Bind to keyboard shortcuts
-  // Cannot specify a namespace: not supported by jqLite
   _searchInput.on('keydown', function(e) {
     // Keyboard shortcuts are all about the items,
     // does not make sense (and will crash) if ctrl.items is empty
@@ -32032,8 +32030,8 @@ angular.module('ui.select', [])
 }])
 
 .directive('uiSelect',
-  ['$document', 'uiSelectConfig',
-  function($document, uiSelectConfig) {
+  ['$document', 'uiSelectConfig', 'uiSelectMinErr', 
+  function($document, uiSelectConfig, uiSelectMinErr) {
 
   return {
     restrict: 'EA',
@@ -32074,8 +32072,7 @@ angular.module('ui.select', [])
         $select.selected = ngModel.$viewValue;
       };
 
-      // See Click everywhere but here event http://stackoverflow.com/questions/12931369
-      $document.on('mousedown', function(e) {
+      function onDocumentClick(e) {
         var contains = false;
 
         if (window.jQuery) {
@@ -32090,10 +32087,13 @@ angular.module('ui.select', [])
           $select.close();
           scope.$digest();
         }
-      });
+      }
+
+      // See Click everywhere but here event http://stackoverflow.com/questions/12931369
+      $document.on('click', onDocumentClick);
 
       scope.$on('$destroy', function() {
-        $document.off('mousedown');
+        $document.off('click', onDocumentClick);
       });
 
       // Move transcluded elements to their correct position in main template
@@ -32121,7 +32121,7 @@ angular.module('ui.select', [])
   };
 }])
 
-.directive('choices',
+.directive('uiSelectChoices',
   ['uiSelectConfig', 'RepeatParser', 'uiSelectMinErr',
   function(uiSelectConfig, RepeatParser, uiSelectMinErr) {
 
@@ -32166,7 +32166,7 @@ angular.module('ui.select', [])
   };
 }])
 
-.directive('match', ['uiSelectConfig', function(uiSelectConfig) {
+.directive('uiSelectMatch', ['uiSelectConfig', function(uiSelectConfig) {
   return {
     restrict: 'EA',
     require: '^uiSelect',
@@ -32203,15 +32203,16 @@ angular.module('ui.select', [])
 
 angular.module('ui.select').run(['$templateCache', function ($templateCache) {
 	$templateCache.put('bootstrap/choices.tpl.html', '<ul class="ui-select-choices ui-select-choices-content dropdown-menu" role="menu" aria-labelledby="dLabel" ng-show="$select.items.length> 0"> <li class="ui-select-choices-row" ng-class="{active: $select.activeIndex===$index}"> <a href="javascript:void(0)" ng-transclude></a> </li> </ul> ');
-	$templateCache.put('bootstrap/match.tpl.html', '<button class="btn btn-default form-control ui-select-match" ng-hide="$select.open" ng-disabled="$select.disabled" ng-click="$select.activate()"> <span ng-hide="$select.selected !==undefined" class="text-muted">{{$select.placeholder}}</span> <span ng-show="$select.selected !==undefined" ng-transclude></span> <span class="caret"></span> </button> ');
+	$templateCache.put('bootstrap/match.tpl.html', '<button type="button" class="btn btn-default form-control ui-select-match" ng-hide="$select.open" ng-disabled="$select.disabled" ng-click="$select.activate()"> <span ng-hide="$select.selected !==undefined" class="text-muted">{{$select.placeholder}}</span> <span ng-show="$select.selected !==undefined" ng-transclude></span> <span class="caret"></span> </button> ');
 	$templateCache.put('bootstrap/select.tpl.html', '<div class="ui-select-bootstrap dropdown" ng-class="{open: $select.open}"> <div class="ui-select-match"></div> <input type="text" autocomplete="off" tabindex="" class="form-control ui-select-search" placeholder="{{$select.placeholder}}" ng-model="$select.search" ng-show="$select.open"> <div class="ui-select-choices"></div> </div> ');
 	$templateCache.put('select2/choices.tpl.html', '<ul class="ui-select-choices ui-select-choices-content select2-results"> <li class="ui-select-choices-row" ng-class="{\'select2-highlighted\': $select.activeIndex===$index}"> <div class="select2-result-label" ng-transclude></div> </li> </ul> ');
-	$templateCache.put('select2/match.tpl.html', '<a class="select2-choice ui-select-match" ng-class="{\'select2-default\': $select.selected === undefined}" ng-click="$select.activate()"> <span ng-hide="$select.selected !==undefined" class="select2-chosen">{{$select.placeholder}}</span> <span ng-show="$select.selected !==undefined" class="select2-chosen" ng-transclude></span> <span class="select2-arrow"><b></b></span> </a> ');
+	$templateCache.put('select2/match.tpl.html', '<a class="select2-choice ui-select-match" ng-class="{\'select2-default\': $select.selected===undefined}" ng-click="$select.activate()"> <span ng-hide="$select.selected !==undefined" class="select2-chosen">{{$select.placeholder}}</span> <span ng-show="$select.selected !==undefined" class="select2-chosen" ng-transclude></span> <span class="select2-arrow"><b></b></span> </a> ');
 	$templateCache.put('select2/select.tpl.html', '<div class="select2 select2-container" ng-class="{\'select2-container-active select2-dropdown-open\': $select.open, \'select2-container-disabled\': $select.disabled}"> <div class="ui-select-match"></div> <div class="select2-drop select2-with-searchbox select2-drop-active" ng-class="{\'select2-display-none\': !$select.open}"> <div class="select2-search"> <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="ui-select-search select2-input" ng-model="$select.search"> </div> <div class="ui-select-choices"></div> </div> </div> ');
 	$templateCache.put('selectize/choices.tpl.html', '<div ng-show="$select.open" class="ui-select-choices selectize-dropdown single"> <div class="ui-select-choices-content selectize-dropdown-content"> <div class="ui-select-choices-row" ng-class="{\'active\': $select.activeIndex===$index}"> <div class="option" data-selectable ng-transclude></div> </div> </div> </div> ');
 	$templateCache.put('selectize/match.tpl.html', '<div ng-hide="$select.open || $select.selected===undefined" class="ui-select-match" ng-transclude></div> ');
 	$templateCache.put('selectize/select.tpl.html', '<div class="selectize-control single"> <div class="selectize-input" ng-class="{\'focus\': $select.open, \'disabled\': $select.disabled}" ng-click="$select.activate()"> <div class="ui-select-match"></div> <input type="text" autocomplete="off" tabindex="" class="ui-select-search" placeholder="{{$select.placeholder}}" ng-model="$select.search" ng-hide="$select.selected && !$select.open" ng-disabled="$select.disabled"> </div> <div class="ui-select-choices"></div> </div> ');
 }]);
+!function(a,b){"use strict";function c(b,c,d){b._eventHandlers=b._eventHandlers||[{element:b.scroller,handler:function(a){b.scroll(a)},type:"scroll"},{element:b.scroller,handler:function(){b.update()},type:"keyup"},{element:b.bar,handler:function(a){a.preventDefault(),b.selection(),b.drag.now=1},type:"touchstart mousedown"},{element:document,handler:function(){b.selection(1),b.drag.now=0},type:"mouseup blur touchend"},{element:document,handler:function(a){2!=a.button&&b._pos0(a)},type:"touchstart mousedown"},{element:document,handler:function(a){b.drag.now&&b.drag(a)},type:"mousemove touchmove"},{element:a,handler:function(){b.update()},type:"resize"},{element:b.root,handler:function(){b.update()},type:"sizeChange"}],l(b._eventHandlers,function(a){a.element&&c(a.element,a.type,a.handler,d)})}function d(a,b,c){var d="data-baron-"+b;if("on"==c)a.setAttribute(d,"inited");else{if("off"!=c)return a.getAttribute(d);a.removeAttribute(d)}}function e(a){if(d(a.root,a.direction))throw new Error("Second baron initialization");var b=new n.prototype.constructor(a);return c(b,a.event,"on"),d(b.root,a.direction,"on"),b.update({initMode:!0}),b}function f(a){var b={};a=a||{};for(var c in a)a.hasOwnProperty(c)&&(b[c]=a[c]);return b}function g(a){var b=f(a);b.direction=b.direction||"v";var c=a.event||function(a,c,d,e){b.$(a)[e||"on"](c,d)};return b.event=function(a,b,d,e){l(a,function(a){c(a,b,d,e)})},b}function h(a){if(this.events&&this.events[a])for(var b=0;b<this.events[a].length;b++){var c=Array.prototype.slice.call(arguments,1);this.events[a][b].apply(this,c)}}if(a){var i=m,j=["left","top","right","bottom","width","height"],k={v:{x:"Y",pos:j[1],oppos:j[3],crossPos:j[0],crossOpPos:j[2],size:j[5],crossSize:j[4],client:"clientHeight",crossClient:"clientWidth",crossScroll:"scrollWidth",offset:"offsetHeight",crossOffset:"offsetWidth",offsetPos:"offsetTop",scroll:"scrollTop",scrollSize:"scrollHeight"},h:{x:"X",pos:j[0],oppos:j[2],crossPos:j[1],crossOpPos:j[3],size:j[4],crossSize:j[5],client:"clientWidth",crossClient:"clientHeight",crossScroll:"scrollHeight",offset:"offsetWidth",crossOffset:"offsetHeight",offsetPos:"offsetLeft",scroll:"scrollLeft",scrollSize:"scrollWidth"}},l=function(c,d){var e=0;for((c.length===b||c===a)&&(c=[c]);c[e];)d.call(this,c[e],e),e++},m=function(b){var c,d,e;return b=b||{},e=b.$||a.jQuery,c=this instanceof e,c?b.root=d=this:d=e(b.root||b.scroller),new m.fn.constructor(d,b,e)};m.fn={constructor:function(a,b,c){var d=g(b);d.$=c,l.call(this,a,function(a,b){var c=f(d);d.root&&d.scroller?(c.scroller=d.$(d.scroller,a),c.scroller.length||(c.scroller=a)):c.scroller=a,c.root=a,this[b]=e(c),this.length=b+1}),this.params=d},dispose:function(){var a=this.params;l(this,function(b){b.dispose(a)}),this.params=null},update:function(){for(var a=0;this[a];)this[a].update.apply(this[a],arguments),a++},baron:function(a){return a.root=[],a.scroller=this.params.scroller,l.call(this,this,function(b){a.root.push(b.root)}),a.direction="v"==this.params.direction?"h":"v",a._chain=!0,m(a)}};var n={};n.prototype={constructor:function(a){function c(a,b){return l(a,b)[0]}function d(a){var b=this.barMinSize||20;a>0&&b>a&&(a=b),this.bar&&l(this.bar).css(this.origin.size,parseInt(a,10)+"px")}function e(a){this.bar&&l(this.bar).css(this.origin.pos,+a+"px")}function f(){return o[this.origin.client]-this.barTopLimit-this.bar[this.origin.offset]}function g(a){return a*f.call(this)+this.barTopLimit}function i(a){return(a-this.barTopLimit)/f.call(this)}function j(){return!1}var l,m,n,o,p,q,r,s,t,u,v;return u=t=(new Date).getTime(),l=this.$=a.$,this.event=a.event,this.events={},this.root=a.root,this.scroller=c(a.scroller),this.bar=c(a.bar,this.root),o=this.track=c(a.track,this.root),!this.track&&this.bar&&(o=this.bar.parentNode),this.clipper=this.scroller.parentNode,this.direction=a.direction,this.origin=k[this.direction],this.barOnCls=a.barOnCls,this.scrollingCls=a.scrollingCls,this.barTopLimit=0,s=1e3*a.pause||0,this.cursor=function(a){return a["client"+this.origin.x]||(((a.originalEvent||a).touches||{})[0]||{})["page"+this.origin.x]},this.pos=function(a){var c="page"+this.origin.x+"Offset",d=this.scroller[c]?c:this.origin.scroll;return a!==b&&(this.scroller[d]=a),this.scroller[d]},this.rpos=function(a){var b,c=this.scroller[this.origin.scrollSize]-this.scroller[this.origin.client];return b=a?this.pos(a*c):this.pos(),b/(c||1)},this.barOn=function(a){this.barOnCls&&(a||this.scroller[this.origin.client]>=this.scroller[this.origin.scrollSize]?l(this.root).removeClass(this.barOnCls):l(this.root).addClass(this.barOnCls))},this._pos0=function(a){n=this.cursor(a)-m},this.drag=function(a){this.scroller[this.origin.scroll]=i.call(this,this.cursor(a)-n)*(this.scroller[this.origin.scrollSize]-this.scroller[this.origin.client])},this.selection=function(a){this.event(document,"selectpos selectstart",j,a?"off":"on")},this.resize=function(){function b(){var b,d;c.barOn(),d=c.scroller[c.origin.crossClient],b=c.scroller[c.origin.crossOffset]-d,a.freeze&&!c.clipper.style[c.origin.crossSize]&&l(c.clipper).css(c.origin.crossSize,c.clipper[c.origin.crossClient]-b+"px"),l(c.scroller).css(c.origin.crossSize,c.clipper[c.origin.crossClient]+b+"px"),Array.prototype.unshift.call(arguments,"resize"),h.apply(c,arguments),u=(new Date).getTime()}var c=this,d=0;(new Date).getTime()-u<s&&(clearTimeout(p),d=s),d?p=setTimeout(b,d):b()},this.updatePositions=function(){var a,b=this;b.bar&&(a=(o[b.origin.client]-b.barTopLimit)*b.scroller[b.origin.client]/b.scroller[b.origin.scrollSize],parseInt(v,10)!=parseInt(a,10)&&(d.call(b,a),v=a),m=g.call(b,b.rpos()),e.call(b,m)),Array.prototype.unshift.call(arguments,"scroll"),h.apply(b,arguments),t=(new Date).getTime()},this.scroll=function(){var a=0,c=this;(new Date).getTime()-t<s&&(clearTimeout(q),a=s),(new Date).getTime()-t<s&&(clearTimeout(q),a=s),a?q=setTimeout(function(){c.updatePositions()},a):c.updatePositions(),c.scrollingCls&&(r||this.$(this.scroller).addClass(this.scrollingCls),clearTimeout(r),r=setTimeout(function(){c.$(c.scroller).removeClass(c.scrollingCls),r=b},300))},this},update:function(a){return h.call(this,"upd",a),this.resize(1),this.updatePositions(),this},dispose:function(a){c(this,this.event,"off"),d(this.root,a.direction,"off"),$(this.scroller).css(this.origin.crossSize,""),this.barOn(!0),h.call(this,"dispose")},on:function(a,b,c){for(var d=a.split(" "),e=0;e<d.length;e++)"init"==d[e]?b.call(this,c):(this.events[d[e]]=this.events[d[e]]||[],this.events[d[e]].push(function(a){b.call(this,a||c)}))}},m.fn.constructor.prototype=m.fn,n.prototype.constructor.prototype=n.prototype,m.noConflict=function(){return a.baron=i,m},m.version="0.7.7",$&&$.fn&&($.fn.baron=m),a.baron=m,a.module&&module.exports&&(module.exports=m.noConflict())}}(window),function(a,b){var c=function(a){function c(a,c,d){var e=1==d?"pos":"oppos";g<(h.minView||0)&&(c=b),this.$(f[a]).css(this.origin.pos,"").css(this.origin.oppos,"").removeClass(h.outside),c!==b&&(c+="px",this.$(f[a]).css(this.origin[e],c).addClass(h.outside))}function d(a){try{i=document.createEvent("WheelEvent"),i.initWebKitWheelEvent(a.originalEvent.wheelDeltaX,a.originalEvent.wheelDeltaY),m.dispatchEvent(i),a.preventDefault()}catch(a){}}function e(a){var b;for(var c in a)h[c]=a[c];if(f=this.$(h.elements,this.scroller)){g=this.scroller[this.origin.client];for(var e=0;e<f.length;e++)b={},b[this.origin.size]=f[e][this.origin.offset],f[e].parentNode!==this.scroller&&this.$(f[e].parentNode).css(b),b={},b[this.origin.crossSize]=f[e].parentNode[this.origin.crossClient],this.$(f[e]).css(b),g-=f[e][this.origin.offset],l[e]=f[e].parentNode[this.origin.offsetPos],j[e]=j[e-1]||0,k[e]=k[e-1]||Math.min(l[e],0),f[e-1]&&(j[e]+=f[e-1][this.origin.offset],k[e]+=f[e-1][this.origin.offset]),(0!=e||0!=l[e])&&(this.event(f[e],"mousewheel",d,"off"),this.event(f[e],"mousewheel",d));h.limiter&&f[0]&&(this.track&&this.track!=this.scroller?(b={},b[this.origin.pos]=f[0].parentNode[this.origin.offset],this.$(this.track).css(b)):this.barTopLimit=f[0].parentNode[this.origin.offset],this.scroll()),h.limiter===!1&&(this.barTopLimit=0)}var i={element:f,handler:function(){for(var a,b=o(this)[0].parentNode,c=b.offsetTop,d=0;d<f.length;d++)f[d]===this&&(a=d);var e=c-j[a];h.scroll?h.scroll({x1:p.scroller.scrollTop,x2:e}):p.scroller.scrollTop=e},type:"click"};h.clickable&&(this._eventHandlers.push(i),n(i.element,i.type,i.handler,"on"))}var f,g,h={outside:"",inside:"",before:"",after:"",past:"",future:"",radius:0,minView:0},j=[],k=[],l=[],m=this.scroller,n=this.event,o=this.$,p=this;this.on("init",e,a);var q=[],r=[];this.on("init scroll",function(){var a,d,e;if(f){for(var i,m=0;m<f.length;m++)a=0,l[m]-this.pos()<k[m]+h.radius?(a=1,d=j[m]):l[m]-this.pos()>k[m]+g-h.radius?(a=2,d=this.scroller[this.origin.client]-f[m][this.origin.offset]-j[m]-g):(a=3,d=b),e=!1,(l[m]-this.pos()<k[m]||l[m]-this.pos()>k[m]+g)&&(e=!0),(a!=q[m]||e!=r[m])&&(c.call(this,m,d,a),q[m]=a,r[m]=e,i=!0);if(i)for(m=0;m<f.length;m++)1==q[m]&&h.past&&this.$(f[m]).addClass(h.past).removeClass(h.future),2==q[m]&&h.future&&this.$(f[m]).addClass(h.future).removeClass(h.past),3==q[m]?((h.future||h.past)&&this.$(f[m]).removeClass(h.past).removeClass(h.future),h.inside&&this.$(f[m]).addClass(h.inside)):h.inside&&this.$(f[m]).removeClass(h.inside),q[m]!=q[m+1]&&1==q[m]&&h.before?this.$(f[m]).addClass(h.before).removeClass(h.after):q[m]!=q[m-1]&&2==q[m]&&h.after?this.$(f[m]).addClass(h.after).removeClass(h.before):this.$(f[m]).removeClass(h.before).removeClass(h.after),h.grad&&(r[m]?this.$(f[m]).addClass(h.grad):this.$(f[m]).removeClass(h.grad))}}),this.on("resize upd",function(a){e.call(this,a&&a.fix)})};baron.fn.fix=function(a){for(var b=0;this[b];)c.call(this[b],a),b++;return this}}(window),function(){var a=function(a){var b,c,d,e,f,g=this;e=a.screen||.9,a.forward&&(b=this.$(a.forward,this.clipper),f={element:b,handler:function(){var b=g.pos()-a.delta||30;g.pos(b)},type:"click"},this._eventHandlers.push(f),this.event(f.element,f.type,f.handler,"on")),a.backward&&(c=this.$(a.backward,this.clipper),f={element:c,handler:function(){var b=g.pos()+a.delta||30;g.pos(b)},type:"click"},this._eventHandlers.push(f),this.event(f.element,f.type,f.handler,"on")),a.track&&(d=a.track===!0?this.track:this.$(a.track,this.clipper)[0],d&&(f={element:d,handler:function(a){var b=a["offset"+g.origin.x],c=g.bar[g.origin.offsetPos],d=0;c>b?d=-1:b>c+g.bar[g.origin.offset]&&(d=1);var f=g.pos()+d*e*g.scroller[g.origin.client];g.pos(f)},type:"mousedown"},this._eventHandlers.push(f),this.event(f.element,f.type,f.handler,"on")))};baron.fn.controls=function(b){for(var c=0;this[c];)a.call(this[c],b),c++;return this}}(window),function(){var a=function(a){function b(){return r.scroller[r.origin.scroll]+r.scroller[r.origin.offset]}function c(){return r.scroller[r.origin.scrollSize]}function d(){return r.scroller[r.origin.client]}function e(a,b){var c=5e-4*a;return Math.floor(b-c*(a+550))}function f(a){k=a,a?(g(),h=setInterval(g,200)):clearInterval(h)}function g(){var g,h,k={},w=b(),x=c(),y=1==s;if(h=0,s>0&&(h=40),g=e(u,h),w>=x-u&&s>-1?y&&(u+=g):u=0,0>u&&(u=0),k[m]=u+"px",d()<=c()){r.$(l).css(k);for(var z=0;z<p.length;z++)r.$(p[z].self).css(p[z].property,Math.min(u/n*100,100)+"%")}q&&u&&r.$(r.root).addClass(q),0==u&&a.onCollapse&&a.onCollapse(),s=0,i=setTimeout(function(){s=-1},v),o&&u>n&&!j&&(o(),j=!0),0==u?t++:t=0,t>1&&(f(!1),j=!1,q&&r.$(r.root).removeClass(q))}var h,i,j,k,l=this.$(a.block),m=a.size||this.origin.size,n=a.limit||80,o=a.onExpand,p=a.elements||[],q=a.inProgress||"",r=this,s=0,t=0,u=0,v=a.waiting||500;this.on("init",function(){f(!0)}),this.on("dispose",function(){f(!1)}),this.event(this.scroller,"mousewheel DOMMouseScroll",function(a){var d=a.wheelDelta<0||a.originalEvent&&a.originalEvent.wheelDelta<0||a.detail>0;d&&(s=1,clearTimeout(i),!k&&b()>=c()&&f(!0))})};baron.fn.pull=function(b){for(var c=0;this[c];)a.call(this[c],b),c++;return this}}(window),function(a){var b=a.MutationObserver||a.WebKitMutationObserver||a.MozMutationObserver||null,c=function(){var a=this;this._observer=new MutationObserver(function(){a.update()}),this.on("init",function(){a._observer.observe(a.root,{childList:!0,subtree:!0,characterData:!0})}),this.on("dispose",function(){a._observer.dissconect(),delete a._observer})};baron.fn.autoUpdate=function(a){if(!b)return this;for(var d=0;this[d];)c.call(this[d],a),d++;return this}}(window);
 //! moment.js
 //! version : 2.6.0
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
