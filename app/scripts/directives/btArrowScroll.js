@@ -15,9 +15,18 @@
   Boomstrap.directive('btArrowScroll', function($window){
     return {
       restrict: 'A',
+      scope: {
+        distance: '@btArrowScroll'
+      },
       link: function(scope, element) {
         var $windowEl = angular.element($window);
-        var scrollDistance = 50;
+        var scrollDistance = scope.distance || 50;
+
+        scope.$watch('distance', function(newVal) {
+          if (angular.isDefined(newVal) && newVal !== scrollDistance) {
+            scrollDistance = newVal;
+          }
+        });
 
         $windowEl.on('keydown.arrowscroll', function(e) {
           var scroll;
