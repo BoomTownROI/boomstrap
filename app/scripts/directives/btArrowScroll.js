@@ -20,11 +20,23 @@
       },
       link: function(scope, element) {
         var $windowEl = angular.element($window);
-        var scrollDistance = scope.distance || 50;
+        var DEFAULT_SCROLL_DISTANCE = 50;
+        var scrollDistance = parseScroll(scope.scrollDistance);
+
+        var parseScroll = function(value) {
+          var parsed;
+
+          if (angular.isDefined(value)) {
+            parsed = parseInt(value, 10);
+            return isNaN(parsed) ? DEFAULT_SCROLL_DISTANCE : parsed;
+          } else {
+            return DEFAULT_SCROLL_DISTANCE;
+          }
+        }
 
         scope.$watch('distance', function(newVal) {
           if (angular.isDefined(newVal) && newVal !== scrollDistance) {
-            scrollDistance = newVal;
+            scrollDistance = parseScroll(newVal);
           }
         });
 
