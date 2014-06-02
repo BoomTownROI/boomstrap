@@ -22,7 +22,8 @@
     "angular-chosen": "*",
     "bootstrap-select": "~1.5.2",
     "angular-animate": "~1.2.16",
-    "angular-ui-select": "~0.2.1"
+    "angular-ui-select": "~0.2.1",
+    "baron": "*"
   },
   "dependencies": {
     "bootstrap": "~3.1.1",
@@ -30,6 +31,5 @@
     "momentjs": "~2.6.0",
     "angular-moment": "~0.7.0",
     "perfect-scrollbar": "~0.4.10",
-    "baron": "*"
   }
 }
