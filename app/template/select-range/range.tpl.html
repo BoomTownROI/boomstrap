@@ -1,14 +1,14 @@
 <div class="ui-select-range clearfix">
   <ui-select ng-model="minimum.value">
-    <match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected, 'No min') }}</match>
-    <choices repeat="value in getValues($select.search) | filter: $select.search">
+    <ui-select-match placeholder="{{ minPlaceholder }}">{{ translateValue($select.selected, 'No min') }}</ui-select-match>
+    <ui-select-choices repeat="value in getValues($select.search) | filter: $select.search">
       <div>{{ translateValue(value, 'No min') }}</div>
-    </choices>
+    </ui-select-choices>
   </ui-select>
   <ui-select ng-model="maximum.value">
-    <match placeholder="{{ maxPlaceholder }}">{{ translateValue($select.selected, 'No max') }}</match>
-    <choices repeat="value in getValues($select.search) | filter: $select.search">
+    <ui-select-match placeholder="{{ maxPlaceholder }}">{{ translateValue($select.selected, 'No max') }}</ui-select-match>
+    <ui-select-choices repeat="value in getValues($select.search) | filter: $select.search">
       <div>{{ translateValue(value, 'No max') }}</div>
-    </choices>
+    </ui-select-choices>
   </ui-select>
 </div>

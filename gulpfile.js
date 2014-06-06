@@ -99,7 +99,9 @@ gulp.task('boomstrapjsLib', function() {
 
 gulp.task('boomstrapjsAngular', function() {
   return es.concat(
-    gulp.src(['app/app.js', 'app/constants.js', 'app/scripts/**/*.js']),
+    gulp.src(['app/app.js', 'app/constants.js', 'app/scripts/**/*.js'])
+      .pipe(jshint())
+      .pipe(jshint.reporter(jshintstylish)),
     gulp.src(['app/template/**/*.html', '!app/template/pagination/*.html'])
       .pipe(templateCache({
         module: 'boomstrap',
@@ -111,8 +113,6 @@ gulp.task('boomstrapjsAngular', function() {
         root: 'template/'
       }))
   )
-  .pipe(jshint())
-  .pipe(jshint.reporter(jshintstylish))
   .pipe(concat('boomstrap-angular.js'))
   .pipe(ngmin())
   .pipe(gulp.dest('docs/js/'))
