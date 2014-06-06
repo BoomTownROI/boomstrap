@@ -2,9 +2,13 @@
     <button
         type="button"
         class="btn btn-default btn-icon"
-        ng-repeat="page in pages"
-        ng-class="{ 'disabled': page.disabled, 'active': page.active }"
-        ng-click="selectPage(page.number)"><i
-            class="ficon"
-            ng-class="{ 'ficon-chevron-left': page.previous, 'ficon-chevron-right': page.next }"></i></button>
+        ng-class="{ 'disabled': noPrevious() }"
+        ng-click="selectPage(page - 1)"><i
+            class="ficon ficon-chevron-left"></i></button>
+    <button
+        type="button"
+        class="btn btn-default btn-icon"
+        ng-class="{ 'disabled': noNext() }"
+        ng-click="selectPage(page + 1)"><i
+            class="ficon ficon-chevron-right"></i></button>
 </div>
