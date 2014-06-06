@@ -98,10 +98,16 @@ gulp.task('boomstrapjsLib', function() {
 });
 
 gulp.task('boomstrapjsAngular', function() {
+  return gulp.src(['app/app.js', 'app/constants.js', 'app/scripts/**/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter(jshintstylish))
+    .pipe(concat('boomstrap-angular.js'))
+    .pipe(ngmin())
+    .pipe(gulp.dest('docs/js/'));
+});
+
+gulp.task('boomstrapjsTemplates', function() {
   return es.concat(
-    gulp.src(['app/app.js', 'app/constants.js', 'app/scripts/**/*.js'])
-      .pipe(jshint())
-      .pipe(jshint.reporter(jshintstylish)),
     gulp.src(['app/template/**/*.html', '!app/template/pagination/*.html'])
       .pipe(templateCache({
         module: 'boomstrap',
@@ -113,17 +119,21 @@ gulp.task('boomstrapjsAngular', function() {
         root: 'template/'
       }))
   )
-  .pipe(concat('boomstrap-angular.js'))
-  .pipe(ngmin())
-  .pipe(gulp.dest('docs/js/'))
-  .pipe(gulp.dest('dist/js/'))
-  .pipe(rename({ suffix:'.min' }))
-  .pipe(uglify({ mangle: false, outSourceMap: true  }))
-  .pipe(gulp.dest('docs/js/'))
-  .pipe(gulp.dest('dist/js/'));
-});
+  .pipe(concat('boomstrap-angular-templates.js'))
+  .pipe(gulp.dest('docs/js/'));
+})
 
-gulp.task('boomstrapjs', ['boomstrapjsLib', 'boomstrapjsAngular']);
+gulp.task('boomstrapjs', ['boomstrapjsLib', 'boomstrapjsAngular', 'boomstrapjsTemplates'], function() {
+  // Combine templates and angular
+  return gulp.src(['docs/js/boomstrap-angular.js', 'docs/js/boomstrap-angular-templates.js'])
+    .pipe(concat('boomstrap-angular.js'))
+    .pipe(gulp.dest('docs/js/'))
+    .pipe(gulp.dest('dist/js/'))
+    .pipe(rename({ suffix:'.min' }))
+    .pipe(uglify({ mangle: false, outSourceMap: true  }))
+    .pipe(gulp.dest('docs/js/'))
+    .pipe(gulp.dest('dist/js/'));
+});
 
 gulp.task('reloadDocsJs', function() {
   gulp.src('docs/js/*.js')
