@@ -1,5 +1,6 @@
 var es = require('event-stream'),
   gulp = require('gulp'),
+  newer = require('gulp-newer'),
   concat = require('gulp-concat'),
   rename = require('gulp-rename'),
   less = require('gulp-less'),
@@ -68,26 +69,27 @@ var htmlList = function(key, src) {
 
 gulp.task('boomstrapjsLib', function() {
   return gulp.src([
-    'bower_components/jquery/dist/jquery.js',
+    'bower_components/jquery/dist/jquery.min.js',
     'bower_components/jquery-mousewheel/jquery.mousewheel.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
-    'bower_components/bootstrap-select/bootstrap-select.js',
-    'bower_components/angular/angular.js',
-    'bower_components/angular/angular-animate.js',
+    'bower_components/bootstrap-select/bootstrap-select.min.js',
+    'bower_components/angular/angular.min.js',
+    'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-    'bower_components/angular-chosen/angular-chosen.js',
-    'bower_components/angular-ui-select/dist/select.js',
+    'bower_components/angular-chosen/angular-chosen.js', // No minified version
+    'bower_components/angular-ui-select/dist/select.js', // No minified version
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
-    'bower_components/angular-moment/angular-moment.js',
-    'bower_components/perfect-scrollbar/src/perfect-scrollbar.js',
+    'bower_components/angular-moment/angular-moment.min.js',
+    // 'bower_components/perfect-scrollbar/src/perfect-scrollbar.js', // Using angular dependency version
     'bower_components/angular-perfect-scrollbar/dependencies/perfect-scrollbar.js',
     'bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js',
     'js/global.js',
     'js/vendor-config.js'
   ])
+  .pipe(newer('docs/js/boomstrap.js'))
   .pipe(concat('boomstrap.js'))
   .pipe(gulp.dest('docs/js/'))
   .pipe(gulp.dest('dist/js/'))
@@ -164,23 +166,31 @@ gulp.task('reloadDocsHtml', function() {
  * Compile less files
  */
 gulp.task('boomstrapLessDocs', function() {
+  var DEST_DIR  = 'docs/css';
+  var DEST_FILE = 'boomstrap.less';
+
   return gulp.src([
     'less/boomstrap.less',
     'less/boomstrap-docs.less'
   ])
-  .pipe(concat('boomstrap.less'))
-  .pipe(less({ compress: false }))
-  .pipe(gulp.dest('docs/css'));
+    .pipe(newer(DEST_DIR + '/' + DEST_FILE))
+    .pipe(concat(DEST_FILE))
+    .pipe(less({ compress: false }))
+    .pipe(gulp.dest(DEST_DIR));
 
 });
 
 gulp.task('boomstrapLessDist', function() {
+  var DEST_DIR  = 'dist/css';
+  var DEST_FILE = 'boomstrap.less';
+
   return gulp.src([
     'less/boomstrap.less'
   ])
-    .pipe(concat('boomstrap.less'))
+    .pipe(newer(DEST_DIR + '/' + DEST_FILE))
+    .pipe(concat(DEST_FILE))
     .pipe(less({ compress: true }))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest(DEST_DIR));
 });
 
 gulp.task('boomstrapLess', ['boomstrapLessDocs', 'boomstrapLessDist']);
@@ -201,16 +211,30 @@ gulp.task('bower', function() {
 /*
  * Common build task run by all tasks
  */
-gulp.task('boomstrapcommon', ['bower', 'boomstrapjs', 'boomstrapLess', 'docsHtml'], function() {
+gulp.task('boomstrapcommon', ['boomstrapLess', 'boomstrapjs', 'docsHtml'], function() {
+  var IMAGES_DIR   = 'docs/images',
+    FONTS_DOCS_DIR = 'docs/css/fonts',
+    FONTS_DIST_DIR = 'dist/css/fonts',
+    ICONS_DOCS_DIR = 'docs/css/icons',
+    ICONS_DIST_DIR = 'dist/css/icons';
+
+  // Copy all image/font/icon files if they are newer than destination
   return es.concat(
     gulp.src('images/**/*.*')
-      .pipe(gulp.dest('docs/images')),
+      .pipe(newer(IMAGES_DIR))
+      .pipe(gulp.dest(IMAGES_DIR)),
     gulp.src('fonts/**/*.*')
-      .pipe(gulp.dest('docs/css/fonts'))
-      .pipe(gulp.dest('dist/css/fonts')),
+      .pipe(newer(FONTS_DOCS_DIR))
+      .pipe(gulp.dest(FONTS_DOCS_DIR)),
+    gulp.src('fonts/**/*.*')
+      .pipe(newer(FONTS_DIST_DIR))
+      .pipe(gulp.dest(FONTS_DIST_DIR)),
     gulp.src('icons/**/*.*')
-      .pipe(gulp.dest('docs/css/icons'))
-      .pipe(gulp.dest('dist/css/icons'))
+      .pipe(newer(ICONS_DOCS_DIR))
+      .pipe(gulp.dest(ICONS_DOCS_DIR)),
+    gulp.src('icons/**/*.*')
+      .pipe(newer(ICONS_DIST_DIR))
+      .pipe(gulp.dest(ICONS_DIST_DIR))
   );
 });
 

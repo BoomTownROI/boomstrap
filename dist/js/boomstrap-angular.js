@@ -110,6 +110,14 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btAddClassOnLoad
@@ -726,9 +734,9 @@
           } else {
             newViewValue = null;
           }
-          if (newViewValue != data)
-            ctrl.$setViewValue(newViewValue);
-          //Only update the view (which triggers $parsers) if the new view value is actually different
+          if (newViewValue !== data) {
+            ctrl.$setViewValue(newViewValue);  //Only update the view (which triggers $parsers) if the new view value is actually different
+          }
           ctrl.$render();
           return parsed;  //converted value goes to the model
         });
@@ -882,7 +890,7 @@
         author: '@'
       },
       templateUrl: 'template/btLazyPen/btLazyPen.tpl.html',
-      link: function (scope, element) {
+      link: function (scope) {
         scope.showingPen = { value: false };
       }
     };
@@ -915,7 +923,7 @@
             '}}</span>'
           ].join('');
         },
-        link: function (scope, element, attrs) {
+        link: function (scope) {
           scope.cat = categories[scope.category];
           scope.abbr = abbrs[scope.category];
         }
@@ -947,7 +955,6 @@
       link: function (scope, element) {
         var $body = angular.element(document.getElementsByTagName('body')[0]);
         var $html = angular.element(document.getElementsByTagName('html')[0]);
-        var $documentEl = angular.element($document);
         var $windowEl = angular.element($window);
         var htmlDefault = {
             position: $html.css('position'),
@@ -998,7 +1005,6 @@
       require: 'ngModel',
       priority: 1,
       link: function (scope, element, attrs, ngModel) {
-        var analyticsName = '';
         var update = function (alwaysUpdate) {
           scope.$apply(function () {
             var elementValue = element.val().trim();
@@ -1040,6 +1046,7 @@
   });
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
+  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btNumber
@@ -1062,7 +1069,7 @@
             if (parsed) {
               parsed = /\./.test(data) ? parseFloat(data) : parseInt(data);
             }
-            if (parsed != data) {
+            if (parsed !== data) {
               //Only update the view if the new view value is actually different
               modelCtrl.$setViewValue(parsed);
               modelCtrl.$render();
@@ -1123,10 +1130,8 @@
         }
         return template;
       },
-      link: function (scope, element, attrs) {
-        if (scope.size === 'sm') {
-          scope.isSmall = true;
-        }
+      link: function (scope) {
+        scope.isSmall = scope.size === 'sm';
       }
     };
   });
@@ -1158,7 +1163,7 @@
         score: '=',
         size: '@'
       },
-      link: function (scope, iElement, iAttrs) {
+      link: function (scope) {
         var translateScore = function (score) {
           var scoreType, scoreTranslation;
           // Translate string value into a Number
@@ -1182,10 +1187,10 @@
             scope.scoreType
           ];
         };
-        scope.$watch('score', function (newScore, oldScore) {
+        scope.$watch('score', function (newScore) {
           translateScore(newScore);
         });
-        scope.$watch('size', function (newSize, oldSize) {
+        scope.$watch('size', function (newSize) {
           scope.scoreSize = newSize && 'score-' + newSize || '';
         });
       }
@@ -1193,6 +1198,7 @@
   });
 }(angular.module('boomstrap')));
 (function (Boomstrap, baron) {
+  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btScrollBar
@@ -1206,11 +1212,10 @@
    * The `btScrollBar` directive adds a simulated scroll-bar to any element.  It wraps the jQuery baron library.
    */
   Boomstrap.directive('btScrollBar', function () {
-    return function (scope, element, attrs) {
+    return function (scope, element) {
       var $element = angular.element(element);
       $element.addClass('scroller baron');
       $element.append('<div class="scroller__track"><div class="scroller__bar"></div></div>');
-      console.log(element[0]);
       var scroller = baron({
           root: element[0],
           scroller: '.scroller',
@@ -1323,14 +1328,14 @@
         }());
         scope.$watch(function () {
           return ngModel.$modelValue.minimum;
-        }, function (newVal, oldVal) {
+        }, function () {
           if (scope.minimum.value !== ngModel.$modelValue.minimum) {
             scope.minimum.value = ngModel.$modelValue.minimum;
           }
         });
         scope.$watch(function () {
           return ngModel.$modelValue.maximum;
-        }, function (newVal, oldVal) {
+        }, function () {
           if (scope.maximum.value !== ngModel.$modelValue.maximum) {
             scope.maximum.value = ngModel.$modelValue.maximum;
           }
@@ -1362,14 +1367,6 @@
           }
         });
       }
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
     };
   });
 }(angular.module('boomstrap')));
@@ -1484,7 +1481,7 @@
         goToNextStep: function () {
           tourRef.next();
         },
-        endTour: function (skipDismiss) {
+        endTour: function () {
           tourRef.end();
         }
       };
