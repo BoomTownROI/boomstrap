@@ -27,7 +27,7 @@
           //convert data from view format to model format
           var parsed;
           if(data) {
-            parsed = parseInt(data.replace(/[^0-9]+/g,""));
+            parsed = parseInt(data.replace(/[^0-9]+/g, ''));
             if(isNaN(parsed)) {
               parsed = null;
             }
@@ -42,7 +42,9 @@
           } else {
             newViewValue = null;
           }
-          if(newViewValue != data) ctrl.$setViewValue(newViewValue); //Only update the view (which triggers $parsers) if the new view value is actually different
+          if (newViewValue !== data) {
+            ctrl.$setViewValue(newViewValue); //Only update the view (which triggers $parsers) if the new view value is actually different
+          }
           ctrl.$render();
 
           return parsed; //converted value goes to the model

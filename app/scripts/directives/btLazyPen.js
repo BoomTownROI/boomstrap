@@ -20,7 +20,7 @@
         author: '@'
       },
       templateUrl: 'template/btLazyPen/btLazyPen.tpl.html',
-      link: function(scope, element) {
+      link: function(scope) {
         scope.showingPen = { value: false };
       }
     };

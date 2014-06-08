@@ -22,7 +22,6 @@
       link: function(scope, element) {
         var $body = angular.element(document.getElementsByTagName('body')[0]);
         var $html = angular.element(document.getElementsByTagName('html')[0]);
-        var $documentEl = angular.element($document);
         var $windowEl = angular.element($window);
         var htmlDefault = {
           position: $html.css('position'),

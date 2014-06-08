@@ -106,13 +106,13 @@
           };
         })();
 
-        scope.$watch(function() { return ngModel.$modelValue.minimum; }, function(newVal, oldVal) {
+        scope.$watch(function() { return ngModel.$modelValue.minimum; }, function() {
           if (scope.minimum.value !== ngModel.$modelValue.minimum) {
             scope.minimum.value = ngModel.$modelValue.minimum;
           }
         });
 
-        scope.$watch(function() { return ngModel.$modelValue.maximum; }, function(newVal, oldVal) {
+        scope.$watch(function() { return ngModel.$modelValue.maximum; }, function() {
           if (scope.maximum.value !== ngModel.$modelValue.maximum) {
             scope.maximum.value = ngModel.$modelValue.maximum;
           }

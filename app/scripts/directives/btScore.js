@@ -26,7 +26,7 @@
         score: '=',
         size: '@'
       },
-      link: function(scope, iElement, iAttrs) {
+      link: function(scope) {
         var translateScore = function(score) {
           var scoreType,
               scoreTranslation;
@@ -53,11 +53,11 @@
           return [scope.scoreSize, scope.scoreType];
         };
 
-        scope.$watch('score', function(newScore, oldScore) {
+        scope.$watch('score', function(newScore) {
           translateScore(newScore);
         });
 
-        scope.$watch('size', function(newSize, oldSize) {
+        scope.$watch('size', function(newSize) {
           scope.scoreSize = newSize && 'score-' + newSize || '';
         });
 

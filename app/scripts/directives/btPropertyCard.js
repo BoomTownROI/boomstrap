@@ -17,10 +17,8 @@
         }
         return template;
       },
-      link: function(scope, element, attrs) {
-        if (scope.size === 'sm') {
-          scope.isSmall = true;
-        }
+      link: function(scope) {
+        scope.isSmall = scope.size === 'sm';
       }
     };
   });

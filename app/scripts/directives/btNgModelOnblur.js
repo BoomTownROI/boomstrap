@@ -18,8 +18,7 @@
       require: 'ngModel',
       priority: 1,
       link: function (scope, element, attrs, ngModel) {
-        var analyticsName = '';
-
+        
         var update = function (alwaysUpdate) {
           scope.$apply(function () {
             var elementValue = element.val().trim();

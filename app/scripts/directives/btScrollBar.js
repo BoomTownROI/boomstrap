@@ -1,4 +1,6 @@
 (function(Boomstrap, baron) {
+  'use strict';
+
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btScrollBar
@@ -12,11 +14,12 @@
    * The `btScrollBar` directive adds a simulated scroll-bar to any element.  It wraps the jQuery baron library.
    */
   Boomstrap.directive('btScrollBar', function() {
-    return function(scope, element, attrs) {
+    return function(scope, element) {
       var $element = angular.element(element);
+      
       $element.addClass('scroller baron');
       $element.append('<div class="scroller__track"><div class="scroller__bar"></div></div>');
-      console.log(element[0]);
+
       var scroller = baron({
         root: element[0],
         scroller: '.scroller',
@@ -31,7 +34,7 @@
 
       scope.$on('$destroy', function() {
         scroller.dispose();
-      })
+      });
     };
-  })
+  });
 })(angular.module('boomstrap'), window.baron);

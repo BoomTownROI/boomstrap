@@ -123,7 +123,7 @@
       goToNextStep: function() {
         tourRef.next();
       },
-      endTour: function(skipDismiss) {
+      endTour: function() {
         tourRef.end();
       }
     };

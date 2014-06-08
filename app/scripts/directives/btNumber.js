@@ -1,4 +1,5 @@
 (function(Boomstrap) {
+  'use strict';
 
   /**
    * @ngdoc directive
@@ -23,7 +24,7 @@
               parsed = /\./.test(data) ? parseFloat(data) : parseInt(data);
             }
 
-            if(parsed != data){
+            if(parsed !== data){
               //Only update the view if the new view value is actually different
               modelCtrl.$setViewValue(parsed);
               modelCtrl.$render();

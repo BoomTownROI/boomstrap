@@ -30,7 +30,7 @@
           '}}</span>'
         ].join('');
       },
-      link: function(scope, element, attrs) {
+      link: function(scope) {
         scope.cat = categories[scope.category];
         scope.abbr = abbrs[scope.category];
       }
