@@ -1,23 +1,23 @@
-var es = require('event-stream'),
-  gulp = require('gulp'),
-  newer = require('gulp-newer'),
-  concat = require('gulp-concat'),
-  rename = require('gulp-rename'),
-  less = require('gulp-less'),
-  uglify = require('gulp-uglify'),
-  jshint = require('gulp-jshint'),
+var es          = require('event-stream'),
+  gulp          = require('gulp'),
+  newer         = require('gulp-newer'),
+  concat        = require('gulp-concat'),
+  rename        = require('gulp-rename'),
+  less          = require('gulp-less'),
+  uglify        = require('gulp-uglify'),
+  jshint        = require('gulp-jshint'),
   jshintstylish = require('jshint-stylish')
-  watch = require('gulp-watch'),
-  connect = require('gulp-connect'),
-  livereload = require('gulp-livereload'),
-  ghPages = require('gulp-gh-pages'),
-  mustache = require('gulp-mustache'),
-  views = require('./views/views'),
-  ngmin = require('gulp-ngmin'),
+  watch         = require('gulp-watch'),
+  connect       = require('gulp-connect'),
+  livereload    = require('gulp-livereload'),
+  ghPages       = require('gulp-gh-pages'),
+  mustache      = require('gulp-mustache'),
+  views         = require('./views/views'),
+  ngmin         = require('gulp-ngmin'),
   templateCache = require('gulp-angular-templatecache'),
-  bower = require('gulp-bower'),
-  clean = require('gulp-clean'),
-  order = require('gulp-order');
+  bower         = require('gulp-bower'),
+  clean         = require('gulp-clean'),
+  order         = require('gulp-order');
   // dgeni = require('dgeni');
 
 require('gulp-grunt')(gulp, {
@@ -103,8 +103,8 @@ gulp.task('boomstrapjsAngular', function() {
   return gulp.src(['app/app.js', 'app/constants.js', 'app/scripts/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter(jshintstylish))
-    .pipe(concat('boomstrap-angular.js'))
     .pipe(ngmin())
+    .pipe(concat('boomstrap-angular.js'))
     .pipe(gulp.dest('docs/js/'));
 });
 
