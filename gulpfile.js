@@ -77,8 +77,6 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-    'vendor/chosen_v1.1.0/chosen.jquery.min.js',
-    'bower_components/angular-chosen/angular-chosen.js', // No minified version
     'bower_components/angular-ui-select/dist/select.js', // No minified version
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
