@@ -74,19 +74,19 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
     'bower_components/bootstrap-select/bootstrap-select.min.js',
-    'vendor/chosen_v1.1.0/chosen.jquery.min.js',
+    'vendor/chosen/chosen.jquery.min.js',
+    'bower_components/baron/baron.min.js',
+    'bower_components/momentjs/min/moment.min.js',
+    'js/global.js',
+    'js/vendor-config.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     'bower_components/angular-ui-select/dist/select.js', // No minified version
-    'bower_components/baron/baron.min.js',
-    'bower_components/momentjs/min/moment.min.js',
     'bower_components/angular-moment/angular-moment.min.js',
     // 'bower_components/perfect-scrollbar/src/perfect-scrollbar.js', // Using angular dependency version
     'bower_components/angular-perfect-scrollbar/dependencies/perfect-scrollbar.js',
-    'bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js',
-    'js/global.js',
-    'js/vendor-config.js'
+    'bower_components/angular-perfect-scrollbar/src/angular-perfect-scrollbar.js'
   ])
   .pipe(newer('docs/js/boomstrap.js'))
   .pipe(concat('boomstrap.js'))
