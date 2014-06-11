@@ -30,6 +30,10 @@
     top: 0;
     width: 100%;
   }
+  // kill bottom border if card-stats is last child
+  > div:last-child.card-stats {
+    border-bottom: none;
+  }
 }
 
 .card-container {
