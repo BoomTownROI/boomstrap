@@ -6409,9 +6409,6 @@ fieldset[disabled] .btn-attention.active {
   top: 0;
   width: 100%;
 }
-.card > div:last-child.card-stats {
-  border-bottom: none;
-}
 .card-container {
   padding: 10px 6px;
 }
@@ -6476,9 +6473,11 @@ fieldset[disabled] .btn-attention.active {
 .card-stats {
   font-size: 11px;
   border-top: #ececec 1px solid;
-  border-bottom: #ececec 1px solid;
   text-align: center;
   text-transform: uppercase;
+}
+.card-stats + * {
+  border-top: #ececec 1px solid;
 }
 .card-stat {
   display: inline-block;
