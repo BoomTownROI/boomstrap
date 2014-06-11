@@ -31,9 +31,9 @@
     width: 100%;
   }
   // kill bottom border if card-stats is last child
-  > div:last-child.card-stats {
-    border-bottom: none;
-  }
+  // > div:last-child.card-stats {
+  //   border-bottom: none;
+  // }
 }
 
 .card-container {
@@ -108,15 +108,18 @@
 .card-stats {
   font-size: 11px;
   border-top: @gray-lighter 1px solid;
-  border-bottom: @gray-lighter 1px solid;
+  //border-bottom: @gray-lighter 1px solid;
   text-align: center;
   text-transform: uppercase;
+  & + * {
+    border-top: @gray-lighter 1px solid;
+  }
 }
 
 .card-stat {
   display: inline-block;
   padding: @padding-large-vertical 0;
-  &+.card-stat {
+  & + .card-stat {
     padding-left: @padding-small-horizontal;
   }
 }
