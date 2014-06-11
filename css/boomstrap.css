@@ -6409,6 +6409,9 @@ fieldset[disabled] .btn-attention.active {
   top: 0;
   width: 100%;
 }
+.card > div:last-child.card-stats {
+  border-bottom: none;
+}
 .card-container {
   padding: 10px 6px;
 }
