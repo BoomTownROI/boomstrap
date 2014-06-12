@@ -89,8 +89,8 @@ $(function () {
 // The following code is the Tooltip hide function without specific events triggered
 // The commented out code is the code that has changed
 
-(function($, Tooltip) {
-  Tooltip.prototype.hide = function () {
+(function($) {
+  $.fn.tooltip.Constructor.prototype.hide = $.fn.popover.Constructor.prototype.hide = function () {
     var that = this
     var $tip = this.tip()
     //var e    = $.Event('hide.bs.' + this.type)
@@ -116,7 +116,7 @@ $(function () {
 
     return this
   }
-})(window.jQuery, window.Tooltip)
+})(window.jQuery);
 
 // Add icons to Bootstrap collpase.js
 
