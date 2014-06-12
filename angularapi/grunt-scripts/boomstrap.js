@@ -81,6 +81,42 @@ $(function () {
     }
 });
 
+// Fix Bootstrap Issues
+
+// There is a compatibility issue with Bootstrap and Prototype
+// per this: http://stackoverflow.com/questions/15087129/popover-hides-parent-element-if-used-with-prototype-js
+
+// The following code is the Tooltip hide function without specific events triggered
+// The commented out code is the code that has changed
+
+(function($) {
+  $.fn.tooltip.Constructor.prototype.hide = $.fn.popover.Constructor.prototype.hide = function () {
+    var that = this
+    var $tip = this.tip()
+    //var e    = $.Event('hide.bs.' + this.type)
+
+    function complete() {
+      if (that.hoverState != 'in') $tip.detach()
+      that.$element.trigger('hidden.bs.' + that.type)
+    }
+
+    //this.$element.trigger(e)
+
+    //if (e.isDefaultPrevented()) return
+
+    $tip.removeClass('in')
+
+    $.support.transition && this.$tip.hasClass('fade') ?
+      $tip
+        .one($.support.transition.end, complete)
+        .emulateTransitionEnd(150) :
+      complete()
+
+    this.hoverState = null
+
+    return this
+  }
+})(window.jQuery);
 
 // Add icons to Bootstrap collpase.js
 
