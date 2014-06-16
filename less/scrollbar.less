@@ -1,20 +1,59 @@
 // File: scrollbar.less
-// Note: Extends bower_components/perfect-scrollbar/src/perfect-scrollbar.css
-// and bower_components/angular-perfect-scrollbar/dependencies/perfect-scrollbar.css
+// Note: 
 
-.ps-container {
-    // white-space: pre-line; << this was recommended by the docs, but it seems to cause extra white space
-    overflow-y: hidden;
-    position: relative;
-    .ps-scrollbar-x-rail, .ps-scrollbar-y-rail, .ps-scrollbar-x, .ps-scrollbar-y {
-      background-color: @gray-darker;
+
+.baron {
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    .baron-scroller-track {
+      opacity: .8;
     }
-    &:hover .ps-scrollbar-x-rail, &:hover .ps-scrollbar-y-rail, &:hover .ps-scrollbar-x, &:hover .ps-scrollbar-y {
-      opacity: 0.65;
-    }
-    &.inverted {
-      .ps-scrollbar-x-rail, .ps-scrollbar-y-rail, .ps-scrollbar-x, .ps-scrollbar-y {
-        background-color: @gray-lightest;
-      }
-    }
+  }
 }
+
+.baron-scroller {
+  border: 0;
+  height: 100%;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.baron-scroller::-webkit-scrollbar { /* Preventing webkit bug of horizontal scrolling */
+  width: 0;
+}
+
+.baron-scroller-track {
+  background-color: fadeout(@gray-lighter,50%);
+  border-radius: @border-radius-small;
+  bottom: 4px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 8px;
+  z-index: 3;
+  .transition(opacity .2s linear);
+}
+
+.baron-scroller-track-inverted {
+  .baron-scroller-bar {
+    background-color: @white;
+  }
+}
+
+.baron-scroller-bar {
+  background-color: @gray;
+  border-radius: @border-radius-small;
+  pointer-events: auto;
+  position: absolute;
+  right: 0;    
+  width: 8px;
+  z-index: 1;
+}
+
+
+
+
+

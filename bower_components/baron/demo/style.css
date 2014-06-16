@@ -61,10 +61,7 @@ body {
 .baron .scroller__bar {
     opacity: .6;
 }
-.baron_h .scroller__bar_h {
-    opacity: .6;
-    bottom: 30px;
-}
+
 
 .header__title {
     position: relative;
