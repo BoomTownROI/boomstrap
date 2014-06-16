@@ -15,15 +15,15 @@
   </div>
   <div class="card-container">
      <div class="row row-xcondensed">
-      <div class="col-xs-7">
+        <p class="card-priority card-price">{{ property.listPrice }}</p>
         <p class="card-priority card-street">
           <a target="_blank" href="{{ property.listingUrl }}">{{ property.address.street }}</a>
         </p>
+      <div class="col-xs-7">
         <p class="small">{{ property.address.city }}, {{ property.address.state }}</p>
         <p class="small">{{ property.address.neighborhood }}</p>
       </div>
       <div class="col-xs-5 text-right">
-        <p class="card-priority card-price">{{ property.listPrice }}</p>
         <p class="small">{{ property.pricePerSqft }}/SQFT</p>
       </div>
      </div>
