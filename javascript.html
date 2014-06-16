@@ -2217,10 +2217,11 @@ doctour.init();</code></pre>
 </div>
 <!-- ================================== Select ================================== -->
 
-<!-- Selects (Boomstrap Custom) -->
+<!-- Select (Boomstrap Custom) -->
+
 <div class="pl-docs-section">
   <h1 id="select" class="page-header">Select <small>bootstrap-select.js</small></h1>
-  <p class="lead">Custom select using button dropdown. See <a href="http://silviomoreto.github.io/bootstrap-select/3/" target="_blank">http://silviomoreto.github.io/bootstrap-select/3/</a> for options and documentation.</p>
+  <p class="lead">Custom select is a third-party plugin using button dropdown. See <a href="http://silviomoreto.github.io/bootstrap-select/3/" target="_blank">http://silviomoreto.github.io/bootstrap-select/3/</a> for options and documentation.</p>
   <div class="pl-example">
     <select class="selectpicker">
 	    <option>Mustard</option>
@@ -2228,7 +2229,6 @@ doctour.init();</code></pre>
 	    <option>Relish</option>
 	  </select>
   </div>
-
   <div class="pl-code">
     <pre class="prettyprint"><code>&lt;select class="selectpicker"&gt;
   &lt;option&gt;Mustard&lt;/option&gt;
@@ -2236,75 +2236,92 @@ doctour.init();</code></pre>
   &lt;option&gt;Relish&lt;/option&gt;
 &lt;/select&gt;</code></pre>
   </div>
-
 	<p>Call selectpicker manually:</p>
-
 	<div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.selectpicker'</span><span class="p">).</span><span class="nx">selectpicker</span><span class="p">()</span>
 </code></pre></div>
-
-
-
 </div>
 
 
+<!-- ================================== Scrollbar ================================== -->
+
+<!-- Scrollbar (Boomstrap Custom) -->
+
+
+<script>
+window.onload = function() {
+  var scrollAreaOne = baron({
+    root: '.scroll-area-1',
+    scroller: '.baron-scroller',
+    bar: '.baron-scroller-bar',
+    track: '.baron-scroller-track',
+    barOnCls: 'baron'
+  });
+  var scrollAreaTwo = baron({
+    root: '.scroll-area-2',
+    scroller: '.baron-scroller',
+    bar: '.baron-scroller-bar',
+    track: '.baron-scroller-track',
+    barOnCls: 'baron'
+  });
+};
+
+</script>
+
 <section id="scrollbar" class="pl-docs-section">
-    <style>
-        .ps-example {
-            height: 300px;
-            width: 816px;
-        }
-    </style>
-    <script>
-        (function($) {
-            $(document).ready(function() {
-                $('.perfect-scrollbar').perfectScrollbar({ wheelSpeed: 20 });
-            });
-        })(jQuery);
-    </script>
     <div class="page-header">
-      <h1>Scrollbar<small>
-            (<a target="_blank" href="https://github.com/noraesae/perfect-scrollbar">perfect-scrollbar</a>)
-        </small></h1>
+      <h1>Scrollbar <small>baron.js</small></h1>
     </div>
-    <p>The image below sits in a <code>&lt;div&gt;</code> tag with class <code>perfect-scrollbar</code>. If the inner content is wider or taller than the <code>.perfect-scrollbar</code> container, scrollbars will be triggered.</p>
-    <div class="perfect-scrollbar ps-example" style="background-color: #fff; margin-bottom: 12px;">
-        <div style="background: url('http://boomtownroi.com/assets/images/site/bg.gif'); opacity: 0.5; height: 900px;"></div>
+    <p class="lead">Baron is a third-party plugin custom scrollbar. See <a href="https://github.com/Diokuz/baron" target="_blank">https://github.com/Diokuz/baron</a> for options and documentation.</p>
+    <h3>Default Scrollbar</h3>
+    <div class="pl-example">
+      <div class="scroll-area-1 baron">
+        <div class="baron-scroller">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id pulvinar odio, ut gravida lacus. Nulla non ligula fermentum ante iaculis rhoncus. Sed non sagittis neque. Nullam ac neque ac lorem malesuada pulvinar porta vel augue. Proin vitae nunc vehicula, faucibus lorem quis, consectetur magna. Donec commodo velit non feugiat tempus. Sed lacus felis, euismod ut tristique at, cursus ut metus. Sed tellus risus, vestibulum vitae velit quis, ultricies commodo purus. Fusce auctor orci in neque sagittis, sed bibendum urna porttitor. Integer fringilla sodales tellus sit amet hendrerit. Sed nisi risus, posuere at aliquet et, aliquet ac lectus. Vivamus sed nisi rutrum, molestie tortor quis, vulputate dui. Suspendisse vulputate mauris ut nisi vehicula accumsan. Nullam accumsan nibh nec consequat tincidunt. Nam placerat turpis nec lobortis porta. Vestibulum sit amet malesuada lorem, vitae accumsan nisl.</p>
+          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris eu sagittis lorem, non dignissim erat. Duis id hendrerit erat, et interdum tortor. Fusce varius, dolor porttitor tincidunt posuere, purus eros vehicula magna, non lobortis orci nisl id metus. Sed leo massa, vulputate in massa ut, pellentesque iaculis orci. Nulla vulputate cursus nunc ut consequat. Proin nec enim rhoncus, scelerisque enim a, ultricies odio. Duis sodales ac quam sit amet malesuada.</p>
+          <p>Quisque vulputate, justo sed pulvinar molestie, ante nisi aliquet magna, id interdum est sem id arcu. Aliquam lacus lorem, rhoncus eu blandit non, viverra at turpis. Sed feugiat nibh ut ante tincidunt eleifend. Pellentesque eget molestie lacus. Nunc suscipit nulla id orci commodo scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed congue sagittis tincidunt. Donec elementum tellus eu nunc lobortis, at ultrices nulla pretium. Proin sagittis justo sit amet diam laoreet, quis vestibulum purus varius. Aenean at metus eu odio pretium accumsan. Mauris scelerisque scelerisque elementum. Nullam laoreet metus id risus dignissim suscipit. Quisque mattis accumsan rutrum.</p>
+        </div>
+        <div class="baron-scroller-track">
+          <div class="baron-scroller-bar"></div>
+        </div>
+      </div>
     </div>
-    <p>On dark backgrounds, use <code>class="inverted"</code></p>
-    <div class="perfect-scrollbar ps-example inverted" style="background-color: #03a;">
-        <div style="background: url('http://boomtownroi.com/assets/images/site/bg.gif'); opacity: 0.3; height: 900px;"></div>
+    <div class="pl-code"><pre class="prettyprint"><code>&lt;div class="scroll-area-1 baron"&gt;
+  &lt;div class="baron-scroller"&gt;
+    scrollable content goes here
+  &lt;/div&gt;
+  &lt;div class="baron-scroller-track"&gt;
+    &lt;div class="baron-scroller-bar"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
-    <h2>Usage</h2>
-    <p>Create a <code>perfect-scrollbar</code> container with a class to hook up some CSS.</p>
-    <p>HTML</p>
-    <pre class="prettyprint">
-&lt;div class="perfect-scrollbar awesome-clizzass"&gt;&lt;!-- optionally, add class <em>inverted</em> --&gt;
-    &lt;p&gt;So Snoopy!&lt;/p&gt;
-&lt;/div&gt;
-    </pre>
-    <p>CSS</p>
-    <pre class="prettyprint">
-/* set a width and height in your CSS */
 
-.awesome-clizzass {
-    width: 300px;
-    height: 816px;
-}
-    </pre>
-    <p>JavaScript</p>
-    <pre class="prettyprint">
-/* init */
-
-(function($) {
-    $(document).ready(function() {
-        $('.perfect-scrollbar').perfectScrollbar({ wheelSpeed: 0.5 });
-    });
-})(jQuery);
-
-/* for more options, see the perfect-scrollbar docs */
-    </pre>
-    <p>If your scrollbar container changes size (e.g. after an AJAX call), call <code>$('.perfect-scrollbar').perfectScrollbar('update');</code> to reinitialize the container.</p>
+    <h3>Inverted Scrollbar</h3>
+    <p>For inverted scroll bars, add <code>.baron-scroller-track-inverted</code> class to <code>.baron-scroller-track</code>.</p>
+    <div class="pl-example">
+      <div class="scroll-area-2 baron">
+        <div class="baron-scroller">
+          <h4>Inverted Scrollbar</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id pulvinar odio, ut gravida lacus. Nulla non ligula fermentum ante iaculis rhoncus. Sed non sagittis neque. Nullam ac neque ac lorem malesuada pulvinar porta vel augue. Proin vitae nunc vehicula, faucibus lorem quis, consectetur magna. Donec commodo velit non feugiat tempus. Sed lacus felis, euismod ut tristique at, cursus ut metus. Sed tellus risus, vestibulum vitae velit quis, ultricies commodo purus. Fusce auctor orci in neque sagittis, sed bibendum urna porttitor. Integer fringilla sodales tellus sit amet hendrerit. Sed nisi risus, posuere at aliquet et, aliquet ac lectus. Vivamus sed nisi rutrum, molestie tortor quis, vulputate dui. Suspendisse vulputate mauris ut nisi vehicula accumsan. Nullam accumsan nibh nec consequat tincidunt. Nam placerat turpis nec lobortis porta. Vestibulum sit amet malesuada lorem, vitae accumsan nisl.</p>
+          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris eu sagittis lorem, non dignissim erat. Duis id hendrerit erat, et interdum tortor. Fusce varius, dolor porttitor tincidunt posuere, purus eros vehicula magna, non lobortis orci nisl id metus. Sed leo massa, vulputate in massa ut, pellentesque iaculis orci. Nulla vulputate cursus nunc ut consequat. Proin nec enim rhoncus, scelerisque enim a, ultricies odio. Duis sodales ac quam sit amet malesuada.</p>
+          <p>Quisque vulputate, justo sed pulvinar molestie, ante nisi aliquet magna, id interdum est sem id arcu. Aliquam lacus lorem, rhoncus eu blandit non, viverra at turpis. Sed feugiat nibh ut ante tincidunt eleifend. Pellentesque eget molestie lacus. Nunc suscipit nulla id orci commodo scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed congue sagittis tincidunt. Donec elementum tellus eu nunc lobortis, at ultrices nulla pretium. Proin sagittis justo sit amet diam laoreet, quis vestibulum purus varius. Aenean at metus eu odio pretium accumsan. Mauris scelerisque scelerisque elementum. Nullam laoreet metus id risus dignissim suscipit. Quisque mattis accumsan rutrum.</p>
+        </div>
+        <div class="baron-scroller-track baron-scroller-track-inverted">
+          <div class="baron-scroller-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pl-code"><pre class="prettyprint"><code>&lt;div class="scroll-area-2 baron"&gt;
+  &lt;div class="baron-scroller"&gt;
+    scrollable content goes here
+  &lt;/div&gt;
+  &lt;div class="baron-scroller-track baron-scroller-track-inverted"&gt;
+    &lt;div class="baron-scroller-bar"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
 </section>
+
+
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
