@@ -159,6 +159,30 @@
   }
 }
 
+.card-sm-activity {
+  border-top: @gray-lighter 1px solid;
+  .clearfix();
+}
+
+.card-sm-activity-item {
+  float: left;
+  color: @gray-dark;
+  & + & { margin-left: @margin-small; }
+}
+
+.card-sm-activity-item-count {
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+}
+
+.card-sm-activity-timestamp {
+  float: right;
+  font-size: 11px;
+  position: relative;
+  top: 2px;
+}
+
 .card-sm-container {
   padding: @padding-small-vertical 0;
   &:last-child { padding-bottom: 0; }
@@ -170,7 +194,6 @@
 }
 
 .card-sm-stats {
-  //color: @gray;
   border-top: @gray-lighter 1px solid;
   font-size: 10px;
   text-align: center;
