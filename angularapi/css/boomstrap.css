@@ -6166,18 +6166,6 @@ fieldset[disabled] .btn-attention.active {
   background-color: #ffffff;
   border-top: #ececec 1px solid;
 }
-.card-photo {
-  overflow: hidden;
-  padding-top: 75%;
-  position: relative;
-  width: auto;
-}
-.card-photo-inner {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
 .card-img {
   border: none;
   height: auto;
@@ -6190,6 +6178,21 @@ fieldset[disabled] .btn-attention.active {
 }
 .card-intro {
   height: 76px;
+}
+.card-photo {
+  overflow: hidden;
+  padding-top: 75%;
+  position: relative;
+  width: auto;
+}
+.card-photo-inner {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.card-price {
+  float: right;
 }
 .card-toggle {
   background-color: #f6f6f6;
@@ -6238,6 +6241,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .card-street {
   color: #1581e2;
+  max-width: 220px;
 }
 .card-title {
   background-color: #f6f6f6;
@@ -6257,9 +6261,13 @@ fieldset[disabled] .btn-attention.active {
 }
 .card-sm .sash {
   font-size: 11px;
+  padding: 1px 0 5px 0;
 }
 .card-sm-container {
   padding: 5px 0;
+}
+.card-sm-container:last-child {
+  padding-bottom: 0;
 }
 .card-sm-priority {
   font-size: 13px;
@@ -6273,7 +6281,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .card-sm-stat {
   display: inline-block;
-  padding: 6px 0;
+  padding: 5px 0;
 }
 .card-sm-stat + .card-sm-stat {
   padding-left: 4px;
