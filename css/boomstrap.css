@@ -6263,6 +6263,43 @@ fieldset[disabled] .btn-attention.active {
   font-size: 11px;
   padding: 1px 0 5px 0;
 }
+.card-sm-activity {
+  border-top: #ececec 1px solid;
+}
+.card-sm-activity:before,
+.card-sm-activity:after {
+  content: " ";
+  display: table;
+}
+.card-sm-activity:after {
+  clear: both;
+}
+.card-sm-activity:before,
+.card-sm-activity:after {
+  content: " ";
+  display: table;
+}
+.card-sm-activity:after {
+  clear: both;
+}
+.card-sm-activity-item {
+  float: left;
+  color: #696969;
+}
+.card-sm-activity-item + .card-sm-activity-item {
+  margin-left: 6px;
+}
+.card-sm-activity-item-count {
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+}
+.card-sm-activity-timestamp {
+  float: right;
+  font-size: 11px;
+  position: relative;
+  top: 2px;
+}
 .card-sm-container {
   padding: 5px 0;
 }
@@ -6409,8 +6446,8 @@ fieldset[disabled] .btn-attention.active {
 }
 @font-face {
   font-family: 'ficon';
-  src: url('fonts/ficon.eot?-s4z721');
-  src: url('fonts/ficon.eot?#iefix-s4z721') format('embedded-opentype'), url('fonts/ficon.woff?-s4z721') format('woff'), url('fonts/ficon.ttf?-s4z721') format('truetype'), url('fonts/ficon.svg?-s4z721#ficon') format('svg');
+  src: url('fonts/ficon.eot?-m0h7xu');
+  src: url('fonts/ficon.eot?#iefix-m0h7xu') format('embedded-opentype'), url('fonts/ficon.woff?-m0h7xu') format('woff'), url('fonts/ficon.ttf?-m0h7xu') format('truetype'), url('fonts/ficon.svg?-m0h7xu#ficon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6441,6 +6478,9 @@ fieldset[disabled] .btn-attention.active {
 }
 .ficon-buyer-seller:before {
   content: "\e61e";
+}
+.ficon-phone:before {
+  content: "\e620";
 }
 .ficon-phone-neutral:before {
   content: "\e604";
@@ -6480,9 +6520,6 @@ fieldset[disabled] .btn-attention.active {
 }
 .ficon-user:before {
   content: "\e00b";
-}
-.ficon-phone:before {
-  content: "\e009";
 }
 .ficon-heart:before {
   content: "\e01b";
@@ -7513,6 +7550,10 @@ a.responsive-utilities td.is-visible:hover {
 }
 .pl-example .scroll-area-1 {
   height: 200px;
+}
+.pl-example .scroll-area-1 p {
+  margin: 0;
+  padding: 5px 10px 0 5px;
 }
 .pl-example .scroll-area-2 {
   background-color: #1581e2;
