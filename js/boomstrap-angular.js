@@ -3,8 +3,7 @@
   angular.module('boomstrap', [
     'ui.bootstrap',
     'ui.select',
-    'angularMoment',
-    'perfect_scrollbar'
+    'angularMoment'
   ]).value('AUTO_START_TOUR', { value: false }).config([
     'uiSelectConfig',
     function (uiSelectConfig) {
