@@ -18,7 +18,7 @@
             return number + " days";
           } else {
             // pluralize weeks
-            return weeks + " week" + (weeks === 1 ? "" : "s"); 
+            return weeks + " wk" + (weeks === 1 ? "" : "s"); 
           }
         },
         M:  "1 mo",
