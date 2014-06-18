@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'ficon';
-	src:url('fonts/ficon.eot?-m0h7xu');
-	src:url('fonts/ficon.eot?#iefix-m0h7xu') format('embedded-opentype'),
-		url('fonts/ficon.woff?-m0h7xu') format('woff'),
-		url('fonts/ficon.ttf?-m0h7xu') format('truetype'),
-		url('fonts/ficon.svg?-m0h7xu#ficon') format('svg');
+	src:url('fonts/ficon.eot?obcu6i');
+	src:url('fonts/ficon.eot?#iefixobcu6i') format('embedded-opentype'),
+		url('fonts/ficon.woff?obcu6i') format('woff'),
+		url('fonts/ficon.ttf?obcu6i') format('truetype'),
+		url('fonts/ficon.svg?obcu6i#ficon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.ficon-paperclip:before {
+	content: "\e621";
+}
 .ficon-bell:before {
 	content: "\e61f";
 }
