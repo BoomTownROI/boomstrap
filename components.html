@@ -15,7 +15,7 @@
 <body class="pl-body">
   <!-- ================================== Navigation ================================== -->
   <nav id="top" class="navbar navbar-default" role="navigation">
-    <div class="container pl-docs-container">
+    <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
           <span class="icon-bar"></span>
@@ -132,7 +132,8 @@
 &lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt;&lt;/button&gt;
 </code></pre></div>
 
-	<h3>Custom Icons</h3>
+<!-- 	TOOK THESE OUT FOR NOW B/C GEORGY BOY WANTS TO DO AWAY WITH THE ICONS
+  <h3>Custom Icons</h3>
 	<p>Our custom icons, lovingly referred to as "bticon", are used when mulitple colors are necessary within the icon. These are icons with an <code>svg</code> background image.</p>
 	<h4>Lead Type</h4>
   <div class="pl-example pl-icons">
@@ -152,7 +153,7 @@
   <div class="callout callout-info">
     <h4>Icon Naming</h4>
     <p>We intentionally refrained from using <code>icon</code> in our icon class naming convention as <code>icon</code> is a popular class name in third-party iconography frameworks. Should we choose to move toward a third-party solution in the future, we won't have to worry about class name collisions.</p>
-  </div>
+  </div> -->
 
 
 
@@ -936,6 +937,31 @@
 &lt;/div&gt;
 </code></pre></div>
 
+  <p>Lead type dropdowns.</p>
+  <div class="pl-example">
+    <div class="btn-group">
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+        <span class="leadtype">buyer</span> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-leadtype" role="menu">
+        <li><a href="#"><span class="leadtype">buyer</span></a></li>
+        <li><a href="#"><span class="leadtype">seller</span></a></li>
+        <li><a href="#"><span class="leadtype">buyer/seller</span></a></li>
+      </ul>
+    </div>
+  </div><!-- /example -->
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;span class="leadtype leadtype-buyer"&gt;buyer&lt;/span&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu dropdown-menu-leadtype" role="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="leadtype"&gt;buyer&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="leadtype"&gt;seller&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;span class="leadtype"&gt;buyer/seller&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></div>
+
   <h3 id="btn-dropdowns-split">Split button dropdowns</h3>
   <p>Similarly, create split button dropdowns with the same markup changes, only with a separate button.</p>
   <div class="pl-example">
@@ -1266,7 +1292,9 @@
       <div class="col-lg-6">
         <div class="input-group">
           <span class="input-group-addon">
-            <input type="checkbox">
+            <!-- Fauxbox (Boomstrap Custom) -->
+            <input type="checkbox" class="fauxbox" id="theFauxbox000">
+            <label for="theFauxbox000"></label>
           </span>
           <input type="text" class="form-control">
         </div><!-- /input-group -->
@@ -1281,24 +1309,27 @@
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
   </form>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /input-group --&gt;</span>
-  <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.col-lg-6 --&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;/span&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /input-group --&gt;</span>
-  <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.col-lg-6 --&gt;</span>
-<span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.row --&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="row"&gt;
+  &lt;div class="col-lg-6"&gt;
+    &lt;div class="input-group"&gt;
+      &lt;span class="input-group-addon"&gt;
+        &lt;!-- Fauxbox (Boomstrap Custom) --&gt;
+        &lt;input type="checkbox" class="fauxbox" id="theFauxbox000"&gt;
+        &lt;label for="theFauxbox000"&gt;&lt;/label&gt;
+      &lt;/span&gt;
+      &lt;input type="text" class="form-control"&gt;
+    &lt;/div&gt;&lt;!-- /input-group --&gt;
+  &lt;/div&gt;&lt;!-- /.col-lg-6 --&gt;
+  &lt;div class="col-lg-6"&gt;
+    &lt;div class="input-group"&gt;
+      &lt;span class="input-group-addon"&gt;
+        &lt;input type="radio"&gt;
+      &lt;/span&gt;
+      &lt;input type="text" class="form-control"&gt;
+    &lt;/div&gt;&lt;!-- /input-group --&gt;
+  &lt;/div&gt;&lt;!-- /.col-lg-6 --&gt;
+&lt;/div&gt;&lt;!-- /.row --&gt;
 </code></pre></div>
 
 
@@ -1938,6 +1969,33 @@
 &lt;span class="cat cat-eq-abbr cat-trash"&gt;trash&lt;/span&gt;
 &lt;span class="cat cat-eq-abbr cat-watch"&gt;watch&lt;/span&gt;
 </code></pre></div>
+
+  <!-- Labels for Lead Types (Boomstrap Custom) -->
+  <h3>Lead types</h3>
+  <p>Lead type labels extend the <code>.label</code> class.</p>
+  <h4>Default</h4>
+  <div class="pl-example">
+    <span class="leadtype">buyer</span>
+    <span class="leadtype">seller</span>
+    <span class="leadtype">buyer/seller</span>
+  </div><!-- /example -->
+<div class="pl-code"><pre class="prettyprint"><code>&lt;span class="leadtype"&gt;buyer&lt;/span&gt;
+&lt;span class="leadtype"&gt;seller&lt;/span&gt;
+&lt;span class="leadtype"&gt;buyer/seller&lt;/span&gt;
+</code></pre></div>
+  
+  <h4>Equal width</h4>
+  <p>For equal width lead type labels, use the <code>.leadtype-eq</code> class.</p>
+  <div class="pl-example">
+    <span class="leadtype leadtype-eq">buyer</span>
+    <span class="leadtype leadtype-eq">seller</span>
+    <span class="leadtype leadtype-eq">buyer/seller</span>
+  </div><!-- /example -->
+<div class="pl-code"><pre class="prettyprint"><code>&lt;span class="leadtype leadtype-eq"&gt;buyer&lt;/span&gt;
+&lt;span class="leadtype leadtype-eq"&gt;seller&lt;/span&gt;
+&lt;span class="leadtype leadtype-eq"&gt;buyer/seller&lt;/span&gt;
+</code></pre></div>
+
 
 </div>
 <!-- ================================== Badges ================================== -->
@@ -3839,7 +3897,7 @@
                     <a href="#pagination">Pagination</a>
                 </li>
                 <li>
-                    <a href="#labels">Labels (lead categories)</a>
+                    <a href="#labels">Labels</a>
                 </li>
                 <li>
                     <a href="#badges">Badges</a>
