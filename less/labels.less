@@ -30,31 +30,31 @@
 // -------------------------
 
 .cat-archive {
-  .category-variant(@label-archive-color);
+  .label-variant-outline(@label-archive-color);
 }
 .cat-closed {
-  .category-variant(@label-closed-color);
+  .label-variant-outline(@label-closed-color);
 }
 .cat-hot {
-  .category-variant(@label-hot-color);
+  .label-variant-outline(@label-hot-color);
 }
 .cat-new {
-  .category-variant(@label-new-color);
+  .label-variant-outline(@label-new-color);
 }
 .cat-nurture {
-  .category-variant(@label-nurture-color);
+  .label-variant-outline(@label-nurture-color);
 }
 .cat-pending {
-  .category-variant(@label-pending-color);
+  .label-variant-outline(@label-pending-color);
 }
 .cat-qualify {
-  .category-variant(@label-qualify-color);
+  .label-variant-outline(@label-qualify-color);
 }
 .cat-trash {
-  .category-variant(@label-trash-color);
+  .label-variant-outline(@label-trash-color);
 }
 .cat-watch {
-  .category-variant(@label-watch-color);
+  .label-variant-outline(@label-watch-color);
 }
 
 // Lead Category Equal Width
@@ -69,4 +69,29 @@
 .cat-eq-abbr {
   width: 42px;
 }
+
+
+// Lead Type
+// -------------------------
+
+.leadtype {
+  &:extend(.label);
+  display: inline-block;
+  line-height: 1.1;
+  text-transform: lowercase;
+  .label-variant-outline();
+}
+
+// Lead Type Equal Width
+// -------------------------
+
+.leadtype-eq {
+  padding-left: 0;
+  padding-right: 0;
+  width: 76px;
+}
+
+
+
+
 

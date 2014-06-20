@@ -1,0 +1,38 @@
+// File: forms.less
+// Note: Extends Bootstrap forms.less
+
+.fauxbox {
+  display: none;
+  + label {
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 0 !important;
+    &:before {
+      content: "";
+      background-color: @white;
+      display: inline-block;
+      width: 14px;
+      height: 15px;
+      border: 1px solid @gray;
+      vertical-align: middle;
+      color: @boomtown-blue;
+      padding: 0 1px 1px;
+      text-align: center;
+      font-size: 15px;
+      margin: 1px 4px 1px 3px;
+      font-family: 'ficon';
+      font-weight: normal;
+      speak: none;
+      line-height: 13px;
+      text-indent: -2px;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      top: -2px;
+    }
+  }
+  &:checked+label:before {
+    content: "\e00a";
+    background: @white;
+    border: 1px solid @boomtown-blue;
+  }
+}

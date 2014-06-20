@@ -125,7 +125,7 @@
 			{
 				"source": "views/components/labels.html",
 				"css_id": "#labels",
-				"nav_header": "Labels (lead categories)"
+				"nav_header": "Labels"
 			},
 			{
 				"source": "views/components/badges.html",
@@ -317,7 +317,7 @@
 			{
 				"source": "app/views/lead-category.html",
 				"css_id": "#lead-category",
-				"nav_header": "Lead Category"
+				"nav_header": "Labels - Lead Category"
 			},
 			{
 				"source": "app/views/modals.html",

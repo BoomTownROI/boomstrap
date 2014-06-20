@@ -4,28 +4,15 @@
 // Dropdown menus
 // -------------------------
 
-
-
 // The dropdown menu (ul)
+
 .dropdown-menu {
   .divider {
     margin: @margin-xsmall 0;
   }
 }
 
-
-// Link buttons
-
-.dropdown-toggle {
-  &.btn-link {
-    padding: 0;
-    text-decoration: none;
-    .caret { color: @btn-default-color; }
-  }
-}
-
-
-
+// Lead category dropdown (ul)
 
 .dropdown-menu-cat {
   min-width: 50px;
@@ -34,5 +21,32 @@
   }
   .cat { 
     .cat-eq;
+  }
+}
+
+// Lead type dropdown (ul)
+
+.dropdown-menu-leadtype {
+  min-width: 50px;
+  > li > a {
+    padding: 3px @padding-base @padding-small;
+  }
+  .leadtype { 
+    .leadtype-eq;
+  }
+}
+
+
+
+// Dropdown toggles
+// -------------------------
+
+// Link buttons with dropdown caret
+
+.dropdown-toggle {
+  &.btn-link {
+    padding: 0;
+    text-decoration: none;
+    .caret { color: @btn-default-color; }
   }
 }
