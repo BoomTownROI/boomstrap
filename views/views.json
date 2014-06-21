@@ -28,29 +28,14 @@
 				"nav_header": "Overview"
 			},
 			{ 
+				"source": "views/css/buttons.html",
+				"css_id": "#buttons",
+				"nav_header": "Buttons"
+			},
+			{ 
 				"source": "views/css/colors.html",
 				"css_id": "#colors",
 				"nav_header": "Colors"
-			},
-			{ 
-				"source": "views/css/loaders.html",
-				"css_id": "#loaders",
-				"nav_header": "Loaders"
-			},
-			{ 
-				"source": "views/css/grid.html",
-				"css_id": "#grid",
-				"nav_header": "Grid"
-			},
-			{ 
-				"source": "views/css/typography.html",
-				"css_id": "#type",
-				"nav_header": "Type"
-			},
-			{ 
-				"source": "views/css/tables.html",
-				"css_id": "#tables",
-				"nav_header": "Tables"
 			},
 			{ 
 				"source": "views/css/forms.html",
@@ -58,14 +43,9 @@
 				"nav_header": "Forms"
 			},
 			{ 
-				"source": "views/css/buttons.html",
-				"css_id": "#buttons",
-				"nav_header": "Buttons"
-			},
-			{ 
-				"source": "views/css/images.html",
-				"css_id": "#images",
-				"nav_header": "Images"
+				"source": "views/css/grid.html",
+				"css_id": "#grid",
+				"nav_header": "Grid"
 			},
 			{ 
 				"source": "views/css/helper-classes.html",
@@ -73,9 +53,29 @@
 				"nav_header": "Helper Classes"
 			},
 			{ 
+				"source": "views/css/images.html",
+				"css_id": "#images",
+				"nav_header": "Images"
+			},
+			{ 
+				"source": "views/css/loaders.html",
+				"css_id": "#loaders",
+				"nav_header": "Loaders"
+			},
+			{ 
 				"source": "views/css/responsive-utilities.html",
 				"css_id": "#responsive-utilities",
 				"nav_header": "Responsive Utilities"
+			},
+			{ 
+				"source": "views/css/tables.html",
+				"css_id": "#tables",
+				"nav_header": "Tables"
+			},
+			{ 
+				"source": "views/css/typography.html",
+				"css_id": "#type",
+				"nav_header": "Type"
 			},
 			{ 
 				"source": "views/css/using-less.html",
@@ -88,14 +88,14 @@
 		"header": "Components",
 		"sources": [
 			{
-				"source": "views/components/icons.html",
-				"css_id": "#icons",
-				"nav_header": "Icons"
+				"source": "views/components/alerts.html",
+				"css_id": "#alerts",
+				"nav_header": "Alerts"
 			},
 			{
-				"source": "views/components/dropdowns.html",
-				"css_id": "#dropdowns",
-				"nav_header": "Dropdowns"
+				"source": "views/components/badges.html",
+				"css_id": "#badges",
+				"nav_header": "Badges"
 			},
 			{
 				"source": "views/components/button-groups.html",
@@ -108,9 +108,44 @@
 				"nav_header": "Button dropdowns"
 			},
 			{
+				"source": "views/components/callouts.html",
+				"css_id": "#callouts",
+				"nav_header": "Callouts"
+			},
+			{
+				"source": "views/components/cards.html",
+				"css_id": "#cards",
+				"nav_header": "Cards"
+			},
+			{
+				"source": "views/components/dropdowns.html",
+				"css_id": "#dropdowns",
+				"nav_header": "Dropdowns"
+			},
+			{
+				"source": "views/components/icons.html",
+				"css_id": "#icons",
+				"nav_header": "Icons"
+			},
+			{
 				"source": "views/components/input-groups.html",
 				"css_id": "#input-groups",
 				"nav_header": "Input groups"
+			},
+			{
+				"source": "views/components/jumbotron.html",
+				"css_id": "#jumbotron",
+				"nav_header": "Jumbotron"
+			},
+			{
+				"source": "views/components/labels.html",
+				"css_id": "#labels",
+				"nav_header": "Labels"
+			},
+			{
+				"source": "views/components/list-group.html",
+				"css_id": "#list-group",
+				"nav_header": "List group"
 			},
 			{
 				"source": "views/components/navs.html",
@@ -123,44 +158,9 @@
 				"nav_header": "Pagination"
 			},
 			{
-				"source": "views/components/labels.html",
-				"css_id": "#labels",
-				"nav_header": "Labels"
-			},
-			{
-				"source": "views/components/badges.html",
-				"css_id": "#badges",
-				"nav_header": "Badges"
-			},
-			{
-				"source": "views/components/jumbotron.html",
-				"css_id": "#jumbotron",
-				"nav_header": "Jumbotron"
-			},
-			{
 				"source": "views/components/page-header.html",
 				"css_id": "#page-header",
 				"nav_header": "Page header"
-			},
-			{
-				"source": "views/components/thumbnails.html",
-				"css_id": "#thumbnails",
-				"nav_header": "Thumbnails"
-			},
-			{
-				"source": "views/components/alerts.html",
-				"css_id": "#alerts",
-				"nav_header": "Alerts"
-			},
-			{
-				"source": "views/components/progress-bars.html",
-				"css_id": "#progress",
-				"nav_header": "Progress bars"
-			},
-			{
-				"source": "views/components/list-group.html",
-				"css_id": "#list-group",
-				"nav_header": "List group"
 			},
 			{
 				"source": "views/components/panels.html",
@@ -168,14 +168,9 @@
 				"nav_header": "Panels"
 			},
 			{
-				"source": "views/components/wells.html",
-				"css_id": "#wells",
-				"nav_header": "Wells"
-			},
-			{
-				"source": "views/components/callouts.html",
-				"css_id": "#callouts",
-				"nav_header": "Callouts"
+				"source": "views/components/progress-bars.html",
+				"css_id": "#progress",
+				"nav_header": "Progress bars"
 			},
 			{
 				"source": "views/components/sashes.html",
@@ -183,9 +178,9 @@
 				"nav_header": "Sashes"
 			},
 			{
-				"source": "views/components/cards.html",
-				"css_id": "#cards",
-				"nav_header": "Cards"
+				"source": "views/components/scores.html",
+				"css_id": "#scores",
+				"nav_header": "scores"
 			},
 			{
 				"source": "views/components/tags.html",
@@ -193,9 +188,14 @@
 				"nav_header": "tags"
 			},
 			{
-				"source": "views/components/scores.html",
-				"css_id": "#scores",
-				"nav_header": "scores"
+				"source": "views/components/thumbnails.html",
+				"css_id": "#thumbnails",
+				"nav_header": "Thumbnails"
+			},
+			{
+				"source": "views/components/wells.html",
+				"css_id": "#wells",
+				"nav_header": "Wells"
 			}
 		]
 	},
@@ -208,34 +208,9 @@
 				"nav_header": "overview"
 			},
 			{
-				"source": "views/javascript/modal.html",
-				"css_id": "#modals",
-				"nav_header": "modal"
-			},
-			{
-				"source": "views/javascript/dropdown.html",
-				"css_id": "#dropdowns",
-				"nav_header": "dropdown"
-			},
-			{
-				"source": "views/javascript/scrollspy.html",
-				"css_id": "#scrollspy",
-				"nav_header": "scrollspy"
-			},
-			{
-				"source": "views/javascript/tab.html",
-				"css_id": "#tabs",
-				"nav_header": "tab"
-			},
-			{
-				"source": "views/javascript/tooltip.html",
-				"css_id": "#tooltips",
-				"nav_header": "tooltip"
-			},
-			{
-				"source": "views/javascript/popover.html",
-				"css_id": "#popovers",
-				"nav_header": "popover"
+				"source": "views/javascript/affix.html",
+				"css_id": "#affix",
+				"nav_header": "affix"
 			},
 			{
 				"source": "views/javascript/alert.html",
@@ -248,24 +223,39 @@
 				"nav_header": "button"
 			},
 			{
-				"source": "views/javascript/collapse.html",
-				"css_id": "#collapse",
-				"nav_header": "collapse"
-			},
-			{
 				"source": "views/javascript/carousel.html",
 				"css_id": "#carousel",
 				"nav_header": "carousel"
 			},
 			{
-				"source": "views/javascript/affix.html",
-				"css_id": "#affix",
-				"nav_header": "affix"
+				"source": "views/javascript/collapse.html",
+				"css_id": "#collapse",
+				"nav_header": "collapse"
 			},
 			{
-				"source": "views/javascript/tour.html",
-				"css_id": "#tour",
-				"nav_header": "tour"
+				"source": "views/javascript/dropdown.html",
+				"css_id": "#dropdowns",
+				"nav_header": "dropdown"
+			},
+			{
+				"source": "views/javascript/modal.html",
+				"css_id": "#modals",
+				"nav_header": "modal"
+			},
+			{
+				"source": "views/javascript/popover.html",
+				"css_id": "#popovers",
+				"nav_header": "popover"
+			},
+			{
+				"source": "views/javascript/scrollbar.html",
+				"css_id": "#scrollbar",
+				"nav_header": "scrollbar"
+			},
+			{
+				"source": "views/javascript/scrollspy.html",
+				"css_id": "#scrollspy",
+				"nav_header": "scrollspy"
 			},
 			{
 				"source": "views/javascript/select.html",
@@ -273,9 +263,19 @@
 				"nav_header": "select"
 			},
 			{
-				"source": "views/javascript/scrollbar.html",
-				"css_id": "#scrollbar",
-				"nav_header": "scrollbar"
+				"source": "views/javascript/tab.html",
+				"css_id": "#tabs",
+				"nav_header": "tab"
+			},
+			{
+				"source": "views/javascript/tooltip.html",
+				"css_id": "#tooltips",
+				"nav_header": "tooltip"
+			},
+			{
+				"source": "views/javascript/tour.html",
+				"css_id": "#tour",
+				"nav_header": "tour"
 			}
 		]
 	},

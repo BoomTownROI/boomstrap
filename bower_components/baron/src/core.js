@@ -45,7 +45,7 @@ var
             roots = $(params.root || params.scroller);
         }
 
-        return new baron.fn.constructor(roots, params, $);
+        return new baron.fn.constructor(roots, params, $).autoUpdate();
     };
 
     baron.fn = {
@@ -76,9 +76,11 @@ var
         dispose: function() {
             var params = this.params;
 
-            each(this, function(item) {
-                item.dispose(params);
-            });
+            if (this[0]) { /* Если есть хотя бы 1 рабочий инстанс */
+                each(this, function(item) {
+                    item.dispose(params);
+                });
+            }
             this.params = null;
         },
 

@@ -1,14 +1,14 @@
 {
   "name": "baron",
   "homepage": "https://github.com/Diokuz/baron",
-  "_release": "eea1387f28",
+  "version": "0.7.8",
+  "_release": "0.7.8",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "eea1387f281a121f85cbd19fe98887d3d08fc618"
+    "type": "version",
+    "tag": "0.7.8",
+    "commit": "c262b3714b835e0a672879100d2eeed6e84c7ce7"
   },
   "_source": "git://github.com/Diokuz/baron.git",
   "_target": "*",
-  "_originalSource": "baron",
-  "_direct": true
+  "_originalSource": "baron"
 }
