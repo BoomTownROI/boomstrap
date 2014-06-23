@@ -907,8 +907,8 @@
         template: function (el, attrs) {
           var equal = attrs.hasOwnProperty('equal'), abbr = attrs.hasOwnProperty('abbreviated');
           return [
-            '<span class="cat cat-{{ cat | lowercase }}',
-            equal ? abbr ? ' cat-eq-abbr' : ' cat-eq' : '',
+            '<span class="leadcat leadcat-{{ cat | lowercase }}',
+            equal ? abbr ? ' leadcat-eq-abbr' : ' leadcat-eq' : '',
             '">{{ ',
             abbr ? 'abbr' : 'cat',
             '}}</span>'
