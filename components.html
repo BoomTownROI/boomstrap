@@ -2057,8 +2057,30 @@
   <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">&quot;menuitem&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Another link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div>
-  <h3>.dropdown-no-min-width</h3>
-  <p>Sets <code>min-width</code> on <code>ul.dropdown</code> to <code>1px</code>.</p>
+  
+  <!-- No min-width dropdown menu (Boomstrap Custom) -->
+  <h3>No min-width menu</h3>
+  <p>Bootstrap's dropdown menus have a default min-width of 160px. If you want a dropdown menu that doesn't have a defined min-width, simply add <code>.dropdown-menu-no-min-width</code> to the <code>.dropdown-menu</code> menu class.</p>
+  <div class="pl-example">
+    <div class="dropdown clearfix">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown">
+        1
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-no-min-width" role="menu" aria-labelledby="dropdownMenu4">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
+      </ul>
+    </div>
+  </div><!-- /example -->
+<div class="pl-code"><pre class="prettyprint"><code>&lt;ul class="dropdown-menu dropdown-menu-no-min-width" role="menu" aria-labelledby="dropdownMenu4"&gt;
+  &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+  &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+  &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+
 </div>
 
 <!-- ================================== Icons ================================== -->

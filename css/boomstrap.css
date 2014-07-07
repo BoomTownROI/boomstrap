@@ -6434,6 +6434,9 @@ fieldset[disabled] .btn-attention.active {
 .dropdown-menu .divider {
   margin: 4px 0;
 }
+.dropdown-menu-no-min-width {
+  min-width: 1px;
+}
 .dropdown-menu-leadcat {
   min-width: 50px;
 }
@@ -6462,9 +6465,6 @@ fieldset[disabled] .btn-attention.active {
 }
 .dropdown-toggle.btn-link .caret {
   color: #696969;
-}
-.dropdown-menu-no-min-width {
-  min-width: 1px;
 }
 .ficon {
   display: inline-block;
