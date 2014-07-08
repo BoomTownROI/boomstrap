@@ -320,6 +320,11 @@
 				"nav_header": "Labels - Lead Category"
 			},
 			{
+				"source": "app/views/loaders.html",
+				"css_id": "#loaders",
+				"nav_header": "Loaders"
+			},
+			{
 				"source": "app/views/modals.html",
 				"css_id": "#modals",
 				"nav_header": "Modals"
