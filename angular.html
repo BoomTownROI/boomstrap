@@ -322,6 +322,32 @@
     </pre>
 
 </section>
+<!-- ================================== Loader (Angular) ================================== -->
+
+<!-- Loader (Angular Custom) -->
+<script type="text/javascript">
+      angular.module('boomstrap').controller('btLoaderTest', function($scope) {});
+</script>
+<div class="pl-docs-section" ng-controller="btLoaderTest">
+  <h1 id="loaders" class="page-header">Loaders</h1>
+  <div class="pl-example">
+    <bt-loader></bt-loader>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>
+&lt;bt-loader&gt;&lt;/bt-loader&gt;
+    </code></pre>
+  </div>
+  <p>Want to center the loader animation? No hay problemo! Just add the <code>.text-center</code> class.</p>
+  <div class="pl-example">
+    <bt-loader class="text-center"></bt-loader>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>
+&lt;bt-loader class="text-center"&gt;&lt;/bt-loader&gt;
+    </code></pre>
+  </div>
+</div>
 <section id="modals">
     <div class="page-header">
         <h1>Modal<small>
@@ -575,6 +601,9 @@
                 </li>
                 <li>
                     <a href="#lead-category">Labels - Lead Category</a>
+                </li>
+                <li>
+                    <a href="#loaders">Loaders</a>
                 </li>
                 <li>
                     <a href="#modals">Modals</a>
