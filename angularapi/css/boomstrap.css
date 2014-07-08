@@ -6821,7 +6821,7 @@ fieldset[disabled] .btn-attention.active {
 .label,
 .leadcat,
 .leadtype {
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.1em 0.5em 0.2em;
 }
 .label-attention {
@@ -6837,7 +6837,7 @@ fieldset[disabled] .btn-attention.active {
   text-transform: lowercase;
 }
 .leadcat-archive {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #9b9b9b;
   color: #9b9b9b;
 }
@@ -6846,7 +6846,7 @@ fieldset[disabled] .btn-attention.active {
   color: #828282;
 }
 .leadcat-closed {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #a4c16b;
   color: #a4c16b;
 }
@@ -6855,16 +6855,16 @@ fieldset[disabled] .btn-attention.active {
   color: #8daf4a;
 }
 .leadcat-hot {
-  background-color: transparent;
-  border: 1px solid #f68a24;
-  color: #f68a24;
+  background-color: #ffffff;
+  border: 1px solid #f75117;
+  color: #f75117;
 }
 .leadcat-hot[href]:hover,
 .leadcat-hot[href]:focus {
-  color: #de7009;
+  color: #d43c07;
 }
 .leadcat-new {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #e9b929;
   color: #e9b929;
 }
@@ -6873,7 +6873,7 @@ fieldset[disabled] .btn-attention.active {
   color: #ca9d15;
 }
 .leadcat-nurture {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #1581e2;
   color: #1581e2;
 }
@@ -6882,7 +6882,7 @@ fieldset[disabled] .btn-attention.active {
   color: #1166b3;
 }
 .leadcat-pending {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #e1a5a6;
   color: #e1a5a6;
 }
@@ -6891,7 +6891,7 @@ fieldset[disabled] .btn-attention.active {
   color: #d47f80;
 }
 .leadcat-qualify {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #5b8801;
   color: #5b8801;
 }
@@ -6900,7 +6900,7 @@ fieldset[disabled] .btn-attention.active {
   color: #395501;
 }
 .leadcat-trash {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #636363;
   color: #636363;
 }
@@ -6909,7 +6909,7 @@ fieldset[disabled] .btn-attention.active {
   color: #4a4a4a;
 }
 .leadcat-watch {
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #be7810;
   color: #be7810;
 }
@@ -6930,7 +6930,7 @@ fieldset[disabled] .btn-attention.active {
   display: inline-block;
   line-height: 1.1;
   text-transform: lowercase;
-  background-color: transparent;
+  background-color: #ffffff;
   border: 1px solid #444444;
   color: #444444;
 }
