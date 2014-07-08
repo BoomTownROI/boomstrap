@@ -81,7 +81,6 @@
 // Callouts
 // -------------------------
 
-
 .callout-variant(@background; @color; @text-color) {
   background-color: @background;
   border-color: @color;
@@ -101,7 +100,7 @@
 // -------------------------
 
 .label-variant-outline(@color:@text-color) {
-  background-color: transparent;
+  background-color: @white;
   border: 1px solid @color;
   color: @color;
   &[href] {
