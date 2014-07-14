@@ -29,47 +29,56 @@
     {
       value: 0,
       name: 'new',
-      abbr: 'new'
+      abbr: 'new',
+      active: true
     },
     {
       value: 3,
       name: 'qualify',
-      abbr: 'qual'
+      abbr: 'qual',
+      active: true
     },
     {
       value: 5,
       name: 'hot',
-      abbr: 'hot'
+      abbr: 'hot',
+      active: true
     },
     {
       value: 4,
       name: 'nurture',
-      abbr: 'nurt'
+      abbr: 'nurt',
+      active: true
     },
     {
       value: 2,
       name: 'watch',
-      abbr: 'watch'
+      abbr: 'watch',
+      active: true
     },
     {
       value: 11,
       name: 'pending',
-      abbr: 'pend'
+      abbr: 'pend',
+      active: false
     },
     {
       value: 10,
       name: 'closed',
-      abbr: 'close'
+      abbr: 'close',
+      active: false
     },
     {
       value: 6,
       name: 'archive',
-      abbr: 'arch'
+      abbr: 'arch',
+      active: false
     },
     {
       value: 1,
       name: 'trash',
-      abbr: 'trash'
+      abbr: 'trash',
+      active: false
     }
   ]);
 }(angular.module('boomstrap')));
