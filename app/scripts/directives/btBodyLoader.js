@@ -9,7 +9,10 @@
       },
       link: function(scope) {
         var body = $document.find('body'),
+            loader = $document.find('#bt-body-loader'),
             template = '<div id="bt-body-loader" class="loader body-loader"><span class="loader-pulse"></span><span class="loader-pulse"></span><span class="loader-pulse"></span></div>';
+
+        if (loader.length > 0) { return true } // there can be only one
 
         body.append(template);
 
