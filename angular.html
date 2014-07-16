@@ -363,11 +363,12 @@
   </div>
   <div class="pl-code">
     <pre class="prettyprint"><code>
-// html
+// HTML
 &lt;bt-body-loader is-loading="isLoading"&gt;&lt;/bt-body-loader&gt;
 
-// controller
-$scope.isLoading = false; // you may want to start as true if your app relies on data to initialize
+// CONTROLLER
+// you may want to start as true if your app relies on data to initialize
+$scope.isLoading = { value: false }; // needs to be an object for two-way binding to work
 $scope.toggleLoader = function() { // flip the boolean to toggle
   $scope.isLoading.value = !$scope.isLoading.value;
 }
