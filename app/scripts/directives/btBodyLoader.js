@@ -7,7 +7,7 @@
       scope: {
         isLoading: '='
       },
-      link: function(scope, el, attrs) {
+      link: function(scope) {
         var body = $document.find('body'),
             template = '<div id="bt-body-loader" class="loader body-loader"><span class="loader-pulse"></span><span class="loader-pulse"></span><span class="loader-pulse"></span></div>';
 
