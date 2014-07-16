@@ -326,7 +326,15 @@
 
 <!-- Loader (Angular Custom) -->
 <script type="text/javascript">
-      angular.module('boomstrap').controller('btLoaderTest', function($scope) {});
+      angular.module('boomstrap').controller('btLoaderTest', function($scope) {
+        $scope.isLoading = {
+          value: false
+        }
+
+        $scope.toggleLoader = function() {
+          $scope.isLoading.value = !$scope.isLoading.value;
+        }
+      });
 </script>
 <div class="pl-docs-section" ng-controller="btLoaderTest">
   <h1 id="loaders" class="page-header">Loaders</h1>
@@ -345,6 +353,25 @@
   <div class="pl-code">
     <pre class="prettyprint"><code>
 &lt;bt-loader class="text-center"&gt;&lt;/bt-loader&gt;
+    </code></pre>
+  </div>
+  <p>You may want to append your loader straight to the body element outside of your Angular app. Use <code>&lt;bt-body-loader&gt;</code>. This is useful when your Angular app sits within a container with <code>position: absolute;</code> and you're looking to absolutely center the loader over the page.</p>
+  <p>Control the visibility of the loader with <code>$scope.isLoading</code> in your controller. Even though the loader itself sites outside of the controller, two-way data binding handles the loader's visibility.</p>
+  <div class="pl-example">
+    <bt-body-loader is-loading="isLoading" class="text-center"></bt-body-loader>
+    <button class="btn btn-attention" ng-click="toggleLoader()">Click to toggle loader</button>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>
+// html
+&lt;bt-body-loader is-loading="isLoading"&gt;&lt;/bt-body-loader&gt;
+
+// controller
+$scope.isLoading = false; // you may want to start as true if your app relies on data to initialize
+$scope.toggleLoader = function() { // flip the boolean to toggle
+  $scope.isLoading.value = !$scope.isLoading.value;
+}
+
     </code></pre>
   </div>
 </div>

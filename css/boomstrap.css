@@ -6975,6 +6975,12 @@ fieldset[disabled] .btn-attention.active {
   height: 18px;
   margin: 20px 0;
 }
+.loader.body-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -9px 0 0 -30px;
+}
 .loader-pulse {
   background-color: #f68a24;
   border-radius: 100%;
