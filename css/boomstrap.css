@@ -6980,6 +6980,7 @@ fieldset[disabled] .btn-attention.active {
   top: 50%;
   left: 50%;
   margin: -9px 0 0 -30px;
+  z-index: 9999;
 }
 .loader-pulse {
   background-color: #f68a24;
