@@ -24,6 +24,15 @@
       &:hover,
       &:focus {
         border-top-color: @nav-tabs-active-link-hover-border-color-top;
+        &:after {
+          content: "";
+          height: 2px;
+          left: -1px;
+          position: absolute;
+          right: -1px;
+          top: 0;
+          background-color: @nav-tabs-active-link-hover-border-color-top;
+        }
       }
     }
     &.open > a {
