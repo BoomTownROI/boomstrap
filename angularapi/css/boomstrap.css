@@ -4355,11 +4355,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   top: -1px;
 }
 .label-default {
-  background-color: #cccccc;
+  background-color: #848484;
 }
 .label-default[href]:hover,
 .label-default[href]:focus {
-  background-color: #b3b3b3;
+  background-color: #6b6b6b;
 }
 .label-primary {
   background-color: #1581e2;
