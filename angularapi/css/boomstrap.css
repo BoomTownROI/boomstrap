@@ -5907,7 +5907,8 @@ button.close {
   max-width: 100%;
 }*/
 .badge {
-  padding: 3px 6px;
+  min-width: 18px;
+  padding: 3px 4px;
 }
 .btn-xs .badge {
   padding: 1px 4px;
@@ -5918,7 +5919,7 @@ button.close {
   border-style: solid;
   border-width: 1px;
   color: #848484;
-  padding: 2px 5px;
+  padding: 2px 3px;
 }
 .btn-group-alt-two {
   width: 100%;
@@ -7669,9 +7670,6 @@ a.responsive-utilities td.is-visible:hover {
 }
 .pl-badge-outline > button {
   margin-bottom: 6px;
-}
-.pl-badge-outline button:last-child {
-  margin-bottom: 0;
 }
 .pl-code {
   margin: 1.5em 0;
