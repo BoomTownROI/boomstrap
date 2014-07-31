@@ -158,11 +158,6 @@
 				"nav_header": "Pagination"
 			},
 			{
-				"source": "views/components/page-header.html",
-				"css_id": "#page-header",
-				"nav_header": "Page header"
-			},
-			{
 				"source": "views/components/panels.html",
 				"css_id": "#panels",
 				"nav_header": "Panels"
