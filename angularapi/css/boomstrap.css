@@ -7424,11 +7424,14 @@ a.text-attention:hover {
 .xsmall {
   font-size: 75%;
 }
-h1 {
+h1,
+h2,
+h3,
+h4 {
   letter-spacing: -1px;
 }
-.page-header {
-  margin-top: 0;
+.page-heading {
+  margin: 0 0 20px 0;
 }
 .pointer {
   cursor: pointer;
@@ -7750,6 +7753,14 @@ a.responsive-utilities td.is-visible:hover {
 .pl-example .scroll-area-2 p {
   margin: 0;
   padding: 5px 10px;
+}
+.pl-example-type h1,
+.pl-example-type h2,
+.pl-example-type h3,
+.pl-example-type h4,
+.pl-example-type h5,
+.pl-example-type h6 {
+  margin: 0;
 }
 .pl-example-close-inverted {
   background-color: #f68a24;
