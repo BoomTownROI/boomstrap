@@ -6513,8 +6513,8 @@ button.close-inverted {
 }
 @font-face {
   font-family: 'ficon';
-  src: url('fonts/ficon.eot?obcu6i');
-  src: url('fonts/ficon.eot?#iefixobcu6i') format('embedded-opentype'), url('fonts/ficon.woff?obcu6i') format('woff'), url('fonts/ficon.ttf?obcu6i') format('truetype'), url('fonts/ficon.svg?obcu6i#ficon') format('svg');
+  src: url('fonts/ficon.eot?3d9m47');
+  src: url('fonts/ficon.eot?#iefix3d9m47') format('embedded-opentype'), url('fonts/ficon.woff?3d9m47') format('woff'), url('fonts/ficon.ttf?3d9m47') format('truetype'), url('fonts/ficon.svg?3d9m47#ficon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6530,6 +6530,12 @@ button.close-inverted {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.ficon-clipboard:before {
+  content: "\e622";
+}
+.ficon-house2:before {
+  content: "\e623";
 }
 .ficon-paperclip:before {
   content: "\e621";
