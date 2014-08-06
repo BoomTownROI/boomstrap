@@ -126,14 +126,19 @@
 </code></pre></div>
 
   <h3 id="helper-classes-vertical-align">Vertically Align</h3>
-  <p>Vertically align elements inside of containers with a set height. In the example below, the paragraph is centered using the <code>.vertical-align()</code> mixin. The paragraph's parent element has a set height - this is a must in order for the mixin to work.</p>
-  <p>If the vertically aligned element appears blurry, it is due to 1/2 pixel positioning. To fix, apply the <code>.preserve-3d()</code> mixin to the parent container.</p>
+  <p>Vertically align elements inside of containers with a set height. In the example below, the paragraph is centered using the <code>.vert-align</code> class. The paragraph's parent element has a set height - this is a must in order for the mixin to work.</p>
+  <p>If the vertically aligned element appears blurry, it is due to 1/2 pixel positioning. To fix, apply the <code>.preserve-3d()</code> mixin to the parent container or add the <code>.preserve-3d</code> class to the parent container.</p>
   <p>See <a href="http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/" target="_blank">http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/</a> for further explanation.</p>
 <div class="pl-example">
   <div class="pl-example-vert-align">
-    <p>I'm a vertically aligned paragraph!</p>
+    <p class="vert-align">I'm a vertically aligned paragraph!</p>
   </div>
 </div>
+
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div&gt;
+  &lt;p class="vert-align"&gt;I'm a vertically aligned paragraph!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </div>
 
   <h3 id="helper-classes-clearfix">Clearfix</h3>
   <p>Clear the <code>float</code> on any element with the <code>.clearfix</code> class. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>
