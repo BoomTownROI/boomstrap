@@ -5901,6 +5901,11 @@ button.close {
 .popover[class*="tour-"].orphan .arrow {
   display: none;
 }
+.preserve-3d {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
 /*img {
   display: block;
   height: auto;
@@ -7774,4 +7779,16 @@ a.responsive-utilities td.is-visible:hover {
 }
 .pl-example-close-inverted .close-inverted {
   float: none;
+}
+.pl-example-vert-align {
+  background-color: #ffcc33;
+  height: 100px;
+  padding: 12px;
+}
+.pl-example-vert-align p {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
