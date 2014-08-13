@@ -3,8 +3,7 @@
   angular.module('boomstrap', [
     'ui.bootstrap',
     'ui.select',
-    'angularMoment',
-    'mgcrea.ngStrap.popover'
+    'angularMoment'
   ]).value('AUTO_START_TOUR', { value: false }).config([
     'uiSelectConfig',
     function (uiSelectConfig) {
@@ -116,6 +115,14 @@
       });
     }
   ]);
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
@@ -1400,14 +1407,6 @@
           }
         });
       }
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
     };
   });
 }(angular.module('boomstrap')));
