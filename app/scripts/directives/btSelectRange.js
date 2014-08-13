@@ -77,7 +77,7 @@
         var translateValidValue;
         if (iAttrs.rangeType === 'money') {
           translateValidValue = function(value) {
-            return $filter('currency')(value);
+            return $filter('currency')(value).split('.')[0];
           };
         } else {
           translateValidValue = angular.identity;
