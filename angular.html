@@ -430,19 +430,13 @@ $scope.toggleLoader = function() { // flip the boolean to toggle
             (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/popover">ui.bootstrap.popover</a>)
         </small></h1>
     </div>
-    <script type="text/ng-template" id="myTemplatePopover.html">
-    	<div ng-controller="PopoverTestCtrl">
-    		<span>Is it not <b style="color:red;">glorious</b> to have <i>html</i> in a popover?</span>
-    		<span>Binding stuff is cool too!</span>
-    	</div>
-    </script>
-    <script type="text/javascript">
-    	angular.module('boomstrap').controller('PopoverTestCtrl', function($scope) {
-    		$scope.theStuff = "Binding stuff is cool too!";
-    	});
-    </script>
     <bt-lazy-pen height="360" theme-id="5675" slug="hsGzd" user-id="boomtownroi" author="BoomTown"></bt-lazy-pen>
-	<button class="btn btn-success" template-popover="myTemplatePopover.html" template-popover-title="I'm a title!" template-popover-placement="bottom">You can have popovers with templates too!</span>
+    <div class="page-header">
+        <h1>Template Popover<small>
+            (wraps <a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/popover">ui.bootstrap.popover</a>)
+        </small></h1>
+    </div>
+    <bt-lazy-pen height="360" theme-id="5675" slug="GscBJ" user-id="boomtownroi" author="BoomTown"></bt-lazy-pen>
 </section>
 <section id="progressbar">
     <div class="page-header">
