@@ -2106,7 +2106,9 @@ input[type="date"] {
   margin-bottom: 15px;
 }
 .radio,
-.checkbox {
+.checkbox,
+.fauxbox,
+.fauxdio {
   display: block;
   min-height: 20px;
   margin-top: 10px;
@@ -6769,14 +6771,22 @@ button.close-inverted {
   content: "\e611";
 }
 .fauxbox {
+  padding-left: 0;
+}
+.fauxbox input {
   display: none;
 }
-.fauxbox + label {
-  font-size: 1em;
+.fauxbox input:checked + label:before {
+  content: "\e00a";
+  background: #ffffff;
+}
+.fauxbox label {
+  display: inline;
   cursor: pointer;
+  font-weight: normal;
   margin-bottom: 0 !important;
 }
-.fauxbox + label:before {
+.fauxbox label:before {
   content: "";
   background-color: #ffffff;
   display: inline-block;
@@ -6788,7 +6798,7 @@ button.close-inverted {
   padding: 0;
   text-align: center;
   font-size: 16px;
-  margin: 1px 4px 1px 3px;
+  margin: 1px 6px 1px 0px;
   font-family: 'ficon';
   font-weight: normal;
   speak: none;
@@ -6799,19 +6809,33 @@ button.close-inverted {
   left: 0.5px;
   top: -1px;
 }
-.fauxbox:checked + label:before {
-  content: "\e00a";
-  background: #ffffff;
+.fauxbox-inline,
+.fauxdio-inline {
+  display: inline-block;
+}
+.fauxbox-inline + .fauxbox-inline,
+.fauxbox-inline + .fauxdio-inline,
+.fauxdio-inline + .fauxbox-inline,
+.fauxdio-inline + .fauxdio-inline {
+  padding-left: 8px;
 }
 .fauxdio {
+  padding-left: 0;
+}
+.fauxdio input {
   display: none;
 }
-.fauxdio + label {
-  font-size: 1em;
-  cursor: pointer;
+.fauxdio input:checked + label:before {
+  background-color: #1581e2;
 }
-.fauxdio + label:before {
-  margin: 0 5px 0 0;
+.fauxdio label {
+  display: inline;
+  cursor: pointer;
+  font-weight: normal;
+  margin-bottom: 0 !important;
+}
+.fauxdio label:before {
+  margin: 0 6px 0 0;
   content: "";
   background-color: #ffffff;
   display: inline-block;
@@ -6822,9 +6846,6 @@ button.close-inverted {
   border: 3px solid #ffffff;
   box-shadow: 0 0 0 2px #696969;
   border-radius: 50%;
-}
-.fauxdio:checked + label:before {
-  background-color: #1581e2;
 }
 .row-condensed {
   margin-left: -7px;
