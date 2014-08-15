@@ -2,10 +2,19 @@
 // Note: Extends Bootstrap forms.less
 
 .fauxbox {
-  display: none;
-  + label {
-    font-size: 1em;
+  &:extend(.checkbox);
+  padding-left: 0;
+  input {
+    display: none;
+    &:checked+label:before {
+      content: "\e00a";
+      background: @white;
+    }
+  }
+  label {
+    display: inline;
     cursor: pointer;
+    font-weight: normal;
     margin-bottom: 0 !important;
     &:before {
       content: "";
@@ -19,7 +28,7 @@
       padding: 0;
       text-align: center;
       font-size: 16px;
-      margin: 1px 4px 1px 3px;
+      margin: 1px @margin-small 1px 0px;
       font-family: 'ficon';
       font-weight: normal;
       speak: none;
@@ -31,19 +40,31 @@
       top: -1px;
     }
   }
-  &:checked+label:before {
-    content: "\e00a";
-    background: @white;
+}
+
+.fauxbox-inline, .fauxdio-inline {
+  display: inline-block;
+  & + & {
+    padding-left: @padding-base;
   }
 }
 
 .fauxdio {
-  display: none;
-  + label {
-    font-size: 1em;
+  &:extend(.radio);
+  padding-left: 0;
+  input{
+    display: none;
+    &:checked+label:before {
+      background-color: @brand-primary;
+    }
+  }
+  label {
+    display: inline;
     cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0 !important;
     &:before {
-      margin: 0 5px 0 0;
+      margin: 0 @margin-small 0 0;
       content: "";
       background-color: @white;
       display: inline-block;
@@ -56,7 +77,5 @@
       border-radius: 50%;
     }
   }
-  &:checked+label:before {
-    background-color: @brand-primary;
-  }
+  
 }
