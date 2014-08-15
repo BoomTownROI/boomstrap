@@ -1,7 +1,7 @@
 <div class="popover {{placement}}" ng-class="{ in: isOpen(), fade: animation() }">
   <div class="arrow"></div>
 
-  <div class="popover-close" ng-click="$parent.close()" aria-hidden="true"><i class="ficon ficon-cross"></i></div>
+  <div class="popover-close" ng-click="$popover.close($event)" aria-hidden="true"><i class="ficon ficon-cross"></i></div>
 
   <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
 

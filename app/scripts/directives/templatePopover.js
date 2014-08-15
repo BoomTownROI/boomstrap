@@ -1,6 +1,15 @@
 (function(Boomstrap) {
   'use strict';
-  Boomstrap.directive('templatePopoverPopup', function () {
+  Boomstrap.controller('templatePopoverPopupCtrl', function($scope) {
+    this.close = function($event) {
+      if ($event && $event.stopPropagation) {
+        $event.stopPropagation();
+      }
+      $scope.$parent.close();
+    };
+  })
+
+  .directive('templatePopoverPopup', function () {
     return {
       restrict: 'EA',
       replace: true,
@@ -11,7 +20,9 @@
         animation: '&',
         isOpen: '&'
       },
-      templateUrl: 'template/popover/template-popover.html'
+      templateUrl: 'template/popover/template-popover.html',
+      controller: 'templatePopoverPopupCtrl',
+      controllerAs: '$popover'
     };
   })
 
