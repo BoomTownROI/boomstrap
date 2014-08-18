@@ -607,7 +607,8 @@ th {
   }
   .label,
   .leadcat,
-  .leadtype {
+  .leadtype,
+  .marker {
     border: 1px solid #000;
   }
   .table {
@@ -4331,7 +4332,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .label,
 .leadcat,
-.leadtype {
+.leadtype,
+.marker {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
@@ -6894,7 +6896,8 @@ button.close-inverted {
 }
 .label,
 .leadcat,
-.leadtype {
+.leadtype,
+.marker {
   font-weight: 700;
   padding: 0.1em 0.5em 0.2em;
 }
@@ -7043,6 +7046,18 @@ button.close-inverted {
   padding-left: 0;
   padding-right: 0;
   width: 76px;
+}
+.marker {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.1;
+  background-color: #ffffff;
+  border: 1px solid #444444;
+  color: #444444;
+}
+.marker[href]:hover,
+.marker[href]:focus {
+  color: #2b2b2b;
 }
 .loader {
   display: block;
