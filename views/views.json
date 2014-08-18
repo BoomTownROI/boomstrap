@@ -148,6 +148,11 @@
 				"nav_header": "List group"
 			},
 			{
+				"source": "views/components/markers.html",
+				"css_id": "#markers",
+				"nav_header": "markers"
+			},
+			{
 				"source": "views/components/navs.html",
 				"css_id": "#nav",
 				"nav_header": "navs"
@@ -176,11 +181,6 @@
 				"source": "views/components/scores.html",
 				"css_id": "#scores",
 				"nav_header": "scores"
-			},
-			{
-				"source": "views/components/tags.html",
-				"css_id": "#tags",
-				"nav_header": "tags"
 			},
 			{
 				"source": "views/components/thumbnails.html",
