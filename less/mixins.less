@@ -111,6 +111,21 @@
   }
 }
 
+// Markers
+// --------------------------
+
+.marker-variant-outline(@border-color: @text-color, @color: @text-color) {
+  background-color: @white;
+  border: 1px solid @border-color;
+  color: multiply(@border-color, @color);
+  &[href] {
+    &:hover,
+    &:focus {
+      color: darken(@color, 10%);
+    }
+  }
+}
+
 // Preserve 3D
 // -------------------------
 
