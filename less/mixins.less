@@ -114,14 +114,13 @@
 // Markers
 // --------------------------
 
-.marker-variant-outline(@border-color: @text-color, @color: @text-color) {
-  background-color: @white;
-  border: 1px solid @border-color;
-  color: multiply(@border-color, @color);
+.marker-variant-solid(@background-color: @text-color) {
+  background-color: screen(@background-color, @gray-light);
+  color: multiply(@background-color, @gray-dark);
   &[href] {
     &:hover,
     &:focus {
-      color: darken(@color, 10%);
+      color: darken(multiply(@background-color, @gray-dark), 10%);
     }
   }
 }

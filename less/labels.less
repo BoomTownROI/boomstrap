@@ -125,33 +125,35 @@
   &:extend(.label);
   display: inline-block;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.3;
+  padding: 4px;
+  border: none;
 }
 
 .marker-default {
-  .marker-variant-outline(@gray-dark, @gray-light);
+  .marker-variant-solid(@gray-dark);
 }
 
-.marker-primary {
-  .marker-variant-outline(@brand-primary, @gray-light);
+.marker-primary, .marker-name {
+  .marker-variant-solid(@brand-primary);
 }
 
-.marker-attention {
-  .marker-variant-outline(@brand-attention, @gray-light);
+.marker-attention, .marker-zip {
+  .marker-variant-solid(@brand-attention);
 }
 
 .marker-success {
-  .marker-variant-outline(@brand-success, @gray-light);
+  .marker-variant-solid(@brand-success);
 }
 
 .marker-info {
-  .marker-variant-outline(@brand-info, @gray-light);
+  .marker-variant-solid(@brand-info);
 }
 
 .marker-warning {
-  .marker-variant-outline(@brand-warning, @gray-light);
+  .marker-variant-solid(@brand-warning);
 }
 
 .marker-danger {
-  .marker-variant-outline(@brand-danger, @gray-light);
+  .marker-variant-solid(@brand-danger);
 }
