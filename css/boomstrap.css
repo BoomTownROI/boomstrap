@@ -7051,13 +7051,69 @@ button.close-inverted {
   display: inline-block;
   font-weight: 400;
   line-height: 1.1;
-  background-color: #ffffff;
-  border: 1px solid #444444;
-  color: #444444;
 }
-.marker[href]:hover,
-.marker[href]:focus {
-  color: #2b2b2b;
+.marker-default {
+  background-color: #ffffff;
+  border: 1px solid #696969;
+  color: #545454;
+}
+.marker-default[href]:hover,
+.marker-default[href]:focus {
+  color: #b3b3b3;
+}
+.marker-primary {
+  background-color: #ffffff;
+  border: 1px solid #1581e2;
+  color: #1167b5;
+}
+.marker-primary[href]:hover,
+.marker-primary[href]:focus {
+  color: #b3b3b3;
+}
+.marker-attention {
+  background-color: #ffffff;
+  border: 1px solid #f68a24;
+  color: #c56e1d;
+}
+.marker-attention[href]:hover,
+.marker-attention[href]:focus {
+  color: #b3b3b3;
+}
+.marker-success {
+  background-color: #ffffff;
+  border: 1px solid #669900;
+  color: #527a00;
+}
+.marker-success[href]:hover,
+.marker-success[href]:focus {
+  color: #b3b3b3;
+}
+.marker-info {
+  background-color: #ffffff;
+  border: 1px solid #5bc0de;
+  color: #499ab2;
+}
+.marker-info[href]:hover,
+.marker-info[href]:focus {
+  color: #b3b3b3;
+}
+.marker-warning {
+  background-color: #ffffff;
+  border: 1px solid #ffcc33;
+  color: #cca329;
+}
+.marker-warning[href]:hover,
+.marker-warning[href]:focus {
+  color: #b3b3b3;
+}
+.marker-danger {
+  background-color: #ffffff;
+  border: 1px solid #cb2027;
+  color: #a21a1f;
+}
+.marker-danger[href]:hover,
+.marker-danger[href]:focus {
+  color: #b3b3b3;
 }
 .loader {
   display: block;
