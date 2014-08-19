@@ -3,15 +3,11 @@
 
   /**
    * @ngdoc directive
-   * @name  boomstrap.directive:btScrollBar
-   * @restrict A
-   *
-   * @param {Number} totalItems The number of items to paginate through.
-   * @param {Number} currentPage The number of the current page we are on.
-   * @param {Number} itemsPerPage How many items are allowed on each page.
+   * @name  boomstrap.directive:btScrollbar
+   * @restrict EA
    *
    * @description
-   * The `btScrollBar` directive adds a simulated scroll-bar to any element.  It wraps the jQuery baron library.
+   * The `btScrollbar` directive adds a simulated scrollbar to any element.  It wraps the jQuery baron library.
    */
   Boomstrap.directive('btScrollBar', function() {
     return function(scope, element) {
