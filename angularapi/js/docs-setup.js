@@ -149,12 +149,12 @@ NG_DOCS={
     },
     {
       "section": "ngboomstrap",
-      "id": "boomstrap.directive:btScrollBar",
-      "shortName": "btScrollBar",
+      "id": "boomstrap.directive:btScrollbar",
+      "shortName": "btScrollbar",
       "type": "directive",
       "moduleName": "boomstrap",
-      "shortDescription": "The btScrollBar directive adds a simulated scroll-bar to any element.  It wraps the jQuery baron library.",
-      "keywords": "adds allowed baron boomstrap btscrollbar current currentpage directive element items itemsperpage jquery library ngboomstrap number paginate scroll-bar simulated totalitems wraps"
+      "shortDescription": "The btScrollbar directive adds a simulated scrollbar to any element.  It wraps the jQuery baron library.",
+      "keywords": "adds baron boomstrap btscrollbar directive ea element jquery library ngboomstrap scrollbar simulated wraps"
     },
     {
       "section": "ngboomstrap",
