@@ -118,6 +118,132 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap, Tour) {
+  'use strict';
+  Boomstrap.service('bootstrapTourService', function ($templateCache, $rootScope, $http, AUTO_START_TOUR) {
+    var tourRef;
+    var tour = {
+        init: function (steps, onStart, onNextStep, onDismiss, onComplete) {
+          var tourSteps = [];
+          angular.forEach(steps, function (step) {
+            if (step.template) {
+              step.template = $templateCache.get(step.template);
+            }
+            if (!step.content && !step.title) {
+              // Giving content a default value due to an issue
+              // with bootstrap tour where a popover will not show
+              // if both the content and the title is empty
+              step.content = '.';
+            }
+            tourSteps.push(step);
+          });
+          tour.steps = tourSteps;
+          tour.onStart = onStart;
+          tour.onNextStep = onNextStep;
+          tour.onDismiss = onDismiss;
+          tour.onComplete = onComplete;
+        },
+        steps: [],
+        startTour: function (startingStep) {
+          startingStep = startingStep || 0;
+          var tourTemplate = $templateCache.get('template/popover/popover-bootstrap-tour.html');
+          var wasHidden = tour.isHidden;
+          tour.isHidden = false;
+          // End existing tours
+          if (tourRef && tourRef.ended && !tourRef.ended()) {
+            tourRef.end();
+          }
+          var ngApply = function (fn) {
+            return function () {
+              // This could be called in a programmatic context so
+              // Make sure we're not currently in an angular context first
+              if (!$rootScope.$$phase) {
+                $rootScope.$apply(fn);
+              } else {
+                fn();
+              }
+            };
+          };
+          tourRef = new Tour({
+            steps: tour.steps.slice(startingStep),
+            template: tourTemplate,
+            container: 'body',
+            storage: false,
+            onNext: ngApply(function () {
+              tour.currentStep += 1;
+              if (tour.onNextStep) {
+                tour.onNextStep();
+              }
+            }),
+            onPrev: ngApply(function () {
+              tour.currentStep -= 1;
+            }),
+            onEnd: ngApply(function () {
+              if (!tour.isHidden) {
+                if (tour.currentStep === tour.steps.length - 1) {
+                  // Tour is complete
+                  if (tour.onComplete) {
+                    tour.onComplete();
+                  }
+                } else {
+                  // Tour is dismissed
+                  if (tour.onDismiss) {
+                    tour.onDismiss();
+                  }
+                }
+              }
+              tour.currentStep = -1;
+            })
+          });
+          tourRef.init();
+          tourRef.start(true);
+          tour.currentStep = startingStep;
+          if (!wasHidden && tour.onStart) {
+            tour.onStart();
+          }
+          $rootScope.$on('$stateChangeStart', function () {
+            if (tourRef && tourRef.ended && !tourRef.ended()) {
+              // End the tour at the current step, but do not dismiss
+              tour.endTour(true);
+              AUTO_START_TOUR.value = false;
+            }
+          });
+        },
+        currentStep: -1,
+        isHidden: false,
+        shouldResume: function (val) {
+          if (angular.isDefined(val)) {
+            tour.isHidden = val;
+            /*
+           * shouldResume is assuming that the tour will start again
+           * Because we are starting the tour in an intermediate state
+           * the next step function will not be registered
+           * Call the next step function here because of this
+           */
+            if (tour.onNextStep) {
+              tour.onNextStep();
+            }
+          }
+          return tour.isHidden;
+        },
+        goToNextStep: function () {
+          tourRef.next();
+        },
+        endTour: function () {
+          tourRef.end();
+        }
+      };
+    return tour;
+  });
+}(angular.module('boomstrap'), window.Tour));
+(function (Boomstrap) {
+  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btAddClassOnLoad
@@ -1439,132 +1565,6 @@
     }
   ]);
 }(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap, Tour) {
-  'use strict';
-  Boomstrap.service('bootstrapTourService', function ($templateCache, $rootScope, $http, AUTO_START_TOUR) {
-    var tourRef;
-    var tour = {
-        init: function (steps, onStart, onNextStep, onDismiss, onComplete) {
-          var tourSteps = [];
-          angular.forEach(steps, function (step) {
-            if (step.template) {
-              step.template = $templateCache.get(step.template);
-            }
-            if (!step.content && !step.title) {
-              // Giving content a default value due to an issue
-              // with bootstrap tour where a popover will not show
-              // if both the content and the title is empty
-              step.content = '.';
-            }
-            tourSteps.push(step);
-          });
-          tour.steps = tourSteps;
-          tour.onStart = onStart;
-          tour.onNextStep = onNextStep;
-          tour.onDismiss = onDismiss;
-          tour.onComplete = onComplete;
-        },
-        steps: [],
-        startTour: function (startingStep) {
-          startingStep = startingStep || 0;
-          var tourTemplate = $templateCache.get('template/popover/popover-bootstrap-tour.html');
-          var wasHidden = tour.isHidden;
-          tour.isHidden = false;
-          // End existing tours
-          if (tourRef && tourRef.ended && !tourRef.ended()) {
-            tourRef.end();
-          }
-          var ngApply = function (fn) {
-            return function () {
-              // This could be called in a programmatic context so
-              // Make sure we're not currently in an angular context first
-              if (!$rootScope.$$phase) {
-                $rootScope.$apply(fn);
-              } else {
-                fn();
-              }
-            };
-          };
-          tourRef = new Tour({
-            steps: tour.steps.slice(startingStep),
-            template: tourTemplate,
-            container: 'body',
-            storage: false,
-            onNext: ngApply(function () {
-              tour.currentStep += 1;
-              if (tour.onNextStep) {
-                tour.onNextStep();
-              }
-            }),
-            onPrev: ngApply(function () {
-              tour.currentStep -= 1;
-            }),
-            onEnd: ngApply(function () {
-              if (!tour.isHidden) {
-                if (tour.currentStep === tour.steps.length - 1) {
-                  // Tour is complete
-                  if (tour.onComplete) {
-                    tour.onComplete();
-                  }
-                } else {
-                  // Tour is dismissed
-                  if (tour.onDismiss) {
-                    tour.onDismiss();
-                  }
-                }
-              }
-              tour.currentStep = -1;
-            })
-          });
-          tourRef.init();
-          tourRef.start(true);
-          tour.currentStep = startingStep;
-          if (!wasHidden && tour.onStart) {
-            tour.onStart();
-          }
-          $rootScope.$on('$stateChangeStart', function () {
-            if (tourRef && tourRef.ended && !tourRef.ended()) {
-              // End the tour at the current step, but do not dismiss
-              tour.endTour(true);
-              AUTO_START_TOUR.value = false;
-            }
-          });
-        },
-        currentStep: -1,
-        isHidden: false,
-        shouldResume: function (val) {
-          if (angular.isDefined(val)) {
-            tour.isHidden = val;
-            /*
-           * shouldResume is assuming that the tour will start again
-           * Because we are starting the tour in an intermediate state
-           * the next step function will not be registered
-           * Call the next step function here because of this
-           */
-            if (tour.onNextStep) {
-              tour.onNextStep();
-            }
-          }
-          return tour.isHidden;
-        },
-        goToNextStep: function () {
-          tourRef.next();
-        },
-        endTour: function () {
-          tourRef.end();
-        }
-      };
-    return tour;
-  });
-}(angular.module('boomstrap'), window.Tour));
 angular.module("ui.bootstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/pager/bt-pager.tpl.html","<div class=\"btn-group minimal-pager\">\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noPrevious() }\"\n        ng-click=\"selectPage(page - 1)\"><i\n            class=\"ficon ficon-chevron-left\"></i></button>\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noNext() }\"\n        ng-click=\"selectPage(page + 1)\"><i\n            class=\"ficon ficon-chevron-right\"></i></button>\n</div>");}]);
 angular.module("boomstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/nav.html","<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#pl-nav\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">PL</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"pl-nav\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"#pl-colors\">Colors</a></li>\n        <li class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Buttons <b class=\"caret\"></b></a>\n          <ul class=\"dropdown-menu\">\n            <li><a href=\"#pl-button-options\">Options</a></li>\n            <li><a href=\"#pl-button-sizes\">Sizes</a></li>\n            <li><a href=\"#pl-button-active\">Active State</a></li>\n            <li><a href=\"#pl-button-disabled\">Disabled State</a></li>\n            <li><a href=\"#pl-button-tags\">Button Tags</a></li>\n          </ul>\n        </li>\n        <li><a href=\"#pl-labels\">Labels</a></li>\n        <li><a href=\"#pl-typography\">Typography</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n<div class=\"container\">");
 $templateCache.put("template/btLazyPen/btLazyPen.tpl.html","<div class=\"bt-lazy-pen\">\n  <span class=\"btn btn-attention\" ng-if=\"!showingPen.value\" ng-click=\"showingPen.value = !showingPen.value\">Load CodePen Example</span>\n  <div ng-if=\"showingPen.value\">\n    <p data-height=\"{{ height }}\" data-theme-id=\"{{ themeId }}\" data-slug-hash=\"{{ slug }}\" data-default-tab=\"result\" class=\'codepen\'>See the Pen <a href=\'http://codepen.io/{{ user }}/pen/{{ slug }}/\'>{{ title }}</a> by {{ author }} (<a href=\'http://codepen.io/{{ user }}\'>@{{ userId }}</a>) on <a href=\'http://codepen.io\'>CodePen</a>.</p>\n    <script async src=\"//codepen.io/assets/embed/ei.js\"></script>\n  </div>\n</div>");
