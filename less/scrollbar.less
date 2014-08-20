@@ -6,8 +6,8 @@
   overflow: hidden;
   position: relative;
   &:hover {
-    .baron-scroller-track {
-      opacity: .8;
+    .baron-scroller-bar {
+      opacity: .5;
     }
   }
 }
@@ -24,32 +24,25 @@
 }
 
 .baron-scroller-track {
-  background-color: fadeout(@gray-lighter,50%);
-  border-radius: @border-radius-small;
-  bottom: 4px;
-  opacity: 0;
+  bottom: 2px;
   pointer-events: none;
   position: absolute;
-  right: 4px;
-  top: 4px;
-  width: 8px;
+  right: 2px;
+  top: 2px;
+  width: 9px;
   z-index: 3;
-  .transition(opacity .2s linear);
-}
-
-.baron-scroller-track-inverted {
-  .baron-scroller-bar {
-    background-color: @white;
-  }
 }
 
 .baron-scroller-bar {
-  background-color: @gray;
-  border-radius: @border-radius-small;
+  background-color: #000;
+  border: 1px solid @white;
+  border-radius: @border-radius-base;
+  opacity: 0;
   pointer-events: auto;
   position: absolute;
   right: 0;    
-  width: 8px;
+  .transition(opacity .2s linear);
+  width: 9px;
   z-index: 1;
 }
 
