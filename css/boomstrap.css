@@ -5910,6 +5910,10 @@ button.close {
   height: auto;
   max-width: 100%;
 }*/
+.alert a,
+.alert .alert-link {
+  text-decoration: underline;
+}
 .badge {
   min-width: 18px;
   padding: 3px 4px;
