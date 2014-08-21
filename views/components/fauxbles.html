@@ -1,0 +1,316 @@
+<!-- ================================== Fauxbles ================================== -->
+
+<!-- Fauxbles (Boomstrap Custom) -->
+<div class="pl-docs-section">
+  <h1 id="fauxbles" class="page-header">Fauxbles</h1>
+  <p class="lead">Fauxbles are regular block elements designed to look like tables and inherit table classes.</p>
+
+  <h2>Default fauxble</h2>
+  <div class="pl-example">
+    <ul class="fauxble">
+      <li class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-2">Heading</div>
+        <div class="col-md-5">Another Heading</div>
+        <div class="col-md-4">Yet Another Heading</div>
+      </li>
+      <li class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-2">Data "Cell"</div>
+        <div class="col-md-5">A horse is a horse ...</div>
+        <div class="col-md-4">of course, of course.</div>
+      </li>
+      <li class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-2">Data "Cell"</div>
+        <div class="col-md-5">And no one can talk to a horse, of course ...</div>
+        <div class="col-md-4">but the famous Mr. Ed.</div>
+      </li>
+    </ul>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;ul class="fauxble"&gt;
+  &lt;li class="fauxble-headings"&gt;
+    &lt;div class="col-md-1"&gt;#&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Heading&lt;/div&gt;
+    &lt;div class="col-md-5"&gt;Another Heading&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Yet Another Heading&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Data "Cell"&lt;/div&gt;
+    &lt;div class="col-md-5"&gt;A horse is a horse ...&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;of course, of course.&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;2&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Data "Cell"&lt;/div&gt;
+    &lt;div class="col-md-5"&gt;And no one can talk to a horse, of course ...&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;but the famous Mr. Ed.&lt;/div&gt;
+  &lt;/li&gt;
+  </code></pre></div>
+
+  <h2>Striped rows</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-striped">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Sport</div>
+        <div class="col-md-2">Season</div>
+        <div class="col-md-3">Location</div>
+        <div class="col-md-2">Price</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">snowboarding</div>
+        <div class="col-md-2">winter</div>
+        <div class="col-md-3">mountains</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">surfing</div>
+        <div class="col-md-2">summer</div>
+        <div class="col-md-3">coast</div>
+        <div class="col-md-2">$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">ice climbing</div>
+        <div class="col-md-2">winter</div>
+        <div class="col-md-3">mountains</div>
+        <div class="col-md-2">$$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-striped"&gt;
+  &lt;div class="fauxble-headings"&gt;
+    &lt;div class="col-md-1"&gt;#&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Sport&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Season&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;Location&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Price&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;snowboarding&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;winter&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;mountains&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;$$$$&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;2&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;surfing&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;summer&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;coast&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;$$&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;3&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;ice climbing&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;winter&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;mountains&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;$$&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div>
+  </code></pre></div>
+
+  <h2>Bordered cells</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-bordered">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Beach</div>
+        <div class="col-md-2">Surfing</div>
+        <div class="col-md-3">Bars &amp; Restaurants</div>
+        <div class="col-md-2">Real Estate</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">Folly Beach</div>
+        <div class="col-md-2">excellent</div>
+        <div class="col-md-3">laid back</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">Sullivan's Island</div>
+        <div class="col-md-2">poor</div>
+        <div class="col-md-3">upscale beachy</div>
+        <div class="col-md-2">$$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">Isle of Palms</div>
+        <div class="col-md-2">good</div>
+        <div class="col-md-3">touristy</div>
+        <div class="col-md-2">$$$$$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-bordered">
+  &lt;div class="fauxble-headings">
+    &lt;div class="col-md-1">#&lt;/div>
+    &lt;div class="col-md-4">Beach&lt;/div>
+    &lt;div class="col-md-2">Surfing&lt;/div>
+    &lt;div class="col-md-3">Bars &amp; Restaurants&lt;/div>
+    &lt;div class="col-md-2">Real Estate&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">1&lt;/div>
+    &lt;div class="col-md-4">Folly Beach&lt;/div>
+    &lt;div class="col-md-2">excellent&lt;/div>
+    &lt;div class="col-md-3">laid back&lt;/div>
+    &lt;div class="col-md-2">$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">2&lt;/div>
+    &lt;div class="col-md-4">Sullivan's Island&lt;/div>
+    &lt;div class="col-md-2">poor&lt;/div>
+    &lt;div class="col-md-3">upscale beachy&lt;/div>
+    &lt;div class="col-md-2">$$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">3&lt;/div>
+    &lt;div class="col-md-4">Isle of Palms&lt;/div>
+    &lt;div class="col-md-2">good&lt;/div>
+    &lt;div class="col-md-3">touristy&lt;/div>
+    &lt;div class="col-md-2">$$$$$&lt;/div>
+  &lt;/div>
+&lt;/div>
+  </code></pre></div>
+
+  <h2>Hover rows</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-hover">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Brand</div>
+        <div class="col-md-2">Industry</div>
+        <div class="col-md-3">Nationality</div>
+        <div class="col-md-2">Price</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">Beats By Dre</div>
+        <div class="col-md-2">audio</div>
+        <div class="col-md-3">USA</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">Adidas</div>
+        <div class="col-md-2">shoes</div>
+        <div class="col-md-3">Germany</div>
+        <div class="col-md-2">$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">Fruit of the Loom</div>
+        <div class="col-md-2">garments</div>
+        <div class="col-md-3">USA</div>
+        <div class="col-md-2">$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-hover">
+  &lt;div class="fauxble-headings">
+    &lt;div class="col-md-1">#&lt;/div>
+    &lt;div class="col-md-4">Brand&lt;/div>
+    &lt;div class="col-md-2">Industry&lt;/div>
+    &lt;div class="col-md-3">Nationality&lt;/div>
+    &lt;div class="col-md-2">Price&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">1&lt;/div>
+    &lt;div class="col-md-4">Beats By Dre&lt;/div>
+    &lt;div class="col-md-2">audio&lt;/div>
+    &lt;div class="col-md-3">USA&lt;/div>
+    &lt;div class="col-md-2">$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">2&lt;/div>
+    &lt;div class="col-md-4">Adidas&lt;/div>
+    &lt;div class="col-md-2">shoes&lt;/div>
+    &lt;div class="col-md-3">Germany&lt;/div>
+    &lt;div class="col-md-2">$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">3&lt;/div>
+    &lt;div class="col-md-4">Fruit of the Loom&lt;/div>
+    &lt;div class="col-md-2">garments&lt;/div>
+    &lt;div class="col-md-3">USA&lt;/div>
+    &lt;div class="col-md-2">$&lt;/div>
+  &lt;/div>
+&lt;/div>
+  </code></pre></div>
+
+  <h2>Condensed fauxble</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-condensed">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Manufacturer</div>
+        <div class="col-md-2">Type</div>
+        <div class="col-md-3">Speed</div>
+        <div class="col-md-2">Price</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">Porsche</div>
+        <div class="col-md-2">sportscar</div>
+        <div class="col-md-3">really fast</div>
+        <div class="col-md-2">$$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">BMW</div>
+        <div class="col-md-2">luxury</div>
+        <div class="col-md-3">fast</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">Kia</div>
+        <div class="col-md-2">economy</div>
+        <div class="col-md-3">not so fast</div>
+        <div class="col-md-2">$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-condensed">
+  &lt;div class="fauxble-headings">
+    &lt;div class="col-md-1">#&lt;/div>
+    &lt;div class="col-md-4">Manufacturer&lt;/div>
+    &lt;div class="col-md-2">Type&lt;/div>
+    &lt;div class="col-md-3">Speed&lt;/div>
+    &lt;div class="col-md-2">Price&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">1&lt;/div>
+    &lt;div class="col-md-4">Porsche&lt;/div>
+    &lt;div class="col-md-2">sportscar&lt;/div>
+    &lt;div class="col-md-3">really fast&lt;/div>
+    &lt;div class="col-md-2">$$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">2&lt;/div>
+    &lt;div class="col-md-4">BMW&lt;/div>
+    &lt;div class="col-md-2">luxury&lt;/div>
+    &lt;div class="col-md-3">fast&lt;/div>
+    &lt;div class="col-md-2">$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">3&lt;/div>
+    &lt;div class="col-md-4">Kia&lt;/div>
+    &lt;div class="col-md-2">economy&lt;/div>
+    &lt;div class="col-md-3">not so fast&lt;/div>
+    &lt;div class="col-md-2">$&lt;/div>
+  &lt;/div>
+&lt;/div>
+  </code></pre></div>
+</div>
