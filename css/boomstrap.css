@@ -537,7 +537,8 @@ textarea {
 optgroup {
   font-weight: bold;
 }
-table {
+table,
+.fauxble {
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -611,7 +612,8 @@ th {
   .marker {
     border: 1px solid #000;
   }
-  .table {
+  .table,
+  .fauxble {
     border-collapse: collapse !important;
   }
   .table-bordered th,
@@ -1764,14 +1766,16 @@ pre code {
     margin-left: 0%;
   }
 }
-table {
+table,
+.fauxble {
   max-width: 100%;
   background-color: transparent;
 }
 th {
   text-align: left;
 }
-.table {
+.table,
+.fauxble {
   width: 100%;
   margin-bottom: 20px;
 }
@@ -6498,6 +6502,106 @@ button.close-inverted {
 .dropdown-toggle.btn-link .caret {
   color: #696969;
 }
+.fauxble {
+  list-style: none;
+  /* for UL/OL case */
+  margin: 0 0 20px;
+  padding: 0;
+}
+.fauxble-headings {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  border-top: none;
+}
+.fauxble-headings:before,
+.fauxble-headings:after {
+  content: " ";
+  display: table;
+}
+.fauxble-headings:after {
+  clear: both;
+}
+.fauxble-headings:before,
+.fauxble-headings:after {
+  content: " ";
+  display: table;
+}
+.fauxble-headings:after {
+  clear: both;
+}
+.fauxble-headings > div,
+.fauxble-headings span,
+.fauxble-headings section,
+.fauxble-headings p {
+  padding: 8px;
+  display: block;
+}
+.fauxble-row {
+  border-top: 1px solid #cccccc;
+}
+.fauxble-row:before,
+.fauxble-row:after {
+  content: " ";
+  display: table;
+}
+.fauxble-row:after {
+  clear: both;
+}
+.fauxble-row:before,
+.fauxble-row:after {
+  content: " ";
+  display: table;
+}
+.fauxble-row:after {
+  clear: both;
+}
+.fauxble-row > div,
+.fauxble-row span,
+.fauxble-row p {
+  padding: 8px;
+  display: block;
+}
+.fauxble-condensed .fauxble-row > div,
+.fauxble-condensed .fauxble-row span,
+.fauxble-condensed .fauxble-row p {
+  padding: 5px;
+}
+.fauxble-bordered {
+  border: 1px solid #cccccc;
+}
+.fauxble-bordered .fauxble-headings,
+.fauxble-bordered .fauxble-row {
+  border: none;
+  border-bottom: 1px solid #cccccc;
+}
+.fauxble-bordered .fauxble-headings:last-child,
+.fauxble-bordered .fauxble-row:last-child {
+  border: none;
+}
+.fauxble-bordered .fauxble-headings > div,
+.fauxble-bordered .fauxble-row > div,
+.fauxble-bordered .fauxble-headings span,
+.fauxble-bordered .fauxble-row span,
+.fauxble-bordered .fauxble-headings p,
+.fauxble-bordered .fauxble-row p {
+  border: none;
+  border-right: 1px solid #cccccc;
+}
+.fauxble-bordered .fauxble-headings > div:last-child,
+.fauxble-bordered .fauxble-row > div:last-child,
+.fauxble-bordered .fauxble-headings span:last-child,
+.fauxble-bordered .fauxble-row span:last-child,
+.fauxble-bordered .fauxble-headings p:last-child,
+.fauxble-bordered .fauxble-row p:last-child {
+  border: none;
+}
+.fauxble-striped .fauxble-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.fauxble-hover .fauxble-row:hover {
+  background-color: #f5f5f5;
+}
 .ficon {
   display: inline-block;
   position: relative;
@@ -7437,7 +7541,8 @@ button.close-inverted {
   width: 9px;
   z-index: 1;
 }
-.table {
+.table,
+.fauxble {
   background-color: #ffffff;
 }
 .table > thead > tr > th,
@@ -7445,6 +7550,7 @@ button.close-inverted {
 .table > tfoot > tr > th {
   text-transform: uppercase;
   font-size: 12px;
+  font-weight: bold;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
