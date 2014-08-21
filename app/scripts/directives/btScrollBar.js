@@ -3,38 +3,37 @@
 
   /**
    * @ngdoc directive
-   * @name  boomstrap.directive:btScrollBar
-   * @restrict A
-   * 
-   * @param {Number} totalItems The number of items to paginate through.
-   * @param {Number} currentPage The number of the current page we are on.
-   * @param {Number} itemsPerPage How many items are allowed on each page.
+   * @name  boomstrap.directive:btScrollbar
+   * @restrict EA
    *
    * @description
-   * The `btScrollBar` directive adds a simulated scroll-bar to any element.  It wraps the jQuery baron library.
+   * The `btScrollbar` directive adds a simulated scrollbar to any element.  It wraps the jQuery baron library.
    */
-  Boomstrap.directive('btScrollBar', function() {
-    return function(scope, element) {
-      var $element = angular.element(element);
-      
-      $element.addClass('scroller baron');
-      $element.append('<div class="scroller__track"><div class="scroller__bar"></div></div>');
+  Boomstrap.directive('btScrollbar', function() {
+    return {
+      restrict: 'EA',
+      transclude: true,
+      replace: true,
+      templateUrl: 'template/scrollbar/bt-scrollbar.tpl.html',
+      link: function(scope, element) {
+        var $element = angular.element(element);
 
-      var scroller = baron({
-        root: element[0],
-        scroller: '.scroller',
-        bar: '.scroller__bar',
-        track: '.scroller__track',
-        $: angular.element
-      });
+        var scroll = baron({
+          root: element,
+          scroller: '.baron-scroller',
+          track: '.baron-scroller-track',
+          bar: '.baron-scroller-bar',
+          $: angular.element
+        });
 
-      $element.bind('resize', function() {
-        scroller.update();
-      });
+        $element.bind('resize', function() {
+          scroll.update();
+        });
 
-      scope.$on('$destroy', function() {
-        scroller.dispose();
-      });
+        scope.$on('$destroy', function() {
+          scroll.dispose();
+        });
+      }
     };
   });
 })(angular.module('boomstrap'), window.baron);
