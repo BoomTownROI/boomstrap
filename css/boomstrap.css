@@ -2056,7 +2056,7 @@ output {
   padding-top: 7px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #848484;
+  color: #999999;
 }
 .form-control {
   display: block;
@@ -2065,7 +2065,7 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #848484;
+  color: #999999;
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
@@ -3471,7 +3471,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
-  color: #848484;
+  color: #999999;
   text-align: center;
   background-color: #ececec;
   border: 1px solid #cccccc;
@@ -5310,7 +5310,7 @@ button.close {
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  background-color: #848484;
+  background-color: #999999;
   border-radius: 4px;
 }
 .tooltip-arrow {
@@ -5325,52 +5325,52 @@ button.close {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #848484;
+  border-top-color: #999999;
 }
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
   left: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #848484;
+  border-top-color: #999999;
 }
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   right: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #848484;
+  border-top-color: #999999;
 }
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #848484;
+  border-right-color: #999999;
 }
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #848484;
+  border-left-color: #999999;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #848484;
+  border-bottom-color: #999999;
 }
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   left: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #848484;
+  border-bottom-color: #999999;
 }
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   right: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #848484;
+  border-bottom-color: #999999;
 }
 .popover {
   position: absolute;
@@ -5930,7 +5930,7 @@ button.close {
   border-color: #cccccc;
   border-style: solid;
   border-width: 1px;
-  color: #848484;
+  color: #999999;
   padding: 2px 3px;
 }
 .btn-group-alt-two {
@@ -6094,7 +6094,7 @@ fieldset[disabled] .btn-attention.active {
 .callout {
   margin: 20px 0;
   padding: 20px;
-  border-left: 3px solid #848484;
+  border-left: 3px solid #999999;
 }
 .callout h1,
 .callout h2,
@@ -6902,7 +6902,7 @@ button.close-inverted {
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid #848484;
+  border: 2px solid #999999;
   vertical-align: middle;
   color: #1581e2;
   padding: 0;
@@ -7380,7 +7380,7 @@ button.close-inverted {
   color: #696969;
 }
 .popover-content {
-  color: #848484;
+  color: #999999;
   padding: 14px;
 }
 .popover-title {
@@ -7390,7 +7390,7 @@ button.close-inverted {
 }
 .sash {
   background-color: #ffffff;
-  border-bottom: 4px solid #848484;
+  border-bottom: 4px solid #999999;
   display: block;
   font-size: 12px;
   font-weight: 600;
@@ -7644,25 +7644,25 @@ button.close-inverted {
 a.bg-attention:hover {
   background-color: #de7009;
 }
-.bg-blue-dark {
+.bg-cool-dark {
   background-color: #222c32;
   color: #ffffff;
 }
-a.bg-blue-dark:hover {
+a.bg-cool-dark:hover {
   background-color: #0d1114;
 }
-.bg-blue {
+.bg-cool {
   background-color: #394b54;
   color: #ffffff;
 }
-a.bg-blue:hover {
+a.bg-cool:hover {
   background-color: #243036;
 }
-.bg-blue-light {
+.bg-cool-light {
   background-color: #5f7f8e;
   color: #ffffff;
 }
-a.bg-blue-light:hover {
+a.bg-cool-light:hover {
   background-color: #4b646f;
 }
 .bg-gray-lightest {
@@ -7684,11 +7684,11 @@ a.bg-gray-light:hover {
   background-color: #b3b3b3;
 }
 .bg-gray {
-  background-color: #848484;
+  background-color: #999999;
   color: #ffffff;
 }
 a.bg-gray:hover {
-  background-color: #6b6b6b;
+  background-color: #808080;
 }
 .bg-gray-dark {
   background-color: #696969;
@@ -7782,7 +7782,7 @@ h1 {
 }
 .pl-docs-sidenav > li > a {
   border-left: 2px solid transparent;
-  color: #848484;
+  color: #999999;
   font-size: 13px;
   padding: 5px 12px;
   text-transform: lowercase;
@@ -7852,7 +7852,7 @@ a.responsive-utilities td.is-visible:hover {
 .responsive-utilities th small {
   display: block;
   font-weight: 400;
-  color: #848484;
+  color: #999999;
 }
 .pl-example > .btn-toolbar + .btn-toolbar {
   margin-top: 10px;
@@ -7939,7 +7939,7 @@ a.responsive-utilities td.is-visible:hover {
   background-color: #cb2027;
 }
 .pl-swatch--gray {
-  background-color: #848484;
+  background-color: #999999;
 }
 .pl-swatch--gray-light {
   background-color: #cccccc;
@@ -7956,16 +7956,16 @@ a.responsive-utilities td.is-visible:hover {
 .pl-swatch--gray-darker {
   background-color: #444444;
 }
-.pl-swatch--blue {
+.pl-swatch--cool {
   background-color: #394b54;
 }
-.pl-swatch--blue-light {
+.pl-swatch--cool-light {
   background-color: #5f7f8e;
 }
-.pl-swatch--blue-dark {
+.pl-swatch--cool-dark {
   background-color: #222c32;
 }
-.pl-swatch--blue-hover {
+.pl-swatch--cool-hover {
   background-color: #f2f9fc;
 }
 .pl-sashes .sash {
