@@ -6531,9 +6531,9 @@ button.close-inverted {
   clear: both;
 }
 .fauxble-headings > div,
-.fauxble-headings span,
-.fauxble-headings section,
-.fauxble-headings p {
+.fauxble-headings > span,
+.fauxble-headings > section,
+.fauxble-headings > p {
   padding: 8px;
   display: block;
 }
@@ -6557,14 +6557,14 @@ button.close-inverted {
   clear: both;
 }
 .fauxble-row > div,
-.fauxble-row span,
-.fauxble-row p {
+.fauxble-row > span,
+.fauxble-row > p {
   padding: 8px;
   display: block;
 }
 .fauxble-condensed .fauxble-row > div,
-.fauxble-condensed .fauxble-row span,
-.fauxble-condensed .fauxble-row p {
+.fauxble-condensed .fauxble-row > span,
+.fauxble-condensed .fauxble-row > p {
   padding: 5px;
 }
 .fauxble-bordered {
