@@ -1254,7 +1254,7 @@
             bar: '.baron-scroller-bar',
             $: angular.element
           });
-        $element.bind('resize', function () {
+        $element.on('resize', function () {
           scroll.update();
         });
         scope.$on('$destroy', function () {
