@@ -576,42 +576,11 @@ $scope.toggleLoader = function() { // flip the boolean to toggle
 <!-- Scrollbar (Boomstrap Custom) -->
 
 <section id="scrollbar" class="pl-docs-section">
-    <style>
-      .scroller {
-        overflow-y: scroll;
-      }
-
-      .scroller::-webkit-scrollbar {
-        width: 0;
-      }
-
-      .scroller__track {
-        display: none;
-        position: absolute;
-        right: 4px;
-        top: 10px;
-        bottom: 4px;
-        width: 10px;
-        background: rgba(0, 0, 0, .1);
-      }
-
-      .baron .scroller__track {
-        display: block;
-      }
-
-      .scroller__bar {
-        position: absolute;    
-        z-index: 1;
-        right: 0;
-        width: 10px;
-        background: #999;
-      }
-    </style>
     <div class="page-header">
       <h1>Scrollbar <small>(<a href="https://github.com/Diokuz/baron" target="_blank">baron.js</a>)</small></h1>
     </div>
     <p>Adds a simulated scrollbar to any element. It wraps the jQuery baron library.</p>
-    <p>Either add the <code>bt-scrollbar</code> attribute, or use the <code><bt-scrollbar></code> element.</p>
+    <p>Either add the <code>bt-scrollbar</code> attribute, or use the <code>&lt;bt-scrollbar&gt;</code> element.</p>
     <div class="pl-example">
       <bt-scrollbar class="scroll-area-1">
         <p>Bacon ipsum dolor sit amet bresaola meatball ground round pariatur proident mollit prosciutto incididunt exercitation. Short ribs short loin qui jerky culpa. Ut ad hamburger shankle frankfurter aliqua. Kevin anim filet mignon bacon. Hamburger non quis, bacon flank rump commodo magna dolor enim pariatur dolore id nostrud. Short ribs minim adipisicing, boudin commodo dolore irure cillum turducken tail ground round. Do in occaecat quis salami veniam commodo cupidatat in flank spare ribs ham t-bone turducken shoulder.</p>
