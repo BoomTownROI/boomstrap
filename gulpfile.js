@@ -17,7 +17,8 @@ var es          = require('event-stream'),
   templateCache = require('gulp-angular-templatecache'),
   bower         = require('gulp-bower'),
   clean         = require('gulp-clean'),
-  order         = require('gulp-order');
+  order         = require('gulp-order'),
+  prefix        = require('gulp-autoprefixer');
   // dgeni = require('dgeni');
 
 require('gulp-grunt')(gulp, {
@@ -172,6 +173,7 @@ gulp.task('boomstrapLessDocs', function() {
     .pipe(newer(DEST_DIR + '/' + DEST_FILE))
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: false }))
+    .pipe(prefix('last 2 version', 'ie 9')) // autoprefixer
     .pipe(gulp.dest(DEST_DIR));
 
 });
@@ -186,10 +188,14 @@ gulp.task('boomstrapLessDist', function() {
     .pipe(newer(DEST_DIR + '/' + DEST_FILE))
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: true }))
+    .pipe(prefix('last 2 version', 'ie 9')) // autoprefixer
     .pipe(gulp.dest(DEST_DIR));
 });
 
+
+
 gulp.task('boomstrapLess', ['boomstrapLessDocs', 'boomstrapLessDist']);
+
 gulp.task('reloadDocsLess', function() {
   gulp.src('docs/css/**/*.css')
     .pipe(connect.reload());
