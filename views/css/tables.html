@@ -364,7 +364,17 @@
 
 
   <h2 id="tables-responsive">Responsive tables</h2>
-  <p>Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to make them scroll horizontally up to small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
+  <p>Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
+
+  <div class="callout callout-warning">
+    <h4>Firefox and fieldsets</h4>
+    <p>Firefox has some awkward fieldset styling involving <code>width</code> that interferes with the responsive table. This cannot be overriden without a Firefox-specific hack that we <strong>don't</strong> provide in Bootstrap:</p>
+<div class="highlight"><pre><code class="css"><span class="k">@-moz-document</span> <span class="nt">url-prefix</span><span class="o">()</span> <span class="p">{</span>
+  <span class="nt">fieldset</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span> <span class="k">table-cell</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+    <p>For more information, read <a href="http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685">this Stack Overflow answer</a>.</p>
+  </div>
+
   <div class="pl-example">
     <div class="table-responsive">
       <table class="table">
@@ -460,8 +470,16 @@
   <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table&quot;</span><span class="nt">&gt;</span>
     ...
   <span class="nt">&lt;/table&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+
+
+
+
+
+
+
 
   <!-- Table Sorting (Boomstrap Custom) -->
   <h2 id="tables-sorting">Sorting tables</h2>
