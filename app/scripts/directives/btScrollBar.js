@@ -26,7 +26,7 @@
           $: angular.element
         });
 
-        $element.bind('resize', function() {
+        $element.on('resize', function() {
           scroll.update();
         });
 
