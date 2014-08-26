@@ -9,7 +9,7 @@
    * @description
    * The `btScrollbar` directive adds a simulated scrollbar to any element.  It wraps the jQuery baron library.
    */
-  Boomstrap.directive('btScrollbar', function() {
+  Boomstrap.directive('btScrollbar', function($window) {
     return {
       restrict: 'EA',
       transclude: true,
@@ -25,9 +25,11 @@
           bar: '.baron-scroller-bar',
           $: angular.element
         });
-
-        $element.on('resize', function() {
-          scroll.update();
+        // Seriously hacky. Need to add a subdirective for elements in the scrollbar that need to trigger the scroller update
+        $element.on('click', function() {
+          $window.setTimeout(function() {
+            scroll.update();
+          }, 400);
         });
 
         scope.$on('$destroy', function() {
