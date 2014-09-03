@@ -16,8 +16,9 @@
       replace: true,
       templateUrl: 'template/scrollbar/bt-scrollbar.tpl.html',
       link: function(scope, element) {
-        var $element  = angular.element(element);
-        var $scroller = $element.find('.baron-scroller')[0];
+        var $element   = angular.element(element);
+        var $scroller  = $element.find('.baron-scroller')[0];
+        var $scrollbar = $element.find('.baron-scroller-bar')[0];
 
         var scroll = baron({
           root: element,
@@ -31,14 +32,16 @@
         $element.on('click', function() {
           $window.setTimeout(function() {
             scroll.update();
-          }, 400);
-          if ($scroller.scrollHeight <= $scroller.clientHeight) {
-            $element[0].classList.remove('baron');
-          } else {
-            if (!$element[0].classList.contains('baron')) {
-              $element[0].classList.add('baron');
+
+            if ($scroller.scrollHeight <= $scroller.clientHeight) {
+              console.log($scrollbar);
+              $scrollbar.classList.add('hidden');
+            } else {
+              if ($scrollbar.classList.contains('hidden')) {
+                $scrollbar.classList.remove('hidden');
+              }
             }
-          }
+          }, 400);
         });
 
         scope.$on('$destroy', function() {
