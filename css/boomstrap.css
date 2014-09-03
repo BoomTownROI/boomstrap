@@ -7542,10 +7542,12 @@ button.close-inverted {
 .baron:hover .baron-scroller-bar {
   opacity: .5;
 }
+.baron .baron-scroller {
+  overflow-y: scroll;
+}
 .baron-scroller {
   border: 0;
   height: 100%;
-  overflow-y: scroll;
   width: 100%;
 }
 .baron-scroller::-webkit-scrollbar {
