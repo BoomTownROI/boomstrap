@@ -1075,7 +1075,6 @@ var
         var self = this;
 
         this._observer = new MutationObserver(function() {
-            console.log('observe callback');
             self.update();
         });
 
