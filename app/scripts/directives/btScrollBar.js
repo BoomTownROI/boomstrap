@@ -34,7 +34,6 @@
             scroll.update();
 
             if ($scroller.scrollHeight <= $scroller.clientHeight) {
-              console.log($scrollbar);
               $scrollbar.classList.add('hidden');
             } else {
               if ($scrollbar.classList.contains('hidden')) {
