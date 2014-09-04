@@ -7396,6 +7396,15 @@ button.close-inverted {
 .panel-title > a[data-toggle="collapse"].collapsed .panel-collapse-more {
   display: inline-block;
 }
+.panel-sm .panel-body {
+  padding: 6px;
+}
+.panel-sm .panel-footer {
+  padding: 4px 6px;
+}
+.panel-sm .panel-heading {
+  padding: 4px 6px;
+}
 .popover-close {
   color: #cccccc;
   cursor: pointer;
