@@ -5,6 +5,8 @@
 // Panels
 // -------------------------
 
+
+// Panel title
 .panel-title {
   > a[data-toggle="collapse"] {
     display: block;
@@ -16,5 +18,18 @@
       .panel-collapse-less { display: none; }
       .panel-collapse-more { display: inline-block; }
     }
+  }
+}
+
+// Panel small
+.panel-sm {
+  .panel-body {
+    padding: @panel-body-padding-sm;
+  }
+  .panel-footer {
+    padding: 4px @panel-body-padding-sm;
+  }
+  .panel-heading {
+    padding: 4px @panel-body-padding-sm;
   }
 }
