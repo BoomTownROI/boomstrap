@@ -21,7 +21,7 @@
     "bootstrap-tour": "~0.9.1",
     "bootstrap-select": "~1.5.2",
     "angular-animate": "~1.2.16",
-    "angular-ui-select": "~0.2.1",
+    "angular-ui-select": "~0.6.0",
     "baron": "*",
     "momentjs": "~2.6.0",
     "angular-moment": "~0.7.0"
