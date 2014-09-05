@@ -1,12 +1,12 @@
 {
   "name": "ui-select",
-  "version": "0.2.0",
+  "version": "0.6.0",
   "homepage": "https://github.com/angular-ui/ui-select",
   "authors": [
     "AngularUI"
   ],
   "description": "AngularJS ui-select",
-  "main": "dist/select.js",
+  "main": ["dist/select.js", "dist/select.css"],
   "license": "MIT",
   "ignore": [
     "**/.*",
