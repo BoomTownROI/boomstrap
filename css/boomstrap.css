@@ -894,15 +894,15 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 30px;
+  font-size: 24px;
 }
 h2,
 .h2 {
-  font-size: 26px;
+  font-size: 22px;
 }
 h3,
 .h3 {
-  font-size: 22px;
+  font-size: 20px;
 }
 h4,
 .h4 {
@@ -910,11 +910,11 @@ h4,
 }
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 16px;
 }
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 14px;
 }
 p {
   margin: 0 0 10px;
@@ -7414,6 +7414,7 @@ button.close-inverted {
 .nav-tabs > li > a {
   border-radius: 0;
   color: #1581e2;
+  cursor: pointer;
   margin-right: -1px;
   -webkit-transition: all linear 0.25s;
   transition: all linear 0.25s;
