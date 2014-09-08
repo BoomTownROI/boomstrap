@@ -7571,6 +7571,9 @@ button.close-inverted {
   font-weight: 400;
   text-transform: lowercase;
 }
+.bootstrap-select.form-control {
+  margin-bottom: 0 !important;
+}
 .ui-select-match.form-control {
   height: auto;
 }
