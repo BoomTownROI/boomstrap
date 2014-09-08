@@ -4599,7 +4599,7 @@ a.thumbnail.active {
   color: inherit;
 }
 .alert .alert-link {
-  font-weight: bold;
+  font-weight: 600;
 }
 .alert > p,
 .alert > ul {
@@ -6031,6 +6031,7 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
 }*/
 .alert a,
 .alert .alert-link {
+  font-weight: 600;
   text-decoration: underline;
 }
 .badge {
@@ -6220,11 +6221,13 @@ fieldset[disabled] .btn-attention.active {
   margin-bottom: 5px;
   margin-top: 0;
 }
+.callout a,
+.callout .callout-link {
+  text-decoration: underline;
+  font-weight: 600;
+}
 .callout p:last-child {
   margin-bottom: 0;
-}
-.callout .callout-link {
-  font-weight: 600;
 }
 .callout-success {
   background-color: #eef7ea;
