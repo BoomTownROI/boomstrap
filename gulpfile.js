@@ -18,7 +18,8 @@ var es          = require('event-stream'),
   bower         = require('gulp-bower'),
   clean         = require('gulp-clean'),
   order         = require('gulp-order'),
-  autoprefixer  = require('gulp-autoprefixer');
+  autoprefixer  = require('gulp-autoprefixer'),
+  plumber       = require('gulp-plumber');
   // dgeni = require('dgeni');
 
 require('gulp-grunt')(gulp, {
@@ -170,6 +171,7 @@ gulp.task('boomstrapLessDocs', function() {
     'less/boomstrap.less',
     'less/boomstrap-docs.less'
   ])
+    .pipe(plumber())
     .pipe(newer(DEST_DIR + '/' + DEST_FILE))
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: false }))
