@@ -26,7 +26,8 @@
     "gulp-bower": "0.0.4",
     "gulp-clean": "^0.2.4",
     "gulp-order": "^1.0.6",
-    "gulp-newer": "^0.3.0"
+    "gulp-newer": "^0.3.0",
+    "gulp-autoprefixer": "^1.0.0"
   },
   "repository": {
     "type": "git",

@@ -17,7 +17,8 @@ var es          = require('event-stream'),
   templateCache = require('gulp-angular-templatecache'),
   bower         = require('gulp-bower'),
   clean         = require('gulp-clean'),
-  order         = require('gulp-order');
+  order         = require('gulp-order'),
+  autoprefixer  = require('gulp-autoprefixer');
   // dgeni = require('dgeni');
 
 require('gulp-grunt')(gulp, {
@@ -172,6 +173,7 @@ gulp.task('boomstrapLessDocs', function() {
     .pipe(newer(DEST_DIR + '/' + DEST_FILE))
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: false }))
+    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR));
 
 });
@@ -186,6 +188,7 @@ gulp.task('boomstrapLessDist', function() {
     .pipe(newer(DEST_DIR + '/' + DEST_FILE))
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: true }))
+    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR));
 });
 
