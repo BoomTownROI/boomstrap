@@ -1,0 +1,19 @@
+// File: wells.less
+// Note: Extends Bootstrap wells.less
+
+
+// Base class
+.well {
+  background-color: @well-bg;
+  &:extend(.border all);
+  box-shadow: none;
+  min-height: 20px;
+  padding: @grid-gutter-width/2;
+}
+
+// Sizes
+
+.well-sm {
+  border-radius: @border-radius-small;
+  padding: @padding-small;
+}

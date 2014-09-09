@@ -8,13 +8,13 @@
 
 .card {
   background-color: @white;
-  .border();
   border-radius: @card-border-radius;
   display: inline-block;
   max-width: 320px;
   overflow: hidden;
   position: relative;
   width: 100%;
+  &:extend(.border all);
   p {
     margin: 0;
     .text-overflow();
