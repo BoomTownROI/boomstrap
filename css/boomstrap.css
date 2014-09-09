@@ -5115,18 +5115,18 @@ a.list-group-item-danger.active:focus {
   border-bottom: 1px solid #dddddd;
 }
 .panel-default {
-  border-color: #dddddd;
+  border-color: #cccccc;
 }
 .panel-default > .panel-heading {
   color: #696969;
   background-color: #f5f5f5;
-  border-color: #dddddd;
+  border-color: #cccccc;
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #dddddd;
+  border-top-color: #cccccc;
 }
 .panel-default > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #dddddd;
+  border-bottom-color: #cccccc;
 }
 .panel-primary {
   border-color: #1581e2;
@@ -5203,8 +5203,8 @@ a.list-group-item-danger.active:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
+  background-color: #ffffff;
+  border: 1px solid #ededed;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -6223,8 +6223,8 @@ fieldset[disabled] .btn-attention.active {
 }
 .callout a,
 .callout .callout-link {
-  text-decoration: underline;
   font-weight: 600;
+  text-decoration: underline;
 }
 .callout p:last-child {
   margin-bottom: 0;
@@ -6321,9 +6321,6 @@ fieldset[disabled] .btn-attention.active {
 }
 .card {
   background-color: #ffffff;
-  border-color: #cccccc;
-  border-style: solid;
-  border-width: 1px;
   border-radius: 3px;
   display: inline-block;
   max-width: 320px;
@@ -6743,8 +6740,8 @@ button.close-inverted {
 }
 @font-face {
   font-family: 'ficon';
-  src: url('fonts/ficon.eot?-kqy5zk');
-  src: url('fonts/ficon.eot?#iefix-kqy5zk') format('embedded-opentype'), url('fonts/ficon.woff?-kqy5zk') format('woff'), url('fonts/ficon.ttf?-kqy5zk') format('truetype'), url('fonts/ficon.svg?-kqy5zk#ficon') format('svg');
+  src: url('fonts/ficon.eot?vg5xzv');
+  src: url('fonts/ficon.eot?#iefixvg5xzv') format('embedded-opentype'), url('fonts/ficon.woff?vg5xzv') format('woff'), url('fonts/ficon.ttf?vg5xzv') format('truetype'), url('fonts/ficon.svg?vg5xzv#ficon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6760,6 +6757,9 @@ button.close-inverted {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.ficon-sms:before {
+  content: "\e628";
 }
 .ficon-clipboard:before {
   content: "\e622";
@@ -6998,7 +6998,7 @@ button.close-inverted {
 .ficon-graph:before {
   content: "\e611";
 }
-.ficon-menu:before {
+.ficon-up-down:before {
   content: "\e624";
 }
 .fauxbox {
@@ -7489,10 +7489,10 @@ button.close-inverted {
   padding: 6px;
 }
 .panel-sm .panel-footer {
-  padding: 4px 6px;
+  padding: 8px 6px;
 }
 .panel-sm .panel-heading {
-  padding: 4px 6px;
+  padding: 8px 6px;
 }
 .popover-close {
   color: #cccccc;
@@ -7579,7 +7579,9 @@ button.close-inverted {
 }
 .score {
   background-color: #ffffff;
-  border: 1px solid #cccccc;
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px;
   color: #cccccc;
   display: inline-block;
   text-align: center;
@@ -7858,6 +7860,14 @@ h4 {
 .page-heading {
   margin: 0 0 20px 0;
 }
+.border,
+.card,
+.well,
+.pl-example {
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px;
+}
 .pointer {
   cursor: pointer;
 }
@@ -7872,6 +7882,17 @@ h4 {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+.well,
+.pl-example {
+  box-shadow: none;
+  padding: 15px;
+}
+.well-sm {
+  padding: 6px;
+}
+.well-lg {
+  padding: 20px;
 }
 h1,
 h2 {
@@ -8000,7 +8021,7 @@ a.responsive-utilities td.is-visible:hover {
   margin: 1.5em 0;
 }
 .pl-code pre {
-  border-color: #e3e3e3;
+  border-color: #ededed;
   padding-left: 19px;
   padding-right: 19px;
 }
@@ -8118,7 +8139,7 @@ a.responsive-utilities td.is-visible:hover {
   margin: 1.5em 0;
 }
 .pl-code pre {
-  border-color: #e3e3e3;
+  border-color: #ededed;
   padding-left: 19px;
   padding-right: 19px;
 }
@@ -8149,7 +8170,7 @@ a.responsive-utilities td.is-visible:hover {
   color: #006699;
 }
 .pl-body pre.prettyprint {
-  border-color: #e3e3e3;
+  border-color: #ededed;
   padding: 9.5px 19px;
 }
 .pl-body pre.prettyprint .atv {
