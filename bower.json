@@ -3,9 +3,10 @@
   "description": "A robust pattern library",
   "version": "1.0.8",
   "authors": [
-    "Craig Anthony <craig@boomtownroi.com>",
     "Mark Funk <mark@boomtownroi.com>",
-    "Sean McCambridge <sean@boomtownroi.com>"
+    "Sean McCambridge <sean@boomtownroi.com>",
+    "Ian Greulich <igreulich@boomtownroi.com>",
+    "Craig Anthony <craig@boomtownroi.com>"
   ],
   "main": "index.html",
   "private": true,
