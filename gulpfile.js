@@ -281,7 +281,7 @@ gulp.task('server', ['boomstrapcommon'], function() {
 });
 
 // Deploy to our github pages page
-gulp.task('website', ['boomstrapcommon'], function() {
+gulp.task('website', function() {
   // Run our gulp tasks
   gulp.run('grunt-tasks-ngdocs');
   return gulp.run('grunt-tasks-gh-pages');
