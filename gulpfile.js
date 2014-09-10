@@ -177,7 +177,7 @@ gulp.task('boomstrapLessDocs', function() {
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: false }))
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
-    //.pipe(csso())
+    .pipe(csso())
     .pipe(gulp.dest(DEST_DIR));
 
 });

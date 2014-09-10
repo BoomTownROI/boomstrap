@@ -1,7 +1,7 @@
 {
   "name": "boomstrap",
   "description": "A robust pattern library",
-  "version": "1.0.8",
+  "version": "1.0.0",
   "authors": [
     "Mark Funk <mark@boomtownroi.com>",
     "Sean McCambridge <sean@boomtownroi.com>",
@@ -23,7 +23,7 @@
     "bootstrap-select": "~1.5.2",
     "angular-animate": "~1.2.16",
     "angular-ui-select": "~0.6.0",
-    "baron": "*",
+    "baron": "~0.7.8",
     "momentjs": "~2.6.0",
     "angular-moment": "~0.7.0"
   },
