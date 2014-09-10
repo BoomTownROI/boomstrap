@@ -84,6 +84,14 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btAddClassOnLoad
@@ -1422,14 +1430,6 @@
       return toolTip;
     }
   ]);
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-  });
 }(angular.module('boomstrap')));
 (function (Boomstrap, Tour) {
   'use strict';
