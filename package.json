@@ -28,8 +28,7 @@
     "gulp-order": "^1.0.6",
     "gulp-newer": "^0.3.0",
     "gulp-autoprefixer": "^1.0.0",
-    "gulp-plumber": "^0.6.5",
-    "gulp-csso": "^0.2.9"
+    "gulp-plumber": "^0.6.5"
   },
   "repository": {
     "type": "git",
