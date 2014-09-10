@@ -84,6 +84,14 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
   /**
    * @ngdoc directive
    * @name  boomstrap.directive:btAddClassOnLoad
@@ -1541,14 +1549,6 @@
     return tour;
   });
 }(angular.module('boomstrap'), window.Tour));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-  });
-}(angular.module('boomstrap')));
 angular.module("ui.bootstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/pager/bt-pager.tpl.html","<div class=\"btn-group minimal-pager\">\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noPrevious() }\"\n        ng-click=\"selectPage(page - 1)\"><i\n            class=\"ficon ficon-chevron-left\"></i></button>\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noNext() }\"\n        ng-click=\"selectPage(page + 1)\"><i\n            class=\"ficon ficon-chevron-right\"></i></button>\n</div>");}]);
 angular.module("boomstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/nav.html","<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#pl-nav\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">PL</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"pl-nav\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"#pl-colors\">Colors</a></li>\n        <li class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Buttons <b class=\"caret\"></b></a>\n          <ul class=\"dropdown-menu\">\n            <li><a href=\"#pl-button-options\">Options</a></li>\n            <li><a href=\"#pl-button-sizes\">Sizes</a></li>\n            <li><a href=\"#pl-button-active\">Active State</a></li>\n            <li><a href=\"#pl-button-disabled\">Disabled State</a></li>\n            <li><a href=\"#pl-button-tags\">Button Tags</a></li>\n          </ul>\n        </li>\n        <li><a href=\"#pl-labels\">Labels</a></li>\n        <li><a href=\"#pl-typography\">Typography</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n<div class=\"container\">");
 $templateCache.put("template/btLazyPen/btLazyPen.tpl.html","<div class=\"bt-lazy-pen\">\n  <span class=\"btn btn-attention\" ng-if=\"!showingPen.value\" ng-click=\"showingPen.value = !showingPen.value\">Load CodePen Example</span>\n  <div ng-if=\"showingPen.value\">\n    <p data-height=\"{{ height }}\" data-theme-id=\"{{ themeId }}\" data-slug-hash=\"{{ slug }}\" data-default-tab=\"result\" class=\'codepen\'>See the Pen <a href=\'http://codepen.io/{{ user }}/pen/{{ slug }}/\'>{{ title }}</a> by {{ author }} (<a href=\'http://codepen.io/{{ user }}\'>@{{ userId }}</a>) on <a href=\'http://codepen.io\'>CodePen</a>.</p>\n    <script async src=\"//codepen.io/assets/embed/ei.js\"></script>\n  </div>\n</div>");

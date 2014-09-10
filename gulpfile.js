@@ -1,6 +1,5 @@
 var es          = require('event-stream'),
   gulp          = require('gulp'),
-  newer         = require('gulp-newer'),
   concat        = require('gulp-concat'),
   rename        = require('gulp-rename'),
   less          = require('gulp-less'),
@@ -87,7 +86,6 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/angular-ui-select/dist/select.js', // No minified version
     'bower_components/angular-moment/angular-moment.min.js'
   ])
-  .pipe(newer('docs/js/boomstrap.js'))
   .pipe(concat('boomstrap.js'))
   .pipe(gulp.dest('docs/js/'))
   .pipe(gulp.dest('dist/js/'))
@@ -172,7 +170,6 @@ gulp.task('boomstrapLessDocs', function() {
     'less/boomstrap-docs.less'
   ])
     .pipe(plumber())
-    .pipe(newer(DEST_DIR + '/' + DEST_FILE))
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: false }))
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
@@ -187,7 +184,6 @@ gulp.task('boomstrapLessDist', function() {
   return gulp.src([
     'less/boomstrap.less'
   ])
-    .pipe(newer(DEST_DIR + '/' + DEST_FILE))
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: true }))
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
@@ -222,19 +218,14 @@ gulp.task('boomstrapcommon', ['boomstrapLess', 'boomstrapjs', 'docsHtml'], funct
   // Copy all image/font/icon files if they are newer than destination
   return es.concat(
     gulp.src('images/**/*.*')
-      .pipe(newer(IMAGES_DIR))
       .pipe(gulp.dest(IMAGES_DIR)),
     gulp.src('fonts/**/*.*')
-      .pipe(newer(FONTS_DOCS_DIR))
       .pipe(gulp.dest(FONTS_DOCS_DIR)),
     gulp.src('fonts/**/*.*')
-      .pipe(newer(FONTS_DIST_DIR))
       .pipe(gulp.dest(FONTS_DIST_DIR)),
     gulp.src('icons/**/*.*')
-      .pipe(newer(ICONS_DOCS_DIR))
       .pipe(gulp.dest(ICONS_DOCS_DIR)),
     gulp.src('icons/**/*.*')
-      .pipe(newer(ICONS_DIST_DIR))
       .pipe(gulp.dest(ICONS_DIST_DIR))
   );
 });
