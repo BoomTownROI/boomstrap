@@ -11,11 +11,12 @@
    * @param {string} minPlaceholder String to show when the user is selecting an item from the minimum dropdown
    * @param {string} maxPlaceholder String to show when the user is selecting an item from the maximum dropdown
    * @param {string} rangeType If the range type is 'money', format the Number values as currency.
+   * @param {function} translate If numbers and currency are not acceptable values, or the 'No min' and 'No max' are not satisfactory empty values, a function can be provided to translate them.
    *
    * @description The `btSelectRange` element directive wraps the AngularUI's uiSelect directive.
    * It allows the user to change the placeholder text for the range, and ensures that the minimum will always
    * be less than the maximum.  It also provides a way for the user to select 'No minimum' or 'No maximum' if
-   * the array provided has a non-number value in it.  This directive will add the users input to the current
+   * the array provided has -1 value in it.  This directive will add the users input to the current
    * list of items shown as the user types, and if the user enters a non-provided value, that value will be added
    * to the values Array provided.
    *
@@ -29,7 +30,8 @@
       scope: {
         values: '=',
         minPlaceholder: '@',
-        maxPlaceholder: '@'
+        maxPlaceholder: '@',
+        translate: '='
       },
       link: function(scope, iElement, iAttrs, ngModel) {
         /*
@@ -45,15 +47,7 @@
         scope.maxPlaceholder = scope.maxPLaceholder || 'Select a maximum value';
 
         var validateMinMax = function(flippingFn) {
-          // Normalize values first
-          if(!angular.isNumber(scope.minimum.value)) {
-            scope.minimum.value = null;
-          }
-          if(!angular.isNumber(scope.maximum.value)) {
-            scope.maximum.value = null;
-          }
-
-          if(scope.maximum.value !== null && scope.minimum.value !== null && scope.maximum.value < scope.minimum.value && flippingFn) {
+          if(scope.maximum.value !== -1 && scope.minimum.value !== -1 && scope.maximum.value < scope.minimum.value && flippingFn) {
             flippingFn();
           }
         };
@@ -83,8 +77,12 @@
           translateValidValue = angular.identity;
         }
 
-        scope.translateValue = function(value, defaultText) {
-          return angular.isNumber(value) ? translateValidValue(value) : defaultText;
+        scope.translateValue = scope.translate || function(value, defaultText) {
+          if (angular.isNumber(value)) {
+            return value === -1 ? defaultText : translateValidValue(value);
+          } else {
+            return defaultText;
+          }
         };
 
         (function() {
