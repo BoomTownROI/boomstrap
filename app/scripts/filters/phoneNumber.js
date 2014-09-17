@@ -27,9 +27,11 @@
 
       switch (params) {
         case 'remove':
-          formattedNumber = number.replace(/\D/g,'');
+          formattedNumber = number.replace(/\D/g, '');
           break;
         case 'add':
+          number = number.replace(/\D/g, '');
+
           area        = number.substring(0, 3);
           localPrefix = number.substring(3, 6);
           localMain   = number.substring(6);
