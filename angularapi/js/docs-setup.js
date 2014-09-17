@@ -173,6 +173,15 @@ NG_DOCS={
       "moduleName": "boomstrap",
       "shortDescription": "Lazy loads a CodePen iframe",
       "keywords": "boomstrap codepen directive iframe lazy loads ngboomstrap"
+    },
+    {
+      "section": "ngboomstrap",
+      "id": "phoneNumber",
+      "shortName": "phoneNumber",
+      "type": "filter",
+      "moduleName": "phoneNumber",
+      "shortDescription": "The &#39;phoneNumberfilter&#39; filter will format or unformat a phone number.",
+      "keywords": "$scope add filter format ngboomstrap number outputs phone phonenumber phonenumberfilter remove string1 string2 unformat"
     }
   ],
   "apis": {
