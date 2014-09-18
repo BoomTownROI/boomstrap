@@ -44,7 +44,7 @@
           value: ngModel.$modelValue.maximum
         };
         scope.minPlaceholder = scope.minPlaceholder || 'Select a minimum value';
-        scope.maxPlaceholder = scope.maxPLaceholder || 'Select a maximum value';
+        scope.maxPlaceholder = scope.maxPlaceholder || 'Select a maximum value';
 
         var validateMinMax = function(flippingFn) {
           if(scope.maximum.value !== -1 && scope.minimum.value !== -1 && scope.maximum.value < scope.minimum.value && flippingFn) {
