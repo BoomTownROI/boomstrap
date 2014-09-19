@@ -15,6 +15,7 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
 
       'dist/select.js',
+      'test/helpers.js',
       'test/**/*.spec.js'
     ],
 
@@ -39,7 +40,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: [process.env.TRAVIS ? 'Firefox' : 'Chrome'],
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

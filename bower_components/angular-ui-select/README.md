@@ -1,9 +1,9 @@
-# AngularJS ui-select [![Build Status](https://travis-ci.org/angular-ui/ui-select.png)](https://travis-ci.org/angular-ui/ui-select)
+# AngularJS ui-select [![Build Status](https://travis-ci.org/angular-ui/ui-select.svg?branch=master)](https://travis-ci.org/angular-ui/ui-select)
 
 AngularJS-native version of [Select2](http://ivaynberg.github.io/select2/) and [Selectize](http://brianreavis.github.io/selectize.js/).
 
-- [Demo](http://plnkr.co/edit/GtOOWE?p=preview)
-- [Bootstrap theme](http://plnkr.co/edit/7Fpbtg?p=preview)
+- [Demo](http://plnkr.co/edit/a3KlK8dKH3wwiiksDSn2?p=preview)
+- [Bootstrap theme](http://plnkr.co/edit/QCwSM75ilH2Vh6D9aMA4?p=preview)
 
 ## Features
 
@@ -25,8 +25,9 @@ Check the [examples](https://github.com/angular-ui/ui-select/blob/master/example
 
 - `bower install angular-ui-select`
 - Inside your HTML add
-  - select.js: `<script src="bower_components/ui-select/dist/select.js"></script>`
-  - select.css: `<link rel="stylesheet" href="bower_components/ui-select/dist/select.css">`
+  - select.js: `<script src="bower_components/angular-ui-select/dist/select.min.js"></script>`
+  - select.css: `<link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css">`
+- Add the `ui.select` module as a dependency: `angular.module("myApp", ["ui.select"]);`
 
 ### Bootstrap theme
 
@@ -138,19 +139,18 @@ Or:
 <div ng-bind-html="person.age.toString() | highlight: $select.search"></div>
 ```
 
-## Run the tests
+## Development
+### Prepare your environment
+* Install [Node.js](http://nodejs.org/) and NPM (should come with)
+* Install global dev dependencies: `npm install -g bower gulp`
+* Install local dev dependencies: `npm install && bower install` in repository directory
 
-Install [Node.js](http://nodejs.org/), then inside a console:
-```
-npm update # Installs all Grunt dependencies (package.json) inside node_modules directory
-bower update # Installs all ui-select dependencies (bower.json) inside bower_components directory
-```
+### Development Commands
 
-To run the tests:
-```
-grunt build # Builds dist/select.js
-grunt test # Launches Karma
-```
+* `gulp` to jshint, build and test
+* `gulp build` to jshint and build
+* `gulp test` for one-time test with karma (also build and jshint)
+* `gulp watch` to watch src files to jshin, build and test when changed
 
 ## Contributing
 

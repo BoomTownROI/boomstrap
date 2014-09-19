@@ -1,28 +1,28 @@
 {
   "name": "boomstrap",
-  "description": "A robust pattern library",
-  "version": "1.0.8",
+  "description": "A custom pattern library built on Bootstrap.",
+  "version": "1.1.2",
   "authors": [
-    "Craig Anthony <craig@boomtownroi.com>",
     "Mark Funk <mark@boomtownroi.com>",
-    "Sean McCambridge <sean@boomtownroi.com>"
+    "Sean McCambridge <sean@boomtownroi.com>",
+    "Ian Greulich <igreulich@boomtownroi.com>",
+    "Craig Anthony <craig@boomtownroi.com>"
   ],
-  "main": "index.html",
-  "private": true,
+  "main": "dist/*",
   "ignore": [
     "*",
     "!dist/**/*.*",
     "!less/**/*.*"
   ],
   "devDependencies": {
-    "angular": "1.2.17",
+    "angular": "~1.2.17",
     "jquery": ">= 1.9.0",
     "angular-bootstrap": "~0.11.0",
     "bootstrap-tour": "~0.9.1",
     "bootstrap-select": "~1.6.2",
     "angular-animate": "~1.2.16",
-    "angular-ui-select": "~0.2.1",
-    "baron": "*",
+    "angular-ui-select": "~0.7.0",
+    "baron": "~0.7.8",
     "momentjs": "~2.6.0",
     "angular-moment": "~0.7.0"
   },
