@@ -24,13 +24,13 @@
   /* Prevent first frame from flickering when animation starts */
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  &+.loader-pulse {
-    -webkit-animation-delay: 0.125s;
-    animation-delay: 0.125s;
+  &:nth-child(2) {
+    -webkit-animation-delay: -0.125s;
+    animation-delay: -0.125s;
   }
-  &:last-child {
-    -webkit-animation-delay: 0.25s;
-    animation-delay: 0.25s;
+  &:first-child {
+    -webkit-animation-delay: -0.25s;
+    animation-delay: -0.25s;
   }
 }
 
