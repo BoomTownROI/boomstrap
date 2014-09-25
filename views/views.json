@@ -188,9 +188,9 @@
 				"nav_header": "scores"
 			},
 			{
-				"source": "views/components/thumbnails.html",
-				"css_id": "#thumbnails",
-				"nav_header": "Thumbnails"
+				"source": "views/components/texting.html",
+				"css_id": "#texting",
+				"nav_header": "Texting"
 			},
 			{
 				"source": "views/components/wells.html",
