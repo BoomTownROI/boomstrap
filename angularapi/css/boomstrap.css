@@ -7263,14 +7263,15 @@ button.close-inverted {
   margin: 0 4px 4px 0;
   padding: 3px 4px;
   border: none;
+  box-shadow: 0 0 2px rgba(10, 10, 10, 0.5);
 }
 .marker-default {
-  background-color: #e1e1e1;
-  color: #2b2b2b;
+  background-color: #ffffff;
+  color: #696969;
 }
 .marker-default[href]:hover,
 .marker-default[href]:focus {
-  color: #121212;
+  color: #505050;
 }
 .marker-primary,
 .marker-name {
@@ -7350,13 +7351,13 @@ button.close-inverted {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.loader-pulse + .loader-pulse {
-  -webkit-animation-delay: 0.125s;
-  animation-delay: 0.125s;
+.loader-pulse:nth-child(2) {
+  -webkit-animation-delay: -0.125s;
+  animation-delay: -0.125s;
 }
-.loader-pulse:last-child {
-  -webkit-animation-delay: 0.25s;
-  animation-delay: 0.25s;
+.loader-pulse:first-child {
+  -webkit-animation-delay: -0.25s;
+  animation-delay: -0.25s;
 }
 @-webkit-keyframes pulsedelay {
   0%,
