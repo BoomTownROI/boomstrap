@@ -58,11 +58,6 @@
 				"nav_header": "Images"
 			},
 			{ 
-				"source": "views/css/loaders.html",
-				"css_id": "#loaders",
-				"nav_header": "Loaders"
-			},
-			{ 
 				"source": "views/css/responsive-utilities.html",
 				"css_id": "#responsive-utilities",
 				"nav_header": "Responsive Utilities"
@@ -151,6 +146,11 @@
 				"source": "views/components/list-group.html",
 				"css_id": "#list-group",
 				"nav_header": "List group"
+			},
+			{ 
+				"source": "views/components/loaders.html",
+				"css_id": "#loaders",
+				"nav_header": "Loaders"
 			},
 			{
 				"source": "views/components/markers.html",
