@@ -1875,6 +1875,23 @@
   <span class="nc">.text-hide</span><span class="o">();</span>
 <span class="p">}</span>
 </code></pre></div>
+
+
+  <h3 id="helper-overflow">Overflow</h3>
+  <p>Utilize the <code>.overflow-hidden</code> class or mixin to hide content overflow. This is particularly helpful when you need a container's border radius to clip its content (ie. panels and modals). In the example below, the panel component has a border radius. If a background color is applied to <code>.panel-body</code>, the border radius of <code>.panel</code> will be covered. Utilizing the <code>.overflow-hidden</code> class on <code>.panel</code> with prevent this behavior.</p>
+  <div class="pl-example">
+    <div class="panel panel-default overflow-hidden">
+      <div class="panel-body bg-primary">
+        Basic panel example
+      </div>
+    </div>
+  </div>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="panel panel-default overflow-hidden"&gt;
+  &lt;div class="panel-body bg-primary"&gt;
+    Basic panel example
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
 </div>
 
 <!-- ================================== Images ================================== -->
@@ -1905,46 +1922,6 @@
 </code></pre></div>
 </div>
 
-<!-- ================================== Loaders ================================== -->
-
-<!-- Loaders (Boomstrap Custom) -->
-<div class="pl-docs-section">
-  <h1 id="loaders" class="page-header">Loaders</h1>
-  <p>Loaders are used to inform users that data is being filtered, retrieved, processed, etc.</p>
-  <div class="pl-example">
-    <div class="loader">
-      <span class="loader-pulse"></span>
-      <span class="loader-pulse"></span>
-      <span class="loader-pulse"></span>
-    </div>
-  </div>
-  <div class="pl-code">
-    <pre class="prettyprint"><code>
-&lt;div class="loader"&gt;
-  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
-  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
-  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
-&lt;/div&gt;
-    </code></pre>
-  </div>
-  <p>Want to center the loader animation? No hay problemo! Just add the <code>.text-center</code> class.</p>
-  <div class="pl-example">
-    <div class="loader text-center">
-      <span class="loader-pulse"></span>
-      <span class="loader-pulse"></span>
-      <span class="loader-pulse"></span>
-    </div>
-  </div>
-  <div class="pl-code">
-    <pre class="prettyprint"><code>
-&lt;div class="loader text-center"&gt;
-  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
-  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
-  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
-&lt;/div&gt;
-    </code></pre>
-  </div>
-</div>
 <!-- ================================== Responsive Utilities ================================== -->
 
 <div class="pl-docs-section">
@@ -3560,9 +3537,6 @@
                 </li>
                 <li>
                     <a href="#images">Images</a>
-                </li>
-                <li>
-                    <a href="#loaders">Loaders</a>
                 </li>
                 <li>
                     <a href="#responsive-utilities">Responsive Utilities</a>

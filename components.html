@@ -3162,6 +3162,46 @@
 </code></pre></div>
 </div>
 
+<!-- ================================== Loaders ================================== -->
+
+<!-- Loaders (Boomstrap Custom) -->
+<div class="pl-docs-section">
+  <h1 id="loaders" class="page-header">Loaders</h1>
+  <p>Loaders are used to inform users that data is being filtered, retrieved, processed, etc.</p>
+  <div class="pl-example">
+    <div class="loader">
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>
+&lt;div class="loader"&gt;
+  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
+  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
+  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
+&lt;/div&gt;
+    </code></pre>
+  </div>
+  <p>Want to center the loader animation? No hay problemo! Just add the <code>.text-center</code> class.</p>
+  <div class="pl-example">
+    <div class="loader text-center">
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+      <span class="loader-pulse"></span>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>
+&lt;div class="loader text-center"&gt;
+  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
+  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
+  &lt;span class="loader-pulse"&gt;&lt;/span&gt;
+&lt;/div&gt;
+    </code></pre>
+  </div>
+</div>
 <!-- ================================== Markers ================================== -->
 
 <!-- Tags (Boomstrap Custom) -->
@@ -3171,6 +3211,7 @@
   <p class="lead">Use these to represent current searching / filtering parameters.</p>
 
   <h2>Default Markers</h2>
+  <p>All markers extend the <code>.label</code> class.</p>
   <div class="pl-example">
     <span class="marker marker-default"><span>Mark Funk</span>&nbsp;<i class="ficon ficon-cross"></i></span>
     <span class="marker marker-primary"><span>Craig Anthony</span>&nbsp;<i class="ficon ficon-cross"></i></span>
@@ -3192,7 +3233,7 @@
 
   <h2>Contextual Markers</h1>
 
-  <p class="lead">These standard markers have been created for convenience and consistency.</p>
+  <p>These standard markers have been created for convenience and consistency.</p>
   <div class="pl-example">
     <span class="marker marker-name"><span>Grier Allen</span>&nbsp;<i class="ficon ficon-cross"></i></span>
     <span class="marker marker-zip"><span>29403</span>&nbsp;<i class="ficon ficon-cross"></i></span>
@@ -3201,6 +3242,94 @@
 &lt;span class=&quot;marker marker-name&quot;&gt;&lt;span&gt;Grier Allen&lt;/span&gt;&nbsp;&lt;i class=&quot;ficon ficon-cross&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 &lt;span class=&quot;marker marker-zip&quot;&gt;&lt;span&gt;29403&lt;/span&gt;&nbsp;&lt;i class=&quot;ficon ficon-cross&quot;&gt;&lt;/i&gt;&lt;/span&gt;
   </code></pre></div>
+</div>
+<!-- ================================== Message Faces ================================== -->
+
+<!-- Message Faces (Boomstrap Custom) -->
+
+<div class="pl-docs-section">
+  <h1 id="faces" class="page-header">Message faces</h1>
+  <p class="lead">Message faces are delightful little fellas designed to be used alongside simple user messages.</p>
+  <div class="pl-example">
+    <div class="message-face">
+      <div class="message-face-eyes">
+        <span class="message-face-eye"></span>
+        <span class="message-face-eye"></span>
+      </div>
+      <div class="message-face-mouth"></div>
+    </div>
+    <div class="message-face message-face-arrow-left">
+      <div class="message-face-eyes">
+        <span class="message-face-eye"></span>
+        <span class="message-face-eye"></span>
+      </div>
+      <div class="message-face-mouth"></div>
+    </div>
+    <div class="message-face message-face-arrow-top">
+      <div class="message-face-eyes">
+        <span class="message-face-eye"></span>
+        <span class="message-face-eye"></span>
+      </div>
+      <div class="message-face-mouth"></div>
+    </div>
+    <div class="message-face message-face-arrow-right">
+      <div class="message-face-eyes">
+        <span class="message-face-eye"></span>
+        <span class="message-face-eye"></span>
+      </div>
+      <div class="message-face-mouth"></div>
+    </div>
+    <div class="message-face message-face-arrow-bottom">
+      <div class="message-face-eyes">
+        <span class="message-face-eye"></span>
+        <span class="message-face-eye"></span>
+      </div>
+      <div class="message-face-mouth"></div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;!-- no arrow --&gt;
+&lt;div class="message-face"&gt;
+  &lt;div class="message-face-eyes"&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="message-face-mouth"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- left arrow --&gt;
+&lt;div class="message-face message-face-arrow-left"&gt;
+  &lt;div class="message-face-eyes"&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="message-face-mouth"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- top arrow --&gt;
+&lt;div class="message-face message-face-arrow-top"&gt;
+  &lt;div class="message-face-eyes"&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="message-face-mouth"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- right arrow --&gt;
+&lt;div class="message-face message-face-arrow-right"&gt;
+  &lt;div class="message-face-eyes"&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="message-face-mouth"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- bottom arrow --&gt;
+&lt;div class="message-face message-face-arrow-bottom"&gt;
+  &lt;div class="message-face-eyes"&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+    &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="message-face-mouth"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
 </div>
 <!-- ================================== Navs ================================== -->
 
@@ -3559,8 +3688,7 @@
 
 </div>
 <!-- ================================== Panels ================================== -->
-<!-- Panels
-================================================== -->
+
 <div class="pl-docs-section">
   <h1 id="panels" class="page-header">Panels</h1>
 
@@ -4169,98 +4297,568 @@
   </div>
 
 </div>
-<!-- ================================== Thumbnails ================================== -->
+<!-- ================================== Texting ================================== -->
+
+<!-- Texting (Boomstrap Custom) -->
 
 <div class="pl-docs-section">
-  <h1 id="thumbnails" class="page-header">Thumbnails</h1>
+  <h1 id="texting" class="page-header">Texting</h1>
+  <p class="lead">Modular components for texting.</p>
 
-  <p class="lead">Extend Bootstrap's <a href="../css/#grid">grid system</a> with the thumbnail component to easily display grids of images, videos, text, and more.</p>
+  <h2>Basic texting example</h2>
+  <p>This is the basic construction of the texting component. In proper mobile-first fashion, the texting component begins in a stacked layout.</p>
 
-  <h3 id="thumbnails-default">Default example</h3>
-  <p>By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.</p>
-  <div class="pl-example">
-    <div class="row">
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="images/fpo-he-man.jpg">
-        </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="images/fpo-he-man.jpg">
-        </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="images/fpo-he-man.jpg">
-        </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="images/fpo-he-man.jpg">
-        </a>
-      </div>
-    </div>
-  </div><!-- /.pl-example -->
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-6 col-md-3&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;thumbnail&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span> <span class="na">alt=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
+  <div class="pl-example pl-example-texting">
+
+    <div class="texting">
+      <div class="texting__body">
+        <div class="texting__convo">
+          <div class="texting__convo__inner">
+            <div class="texting__msg">
+                <div class="texting__msg__time">Thursday 6:00 pm</div>
+                <div class="texting__msg__bubble">
+                  C'mon, throw in a buck!
+                  <aside class="texting__msg__bubble__avatar">
+                    <i class="ficon ficon-user"></i>
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg texting__msg--agent">
+                <div class="texting__msg__time">Thursday 6:01 pm</div>
+                <div class="texting__msg__bubble">
+                  Uh-uh, I don't tip.
+                  <aside class="texting__msg__bubble__avatar">
+                    <img src="http://www.nicenicejpg.com/600">
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg">
+                <div class="texting__msg__time">Thursday 6:02 pm</div>
+                <div class="texting__msg__bubble">
+                  You don't tip?
+                  <aside class="texting__msg__bubble__avatar">
+                    <i class="ficon ficon-user"></i>
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg texting__msg--agent">
+                <div class="texting__msg__time">Thursday 6:03 pm</div>
+                <div class="texting__msg__bubble texting__msg__bubble--error">
+                  Nah, I don't believe in it.
+                  <aside class="texting__msg__bubble__avatar">
+                    <img src="http://www.nicenicejpg.com/600">
+                  </aside>
+                </div>
+                <div class="texting__msg__status texting__msg__status--error">
+                  <i class="ficon ficon-warning"></i> Message Failed To Send. <a href="">Click to retry.</a>
+                </div>
+            </div> <!-- end texting__msg -->
+          </div> <!-- end texting__convo__inner -->
+        </div> <!-- end texting__convo -->
+        <div class="texting__actions">
+          <div class="texting__actions__phones">
+            <select class="selectpicker form-control" data-style="btn-default btn-sm">
+              <option>888-555-1111 (home)</option>
+              <option>888-555-2222 (cell)</option>
+              <option>888-555-3333 (work)</option>
+            </select>
+          </div>
+          <div class="texting__actions__compose">
+            <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
+            </div>
+            <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
+          </div>
+        </div> <!-- end texting__actions -->
+      </div> <!-- end texting__body -->
+    </div> <!-- end texting -->
+
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="texting"&gt;
+  &lt;div class="texting__body"&gt;
+    &lt;div class="texting__convo"&gt;
+      &lt;div class="texting__convo__inner"&gt;
+        &lt;div class="texting__msg"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:00 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble"&gt;
+              C'mon, throw in a buck!
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;i class="ficon ficon-user"&gt;&lt;/i&gt;
+              &lt;/aside&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+        &lt;div class="texting__msg texting__msg--agent"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:01 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble"&gt;
+              Uh-uh, I don't tip.
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;img src="http://www.nicenicejpg.com/600"&gt;
+              &lt;/aside&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+        &lt;div class="texting__msg"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:02 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble"&gt;
+              You don't tip?
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;i class="ficon ficon-user"&gt;&lt;/i&gt;
+              &lt;/aside&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+        &lt;div class="texting__msg texting__msg--agent"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:03 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble texting__msg__bubble--error"&gt;
+              Nah, I don't believe in it.
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;img src="http://www.nicenicejpg.com/600"&gt;
+              &lt;/aside&gt;
+            &lt;/div&gt;
+            &lt;div class="texting__msg__status texting__msg__status--error"&gt;
+              &lt;i class="ficon ficon-warning"&gt;&lt;/i&gt; Message Failed To Send. &lt;a href=""&gt;Click to retry.&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+      &lt;/div&gt; &lt;!-- end texting__convo__inner --&gt;
+    &lt;/div&gt; &lt;!-- end texting__convo --&gt;
+    &lt;div class="texting__actions"&gt;
+      &lt;div class="texting__actions__phones"&gt;
+        &lt;select class="selectpicker form-control" data-style="btn-default btn-sm"&gt;
+          &lt;option&gt;888-555-1111 (home)&lt;/option&gt;
+          &lt;option&gt;888-555-2222 (cell)&lt;/option&gt;
+          &lt;option&gt;888-555-3333 (work)&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class="texting__actions__compose"&gt;
+        &lt;div class="form-group"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Compose text message"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;button class="btn btn-default btn-sm btn-primary btn-block"&gt;Send&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt; &lt;!-- end texting__actions --&gt;
+  &lt;/div&gt; &lt;!-- end texting__body --&gt;
+&lt;/div&gt; &lt;!-- end texting --&gt;</code></pre>
+  </div>
+
+  <h4>Texting layout options</h4>
+  <p>Utilize the <code>.texting--lg</code> modifier class to alter layout for use in wide containers. Simply add <code>.texting--lg</code> to the <code>.texting</code> class directly or use media queries to extend the <code>.texting--lg</code> class at different break points.</p><br>
+
+  <div class="pl-example pl-example-texting">
+
+    <div class="texting texting--lg">
+      <div class="texting__body">
+        <div class="texting__convo">
+          <div class="texting__convo__inner">
+            <div class="texting__msg">
+                <div class="texting__msg__time">Thursday 6:00 pm</div>
+                <div class="texting__msg__bubble">
+                  Yeah, but do you consider a dog to be a filthy animal?
+                  <aside class="texting__msg__bubble__avatar">
+                    <i class="ficon ficon-user"></i>
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg texting__msg--agent">
+                <div class="texting__msg__time">Thursday 6:01 pm</div>
+                <div class="texting__msg__bubble">
+                  I wouldn't go so far as to call a dog filthy but they're definitely dirty. But, a dog's got personality. Personality goes a long way.
+                  <aside class="texting__msg__bubble__avatar">
+                    <img src="http://www.nicenicejpg.com/600">
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg">
+                <div class="texting__msg__time">Thursday 6:02 pm</div>
+                <div class="texting__msg__bubble">
+                  Ah, so by that rationale, if a pig had a better personality, he would cease to be a filthy animal. Is that true?
+                  <aside class="texting__msg__bubble__avatar">
+                    <i class="ficon ficon-user"></i>
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg texting__msg--agent">
+                <div class="texting__msg__time">Thursday 6:03 pm</div>
+                <div class="texting__msg__bubble texting__msg__bubble--error">
+                  Well we'd have to be talkin' about one charming pig. I mean he'd have to be ten times more charmin' than that Arnold on Green Acres, you know what I'm sayin'?
+                  <aside class="texting__msg__bubble__avatar">
+                    <img src="http://www.nicenicejpg.com/600">
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+          </div> <!-- end texting__convo__inner -->
+        </div> <!-- end texting__convo -->
+        <div class="texting__actions">
+          <div class="texting__actions__phones">
+            <select class="selectpicker form-control" data-style="btn-default btn-sm">
+              <option>888-555-1111 (home)</option>
+              <option>888-555-2222 (cell)</option>
+              <option>888-555-3333 (work)</option>
+            </select>
+          </div>
+          <div class="texting__actions__compose">
+            <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
+            </div>
+            <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
+          </div>
+        </div> <!-- end texting__actions -->
+      </div> <!-- end texting__body -->
+    </div> <!-- end texting -->
+
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="texting texting--lg"&gt;
   ...
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+&lt;/div&gt;</code></pre>
+  </div>
 
-  <h3 id="thumbnails-custom-content">Custom content</h3>
-  <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>
-  <div class="pl-example">
-    <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="images/fpo-he-man.jpg">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+
+
+  <h2>Texting panel</h2>
+  <p>This is the texting component wrapped in a panel. Add the <code>.texting--panel</code> modifier class to the <code>.texting</code> class.</p>
+  <div class="pl-example pl-example-texting">
+    <div class="panel panel-default texting texting--panel texting--lg">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="ficon ficon-sms"></i> Text Message: Mr. White</h3>
+        </div>
+        <div class="panel-body texting__body">
+          <div class="texting__convo">
+            <div class="texting__convo__inner">
+              <div class="texting__msg">
+                  <div class="texting__msg__time">Thursday 6:00 pm</div>
+                  <div class="texting__msg__bubble">
+                    C'mon, throw in a buck!
+                    <aside class="texting__msg__bubble__avatar">
+                      <i class="ficon ficon-user"></i>
+                    </aside>
+                  </div>
+              </div> <!-- end texting__msg -->
+              <div class="texting__msg texting__msg--agent">
+                  <div class="texting__msg__time">Thursday 6:01 pm</div>
+                  <div class="texting__msg__bubble">
+                    Uh-uh, I don't tip.
+                    <aside class="texting__msg__bubble__avatar">
+                      <img src="http://www.nicenicejpg.com/600">
+                    </aside>
+                  </div>
+              </div> <!-- end texting__msg -->
+              <div class="texting__msg">
+                  <div class="texting__msg__time">Thursday 6:02 pm</div>
+                  <div class="texting__msg__bubble">
+                    You don't tip?
+                    <aside class="texting__msg__bubble__avatar">
+                      <i class="ficon ficon-user"></i>
+                    </aside>
+                  </div>
+              </div> <!-- end texting__msg -->
+              <div class="texting__msg texting__msg--agent">
+                  <div class="texting__msg__time">Thursday 6:03 pm</div>
+                  <div class="texting__msg__bubble">
+                    Nah, I don't believe in it.
+                    <aside class="texting__msg__bubble__avatar">
+                      <img src="http://www.nicenicejpg.com/600">
+                    </aside>
+                  </div>
+              </div> <!-- end texting__msg -->
+            </div> <!-- end texting__convo__inner -->
+          </div> <!-- end texting__convo -->
+          <div class="texting__actions">
+            <div class="texting__actions__phones">
+            <select class="selectpicker form-control" data-style="btn-default btn-sm">
+              <option>888-555-1111 (home)</option>
+              <option>888-555-2222 (cell)</option>
+              <option>888-555-3333 (work)</option>
+            </select>
           </div>
+            <div class="texting__actions__compose form-group">
+              <div class="form-group">
+                <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
+              </div>
+              <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
+            </div>
+          </div> <!-- end texting__actions -->
+        </div> <!-- end texting__body -->
+      </div> <!-- end texting -->
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="panel panel-default texting texting--panel texting--lg"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;&lt;i class="ficon ficon-sms"&gt;&lt;/i&gt; Text Message: Mr. White&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body texting__body"&gt;
+    &lt;div class="texting__convo"&gt;
+      &lt;div class="texting__convo__inner"&gt;
+        &lt;div class="texting__msg"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:00 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble"&gt;
+              C'mon, throw in a buck!
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;i class="ficon ficon-user"&gt;&lt;/i&gt;
+              &lt;/aside&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+        &lt;div class="texting__msg texting__msg--agent"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:01 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble"&gt;
+              Uh-uh, I don't tip.
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;img src="http://www.nicenicejpg.com/600"&gt;
+              &lt;/aside&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+        &lt;div class="texting__msg"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:02 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble"&gt;
+              You don't tip?
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;i class="ficon ficon-user"&gt;&lt;/i&gt;
+              &lt;/aside&gt;
+            &ltåç/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+        &lt;div class="texting__msg texting__msg--agent"&gt;
+            &lt;div class="texting__msg__time"&gt;Thursday 6:03 pm&lt;/div&gt;
+            &lt;div class="texting__msg__bubble"&gt;
+              Nah, I don't believe in it.
+              &lt;aside class="texting__msg__bubble__avatar"&gt;
+                &lt;img src="http://www.nicenicejpg.com/600"&gt;
+              &lt;/aside&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+      &lt;/div&gt; &lt;!-- end texting__convo__inner --&gt;
+    &lt;/div&gt; &lt;!-- end texting__convo --&gt;
+    &lt;div class="texting__actions"&gt;
+      &lt;div class="texting__actions__phones"&gt;
+      &lt;select class="selectpicker form-control" data-style="btn-default btn-sm"&gt;
+        &lt;option&gt;888-555-1111 (home)&lt;/option&gt;
+        &lt;option&gt;888-555-2222 (cell)&lt;/option&gt;
+        &lt;option&gt;888-555-3333 (work)&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+      &lt;div class="texting__actions__compose form-group"&gt;
+        &lt;div class="form-group"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Compose text message"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;button class="btn btn-default btn-sm btn-primary btn-block"&gt;Send&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt; &lt;!-- end texting__actions --&gt;
+  &lt;/div&gt; &lt;!-- end texting__body --&gt;
+&lt;/div&gt; &lt;!-- end texting --&gt;</code></pre>
+  </div>
+
+  <h2>Texting modal</h2>
+  <p>This is the texting component wrapped in a modal. Add the <code>.texting--modal</code> modifier class to the <code>.texting</code> class.</p>
+  <div class="pl-example pl-example-modal">
+    <div class="modal texting texting--modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="ficon ficon-sms"></i> Text Message: Vincent</h4>
+          </div>
+          <div class="modal-body texting__body">
+            <div class="texting__convo">
+              <div class="texting__convo__inner">
+                <div class="texting__msg">
+                    <div class="texting__msg__time">Thursday 6:00 pm</div>
+                    <div class="texting__msg__bubble">
+                      Yeah, but do you consider a dog to be a filthy animal?
+                      <aside class="texting__msg__bubble__avatar">
+                        <i class="ficon ficon-user"></i>
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+                <div class="texting__msg texting__msg--agent">
+                    <div class="texting__msg__time">Thursday 6:01 pm</div>
+                    <div class="texting__msg__bubble">
+                      I wouldn't go so far as to call a dog filthy but they're definitely dirty. But, a dog's got personality. Personality goes a long way.
+                      <aside class="texting__msg__bubble__avatar">
+                        <img src="http://www.nicenicejpg.com/600">
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+                <div class="texting__msg">
+                    <div class="texting__msg__time">Thursday 6:02 pm</div>
+                    <div class="texting__msg__bubble">
+                      Ah, so by that rationale, if a pig had a better personality, he would cease to be a filthy animal. Is that true?
+                      <aside class="texting__msg__bubble__avatar">
+                        <i class="ficon ficon-user"></i>
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+                <div class="texting__msg texting__msg--agent">
+                    <div class="texting__msg__time">Thursday 6:03 pm</div>
+                    <div class="texting__msg__bubble texting__msg__bubble--error">
+                      Well we'd have to be talkin' about one charming pig. I mean he'd have to be ten times more charmin' than that Arnold on Green Acres, you know what I'm sayin'?
+                      <aside class="texting__msg__bubble__avatar">
+                        <img src="http://www.nicenicejpg.com/600">
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+              </div> <!-- end texting__convo__inner -->
+            </div> <!-- end texting__convo -->
+            <div class="texting__actions">
+              <div class="texting__actions__phones">
+              <select class="selectpicker form-control" data-style="btn-default btn-sm">
+                <option>888-555-1111 (home)</option>
+                <option>888-555-2222 (cell)</option>
+                <option>888-555-3333 (work)</option>
+              </select>
+            </div>
+              <div class="texting__actions__compose form-group">
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
+                </div>
+                <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
+              </div>
+            </div> <!-- end texting__actions -->
+          </div> <!-- end texting__body -->
         </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="images/fpo-he-man.jpg">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+    </div> <!-- end texting -->
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="modal texting texting--modal"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
+        &lt;h4 class="modal-title"&gt;&lt;i class="ficon ficon-sms"&gt;&lt;/i&gt; Text Message: Vincent&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body texting__body"&gt;
+        &lt;div class="texting__convo"&gt;
+          &lt;div class="texting__convo__inner"&gt;
+            &lt;div class="texting__msg"&gt;
+                &lt;div class="texting__msg__time"&gt;Thursday 6:00 pm&lt;/div&gt;
+                &lt;div class="texting__msg__bubble"&gt;
+                  Yeah, but do you consider a dog to be a filthy animal?
+                  &lt;aside class="texting__msg__bubble__avatar"&gt;
+                    &lt;i class="ficon ficon-user"&gt;&lt;/i&gt;
+                  &lt;/aside&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+            &lt;div class="texting__msg texting__msg--agent"&gt;
+                &lt;div class="texting__msg__time"&gt;Thursday 6:01 pm&lt;/div&gt;
+                &lt;div class="texting__msg__bubble"&gt;
+                  I wouldn't go so far as to call a dog filthy but they're definitely dirty. But, a dog's got personality. Personality goes a long way.
+                  &lt;aside class="texting__msg__bubble__avatar"&gt;
+                    &lt;img src="http://www.nicenicejpg.com/600"&gt;
+                  &lt;/aside&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+            &lt;div class="texting__msg"&gt;
+                &lt;div class="texting__msg__time"&gt;Thursday 6:02 pm&lt;/div&gt;
+                &lt;div class="texting__msg__bubble"&gt;
+                  Ah, so by that rationale, if a pig had a better personality, he would cease to be a filthy animal. Is that true?
+                  &lt;aside class="texting__msg__bubble__avatar"&gt;
+                    &lt;i class="ficon ficon-user"&gt;&lt;/i&gt;
+                  &lt;/aside&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+            &lt;div class="texting__msg texting__msg--agent"&gt;
+                &lt;div class="texting__msg__time"&gt;Thursday 6:03 pm&lt;/div&gt;
+                &lt;div class="texting__msg__bubble texting__msg__bubble--error"&gt;
+                  Well we'd have to be talkin' about one charming pig. I mean he'd have to be ten times more charmin' than that Arnold on Green Acres, you know what I'm sayin'?
+                  &lt;aside class="texting__msg__bubble__avatar"&gt;
+                    &lt;img src="http://www.nicenicejpg.com/600"&gt;
+                  &lt;/aside&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; &lt;!-- end texting__msg --&gt;
+          &lt;/div&gt; &lt;!-- end texting__convo__inner --&gt;
+        &lt;/div&gt; &lt;!-- end texting__convo --&gt;
+        &lt;div class="texting__actions"&gt;
+          &lt;div class="texting__actions__phones"&gt;
+          &lt;select class="selectpicker form-control" data-style="btn-default btn-sm"&gt;
+            &lt;option&gt;888-555-1111 (home)&lt;/option&gt;
+            &lt;option&gt;888-555-2222 (cell)&lt;/option&gt;
+            &lt;option&gt;888-555-3333 (work)&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+          &lt;div class="texting__actions__compose form-group"&gt;
+            &lt;div class="form-group"&gt;
+              &lt;textarea class="form-control" rows="3" placeholder="Compose text message"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;button class="btn btn-default btn-sm btn-primary btn-block"&gt;Send&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt; &lt;!-- end texting__actions --&gt;
+      &lt;/div&gt; &lt;!-- end texting__body --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; &lt;!-- end texting --&gt;</code></pre>
+  </div>
+
+
+  <h2>Texting welcome message</h2>
+  <p>This is a simple text messaging welcome message.</p>
+  <div class="pl-example pl-example-texting">
+    <div class="texting">
+      <div class="texting__body">
+        <div class="texting__convo">
+          <div class="texting__convo__inner">
+            <div class="texting__welcome">
+              Hey! It's quiet in here. Send <strong>Vincent Vega</strong> a text.
+              <div class="message-face message-face-arrow-right">
+                <div class="message-face-eyes">
+                  <span class="message-face-eye"></span>
+                  <span class="message-face-eye"></span>
+                </div>
+                <div class="message-face-mouth"></div>
+              </div> <!-- end message-face -->
+            </div> <!-- end texting__welcome -->
+          </div> <!-- end texting__convo__inner -->
+        </div> <!-- end texting__convo -->
+        <div class="texting__actions">
+          <div class="texting__actions__phones">
+            <select class="selectpicker form-control" data-style="btn-default btn-sm">
+              <option>888-555-1111 (home)</option>
+              <option>888-555-2222 (cell)</option>
+              <option>888-555-3333 (work)</option>
+            </select>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="images/fpo-he-man.jpg">
-          <div class="caption">
-            <h3>Thumbnail label</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <div class="texting__actions__compose">
+            <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
+            </div>
+            <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
           </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- /.pl-example -->
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-6 col-md-4&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;thumbnail&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span> <span class="na">alt=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;caption&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h3&gt;</span>Thumbnail label<span class="nt">&lt;/h3&gt;</span>
-        <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+        </div> <!-- end texting__actions -->
+      </div> <!-- end texting__body -->
+    </div> <!-- end texting -->
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="texting"&gt;
+  &lt;div class="texting__body"&gt;
+    &lt;div class="texting__convo"&gt;
+      &lt;div class="texting__convo__inner"&gt;
+        &lt;div class="texting__welcome"&gt;
+          Hey! It's quiet in here. Send &lt;strong&gt;Vincent Vega&lt;/strong&gt; a text.
+          &lt;div class="message-face message-face-arrow-right"&gt;
+            &lt;div class="message-face-eyes"&gt;
+              &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+              &lt;span class="message-face-eye"&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="message-face-mouth"&gt;&lt;/div&gt;
+          &lt;/div&gt; &lt;!-- end message-face --&gt;
+        &lt;/div&gt; &lt;!-- end texting__welcome --&gt;
+      &lt;/div&gt; &lt;!-- end texting__convo__inner --&gt;
+    &lt;/div&gt; &lt;!-- end texting__convo --&gt;
+    &lt;div class="texting__actions"&gt;
+      &lt;div class="texting__actions__phones"&gt;
+        &lt;select class="selectpicker form-control" data-style="btn-default btn-sm"&gt;
+          &lt;option&gt;888-555-1111 (home)&lt;/option&gt;
+          &lt;option&gt;888-555-2222 (cell)&lt;/option&gt;
+          &lt;option&gt;888-555-3333 (work)&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div class="texting__actions__compose"&gt;
+        &lt;div class="form-group"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Compose text message"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;button class="btn btn-default btn-sm btn-primary btn-block"&gt;Send&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt; &lt;!-- end texting__actions --&gt;
+  &lt;/div&gt; &lt;!-- end texting__body --&gt;
+&lt;/div&gt; &lt;!-- end texting --&gt;</code></pre>
+  </div>
+
 </div>
 <!-- ================================== Wells ================================== -->
 
@@ -4340,7 +4938,13 @@
                     <a href="#list-group">List group</a>
                 </li>
                 <li>
+                    <a href="#loaders">Loaders</a>
+                </li>
+                <li>
                     <a href="#markers">markers</a>
+                </li>
+                <li>
+                    <a href="#faces">message faces</a>
                 </li>
                 <li>
                     <a href="#nav">navs</a>
@@ -4361,7 +4965,7 @@
                     <a href="#scores">scores</a>
                 </li>
                 <li>
-                    <a href="#thumbnails">Thumbnails</a>
+                    <a href="#texting">Texting</a>
                 </li>
                 <li>
                     <a href="#wells">Wells</a>
