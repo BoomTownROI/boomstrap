@@ -2,8 +2,9 @@
 // Note: texting component
 
 
-// .texting { } currently no base styles
+.texting { } // currently no base styles
 
+// Texting modifer - large, side by side
 .texting--lg {
   .texting__body {
     &:extend(.clearfix all);
@@ -24,18 +25,18 @@
     border-left: 1px solid @gray-light;
     float: right;
     min-height: 240px;
-    padding: @panel-body-padding;
+    padding: @texting-padding;
     width: @texting-sidebar-width;
   }
   .texting__actions__phones {
     border-bottom: 1px solid @gray-lighter;
     margin-bottom: 170px;
-    padding-bottom: @panel-body-padding;
+    padding-bottom: @texting-padding;
   }
   .texting__actions__compose {
     bottom: 0;
     left: 0;
-    padding: 0 @panel-body-padding;
+    padding: 0 @texting-padding;
     position: absolute;
     width: 100%;
     textarea {
@@ -43,18 +44,22 @@
     }  
   }
   .texting__msg {
-    margin: 0 20% @panel-body-padding @texting-avatar-offset;
+    margin: 0 20% @texting-padding @texting-avatar-offset;
   }
   .texting__msg--agent {
-    margin: 0 @texting-avatar-offset @panel-body-padding 20%;
+    margin: 0 @texting-avatar-offset @texting-padding 20%;
   }
 }
 
+// Texting modifier - wrapped in modal or panel
 .texting--modal,.texting--panel {
   .texting__actions {
-    padding: @panel-body-padding @panel-body-padding 0 @panel-body-padding;
+    padding: @texting-padding @texting-padding 0 @texting-padding;
   }
 }
+
+// Texting base
+// -------------------------
 
 .texting__body {
   padding: 0;
@@ -71,22 +76,22 @@
   max-height: 230px;
   min-height: 100px;
   overflow-y: auto;
-  padding: @panel-body-padding;
+  padding: @texting-padding;
   position: relative;
 }
 
 /*.texting__convo__fader {
   bottom: 0;
-  height: @panel-body-padding;
+  height: @texting-padding;
   left: 0;
   position: absolute;
-  right: @panel-body-padding; // give a lil room for varying scroll bar widths
+  right: @texting-padding; // give a lil room for varying scroll bar widths
   #gradient > .vertical(@start-color: fade(@gray-lightest,0%); @end-color: @gray-lightest; @start-percent: 0%; @end-percent: 80%);
 }*/
 
 .texting__actions {
   background-color: @white;
-  padding: @panel-body-padding 0 0 0;
+  padding: @texting-padding 0 0 0;
   position: relative;
   z-index: 10;
 }
@@ -113,6 +118,7 @@
   min-height: 40px; // to match message-face height
   padding: @padding-medium @padding-large ;
   position: relative;
+  .user-select(none);
   .message-face {
     position: absolute;
     right: 100%;
@@ -126,13 +132,12 @@
 // -------------------------
 
 .texting__msg {
-  margin: 0 20% (@panel-body-padding/2) @texting-avatar-offset;
+  margin: 0 10% (@texting-padding/2) @texting-avatar-offset;
   position: relative;
-  &+& { margin-top: @margin-large; }
 }
 
 .texting__msg--agent {
-  margin: 0 @texting-avatar-offset (@panel-body-padding/2) 20%;
+  margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
   .texting__msg__bubble {
     &:extend(.bg-info);
   }

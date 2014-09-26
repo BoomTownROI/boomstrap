@@ -158,6 +158,11 @@
 				"nav_header": "markers"
 			},
 			{
+				"source": "views/components/message-faces.html",
+				"css_id": "#faces",
+				"nav_header": "message faces"
+			},
+			{
 				"source": "views/components/navs.html",
 				"css_id": "#nav",
 				"nav_header": "navs"

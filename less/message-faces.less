@@ -1,0 +1,111 @@
+// File: message-faces.less
+// Note: cute animated face
+
+
+// Message face
+// -------------------------
+
+.message-face {
+  background-color: @gray-light;
+  border-radius: @border-radius-large;
+  display: inline-block;
+  height: @message-face-height;
+  position: relative;
+  width: @message-face-width;
+  &:hover {
+    .animation(bounce 2s 1 ease 0s);
+    .message-face-eye {
+      background-color: @gray;
+    }
+    .message-face-mouth {
+      box-shadow: inset 0 -5px 0 0 @gray;
+    }
+  }
+}
+
+
+.message-face-arrow-bottom,
+.message-face-arrow-left,
+.message-face-arrow-right,
+.message-face-arrow-top {
+  &:after {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(204, 204, 204, 0);
+    border-width: @message-face-arrow-size;
+  }
+}
+
+
+.message-face-arrow-bottom {
+  margin-bottom: @margin-large;
+  &:after {
+    border-top-color: @gray-light;
+    left: 50%;
+    margin-left: -@message-face-arrow-size;
+    top: 100%;
+  }
+
+}
+.message-face-arrow-left {
+  margin-left: @margin-large;
+  &:after {
+    border-right-color: @gray-light;
+    margin-top: -@message-face-arrow-size;
+    right: 100%;
+    top: 50%;
+  }
+}
+.message-face-arrow-right {
+  margin-right: @margin-large;
+  &:after {
+    border-left-color: @gray-light;
+    left: 100%;
+    margin-top: -@message-face-arrow-size;
+    top: 50%;
+  }
+}
+.message-face-arrow-top {
+  margin-top: @margin-large;
+  &:after {
+    border-bottom-color: @gray-light;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -@message-face-arrow-size;
+  }
+}
+
+.message-face-eyes {
+  position: absolute;
+  left: 0;
+  line-height: 1;
+  right: 0;
+  text-align: center;
+  top: 6px;
+}
+
+.message-face-eye {
+  border-radius: 100%;
+  box-shadow: inset 0 3px 0 0 @gray;
+  display: inline-block;
+  margin: 0 1px;
+  height: 6px;
+  width: 6px;
+  .animation(blink-eyes 3s 1 ease 1s);
+}
+
+.message-face-mouth {
+  border-radius: 100%;
+  bottom: 10px;
+  box-shadow: inset 0 -3px 0 0 @gray;
+  display: inline-block;
+  height: 10px;
+  left: 50%;
+  margin-left: -9px;
+  position: absolute;
+  width: 20px;
+}
