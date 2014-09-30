@@ -1,0 +1,233 @@
+// File: texting.less
+// Note: texting component
+
+
+.texting { } // currently no base styles
+
+// Texting modifer - large, side by side
+.texting--lg {
+  .texting__body {
+    &:extend(.clearfix all);
+  }
+  .texting__convo {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: @texting-sidebar-width;
+    top: 0;
+    z-index: 1;
+  }
+  .texting__convo__inner {
+    max-height: auto;
+    min-height: 100%;
+  }
+  .texting__actions {
+    border-left: 1px solid @gray-light;
+    float: right;
+    min-height: 240px;
+    padding: @texting-padding;
+    width: @texting-sidebar-width;
+  }
+  .texting__actions__phones {
+    border-bottom: 1px solid @gray-lighter;
+    margin-bottom: 170px;
+    padding-bottom: @texting-padding;
+  }
+  .texting__actions__compose {
+    bottom: 0;
+    left: 0;
+    padding: 0 @texting-padding;
+    position: absolute;
+    width: 100%;
+    textarea {
+      height: 120px;
+    }  
+  }
+  .texting__msg {
+    margin: 0 20% @texting-padding @texting-avatar-offset;
+  }
+  .texting__msg--agent {
+    margin: 0 @texting-avatar-offset @texting-padding 20%;
+  }
+}
+
+// Texting modifier - wrapped in modal or panel
+.texting--modal,.texting--panel {
+  .texting__actions {
+    padding: @texting-padding @texting-padding 0 @texting-padding;
+  }
+  &.texting--lg {
+    .texting__actions {
+      border-bottom-right-radius: @panel-border-radius;
+    }
+    .texting__convo {
+      border-bottom-left-radius: @panel-border-radius;
+    } 
+  } 
+}
+
+/*.texting--panel.texting--lg {
+  .texting__actions {
+    border-bottom-right-radius: @panel-border-radius;
+  }
+  .texting__convo {
+    border-bottom-left-radius: @panel-border-radius;
+  }
+}*/
+
+// Texting base
+// -------------------------
+
+.texting__body {
+  padding: 0;
+  position: relative;
+}
+
+.texting__convo {
+  background-color: @gray-lightest;
+  position: relative;
+}
+
+.texting__convo__inner {
+  height: 100%;
+  max-height: 230px;
+  min-height: 100px;
+  overflow-y: auto;
+  padding: @texting-padding;
+  position: relative;
+}
+
+/*.texting__convo__fader {
+  bottom: 0;
+  height: @texting-padding;
+  left: 0;
+  position: absolute;
+  right: @texting-padding; // give a lil room for varying scroll bar widths
+  #gradient > .vertical(@start-color: fade(@gray-lightest,0%); @end-color: @gray-lightest; @start-percent: 0%; @end-percent: 80%);
+}*/
+
+.texting__actions {
+  background-color: @white;
+  padding: @texting-padding 0 0 0;
+  position: relative;
+  z-index: 10;
+}
+
+
+.texting__actions__phones {
+  padding-bottom: @padding-small;
+}
+
+.texting__actions__compose {
+  textarea {
+    height: 100px;
+    overflow: auto;
+    resize: none;
+  }  
+}
+
+.texting__welcome {
+  &:extend(.bg-success);
+  border-radius: @border-radius-small;
+  display: inline-block;
+  font-size: 13px;
+  margin-left: @message-face-width + @margin-large;
+  min-height: 40px; // to match message-face height
+  padding: @padding-medium @padding-large ;
+  position: relative;
+  .user-select(none);
+  .message-face {
+    position: absolute;
+    right: 100%;
+    top: 0;
+  }
+}
+
+
+
+// Actual text messages
+// -------------------------
+
+.texting__msg {
+  margin: 0 10% (@texting-padding/2) @texting-avatar-offset;
+  position: relative;
+}
+
+.texting__msg--agent {
+  margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
+  .texting__msg__bubble {
+    &:extend(.bg-info);
+  }
+  .texting__msg__bubble__avatar {
+    left: auto;
+    right: -@texting-avatar-offset;
+  }
+  .texting__msg__time {
+    text-align: right;
+  }
+}
+
+.texting__msg__bubble {
+  background-color: @gray-lighter;
+  border-radius: @border-radius-small;
+  font-size: 13px;
+  padding: @padding-small;
+  position: relative;
+  &.texting__msg__bubble--error {
+    &:extend(.bg-danger);
+  }
+  .transition(background-color 500ms linear 0s);
+}
+
+.texting__msg__bubble__avatar {
+  background-color: @gray-light;
+  border-radius: 50%;
+  height: @texting-avatar-size;
+  position: absolute;
+  left: -@texting-avatar-offset;
+  margin-top: -(@texting-avatar-size/2);
+  overflow: hidden;
+  pointer-events: none;
+  text-align: center;
+  top: 50%;
+  width: @texting-avatar-size;
+  z-index: 10;
+  .ficon {
+    border-radius: 50%;
+    color: @gray-lighter;
+    font-size: 40px;
+    top: 6px;
+  }
+  img {
+    border-radius: 50%;
+    margin-left: -2px;
+    width: @texting-avatar-size + 2px;
+  }
+}
+
+.texting__msg__status {
+  font-size: 11px;
+}
+
+.texting__msg__status--error {
+  color: @brand-danger;
+  padding-bottom: @padding-base;
+  a {
+    color: @brand-danger;
+    text-decoration: underline;
+  }
+  .ficon-warning { top: 0; }
+}
+
+.texting__msg__time {
+  color: @gray-dark;
+  font-size: 10px;
+} 
+
+
+
+
+
+
+
+

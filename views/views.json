@@ -58,11 +58,6 @@
 				"nav_header": "Images"
 			},
 			{ 
-				"source": "views/css/loaders.html",
-				"css_id": "#loaders",
-				"nav_header": "Loaders"
-			},
-			{ 
 				"source": "views/css/responsive-utilities.html",
 				"css_id": "#responsive-utilities",
 				"nav_header": "Responsive Utilities"
@@ -147,10 +142,20 @@
 				"css_id": "#list-group",
 				"nav_header": "List group"
 			},
+			{ 
+				"source": "views/components/loaders.html",
+				"css_id": "#loaders",
+				"nav_header": "Loaders"
+			},
 			{
 				"source": "views/components/markers.html",
 				"css_id": "#markers",
 				"nav_header": "markers"
+			},
+			{
+				"source": "views/components/message-faces.html",
+				"css_id": "#faces",
+				"nav_header": "message faces"
 			},
 			{
 				"source": "views/components/navs.html",
@@ -183,9 +188,9 @@
 				"nav_header": "scores"
 			},
 			{
-				"source": "views/components/thumbnails.html",
-				"css_id": "#thumbnails",
-				"nav_header": "Thumbnails"
+				"source": "views/components/texting.html",
+				"css_id": "#texting",
+				"nav_header": "Texting"
 			},
 			{
 				"source": "views/components/wells.html",
