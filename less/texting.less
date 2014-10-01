@@ -24,23 +24,18 @@
   .texting__actions {
     border-left: 1px solid @gray-light;
     float: right;
-    min-height: 240px;
+    min-height: 280px;
     padding: @texting-padding;
     width: @texting-sidebar-width;
   }
   .texting__actions__phones {
     border-bottom: 1px solid @gray-lighter;
-    margin-bottom: 170px;
+    margin-bottom: @texting-padding*2;
     padding-bottom: @texting-padding;
   }
   .texting__actions__compose {
-    bottom: 0;
-    left: 0;
-    padding: 0 @texting-padding;
-    position: absolute;
-    width: 100%;
     textarea {
-      height: 120px;
+      height: 140px;
     }  
   }
   .texting__msg {
@@ -66,14 +61,6 @@
   } 
 }
 
-/*.texting--panel.texting--lg {
-  .texting__actions {
-    border-bottom-right-radius: @panel-border-radius;
-  }
-  .texting__convo {
-    border-bottom-left-radius: @panel-border-radius;
-  }
-}*/
 
 // Texting base
 // -------------------------
@@ -120,7 +107,7 @@
 
 .texting__actions__compose {
   textarea {
-    height: 100px;
+    height: 60px;
     overflow: auto;
     resize: none;
   }  
