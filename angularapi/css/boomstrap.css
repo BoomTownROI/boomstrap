@@ -7942,24 +7942,17 @@ button.close-inverted {
 .texting--lg .texting__actions {
   border-left: 1px solid #cccccc;
   float: right;
-  min-height: 240px;
+  min-height: 280px;
   padding: 15px;
   width: 280px;
 }
 .texting--lg .texting__actions__phones {
   border-bottom: 1px solid #ececec;
-  margin-bottom: 170px;
+  margin-bottom: 30px;
   padding-bottom: 15px;
 }
-.texting--lg .texting__actions__compose {
-  bottom: 0;
-  left: 0;
-  padding: 0 15px;
-  position: absolute;
-  width: 100%;
-}
 .texting--lg .texting__actions__compose textarea {
-  height: 120px;
+  height: 140px;
 }
 .texting--lg .texting__msg {
   margin: 0 20% 15px 52px;
@@ -7979,14 +7972,6 @@ button.close-inverted {
 .texting--panel.texting--lg .texting__convo {
   border-bottom-left-radius: 4px;
 }
-/*.texting--panel.texting--lg {
-  .texting__actions {
-    border-bottom-right-radius: @panel-border-radius;
-  }
-  .texting__convo {
-    border-bottom-left-radius: @panel-border-radius;
-  }
-}*/
 .texting__body {
   padding: 0;
   position: relative;
@@ -8021,7 +8006,7 @@ button.close-inverted {
   padding-bottom: 6px;
 }
 .texting__actions__compose textarea {
-  height: 100px;
+  height: 60px;
   overflow: auto;
   resize: none;
 }
