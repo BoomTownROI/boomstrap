@@ -1,3 +1,3 @@
 # Pattern Library
 
-http://mcraiganthony.github.io/pattern-library/index.html
+http://boomtownroi.github.io/boomstrap/
