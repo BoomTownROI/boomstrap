@@ -41,10 +41,10 @@
   <div class="card-sm-container">
     <div class="row row-xcondensed">
       <div class="col-sm-6">
-        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>
+        <button type="button" class="btn btn-default btn-block btn-sm" ng-click="onClickBestFit($event)"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>
       </div>
       <div class="col-sm-6">
-        <button class="btn btn-default btn-block btn-sm"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>
+        <button type="button" class="btn btn-default btn-block btn-sm" ng-click="onClickFavs($event)"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>
       </div>
     </div>
   </div> <!-- /card-container -->
