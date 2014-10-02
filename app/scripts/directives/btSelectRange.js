@@ -10,6 +10,7 @@
    * @param {Array} values Array of values to display in the select dropdowns.
    * @param {string} minPlaceholder String to show when the user is selecting an item from the minimum dropdown
    * @param {string} maxPlaceholder String to show when the user is selecting an item from the maximum dropdown
+   * @param {string} btnClass String to add a Bootstrap class to control the style of the button
    * @param {string} rangeType If the range type is 'money', format the Number values as currency.
    * @param {function} translate If numbers and currency are not acceptable values, or the 'No min' and 'No max' are not satisfactory empty values, a function can be provided to translate them.
    *
@@ -31,6 +32,7 @@
         values: '=',
         minPlaceholder: '@',
         maxPlaceholder: '@',
+        btnClass: '@',
         translate: '='
       },
       link: function(scope, iElement, iAttrs, ngModel) {
@@ -45,6 +47,7 @@
         };
         scope.minPlaceholder = scope.minPlaceholder || 'Select a minimum value';
         scope.maxPlaceholder = scope.maxPlaceholder || 'Select a maximum value';
+        scope.btnClass       = scope.btnClass       || '';
 
         var validateMinMax = function(flippingFn) {
           if(scope.maximum.value !== -1 && scope.minimum.value !== -1 && scope.maximum.value < scope.minimum.value && flippingFn) {
