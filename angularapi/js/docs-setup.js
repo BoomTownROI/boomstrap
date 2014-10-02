@@ -163,7 +163,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "boomstrap",
       "shortDescription": "The btSelectRange element directive wraps the AngularUI&#39;s uiSelect directive.",
-      "keywords": "$filter acceptable add allows angularui array boomstrap btselectrange change currency current directive display dropdown dropdowns element empty ensures enters format function input item items list max maximum maxplaceholder min minimum minplaceholder money ngboomstrap non-provided number numbers placeholder provided range rangetype satisfactory select selecting string text translate type types uiselect user users values wraps"
+      "keywords": "$filter acceptable add allows angularui array boomstrap bootstrap btnclass btselectrange button change class control currency current directive display dropdown dropdowns element empty ensures enters format function input item items list max maximum maxplaceholder min minimum minplaceholder money ngboomstrap non-provided number numbers placeholder provided range rangetype satisfactory select selecting string style text translate type types uiselect user users values wraps"
     },
     {
       "section": "ngboomstrap",
