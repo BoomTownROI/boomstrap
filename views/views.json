@@ -152,6 +152,11 @@
 				"css_id": "#loaders",
 				"nav_header": "Loaders"
 			},
+			{ 
+				"source": "views/components/log-call.html",
+				"css_id": "#log-call",
+				"nav_header": "Log Call"
+			},
 			{
 				"source": "views/components/markers.html",
 				"css_id": "#markers",
