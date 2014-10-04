@@ -1,0 +1,23 @@
+// File: list-group.less
+// Note: Extends Bootstrap list-group.less
+
+
+// Linked list items
+// -------------------------
+
+a.list-group-item {
+  &.active {
+    padding-right: 35px; // make room for check mark
+  }
+  // pseudo check mark
+  &.active:after {
+    color: @brand-success;
+    content: "\e00a";
+    font-family: 'ficon';
+    font-size: 1.25em;
+    font-weight: normal;
+    right: 15px;
+    .vert-align();
+    position: absolute; // comes after vert-align to overwrite position relative
+  }
+}

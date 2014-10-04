@@ -2,13 +2,46 @@
 // Note: log call component
 
 
-.log-call { } // currently no base styles
 
 
-// Log call body
+
+// Log call base
 // -------------------------
+
+.log-call { } // currently no styles
 
 .log-call__body {
   padding: 0;
   position: relative;
+}
+
+.log-call__phones,.log-call__status,.log-call__comments  {
+  //padding: @log-call-padding;
+  margin-bottom: @margin-half-gutter
+}
+
+.log-call__status {
+  .ficon { margin-right: @margin-base; }
+  .list-group { margin-bottom: 0; }
+  &:extend(.small);
+}
+
+.log-call__comments {
+  textarea {
+    height: 60px;
+    overflow: auto;
+    resize: none;
+    &:extend(.small);
+  }  
+}
+
+.log-call__checkboxes { }
+  
+.log-call__checkbox {
+  margin: 0;
+  width: 132px;
+  &:extend(.small);
+  &+.log-call__checkbox {
+    padding-left: 0;
+  }
 }

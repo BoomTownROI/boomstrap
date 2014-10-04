@@ -9,25 +9,58 @@
   <h2>Basic log call example</h2>
   <p>This is the basic construction of the texting component. In proper mobile-first fashion, the texting component begins in a stacked layout.</p>
 
-  <div class="pl-example">
+  <div class="pl-example pl-example-log-call">
 
     <div class="log-call">
       <div class="log-call__body">
-        <div class="btn-group block">
-          <button type="button" class="btn btn-default btn-sm btn-block dropdown-toggle" data-toggle="dropdown">
-            <i class="ficon ficon-phone-good"></i> 888-555-1111 (home) <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#"><i class="ficon ficon-phone-good"></i> 888-555-1111 (home)</a></li>
-            <li><a href="#"><i class="ficon ficon-phone-neutral"></i> 888-555-1111 (cell)</a></li>
-          </ul>
+        <div class="log-call__phones">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+              <i class="ficon ficon-phone-good"></i> 888-555-1111 (home) <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><i class="ficon ficon-phone-good"></i> 888-555-1111 (home)</a></li>
+              <li><a href="#"><i class="ficon ficon-phone-neutral"></i> 888-555-2222 (cell)</a></li>
+            </ul>
+          </div>
         </div>
-        <br><br>
+        <!-- <br><br>
         <select class="selectpicker form-control" data-style="btn-default btn-sm">
           <option>888-555-1111 (home)</option>
           <option>888-555-2222 (cell)</option>
           <option>888-555-3333 (work)</option>
-        </select>
+        </select> -->
+        <div class="log-call__status">
+          <div class="list-group">
+            <a href="#" class="list-group-item active"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Wrong Number</a>
+          </div>
+        </div>
+        <div class="log-call__comments">
+          <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+        </div>
+        <div class="log-call__checkboxes">
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="share-agent" checked>
+            <label for="share-agent">Share with Agent</label>
+          </div>
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="share-lender" checked>
+            <label for="share-lender">Share with Lender</label>
+          </div>
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="notify-agent">
+            <label for="notify-agent">Notify Agent</label>
+          </div>
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="notify-lender">
+            <label for="notify-lender">Notify Lender</label>
+          </div>
+        </div>
+        
       </div> <!-- end log-call__body -->
     </div> <!-- end log-call -->
 
