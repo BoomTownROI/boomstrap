@@ -3,8 +3,6 @@
 
 
 
-
-
 // Log call base
 // -------------------------
 
@@ -15,14 +13,16 @@
   position: relative;
 }
 
-.log-call__phones,.log-call__status,.log-call__comments  {
-  //padding: @log-call-padding;
+.log-call__comments,.log-call__phones,.log-call__status {
   margin-bottom: @margin-half-gutter
 }
 
-.log-call__status {
-  .ficon { margin-right: @margin-base; }
-  .list-group { margin-bottom: 0; }
+.log-call__checkboxes {
+  &:extend(.clearfix all);
+}
+  
+.log-call__checkbox {
+  margin: 0;
   &:extend(.small);
 }
 
@@ -35,13 +35,35 @@
   }  
 }
 
-.log-call__checkboxes { }
-  
-.log-call__checkbox {
-  margin: 0;
-  width: 132px;
+.log-call__phones__dropdown {
+  &:extend(.btn-group-block-dropdown all);
+}
+
+.log-call__status {
+  .ficon { margin-right: @margin-base; }
+  .list-group { margin-bottom: 0; }
   &:extend(.small);
-  &+.log-call__checkbox {
-    padding-left: 0;
+}
+
+
+// Log call modifier - wrapped in small modal
+.log-call--modal-sm {
+  .log-call__body {
+    padding: @modal-inner-padding;
+  }
+  .log-call__checkbox {
+    float: left;
+    width: 50%;
+    &+.log-call__checkbox {
+      padding-left: 0;
+    }
   }
 }
+
+
+
+
+
+
+
+
