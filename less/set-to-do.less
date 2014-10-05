@@ -1,32 +1,32 @@
-// File: log-call.less
-// Note: log call component
+// File: set-to-do.less
+// Note: set to-do component
 
 
 
-// Log call base
+// Set todo base
 // -------------------------
 
-.log-call { } // currently no styles
+.set-to-do { } // currently no styles
 
-.log-call__body {
+.set-to-do__body {
   padding: 0;
   position: relative;
 }
 
-.log-call__comments,.log-call__phones,.log-call__status {
+.set-to-do__comments,.set-to-do__phones,.set-to-do__status {
   margin-bottom: @margin-half-gutter
 }
 
-.log-call__checkboxes {
+.set-to-do__checkboxes {
   &:extend(.clearfix all);
 }
   
-.log-call__checkbox {
+.set-to-do__checkbox {
   margin: 0;
   &:extend(.small);
 }
 
-.log-call__comments {
+.set-to-do__comments {
   textarea {
     height: 60px;
     overflow: auto;
@@ -35,35 +35,34 @@
   }  
 }
 
-.log-call__phones__dropdown {
+.set-to-do__phones__dropdown {
   &:extend(.btn-group-block-dropdown all);
 }
 
-.log-call__status {
+.set-to-do__status {
   .ficon { margin-right: @margin-base; }
   .list-group { margin-bottom: 0; }
   &:extend(.small);
 }
 
+
 // Log call modifier - wrapped in modal
-.log-call--modal {
-  .log-call__body {
+.set-to-do--modal {
+  .set-to-do__body {
     padding: @modal-inner-padding;
   }
 }
 
 // Log call modifier - wrapped in small modal
-.log-call--modal-sm {
-  
-  .log-call__checkbox {
+.set-to-do--modal-sm {
+  .set-to-do__checkbox {
     float: left;
     width: 50%;
-    &+.log-call__checkbox {
+    &+.set-to-do__checkbox {
       padding-left: 0;
     }
   }
 }
-
 
 
 

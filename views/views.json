@@ -198,6 +198,11 @@
 				"nav_header": "scores"
 			},
 			{
+				"source": "views/components/set-to-do.html",
+				"css_id": "#set-to-do",
+				"nav_header": "set to-do"
+			},
+			{
 				"source": "views/components/texting.html",
 				"css_id": "#texting",
 				"nav_header": "Texting"

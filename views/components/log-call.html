@@ -3,11 +3,11 @@
 <!-- Log Call (Boomstrap Custom) -->
 
 <div class="pl-docs-section">
-  <h1 id="log-call" class="page-header">Log Call</h1>
+  <h1 id="log-call" class="page-header">Log call</h1>
   <p class="lead">Modular component for logging a call.</p>
 
   <h2>Basic log call example</h2>
-  <p>This is the basic construction of the texting component. In proper mobile-first fashion, the texting component begins in a stacked layout.</p>
+  <p>This is the basic construction of the log call component.</p>
 
   <div class="pl-example pl-example-log-call">
 
@@ -106,12 +106,17 @@
 &lt;/div&gt; &lt;!-- end log-call --&gt;</code></pre>
   </div>
 
-  <h2>Log call small modal</h2>
-  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal-sm</code> modifier class to the <code>.log-call</code> class.</p>
+  <h2>Log call in small modal</h2>
+  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal .log-call--modal-sm</code> modifier classes to the <code>.log-call</code> class.</p>
+
+  <div class="callout callout-info">
+    <h4>Log call in modals</h4>
+    <p>When using the log call component in a default or large modal, simple add the <code>.log-call--modal</code> class to the <code>.log-call</code> class.</p>
+  </div>
 
   <div class="pl-example pl-example-modal">
 
-    <div class="modal log-call log-call--modal-sm">
+    <div class="modal log-call log-call--modal log-call--modal-sm">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -159,16 +164,74 @@
                 <input type="checkbox" id="notify-lender">
                 <label for="notify-lender">Notify Lender</label>
               </div>
-            </div> <!-- end log-call__body -->
-          </div> <!-- end log-call -->
+            </div>
+          </div> <!-- end log-call__body -->
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
-    </div>
+    </div> <!-- end log-call -->
 
   </div><!-- /example -->
-
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="modal log-call log-call--modal log-call--modal-sm"&gt;
+  &lt;div class="modal-dialog modal-sm"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
+        &lt;h4 class="modal-title"&gt;&lt;i class="ficon ficon-phone"&gt;&lt;/i&gt; Log Call: April Summers&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body log-call__body"&gt;
+        &lt;div class="log-call__phones"&gt;
+          &lt;div class="btn-group log-call__phones__dropdown"&gt;
+            &lt;button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"&gt;
+              &lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home) &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class="dropdown-menu" role="menu"&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home)&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; 888-555-2222 (cell)&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__status"&gt;
+          &lt;div class="list-group"&gt;
+            &lt;a href="#" class="list-group-item active"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-speaker"&gt;&lt;/i&gt; Left Message&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; Call Attempt &lt;em&gt;(no message)&lt;/em&gt;&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opted Out&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Wrong Number&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__comments"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__checkboxes"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="share-agent" checked&gt;
+            &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="share-lender" checked&gt;
+            &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="notify-agent"&gt;
+            &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="notify-lender"&gt;
+            &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt; &lt;!-- end log-call__body --&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; &lt;!-- end log-call --&gt;</code></pre>
+  </div>
 </div>
