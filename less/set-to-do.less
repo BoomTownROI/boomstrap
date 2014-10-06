@@ -8,22 +8,19 @@
 
 .set-to-do { } // currently no styles
 
+.set-to-do__assign {
+  p {
+    margin-bottom: @margin-xsmall;
+  }
+}
+
 .set-to-do__body {
   padding: 0;
   position: relative;
 }
 
-.set-to-do__comments,.set-to-do__phones,.set-to-do__status {
-  margin-bottom: @margin-half-gutter
-}
-
-.set-to-do__checkboxes {
-  &:extend(.clearfix all);
-}
-  
-.set-to-do__checkbox {
-  margin: 0;
-  &:extend(.small);
+.set-to-do__comments,.set-to-do__date,.set-to-do__date-btns,.set-to-do__time {
+  margin-bottom: @margin-half-gutter;
 }
 
 .set-to-do__comments {
@@ -32,18 +29,29 @@
     overflow: auto;
     resize: none;
     &:extend(.small);
-  }  
+  } 
 }
 
-.set-to-do__phones__dropdown {
-  &:extend(.btn-group-block-dropdown all);
+.set-to-do__date {
+  font-weight: 600;
 }
 
-.set-to-do__status {
-  .ficon { margin-right: @margin-base; }
-  .list-group { margin-bottom: 0; }
-  &:extend(.small);
+.set-to-do__date-btns {
+  .btn.active {
+    &:extend(.btn-success);
+  }
 }
+
+.set-to-do__time {
+  .fauxdio { margin: 0; }
+}
+
+.set-to-do__time__opts {
+  display: none;
+  margin-left: 3px;
+}
+
+
 
 
 // Log call modifier - wrapped in modal

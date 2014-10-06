@@ -3,7 +3,7 @@
     $( document ).ready(function() {
     	$('body').scrollspy({ target: '.pl-docs-sidebar'});
 
-    	// active nav
+    	///////////// active nav
 			var path = location.pathname.split("/");
 			var section = path[path.length-1];
 			if(section == "") {
@@ -13,10 +13,32 @@
 			}
 			$("[data-toggle=popover]").popover();
 			$('.selectpicker').selectpicker();
+
+		
+
+
+    	///////////// to dos
+
+    	// add/remove active class to date buttons
+			$('.set-to-do__date-btns .btn').click(function(){
+				$('.set-to-do__date-btns .btn').removeClass('active');
+				$(this).addClass('active');
+			});
+
+    	// show/hide specific time options
+			$('#set-to-do__time__radios').click(function() {
+			   if($('#to-do-specific-time').is(':checked')) { 
+			   	$('#set-to-do__time__opts').show();
+			   } else {
+			   	$('#set-to-do__time__opts').hide();
+			   }
+			});
+
+
+
+
+
     });
-
-
-
 
 </script>
 
