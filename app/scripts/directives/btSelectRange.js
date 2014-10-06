@@ -33,7 +33,8 @@
         minPlaceholder: '@',
         maxPlaceholder: '@',
         btnClass: '@',
-        translate: '='
+        translateMin: '=',
+        translateMax: '='
       },
       link: function(scope, iElement, iAttrs, ngModel) {
         /*
@@ -80,7 +81,15 @@
           translateValidValue = angular.identity;
         }
 
-        scope.translateValue = scope.translate || function(value, defaultText) {
+        scope.translateMinValue = scope.translateMin || function(value, defaultText) {
+          if (angular.isNumber(value)) {
+            return value === -1 ? defaultText : translateValidValue(value);
+          } else {
+            return defaultText;
+          }
+        };
+
+        scope.translateMaxValue = scope.translateMax || function(value, defaultText) {
           if (angular.isNumber(value)) {
             return value === -1 ? defaultText : translateValidValue(value);
           } else {
