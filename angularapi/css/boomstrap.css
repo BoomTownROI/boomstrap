@@ -6656,6 +6656,30 @@ button.close-inverted {
   border: 0;
   -webkit-appearance: none;
 }
+.circle {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background-color: #999999;
+  position: relative;
+  top: 3px;
+}
+.circle-now {
+  background-color: #669900;
+}
+.circle-today {
+  background-color: #ffcc33;
+}
+.circle-14-days {
+  background-color: #444444;
+}
+.circle-90-days {
+  background-color: #696969;
+}
+.circle-forever {
+  background-color: #999999;
+}
 .dropdown-menu .divider {
   margin: 4px 0;
 }
