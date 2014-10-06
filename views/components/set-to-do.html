@@ -28,13 +28,13 @@
           <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
         </div>
         <div class="set-to-do__time">
-          <span id="set-to-do__time__radios" class="set-to-do__time__radios">
-            <div class="fauxdio fauxdio-inline small">
-              <input type="radio" name="set-to-do-time" id="to-do-anytime" checked>
+          <span id="set-to-do__time__radios">
+            <div class="set-to-do__radio fauxdio fauxdio-inline">
+              <input id="to-do-anytime" type="radio" name="set-to-do-time" checked>
               <label for="to-do-anytime">Anytime</label>
             </div>
-            <div class="fauxdio fauxdio-inline small">
-              <input type="radio" name="set-to-do-time" id="to-do-specific-time">
+            <div class="set-to-do__radio fauxdio fauxdio-inline">
+              <input id="to-do-specific-time" type="radio" name="set-to-do-time">
               <label for="to-do-specific-time">Specific Time</label>
             </div>
           </span>
@@ -86,7 +86,7 @@
         <div class="set-to-do__assign">
           <p class="small">Assign To-Do to:</p>
           <select class="selectpicker form-control" data-style="btn-default btn-sm">
-            <option>Sean McCambridge (assasin)</option>
+            <option>Sean McCambridge (assassin)</option>
             <option>Mark Funk (overlord)</option>
             <option>Geore Mountis (joker)</option>
           </select>
@@ -100,11 +100,11 @@
   </div>
 
   <h2>Set to-do in small modal</h2>
-  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal-sm</code> modifier class to the <code>.log-call</code> class.</p>
+  <p>This is the set to-do component wrapped in a small modal. Add the <code>.set-to-do--modal</code> and <code>.set-to-do--modal-sm</code> modifier class to the existing <code>.set-to-do</code> class.</p>
 
   <div class="callout callout-info">
     <h4>Set to-do in modals</h4>
-    <p>When using the set to-do component in a default or large modal, simple add the <code>.set-to-do--modal</code> class to the <code>.set-to-do</code> class.</p>
+    <p>When using the <strong>set to-do</strong> component in a modal, add the <code>.set-to-do--modal</code> modifier class to the existing <code>.set-to-do</code> class. Currently there are no modifier classes needed for use within default and large modals.</p>
   </div>
 
   <div class="pl-example pl-example-modal">
@@ -117,11 +117,88 @@
             <h4 class="modal-title"><i class="ficon ficon-clipboard"></i> To-Do: April Summers</h4>
           </div>
           <div class="modal-body set-to-do__body">
-            
+            <div class="set-to-do__date">
+              Friday, October 10, 2014
+            </div>
+            <div class="set-to-do__date-btns">
+              <button class="btn btn-sm btn-default active">Today</button>
+              <button class="btn btn-sm btn-default">Tomorrow</button>
+              <button class="btn btn-sm btn-default">2 Days</button>
+              <button class="btn btn-sm btn-default">3 Days</button>
+              <button class="btn btn-sm btn-default">1 Week</button>
+              <button class="btn btn-sm btn-default">2 Weeks</button>
+              <button class="btn btn-sm btn-default">3 Weeks</button>
+              <button class="btn btn-sm btn-default">1 Month</button>
+              <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
+            </div>
+            <div class="set-to-do__time">
+              <span id="set-to-do__time__radios2">
+                <div class="set-to-do__radio fauxdio fauxdio-inline">
+                  <input id="to-do-anytime2" type="radio" name="set-to-do-time2" checked>
+                  <label for="to-do-anytime2">Anytime</label>
+                </div>
+                <div class="set-to-do__radio fauxdio fauxdio-inline">
+                  <input id="to-do-specific-time2" type="radio" name="set-to-do-time2">
+                  <label for="to-do-specific-time2">Specific Time</label>
+                </div>
+              </span>
+              <span id="set-to-do__time__opts2" class="set-to-do__time__opts">
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="50px">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="50px">
+                  <option>00</option>
+                  <option>15</option>
+                  <option>30</option>
+                  <option>45</option>
+                </select>
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="54px">
+                  <option>am</option>
+                  <option>pm</option>
+                </select>
+              </span>
+            </div>
+            <div class="set-to-do__category">
+              <select class="selectpicker form-control" data-style="btn-default btn-sm">
+                <option>Follow-up</option>
+                <option>Call</option>
+                <option>Email</option>
+                <option>Fax</option>
+                <option>Mail</option>
+                <option>Meeting</option>
+                <option>Arrival Date</option>
+                <option>Showing</option>
+                <option>Closing</option>
+                <option>Open House</option>
+                <option>Thank You</option>
+              </select>
+            </div>
+            <div class="set-to-do__comments">
+              <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+            </div>
+            <div class="set-to-do__assign">
+              <p class="small">Assign To-Do to:</p>
+              <select class="selectpicker form-control" data-style="btn-default btn-sm">
+                <option>Sean McCambridge (assassin)</option>
+                <option>Mark Funk (overlord)</option>
+                <option>Geore Mountis (joker)</option>
+              </select>
+            </div>
           </div> <!-- end set-to-do__body -->
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary">Save To-Do</button>
           </div>
         </div>
       </div>

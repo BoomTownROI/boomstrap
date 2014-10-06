@@ -15,6 +15,14 @@
 			$('.selectpicker').selectpicker();
 
 		
+			///////////// log call
+
+			// add/remove active class to log call status buttons
+			/*$('.log-call__status .list-group-item').click(function(e){
+				e.preventDefault();
+				$('.log-call__status .list-group-item').removeClass('active');
+				$(this).addClass('active');
+			});*/
 
 
     	///////////// to dos
@@ -31,6 +39,14 @@
 			   	$('#set-to-do__time__opts').show();
 			   } else {
 			   	$('#set-to-do__time__opts').hide();
+			   }
+			});
+			// show/hide specific time options
+			$('#set-to-do__time__radios2').click(function() {
+			   if($('#to-do-specific-time2').is(':checked')) { 
+			   	$('#set-to-do__time__opts2').show();
+			   } else {
+			   	$('#set-to-do__time__opts2').hide();
 			   }
 			});
 

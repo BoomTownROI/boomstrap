@@ -8,7 +8,12 @@
 
 .set-to-do { } // currently no styles
 
+.set-to-do__date,.set-to-do__date-btns,.set-to-do__time {
+  margin-bottom: @margin-half-gutter;
+}
+
 .set-to-do__assign {
+  margin-top: @margin-half-gutter;
   p {
     margin-bottom: @margin-xsmall;
   }
@@ -17,10 +22,6 @@
 .set-to-do__body {
   padding: 0;
   position: relative;
-}
-
-.set-to-do__comments,.set-to-do__date,.set-to-do__date-btns,.set-to-do__time {
-  margin-bottom: @margin-half-gutter;
 }
 
 .set-to-do__comments {
@@ -37,9 +38,26 @@
 }
 
 .set-to-do__date-btns {
+  &:extend(.clearfix all);
   .btn.active {
     &:extend(.btn-success);
   }
+}
+
+.set-to-do__date-btns .btn {
+  float: left;
+  margin: 3px 0;
+  width: 49%;
+  &:nth-child(even) {
+    float: right;
+  }
+  &:last-child {
+    .btn-block;
+  }
+}
+
+.set-to-do__radio {
+  &:extend(.small);
 }
 
 .set-to-do__time {
@@ -52,8 +70,6 @@
 }
 
 
-
-
 // Log call modifier - wrapped in modal
 .set-to-do--modal {
   .set-to-do__body {
@@ -63,13 +79,14 @@
 
 // Log call modifier - wrapped in small modal
 .set-to-do--modal-sm {
-  .set-to-do__checkbox {
+  /*.set-to-do__checkbox {
     float: left;
-    width: 50%;
+    width: 48%;
     &+.set-to-do__checkbox {
       padding-left: 0;
     }
-  }
+  }*/
+  
 }
 
 
