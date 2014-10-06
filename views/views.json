@@ -113,6 +113,11 @@
 				"nav_header": "Cards"
 			},
 			{
+				"source": "views/components/circles.html",
+				"css_id": "#circles",
+				"nav_header": "Circles"
+			},
+			{
 				"source": "views/components/dropdowns.html",
 				"css_id": "#dropdowns",
 				"nav_header": "Dropdowns"
