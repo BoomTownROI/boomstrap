@@ -28,25 +28,25 @@
     	///////////// to dos
 
     	// add/remove active class to date buttons
-			$('.set-to-do__date-btns .btn').click(function(){
+			/*$('.set-to-do__date-btns .btn').click(function(){
 				$('.set-to-do__date-btns .btn').removeClass('active');
 				$(this).addClass('active');
-			});
+			});*/
 
     	// show/hide specific time options
 			$('#set-to-do__time__radios').click(function() {
 			   if($('#to-do-specific-time').is(':checked')) { 
-			   	$('#set-to-do__time__opts').show();
+			   	$('#set-to-do__time__opts').removeClass("hide");
 			   } else {
-			   	$('#set-to-do__time__opts').hide();
+			   	$('#set-to-do__time__opts').addClass("hide");
 			   }
 			});
 			// show/hide specific time options
 			$('#set-to-do__time__radios2').click(function() {
 			   if($('#to-do-specific-time2').is(':checked')) { 
-			   	$('#set-to-do__time__opts2').show();
+			   	$('#set-to-do__time__opts2').removeClass("hide");
 			   } else {
-			   	$('#set-to-do__time__opts2').hide();
+			   	$('#set-to-do__time__opts2').addClass("hide");
 			   }
 			});
 

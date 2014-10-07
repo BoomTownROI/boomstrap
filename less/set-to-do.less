@@ -56,19 +56,25 @@
   }
 }
 
-.set-to-do__radio {
-  &:extend(.small);
-}
-
 .set-to-do__time {
   .fauxdio { margin: 0; }
 }
 
 .set-to-do__time__opts {
-  display: none;
+  display: inline-block;
   margin-left: 3px;
+  &.hide {
+    display: none;
+  }
 }
 
+.set-to-do__time__radios {
+  display: inline-block;
+}
+
+.set-to-do__time__radio {
+  &:extend(.small);
+}
 
 // Log call modifier - wrapped in modal
 .set-to-do--modal {
@@ -86,7 +92,11 @@
       padding-left: 0;
     }
   }*/
-  
+  .set-to-do__time__opts {
+    display: block;
+    margin: @margin-xsmall 0 0 0;
+  }
+
 }
 
 
