@@ -6,7 +6,9 @@
       replace: true,
       scope: {
         property: '=',
-        size: '@'
+        size: '@',
+        onClickBestFit: '&',
+        onClickFavs: '&'
       },
       templateUrl: function(el, attrs) {
         var template = '';
@@ -18,7 +20,9 @@
         return template;
       },
       link: function(scope) {
-        scope.isSmall = scope.size === 'sm';
+        scope.onClickBestFit = scope.onClickBestFit || angular.noop;
+        scope.onClickFavs    = scope.onClickFavs    || angular.noop;
+        scope.isSmall        = scope.size === 'sm';
       }
     };
   });
