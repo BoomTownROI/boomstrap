@@ -41,7 +41,6 @@
 			   	$('#set-to-do__time__opts').addClass("hide");
 			   }
 			});
-			// show/hide specific time options
 			$('#set-to-do__time__radios2').click(function() {
 			   if($('#to-do-specific-time2').is(':checked')) { 
 			   	$('#set-to-do__time__opts2').removeClass("hide");
@@ -49,10 +48,22 @@
 			   	$('#set-to-do__time__opts2').addClass("hide");
 			   }
 			});
+			$('#set-to-do__time__radios3').click(function() {
+			   if($('#to-do-specific-time3').is(':checked')) { 
+			   	$('#set-to-do__time__opts3').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts3').addClass("hide");
+			   }
+			});
 
 
-
-
+			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
+			$('.pl-code pre').hide();
+			$('.btn-showmarkup').click(function(){
+				var prediv = $('pre');
+				$(this).next(prediv).show();
+				$(this).hide();
+			});
 
     });
 

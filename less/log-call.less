@@ -49,12 +49,15 @@
 .log-call--modal {
   .log-call__body {
     padding: @modal-inner-padding;
+    // when set-to-do follows, make bg gray
+    & + .set-to-do__body {
+      background-color: @gray-lightest;
+    }
   }
 }
 
 // Log call modifier - wrapped in small modal
 .log-call--modal-sm {
-  
   .log-call__checkbox {
     float: left;
     width: 50%;
