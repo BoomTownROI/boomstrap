@@ -1,5 +1,6 @@
 (function(Boomstrap) {
   'use strict';
+  /* jshint camelcase: false */
   Boomstrap.controller('templatePopoverPopupCtrl', function($scope) {
     this.close = function($event) {
       if ($event && $event.stopPropagation) {
