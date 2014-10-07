@@ -13,9 +13,7 @@
 
     <div class="set-to-do">
       <div class="set-to-do__body">
-        <div class="set-to-do__date">
-          Friday, October 10, 2014
-        </div>
+        <div class="set-to-do__date">Friday, October 10, 2014</div>
         <div class="set-to-do__date-btns">
           <button class="btn btn-sm btn-default active">Today</button>
           <button class="btn btn-sm btn-default">Tomorrow</button>
@@ -85,7 +83,7 @@
         </div>
         <div class="set-to-do__assign">
           <p class="small">Assign To-Do to:</p>
-          <select class="selectpicker" data-style="btn-default btn-sm" data-width="100%">
+          <select class="selectpicker form-control" data-style="btn-default btn-sm" data-width="100%">
             <option>Sean McCambridge (assassin)</option>
             <option>Mark Funk (overlord)</option>
             <option>Geore Mountis (joker)</option>
@@ -96,7 +94,86 @@
 
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div class="set-to-do"&gt;
+  &lt;div class="set-to-do__body"&gt;
+    &lt;div class="set-to-do__date"&gt;Friday, October 10, 2014&lt;/div&gt;
+    &lt;div class="set-to-do__date-btns"&gt;
+      &lt;button class="btn btn-sm btn-default active"&gt;Today&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="set-to-do__time"&gt;
+      &lt;span id="set-to-do__time__radios"&gt;
+        &lt;div class="set-to-do__time__radio fauxdio fauxdio-inline"&gt;
+          &lt;input id="to-do-anytime" type="radio" name="set-to-do-time" checked&gt;
+          &lt;label for="to-do-anytime"&gt;Anytime&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__time__radio fauxdio fauxdio-inline"&gt;
+          &lt;input id="to-do-specific-time" type="radio" name="set-to-do-time"&gt;
+          &lt;label for="to-do-specific-time"&gt;Specific Time&lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/span&gt;
+      &lt;span id="set-to-do__time__opts" class="set-to-do__time__opts hide"&gt;
+        &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="50px"&gt;
+          &lt;option&gt;1&lt;/option&gt;
+          &lt;option&gt;2&lt;/option&gt;
+          &lt;option&gt;3&lt;/option&gt;
+          &lt;option&gt;4&lt;/option&gt;
+          &lt;option&gt;5&lt;/option&gt;
+          &lt;option&gt;6&lt;/option&gt;
+          &lt;option&gt;7&lt;/option&gt;
+          &lt;option&gt;8&lt;/option&gt;
+          &lt;option&gt;9&lt;/option&gt;
+          &lt;option&gt;10&lt;/option&gt;
+          &lt;option&gt;11&lt;/option&gt;
+          &lt;option&gt;12&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="50px"&gt;
+          &lt;option&gt;00&lt;/option&gt;
+          &lt;option&gt;15&lt;/option&gt;
+          &lt;option&gt;30&lt;/option&gt;
+          &lt;option&gt;45&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="54px"&gt;
+          &lt;option&gt;am&lt;/option&gt;
+          &lt;option&gt;pm&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="set-to-do__category"&gt;
+      &lt;select class="selectpicker" data-style="btn-default btn-sm" data-width="100%"&gt;
+        &lt;option&gt;Follow-up&lt;/option&gt;
+        &lt;option&gt;Call&lt;/option&gt;
+        &lt;option&gt;Email&lt;/option&gt;
+        &lt;option&gt;Fax&lt;/option&gt;
+        &lt;option&gt;Mail&lt;/option&gt;
+        &lt;option&gt;Meeting&lt;/option&gt;
+        &lt;option&gt;Arrival Date&lt;/option&gt;
+        &lt;option&gt;Showing&lt;/option&gt;
+        &lt;option&gt;Closing&lt;/option&gt;
+        &lt;option&gt;Open House&lt;/option&gt;
+        &lt;option&gt;Thank You&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="set-to-do__comments"&gt;
+      &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div class="set-to-do__assign"&gt;
+      &lt;p class="small"&gt;Assign To-Do to:&lt;/p&gt;
+      &lt;select class="selectpicker form-control" data-style="btn-default btn-sm" data-width="100%"&gt;
+        &lt;option&gt;Sean McCambridge (assassin)&lt;/option&gt;
+        &lt;option&gt;Mark Funk (overlord)&lt;/option&gt;
+        &lt;option&gt;Geore Mountis (joker)&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt; &lt;!-- end set-to-do__body --&gt;
+&lt;/div&gt; &lt;!-- end set-to-do --&gt;</code></pre>
   </div>
 
   <h2>Set to-do in small modal</h2>
@@ -117,9 +194,7 @@
             <h4 class="modal-title"><i class="ficon ficon-clipboard"></i> To-Do: April Summers</h4>
           </div>
           <div class="modal-body set-to-do__body">
-            <div class="set-to-do__date">
-              Friday, October 10, 2014
-            </div>
+            <div class="set-to-do__date">Friday, October 10, 2014</div>
             <div class="set-to-do__date-btns">
               <button class="btn btn-sm btn-default active">Today</button>
               <button class="btn btn-sm btn-default">Tomorrow</button>
@@ -202,10 +277,101 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> <!-- end set-to-do -->
 
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div class="modal set-to-do set-to-do--modal set-to-do--modal-sm"&gt;
+  &lt;div class="modal-dialog modal-sm"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
+        &lt;h4 class="modal-title"&gt;&lt;i class="ficon ficon-clipboard"&gt;&lt;/i&gt; To-Do: April Summers&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body set-to-do__body"&gt;
+        &lt;div class="set-to-do__date"&gt;Friday, October 10, 2014&lt;/div&gt;
+        &lt;div class="set-to-do__date-btns"&gt;
+          &lt;button class="btn btn-sm btn-default active"&gt;Today&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__time"&gt;
+          &lt;span id="set-to-do__time__radios" class="set-to-do__time__radios"&gt;
+            &lt;div class="set-to-do__time__radio fauxdio fauxdio-inline"&gt;
+              &lt;input id="to-do-anytime" type="radio" name="set-to-do-time" checked&gt;
+              &lt;label for="to-do-anytime"&gt;Anytime&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class="set-to-do__time__radio fauxdio fauxdio-inline"&gt;
+              &lt;input id="to-do-specific-time" type="radio" name="set-to-do-time"&gt;
+              &lt;label for="to-do-specific-time"&gt;Specific Time&lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/span&gt;
+          &lt;span id="set-to-do__time__opts" class="set-to-do__time__opts hide"&gt;
+            &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="50px"&gt;
+              &lt;option&gt;1&lt;/option&gt;
+              &lt;option&gt;2&lt;/option&gt;
+              &lt;option&gt;3&lt;/option&gt;
+              &lt;option&gt;4&lt;/option&gt;
+              &lt;option&gt;5&lt;/option&gt;
+              &lt;option&gt;6&lt;/option&gt;
+              &lt;option&gt;7&lt;/option&gt;
+              &lt;option&gt;8&lt;/option&gt;
+              &lt;option&gt;9&lt;/option&gt;
+              &lt;option&gt;10&lt;/option&gt;
+              &lt;option&gt;11&lt;/option&gt;
+              &lt;option&gt;12&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="50px"&gt;
+              &lt;option&gt;00&lt;/option&gt;
+              &lt;option&gt;15&lt;/option&gt;
+              &lt;option&gt;30&lt;/option&gt;
+              &lt;option&gt;45&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="54px"&gt;
+              &lt;option&gt;am&lt;/option&gt;
+              &lt;option&gt;pm&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__category"&gt;
+          &lt;select class="selectpicker" data-style="btn-default btn-sm" data-width="100%"&gt;
+            &lt;option&gt;Follow-up&lt;/option&gt;
+            &lt;option&gt;Call&lt;/option&gt;
+            &lt;option&gt;Email&lt;/option&gt;
+            &lt;option&gt;Fax&lt;/option&gt;
+            &lt;option&gt;Mail&lt;/option&gt;
+            &lt;option&gt;Meeting&lt;/option&gt;
+            &lt;option&gt;Arrival Date&lt;/option&gt;
+            &lt;option&gt;Showing&lt;/option&gt;
+            &lt;option&gt;Closing&lt;/option&gt;
+            &lt;option&gt;Open House&lt;/option&gt;
+            &lt;option&gt;Thank You&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__comments"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__assign"&gt;
+          &lt;p class="small"&gt;Assign To-Do to:&lt;/p&gt;
+          &lt;select class="selectpicker" data-style="btn-default btn-sm" data-width="100%"&gt;
+            &lt;option&gt;Sean McCambridge (assassin)&lt;/option&gt;
+            &lt;option&gt;Mark Funk (overlord)&lt;/option&gt;
+            &lt;option&gt;Geore Mountis (joker)&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/div&gt; &lt;!-- end set-to-do__body --&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save To-Do&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; &lt;!-- end set-to-do --&gt;</code></pre>
   </div>
 </div>

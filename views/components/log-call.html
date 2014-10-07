@@ -107,7 +107,7 @@
   </div>
 
   <h2>Log call in small modal</h2>
-  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> and <code>.log-call--modal-sm</code> modifier classes to the existing<code>.log-call</code> class.</p>
+  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> and <code>.log-call--modal-sm</code> modifier classes to the existing <code>.log-call</code> class.</p>
 
   <div class="callout callout-info">
     <h4>Log call in modals</h4>
@@ -116,7 +116,7 @@
 
   <div class="pl-example pl-example-modal">
 
-    <div class="modal log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm">
+    <div class="modal log-call log-call--modal log-call--modal-sm">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -234,4 +234,153 @@
   &lt;/div&gt;
 &lt;/div&gt; &lt;!-- end log-call --&gt;</code></pre>
   </div>
+
+  <h2>Log call combined with set to-do component</h2>
+  <p>This is the log call and set to-do component combined in a small modal. Simply add the necessary <a href="#set-to-do">set to-do</a> classes <code>.set-to-do .set-to-do--modal .set-to-do--modal-sm</code> to the existing log call classes.</p>
+
+  <div class="pl-example pl-example-modal">
+
+    <div class="modal log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="ficon ficon-phone"></i> Log Call: April Summers</h4>
+          </div>
+          <div class="modal-body log-call__body">
+            <div class="log-call__phones">
+              <div class="btn-group log-call__phones__dropdown">
+                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                  <i class="ficon ficon-phone-good"></i> 888-555-1111 (home) <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#"><i class="ficon ficon-phone-good"></i> 888-555-1111 (home)</a></li>
+                  <li><a href="#"><i class="ficon ficon-phone-neutral"></i> 888-555-2222 (cell)</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="log-call__status">
+              <div class="list-group">
+                <a href="#" class="list-group-item active"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Wrong Number</a>
+              </div>
+            </div>
+            <div class="log-call__comments">
+              <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+            </div>
+            <div class="log-call__checkboxes">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="share-agent" checked>
+                <label for="share-agent">Share with Agent</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="share-lender" checked>
+                <label for="share-lender">Share with Lender</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="notify-agent">
+                <label for="notify-agent">Notify Agent</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="notify-lender">
+                <label for="notify-lender">Notify Lender</label>
+              </div>
+            </div>
+          </div> <!-- end log-call__body -->
+          <div class="modal-body set-to-do__body">
+            <div class="set-to-do__date">Schedule a To-Do?</div>
+            <a href="#" class="set-to-do__cancel">cancel to-do</a>
+            <div class="set-to-do__date-btns">
+              <button class="btn btn-sm btn-default">Today</button>
+              <button class="btn btn-sm btn-default">Tomorrow</button>
+              <button class="btn btn-sm btn-default">2 Days</button>
+              <button class="btn btn-sm btn-default">3 Days</button>
+              <button class="btn btn-sm btn-default">1 Week</button>
+              <button class="btn btn-sm btn-default">2 Weeks</button>
+              <button class="btn btn-sm btn-default">3 Weeks</button>
+              <button class="btn btn-sm btn-default">1 Month</button>
+              <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
+            </div>
+            <div class="set-to-do__time">
+              <span id="set-to-do__time__radios2" class="set-to-do__time__radios">
+                <div class="set-to-do__time__radio fauxdio fauxdio-inline">
+                  <input id="to-do-anytime2" type="radio" name="set-to-do-time2" checked>
+                  <label for="to-do-anytime2">Anytime</label>
+                </div>
+                <div class="set-to-do__time__radio fauxdio fauxdio-inline">
+                  <input id="to-do-specific-time2" type="radio" name="set-to-do-time2">
+                  <label for="to-do-specific-time2">Specific Time</label>
+                </div>
+              </span>
+              <span id="set-to-do__time__opts2" class="set-to-do__time__opts hide">
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="50px">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="50px">
+                  <option>00</option>
+                  <option>15</option>
+                  <option>30</option>
+                  <option>45</option>
+                </select>
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="54px">
+                  <option>am</option>
+                  <option>pm</option>
+                </select>
+              </span>
+            </div>
+            <div class="set-to-do__category">
+              <select class="selectpicker" data-style="btn-default btn-sm" data-width="100%">
+                <option>Follow-up</option>
+                <option>Call</option>
+                <option>Email</option>
+                <option>Fax</option>
+                <option>Mail</option>
+                <option>Meeting</option>
+                <option>Arrival Date</option>
+                <option>Showing</option>
+                <option>Closing</option>
+                <option>Open House</option>
+                <option>Thank You</option>
+              </select>
+            </div>
+            <div class="set-to-do__comments">
+              <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+            </div>
+            <div class="set-to-do__assign">
+              <p class="small">Assign To-Do to:</p>
+              <select class="selectpicker" data-style="btn-default btn-sm" data-width="100%">
+                <option>Sean McCambridge (assassin)</option>
+                <option>Mark Funk (overlord)</option>
+                <option>Geore Mountis (joker)</option>
+              </select>
+            </div>
+          </div> <!-- end set-to-do__body -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end log-call -->
+
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code></code></pre>
+  </div>
+
+
 </div>
