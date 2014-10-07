@@ -6658,12 +6658,12 @@ button.close-inverted {
 }
 .circle {
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   display: inline-block;
   background-color: #999999;
   position: relative;
-  top: 3px;
+  top: 2px;
 }
 .circle-now {
   background-color: #669900;
@@ -6672,13 +6672,15 @@ button.close-inverted {
   background-color: #ffcc33;
 }
 .circle-14-days {
-  background-color: #444444;
+  background-color: #ffffff;
+  border: 2px solid #ffcc33;
 }
 .circle-90-days {
-  background-color: #696969;
+  background-color: #cccccc;
 }
 .circle-forever {
-  background-color: #999999;
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
 }
 .dropdown-menu .divider {
   margin: 4px 0;
