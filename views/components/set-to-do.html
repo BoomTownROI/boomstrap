@@ -176,12 +176,17 @@
 &lt;/div&gt; &lt;!-- end set-to-do --&gt;</code></pre>
   </div>
 
+  <div class="callout callout-danger">
+    <h4>Interaction note</h4>
+    <p>When a <strong>set to-do date button</strong> is clicked, it should receive the <code>.active</code> class and change the displayed date accordingly.<br>When <strong>specific time is checked</strong>, the <code>.hide</code> class should be removed from <code>.set-to-do__time__opts</code>.</p>
+  </div>
+
   <h2>Set to-do in small modal</h2>
-  <p>This is the set to-do component wrapped in a small modal. Add the <code>.set-to-do--modal</code> and <code>.set-to-do--modal-sm</code> modifier class to the existing <code>.set-to-do</code> class.</p>
+  <p>This is the set to-do component wrapped in a small modal. Add the <code>.set-to-do--modal</code> and <code>.set-to-do--modal-sm</code> modifier classes to the existing <code>.set-to-do</code> class.</p>
 
   <div class="callout callout-info">
     <h4>Set to-do in modals</h4>
-    <p>When using the <strong>set to-do</strong> component in a modal, add the <code>.set-to-do--modal</code> modifier class to the existing <code>.set-to-do</code> class. Currently there are no modifier classes needed for use within default and large modals.</p>
+    <p>When using the <strong>set to-do</strong> component in a modal, the <code>.set-to-do--modal</code> modifier class is required. Currently there are no additional modifier classes needed for use within default and large modals.</p>
   </div>
 
   <div class="pl-example pl-example-modal">

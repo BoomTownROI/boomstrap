@@ -26,7 +26,7 @@
         </div>
         <div class="log-call__status">
           <div class="list-group">
-            <a href="#" class="list-group-item active"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
             <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
             <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
             <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
@@ -74,7 +74,7 @@
     &lt;/div&gt;
     &lt;div class="log-call__status"&gt;
       &lt;div class="list-group"&gt;
-        &lt;a href="#" class="list-group-item active"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
+        &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
         &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-speaker"&gt;&lt;/i&gt; Left Message&lt;/a&gt;
         &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; Call Attempt &lt;em&gt;(no message)&lt;/em&gt;&lt;/a&gt;
         &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opted Out&lt;/a&gt;
@@ -106,12 +106,17 @@
 &lt;/div&gt; &lt;!-- end log-call --&gt;</code></pre>
   </div>
 
+  <div class="callout callout-danger">
+    <h4>Interaction note</h4>
+    <p>When a <strong>log call status button</strong> is clicked, it should receive the <code>.active</code> class.</p>
+  </div>
+
   <h2>Log call in small modal</h2>
   <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> and <code>.log-call--modal-sm</code> modifier classes to the existing <code>.log-call</code> class.</p>
 
   <div class="callout callout-info">
     <h4>Log call in modals</h4>
-    <p>When using the <strong>log call</strong> component in a modal, add the <code>.log-call--modal</code> modifier class to the existing <code>.log-call</code> class. Currently there are no modifier classes needed for use within default and large modals.</p>
+    <p>When using the <strong>log call</strong> component in a modal, the <code>.log-call--modal</code> modifier class is required. Currently there are no additional modifier classes required for use within default and large modals.</p>
   </div>
 
   <div class="pl-example pl-example-modal">
@@ -137,7 +142,7 @@
             </div>
             <div class="log-call__status">
               <div class="list-group">
-                <a href="#" class="list-group-item active"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
                 <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
                 <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
                 <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
@@ -197,7 +202,7 @@
         &lt;/div&gt;
         &lt;div class="log-call__status"&gt;
           &lt;div class="list-group"&gt;
-            &lt;a href="#" class="list-group-item active"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
             &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-speaker"&gt;&lt;/i&gt; Left Message&lt;/a&gt;
             &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; Call Attempt &lt;em&gt;(no message)&lt;/em&gt;&lt;/a&gt;
             &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opted Out&lt;/a&gt;
@@ -236,7 +241,17 @@
   </div>
 
   <h2>Log call combined with set to-do component</h2>
-  <p>This is the log call and set to-do component combined in a small modal. Simply add the necessary <a href="#set-to-do">set to-do</a> classes <code>.set-to-do .set-to-do--modal .set-to-do--modal-sm</code> to the existing log call classes.</p>
+  <p>This is the log call and set to-do component combined in a small modal. Simply add the necessary <a href="#set-to-do">set to-do</a> classes <code>.set-to-do .set-to-do--modal .set-to-do--modal-sm</code> to the existing log call component.</p>
+
+  <div class="callout callout-danger">
+    <h4>Interaction note (log call)</h4>
+    <p>When a <strong>log call status button</strong> is clicked it will trigger the reveal of the <strong>set to-do</strong> componenet using the <a href="/javascript.html#collapse">collapse plug-in</a>.</p>
+  </div>
+
+  <div class="callout callout-danger">
+    <h4>Interaction note (set to-do)</h4>
+    <p>When a <strong>set to-do date button</strong> is clicked, it should receive the <code>.active</code> class, change the displayed date accordingly, and the <code>.hide</code> class should be removed from <code>.set-to-do__cancel</code>.<br>Then, when the <strong>cancel to-do button</strong> is clicked, it should receive the <code>.hide</code> class and reset the displayed date accordingly.</p>
+  </div>
 
   <div class="pl-example pl-example-modal">
 
@@ -261,7 +276,7 @@
             </div>
             <div class="log-call__status">
               <div class="list-group">
-                <a href="#" class="list-group-item active"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
                 <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
                 <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
                 <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
@@ -290,9 +305,9 @@
               </div>
             </div>
           </div> <!-- end log-call__body -->
-          <div class="modal-body set-to-do__body">
+          <div id="zebracornftw" class="collapse modal-body set-to-do__body">
             <div class="set-to-do__date">Schedule a To-Do?</div>
-            <a href="#" class="set-to-do__cancel">cancel to-do</a>
+            <div class="set-to-do__cancel hide"><a href="#">cancel to-do</a></div>
             <div class="set-to-do__date-btns">
               <button class="btn btn-sm btn-default">Today</button>
               <button class="btn btn-sm btn-default">Tomorrow</button>
@@ -305,17 +320,17 @@
               <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
             </div>
             <div class="set-to-do__time">
-              <span id="set-to-do__time__radios2" class="set-to-do__time__radios">
+              <span id="set-to-do__time__radios3" class="set-to-do__time__radios">
                 <div class="set-to-do__time__radio fauxdio fauxdio-inline">
-                  <input id="to-do-anytime2" type="radio" name="set-to-do-time2" checked>
-                  <label for="to-do-anytime2">Anytime</label>
+                  <input id="to-do-anytime3" type="radio" name="set-to-do-time3" checked>
+                  <label for="to-do-anytime3">Anytime</label>
                 </div>
                 <div class="set-to-do__time__radio fauxdio fauxdio-inline">
-                  <input id="to-do-specific-time2" type="radio" name="set-to-do-time2">
-                  <label for="to-do-specific-time2">Specific Time</label>
+                  <input id="to-do-specific-time3" type="radio" name="set-to-do-time3">
+                  <label for="to-do-specific-time3">Specific Time</label>
                 </div>
               </span>
-              <span id="set-to-do__time__opts2" class="set-to-do__time__opts hide">
+              <span id="set-to-do__time__opts3" class="set-to-do__time__opts hide">
                 <select class="selectpicker" data-style="btn-default btn-xs" data-width="50px">
                   <option>1</option>
                   <option>2</option>

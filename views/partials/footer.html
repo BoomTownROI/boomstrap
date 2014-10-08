@@ -4,6 +4,7 @@
     	$('body').scrollspy({ target: '.pl-docs-sidebar'});
 
     	///////////// active nav
+
 			var path = location.pathname.split("/");
 			var section = path[path.length-1];
 			if(section == "") {
@@ -18,20 +19,43 @@
 			///////////// log call
 
 			// add/remove active class to log call status buttons
-			/*$('.log-call__status .list-group-item').click(function(e){
+			$('.log-call__status .list-group-item').click(function(e){
 				e.preventDefault();
-				$('.log-call__status .list-group-item').removeClass('active');
-				$(this).addClass('active');
-			});*/
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.list-group-item').removeClass('active');
+				$this.addClass('active');
+			});
+
+			$('.log-call__status').click(function(e){
+				e.preventDefault();
+				var $theParent = $(this).parent();
+				$theParent.next('#zebracornftw').collapse('show');
+			});
 
 
-    	///////////// to dos
+    	///////////// to-dos
 
-    	// add/remove active class to date buttons
-			/*$('.set-to-do__date-btns .btn').click(function(){
-				$('.set-to-do__date-btns .btn').removeClass('active');
-				$(this).addClass('active');
-			});*/
+			// add/remove active class to date buttons
+			$('.set-to-do__date-btns .btn').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.btn').removeClass('active');
+				$this.addClass('active');
+				$this.closest('.set-to-do__body').find('.set-to-do__cancel').removeClass('hide');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Thursday, January 1, 2015');
+			});
+
+			// cancel
+			$('.set-to-do__cancel a').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.addClass('hide');
+				$this.closest('.set-to-do__body').find('.set-to-do__date-btns .btn').removeClass('active');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Schedule a To-Do?');
+			});
 
     	// show/hide specific time options
 			$('#set-to-do__time__radios').click(function() {
@@ -56,6 +80,9 @@
 			   }
 			});
 
+			
+
+			///////////// view markup buttons
 
 			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
 			$('.pl-code pre').hide();
