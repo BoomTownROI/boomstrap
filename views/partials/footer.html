@@ -48,11 +48,10 @@
 			});
 
 			// cancel
-			$('.set-to-do__cancel a').click(function(e){
+			$('.set-to-do__cancel').click(function(e){
 				e.preventDefault();
 				var $this = $(this);
-				var $theParent = $this.parent();
-				$theParent.addClass('hide');
+				$this.addClass('hide');
 				$this.closest('.set-to-do__body').find('.set-to-do__date-btns .btn').removeClass('active');
     		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Schedule a To-Do?');
 			});

@@ -26,10 +26,10 @@
 
 .set-to-do__cancel {
   font-size: 11px;
-  margin: -12px 0 @margin-half-gutter 0;
-  /*position: absolute;
-  right: 15px;
-  top: 15px;*/
+  //margin: -12px 0 @margin-half-gutter 0;
+  position: absolute;
+  right: @margin-half-gutter;
+  top: @margin-half-gutter + 4px;
 }
 
 .set-to-do__category {
@@ -47,6 +47,7 @@
 
 .set-to-do__date {
   font-weight: 600;
+  padding-right: 68px; // make room for cancel to-do button
 }
 
 .set-to-do__date-btns {
@@ -97,13 +98,13 @@
 
 // Log call modifier - wrapped in small modal
 .set-to-do--modal-sm {
-  /*.set-to-do__checkbox {
-    float: left;
-    width: 48%;
-    &+.set-to-do__checkbox {
-      padding-left: 0;
+
+  @media (min-width: @screen-sm-min) {
+    // make btns extra small
+    .set-to-do__date-btns .btn { 
+      .btn-xs;
     }
-  }*/
+  }
   .set-to-do__time__opts {
     display: block;
     margin: @margin-xsmall 0 0 0;
