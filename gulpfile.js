@@ -184,7 +184,7 @@ gulp.task('boomstrapLessDist', function() {
   return gulp.src([
     'less/boomstrap.less'
   ])
-    .pipe(concat(DEST_FILE))
+    //.pipe(concat(DEST_FILE))
     .pipe(less({ compress: true }))
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR));

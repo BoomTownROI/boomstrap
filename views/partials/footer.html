@@ -3,7 +3,8 @@
     $( document ).ready(function() {
     	$('body').scrollspy({ target: '.pl-docs-sidebar'});
 
-    	// active nav
+    	///////////// active nav
+
 			var path = location.pathname.split("/");
 			var section = path[path.length-1];
 			if(section == "") {
@@ -13,10 +14,84 @@
 			}
 			$("[data-toggle=popover]").popover();
 			$('.selectpicker').selectpicker();
+
+		
+			///////////// log call
+
+			// add/remove active class to log call status buttons
+			$('.log-call__status .list-group-item').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.list-group-item').removeClass('active');
+				$this.addClass('active');
+			});
+
+			$('.log-call__status').click(function(e){
+				e.preventDefault();
+				var $theParent = $(this).parent();
+				$theParent.next('#zebracornftw').collapse('show');
+			});
+
+
+    	///////////// to-dos
+
+			// add/remove active class to date buttons
+			$('.set-to-do__date-btns .btn').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.btn').removeClass('active');
+				$this.addClass('active');
+				$this.closest('.set-to-do__body').find('.set-to-do__cancel').removeClass('hide');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Thursday, January 1, 2015');
+			});
+
+			// cancel
+			$('.set-to-do__cancel').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				$this.addClass('hide');
+				$this.closest('.set-to-do__body').find('.set-to-do__date-btns .btn').removeClass('active');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Schedule a To-Do?');
+			});
+
+    	// show/hide specific time options
+			$('#set-to-do__time__radios').click(function() {
+			   if($('#to-do-specific-time').is(':checked')) { 
+			   	$('#set-to-do__time__opts').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts').addClass("hide");
+			   }
+			});
+			$('#set-to-do__time__radios2').click(function() {
+			   if($('#to-do-specific-time2').is(':checked')) { 
+			   	$('#set-to-do__time__opts2').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts2').addClass("hide");
+			   }
+			});
+			$('#set-to-do__time__radios3').click(function() {
+			   if($('#to-do-specific-time3').is(':checked')) { 
+			   	$('#set-to-do__time__opts3').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts3').addClass("hide");
+			   }
+			});
+
+			
+
+			///////////// view markup buttons
+
+			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
+			$('.pl-code pre').hide();
+			$('.btn-showmarkup').click(function(){
+				var prediv = $('pre');
+				$(this).next(prediv).show();
+				$(this).hide();
+			});
+
     });
-
-
-
 
 </script>
 

@@ -2,81 +2,10 @@
 // Note: texting component
 
 
-.texting { } // currently no base styles
-
-// Texting modifer - large, side by side
-.texting--lg {
-  .texting__body {
-    &:extend(.clearfix all);
-  }
-  .texting__convo {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: @texting-sidebar-width;
-    top: 0;
-    z-index: 1;
-  }
-  .texting__convo__inner {
-    max-height: auto;
-    min-height: 100%;
-  }
-  .texting__actions {
-    border-left: 1px solid @gray-light;
-    float: right;
-    min-height: 240px;
-    padding: @texting-padding;
-    width: @texting-sidebar-width;
-  }
-  .texting__actions__phones {
-    border-bottom: 1px solid @gray-lighter;
-    margin-bottom: 170px;
-    padding-bottom: @texting-padding;
-  }
-  .texting__actions__compose {
-    bottom: 0;
-    left: 0;
-    padding: 0 @texting-padding;
-    position: absolute;
-    width: 100%;
-    textarea {
-      height: 120px;
-    }  
-  }
-  .texting__msg {
-    margin: 0 20% @texting-padding @texting-avatar-offset;
-  }
-  .texting__msg--agent {
-    margin: 0 @texting-avatar-offset @texting-padding 20%;
-  }
-}
-
-// Texting modifier - wrapped in modal or panel
-.texting--modal,.texting--panel {
-  .texting__actions {
-    padding: @texting-padding @texting-padding 0 @texting-padding;
-  }
-  &.texting--lg {
-    .texting__actions {
-      border-bottom-right-radius: @panel-border-radius;
-    }
-    .texting__convo {
-      border-bottom-left-radius: @panel-border-radius;
-    } 
-  } 
-}
-
-/*.texting--panel.texting--lg {
-  .texting__actions {
-    border-bottom-right-radius: @panel-border-radius;
-  }
-  .texting__convo {
-    border-bottom-left-radius: @panel-border-radius;
-  }
-}*/
-
 // Texting base
 // -------------------------
+
+.texting { } // currently no styles
 
 .texting__body {
   padding: 0;
@@ -97,15 +26,6 @@
   position: relative;
 }
 
-/*.texting__convo__fader {
-  bottom: 0;
-  height: @texting-padding;
-  left: 0;
-  position: absolute;
-  right: @texting-padding; // give a lil room for varying scroll bar widths
-  #gradient > .vertical(@start-color: fade(@gray-lightest,0%); @end-color: @gray-lightest; @start-percent: 0%; @end-percent: 80%);
-}*/
-
 .texting__actions {
   background-color: @white;
   padding: @texting-padding 0 0 0;
@@ -113,14 +33,13 @@
   z-index: 10;
 }
 
-
 .texting__actions__phones {
   padding-bottom: @padding-small;
 }
 
 .texting__actions__compose {
   textarea {
-    height: 100px;
+    height: 60px;
     overflow: auto;
     resize: none;
   }  
@@ -142,7 +61,6 @@
     top: 0;
   }
 }
-
 
 
 // Actual text messages
@@ -225,7 +143,62 @@
 } 
 
 
+// Texting modifer - large, side by side
+.texting--lg {
+  .texting__body {
+    &:extend(.clearfix all);
+  }
+  .texting__convo {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: @texting-sidebar-width;
+    top: 0;
+    z-index: 1;
+  }
+  .texting__convo__inner {
+    max-height: auto;
+    min-height: 100%;
+  }
+  .texting__actions {
+    border-left: 1px solid @gray-light;
+    float: right;
+    min-height: 280px;
+    padding: @texting-padding;
+    width: @texting-sidebar-width;
+  }
+  .texting__actions__phones {
+    border-bottom: 1px solid @gray-lighter;
+    margin-bottom: @texting-padding*2;
+    padding-bottom: @texting-padding;
+  }
+  .texting__actions__compose {
+    textarea {
+      height: 140px;
+    }  
+  }
+  .texting__msg {
+    margin: 0 20% @texting-padding @texting-avatar-offset;
+  }
+  .texting__msg--agent {
+    margin: 0 @texting-avatar-offset @texting-padding 20%;
+  }
+}
 
+// Texting modifier - wrapped in modal or panel
+.texting--modal,.texting--panel {
+  .texting__actions {
+    padding: @texting-padding @texting-padding 0 @texting-padding;
+  }
+  &.texting--lg {
+    .texting__actions {
+      border-bottom-right-radius: @panel-border-radius;
+    }
+    .texting__convo {
+      border-bottom-left-radius: @panel-border-radius;
+    } 
+  } 
+}
 
 
 

@@ -2,6 +2,32 @@
 // Note: Extends Bootstrap buttons-groups.less
 
 
+// Block dropdown button group
+// -------------------------
+
+// for block style button dropdowns
+
+.btn-group-block-dropdown {
+  width: 100%;
+  .btn {
+    text-align: left;
+    width: 100%;
+    .caret {
+      right: @padding-base-horizontal; // default button padding
+      .vert-align();
+      position: absolute; // comes after vert-align to overwrite position relative
+    }
+    i { margin-right: @margin-small; }
+  }
+  .btn-sm {
+    .caret {
+      right: @padding-small-horizontal; // small button padding
+    }
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+}
 
 // Custom button groups
 // -------------------------

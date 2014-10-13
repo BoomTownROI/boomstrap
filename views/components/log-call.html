@@ -1,0 +1,536 @@
+<!-- ================================== Log Call ================================== -->
+
+<!-- Log Call (Boomstrap Custom) -->
+
+<div class="pl-docs-section">
+  <h1 id="log-call" class="page-header">Log call</h1>
+  <p class="lead">Modular component for logging a call.</p>
+
+  <h2>Basic log call example</h2>
+  <p>This is the basic construction of the log call component.</p>
+
+  <div class="pl-example pl-example-log-call">
+
+    <div class="log-call">
+      <div class="log-call__body">
+        <div class="log-call__phones">
+          <div class="btn-group log-call__phones__dropdown">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+              <i class="ficon ficon-phone-good"></i> 888-555-1111 (home) <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><i class="ficon ficon-phone-good"></i> 888-555-1111 (home)</a></li>
+              <li><a href="#"><i class="ficon ficon-phone-neutral"></i> 888-555-2222 (cell)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="log-call__status">
+          <div class="list-group">
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
+            <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Wrong Number</a>
+          </div>
+        </div>
+        <div class="log-call__comments">
+          <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+        </div>
+        <div class="log-call__checkboxes">
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="share-agent" checked>
+            <label for="share-agent">Share with Agent</label>
+          </div>
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="share-lender" checked>
+            <label for="share-lender">Share with Lender</label>
+          </div>
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="notify-agent">
+            <label for="notify-agent">Notify Agent</label>
+          </div>
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
+            <input type="checkbox" id="notify-lender">
+            <label for="notify-lender">Notify Lender</label>
+          </div>
+        </div>
+      </div> <!-- end log-call__body -->
+    </div> <!-- end log-call -->
+
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="log-call"&gt;
+  &lt;div class="log-call__body"&gt;
+    &lt;div class="log-call__phones"&gt;
+      &lt;div class="btn-group log-call__phones__dropdown"&gt;
+        &lt;button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"&gt;
+          &lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home) &lt;span class="caret"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;ul class="dropdown-menu" role="menu"&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; 888-555-2222 (cell)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="log-call__status"&gt;
+      &lt;div class="list-group"&gt;
+        &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
+        &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-speaker"&gt;&lt;/i&gt; Left Message&lt;/a&gt;
+        &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; Call Attempt &lt;em&gt;(no message)&lt;/em&gt;&lt;/a&gt;
+        &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opted Out&lt;/a&gt;
+        &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Wrong Number&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="log-call__comments"&gt;
+      &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div class="log-call__checkboxes"&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+        &lt;input type="checkbox" id="share-agent" checked&gt;
+        &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+        &lt;input type="checkbox" id="share-lender" checked&gt;
+        &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+        &lt;input type="checkbox" id="notify-agent"&gt;
+        &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+        &lt;input type="checkbox" id="notify-lender"&gt;
+        &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt; &lt;!-- end log-call__body --&gt;
+&lt;/div&gt; &lt;!-- end log-call --&gt;</code></pre>
+  </div>
+
+  <div class="callout callout-danger">
+    <h4>Interaction note</h4>
+    <p>When a <strong>log call status button</strong> is clicked, it should receive the <code>.active</code> class.</p>
+  </div>
+
+  <h2>Log call in small modal</h2>
+  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> and <code>.log-call--modal-sm</code> modifier classes to the existing <code>.log-call</code> class.</p>
+
+  <div class="callout callout-info">
+    <h4>Log call in modals</h4>
+    <p>When using the <strong>log call</strong> component in a modal, the <code>.log-call--modal</code> modifier class is required. Currently there are no additional modifier classes required for use within default and large modals.</p>
+  </div>
+
+  <div class="pl-example pl-example-modal">
+
+    <div class="modal log-call log-call--modal log-call--modal-sm">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="ficon ficon-phone"></i> Log Call: April Summers</h4>
+          </div>
+          <div class="modal-body log-call__body">
+            <div class="log-call__phones">
+              <div class="btn-group log-call__phones__dropdown">
+                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                  <i class="ficon ficon-phone-good"></i> 888-555-1111 (home) <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#"><i class="ficon ficon-phone-good"></i> 888-555-1111 (home)</a></li>
+                  <li><a href="#"><i class="ficon ficon-phone-neutral"></i> 888-555-2222 (cell)</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="log-call__status">
+              <div class="list-group">
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Wrong Number</a>
+              </div>
+            </div>
+            <div class="log-call__comments">
+              <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+            </div>
+            <div class="log-call__checkboxes">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="share-agent" checked>
+                <label for="share-agent">Share with Agent</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="share-lender" checked>
+                <label for="share-lender">Share with Lender</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="notify-agent">
+                <label for="notify-agent">Notify Agent</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="notify-lender">
+                <label for="notify-lender">Notify Lender</label>
+              </div>
+            </div>
+          </div> <!-- end log-call__body -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end log-call -->
+
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="modal log-call log-call--modal log-call--modal-sm"&gt;
+  &lt;div class="modal-dialog modal-sm"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
+        &lt;h4 class="modal-title"&gt;&lt;i class="ficon ficon-phone"&gt;&lt;/i&gt; Log Call: April Summers&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body log-call__body"&gt;
+        &lt;div class="log-call__phones"&gt;
+          &lt;div class="btn-group log-call__phones__dropdown"&gt;
+            &lt;button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"&gt;
+              &lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home) &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class="dropdown-menu" role="menu"&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home)&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; 888-555-2222 (cell)&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__status"&gt;
+          &lt;div class="list-group"&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-speaker"&gt;&lt;/i&gt; Left Message&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; Call Attempt &lt;em&gt;(no message)&lt;/em&gt;&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opted Out&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Wrong Number&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__comments"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__checkboxes"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="share-agent" checked&gt;
+            &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="share-lender" checked&gt;
+            &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="notify-agent"&gt;
+            &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="notify-lender"&gt;
+            &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt; &lt;!-- end log-call__body --&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; &lt;!-- end log-call --&gt;</code></pre>
+  </div>
+
+  <h2>Log call combined with set to-do component</h2>
+  <p>This is the log call and set to-do component combined in a small modal. Simply add the necessary <a href="#set-to-do">set to-do</a> classes <code>.set-to-do .set-to-do--modal .set-to-do--modal-sm</code> to the existing log call component.</p>
+
+  <div class="callout callout-danger">
+    <h4>Interaction note (log call)</h4>
+    <p>When a <strong>log call status button</strong> is clicked it will trigger the reveal of the <strong>set to-do</strong> componenet using the <a href="/javascript.html#collapse">collapse plug-in</a>.</p>
+  </div>
+
+  <div class="callout callout-danger">
+    <h4>Interaction note (set to-do)</h4>
+    <p>When a <strong>set to-do date button</strong> is clicked, it should receive the <code>.active</code> class, change the displayed date accordingly, and the <code>.hide</code> class should be removed from <code>.set-to-do__cancel</code>.<br>Then, when the <strong>cancel to-do button</strong> is clicked, it should receive the <code>.hide</code> class and reset the displayed date accordingly.</p>
+  </div>
+
+  <div class="pl-example pl-example-modal">
+
+    <div class="modal log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="ficon ficon-phone"></i> Log Call: April Summers</h4>
+          </div>
+          <div class="modal-body log-call__body">
+            <div class="log-call__phones">
+              <div class="btn-group log-call__phones__dropdown">
+                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                  <i class="ficon ficon-phone-good"></i> 888-555-1111 (home) <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#"><i class="ficon ficon-phone-good"></i> 888-555-1111 (home)</a></li>
+                  <li><a href="#"><i class="ficon ficon-phone-neutral"></i> 888-555-2222 (cell)</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="log-call__status">
+              <div class="list-group">
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-good"></i> Talked to Prospect</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-speaker"></i> Left Message</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-neutral"></i> Call Attempt <em>(no message)</em></a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Opted Out</a>
+                <a href="#" class="list-group-item"><i class="ficon ficon-phone-bad"></i> Wrong Number</a>
+              </div>
+            </div>
+            <div class="log-call__comments">
+              <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+            </div>
+            <div class="log-call__checkboxes">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="share-agent" checked>
+                <label for="share-agent">Share with Agent</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="share-lender" checked>
+                <label for="share-lender">Share with Lender</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="notify-agent">
+                <label for="notify-agent">Notify Agent</label>
+              </div>
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
+                <input type="checkbox" id="notify-lender">
+                <label for="notify-lender">Notify Lender</label>
+              </div>
+            </div>
+          </div> <!-- end log-call__body -->
+          <div id="zebracornftw" class="collapse modal-body set-to-do__body">
+            <div class="set-to-do__date">Schedule a To-Do?</div>
+            <a href="#" class="set-to-do__cancel hide">cancel to-do</a>
+            <div class="set-to-do__date-btns">
+              <button class="btn btn-sm btn-default">Today</button>
+              <button class="btn btn-sm btn-default">Tomorrow</button>
+              <button class="btn btn-sm btn-default">2 Days</button>
+              <button class="btn btn-sm btn-default">3 Days</button>
+              <button class="btn btn-sm btn-default">1 Week</button>
+              <button class="btn btn-sm btn-default">2 Weeks</button>
+              <button class="btn btn-sm btn-default">3 Weeks</button>
+              <button class="btn btn-sm btn-default">1 Month</button>
+              <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
+            </div>
+            <div class="set-to-do__time">
+              <span id="set-to-do__time__radios3" class="set-to-do__time__radios">
+                <div class="set-to-do__time__radio fauxdio fauxdio-inline">
+                  <input id="to-do-anytime3" type="radio" name="set-to-do-time3" checked>
+                  <label for="to-do-anytime3">Anytime</label>
+                </div>
+                <div class="set-to-do__time__radio fauxdio fauxdio-inline">
+                  <input id="to-do-specific-time3" type="radio" name="set-to-do-time3">
+                  <label for="to-do-specific-time3">Specific Time</label>
+                </div>
+              </span>
+              <span id="set-to-do__time__opts3" class="set-to-do__time__opts hide">
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="50px">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="50px">
+                  <option>00</option>
+                  <option>15</option>
+                  <option>30</option>
+                  <option>45</option>
+                </select>
+                <select class="selectpicker" data-style="btn-default btn-xs" data-width="54px">
+                  <option>am</option>
+                  <option>pm</option>
+                </select>
+              </span>
+            </div>
+            <div class="set-to-do__category">
+              <select class="selectpicker" data-style="btn-default btn-sm" data-width="100%">
+                <option>Follow-up</option>
+                <option>Call</option>
+                <option>Email</option>
+                <option>Fax</option>
+                <option>Mail</option>
+                <option>Meeting</option>
+                <option>Arrival Date</option>
+                <option>Showing</option>
+                <option>Closing</option>
+                <option>Open House</option>
+                <option>Thank You</option>
+              </select>
+            </div>
+            <div class="set-to-do__comments">
+              <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
+            </div>
+            <div class="set-to-do__assign">
+              <p class="small">Assign To-Do to:</p>
+              <select class="selectpicker" data-style="btn-default btn-sm" data-width="100%">
+                <option>Sean McCambridge (assassin)</option>
+                <option>Mark Funk (overlord)</option>
+                <option>Geore Mountis (joker)</option>
+              </select>
+            </div>
+          </div> <!-- end set-to-do__body -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end log-call and set-to-do -->
+
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="modal log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm"&gt;
+  &lt;div class="modal-dialog modal-sm"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
+        &lt;h4 class="modal-title"&gt;&lt;i class="ficon ficon-phone"&gt;&lt;/i&gt; Log Call: April Summers&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body log-call__body"&gt;
+        &lt;div class="log-call__phones"&gt;
+          &lt;div class="btn-group log-call__phones__dropdown"&gt;
+            &lt;button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"&gt;
+              &lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home) &lt;span class="caret"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class="dropdown-menu" role="menu"&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; 888-555-1111 (home)&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; 888-555-2222 (cell)&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__status"&gt;
+          &lt;div class="list-group"&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt; Talked to Prospect&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-speaker"&gt;&lt;/i&gt; Left Message&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt; Call Attempt &lt;em&gt;(no message)&lt;/em&gt;&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Opted Out&lt;/a&gt;
+            &lt;a href="#" class="list-group-item"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt; Wrong Number&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__comments"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="log-call__checkboxes"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="share-agent" checked&gt;
+            &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="share-lender" checked&gt;
+            &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="notify-agent"&gt;
+            &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+            &lt;input type="checkbox" id="notify-lender"&gt;
+            &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt; &lt;!-- end log-call__body --&gt;
+      &lt;div class="collapse modal-body set-to-do__body"&gt;
+        &lt;div class="set-to-do__date"&gt;Schedule a To-Do?&lt;/div&gt;
+        &lt;a href="#" class="set-to-do__cancel hide"&gt;cancel to-do&lt;/a&gt;
+        &lt;div class="set-to-do__date-btns"&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;Today&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__time"&gt;
+          &lt;span id="set-to-do__time__radios3" class="set-to-do__time__radios"&gt;
+            &lt;div class="set-to-do__time__radio fauxdio fauxdio-inline"&gt;
+              &lt;input id="to-do-anytime3" type="radio" name="set-to-do-time3" checked&gt;
+              &lt;label for="to-do-anytime3"&gt;Anytime&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class="set-to-do__time__radio fauxdio fauxdio-inline"&gt;
+              &lt;input id="to-do-specific-time3" type="radio" name="set-to-do-time3"&gt;
+              &lt;label for="to-do-specific-time3"&gt;Specific Time&lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/span&gt;
+          &lt;span id="set-to-do__time__opts3" class="set-to-do__time__opts hide"&gt;
+            &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="50px"&gt;
+              &lt;option&gt;1&lt;/option&gt;
+              &lt;option&gt;2&lt;/option&gt;
+              &lt;option&gt;3&lt;/option&gt;
+              &lt;option&gt;4&lt;/option&gt;
+              &lt;option&gt;5&lt;/option&gt;
+              &lt;option&gt;6&lt;/option&gt;
+              &lt;option&gt;7&lt;/option&gt;
+              &lt;option&gt;8&lt;/option&gt;
+              &lt;option&gt;9&lt;/option&gt;
+              &lt;option&gt;10&lt;/option&gt;
+              &lt;option&gt;11&lt;/option&gt;
+              &lt;option&gt;12&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="50px"&gt;
+              &lt;option&gt;00&lt;/option&gt;
+              &lt;option&gt;15&lt;/option&gt;
+              &lt;option&gt;30&lt;/option&gt;
+              &lt;option&gt;45&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;select class="selectpicker" data-style="btn-default btn-xs" data-width="54px"&gt;
+              &lt;option&gt;am&lt;/option&gt;
+              &lt;option&gt;pm&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__category"&gt;
+          &lt;select class="selectpicker" data-style="btn-default btn-sm" data-width="100%"&gt;
+            &lt;option&gt;Follow-up&lt;/option&gt;
+            &lt;option&gt;Call&lt;/option&gt;
+            &lt;option&gt;Email&lt;/option&gt;
+            &lt;option&gt;Fax&lt;/option&gt;
+            &lt;option&gt;Mail&lt;/option&gt;
+            &lt;option&gt;Meeting&lt;/option&gt;
+            &lt;option&gt;Arrival Date&lt;/option&gt;
+            &lt;option&gt;Showing&lt;/option&gt;
+            &lt;option&gt;Closing&lt;/option&gt;
+            &lt;option&gt;Open House&lt;/option&gt;
+            &lt;option&gt;Thank You&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__comments"&gt;
+          &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="set-to-do__assign"&gt;
+          &lt;p class="small"&gt;Assign To-Do to:&lt;/p&gt;
+          &lt;select class="selectpicker" data-style="btn-default btn-sm" data-width="100%"&gt;
+            &lt;option&gt;Sean McCambridge (assassin)&lt;/option&gt;
+            &lt;option&gt;Mark Funk (overlord)&lt;/option&gt;
+            &lt;option&gt;Geore Mountis (joker)&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/div&gt; &lt;!-- end set-to-do__body --&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; &lt;!-- end log-call and set-to-do --&gt;</code></pre>
+  </div>
+
+
+</div>

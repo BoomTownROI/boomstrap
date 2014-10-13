@@ -74,6 +74,7 @@
 
 // custom fine-tuning padding vars
 
+@padding-half-gutter:       @grid-gutter-width / 2; // 15px
 @padding-xlarge:            14px;
 @padding-large:             12px;
 @padding-medium:            10px;
@@ -83,6 +84,7 @@
 
 // custom fine-tuning margin vars
 
+@margin-half-gutter:        @grid-gutter-width / 2; // 15px
 @margin-xlarge:             14px;
 @margin-large:              12px;
 @margin-medium:             10px;
@@ -169,19 +171,37 @@
 
 
 // -------------------------
+// List Group
+// -------------------------
+
+@list-group-border:         @gray-light;
+@list-group-active-bg:      @cool-hover;
+@list-group-active-color:   inherit;
+@list-group-active-border:  @list-group-border;
+
+
+// -------------------------
+// Log Call
+// -------------------------
+
+@log-call-padding:          @padding-half-gutter;
+
+
+// -------------------------
 // Message Face
 // -------------------------
 
-@message-face-arrow-size:         8px;
-@message-face-height:             40px;
-@message-face-width:              50px;
+@message-face-arrow-size:   8px;
+@message-face-height:       40px;
+@message-face-width:        50px;
 
 
 // -------------------------
 // Modals
 // -------------------------
 
-@modal-header-border-color:                     @gray-light;
+@modal-header-border-color: @gray-light;
+@modal-inner-padding:       @padding-half-gutter;
 
 
 // -------------------------
@@ -207,6 +227,7 @@
 // Panels
 // -------------------------
 
+@panel-body-padding:        @padding-half-gutter;
 @panel-body-padding-small:  @padding-small;
 @panel-default-border:      @gray-light;
 @panel-default-heading-bg:  @gray-lightest;
@@ -265,7 +286,7 @@
 
 @texting-avatar-size:             42px;
 @texting-avatar-offset:           @texting-avatar-size + 10px;
-@texting-padding:                 @panel-body-padding;
+@texting-padding:                 @padding-half-gutter;
 @texting-sidebar-width:           280px;
 
 

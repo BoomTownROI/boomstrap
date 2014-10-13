@@ -31,8 +31,17 @@
         ].join('');
       },
       link: function(scope) {
-        scope.cat = categories[scope.category];
-        scope.abbr = abbrs[scope.category];
+        var updateScope = function() {
+          scope.cat = categories[scope.category];
+          scope.abbr = abbrs[scope.category];
+        };
+        updateScope();
+
+        scope.$watch('category', function(newVal, oldVal) {
+          if (newVal !== oldVal) {
+            updateScope();
+          }
+        });
       }
     };
   }]);
