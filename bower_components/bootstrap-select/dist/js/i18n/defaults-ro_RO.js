@@ -6,10 +6,10 @@
  */
 (function ($) {
   $.fn.selectpicker.defaults = {
-    noneSelectedText: 'Niets geselecteerd',
-    noneResultsText: 'Geen resultaten gevonden voor',
-    countSelectedText: '{0} van {1} geselecteerd',
-    maxOptionsText: ['Limiet bereikt ({n} {var} max)', 'Groep limiet bereikt ({n} {var} max)', ['items', 'item']],
+    noneSelectedText: 'Nu a fost selectat nimic',
+    noneResultsText: 'Nu exista niciun rezultat',
+    countSelectedText: '{0} din {1} selectat(e)',
+    maxOptionsText: ['Limita a fost atinsa ({n} {var} max)', 'Limita de grup a fost atinsa ({n} {var} max)', ['iteme', 'item']],
     multipleSeparator: ', '
   };
 }(jQuery));
