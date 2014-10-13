@@ -6780,7 +6780,7 @@ button.close-inverted {
 .fauxble-headings {
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   border-top: none;
 }
 .fauxble-headings:before,
@@ -8090,7 +8090,7 @@ a.list-group-item.active:after {
 .table > tfoot > tr > th {
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -8104,10 +8104,11 @@ a.list-group-item.active:after {
   cursor: pointer;
 }
 .sortable:hover {
-  background-color: #f6f6f6;
+  background-color: #ececec;
 }
 .sortable.is-sorting {
-  background-color: #ececec;
+  font-weight: 700;
+  background-color: #f6f6f6;
 }
 .sortable.is-sorting:after {
   content: "";
