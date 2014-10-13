@@ -27,9 +27,10 @@
 
 .sortable {
   cursor: pointer;
-  &:hover { background-color: @gray-lightest; };
+  &:hover { background-color: @gray-lighter; };
   &.is-sorting {
-    background-color: @gray-lighter;
+    font-weight: 700;
+    background-color: @gray-lightest;
     &:after {
       content: "";
       .caret;
