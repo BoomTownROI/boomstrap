@@ -6,7 +6,7 @@
       scope: {
         'date': '=btDatePicker'
       },
-      link: function(scope, element, attrs, ngModelCtrl) {
+      link: function(scope, element) {
         element.bsDatepicker({
           dateFormat:'dd-MM-yyyy',
           todayHighlight: true,
