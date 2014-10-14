@@ -588,6 +588,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 			var zIndex = parseInt(this.element.parents().filter(function(){
 					return $(this).css('z-index') !== 'auto';
 				}).first().css('z-index'))+10;
+
 			var offset = this.component ? this.component.parent().offset() : this.element.offset();
 			var height = this.component ? this.component.outerHeight(true) : this.element.outerHeight(false);
 			var width = this.component ? this.component.outerWidth(true) : this.element.outerWidth(false);
@@ -1287,8 +1288,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 		});
 		delete options.inputs;
 
-		$(this.inputs)
-			.datepicker(options)
+		datepickerPlugin.call($(this.inputs), options)
 			.bind('changeDate', $.proxy(this.dateUpdated, this));
 
 		this.pickers = $.map(this.inputs, function(i){
@@ -1389,7 +1389,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 	}
 
 	var old = $.fn.datepicker;
-	$.fn.datepicker = function(option){
+	var datepickerPlugin = function(option){
 		var args = Array.apply(null, arguments);
 		args.shift();
 		var internal_return;
@@ -1425,6 +1425,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 		else
 			return this;
 	};
+	$.fn.datepicker = datepickerPlugin;
 
 	var defaults = $.fn.datepicker.defaults = {
 		autoclose: false,
@@ -1699,11 +1700,11 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 				return;
 			e.preventDefault();
 			// component click requires us to explicitly show it
-			$this.datepicker('show');
+			datepickerPlugin.call($this, 'show');
 		}
 	);
 	$(function(){
-		$('[data-provide="datepicker-inline"]').datepicker();
+		datepickerPlugin.call($('[data-provide="datepicker-inline"]'));
 	});
 
 }(window.jQuery));
