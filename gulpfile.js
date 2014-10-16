@@ -28,7 +28,7 @@ require('gulp-grunt')(gulp, {
 var htmlList = function(key, src) {
   var sources = [],
       idLinks = [];
-  
+
   // Retrieve the ids and Headers
   // for each item we are concatenating
   src.sources.forEach(function(view) {
@@ -75,6 +75,8 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
     'bower_components/bootstrap-select/bootstrap-select.min.js',
+    'js/bootstrap-datepicker-custom.js',
+    'js/bootstrap-datepicker-override.js',
     'vendor/chosen/chosen.jquery.min.js',
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',

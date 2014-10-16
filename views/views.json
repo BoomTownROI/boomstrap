@@ -2,17 +2,17 @@
 	"index": {
 		"header": "Introduction",
 		"sources": [
-			{ 
+			{
 				"source": "views/intro/about.html",
 				"css_id": "#about",
 				"nav_header": "About"
 			},
-			{ 
+			{
 				"source": "views/intro/installation.html",
 				"css_id": "#installation",
 				"nav_header": "Installation"
 			},
-			{ 
+			{
 				"source": "views/intro/rules.html",
 				"css_id": "#rules",
 				"nav_header": "Rules"
@@ -22,57 +22,57 @@
 	"css": {
 		"header": "CSS",
 		"sources": [
-			{ 
+			{
 				"source": "views/css/overview.html",
 				"css_id": "#overview",
 				"nav_header": "Overview"
 			},
-			{ 
+			{
 				"source": "views/css/buttons.html",
 				"css_id": "#buttons",
 				"nav_header": "Buttons"
 			},
-			{ 
+			{
 				"source": "views/css/colors.html",
 				"css_id": "#colors",
 				"nav_header": "Colors"
 			},
-			{ 
+			{
 				"source": "views/css/forms.html",
 				"css_id": "#forms",
 				"nav_header": "Forms"
 			},
-			{ 
+			{
 				"source": "views/css/grid.html",
 				"css_id": "#grid",
 				"nav_header": "Grid"
 			},
-			{ 
+			{
 				"source": "views/css/helper-classes.html",
 				"css_id": "#helper-classes",
 				"nav_header": "Helper Classes"
 			},
-			{ 
+			{
 				"source": "views/css/images.html",
 				"css_id": "#images",
 				"nav_header": "Images"
 			},
-			{ 
+			{
 				"source": "views/css/responsive-utilities.html",
 				"css_id": "#responsive-utilities",
 				"nav_header": "Responsive Utilities"
 			},
-			{ 
+			{
 				"source": "views/css/tables.html",
 				"css_id": "#tables",
 				"nav_header": "Tables"
 			},
-			{ 
+			{
 				"source": "views/css/typography.html",
 				"css_id": "#type",
 				"nav_header": "Type"
 			},
-			{ 
+			{
 				"source": "views/css/using-less.html",
 				"css_id": "#less",
 				"nav_header": "Using Less"
@@ -152,12 +152,12 @@
 				"css_id": "#list-group",
 				"nav_header": "List group"
 			},
-			{ 
+			{
 				"source": "views/components/loaders.html",
 				"css_id": "#loaders",
 				"nav_header": "Loaders"
 			},
-			{ 
+			{
 				"source": "views/components/log-call.html",
 				"css_id": "#log-call",
 				"nav_header": "Log Call"
@@ -328,6 +328,11 @@
 				"source": "app/views/collapse.html",
 				"css_id": "#collapse",
 				"nav_header": "Collapse"
+			},
+			{
+				"source": "app/views/datepicker.html",
+				"css_id": "#datepicker",
+				"nav_header": "Datepicker"
 			},
 			{
 				"source": "app/views/dropdown.html",
