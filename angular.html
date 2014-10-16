@@ -308,6 +308,38 @@
     <bt-lazy-pen height="360" theme-id="5675" slug="Cicmo" user-id="boomtownroi" author="BoomTown"></bt-lazy-pen>
 </section>
 
+<!-- ================================== Datepicker (Angular) ================================== -->
+
+<!-- Datepicker (Bootstrap-datepicker) -->
+<script type="text/javascript">
+  angular.module('boomstrap').controller('btDatepickerTest', function($scope) {
+    $scope.date = {
+      value: null
+    };
+  });
+</script>
+<div class="pl-docs-section" id="datepicker" ng-controller="btDatepickerTest">
+    <h1>Datepicker<small>
+        (<a target="_blank" href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a>)
+    </small></h1>
+    <div class="callout callout-attention">
+        <h4>Data Requirement</h4>
+        <p>btDatePicker requires that the date passed in is of the shape <code>{ value: dateValue }</code>.</p>
+    </div><!-- /callout -->
+    <div class="pl-example">
+        <button type="button" class="btn btn-default" bt-date-picker="date">Click me!</button>
+        <span ng-show="date.value">You selected {{ date.value }}</span>
+    </div>
+    <h2>Usage</h2>
+    <p>Create an object on the scope with a key/value pair of <code>value: myDate</code> and add the bt-date-picker attribute to the item you wish to control.</p>
+    <div class="pl-code">
+    <pre class="prettyprint"><code>
+&lt;button class="btn btn-default" bt-date-picker="date"&gt;Click me!&lt;/button&gt;
+    </code></pre>
+    </div>
+    <p>btDatePicker is just a thin wrapper on the bootstrap-datepicker.</p>
+    <p>All options can be included as data-date-* attributes on an element with bt-date-picker and will be passed down unto the date picker.  Full documentation is <a href="http://bootstrap-datepicker.readthedocs.org/en/release/">here.</a></p>
+</div>
 <section id="dropdown">
     <div class="page-header">
         <h1>Dropdown<small>
@@ -672,6 +704,9 @@ $scope.toggleLoader = function() { // flip the boolean to toggle
                 </li>
                 <li>
                     <a href="#collapse">Collapse</a>
+                </li>
+                <li>
+                    <a href="#datepicker">Datepicker</a>
                 </li>
                 <li>
                     <a href="#dropdown">Dropdown</a>

@@ -108,6 +108,9 @@ p {
 .pvs, .pts {
 	padding-top: .25em;
 }
+.clearfix {
+	zoom: 1;
+}
 .unit {
 	float: left;
 }
@@ -139,7 +142,6 @@ p {
 }
 #testDrive {
 	padding-top: 24px;
-	line-height: 1.5;
 }
 .fs0 {
 	font-size: 16px;

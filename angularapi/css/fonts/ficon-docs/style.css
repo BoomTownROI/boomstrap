@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'ficon';
-	src:url('fonts/ficon.eot?-h76w18');
-	src:url('fonts/ficon.eot?#iefix-h76w18') format('embedded-opentype'),
-		url('fonts/ficon.woff?-h76w18') format('woff'),
-		url('fonts/ficon.ttf?-h76w18') format('truetype'),
-		url('fonts/ficon.svg?-h76w18#ficon') format('svg');
+	src:url('fonts/ficon.eot?wkqr11');
+	src:url('fonts/ficon.eot?#iefixwkqr11') format('embedded-opentype'),
+		url('fonts/ficon.woff?wkqr11') format('woff'),
+		url('fonts/ficon.ttf?wkqr11') format('truetype'),
+		url('fonts/ficon.svg?wkqr11#ficon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,35 +23,14 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.ficon-filter:before {
-	content: "\e62c";
-}
-.ficon-tag:before {
-	content: "\e62a";
-}
-.ficon-export:before {
-	content: "\e62b";
-}
-.ficon-checkmark-circle:before {
-	content: "\e629";
-}
-.ficon-sms:before {
-	content: "\e628";
-}
-.ficon-clipboard:before {
-	content: "\e622";
-}
-.ficon-house2:before {
-	content: "\e623";
-}
-.ficon-paperclip:before {
-	content: "\e621";
-}
-.ficon-bell:before {
-	content: "\e61f";
+.ficon-question-circle:before {
+	content: "\e619";
 }
 .ficon-question:before {
 	content: "\e61c";
+}
+.ficon-buyer-seller:before {
+	content: "\e61e";
 }
 .ficon-star2:before {
 	content: "\e617";
@@ -59,17 +38,8 @@
 .ficon-ealert:before {
 	content: "\e616";
 }
-.ficon-buyer-seller:before {
-	content: "\e61e";
-}
-.ficon-phone:before {
-	content: "\e620";
-}
 .ficon-phone-neutral:before {
 	content: "\e604";
-}
-.ficon-question-circle:before {
-	content: "\e619";
 }
 .ficon-star:before {
 	content: "\e618";
@@ -103,6 +73,9 @@
 }
 .ficon-user:before {
 	content: "\e00b";
+}
+.ficon-phone:before {
+	content: "\e009";
 }
 .ficon-heart:before {
 	content: "\e01b";
@@ -140,6 +113,9 @@
 .ficon-info:before {
 	content: "\e025";
 }
+.ficon-bell:before {
+	content: "\e006";
+}
 .ficon-info-circle:before {
 	content: "\e024";
 }
@@ -155,11 +131,11 @@
 .ficon-sort:before {
 	content: "\e01a";
 }
-.ficon-arrow-bend-down-left:before {
-	content: "\e005";
+.ficon-filter:before {
+	content: "\e017";
 }
 .ficon-arrow-bend-left:before {
-	content: "\e006";
+	content: "\e005";
 }
 .ficon-arrow-bend-right:before {
 	content: "\e002";
@@ -181,6 +157,9 @@
 }
 .ficon-minus:before {
 	content: "\e00d";
+}
+.ficon-question-circle2:before {
+	content: "\f059";
 }
 .ficon-minus-circle:before {
 	content: "\e00f";
@@ -271,7 +250,4 @@
 }
 .ficon-graph:before {
 	content: "\e611";
-}
-.ficon-up-down:before {
-	content: "\e624";
 }
