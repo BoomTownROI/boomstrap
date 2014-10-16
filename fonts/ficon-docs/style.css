@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'ficon';
-	src:url('fonts/ficon.eot?gec85e');
-	src:url('fonts/ficon.eot?#iefixgec85e') format('embedded-opentype'),
-		url('fonts/ficon.woff?gec85e') format('woff'),
-		url('fonts/ficon.ttf?gec85e') format('truetype'),
-		url('fonts/ficon.svg?gec85e#ficon') format('svg');
+	src:url('fonts/ficon.eot?-h76w18');
+	src:url('fonts/ficon.eot?#iefix-h76w18') format('embedded-opentype'),
+		url('fonts/ficon.woff?-h76w18') format('woff'),
+		url('fonts/ficon.ttf?-h76w18') format('truetype'),
+		url('fonts/ficon.svg?-h76w18#ficon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.ficon-filter:before {
+	content: "\e62c";
+}
 .ficon-tag:before {
 	content: "\e62a";
 }
@@ -151,9 +154,6 @@
 }
 .ficon-sort:before {
 	content: "\e01a";
-}
-.ficon-filter:before {
-	content: "\e017";
 }
 .ficon-arrow-bend-down-left:before {
 	content: "\e005";
