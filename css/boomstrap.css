@@ -5580,8 +5580,8 @@ a.list-group-item.active,
 a.list-group-item.active:hover,
 a.list-group-item.active:focus {
   z-index: 2;
-  color: inherit;
-  background-color: #f2f9fc;
+  color: #ffffff;
+  background-color: #1581e2;
   border-color: #cccccc;
 }
 a.list-group-item.active .list-group-item-heading,
@@ -5592,7 +5592,7 @@ a.list-group-item.active:focus .list-group-item-heading {
 a.list-group-item.active .list-group-item-text,
 a.list-group-item.active:hover .list-group-item-text,
 a.list-group-item.active:focus .list-group-item-text {
-  color: #ffffff;
+  color: #c9e3fa;
 }
 .list-group-item-success {
   color: #3c763d;
@@ -7530,6 +7530,9 @@ button.close-inverted {
 .dropdown-menu > li > a:focus {
   outline: none;
 }
+.dropdown-header {
+  padding: 3px 12px;
+}
 .dropdown-menu-no-min-width {
   min-width: 1px;
 }
@@ -8316,7 +8319,6 @@ a.list-group-item.active {
   padding-right: 35px;
 }
 a.list-group-item.active:after {
-  color: #669900;
   content: "\e00a";
   font-family: 'ficon';
   font-size: 1.15em;
@@ -8328,6 +8330,11 @@ a.list-group-item.active:after {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
+}
+a.list-group-item.active .ficon,
+a.list-group-item.active:hover .ficon,
+a.list-group-item.active:focus .ficon {
+  color: #ffffff;
 }
 .loader {
   display: block;
@@ -8525,6 +8532,11 @@ a.list-group-item.active:after {
   color: #cccccc;
   background-color: #fff;
   cursor: not-allowed;
+}
+.modal-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .modal-footer {
   margin-top: 0;
