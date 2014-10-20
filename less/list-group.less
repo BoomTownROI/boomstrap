@@ -5,13 +5,14 @@
 // Linked list items
 // -------------------------
 
+
 a.list-group-item {
   &.active {
     padding-right: 35px; // make room for check mark
   }
   // pseudo check mark
   &.active:after {
-    color: @brand-success;
+    //color: @brand-success;
     content: "\e00a";
     font-family: 'ficon';
     font-size: 1.15em;
@@ -19,5 +20,14 @@ a.list-group-item {
     right: 15px;
     .vert-align();
     position: absolute; // comes after vert-align to overwrite position relative
+  }
+  // Active class on item itself, not parent
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    // ensure all icons match text
+    .ficon {
+      color: @list-group-active-color;
+    }
   }
 }
