@@ -108,9 +108,6 @@ p {
 .pvs, .pts {
 	padding-top: .25em;
 }
-.clearfix {
-	zoom: 1;
-}
 .unit {
 	float: left;
 }
@@ -148,8 +145,11 @@ p {
 	font-size: 16px;
 }
 .fs1 {
-	font-size: 32px;
+	font-size: 28px;
 }
 .fs2 {
+	font-size: 32px;
+}
+.fs3 {
 	font-size: 20px;
 }

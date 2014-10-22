@@ -7,6 +7,9 @@
 // Bootstrap Select (https://github.com/silviomoreto/bootstrap-select,http://silviomoreto.github.io/bootstrap-select/3/)
 @import "bower_components/bootstrap-select/less/bootstrap-select.less";
 
+// Bootstrap Datepicker (http://eternicode.github.io/bootstrap-datepicker,https://github.com/eternicode/bootstrap-datepicker)
+@import (inline) "bower_components/bootstrap-datepicker/css/datepicker3.css";
+
 .bootstrap-select.btn-group:not(.input-group-btn),
 .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: inherit;
@@ -27,5 +30,8 @@
   }
 }
 
-
+// Bootstrap Datepicker
+.datepicker {
+  z-index: 1151 !important; /* Datepicker on modals */
+}
 
