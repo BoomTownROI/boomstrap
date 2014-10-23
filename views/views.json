@@ -213,6 +213,11 @@
 				"nav_header": "Texting"
 			},
 			{
+				"source": "views/components/switchers.html",
+				"css_id": "#switchers",
+				"nav_header": "switchers"
+			},
+			{
 				"source": "views/components/wells.html",
 				"css_id": "#wells",
 				"nav_header": "Wells"
