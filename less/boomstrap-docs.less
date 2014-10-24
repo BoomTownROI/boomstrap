@@ -112,6 +112,35 @@ h1 { letter-spacing: -1px; }
   color: @gray;
 }
 
+.responsive-utilities-test span {
+  display: block;
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.responsive-utilities-test .col-xs-6 {
+  margin-bottom: 10px;
+}
+
+.visible-on .col-xs-6 .visible-xs-block, .visible-on .col-xs-6 .visible-sm-block, .visible-on .col-xs-6 .visible-md-block, .visible-on .col-xs-6 .visible-lg-block, .hidden-on .col-xs-6 .visible-xs-block, .hidden-on .col-xs-6 .visible-sm-block, .hidden-on .col-xs-6 .visible-md-block, .hidden-on .col-xs-6 .visible-lg-block {
+color: #468847;
+background-color: #dff0d8;
+border: 1px solid #d6e9c6;
+}
+
+.show-grid [class^=col-] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
 .pl-example>.btn-toolbar+.btn-toolbar {
   margin-top: 10px;
 }

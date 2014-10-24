@@ -74,7 +74,7 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/jquery-mousewheel/jquery.mousewheel.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
-    'bower_components/bootstrap-select/bootstrap-select.min.js',
+    'bower_components/bootstrap-select/js/bootstrap-select.js',
     'js/bootstrap-datepicker-custom.js',
     'js/bootstrap-datepicker-override.js',
     'vendor/chosen/chosen.jquery.min.js',
