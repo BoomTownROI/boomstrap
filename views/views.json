@@ -71,11 +71,6 @@
 				"source": "views/css/typography.html",
 				"css_id": "#type",
 				"nav_header": "Type"
-			},
-			{
-				"source": "views/css/using-less.html",
-				"css_id": "#less",
-				"nav_header": "Using Less"
 			}
 		]
 	},

@@ -3,12 +3,17 @@
 
   class Tour
     constructor: (options) ->
+      try
+        storage = window.localStorage
+      catch
+        # localStorage may be unavailable due to security settings
+        storage = false
       @_options = $.extend
         name: "tour"
         steps: []
         container: "body"
         keyboard: true
-        storage: window.localStorage
+        storage: storage
         debug: false
         backdrop: false
         redirect: true
@@ -161,7 +166,6 @@
     restart: ->
       @_removeState "current_step"
       @_removeState "end"
-      @setCurrentStep 0
       @start()
 
     # Pause step timer
@@ -260,6 +264,7 @@
         @_showBackdrop(step.element unless @_isOrphan step) if step.backdrop
 
         @_scrollIntoView step.element, =>
+          return if @getCurrentStep() isnt i
           @_showOverlayElement step.element if step.element? and step.backdrop
           @_showPopover step, i
           step.onShown @ if step.onShown?
@@ -342,8 +347,8 @@
     # Check if step path equals current document path
     _isRedirect: (path, currentPath) ->
       path? and path isnt "" and (
-        (toString.call(path) is "[object RegExp]" and not path.test currentPath) or
-        (toString.call(path) is "[object String]" and
+        (({}).toString.call(path) is "[object RegExp]" and not path.test currentPath) or
+        (({}).toString.call(path) is "[object String]" and
           path.replace(/\?.*$/, "").replace(/\/?$/, "") isnt currentPath.replace(/\/?$/, ""))
       )
 
@@ -364,6 +369,11 @@
 
     # Show step popover
     _showPopover: (step, i) ->
+
+      # Remove previously existing tour popovers. This prevents displaying of
+      # multiple inactive popovers when user navigates the tour too quickly.
+      $(".tour-#{@_options.name}").remove()
+
       options = $.extend {}, @_options
       $template = if $.isFunction step.template then $(step.template i, step) else $(step.template)
       $navigation = $template.find ".popover-navigation"
@@ -381,7 +391,7 @@
 
       $.extend options, step.options if step.options
 
-      if step.reflex
+      if step.reflex and not isOrphan
         $element.css("cursor", "pointer").on "click.tour-#{@_options.name}", =>
           if @_isLast() then @next() else @end()
 
@@ -538,9 +548,10 @@
       @_hideBackground()
 
     _hideBackground: ->
-      @backdrop.remove()
-      @backdrop.overlay = null
-      @backdrop.backgroundShown = false
+      if @backdrop
+        @backdrop.remove()
+        @backdrop.overlay = null
+        @backdrop.backgroundShown = false
 
     _showOverlayElement: (element) ->
       $element = $ element

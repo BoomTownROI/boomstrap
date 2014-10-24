@@ -1,6 +1,6 @@
 {
   "name": "boomstrap",
-  "version": "1.5.4",
+  "version": "1.6.0",
   "devDependencies": {
     "grunt": "~0.4.1",
     "jshint-stylish":"~0.1.5",
