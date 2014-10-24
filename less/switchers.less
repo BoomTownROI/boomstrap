@@ -9,12 +9,14 @@
   display: inline-block;
   height: @switcher-height;
   position: relative;
+  user-select: none;
   width: @switcher-width;
 }
 
 .switcher__inner {
   border-radius: @switcher-border-radius;
   display: block;
+  font-size: 0;
   height: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -44,6 +46,7 @@
 .switcher__off, .switcher__on {
   color: @white;
   display: inline-block;
+  font-size: 14px;
   height: 100%;
   line-height: @switcher-state-line-height;
   margin: 0;
@@ -101,7 +104,6 @@
   }
 }
 
-
 .switcher__label--sm {
   .switcher__input:checked ~ & {
     .switcher__toggler {
@@ -111,7 +113,82 @@
 }
 
 
+////////////////////////
 
+.zwitcher {
+  display: inline-block;
+  height: @switcher-height;
+  user-select: none;
+  width: @switcher-width;
+}
+
+.zwitcher__inner {
+  font-size: 0;
+  transform: translate(-50%,0);
+  width: 200%;
+  transition: all 250ms;
+}
+
+.zwitcher__input {
+  display: none;
+}
+
+.zwitcher__label {
+  border-radius: @switcher-border-radius;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  word-spacing: 0;
+  z-index: 20;
+  &:extend(.pointer all);
+  .zwitcher__input:checked ~ & {
+    .zwitcher__inner {
+      transform: translate(0,0);
+    }
+    .zwitcher__toggler {
+      left: 100%;
+      margin-left: -@switcher-toggler-width - @switcher-toggler-margin;
+    }
+  }
+
+  
+}
+
+.zwitcher__off, .zwitcher__on {
+  color: @white;
+  display: inline-block;
+  font-size: 14px;
+  height: 100%;
+  line-height: @switcher-state-line-height;
+  text-align: center;
+  width: 50%;
+}
+
+.zwitcher__off {
+  background-color: @gray-light;
+  padding-left: @switcher-state-padding;
+}
+
+.zwitcher__on {
+  background-color: @brand-success;
+  padding-right: @switcher-state-padding;
+}
+
+.zwitcher__toggler {
+  background-color: @white;
+  border-radius: 2px;
+  height: @switcher-toggler-height;
+  left: 0;
+  margin-left: @switcher-toggler-margin;
+  margin-top: @switcher-toggler-margin;
+  position: absolute;
+  text-align: center;
+  transition: all 250ms;
+  width: @switcher-toggler-width;
+  z-index: 10;
+}
 
 
 
