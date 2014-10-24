@@ -5,23 +5,19 @@
 // Switchers
 // -------------------------
 
+
 .switcher {
   display: inline-block;
   height: @switcher-height;
-  position: relative;
   user-select: none;
   width: @switcher-width;
 }
 
 .switcher__inner {
-  border-radius: @switcher-border-radius;
-  display: block;
   font-size: 0;
-  height: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  word-spacing: 0;
+  transform: translateX(-50%);
+  transition: transform 250ms;
+  width: 200%;
 }
 
 .switcher__input {
@@ -29,16 +25,21 @@
 }
 
 .switcher__label {
+  border-radius: @switcher-border-radius;
   display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
   width: 100%;
+  word-spacing: 0;
+  z-index: 20;
   &:extend(.pointer all);
   .switcher__input:checked ~ & {
-    .switcher__on {
-      margin-left: 0;
+    .switcher__inner {
+      transform: translateX(0);
     }
-    .switcher__toggler {
-      left: 100%;
-      margin-left: -@switcher-toggler-width - @switcher-toggler-margin;
+    .switcher__off:after {
+      transform: translateX(-@switcher-toggler-width - (@switcher-toggler-margin * 2));
     }
   }
 }
@@ -49,21 +50,23 @@
   font-size: 14px;
   height: 100%;
   line-height: @switcher-state-line-height;
-  margin: 0;
-  padding: 0;
+  position: relative;
   text-align: center;
-  transition: all 250ms;
-  width: 100%;
+  width: 50%;
 }
 
 .switcher__off {
   background-color: @gray-light;
   padding-left: @switcher-state-padding;
+  z-index: 2;
+  &:after {
+    content: "";
+    .switcher__toggler;
+  }
 }
 
 .switcher__on {
   background-color: @brand-success;
-  margin-left: -100%;
   padding-right: @switcher-state-padding;
 }
 
@@ -72,12 +75,18 @@
   border-radius: 2px;
   height: @switcher-toggler-height;
   left: 0;
-  margin-left: @switcher-toggler-margin;
-  margin-top: @switcher-toggler-margin;
+  margin: @switcher-toggler-margin;
   position: absolute;
   text-align: center;
-  transition: all 250ms;
+  transition: transform 250ms;
+  transform: translateX(0);
   width: @switcher-toggler-width;
+  z-index: 10;
+}
+
+.switcher__toggler--sm {
+  height: @switcher-sm-toggler-height;
+  width: @switcher-sm-toggler-width;
 }
 
 // Small switcher
@@ -94,100 +103,23 @@
   }
   .switcher__off {
     padding-left: @switcher-sm-state-padding;
+    &:after {
+      content: "";
+      .switcher__toggler;
+      .switcher__toggler--sm;
+    }
   }
   .switcher__on {
     padding-right: @switcher-sm-state-padding;
-  }
-  .switcher__toggler {
-    height: @switcher-sm-toggler-height;
-    width: @switcher-sm-toggler-width;
   }
 }
 
 .switcher__label--sm {
   .switcher__input:checked ~ & {
-    .switcher__toggler {
-      margin-left: -@switcher-sm-toggler-width - @switcher-toggler-margin;
+    .switcher__off:after {
+      transform: translateX(-@switcher-sm-toggler-width - (@switcher-toggler-margin * 2));
     }
   }
-}
-
-
-////////////////////////
-
-.zwitcher {
-  display: inline-block;
-  height: @switcher-height;
-  user-select: none;
-  width: @switcher-width;
-}
-
-.zwitcher__inner {
-  font-size: 0;
-  transform: translate(-50%,0);
-  width: 200%;
-  transition: all 250ms;
-}
-
-.zwitcher__input {
-  display: none;
-}
-
-.zwitcher__label {
-  border-radius: @switcher-border-radius;
-  display: block;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  word-spacing: 0;
-  z-index: 20;
-  &:extend(.pointer all);
-  .zwitcher__input:checked ~ & {
-    .zwitcher__inner {
-      transform: translate(0,0);
-    }
-    .zwitcher__toggler {
-      left: 100%;
-      margin-left: -@switcher-toggler-width - @switcher-toggler-margin;
-    }
-  }
-
-  
-}
-
-.zwitcher__off, .zwitcher__on {
-  color: @white;
-  display: inline-block;
-  font-size: 14px;
-  height: 100%;
-  line-height: @switcher-state-line-height;
-  text-align: center;
-  width: 50%;
-}
-
-.zwitcher__off {
-  background-color: @gray-light;
-  padding-left: @switcher-state-padding;
-}
-
-.zwitcher__on {
-  background-color: @brand-success;
-  padding-right: @switcher-state-padding;
-}
-
-.zwitcher__toggler {
-  background-color: @white;
-  border-radius: 2px;
-  height: @switcher-toggler-height;
-  left: 0;
-  margin-left: @switcher-toggler-margin;
-  margin-top: @switcher-toggler-margin;
-  position: absolute;
-  text-align: center;
-  transition: all 250ms;
-  width: @switcher-toggler-width;
-  z-index: 10;
 }
 
 
