@@ -6,5 +6,74 @@
 // -------------------------
 
 .switcher {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 60px;
+}
 
+.switcher__inner {
+  border-radius: 3px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  word-spacing: 0;
+  
+}
+
+.switcher__input {
+  display: none;
+}
+
+.switcher__label {
+  display: block;
+  width: 100%;
+  &:extend(.pointer all);
+  .switcher__input:checked ~ & {
+    .switcher__on {
+      margin-left: 0;
+    }
+    .switcher__toggler {
+      left: 100%;
+      margin-left: -22px;
+    }
+  }
+}
+
+.switcher__off, .switcher__on {
+  color: @white;
+  display: inline-block;
+  height: 100%;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: all 250ms;
+  width: 100%;
+}
+
+.switcher__off {
+  background-color: @gray-light;
+  padding-left: 20px;
+}
+
+.switcher__on {
+  background-color: @brand-success;
+  margin-left: -100%;
+  padding-right: 20px;
+}
+
+.switcher__toggler {
+  background-color: @white;
+  border-radius: 2px;
+  height: 20px;
+  left: 0;
+  margin-left: 2px;
+  margin-top: 2px;
+  position: absolute;
+  text-align: center;
+  transition: all 250ms;
+  width: 20px;
 }
