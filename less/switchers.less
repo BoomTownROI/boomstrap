@@ -7,20 +7,19 @@
 
 .switcher {
   display: inline-block;
-  height: 24px;
+  height: @switcher-height;
   position: relative;
-  width: 60px;
+  width: @switcher-width;
 }
 
 .switcher__inner {
-  border-radius: 3px;
+  border-radius: @switcher-border-radius;
   display: block;
   height: 100%;
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
   word-spacing: 0;
-  
 }
 
 .switcher__input {
@@ -37,7 +36,7 @@
     }
     .switcher__toggler {
       left: 100%;
-      margin-left: -22px;
+      margin-left: -@switcher-toggler-width - @switcher-toggler-margin;
     }
   }
 }
@@ -46,7 +45,7 @@
   color: @white;
   display: inline-block;
   height: 100%;
-  line-height: 24px;
+  line-height: @switcher-state-line-height;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -56,24 +55,63 @@
 
 .switcher__off {
   background-color: @gray-light;
-  padding-left: 20px;
+  padding-left: @switcher-state-padding;
 }
 
 .switcher__on {
   background-color: @brand-success;
   margin-left: -100%;
-  padding-right: 20px;
+  padding-right: @switcher-state-padding;
 }
 
 .switcher__toggler {
   background-color: @white;
   border-radius: 2px;
-  height: 20px;
+  height: @switcher-toggler-height;
   left: 0;
-  margin-left: 2px;
-  margin-top: 2px;
+  margin-left: @switcher-toggler-margin;
+  margin-top: @switcher-toggler-margin;
   position: absolute;
   text-align: center;
   transition: all 250ms;
-  width: 20px;
+  width: @switcher-toggler-width;
 }
+
+// Small switcher
+// -------------------------
+
+.switcher--sm {
+  height: @switcher-sm-height;
+  width: @switcher-sm-width;
+  .switcher__inner {
+    border-radius: @switcher-sm-border-radius;
+  }
+  .switcher__off, .switcher__on {
+    line-height: @switcher-sm-state-line-height;
+  }
+  .switcher__off {
+    padding-left: @switcher-sm-state-padding;
+  }
+  .switcher__on {
+    padding-right: @switcher-sm-state-padding;
+  }
+  .switcher__toggler {
+    height: @switcher-sm-toggler-height;
+    width: @switcher-sm-toggler-width;
+  }
+}
+
+
+.switcher__label--sm {
+  .switcher__input:checked ~ & {
+    .switcher__toggler {
+      margin-left: -@switcher-sm-toggler-width - @switcher-toggler-margin;
+    }
+  }
+}
+
+
+
+
+
+
