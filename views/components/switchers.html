@@ -8,9 +8,8 @@
 
   <h3>Default switcher</h3>
   <div class="pl-example bg-gray-lighter">
-
     <div class="switcher">
-      <input type="checkbox" class="switcher__input" id="switcher-demo">
+      <input type="checkbox" checked class="switcher__input" id="switcher-demo">
       <label class="switcher__label" for="switcher-demo">
         <div class="switcher__inner">
           <div class="switcher__on"><i class="ficon ficon-checkmark"></i></div>
@@ -18,13 +17,21 @@
         </div>
       </label>
     </div>
-
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div class="switcher"&gt;
+  &lt;input type="checkbox" checked class="switcher__input" id="switcher-demo"&gt;
+  &lt;label class="switcher__label" for="switcher-demo"&gt;
+    &lt;div class="switcher__inner"&gt;
+      &lt;div class="switcher__on"&gt;&lt;i class="ficon ficon-checkmark"&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;div class="switcher__off"&gt;&lt;i class="ficon ficon-cross"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
   </div>
 
   <h3>Small switcher</h3>
+  <p>Smaller verstion of the switcher. Add <code>.switcher--sm</code> modifier class to the <code>.switcher</code> class. Add <code>.switcher__label--sm</code> modifier class to the <code>.switcher__label</code> class.</p>
   <div class="pl-example bg-gray-lighter">
     <div class="switcher switcher--sm">
       <input type="checkbox" class="switcher__input" id="switcher-sm-demo">
@@ -37,7 +44,15 @@
     </div>
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code></code></pre>
+    <pre class="prettyprint"><code>&lt;div class="switcher switcher--sm"&gt;
+  &lt;input type="checkbox" class="switcher__input" id="switcher-sm-demo"&gt;
+  &lt;label class="switcher__label switcher__label--sm" for="switcher-sm-demo"&gt;
+    &lt;div class="switcher__inner"&gt;
+      &lt;div class="switcher__on"&gt;&lt;i class="ficon ficon-checkmark"&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;div class="switcher__off"&gt;&lt;i class="ficon ficon-cross"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
   </div>
 
 </div>
