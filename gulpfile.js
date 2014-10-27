@@ -165,7 +165,7 @@ gulp.task('reloadDocsHtml', function() {
  */
 gulp.task('boomstrapLessDocs', function() {
   var DEST_DIR  = 'docs/css';
-  var DEST_FILE = 'boomstrap.less';
+  var DEST_FILE = 'boomstrap.css';
 
   return gulp.src([
     'less/boomstrap.less',
@@ -182,13 +182,12 @@ gulp.task('boomstrapLessDocs', function() {
 
 gulp.task('boomstrapLessDist', function() {
   var DEST_DIR  = 'dist/css';
-  var DEST_FILE = 'boomstrap.less';
+  var DEST_FILE = 'boomstrap.css';
 
   return gulp.src([
     'less/boomstrap.less'
   ])
-    //.pipe(concat(DEST_FILE))
-    .pipe(less({ compress: true }))
+    .pipe(less({ compress: false })) // compressing will screw up importing as "less" in other projects
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR));
 });
