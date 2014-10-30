@@ -33,7 +33,11 @@ h1 { letter-spacing: -1px; }
   color: @white;
   padding: 6px 12px;
   font-size: 15px;
+  &:extend(.clearfix all);
   > a { color: @white; }
+  a:last-child {
+    float: right;
+  }
 }
 .pl-docs-sidebar.affix {
   top: 10px;
@@ -45,32 +49,42 @@ h1 { letter-spacing: -1px; }
 }
 .pl-docs-sidenav {
   margin-bottom: 6px;
+
+  > li {
+    margin: 0 6px 6px 0;
+    & + li {
+      margin-left: 0;
+    }
+  }
 }
 .pl-docs-sidenav > li > a {
   border-left: 2px solid transparent;
-  color: @gray;
+  background-color: @gray-lightest;
+  color: @gray-dark;
   font-size: 12px;
-  padding: 2px 12px;
+  padding: 3px 6px;
   text-transform: lowercase;
   transition: all 0.35s;
+  margin: 0;
   &:hover {
-    background-color: transparent;
-    border-left: 2px solid @brand-info;
+    background-color: @gray-lighter;
   }
 }
 .pl-docs-sidenav > li.active > a {
-  background-color: @gray-lightest;
-  border-left: 2px solid @brand-attention;
+  background-color: @brand-attention;
+  &:focus,&:hover { background-color: @brand-attention; }
+  //background-color: @gray-lightest;
+  //border-left: 2px solid @brand-attention;
 }
 
-.pl-docs-sidebar > a {
+/*.pl-docs-sidebar > a {
   border-left: 2px solid transparent;
   color: @brand-attention;
   display: inline-block;
   font-size: 13px;
   padding: 6px 12px;
   text-decoration: none;
-}
+}*/
 
 .pl-article {
   &+article { margin-top: 2em; }

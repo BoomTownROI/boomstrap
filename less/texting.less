@@ -7,6 +7,38 @@
 
 .texting { } // currently no styles
 
+.texting__actions {
+  background-color: @white;
+  padding-top: @texting-padding;
+  position: relative;
+  z-index: 10;
+}
+
+.texting__actions__compose {
+  textarea {
+    height: 60px;
+    overflow: auto;
+    resize: none;
+  }  
+}
+
+.texting__actions__hr {
+  margin: @margin-half-gutter 0;
+}
+
+.texting__actions__phones {
+  margin-bottom: @margin-xsmall;
+}
+
+.texting__actions__phone-assign {
+  margin: @margin-xsmall 0;
+  .small;
+}
+
+.texting__actions__templates {
+  margin: @margin-xsmall 0;
+}
+
 .texting__body {
   padding: 0;
   position: relative;
@@ -24,25 +56,6 @@
   overflow-y: auto;
   padding: @texting-padding;
   position: relative;
-}
-
-.texting__actions {
-  background-color: @white;
-  padding: @texting-padding 0 0 0;
-  position: relative;
-  z-index: 10;
-}
-
-.texting__actions__phones {
-  padding-bottom: @padding-small;
-}
-
-.texting__actions__compose {
-  textarea {
-    height: 60px;
-    overflow: auto;
-    resize: none;
-  }  
 }
 
 .texting__welcome {
@@ -145,6 +158,18 @@
 
 // Texting modifer - large, side by side
 .texting--lg {
+  .texting__actions {
+    border-left: 1px solid @gray-light;
+    float: right;
+    min-height: 280px;
+    padding: @texting-padding 0 @texting-padding @texting-padding;
+    width: @texting-sidebar-width;
+  }
+  .texting__actions__compose {
+    textarea {
+      height: 140px;
+    }  
+  }
   .texting__body {
     &:extend(.clearfix all);
   }
@@ -159,23 +184,6 @@
   .texting__convo__inner {
     max-height: auto;
     min-height: 100%;
-  }
-  .texting__actions {
-    border-left: 1px solid @gray-light;
-    float: right;
-    min-height: 280px;
-    padding: @texting-padding 0 @texting-padding @texting-padding;
-    width: @texting-sidebar-width;
-  }
-  .texting__actions__phones {
-    border-bottom: 1px solid @gray-lighter;
-    margin-bottom: @texting-padding*2;
-    padding-bottom: @texting-padding;
-  }
-  .texting__actions__compose {
-    textarea {
-      height: 140px;
-    }  
   }
   .texting__msg {
     margin: 0 20% @texting-padding @texting-avatar-offset;
