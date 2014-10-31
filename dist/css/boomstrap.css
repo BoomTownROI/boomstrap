@@ -9909,7 +9909,14 @@ a.list-group-item.active:focus .ficon {
   margin: 15px 0;
 }
 .texting__actions__phones {
-  margin-bottom: 15px;
+  margin-bottom: 4px;
+}
+.texting__actions__phone-assign {
+  margin: 4px 0;
+  font-size: 85%;
+}
+.texting__actions__templates {
+  margin: 4px 0;
 }
 .texting__body {
   padding: 0;
@@ -10017,9 +10024,6 @@ a.list-group-item.active:focus .ficon {
   min-height: 280px;
   padding: 15px 0 15px 15px;
   width: 280px;
-}
-.texting--lg .texting__actions__phones {
-  margin: 0 0 15px 0;
 }
 .texting--lg .texting__actions__compose textarea {
   height: 140px;
