@@ -32,10 +32,12 @@ var htmlList = function(key, src) {
   // Retrieve the ids and Headers
   // for each item we are concatenating
   src.sources.forEach(function(view) {
-    idLinks.push({
-      css_id: view.css_id,
-      nav_header: view.nav_header
-    });
+    if (view.css_id){
+      idLinks.push({
+        css_id: view.css_id,
+        nav_header: view.nav_header
+      });
+    }
 
     sources.push(view.source);
   });

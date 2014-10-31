@@ -133,11 +133,6 @@
 				"nav_header": "Input groups"
 			},
 			{
-				"source": "views/components/jumbotron.html",
-				"css_id": "#jumbotron",
-				"nav_header": "Jumbotron"
-			},
-			{
 				"source": "views/components/labels.html",
 				"css_id": "#labels",
 				"nav_header": "Labels"
@@ -181,11 +176,6 @@
 				"source": "views/components/panels.html",
 				"css_id": "#panels",
 				"nav_header": "Panels"
-			},
-			{
-				"source": "views/components/progress-bars.html",
-				"css_id": "#progress",
-				"nav_header": "Progress bars"
 			},
 			{
 				"source": "views/components/sashes.html",
