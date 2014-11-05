@@ -8338,6 +8338,7 @@ button.close-inverted {
 }
 .dropdown-menu > li > a {
   padding: 3px 12px;
+  cursor: pointer;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
