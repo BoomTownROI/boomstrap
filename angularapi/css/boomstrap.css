@@ -7414,6 +7414,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: inherit;
 }
+.bootstrap-select.btn-group .btn .filter-option {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .tour-backdrop {
   position: fixed;
   top: 0;
@@ -9441,6 +9446,23 @@ a.list-group-item.active:focus .ficon {
 .panel-sm .panel-heading {
   padding: 8px 6px;
 }
+.panel__nav-tabs {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-bottom: 0;
+}
+.panel__nav-tabs > li {
+  margin-top: -1px;
+}
+.panel__nav-tabs > li:first-child {
+  margin-left: -1px;
+}
+.panel__nav-tabs > li:first-child a {
+  border-top-left-radius: 3px;
+}
+.panel__nav-tabs > li > a {
+  color: #696969;
+}
 .popover-close {
   color: #cccccc;
   cursor: pointer;
@@ -10196,7 +10218,7 @@ h3 {
   letter-spacing: -1px;
 }
 .page-heading {
-  margin: 0 0 20px 0;
+  margin: 4px 0 20px 0;
 }
 .border,
 .card {

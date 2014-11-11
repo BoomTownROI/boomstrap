@@ -4585,6 +4585,123 @@
 &lt;/div&gt;</code></pre>
   </div>
 
+  <h3 id="panels-footer">Panel with nav tabs</h3>
+  <p>Easily include nav tabs inside of a panel. Add the <code>.panel__nav-tabs</code> class to the <code>.nav .nav-tabs</code> classes.</p>
+  <div class="pl-example">
+    <div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs" role="tablist">
+        <li class="active"><a href="#panel-tab-one" role="tab" data-toggle="tab"><i class="ficon ficon-phone"></i></a></li>
+        <li><a href="#panel-tab-two" role="tab" data-toggle="tab"><i class="ficon ficon-sms"></i></a></li>
+        <li><a href="#panel-tab-three" role="tab" data-toggle="tab"><i class="ficon ficon-envelope"></i></a></li>
+        <li><a href="#panel-tab-four" role="tab" data-toggle="tab"><i class="ficon ficon-clipboard"></i></a></li>
+        <li><a href="#panel-tab-five" role="tab" data-toggle="tab"><i class="ficon ficon-fire"></i> tab</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="panel-tab-one">
+            Panel Tab One
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-two">
+            Panel Tab Two
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-three">
+            Panel Tab Three
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-four">
+            Panel Tab Four
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-five">
+            Panel Tab Five
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="panel panel-default"&gt;
+  &lt;!-- Tabs --&gt;
+  &lt;ul class="nav nav-tabs panel__nav-tabs" role="tablist"&gt;
+    &lt;li class="active"&gt;&lt;a href="#panel-tab-one" role="tab" data-toggle="tab"&gt;&lt;i class="ficon ficon-phone"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#panel-tab-two" role="tab" data-toggle="tab"&gt;&lt;i class="ficon ficon-sms"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#panel-tab-three" role="tab" data-toggle="tab"&gt;&lt;i class="ficon ficon-envelope"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#panel-tab-four" role="tab" data-toggle="tab"&gt;&lt;i class="ficon ficon-clipboard"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#panel-tab-five" role="tab" data-toggle="tab"&gt;&lt;i class="ficon ficon-fire"&gt;&lt;/i&gt; tab&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;div class="tab-content"&gt;
+      &lt;!-- Tab Panes --&gt;
+      &lt;div class="tab-pane fade in active" id="panel-tab-one"&gt;
+        Panel Tab One
+      &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+      &lt;div class="tab-pane fade" id="panel-tab-two"&gt;
+        Panel Tab Two
+      &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+      &lt;div class="tab-pane fade" id="panel-tab-three"&gt;
+        Panel Tab Three
+      &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+      &lt;div class="tab-pane fade" id="panel-tab-four"&gt;
+        Panel Tab Four
+      &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+      &lt;div class="tab-pane fade" id="panel-tab-five"&gt;
+        Panel Tab Five
+      &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+    &lt;/div&gt; &lt;!-- end tab-content --&gt;
+  &lt;/div&gt; &lt;!-- end panel-body --&gt;
+&lt;/div&gt; &lt;!-- end panel --&gt;</code></pre>
+  </div>
+
+  <p>Contextual background classes such as <code>.bg-gray-lightest</code> may be added to <code>.panel__nav-tabs</code>.</p>
+  <div class="pl-example">
+    <div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+        <li class="active"><a href="#panel-tab-1" role="tab" data-toggle="tab">one</a></li>
+        <li><a href="#panel-tab-2" role="tab" data-toggle="tab">two</a></li>
+        <li><a href="#panel-tab-3" role="tab" data-toggle="tab">three</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="panel-tab-1">
+            Panel Tab One
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-2">
+            Panel Tab Two
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-3">
+            Panel Tab Three
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="panel panel-default"&gt;
+      &lt;!-- Tabs --&gt;
+      &lt;ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist"&gt;
+        &lt;li class="active"&gt;&lt;a href="#panel-tab-1" role="tab" data-toggle="tab"&gt;one&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#panel-tab-2" role="tab" data-toggle="tab"&gt;two&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#panel-tab-3" role="tab" data-toggle="tab"&gt;three&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class="panel-body"&gt;
+        &lt;div class="tab-content"&gt;
+          &lt;!-- Tab Panes --&gt;
+          &lt;div class="tab-pane fade in active" id="panel-tab-1"&gt;
+            Panel Tab One
+          &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+          &lt;div class="tab-pane fade" id="panel-tab-2"&gt;
+            Panel Tab Two
+          &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+          &lt;div class="tab-pane fade" id="panel-tab-3"&gt;
+            Panel Tab Three
+          &lt;/div&gt; &lt;!-- end tab-pane --&gt;
+        &lt;/div&gt; &lt;!-- end tab-content --&gt;
+      &lt;/div&gt; &lt;!-- end panel-body --&gt;
+    &lt;/div&gt; &lt;!-- end panel --&gt;</code></pre>
+  </div>
+
 </div>
 
 <!-- ================================== Sashes ================================== -->
@@ -5380,7 +5497,7 @@
           <div class="texting__actions">
             <div class="texting__actions__phones">
               <select class="selectpicker form-control" data-style="btn-default btn-sm">
-                <option>888-555-1111 (home)</option>
+                <option>888-555-1111 Livingshone's home number</option>
                 <option>888-555-2222 (cell)</option>
                 <option>888-555-3333 (work)</option>
               </select>
