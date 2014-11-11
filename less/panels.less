@@ -33,3 +33,20 @@
     padding: @padding-base @panel-body-padding-small;
   }
 }
+
+
+// Panel nav tabs
+.panel__nav-tabs {
+  .border-top-radius((@panel-border-radius - 1));
+  margin-bottom: 0;
+  > li {
+    margin-top: -1px;
+    &:first-child {
+      margin-left: -1px;
+      a { border-top-left-radius: @panel-border-radius - 1; }
+    }
+    > a {
+      color: @gray-dark;
+    }
+  }
+}
