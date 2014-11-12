@@ -1,8 +1,14 @@
 // File: navs.less
-// Note: Extends Bootstrap navs.less
+// Note: Extends Bootstrap navs.less and includes custom styles
 
+.nav > li > a { transition: all linear 0.25s; }
 
-// Tabs
+// Small nav modifier
+.nav-sm > li > a {
+  padding: @nav-link-padding-small;
+}
+
+// Nav Tabs
 // -------------------------
 
 .nav-tabs {
@@ -14,7 +20,6 @@
       color: @link-color;
       cursor: pointer;
       margin-right: -1px;
-      .transition(all linear 0.25s);
       &:hover,&:focus {
         box-shadow: none;
         background-color: #fefefe;
@@ -64,6 +69,49 @@
   border-top-color: @nav-tabs-active-link-hover-border-color-top;
   border-bottom-color: @white;
 }
+
+
+// Nav Blocks
+// -------------------------
+
+.nav-blocks > li {
+  &.active > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: @nav-link-hover-bg;
+      border-left-color: @brand-attention;
+      color: @brand-attention;
+    }
+  }
+}
+
+.nav-blocks > li > a {
+  border-left: 3px solid transparent;
+  color: @nav-blocks-color;
+  &:focus,&:hover {
+    border-left-color: @gray-dark;
+  }
+}
+
+// Light nav blocks simply change active and hover bg color of nav-blocks
+
+.nav-blocks-light > li {
+  &.active > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: @nav-link-light-hover-bg;
+    }
+  }
+}
+
+.nav-blocks-light > li > a {
+  &:focus,&:hover {
+    background-color: @nav-link-light-hover-bg;
+  }
+}
+
 
 
 
