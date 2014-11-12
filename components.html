@@ -3919,6 +3919,11 @@
 
   <p class="lead">Navs available in Bootstrap have shared markup, starting with the base <code>.nav</code> class, as well as shared states. Swap modifier classes to switch between each style.</p>
 
+  <div class="callout callout-attention">
+    <h4>Small Nav Modifier</h4>
+    <p>Any time <code>.nav</code> is used, you may add the <code>.nav-sm</code> modifier to reduce padding on the anchor tags.</p>
+  </div>
+
   <h2 id="nav-tabs">Tabs</h2>
   <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class.</p>
   <div class="pl-example">
@@ -3940,7 +3945,7 @@
   </div>
 
   <h2 id="nav-pills">Pills</h2>
-  <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
+  <p>Take that same HTML, but use <code>.nav-pills</code> instead.</p>
   <div class="pl-example">
     <ul class="nav nav-pills">
       <li class="active"><a href="#">Home</a></li>
@@ -4087,6 +4092,61 @@
   ...
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div>
+
+
+
+  <h2 id="nav--blocks">Nav Blocks</h2>
+  <h3>Default</h3>
+  <p>Take that same HTML as nav tabs and nav pills, but use <code>.nav-blocks</code> instead.</p>
+  <div class="pl-example">
+    <ul class="nav nav-blocks">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Messages</a></li>
+    </ul>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;ul class="nav nav-blocks"&gt;
+  &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+  
+  <h3>Light</h3>
+  <p>Take that same HTML as nav tabs and nav pills, but use <code>.nav-blocks .nav-blocks-light</code> instead. This is handy when nav blocks need to be used on darker backgrounds.</p>
+  <div class="pl-example bg-gray-lighter">
+    <ul class="nav nav-blocks nav-blocks-light">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Messages</a></li>
+    </ul>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;ul class="nav nav-blocks nav-blocks-light"&gt;
+  &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+
+  <h3>Small</h3>
+  <p>Nav tabs, nav pills, and nav blocks can be condensed when <code>.nav-sm</code> applied.</p>
+  <div class="pl-example">
+    <ul class="nav nav-sm nav-blocks">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Messages</a></li>
+    </ul>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;ul class="nav nav-sm nav-blocks"&gt;
+  &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+
 </div>
 <!-- ================================== Pagination ================================== -->
 
