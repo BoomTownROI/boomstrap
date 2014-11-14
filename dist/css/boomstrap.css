@@ -8482,6 +8482,7 @@ button.close-inverted {
 }
 .ficon {
   display: inline-block;
+  font-style: normal;
   position: relative;
   top: 1px;
 }
@@ -9050,12 +9051,30 @@ button.close-inverted {
   line-height: 1.1;
   text-transform: lowercase;
   background-color: #ffffff;
-  border: 1px solid #444444;
-  color: #444444;
+  border: 1px solid #cccccc;
+  color: #cccccc;
 }
 .leadtype[href]:hover,
 .leadtype[href]:focus {
-  color: #2b2b2b;
+  color: #b3b3b3;
+}
+.leadtype-buyer {
+  color: #f68a24;
+}
+.leadtype-seller {
+  color: #1581e2;
+}
+.leadtype-buyerseller i {
+  font-style: normal;
+}
+.leadtype-buyerseller i:first-child {
+  color: #f68a24;
+}
+.leadtype-buyerseller i:last-child {
+  color: #1581e2;
+}
+.leadtype-abbr {
+  text-transform: uppercase;
 }
 .leadtype-eq {
   padding-left: 0;

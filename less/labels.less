@@ -7,7 +7,7 @@
 
 .label {
   font-weight: 700;
-  padding: 0.1em 0.5em 0.2em;
+  padding: @label-padding;
 }
 
 .label-attention {
@@ -100,13 +100,82 @@
 // Lead Type
 // -------------------------
 
-.leadtype {
+[class*="leadtype-"] {
   &:extend(.label);
   display: inline-block;
   line-height: 1.1;
-  text-transform: lowercase;
-  .label-variant-outline();
+  position: relative;
+  .label-variant-outline(@gray-light);
 }
+
+.leadtype-buyer {
+  &:after {
+    color: @leadtype-color-buyer;
+    content: @leadtype-txt-buyer;
+  }
+  .leadtype-abbr& {
+    &:after {
+      content: @leadtype-txt-buyer-abbr;
+    }
+  }
+}
+
+.leadtype-seller {
+  &:after {
+    color: @leadtype-color-seller;
+    content: @leadtype-txt-seller;
+  }
+  .leadtype-abbr& {
+    &:after {
+      content: @leadtype-txt-seller-abbr;
+    }
+  }
+}
+
+.leadtype-bs {
+  padding: 0;
+  &:before, &:after {
+    display: inline-block;
+    padding-bottom: @label-padding-bottom;
+    padding-top: @label-padding-top;
+    text-align: center;
+    width: 44px;
+  }
+  &:before {
+    border-left: 1px solid transparent;
+    color: @leadtype-color-buyer;
+    content: @leadtype-txt-buyer;
+  }
+  &:after {
+    border-left: 1px solid @gray-light;
+    color: @leadtype-color-seller;
+    content: @leadtype-txt-seller;
+  }
+  .leadtype-abbr& {
+    &:before,&:after {
+      padding: @label-padding;
+      width: auto;
+    }
+  }
+  .leadtype-abbr& {
+    &:before {
+      content: @leadtype-txt-buyer-abbr;
+    }
+  }
+  .leadtype-abbr& {
+    &:after {
+      content: @leadtype-txt-seller-abbr;
+    }
+  }
+}
+
+// Lead Type Abbreviated
+// -------------------------
+
+.leadtype-abbr {
+  text-transform: uppercase;
+}
+
 
 // Lead Type Equal Width
 // -------------------------
@@ -114,8 +183,9 @@
 .leadtype-eq {
   padding-left: 0;
   padding-right: 0;
-  width: 76px;
+  width: 88px;
 }
+
 
 // Marker
 // -------------------------
