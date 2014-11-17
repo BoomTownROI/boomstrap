@@ -8,7 +8,7 @@
       <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time" am-time-ago="{{ property.offMarket }}"></span></div>
       <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time" am-time-ago="{{ property.reduced.when }}"></span></div>
       <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time" am-time-ago="{{ property.backOnMarket }}"></span></div>
-      <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" ng-src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">
+      <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomstatic.com/images/comingsoon-lg.jpg" class="card-img" ng-src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">
       <carousel ng-if="property.imageSrc.length > 1">
         <slide ng-repeat="slide in property.imageSrc">
           <img ng-src="{{ slide }}" style="margin: auto">
