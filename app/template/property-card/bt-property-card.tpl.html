@@ -5,7 +5,7 @@
   <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time" am-time-ago="{{ property.backOnMarket }}">{{ property.backOnMarket }}</span></div>
   <div class="card-photo">
     <div class="card-photo-inner">
-      <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomtownroi.github.io/boomstrap//images/fpo-he-man-400-300.jpg" class="card-img" ng-src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">
+      <img ng-if="property.imageSrc.length <= 1" bt-error-img="http://boomstatic.com/images/comingsoon-lg.jpg" class="card-img" ng-src="{{ property.imageSrc[0] }}" alt="{{ property.fullAddress }}">
       <carousel ng-if="property.imageSrc.length > 1">
         <slide ng-repeat="slide in property.imageSrc">
           <img ng-src="{{ slide }}" style="margin: auto">
