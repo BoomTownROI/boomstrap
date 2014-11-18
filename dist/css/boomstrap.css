@@ -7745,6 +7745,9 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   color: #999999;
   padding: 2px 3px;
 }
+.nav-pills.nav-pills-attention > .active > a {
+  background-color: #f68a24;
+}
 .btn-group-block-dropdown,
 .log-call__phones__dropdown {
   width: 100%;
