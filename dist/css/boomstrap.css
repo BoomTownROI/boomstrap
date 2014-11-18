@@ -8511,8 +8511,8 @@ button.close-inverted {
 }
 @font-face {
   font-family: 'ficon';
-  src: url('fonts/ficon.eot?-b4vu2k');
-  src: url('fonts/ficon.eot?#iefix-b4vu2k') format('embedded-opentype'), url('fonts/ficon.woff?-b4vu2k') format('woff'), url('fonts/ficon.ttf?-b4vu2k') format('truetype'), url('fonts/ficon.svg?-b4vu2k#ficon') format('svg');
+  src: url('fonts/ficon.eot?22wspa');
+  src: url('fonts/ficon.eot?#iefix22wspa') format('embedded-opentype'), url('fonts/ficon.woff?22wspa') format('woff'), url('fonts/ficon.ttf?22wspa') format('truetype'), url('fonts/ficon.svg?22wspa#ficon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -8529,6 +8529,12 @@ button.close-inverted {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.ficon-text-bad:before {
+  content: "\e62d";
+}
+.ficon-text-neutral:before {
+  content: "\e62e";
+}
 .ficon-filter2:before {
   content: "\f0b0";
 }
@@ -8544,10 +8550,10 @@ button.close-inverted {
 .ficon-checkmark-circle:before {
   content: "\e629";
 }
-.ficon-sms:before,
-.ficon-text-good:before,
-.ficon-text-bad:before,
-.ficon-text-neutral:before {
+.ficon-text-good:before {
+  content: "\e62f";
+}
+.ficon-sms:before {
   content: "\e628";
 }
 .ficon-clipboard:before {
