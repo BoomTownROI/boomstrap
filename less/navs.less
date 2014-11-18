@@ -112,11 +112,21 @@
   }
 }
 
+// Nav Pills
 
-
-
-
-
-
-
-
+.nav-pills.nav-pills-attention > .active > a {
+  background-color: screen(@brand-attention, #444444);
+  &:hover, &:focus {
+    background-color: @brand-attention;
+  }
+}
+.nav-pills.nav-pills-muted > .active > a {
+  background-color: @gray;
+  &:hover, &:focus {
+    background-color: @gray;
+  }
+}
+.nav-pills.nav-pills-sm > li > a {
+  padding: 4px 12px;
+  font-size: 13px;
+}

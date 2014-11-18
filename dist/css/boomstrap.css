@@ -7745,9 +7745,6 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   color: #999999;
   padding: 2px 3px;
 }
-.nav-pills.nav-pills-attention > .active > a {
-  background-color: #f68a24;
-}
 .btn-group-block-dropdown,
 .log-call__phones__dropdown {
   width: 100%;
@@ -9502,6 +9499,20 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks-light > li > a:focus,
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;
+}
+.nav-pills.nav-pills-attention > .active > a {
+  background-color: #f68a24;
+}
+.nav-pills.nav-pills-attention > .active > a:hover,
+.nav-pills.nav-pills-attention > .active > a:focus {
+  background-color: #f68a24;
+}
+.nav-pills.nav-pills-muted > .active > a {
+  background-color: #cccccc;
+}
+.nav-pills.nav-pills-muted > .active > a:hover,
+.nav-pills.nav-pills-muted > .active > a:focus {
+  background-color: #cccccc;
 }
 .panel-title > a[data-toggle="collapse"] {
   display: block;
