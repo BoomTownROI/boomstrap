@@ -79,9 +79,9 @@
     &,
     &:hover,
     &:focus {
-      background-color: @nav-link-hover-bg;
       border-left-color: @brand-attention;
       color: @brand-attention;
+      font-weight: 700;
     }
   }
 }
@@ -90,21 +90,21 @@
   border-left: 3px solid transparent;
   color: @nav-blocks-color;
   &:focus,&:hover {
-    border-left-color: @gray-dark;
+    background-color: @nav-link-hover-bg;
   }
 }
 
 // Light nav blocks simply change active and hover bg color of nav-blocks
 
-.nav-blocks-light > li {
-  &.active > a {
-    &,
-    &:hover,
-    &:focus {
-      background-color: @nav-link-light-hover-bg;
-    }
-  }
-}
+// .nav-blocks-light > li {
+//   &.active > a {
+//     &,
+//     &:hover,
+//     &:focus {
+//       background-color: @nav-link-light-hover-bg;
+//     }
+//   }
+// }
 
 .nav-blocks-light > li > a {
   &:focus,&:hover {
@@ -115,15 +115,17 @@
 // Nav Pills
 
 .nav-pills.nav-pills-attention > .active > a {
-  background-color: screen(@brand-attention, #444444);
+  background-color: screen(@brand-attention, #222);
   &:hover, &:focus {
     background-color: @brand-attention;
   }
 }
 .nav-pills.nav-pills-muted > .active > a {
-  background-color: @gray;
+  background-color: @gray-lighter;
+  color: @gray-dark;
   &:hover, &:focus {
-    background-color: @gray;
+    background-color: @gray-light;
+    color: @gray-dark;
   }
 }
 .nav-pills.nav-pills-sm > li > a {
