@@ -9489,9 +9489,9 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks > li.active > a,
 .nav-blocks > li.active > a:hover,
 .nav-blocks > li.active > a:focus {
-  background-color: #ececec;
   border-left-color: #f68a24;
   color: #f68a24;
+  font-weight: 700;
 }
 .nav-blocks > li > a {
   border-left: 3px solid transparent;
@@ -9499,30 +9499,27 @@ a.list-group-item.active:focus .ficon {
 }
 .nav-blocks > li > a:focus,
 .nav-blocks > li > a:hover {
-  border-left-color: #696969;
-}
-.nav-blocks-light > li.active > a,
-.nav-blocks-light > li.active > a:hover,
-.nav-blocks-light > li.active > a:focus {
-  background-color: #f6f6f6;
+  background-color: #ececec;
 }
 .nav-blocks-light > li > a:focus,
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;
 }
 .nav-pills.nav-pills-attention > .active > a {
-  background-color: #f8a95e;
+  background-color: #f79a41;
 }
 .nav-pills.nav-pills-attention > .active > a:hover,
 .nav-pills.nav-pills-attention > .active > a:focus {
   background-color: #f68a24;
 }
 .nav-pills.nav-pills-muted > .active > a {
-  background-color: #999999;
+  background-color: #ececec;
+  color: #696969;
 }
 .nav-pills.nav-pills-muted > .active > a:hover,
 .nav-pills.nav-pills-muted > .active > a:focus {
-  background-color: #999999;
+  background-color: #cccccc;
+  color: #696969;
 }
 .nav-pills.nav-pills-sm > li > a {
   padding: 4px 12px;
