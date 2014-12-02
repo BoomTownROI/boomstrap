@@ -1,0 +1,26 @@
+{
+  "name": "boomqueries",
+  "version": "0.0.2",
+  "homepage": "http://boomtownroi.github.io/boomqueries/",
+  "authors": [
+    "Craig Anthony <craig@boomtownroi.com>",
+    "Zach Schnackel <zach@boomtownroi.com>"
+  ],
+  "main": "dist/*",
+  "description": "BoomQueries is our take on element-queries; sizing elements based on their container.",
+  "license": "MIT",
+  "ignore": [
+    "*",
+    "!dist/js/*.js"
+  ],
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.2",
+    "commit": "a6d0ce118a9328892006fe9973fe71d5edeca79f"
+  },
+  "_source": "git://github.com/boomtownroi/boomqueries.git",
+  "_target": "~0.0.2",
+  "_originalSource": "boomqueries",
+  "_direct": true
+}

@@ -74,8 +74,8 @@
 }
 
 .set-to-do__time__opts {
-  display: inline-block;
-  margin-left: 3px;
+  display: block;
+  margin: @margin-xsmall 0 0 0;
   &.hide {
     display: none;
   }
@@ -89,28 +89,27 @@
   &:extend(.small);
 }
 
-// Log call modifier - wrapped in modal
+// Set to do modifier - small
+
+.set-to-do--sm {
+  .set-to-do__time__opts {
+    display: inline-block;
+    margin-left: 3px;
+  }
+  .set-to-do__date-btns > .btn {
+    .btn-sm;
+  }
+}
+
+// Set to do modifier - wrapped in modal
+
 .set-to-do--modal {
   .set-to-do__body {
     padding: @modal-inner-padding;
   }
 }
 
-// Log call modifier - wrapped in small modal
-.set-to-do--modal-sm {
 
-  @media (min-width: @screen-sm-min) {
-    // make btns extra small
-    .set-to-do__date-btns .btn { 
-      .btn-xs;
-    }
-  }
-  .set-to-do__time__opts {
-    display: block;
-    margin: @margin-xsmall 0 0 0;
-  }
-
-}
 
 
 

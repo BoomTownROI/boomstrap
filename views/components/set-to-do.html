@@ -4,7 +4,21 @@
 
 <div class="pl-docs-section">
   <h1 id="set-to-do" class="page-header">Set to-do</h1>
-  <p class="lead">Modular component for setting up a to-do task.</p>
+  <p class="lead">Modular component for setting up a to-do task. Uses <a href="https://github.com/BoomTownROI/boomqueries" target="_blank">BoomQueries</a> to apply size modifier classes.</p>
+
+  <div class="callout callout-danger callout-boomqueries">
+    <h4>BoomQuery Values</h4>
+    <div class="fauxble fauxble-bordered">
+      <div class="fauxble-headings">
+        <div class="col-xs-6 col-sm-4">Breakpoint</div>
+        <div class="col-xs-6 col-sm-8">Size Modifier Class</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-xs-6 col-sm-4">>= 420px</div>
+        <div class="col-xs-6 col-sm-8">set-to-do--sm</div>
+      </div>
+    </div>
+  </div>
 
   <h2>Basic set to-do example</h2>
   <p>This is the basic construction of the set to-do component.</p>
@@ -15,15 +29,15 @@
       <div class="set-to-do__body">
         <div class="set-to-do__date">Friday, October 10, 2014</div>
         <div class="set-to-do__date-btns">
-          <button class="btn btn-sm btn-default active">Today</button>
-          <button class="btn btn-sm btn-default">Tomorrow</button>
-          <button class="btn btn-sm btn-default">2 Days</button>
-          <button class="btn btn-sm btn-default">3 Days</button>
-          <button class="btn btn-sm btn-default">1 Week</button>
-          <button class="btn btn-sm btn-default">2 Weeks</button>
-          <button class="btn btn-sm btn-default">3 Weeks</button>
-          <button class="btn btn-sm btn-default">1 Month</button>
-          <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
+          <button class="btn btn-xs btn-default active">Today</button>
+          <button class="btn btn-xs btn-default">Tomorrow</button>
+          <button class="btn btn-xs btn-default">2 Days</button>
+          <button class="btn btn-xs btn-default">3 Days</button>
+          <button class="btn btn-xs btn-default">1 Week</button>
+          <button class="btn btn-xs btn-default">2 Weeks</button>
+          <button class="btn btn-xs btn-default">3 Weeks</button>
+          <button class="btn btn-xs btn-default">1 Month</button>
+          <button class="btn btn-xs btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
         </div>
         <div class="set-to-do__time">
           <span id="set-to-do__time__radios">
@@ -98,15 +112,15 @@
   &lt;div class="set-to-do__body"&gt;
     &lt;div class="set-to-do__date"&gt;Friday, October 10, 2014&lt;/div&gt;
     &lt;div class="set-to-do__date-btns"&gt;
-      &lt;button class="btn btn-sm btn-default active"&gt;Today&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
-      &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
+      &lt;button class="btn btn-xs btn-default active"&gt;Today&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;Tomorrow&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;2 Days&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;3 Days&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;1 Week&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;2 Weeks&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;3 Weeks&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;1 Month&lt;/button&gt;
+      &lt;button class="btn btn-xs btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
     &lt;/div&gt;
     &lt;div class="set-to-do__time"&gt;
       &lt;span id="set-to-do__time__radios"&gt;
@@ -181,18 +195,13 @@
     <p>When a <strong>set to-do date button</strong> is clicked, it should receive the <code>.active</code> class and change the displayed date accordingly.<br>When <strong>specific time is checked</strong>, the <code>.hide</code> class should be removed from <code>.set-to-do__time__opts</code>.</p>
   </div>
 
-  <h2>Set to-do in small modal</h2>
-  <p>This is the set to-do component wrapped in a small modal. Add the <code>.set-to-do--modal</code> and <code>.set-to-do--modal-sm</code> modifier classes to the existing <code>.set-to-do</code> class.</p>
-
-  <div class="callout callout-info">
-    <h4>Set to-do in modals</h4>
-    <p>When using the <strong>set to-do</strong> component in a modal, the <code>.set-to-do--modal</code> modifier class is required. Currently there are no additional modifier classes needed for use within default and large modals.</p>
-  </div>
+  <h2>Set to-do in modal</h2>
+  <p>This is the set to-do component wrapped in a small modal. Add the <code>.set-to-do--modal</code> modifier class to the existing <code>.set-to-do</code> class.</p>
 
   <div class="pl-example pl-example-modal">
 
-    <div class="modal set-to-do set-to-do--modal set-to-do--modal-sm">
-      <div class="modal-dialog modal-sm">
+    <div class="modal">
+      <div class="modal-dialog modal-sm set-to-do set-to-do--modal">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -201,15 +210,15 @@
           <div class="modal-body set-to-do__body">
             <div class="set-to-do__date">Friday, October 10, 2014</div>
             <div class="set-to-do__date-btns">
-              <button class="btn btn-sm btn-default active">Today</button>
-              <button class="btn btn-sm btn-default">Tomorrow</button>
-              <button class="btn btn-sm btn-default">2 Days</button>
-              <button class="btn btn-sm btn-default">3 Days</button>
-              <button class="btn btn-sm btn-default">1 Week</button>
-              <button class="btn btn-sm btn-default">2 Weeks</button>
-              <button class="btn btn-sm btn-default">3 Weeks</button>
-              <button class="btn btn-sm btn-default">1 Month</button>
-              <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
+              <button class="btn btn-xs btn-default active">Today</button>
+              <button class="btn btn-xs btn-default">Tomorrow</button>
+              <button class="btn btn-xs btn-default">2 Days</button>
+              <button class="btn btn-xs btn-default">3 Days</button>
+              <button class="btn btn-xs btn-default">1 Week</button>
+              <button class="btn btn-xs btn-default">2 Weeks</button>
+              <button class="btn btn-xs btn-default">3 Weeks</button>
+              <button class="btn btn-xs btn-default">1 Month</button>
+              <button class="btn btn-xs btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
             </div>
             <div class="set-to-do__time">
               <span id="set-to-do__time__radios2" class="set-to-do__time__radios">
@@ -286,8 +295,8 @@
 
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="modal set-to-do set-to-do--modal set-to-do--modal-sm"&gt;
-  &lt;div class="modal-dialog modal-sm"&gt;
+    <pre class="prettyprint"><code>&lt;div class="modal"&gt;
+  &lt;div class="modal-dialog modal-sm set-to-do set-to-do--modal"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
@@ -296,15 +305,15 @@
       &lt;div class="modal-body set-to-do__body"&gt;
         &lt;div class="set-to-do__date"&gt;Friday, October 10, 2014&lt;/div&gt;
         &lt;div class="set-to-do__date-btns"&gt;
-          &lt;button class="btn btn-sm btn-default active"&gt;Today&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
-          &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
+          &lt;button class="btn btn-xs btn-default active"&gt;Today&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;Tomorrow&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;2 Days&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;3 Days&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;1 Week&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;2 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;3 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;1 Month&lt;/button&gt;
+          &lt;button class="btn btn-xs btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
         &lt;/div&gt;
         &lt;div class="set-to-do__time"&gt;
           &lt;span id="set-to-do__time__radios" class="set-to-do__time__radios"&gt;

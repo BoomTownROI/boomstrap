@@ -79,8 +79,6 @@
 			   }
 			});
 
-			
-
 			///////////// view markup buttons
 
 			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
@@ -90,6 +88,28 @@
 				$(this).next(prediv).show();
 				$(this).hide();
 			});
+
+			///////////// BOOMQUERIES!!!
+			window.boomQueries.add("texting", {
+			  selector: ".texting",
+			  breaks: [
+			    [610, "texting--md"]
+			  ]
+			});
+			window.boomQueries.add("log-call", {
+			  selector: ".log-call",
+			  breaks: [
+			    [420, "log-call--sm"]
+			  ]
+			});
+			window.boomQueries.add("set-to-do", {
+			  selector: ".set-to-do",
+			  breaks: [
+			    [420, "set-to-do--sm"]
+			  ]
+			});
+			window.boomQueries.calculate();
+
 
     });
 

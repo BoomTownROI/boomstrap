@@ -4,7 +4,21 @@
 
 <div class="pl-docs-section">
   <h1 id="log-call" class="page-header">Log call</h1>
-  <p class="lead">Modular component for logging a call.</p>
+  <p class="lead">Modular component for logging a call. Uses <a href="https://github.com/BoomTownROI/boomqueries" target="_blank">BoomQueries</a> to apply size modifier classes.</p>
+
+  <div class="callout callout-danger callout-boomqueries">
+    <h4>BoomQuery Values</h4>
+    <div class="fauxble fauxble-bordered">
+      <div class="fauxble-headings">
+        <div class="col-xs-6 col-sm-4">Breakpoint</div>
+        <div class="col-xs-6 col-sm-8">Size Modifier Class</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-xs-6 col-sm-4">>= 420px</div>
+        <div class="col-xs-6 col-sm-8">log-call--sm</div>
+      </div>
+    </div>
+  </div>
 
   <h2>Basic log call example</h2>
   <p>This is the basic construction of the log call component.</p>
@@ -37,19 +51,19 @@
           <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
         </div>
         <div class="log-call__checkboxes">
-          <div class="log-call__checkbox fauxbox fauxbox-inline">
+          <div class="log-call__checkbox fauxbox">
             <input type="checkbox" id="share-agent" checked>
             <label for="share-agent">Share with Agent</label>
           </div>
-          <div class="log-call__checkbox fauxbox fauxbox-inline">
+          <div class="log-call__checkbox fauxbox">
             <input type="checkbox" id="share-lender" checked>
             <label for="share-lender">Share with Lender</label>
           </div>
-          <div class="log-call__checkbox fauxbox fauxbox-inline">
+          <div class="log-call__checkbox fauxbox">
             <input type="checkbox" id="notify-agent">
             <label for="notify-agent">Notify Agent</label>
           </div>
-          <div class="log-call__checkbox fauxbox fauxbox-inline">
+          <div class="log-call__checkbox fauxbox">
             <input type="checkbox" id="notify-lender">
             <label for="notify-lender">Notify Lender</label>
           </div>
@@ -85,19 +99,19 @@
       &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
     &lt;/div&gt;
     &lt;div class="log-call__checkboxes"&gt;
-      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+      &lt;div class="log-call__checkbox fauxbox"&gt;
         &lt;input type="checkbox" id="share-agent" checked&gt;
         &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
       &lt;/div&gt;
-      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+      &lt;div class="log-call__checkbox fauxbox"&gt;
         &lt;input type="checkbox" id="share-lender" checked&gt;
         &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
       &lt;/div&gt;
-      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+      &lt;div class="log-call__checkbox fauxbox"&gt;
         &lt;input type="checkbox" id="notify-agent"&gt;
         &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
       &lt;/div&gt;
-      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+      &lt;div class="log-call__checkbox fauxbox"&gt;
         &lt;input type="checkbox" id="notify-lender"&gt;
         &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
       &lt;/div&gt;
@@ -111,18 +125,14 @@
     <p>When a <strong>log call status button</strong> is clicked, it should receive the <code>.active</code> class.</p>
   </div>
 
-  <h2>Log call in small modal</h2>
-  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> and <code>.log-call--modal-sm</code> modifier classes to the existing <code>.log-call</code> class.</p>
+  <h2>Log call in modal</h2>
+  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> modifier class to the existing <code>.log-call</code> class.</p>
 
-  <div class="callout callout-info">
-    <h4>Log call in modals</h4>
-    <p>When using the <strong>log call</strong> component in a modal, the <code>.log-call--modal</code> modifier class is required. Currently there are no additional modifier classes required for use within default and large modals.</p>
-  </div>
 
   <div class="pl-example pl-example-modal">
 
-    <div class="modal log-call log-call--modal log-call--modal-sm">
-      <div class="modal-dialog modal-sm">
+    <div class="modal">
+      <div class="modal-dialog modal-sm log-call log-call--modal">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -153,19 +163,19 @@
               <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
             </div>
             <div class="log-call__checkboxes">
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="share-agent" checked>
                 <label for="share-agent">Share with Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="share-lender" checked>
                 <label for="share-lender">Share with Lender</label>
               </div>
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="notify-agent">
                 <label for="notify-agent">Notify Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="notify-lender">
                 <label for="notify-lender">Notify Lender</label>
               </div>
@@ -181,8 +191,8 @@
 
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="modal log-call log-call--modal log-call--modal-sm"&gt;
-  &lt;div class="modal-dialog modal-sm"&gt;
+    <pre class="prettyprint"><code>&lt;div class="modal"&gt;
+  &lt;div class="modal-dialog modal-sm log-call log-call--modal"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
@@ -213,19 +223,19 @@
           &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
         &lt;/div&gt;
         &lt;div class="log-call__checkboxes"&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="share-agent" checked&gt;
             &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="share-lender" checked&gt;
             &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="notify-agent"&gt;
             &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="notify-lender"&gt;
             &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
           &lt;/div&gt;
@@ -255,8 +265,8 @@
 
   <div class="pl-example pl-example-modal">
 
-    <div class="modal log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm">
-      <div class="modal-dialog modal-sm">
+    <div class="modal">
+      <div class="modal-dialog modal-sm log-call log-call--modal set-to-do--modal">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -287,19 +297,19 @@
               <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
             </div>
             <div class="log-call__checkboxes">
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="share-agent" checked>
                 <label for="share-agent">Share with Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="share-lender" checked>
                 <label for="share-lender">Share with Lender</label>
               </div>
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="notify-agent">
                 <label for="notify-agent">Notify Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox fauxbox-inline">
+              <div class="log-call__checkbox fauxbox">
                 <input type="checkbox" id="notify-lender">
                 <label for="notify-lender">Notify Lender</label>
               </div>
@@ -394,8 +404,8 @@
 
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="modal log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm"&gt;
-  &lt;div class="modal-dialog modal-sm"&gt;
+    <pre class="prettyprint"><code>&lt;div class="modal"&gt;
+  &lt;div class="modal-dialog modal-sm log-call log-call--modal set-to-do--modal"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
@@ -426,19 +436,19 @@
           &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
         &lt;/div&gt;
         &lt;div class="log-call__checkboxes"&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="share-agent" checked&gt;
             &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="share-lender" checked&gt;
             &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="notify-agent"&gt;
             &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
+          &lt;div class="log-call__checkbox fauxbox"&gt;
             &lt;input type="checkbox" id="notify-lender"&gt;
             &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
           &lt;/div&gt;

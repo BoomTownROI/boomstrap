@@ -4,10 +4,24 @@
 
 <div class="pl-docs-section">
   <h1 id="texting" class="page-header">Texting</h1>
-  <p class="lead">Modular component for texting.</p>
+  <p class="lead">Modular component for texting. Uses <a href="https://github.com/BoomTownROI/boomqueries" target="_blank">BoomQueries</a> to apply size modifier classes.</p>
+
+  <div class="callout callout-danger callout-boomqueries">
+    <h4>BoomQuery Values</h4>
+    <div class="fauxble fauxble-bordered">
+      <div class="fauxble-headings">
+        <div class="col-xs-6 col-sm-4">Breakpoint</div>
+        <div class="col-xs-6 col-sm-8">Size Modifier Class</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-xs-6 col-sm-4">>= 610px</div>
+        <div class="col-xs-6 col-sm-8">texting--md</div>
+      </div>
+    </div>
+  </div>
 
   <h2>Basic texting example</h2>
-  <p>This is the basic construction of the texting component. In proper mobile-first fashion, the texting component begins in a stacked layout.</p>
+  <p>This is the basic construction of the texting component.</p>
 
   <div class="pl-example pl-example-texting">
 
@@ -162,95 +176,11 @@
 &lt;/div&gt; &lt;!-- end texting --&gt;</code></pre>
   </div>
 
-  <h4>Texting layout options</h4>
-  <p>Utilize the <code>.texting--lg</code> modifier class to alter layout for use in wide containers. Simply add <code>.texting--lg</code> to the <code>.texting</code> class directly or use media queries to extend the <code>.texting--lg</code> class at different break points.</p><br>
-
-  <div class="pl-example pl-example-texting">
-
-    <div class="texting texting--lg">
-      <div class="texting__body">
-        <div class="texting__convo">
-          <div class="texting__convo__inner">
-            <div class="texting__msg">
-                <div class="texting__msg__time">Thursday 6:00 pm</div>
-                <div class="texting__msg__bubble">
-                  Yeah, but do you consider a dog to be a filthy animal?
-                  <aside class="texting__msg__bubble__avatar">
-                    <i class="ficon ficon-user"></i>
-                  </aside>
-                </div>
-            </div> <!-- end texting__msg -->
-            <div class="texting__msg texting__msg--agent">
-                <div class="texting__msg__time">Thursday 6:01 pm</div>
-                <div class="texting__msg__bubble">
-                  I wouldn't go so far as to call a dog filthy but they're definitely dirty. But, a dog's got personality. Personality goes a long way.
-                  <aside class="texting__msg__bubble__avatar">
-                    <img src="http://www.nicenicejpg.com/600">
-                  </aside>
-                </div>
-            </div> <!-- end texting__msg -->
-            <div class="texting__msg">
-                <div class="texting__msg__time">Thursday 6:02 pm</div>
-                <div class="texting__msg__bubble">
-                  Ah, so by that rationale, if a pig had a better personality, he would cease to be a filthy animal. Is that true?
-                  <aside class="texting__msg__bubble__avatar">
-                    <i class="ficon ficon-user"></i>
-                  </aside>
-                </div>
-            </div> <!-- end texting__msg -->
-            <div class="texting__msg texting__msg--agent">
-                <div class="texting__msg__time">Thursday 6:03 pm</div>
-                <div class="texting__msg__bubble texting__msg__bubble--error">
-                  Well we'd have to be talkin' about one charming pig. I mean he'd have to be ten times more charmin' than that Arnold on Green Acres, you know what I'm sayin'?
-                  <aside class="texting__msg__bubble__avatar">
-                    <img src="http://www.nicenicejpg.com/600">
-                  </aside>
-                </div>
-            </div> <!-- end texting__msg -->
-          </div> <!-- end texting__convo__inner -->
-        </div> <!-- end texting__convo -->
-        <div class="texting__actions">
-          <div class="texting__actions__phones">
-            <select class="selectpicker form-control" data-style="btn-default btn-sm">
-              <option>888-555-1111 (home)</option>
-              <option>888-555-2222 (cell)</option>
-              <option>888-555-3333 (work)</option>
-            </select>
-          </div>
-          <div class="texting__actions__phone-assign">
-            <a href="#">Create New Lead</a> | <a href="#">Add to Existing Lead</a>
-          </div>
-          <hr class="texting__actions__hr">
-          <div class="texting__actions__templates">
-            <select class="selectpicker form-control" data-style="btn-default btn-sm">
-              <option>templates</option>
-              <option>templates</option>
-              <option>templates</option>
-            </select>
-          </div>
-          <div class="texting__actions__compose">
-            <div class="form-group">
-              <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
-            </div>
-            <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
-          </div>
-        </div> <!-- end texting__actions -->
-      </div> <!-- end texting__body -->
-    </div> <!-- end texting -->
-
-  </div><!-- /example -->
-  <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="texting texting--lg"&gt;
-  ...
-&lt;/div&gt;</code></pre>
-  </div>
-
-
 
   <h2>Texting panel</h2>
   <p>This is the texting component wrapped in a panel. Add the <code>.texting--panel</code> modifier class to the <code>.texting</code> class.</p>
   <div class="pl-example pl-example-texting">
-    <div class="panel panel-default texting texting--panel texting--lg">
+    <div class="panel panel-default texting texting--panel">
         <div class="panel-heading">
           <h3 class="panel-title"><i class="ficon ficon-sms"></i> Text Message: Mr. White</h3>
         </div>
@@ -325,7 +255,7 @@
       </div> <!-- end texting -->
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="panel panel-default texting texting--panel texting--lg"&gt;
+    <pre class="prettyprint"><code>&lt;div class="panel panel-default texting texting--panel&gt;
   &lt;div class="panel-heading"&gt;
     &lt;h3 class="panel-title"&gt;&lt;i class="ficon ficon-sms"&gt;&lt;/i&gt; Text Message: Mr. White&lt;/h3&gt;
   &lt;/div&gt;
@@ -403,8 +333,8 @@
   <h2>Texting in modal</h2>
   <p>This is the texting component wrapped in a modal. Add the <code>.texting--modal</code> modifier class to the <code>.texting</code> class.</p>
   <div class="pl-example pl-example-modal">
-    <div class="modal texting texting--modal">
-      <div class="modal-dialog">
+    <div class="modal">
+      <div class="modal-dialog texting texting--modal">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -483,8 +413,8 @@
     </div> <!-- end texting -->
   </div>
   <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="modal texting texting--modal"&gt;
-  &lt;div class="modal-dialog"&gt;
+    <pre class="prettyprint"><code>&lt;div class="modal"&gt;
+  &lt;div class="modal-dialog texting texting--modal"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;

@@ -20,10 +20,15 @@
 .log-call__checkboxes {
   &:extend(.clearfix all);
 }
-  
+
 .log-call__checkbox {
   margin: 0;
+  float: left;
+  width: 50%;
   &:extend(.small);
+  &+.log-call__checkbox {
+    padding-left: 0;
+  }
 }
 
 .log-call__comments {
@@ -43,6 +48,16 @@
   .ficon { margin-right: @margin-base; }
   .list-group { margin-bottom: 0; }
   &:extend(.small);
+}
+
+// Log call modifer - small
+
+.log-call--sm {
+  .log-call__checkbox {
+    float: none;
+    width: auto;
+    .fauxbox-inline;
+  }
 }
 
 // Log call modifier - wrapped in modal
