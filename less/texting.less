@@ -82,19 +82,18 @@
 .texting__msg {
   margin: 0 10% (@texting-padding/2) @texting-avatar-offset;
   position: relative;
-}
-
-.texting__msg--agent {
-  margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
-  .texting__msg__bubble {
-    &:extend(.bg-info);
-  }
-  .texting__msg__bubble__avatar {
-    left: auto;
-    right: -@texting-avatar-offset;
-  }
-  .texting__msg__time {
-    text-align: right;
+  &:nth-child(even) {
+    margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
+    .texting__msg__bubble {
+      &:extend(.bg-info);
+    }
+    .texting__msg__bubble__avatar {
+      left: auto;
+      right: -@texting-avatar-offset;
+    }
+    .texting__msg__time {
+      text-align: right;
+    }
   }
 }
 
@@ -187,10 +186,10 @@
     min-height: 100%;
   }
   .texting__msg {
-    margin: 0 20% @texting-padding @texting-avatar-offset;
-  }
-  .texting__msg--agent {
-    margin: 0 @texting-avatar-offset @texting-padding 20%;
+    margin: 0 15% @texting-padding @texting-avatar-offset;
+    &:nth-child(even) {
+      margin: 0 @texting-avatar-offset @texting-padding 15%;
+    }
   }
 }
 
