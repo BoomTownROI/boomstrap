@@ -51,26 +51,23 @@
 }
 
 .set-to-do__date-btns {
+  font-size: 0;
+  margin: 0 0 @margin-half-gutter -2%;
   &:extend(.clearfix all);
-  .btn.active {
+}
+
+.set-to-do__date-btns > .btn {
+  display: inline-block;
+  margin: 0 0 2% 2%;
+  width: 48%;
+  &:extend(.btn-xs);
+  &.active {
     &:extend(.btn-success);
   }
-}
-
-.set-to-do__date-btns .btn {
-  float: left;
-  margin: 3px 0;
-  width: 49%;
-  &:nth-child(even) {
-    float: right;
+  &.btn-block {
+    margin-bottom: 0;
+    width: 98%;
   }
-  &:last-child {
-    .btn-block;
-  }
-}
-
-.set-to-do__time {
-  .fauxdio { margin: 0; }
 }
 
 .set-to-do__time__opts {
@@ -86,6 +83,8 @@
 }
 
 .set-to-do__time__radio {
+  margin-bottom: 0px;
+  margin-top: 0px;
   &:extend(.small);
 }
 
@@ -94,10 +93,20 @@
 .set-to-do--sm {
   .set-to-do__time__opts {
     display: inline-block;
-    margin-left: 3px;
+    margin: 0 0 0 @margin-xsmall;
+  }
+  .set-to-do__date-btns {
+    font-size: 0;
+    margin-left: -1%;
   }
   .set-to-do__date-btns > .btn {
-    .btn-sm;
+    margin: 0 0 1% 1%;
+    width: 49%;
+    &:extend(.btn-sm);
+    &.btn-block {
+      margin-bottom: 0px;
+      width: 99%;
+    }
   }
 }
 
