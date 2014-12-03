@@ -82,14 +82,14 @@ gulp.task('boomstrapjsLib', function() {
     'vendor/chosen/chosen.jquery.min.js',
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
-    'js/global.js',
     'js/vendor-config.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-    'bower_components/angular-ui-select/dist/select.js', // No minified version
+    'bower_components/angular-ui-select/dist/select.js',
     'bower_components/angular-moment/angular-moment.min.js',
-    'bower_components/boomqueries/dist/js/boomqueries.min.js'
+    'bower_components/boomqueries/dist/js/boomqueries.min.js',
+    'js/global.js'
   ])
   .pipe(concat('boomstrap.js'))
   .pipe(gulp.dest('docs/js/'))

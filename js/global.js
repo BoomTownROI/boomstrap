@@ -71,17 +71,32 @@ $(function () {
   }
 })(window.jQuery);
 
-// Add icons to Bootstrap collpase.js
 
-/*$( document ).ready(function() {
-  $('.panel-collapse.collapse').prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
-  $('.panel-collapse.collapse.in').prev().find(".ficon").removeClass("ficon-chevron-down").addClass("ficon-chevron-up");
 
-  $('.panel-collapse').on('shown.bs.collapse', function () {
-      $(this).prev().find(".ficon").removeClass("ficon-chevron-down").addClass("ficon-chevron-up");
-  });
+// Set up element queries (BoomQuery - https://github.com/BoomTownROI/boomqueries)
 
-  $('.panel-collapse').on('hidden.bs.collapse', function () {
-      $(this).prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
-  });
-});*/
+window.boomQueries.add("texting", {
+  selector: ".texting",
+  breaks: [
+    [610, "texting--md"]
+  ]
+});
+window.boomQueries.add("log-call", {
+  selector: ".log-call",
+  breaks: [
+    [420, "log-call--sm"]
+  ]
+});
+window.boomQueries.add("set-to-do", {
+  selector: ".set-to-do",
+  breaks: [
+    [420, "set-to-do--sm"]
+  ]
+});
+window.boomQueries.calculate();
+
+
+
+
+
+

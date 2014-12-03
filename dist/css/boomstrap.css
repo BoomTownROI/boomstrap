@@ -571,7 +571,7 @@ a.bg-success:hover {
   background-color: #c1e2b3;
 }
 .bg-info,
-.texting__msg--agent .texting__msg__bubble {
+.texting__msg:nth-child(even) .texting__msg__bubble {
   background-color: #d9edf7;
 }
 a.bg-info:hover {
@@ -9984,14 +9984,14 @@ a.list-group-item.active:focus .ficon {
   margin: 0 10% 7.5px 52px;
   position: relative;
 }
-.texting__msg--agent {
+.texting__msg:nth-child(even) {
   margin: 0 52px 7.5px 10%;
 }
-.texting__msg--agent .texting__msg__bubble__avatar {
+.texting__msg:nth-child(even) .texting__msg__bubble__avatar {
   left: auto;
   right: -52px;
 }
-.texting__msg--agent .texting__msg__time {
+.texting__msg:nth-child(even) .texting__msg__time {
   text-align: right;
 }
 .texting__msg__bubble {
@@ -10069,10 +10069,10 @@ a.list-group-item.active:focus .ficon {
   min-height: 100%;
 }
 .texting--md .texting__msg {
-  margin: 0 20% 15px 52px;
+  margin: 0 15% 15px 52px;
 }
-.texting--md .texting__msg--agent {
-  margin: 0 52px 15px 20%;
+.texting--md .texting__msg:nth-child(even) {
+  margin: 0 52px 15px 15%;
 }
 .texting--modal .texting__actions,
 .texting--panel .texting__actions {
