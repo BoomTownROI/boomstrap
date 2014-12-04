@@ -248,6 +248,11 @@
 				"nav_header": "dropdown"
 			},
 			{
+				"source": "views/javascript/element-query.html",
+				"css_id": "#element-query",
+				"nav_header": "elelment query"
+			},
+			{
 				"source": "views/javascript/modal.html",
 				"css_id": "#modals",
 				"nav_header": "modal"
