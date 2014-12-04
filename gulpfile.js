@@ -89,6 +89,7 @@ gulp.task('boomstrapjsLib', function() {
     'bower_components/angular-ui-select/dist/select.js',
     'bower_components/angular-moment/angular-moment.min.js',
     'bower_components/boomqueries/dist/js/boomqueries.min.js',
+    'js/element-queries.js',
     'js/global.js'
   ])
   .pipe(concat('boomstrap.js'))

@@ -4088,8 +4088,26 @@ $templateCache.put("selectize/choices.tpl.html","<div ng-show=\"$select.open\" c
 $templateCache.put("selectize/match.tpl.html","<div ng-hide=\"$select.searchEnabled && ($select.open || $select.isEmpty())\" class=\"ui-select-match\" ng-transclude=\"\"></div>");
 $templateCache.put("selectize/select.tpl.html","<div class=\"selectize-control single\"><div class=\"selectize-input\" ng-class=\"{\'focus\': $select.open, \'disabled\': $select.disabled, \'selectize-focus\' : $select.focus}\" ng-click=\"$select.activate()\"><div class=\"ui-select-match\"></div><input type=\"text\" autocomplete=\"off\" tabindex=\"-1\" class=\"ui-select-search\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-hide=\"!$select.searchEnabled || ($select.selected && !$select.open)\" ng-disabled=\"$select.disabled\"></div><div class=\"ui-select-choices\"></div></div>");}]);
 !function(){"use strict";function a(a,b){return a.module("angularMoment",[]).constant("angularMomentConfig",{preprocess:null,timezone:""}).constant("moment",b).constant("amTimeAgoConfig",{withoutSuffix:!1}).directive("amTimeAgo",["$window","moment","amMoment","amTimeAgoConfig","angularMomentConfig",function(b,c,d,e,f){return function(g,h,i){function j(){o&&(b.clearTimeout(o),o=null)}function k(a){h.text(a.fromNow(p));var d=c().diff(a,"minute"),e=3600;1>d?e=1:60>d?e=30:180>d&&(e=300),o=b.setTimeout(function(){k(a)},1e3*e)}function l(){j(),m&&k(d.preprocessDate(m,q,n))}var m,n,o=null,p=e.withoutSuffix,q=f.preprocess;g.$watch(i.amTimeAgo,function(a){return"undefined"==typeof a||null===a||""===a?(j(),void(m&&(h.text(""),m=null))):(m=a,void l())}),a.isDefined(i.amWithoutSuffix)&&g.$watch(i.amWithoutSuffix,function(a){"boolean"==typeof a?(p=a,l()):p=e.withoutSuffix}),i.$observe("amFormat",function(a){n=a,l()}),i.$observe("amPreprocess",function(a){q=a,l()}),g.$on("$destroy",function(){j()}),g.$on("amMoment:languageChange",function(){l()})}}]).service("amMoment",["moment","$rootScope","$log","angularMomentConfig",function(b,c,d,e){this.preprocessors={utc:b.utc,unix:b.unix},this.changeLanguage=function(d){var e=b.lang(d);return a.isDefined(d)&&c.$broadcast("amMoment:languageChange"),e},this.preprocessDate=function(a,c,e){return this.preprocessors[c]?this.preprocessors[c](a,e):(c&&d.warn("angular-moment: Ignoring unsupported value for preprocess: "+c),!isNaN(parseFloat(a))&&isFinite(a)?b(parseInt(a,10)):b(a,e))},this.applyTimezone=function(a){var b=e.timezone;return a&&b&&(a.tz?a=a.tz(b):d.warn("angular-moment: timezone specified but moment.tz() is undefined. Did you forget to include moment-timezone.js?")),a}}]).filter("amCalendar",["moment","amMoment",function(a,b){return function(c,d){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,d);var e=a(c);return e.isValid()?b.applyTimezone(e).calendar():""}}]).filter("amDateFormat",["moment","amMoment",function(a,b){return function(c,d,e){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,e);var f=a(c);return f.isValid()?b.applyTimezone(f).format(d):""}}]).filter("amDurationFormat",["moment",function(a){return function(b,c,d){return"undefined"==typeof b||null===b?"":a.duration(b,c).humanize(d)}}])}"function"==typeof define&&define.amd?define("angular-moment",["angular","moment"],a):a(angular,window.moment)}();
-/*! BoomQueries 0.0.3 | http://boomtownroi.github.io/boomqueries/ | (c) 2014 BoomTown | MIT License */
-!function(e,t){"function"==typeof define&&define.amd?define(["boomQueries"],t):"object"==typeof module&&module.exports?module.exports=t():window.boomQueries=t()}(window,function(){"use strict";function e(e,t,n){var o;return function(){var r=this,i=arguments,a=function(){o=null,n||e.apply(r,i)},s=n&&!o;clearTimeout(o),o=setTimeout(a,t),s&&e.apply(r,i)}}function t(e,t){var n;return"string"==typeof e?(n=e,r[e]=t):(n=i++,r[n]=e),n}function n(e){delete r[e]}function o(){function e(e){if(null!==e.offsetParent){for(var n=t.breaks.length,o=e.offsetWidth,r=-1;n--;)o>=t.breaks[n][0]&&r++,e.classList.remove(t.breaks[n][1]);r>=0&&e.classList.add(t.breaks[r][1])}}var t,n,o=Object.keys(r);o.forEach(function(o){t=r[o],t.selector?n=document.querySelectorAll(t.selector):t.element&&(n=[t.element]),Array.prototype.forEach.call(n,e)})}var r={},i=0;return window.addEventListener("load",o),window.addEventListener("resize",e(o,100),!1),{add:t,remove:n,calculate:o}});
+/*! BoomQueries 0.0.4 | http://boomtownroi.github.io/boomqueries/ | (c) 2014 BoomTown | MIT License */
+!function(e,t){"function"==typeof define&&define.amd?define(["boomQueries"],t):"object"==typeof module&&module.exports?module.exports=t():window.boomQueries=t()}(window,function(){"use strict";function e(){this.nodes=[],this.map={},window.addEventListener("resize",this.debounce(this,this.update,100),!1)}return e.prototype.debounce=function(e,t,o,n){var s;return function(){var i=arguments,r=function(){s=null,n||t.apply(e,i)},d=n&&!s;clearTimeout(s),s=setTimeout(r,o),d&&t.apply(e,i)}},e.prototype.update=function(e){var t={};"undefined"!=typeof e&&(t.detail=e);var o=new CustomEvent("checkyourself",t);this.nodes.forEach(function(e){e.dispatchEvent(o)})},e.prototype._add=function(e,t,o){void 0===e.breaks&&(e.breaks=t,null!==o&&(e.selector=o),e.addEventListener("checkyourself",function(){if(null!==this.offsetParent){for(var e=this.breaks.length,t=this.offsetWidth,o=-1;e--;)t>=this.breaks[e][0]&&o++,this.classList.remove(this.breaks[e][1]);o>=0&&this.classList.add(this.breaks[o][1]);var n={detail:{offsetWidth:t,currentBreak:this.breaks[o]}},s=new CustomEvent("nodeUpdated",n);this.dispatchEvent(s)}}),e.addEventListener("cleanup",function(){var e=this;this.breaks.forEach(function(t){e.classList.remove(t[1])})}),this.nodes.push(e))},e.prototype._addSelector=function(e,t){this.map[e]=t;var o=document.querySelectorAll(e),n=this;Array.prototype.forEach.call(o,function(o){n._add(o,t,e)})},e.prototype.add=function(e,t,o){if("string"==typeof e)this._addSelector(e,t);else{var n=null,s=this;"undefined"!==o&&(n=o),e.constructor===Array?e.forEach(function(e){s._add(e,t,n)}):this._add(e,t,n)}this.update()},e.prototype.refresh=function(){this.remove();var e=Object.keys(this.map),t=this;e.forEach(function(e){t._addSelector(e,t.map[e])}),this.update()},e.prototype._delete=function(e){return this.nodes[e].dispatchEvent(new CustomEvent("cleanup")),this.nodes[e].removeEventListener("checkyourself"),this.nodes[e].removeEventListener("cleanup"),this.nodes.splice(e,1),!0},e.prototype.remove=function(e){if(void 0!==e){for(var t=this.nodes.length;t--;)this.nodes[t].selector===e&&this._delete(t);this.map.hasOwnProperty(e)&&delete this.map[e]}else for(var t=this.nodes.length;t--;)document.body.contains(this.nodes[t])||this._delete(t)},e.prototype.get=function(e){for(var t=this.nodes.length;t--;)if(this.nodes[t].selector===e)return this.nodes[t]},e.prototype.inspect=function(e){"undefined"!=typeof console&&console.log("map"===e?this.map:this.nodes)},new e});
+// Set up element queries (BoomQuery - https://github.com/BoomTownROI/boomqueries)
+
+boomQueries.add(".texting", [[610, "texting--md"]]);
+boomQueries.add(".log-call", [[420, "log-call--sm"]]);
+boomQueries.add(".set-to-do", [[420, "set-to-do--sm"]]);
+
+$(document).ready(function() {
+  boomQueries.refresh();
+});
+
+
+/*boomQueries.add(".texting", [[610, "texting--md"]]);
+boomQueries.add(".log-call", [[420, "log-call--sm"]]);
+boomQueries.add(".set-to-do", [[420, "set-to-do--sm"]]);
+
+document.addEventListener('DOMContentLoaded', boomQueries.refresh, false);*/
+
+
 /* GLOBAL JS */
 
 
@@ -4162,32 +4180,6 @@ $(function () {
     return this
   }
 })(window.jQuery);
-
-
-
-// Set up element queries (BoomQuery - https://github.com/BoomTownROI/boomqueries)
-
-window.boomQueries.add("texting", {
-  selector: ".texting",
-  breaks: [
-    [610, "texting--md"]
-  ]
-});
-window.boomQueries.add("log-call", {
-  selector: ".log-call",
-  breaks: [
-    [420, "log-call--sm"]
-  ]
-});
-window.boomQueries.add("set-to-do", {
-  selector: ".set-to-do",
-  breaks: [
-    [420, "set-to-do--sm"]
-  ]
-});
-window.boomQueries.calculate();
-
-
 
 
 

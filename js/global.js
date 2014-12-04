@@ -73,30 +73,4 @@ $(function () {
 
 
 
-// Set up element queries (BoomQuery - https://github.com/BoomTownROI/boomqueries)
-
-window.boomQueries.add("texting", {
-  selector: ".texting",
-  breaks: [
-    [610, "texting--md"]
-  ]
-});
-window.boomQueries.add("log-call", {
-  selector: ".log-call",
-  breaks: [
-    [420, "log-call--sm"]
-  ]
-});
-window.boomQueries.add("set-to-do", {
-  selector: ".set-to-do",
-  breaks: [
-    [420, "set-to-do--sm"]
-  ]
-});
-window.boomQueries.calculate();
-
-
-
-
-
 

@@ -1,11 +1,12 @@
 {
   "name": "boomqueries",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "http://boomtownroi.github.io/boomqueries/",
   "authors": [
     "Craig Anthony <craig@boomtownroi.com>",
     "Zach Schnackel <zach@boomtownroi.com>",
-    "Mark Funk <mark@boomtownroi.com>"
+    "Mark Funk <mark@boomtownroi.com>",
+    "Jason Benesch <jbenesch@boomtownroi.com>"
   ],
   "main": "dist/*",
   "description": "BoomQueries is our take on element-queries; sizing elements based on their container.",
