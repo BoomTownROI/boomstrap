@@ -1,6 +1,6 @@
 {
   "name": "boomqueries",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "http://boomtownroi.github.io/boomqueries/",
   "authors": [
     "Craig Anthony <craig@boomtownroi.com>",
@@ -15,11 +15,11 @@
     "*",
     "!dist/js/*.js"
   ],
-  "_release": "0.0.4",
+  "_release": "0.0.5",
   "_resolution": {
     "type": "version",
-    "tag": "v0.0.4",
-    "commit": "b4e9d712a7916359a3184cffe3aca5cbe394447d"
+    "tag": "v0.0.5",
+    "commit": "2aec9995cc36e419daecc7737be0138a50824940"
   },
   "_source": "git://github.com/boomtownroi/boomqueries.git",
   "_target": "~0.0.2",

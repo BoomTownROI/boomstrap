@@ -5,24 +5,57 @@
 
 <section id="element-query" class="pl-docs-section">
     <div class="page-header">
-      <h1>Element Query <small>boomqueries.js</small></h1>
+      <h1>Element Queries <small>boomqueries.js</small></h1>
     </div>
     <p class="lead">BoomQueries is a plugin used to perform element queries. See <a href="https://github.com/BoomTownROI/boomqueries" target="_blank">https://github.com/BoomTownROI/boomqueries</a> for options and documentation.</p>
-  
-
-    <div class="callout callout-info">
+   <div class="callout callout-info">
       <h4>About Element Queries</h4>
       <p>Element queries provide us with granular control over how the contents of an individual component will respond relative to its own size rather than the viewport size via media queries. To learn more about element queries, visit <a href="http://responsiveimagescg.github.io/eq-usecases/" target="_blank">http://responsiveimagescg.github.io/eq-usecases/</a>.</p>
     </div>
 
+    <h2>Basic example</h2>
+    <p>In the following example, we register the component (<code>.pl-component</code>) with BoomQueries via JavaScript:</p>
+    <p><code>boomQueries.add(".pl-component", [[420, "pl-component--sm"],[600, "pl-component--md"]]);</code></p>
+    <p>Once registered, the component is set up to receive size modifier classes when <strong>its width</strong> matches the defined breakpoints. In this example, when the component's width reaches 420px it will receive the .pl-component--sm class. When the component's width reaches 600px it will receive the .pl-component--md class.</p>
+    <p>For demonstration purposes, we've provided two visual cues that indicate when a modifier class is added or removed:<br>
+    1) text inside of the component reveals modifier classes<br>
+    2) component's background changes color</p>
+    
 
     <div class="pl-example">
-      
+      <div class="row">
+        <div class="col-xs-12 col-sm-5">
+          <div class="pl-component">.pl-component</div>
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <div class="pl-component">.pl-component</div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="pl-component">.pl-component</div>
+        </div>
+      </div>
     </div>
     
-    <div class="pl-code"><pre class="prettyprint"><code>
-      
-    </code></pre>
+    <div class="pl-code"><pre class="prettyprint"><code>&lt;div class="row"&gt;
+  &lt;div class="col-xs-12 col-sm-5"&gt;
+    &lt;div class="pl-component"&gt;.pl-component&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col-xs-12 col-sm-7"&gt;
+    &lt;div class="pl-component"&gt;.pl-component&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-xs-12"&gt;
+    &lt;div class="pl-component"&gt;.pl-component&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
+
+    <script type="text/javascript">
+      boomQueries.add(".pl-component", [[420, "pl-component--sm"],[600, "pl-component--md"]]);
+    </script>
 </section>
 

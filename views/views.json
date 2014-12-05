@@ -250,7 +250,7 @@
 			{
 				"source": "views/javascript/element-query.html",
 				"css_id": "#element-query",
-				"nav_header": "elelment query"
+				"nav_header": "element queries"
 			},
 			{
 				"source": "views/javascript/modal.html",
