@@ -1,4 +1,4 @@
-/*! BoomQueries 0.0.4 | http://boomtownroi.github.io/boomqueries/ | (c) 2014 BoomTown | MIT License */
+/*! BoomQueries 0.0.6 | http://boomtownroi.github.io/boomqueries/ | (c) 2014 BoomTown | MIT License */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD
@@ -13,16 +13,11 @@
 }(this, function() {
   'use strict';
 
-  function BoomQuery() {
-    // Array of dom nodes which update their class when the window resizes
-    this.nodes = [];
+  // Array of dom nodes which update their class when the window resizes
+  var nodes = [];
 
-    // Hash of selectors with their corresponding break points
-    this.map = {};
-
-    // Dispatch our custom event when the window resizes
-    window.addEventListener('resize', this.debounce(this, this.update, 100), false);
-  }
+  // Hash of selectors with their corresponding break points
+  var map   = {};
 
   // classList.add() Polyfill
   function addClass(el, className) {
@@ -54,7 +49,7 @@
   }
 
   // Rate limit the amount of times our update method gets called on window resize
-  BoomQuery.prototype.debounce = function(context, func, wait, immediate) {
+  function debounce(context, func, wait, immediate) {
     var timeout;
     return function() {
       var args = arguments;
@@ -67,23 +62,23 @@
       timeout = setTimeout(later, wait);
       if (callNow) func.apply(context, args);
     };
-  };
+  }
 
   // Called whenever we need to ensure all nodes have their proper class
-  BoomQuery.prototype.update = function(options) {
+  function update(options) {
     var details = {};
     // You can pass a custom object to each node when we dispatch the event
     if ( typeof options !== 'undefined' ) details.detail = options;
-    var updateEvent = new CustomEvent("checkyourself", details);
-    // Loop through our nodes firing a "checkyourself" event on each of them
-    this.nodes.forEach(function(node) {
+    var updateEvent = new CustomEvent('checkyourself', details);
+    // Loop through our nodes firing a 'checkyourself' event on each of them
+    nodes.forEach(function(node) {
       node.dispatchEvent(updateEvent);
     });
-  };
+  }
 
   // Internal function that accepts a DOM node with break points
   // Adds custom properties and a listener to the node and then stores the node in an internal array
-  BoomQuery.prototype._add = function(node, breakPoints, selector) {
+  function _add(node, breakPoints, selector) {
     // Check to ensure we aren't already tracking this node
     if ( node.breaks === undefined ) {
 
@@ -94,7 +89,7 @@
       if ( selector !== null ) node.selector = selector;
 
       // Attach an event listener with functionality to update it's own class
-      node.addEventListener("checkyourself", function(event) {
+      node.addEventListener('checkyourself', function(event) {
         // event.detail is custom object if we have one
 
         // Ensure we have a parent with layout to assess our offsetWidth from
@@ -121,14 +116,14 @@
               'currentBreak': this.breaks[currentBreak]
             }
           };
-          var completedEvent = new CustomEvent("nodeUpdated", details);
+          var completedEvent = new CustomEvent('nodeUpdated', details);
 
           // You can now attach an event listener to this node to catch when we have completed the event
           this.dispatchEvent(completedEvent);
         }
       });
 
-      node.addEventListener("cleanup", function(event) {
+      node.addEventListener('cleanup', function(event) {
         var self = this;
         this.breaks.forEach(function(br) {
           classListRemove(self, br[1]);
@@ -136,109 +131,123 @@
       });
 
       // Push the node on to our stack of nodes
-      this.nodes.push(node);
+      nodes.push(node);
     }
-  };
+  }
 
   // Internal method that accepts a css selector,
-  BoomQuery.prototype._addSelector = function(selector, breakPoints) {
+  function _addSelector(selector, breakPoints) {
     // Add selector to internal map hash for refreshing
-    this.map[selector] = breakPoints;
+    map[selector] = breakPoints;
 
     // Loop through nodes adding them internally
-    var nodes = document.querySelectorAll(selector), self = this;
+    var nodes = document.querySelectorAll(selector);
     Array.prototype.forEach.call(nodes, function(node) {
-      self._add(node, breakPoints, selector);
+      _add(node, breakPoints, selector);
     });
-  };
+  }
 
   // Main method for external use
   // Can add a css selector or DOM node as first par
   // Breakpoints is a multi dimensional array containing an offsetWidth int and a corresponding class name
   // Name is an optional parameter that allows you to specify or name a DOM node
-  BoomQuery.prototype.add = function (selector, breakPoints, name) {
+  function add(selector, breakPoints, name) {
     if ( typeof selector === 'string' ) {
-      this._addSelector(selector, breakPoints);
+      _addSelector(selector, breakPoints);
     } else {
-      var id = null, self = this;
+      var id = null;
       if ( name !== 'undefined' ) id = name;
       if ( selector.constructor === Array ) {
         selector.forEach(function(node){
-          self._add(node, breakPoints, id);
+          _add(node, breakPoints, id);
         });
       } else {
-        this._add(selector, breakPoints, id);
+        _add(selector, breakPoints, id);
       }
     }
-    this.update();
-  };
+    update();
+  }
 
   // Call refresh method when new DOM elements have been added
-  BoomQuery.prototype.refresh = function() {
+  function refresh() {
     // First let's remove any nodes which have been removed from DOM
-    this.remove();
+    remove();
 
     // Now we need to roll through css selectors and requery them to see if there are a new nodes we need to consume
-    var selectors = Object.keys(this.map), self = this;
+    var selectors = Object.keys(map);
     selectors.forEach(function(selector) {
-      self._addSelector(selector, self.map[selector]);
+      _addSelector(selector, map[selector]);
     });
 
-    this.update();
-  };
+    update();
+  }
 
   // Internal method to stay DRY
-  BoomQuery.prototype._delete = function(i) {
+  function _delete(i) {
     // Remove event listener before discarding to avoid zombies
-    this.nodes[i].dispatchEvent(new CustomEvent("cleanup"));
-    this.nodes[i].removeEventListener("checkyourself");
-    this.nodes[i].removeEventListener("cleanup");
-    this.nodes.splice(i, 1);
+    nodes[i].dispatchEvent(new CustomEvent('cleanup'));
+    nodes[i].removeEventListener('checkyourself');
+    nodes[i].removeEventListener('cleanup');
+    nodes.splice(i, 1);
     return true;
-  };
+  }
 
   // Remove internal nodes based on selector or it's presence in the DOM
-  BoomQuery.prototype.remove = function(selector) {
+  function remove(selector) {
     var i;
 
     // Remove node based on selector or unique name provided
     if ( selector !== undefined ) {
-      for ( i = this.nodes.length; i--; ) {
-        if ( this.nodes[i].selector === selector ) {
-          this._delete(i);
+      for ( i = nodes.length; i--; ) {
+        if ( nodes[i].selector === selector ) {
+          _delete(i);
         }
       }
       // Make sure our selector map actually has selector before deleting
       // If we pass an ID of DOM node to delete, it won't be contained in our selector map
-      if ( this.map.hasOwnProperty(selector) ) delete this.map[selector];
+      if ( map.hasOwnProperty(selector) ) delete map[selector];
     // If a selector is not passed, let's remove the node if it is no longer in the DOM
     } else {
-      for ( i = this.nodes.length; i--; ) {
-        if ( !document.body.contains(this.nodes[i]) ) {
-          this._delete(i);
+      for ( i = nodes.length; i--; ) {
+        if ( !document.body.contains(nodes[i]) ) {
+          _delete(i);
         }
       }
     }
-  };
+  }
 
-  BoomQuery.prototype.get = function(selector) {
+  function get(selector) {
     // Loop through internal array of nodes
-    for ( var i = this.nodes.length; i--; ) {
-      if ( this.nodes[i].selector === selector ) {
-        return this.nodes[i];
+    for ( var i = nodes.length; i--; ) {
+      if ( nodes[i].selector === selector ) {
+        return nodes[i];
       }
     }
-  };
+  }
 
   // Just logs the internal array of nodes for debug/inspection
   // You can specify which internal store you want to inspect: map or nodes
-  BoomQuery.prototype.inspect = function(which) {
-    if ( typeof console !== "undefined" ) {
-      if ( which === 'map' ) console.log(this.map);
-      else console.log(this.nodes);
+  function inspect(which) {
+    if ( typeof console !== 'undefined' ) {
+      if ( which === 'map' ) console.log(map);
+      else console.log(nodes);
     }
-  };
+  }
 
-  return new BoomQuery();
+  // Dispatch our custom event when the window resizes
+  window.addEventListener('resize', debounce(null, update, 100), false);
+
+  return {
+    // Exposing for tests
+    nodes:   nodes,
+    map:     map,
+
+    update:  update,
+    add:     add,
+    refresh: refresh,
+    remove:  remove,
+    get:     get,
+    inspect: inspect
+  };
 
 }));
