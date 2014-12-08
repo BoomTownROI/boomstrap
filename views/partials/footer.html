@@ -92,11 +92,15 @@
 			
 			///////////// 
 			
-			$('.modal').on('show.bs.modal', function (e) {
-				/*setTimeout(function(){
+			$('.modal.fade').on('show.bs.modal', function (e) {
+				setTimeout(function(){
 					boomQueries.refresh();
-				}, 200);*/
+				}, 200);
 			})
+
+			/*$('.modal').on('shown.bs.modal', function (e) {
+				boomQueries.refresh();
+			})*/
 
     });
 
