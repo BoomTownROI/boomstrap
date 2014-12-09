@@ -4090,20 +4090,31 @@ $templateCache.put("selectize/select.tpl.html","<div class=\"selectize-control s
 !function(){"use strict";function a(a,b){return a.module("angularMoment",[]).constant("angularMomentConfig",{preprocess:null,timezone:""}).constant("moment",b).constant("amTimeAgoConfig",{withoutSuffix:!1}).directive("amTimeAgo",["$window","moment","amMoment","amTimeAgoConfig","angularMomentConfig",function(b,c,d,e,f){return function(g,h,i){function j(){o&&(b.clearTimeout(o),o=null)}function k(a){h.text(a.fromNow(p));var d=c().diff(a,"minute"),e=3600;1>d?e=1:60>d?e=30:180>d&&(e=300),o=b.setTimeout(function(){k(a)},1e3*e)}function l(){j(),m&&k(d.preprocessDate(m,q,n))}var m,n,o=null,p=e.withoutSuffix,q=f.preprocess;g.$watch(i.amTimeAgo,function(a){return"undefined"==typeof a||null===a||""===a?(j(),void(m&&(h.text(""),m=null))):(m=a,void l())}),a.isDefined(i.amWithoutSuffix)&&g.$watch(i.amWithoutSuffix,function(a){"boolean"==typeof a?(p=a,l()):p=e.withoutSuffix}),i.$observe("amFormat",function(a){n=a,l()}),i.$observe("amPreprocess",function(a){q=a,l()}),g.$on("$destroy",function(){j()}),g.$on("amMoment:languageChange",function(){l()})}}]).service("amMoment",["moment","$rootScope","$log","angularMomentConfig",function(b,c,d,e){this.preprocessors={utc:b.utc,unix:b.unix},this.changeLanguage=function(d){var e=b.lang(d);return a.isDefined(d)&&c.$broadcast("amMoment:languageChange"),e},this.preprocessDate=function(a,c,e){return this.preprocessors[c]?this.preprocessors[c](a,e):(c&&d.warn("angular-moment: Ignoring unsupported value for preprocess: "+c),!isNaN(parseFloat(a))&&isFinite(a)?b(parseInt(a,10)):b(a,e))},this.applyTimezone=function(a){var b=e.timezone;return a&&b&&(a.tz?a=a.tz(b):d.warn("angular-moment: timezone specified but moment.tz() is undefined. Did you forget to include moment-timezone.js?")),a}}]).filter("amCalendar",["moment","amMoment",function(a,b){return function(c,d){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,d);var e=a(c);return e.isValid()?b.applyTimezone(e).calendar():""}}]).filter("amDateFormat",["moment","amMoment",function(a,b){return function(c,d,e){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,e);var f=a(c);return f.isValid()?b.applyTimezone(f).format(d):""}}]).filter("amDurationFormat",["moment",function(a){return function(b,c,d){return"undefined"==typeof b||null===b?"":a.duration(b,c).humanize(d)}}])}"function"==typeof define&&define.amd?define("angular-moment",["angular","moment"],a):a(angular,window.moment)}();
 /*! BoomQueries 0.0.6 | http://boomtownroi.github.io/boomqueries/ | (c) 2014 BoomTown | MIT License */
 !function(e,t){"function"==typeof define&&define.amd?define(["boomQueries"],t):"object"==typeof exports?module.exports=t():e.boomQueries=t()}(this,function(){"use strict";function e(e,t){e.classList?e.classList.add(t):e.className+=" "+t}function t(e,t){e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp("(^|\\b)"+t.split(" ").join("|")+"(\\b|$)","gi")," ")}function n(e,t,n,o){var i;return function(){var s=arguments,r=function(){i=null,o||t.apply(e,s)},c=o&&!i;clearTimeout(i),i=setTimeout(r,n),c&&t.apply(e,s)}}function o(e){var t={};"undefined"!=typeof e&&(t.detail=e);var n=new v("checkyourself",t);d.forEach(function(e){e.dispatchEvent(n)})}function i(n,o,i){void 0===n.breaks&&(n.breaks=o,null!==i&&(n.selector=i),n.addEventListener("checkyourself",function(){if(null!==this.offsetParent){for(var n=this.breaks.length,o=this.offsetWidth,i=-1;n--;)o>=this.breaks[n][0]&&i++,t(this,this.breaks[n][1]);i>=0&&e(this,this.breaks[i][1]);var s={detail:{offsetWidth:o,currentBreak:this.breaks[i]}},r=new v("nodeUpdated",s);this.dispatchEvent(r)}}),n.addEventListener("cleanup",function(){var e=this;this.breaks.forEach(function(t){classListRemove(e,t[1])})}),d.push(n))}function s(e,t){p[e]=t;var n=document.querySelectorAll(e);Array.prototype.forEach.call(n,function(n){i(n,t,e)})}function r(e,t,n){if("string"==typeof e)s(e,t);else{var r=null;"undefined"!==n&&(r=n),e.constructor===Array?e.forEach(function(e){i(e,t,r)}):i(e,t,r)}o()}function c(){u();var e=Object.keys(p);e.forEach(function(e){s(e,p[e])}),o()}function a(e){return d[e].dispatchEvent(new v("cleanup")),d[e].removeEventListener("checkyourself"),d[e].removeEventListener("cleanup"),d.splice(e,1),!0}function u(e){var t;if(void 0!==e){for(t=d.length;t--;)d[t].selector===e&&a(t);p.hasOwnProperty(e)&&delete p[e]}else for(t=d.length;t--;)document.body.contains(d[t])||a(t)}function f(e){for(var t=d.length;t--;)if(d[t].selector===e)return d[t]}function l(e){"undefined"!=typeof console&&console.log("map"===e?p:d)}var d=[],p={},v=window.CustomEvent;return"object"==typeof v&&(v=function(e,t){t=t||{bubbles:!1,cancelable:!1,detail:void 0};var n=document.createEvent("CustomEvent");return n.initCustomEvent(e,t.bubbles,t.cancelable,t.detail),n},v.prototype=window.Event.prototype),window.addEventListener("resize",n(null,o,100),!1),{nodes:d,map:p,update:o,add:r,refresh:c,remove:u,get:f,inspect:l}});
-// Set up element queries (BoomQuery - https://github.com/BoomTownROI/boomqueries)
+// Define element queries (BoomQuery - https://github.com/BoomTownROI/boomqueries)
 
 boomQueries.add(".texting", [[610, "texting--md"]]);
 boomQueries.add(".log-call", [[420, "log-call--sm"]]);
 boomQueries.add(".set-to-do", [[420, "set-to-do--sm"]]);
 
 $(document).ready(function() {
-  //boomQueries.refresh();
+  boomQueries.refresh();
 });
 
+// document.addEventListener('DOMContentLoaded', boomQueries.refresh, false);
 
-document.addEventListener('DOMContentLoaded', boomQueries.refresh, false);
+$( document ).ready(function() {
 
+// 	$('.modal').on('show.bs.modal', function (e) {
+// 		setTimeout(function(){
+// 			boomQueries.refresh();
+// 		}, 200);
+// 	});
 
+$('.modal').on('shown.bs.modal', function (e) {
+	boomQueries.refresh();
+});
+
+ });
 
 
 /* GLOBAL JS */
