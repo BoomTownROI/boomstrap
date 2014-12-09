@@ -9670,6 +9670,7 @@ a.list-group-item.active:focus .ficon {
   text-transform: lowercase;
 }
 .bootstrap-select.form-control {
+  background-color: inherit;
   margin-bottom: 0 !important;
 }
 .ui-select-match.form-control {
@@ -10050,7 +10051,7 @@ a.list-group-item.active:focus .ficon {
   border-left: 1px solid #cccccc;
   float: right;
   min-height: 280px;
-  padding: 15px 0 15px 15px;
+  padding: 15px;
   width: 280px;
 }
 .texting--md .texting__actions__compose textarea {
@@ -10077,7 +10078,6 @@ a.list-group-item.active:focus .ficon {
 .texting--modal .texting__actions,
 .texting--panel .texting__actions {
   background-color: transparent;
-  padding: 15px;
 }
 .texting--modal.texting--md .texting__actions,
 .texting--panel.texting--md .texting__actions {
