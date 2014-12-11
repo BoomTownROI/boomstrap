@@ -1,4 +1,7 @@
 
+.set-to-do__category {
+  margin-bottom: 4px;
+}
 .set-to-do__comments textarea {
   height: 60px;
   overflow: auto;
