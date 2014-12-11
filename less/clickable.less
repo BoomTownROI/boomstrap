@@ -1,0 +1,16 @@
+// File: clickable.less
+// Note: Pseudo links inteded to look like anchor tags but without the markup
+
+
+.clickable {
+  &:extend(a all);
+  &:extend(.pointer);
+}
+
+.clickable--muted {
+  color: @text-muted;
+  &:hover,
+  &:focus {
+    color: @text-muted-dark;
+  }
+}

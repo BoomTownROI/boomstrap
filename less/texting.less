@@ -9,7 +9,7 @@
 
 .texting__actions {
   background-color: @white;
-  padding-top: @texting-padding;
+  padding: @texting-padding;
   position: relative;
   z-index: 10;
 }
@@ -82,19 +82,18 @@
 .texting__msg {
   margin: 0 10% (@texting-padding/2) @texting-avatar-offset;
   position: relative;
-}
-
-.texting__msg--agent {
-  margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
-  .texting__msg__bubble {
-    &:extend(.bg-info);
-  }
-  .texting__msg__bubble__avatar {
-    left: auto;
-    right: -@texting-avatar-offset;
-  }
-  .texting__msg__time {
-    text-align: right;
+  &:nth-child(even) {
+    margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
+    .texting__msg__bubble {
+      &:extend(.bg-info);
+    }
+    .texting__msg__bubble__avatar {
+      left: auto;
+      right: -@texting-avatar-offset;
+    }
+    .texting__msg__time {
+      text-align: right;
+    }
   }
 }
 
@@ -157,12 +156,12 @@
 
 
 // Texting modifer - large, side by side
-.texting--lg {
+
+.texting--md {
   .texting__actions {
     border-left: 1px solid @gray-light;
     float: right;
     min-height: 280px;
-    padding: @texting-padding 0 @texting-padding @texting-padding;
     width: @texting-sidebar-width;
   }
   .texting__actions__compose {
@@ -186,10 +185,10 @@
     min-height: 100%;
   }
   .texting__msg {
-    margin: 0 20% @texting-padding @texting-avatar-offset;
-  }
-  .texting__msg--agent {
-    margin: 0 @texting-avatar-offset @texting-padding 20%;
+    margin: 0 15% @texting-padding @texting-avatar-offset;
+    &:nth-child(even) {
+      margin: 0 @texting-avatar-offset @texting-padding 15%;
+    }
   }
 }
 
@@ -197,9 +196,8 @@
 .texting--modal,.texting--panel {
   .texting__actions {
     background-color: transparent;
-    padding: @texting-padding;
   }
-  &.texting--lg {
+  &.texting--md {
     .texting__actions {
       border-bottom-right-radius: @panel-border-radius;
     }
@@ -208,8 +206,4 @@
     } 
   } 
 }
-
-
-
-
 
