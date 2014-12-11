@@ -524,7 +524,7 @@ mark,
   text-transform: capitalize;
 }
 .text-muted {
-  color: #cccccc;
+  color: #999999;
 }
 .text-primary {
   color: #1581e2;
@@ -571,7 +571,7 @@ a.bg-success:hover {
   background-color: #c1e2b3;
 }
 .bg-info,
-.texting__msg--agent .texting__msg__bubble {
+.texting__msg:nth-child(even) .texting__msg__bubble {
   background-color: #d9edf7;
 }
 a.bg-info:hover {
@@ -5459,8 +5459,8 @@ button.close {
 .log-call__checkboxes:after,
 .set-to-do__date-btns:before,
 .set-to-do__date-btns:after,
-.texting--lg .texting__body:before,
-.texting--lg .texting__body:after,
+.texting--md .texting__body:before,
+.texting--md .texting__body:after,
 .pl-docs-sidebar-header:before,
 .pl-docs-sidebar-header:after {
   content: " ";
@@ -5483,7 +5483,7 @@ button.close {
 .modal-footer:after,
 .log-call__checkboxes:after,
 .set-to-do__date-btns:after,
-.texting--lg .texting__body:after,
+.texting--md .texting__body:after,
 .pl-docs-sidebar-header:after {
   clear: both;
 }
@@ -8289,6 +8289,29 @@ fieldset[disabled] .btn-attention.active {
 .carousel-control.right .ficon {
   right: 0;
 }
+.clickable {
+  color: #1581e2 !important;
+  text-decoration: none !important;
+}
+.clickable:hover,
+.clickable:focus {
+  color: #0e599c !important;
+  text-decoration: underline !important;
+}
+.clickable:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
+  outline: thin dotted !important;
+  outline: 2px auto -webkit-focus-ring-color !important;
+  outline-offset: -3px !important;
+}
+.clickable--muted {
+  color: #999999 !important;
+}
+.clickable--muted:hover,
+.clickable--muted:focus {
+  color: #696969 !important;
+}
 .close-inverted {
   float: right;
   font-size: 21px;
@@ -9923,7 +9946,7 @@ a.list-group-item.active:focus .ficon {
 }
 .texting__actions {
   background-color: #ffffff;
-  padding-top: 15px;
+  padding: 15px;
   position: relative;
   z-index: 10;
 }
@@ -9983,14 +10006,14 @@ a.list-group-item.active:focus .ficon {
   margin: 0 10% 7.5px 52px;
   position: relative;
 }
-.texting__msg--agent {
+.texting__msg:nth-child(even) {
   margin: 0 52px 7.5px 10%;
 }
-.texting__msg--agent .texting__msg__bubble__avatar {
+.texting__msg:nth-child(even) .texting__msg__bubble__avatar {
   left: auto;
   right: -52px;
 }
-.texting__msg--agent .texting__msg__time {
+.texting__msg:nth-child(even) .texting__msg__time {
   text-align: right;
 }
 .texting__msg__bubble {
@@ -10045,17 +10068,16 @@ a.list-group-item.active:focus .ficon {
   color: #696969;
   font-size: 10px;
 }
-.texting--lg .texting__actions {
+.texting--md .texting__actions {
   border-left: 1px solid #cccccc;
   float: right;
   min-height: 280px;
-  padding: 15px 0 15px 15px;
   width: 280px;
 }
-.texting--lg .texting__actions__compose textarea {
+.texting--md .texting__actions__compose textarea {
   height: 140px;
 }
-.texting--lg .texting__convo {
+.texting--md .texting__convo {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -10063,27 +10085,26 @@ a.list-group-item.active:focus .ficon {
   top: 0;
   z-index: 1;
 }
-.texting--lg .texting__convo__inner {
+.texting--md .texting__convo__inner {
   max-height: auto;
   min-height: 100%;
 }
-.texting--lg .texting__msg {
-  margin: 0 20% 15px 52px;
+.texting--md .texting__msg {
+  margin: 0 15% 15px 52px;
 }
-.texting--lg .texting__msg--agent {
-  margin: 0 52px 15px 20%;
+.texting--md .texting__msg:nth-child(even) {
+  margin: 0 52px 15px 15%;
 }
 .texting--modal .texting__actions,
 .texting--panel .texting__actions {
   background-color: transparent;
-  padding: 15px;
 }
-.texting--modal.texting--lg .texting__actions,
-.texting--panel.texting--lg .texting__actions {
+.texting--modal.texting--md .texting__actions,
+.texting--panel.texting--md .texting__actions {
   border-bottom-right-radius: 4px;
 }
-.texting--modal.texting--lg .texting__convo,
-.texting--panel.texting--lg .texting__convo {
+.texting--modal.texting--md .texting__convo,
+.texting--panel.texting--md .texting__convo {
   border-bottom-left-radius: 4px;
 }
 .switcher {
@@ -10352,6 +10373,7 @@ h3 {
   border-width: 1px;
 }
 .pointer,
+.clickable,
 .switcher__label {
   cursor: pointer;
 }

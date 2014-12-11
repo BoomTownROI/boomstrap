@@ -524,7 +524,7 @@ mark,
   text-transform: capitalize;
 }
 .text-muted {
-  color: #cccccc;
+  color: #999999;
 }
 .text-primary {
   color: #1581e2;
@@ -571,7 +571,7 @@ a.bg-success:hover {
   background-color: #c1e2b3;
 }
 .bg-info,
-.texting__msg--agent .texting__msg__bubble {
+.texting__msg:nth-child(even) .texting__msg__bubble {
   background-color: #d9edf7;
 }
 a.bg-info:hover {
@@ -5459,8 +5459,8 @@ button.close {
 .log-call__checkboxes:after,
 .set-to-do__date-btns:before,
 .set-to-do__date-btns:after,
-.texting--lg .texting__body:before,
-.texting--lg .texting__body:after,
+.texting--md .texting__body:before,
+.texting--md .texting__body:after,
 .pl-docs-sidebar-header:before,
 .pl-docs-sidebar-header:after {
   content: " ";
@@ -5483,7 +5483,7 @@ button.close {
 .modal-footer:after,
 .log-call__checkboxes:after,
 .set-to-do__date-btns:after,
-.texting--lg .texting__body:after,
+.texting--md .texting__body:after,
 .pl-docs-sidebar-header:after {
   clear: both;
 }
@@ -8289,6 +8289,29 @@ fieldset[disabled] .btn-attention.active {
 .carousel-control.right .ficon {
   right: 0;
 }
+.clickable {
+  color: #1581e2 !important;
+  text-decoration: none !important;
+}
+.clickable:hover,
+.clickable:focus {
+  color: #0e599c !important;
+  text-decoration: underline !important;
+}
+.clickable:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
+  outline: thin dotted !important;
+  outline: 2px auto -webkit-focus-ring-color !important;
+  outline-offset: -3px !important;
+}
+.clickable--muted {
+  color: #999999 !important;
+}
+.clickable--muted:hover,
+.clickable--muted:focus {
+  color: #696969 !important;
+}
 .close-inverted {
   float: right;
   font-size: 21px;
@@ -9772,25 +9795,4 @@ a.list-group-item.active:focus .ficon {
   transition: opacity 0.2s linear;
   width: 9px;
   z-index: 1;
-}
-.set-to-do__date,
-.set-to-do__date-btns,
-.set-to-do__time {
-  margin-bottom: 15px;
-}
-.set-to-do__assign {
-  margin-top: 15px;
-}
-.set-to-do__assign p {
-  margin-bottom: 4px;
-}
-.set-to-do__body {
-  padding: 0;
-  position: relative;
-}
-.set-to-do__cancel {
-  font-size: 11px;
-  position: absolute;
-  right: 15px;
-  top: 19px;
 }
