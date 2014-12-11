@@ -9533,6 +9533,11 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;
 }
+.pair + .pair {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #999999;
+}
 .panel-title > a[data-toggle="collapse"] {
   display: block;
   position: relative;

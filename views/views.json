@@ -173,6 +173,11 @@
 				"nav_header": "Pagination"
 			},
 			{
+				"source": "views/components/pairs.html",
+				"css_id": "#pairs",
+				"nav_header": "Pairs"
+			},
+			{
 				"source": "views/components/panels.html",
 				"css_id": "#panels",
 				"nav_header": "Panels"
