@@ -1,4 +1,17 @@
 
+.baron-scroller-bar {
+  background-color: #000;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: auto;
+  position: absolute;
+  right: 0;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  width: 9px;
+  z-index: 1;
+}
 .set-to-do__date,
 .set-to-do__date-btns,
 .set-to-do__time {
@@ -574,6 +587,9 @@ h3 {
   border-color: #cccccc;
   border-style: solid;
   border-width: 1px;
+}
+.inline-block {
+  display: inline-block;
 }
 .pointer,
 .clickable,
