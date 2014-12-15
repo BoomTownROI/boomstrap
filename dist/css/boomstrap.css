@@ -524,7 +524,7 @@ mark,
   text-transform: capitalize;
 }
 .text-muted {
-  color: #cccccc;
+  color: #999999;
 }
 .text-primary {
   color: #1581e2;
@@ -8287,6 +8287,29 @@ fieldset[disabled] .btn-attention.active {
 .carousel-control.right .ficon {
   right: 0;
 }
+.clickable {
+  color: #1581e2 !important;
+  text-decoration: none !important;
+}
+.clickable:hover,
+.clickable:focus {
+  color: #0e599c !important;
+  text-decoration: underline !important;
+}
+.clickable:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
+  outline: thin dotted !important;
+  outline: 2px auto -webkit-focus-ring-color !important;
+  outline-offset: -3px !important;
+}
+.clickable--muted {
+  color: #999999 !important;
+}
+.clickable--muted:hover,
+.clickable--muted:focus {
+  color: #696969 !important;
+}
 .close-inverted {
   float: right;
   font-size: 21px;
@@ -9546,6 +9569,11 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;
 }
+.pair + .pair {
+  font-size: 0.925em;
+  font-weight: 400;
+  color: #999999;
+}
 .panel-title > a[data-toggle="collapse"] {
   display: block;
   position: relative;
@@ -10352,6 +10380,7 @@ h3 {
   border-width: 1px;
 }
 .pointer,
+.clickable,
 .switcher__label {
   cursor: pointer;
 }
