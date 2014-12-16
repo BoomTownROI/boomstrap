@@ -111,6 +111,7 @@
 }
 
 .texting__msg__bubble__avatar {
+  background-clip: padding-box;
   background-color: @gray-light;
   border-radius: 50%;
   height: @texting-avatar-size;
@@ -131,9 +132,9 @@
     top: 6px;
   }
   img {
-    border-radius: 50%;
+    //border-radius: @texting-avatar-size;
     margin-left: -2px;
-    width: @texting-avatar-size + 2px;
+    width: @texting-avatar-size + 4px;
   }
 }
 
