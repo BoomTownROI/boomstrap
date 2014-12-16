@@ -242,6 +242,7 @@
   transition: background-color 500ms linear 0s;
 }
 .texting__msg__bubble__avatar {
+  background-clip: padding-box;
   background-color: #cccccc;
   border-radius: 50%;
   height: 42px;
@@ -259,12 +260,12 @@
   border-radius: 50%;
   color: #ececec;
   font-size: 40px;
+  left: 1px;
   top: 6px;
 }
 .texting__msg__bubble__avatar img {
-  border-radius: 50%;
   margin-left: -2px;
-  width: 44px;
+  width: 46px;
 }
 .texting__msg__status {
   font-size: 11px;
