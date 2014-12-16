@@ -179,15 +179,11 @@ gulp.task('boomstrapLessDocs', function() {
     .pipe(less({ compress: false }))
     .pipe(plumber.stop())
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
-    .pipe(gulp.dest(DEST_DIR));
-
-});
-
-gulp.task("boomstrapBlessDocs", ["boomstrapLessDocs"], function() {
-  gulp.src("docs/css/boomstrap.css")
+    .pipe(gulp.dest(DEST_DIR))
     .pipe(bless({ imports: false }))
     .pipe(gulp.dest("docs/css/splitcss/"));
 });
+
 
 gulp.task('boomstrapLessDist', function() {
   var DEST_DIR  = 'dist/css';
@@ -201,7 +197,7 @@ gulp.task('boomstrapLessDist', function() {
     .pipe(gulp.dest(DEST_DIR));
 });
 
-gulp.task('boomstrapLess', ['boomstrapLessDocs', 'boomstrapBlessDocs', 'boomstrapLessDist']);
+gulp.task('boomstrapLess', ['boomstrapLessDocs', 'boomstrapLessDist']);
 
 gulp.task('reloadDocsLess', function() {
   gulp.src('docs/css/**/*.css')
@@ -266,10 +262,9 @@ gulp.task('server', ['boomstrapcommon'], function() {
   });
 
   // Watch Less files
-  gulp.watch(['less/**/*.less'], ['boomstrapLessDocs', 'reloadDocsLess', 'boomstrapBlessDocs']);
+  gulp.watch(['less/**/*.less'], ['boomstrapLessDocs', 'reloadDocsLess']);
 
-  // 
-  //gulp.watch(paths.legacy_styles.src, ["boomstrapBlessDocs"]);
+
 
   // Watch Javascript Files and Templates
   gulp.watch([
