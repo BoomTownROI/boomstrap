@@ -10042,6 +10042,7 @@ a.list-group-item.active:focus .ficon {
   border-radius: 50%;
   color: #ececec;
   font-size: 40px;
+  left: 1px;
   top: 6px;
 }
 .texting__msg__bubble__avatar img {
