@@ -571,7 +571,7 @@ a.bg-success:hover {
   background-color: #c1e2b3;
 }
 .bg-info,
-.texting__msg:nth-child(even) .texting__msg__bubble {
+.texting__msg--user .texting__msg__bubble {
   background-color: #d9edf7;
 }
 a.bg-info:hover {
@@ -10009,14 +10009,14 @@ a.list-group-item.active:focus .ficon {
   margin: 0 10% 7.5px 52px;
   position: relative;
 }
-.texting__msg:nth-child(even) {
+.texting__msg--user {
   margin: 0 52px 7.5px 10%;
 }
-.texting__msg:nth-child(even) .texting__msg__bubble__avatar {
+.texting__msg--user .texting__msg__bubble__avatar {
   left: auto;
   right: -52px;
 }
-.texting__msg:nth-child(even) .texting__msg__time {
+.texting__msg--user .texting__msg__time {
   text-align: right;
 }
 .texting__msg__bubble {
@@ -10095,7 +10095,7 @@ a.list-group-item.active:focus .ficon {
 .texting--md .texting__msg {
   margin: 0 15% 15px 52px;
 }
-.texting--md .texting__msg:nth-child(even) {
+.texting--md .texting__msg--user {
   margin: 0 52px 15px 15%;
 }
 .texting--modal .texting__actions,

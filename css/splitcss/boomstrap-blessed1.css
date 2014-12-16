@@ -571,7 +571,7 @@ a.bg-success:hover {
   background-color: #c1e2b3;
 }
 .bg-info,
-.texting__msg:nth-child(even) .texting__msg__bubble {
+.texting__msg--user .texting__msg__bubble {
   background-color: #d9edf7;
 }
 a.bg-info:hover {
