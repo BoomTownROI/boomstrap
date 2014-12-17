@@ -1,22 +1,6 @@
 // File: mixins.less
 // Note: Custom Boomstrap mixins, overrides, extends
 
-// Anchor tag - outline badges
-// -------------------------
-
-.anchor-tag() {
-  color: @link-color;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: @link-hover-color;
-    text-decoration: underline;
-  }
-  &:focus {
-    .tab-focus();
-  }
-}
-
 
 // Badges - outline badges
 // -------------------------
@@ -198,7 +182,19 @@
 .table-heading-typography() {
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: @font-weight-semibold;
+}
+
+// Typography
+// -------------------------
+
+// added clickable
+
+.text-emphasis-variant(@color) {
+  color: @color !important;
+  a&:hover,.clickable&:hover,.btn-link&:hover {
+    color: darken(@color, 10%) !important;
+  }
 }
 
 

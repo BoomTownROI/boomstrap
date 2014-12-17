@@ -3,14 +3,18 @@
 
 
 .clickable {
-  .anchor-tag() !important;
+  color: @link-color;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+  }
+  &:focus {
+    .tab-focus();
+  }
   &:extend(.pointer);
 }
 
-.clickable--muted {
-  color: @text-muted !important;
-  &:hover,
-  &:focus {
-    color: @text-muted-dark !important;
-  }
-}
+
+

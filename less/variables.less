@@ -6,7 +6,7 @@
 // Alerts
 // -------------------------
 
-@alert-link-font-weight:      600;
+@alert-link-font-weight:      @font-weight-semibold;
 
 
 // -------------------------
@@ -106,7 +106,7 @@
 // Callouts
 // -------------------------
 
-@callout-link-font-weight:    600;
+@callout-link-font-weight:    @font-weight-semibold;
 
 @callout-success-bg:          lighten(@state-success-bg,5%);
 @callout-success-color:       @brand-success;
@@ -363,8 +363,8 @@
 // Typography
 // -------------------------
 
-@font-family-sans-serif:   'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif; // override bootstrap
-@headings-font-weight:      600; // override bootstrap
+@font-family-sans-serif:  'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif; // override bootstrap
+@headings-font-weight:    @font-weight-semibold; // override bootstrap
 
 @font-size-h1:            floor((@font-size-base * 1.75)); // ~24px
 @font-size-h2:            floor((@font-size-base * 1.6)); // ~22px
@@ -372,6 +372,10 @@
 @font-size-h4:            floor((@font-size-base * 1.3)); // ~18px
 @font-size-h5:            floor((@font-size-base * 1.2)); // ~16px
 @font-size-h6:            @font-size-base; // 14
+
+@font-weight-bold:        700;
+@font-weight-light:       300;
+@font-weight-semibold:    600;
 
 
 // -------------------------

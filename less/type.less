@@ -6,7 +6,7 @@
 // -------------------------
 
 .lead {
-  font-weight: 300;
+  font-weight: @font-weight-light;
 }
 
 
@@ -58,8 +58,12 @@
 
 
 // Contextual colors
+
 .text-attention {
   .text-emphasis-variant(@brand-attention);
+}
+.text-muted {
+  .text-emphasis-variant(@text-muted);
 }
 
 // Ex: 14px base font * 75% = about 11px

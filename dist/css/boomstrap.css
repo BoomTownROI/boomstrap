@@ -528,33 +528,58 @@ mark,
 }
 .text-primary {
   color: #1581e2;
+  color: #1581e2 !important;
 }
 a.text-primary:hover {
   color: #1166b3;
 }
+a.text-primary:hover,
+.clickable.text-primary:hover {
+  color: #1166b3 !important;
+}
 .text-success {
   color: #3c763d;
+  color: #3c763d !important;
 }
 a.text-success:hover {
   color: #2b542c;
 }
+a.text-success:hover,
+.clickable.text-success:hover {
+  color: #2b542c !important;
+}
 .text-info {
   color: #31708f;
+  color: #31708f !important;
 }
 a.text-info:hover {
   color: #245269;
 }
+a.text-info:hover,
+.clickable.text-info:hover {
+  color: #245269 !important;
+}
 .text-warning {
   color: #8a6d3b;
+  color: #8a6d3b !important;
 }
 a.text-warning:hover {
   color: #66512c;
 }
+a.text-warning:hover,
+.clickable.text-warning:hover {
+  color: #66512c !important;
+}
 .text-danger {
   color: #a94442;
+  color: #a94442 !important;
 }
 a.text-danger:hover {
   color: #843534;
+}
+a.text-danger:hover,
+.clickable.text-danger:hover {
+  color: #843534 !important;
 }
 .bg-primary {
   color: #fff;
@@ -8286,27 +8311,20 @@ fieldset[disabled] .btn-attention.active {
   right: 0;
 }
 .clickable {
-  color: #1581e2 !important;
-  text-decoration: none !important;
+  color: #1581e2;
+  text-decoration: none;
 }
 .clickable:hover,
 .clickable:focus {
-  color: #0e599c !important;
-  text-decoration: underline !important;
+  color: #0e599c;
+  text-decoration: underline;
 }
 .clickable:focus {
-  outline: 5px auto -webkit-focus-ring-color !important;
-  outline-offset: -2px !important;
-  outline: thin dotted !important;
-  outline: 2px auto -webkit-focus-ring-color !important;
-  outline-offset: -3px !important;
-}
-.clickable--muted {
-  color: #999999 !important;
-}
-.clickable--muted:hover,
-.clickable--muted:focus {
-  color: #696969 !important;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
 }
 .close-inverted {
   float: right;
@@ -10351,9 +10369,25 @@ a.bg-white:hover {
 }
 .text-attention {
   color: #f68a24;
+  color: #f68a24 !important;
 }
 a.text-attention:hover {
   color: #de7009;
+}
+a.text-attention:hover,
+.clickable.text-attention:hover {
+  color: #de7009 !important;
+}
+.text-muted {
+  color: #999999;
+  color: #999999 !important;
+}
+a.text-muted:hover {
+  color: #808080;
+}
+a.text-muted:hover,
+.clickable.text-muted:hover {
+  color: #808080 !important;
 }
 .xsmall {
   font-size: 75%;
