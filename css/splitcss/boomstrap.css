@@ -711,7 +711,7 @@ a.text-attention,
 }
 a.text-attention:hover,
 .btn-link.text-attention:hover,
-.clickable .text-attention:hover {
+.clickable.text-attention:hover {
   color: #de7009;
 }
 .text-muted {
@@ -727,7 +727,7 @@ a.text-muted,
 }
 a.text-muted:hover,
 .btn-link.text-muted:hover,
-.clickable .text-muted:hover {
+.clickable.text-muted:hover {
   color: #808080;
 }
 .xsmall {

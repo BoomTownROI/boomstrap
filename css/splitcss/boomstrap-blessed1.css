@@ -539,7 +539,7 @@ a.text-primary,
 }
 a.text-primary:hover,
 .btn-link.text-primary:hover,
-.clickable .text-primary:hover {
+.clickable.text-primary:hover {
   color: #1166b3;
 }
 .text-success {
@@ -555,7 +555,7 @@ a.text-success,
 }
 a.text-success:hover,
 .btn-link.text-success:hover,
-.clickable .text-success:hover {
+.clickable.text-success:hover {
   color: #2b542c;
 }
 .text-info {
@@ -571,7 +571,7 @@ a.text-info,
 }
 a.text-info:hover,
 .btn-link.text-info:hover,
-.clickable .text-info:hover {
+.clickable.text-info:hover {
   color: #245269;
 }
 .text-warning {
@@ -587,7 +587,7 @@ a.text-warning,
 }
 a.text-warning:hover,
 .btn-link.text-warning:hover,
-.clickable .text-warning:hover {
+.clickable.text-warning:hover {
   color: #66512c;
 }
 .text-danger {
@@ -603,7 +603,7 @@ a.text-danger,
 }
 a.text-danger:hover,
 .btn-link.text-danger:hover,
-.clickable .text-danger:hover {
+.clickable.text-danger:hover {
   color: #843534;
 }
 .bg-primary {
