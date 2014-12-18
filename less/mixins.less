@@ -146,8 +146,6 @@
 // Use on container that has element using .vertical-align mixin. Prevents 1/2 pixel positioning.
 
 .preserve-3d() {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -191,9 +189,12 @@
 // added clickable
 
 .text-emphasis-variant(@color) {
-  color: @color !important;
-  a&:hover,.clickable&:hover,.btn-link&:hover {
-    color: darken(@color, 10%) !important;
+  color: @color;
+  a&,.btn-link&,.clickable& {
+    color: @color;
+  }
+  a&:hover,.btn-link&:hover,.clickable &:hover {
+    color: darken(@color, 10%);
   }
 }
 
