@@ -82,18 +82,19 @@
 .texting__msg {
   margin: 0 10% (@texting-padding/2) @texting-avatar-offset;
   position: relative;
-  &:nth-child(even) {
-    margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
-    .texting__msg__bubble {
-      &:extend(.bg-info);
-    }
-    .texting__msg__bubble__avatar {
-      left: auto;
-      right: -@texting-avatar-offset;
-    }
-    .texting__msg__time {
-      text-align: right;
-    }
+}
+
+.texting__msg--user {
+  margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
+  .texting__msg__bubble {
+    &:extend(.bg-info);
+  }
+  .texting__msg__bubble__avatar {
+    left: auto;
+    right: -@texting-avatar-offset;
+  }
+  .texting__msg__time {
+    text-align: right;
   }
 }
 
@@ -110,6 +111,7 @@
 }
 
 .texting__msg__bubble__avatar {
+  background-clip: padding-box;
   background-color: @gray-light;
   border-radius: 50%;
   height: @texting-avatar-size;
@@ -126,12 +128,13 @@
     border-radius: 50%;
     color: @gray-lighter;
     font-size: 40px;
+    left: 1px;
     top: 6px;
   }
   img {
-    border-radius: 50%;
+    //border-radius: @texting-avatar-size;
     margin-left: -2px;
-    width: @texting-avatar-size + 2px;
+    width: @texting-avatar-size + 4px;
   }
 }
 
@@ -186,9 +189,9 @@
   }
   .texting__msg {
     margin: 0 15% @texting-padding @texting-avatar-offset;
-    &:nth-child(even) {
-      margin: 0 @texting-avatar-offset @texting-padding 15%;
-    }
+  }
+  .texting__msg--user {
+    margin: 0 @texting-avatar-offset @texting-padding 15%;
   }
 }
 

@@ -3,7 +3,8 @@
   <h1 id="helper-classes" class="page-header">Helper classes</h1>
 
   <h3 id="helper-classes-colors">Contextual colors</h3>
-  <p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
+  <p>Convey meaning through color with a handful of emphasis utility classes.</p>
+  <p><strong>These may also be applied to <code>a</code> tags  and <code>.clickable</code> links and will darken on hover just like our default link styles. See <a href="#links">links</a> for more information.</strong></p>
   <div class="pl-example">
     <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
     <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -124,10 +125,22 @@
 </code></pre></div>
 
   <div class="callout callout-warning">
-    <h4>Not for use in navbars</h4>
+    <h4>Quick floats not for use in navbars</h4>
     <p>To align components in navbars with utility classes, use <code>.navbar-left</code> or <code>.navbar-right</code> instead. <a href="../components/#navbar-component-alignment">See the navbar docs</a> for details.</p>
   </div>
 
+  <h3>Inline-block</h3>
+  <p>Set an element to <code>display: inline-block</code> using the <code>.inline-block</code> class.</p>
+  <div class="pl-example">
+    <div class="bg-success inline-block">
+      Congrats! You successfully used the <strong>inline-block</strong> class!
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="bg-success inline-block"&gt;
+  Congrats! You successfully used the &lt;strong&gt;inline-block&lt;/strong&gt; class!
+&lt;/div&gt;</code></pre>
+  </div>
 
   <h3 id="helper-classes-center">Center content blocks</h3>
   <p>Set an element to <code>display: block</code> and center via <code>margin</code>. Available as a mixin and class.</p>
@@ -148,19 +161,21 @@
 
   <h3 id="helper-classes-vertical-align">Vertically Align</h3>
   <p>Vertically align elements inside of containers with a set height using the <code>.vert-align</code> class or <code>.vert-align()</code> mixin.</p>
-  <p>In the example below, the paragraph is centered using the <code>.vert-align</code> class. The paragraph's parent element has a set height - this is a must in order for the vertical alignment to work.</p>
-  <p>If the vertically aligned element appears blurry, it is due to 1/2 pixel positioning. To fix, add the <code>.preserve-3d</code> class to the parent container or use the <code>.preserve-3d</code> mixin on the parent container.</p>
-  <p>See <a href="http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/" target="_blank">http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/</a> for further explanation.</p>
+
 <div class="pl-example">
   <div class="pl-example-vert-align">
-    <p class="vert-align">I'm a vertically aligned paragraph!</p>
+    <p class="vert-align">I'm a vertically aligned paragraph inside of a div with a set height!</p>
   </div>
 </div>
 
-<div class="pl-code"><pre class="prettyprint"><code>&lt;div&gt;
-  &lt;p class="vert-align"&gt;I'm a vertically aligned paragraph!&lt;/p&gt;
+  <div class="pl-code"><pre class="prettyprint"><code>&lt;div&gt;
+  &lt;p class="vert-align"&gt;I'm a vertically aligned paragraph inside of a div with a set height!&lt;/p&gt;
 &lt;/div&gt;</code></pre>
   </div>
+
+  <p>The <code>.vert-align()</code> mixin is a <em>parametric</em> mixin that can take a <em>position</em> argument. By default, the position is set to <strong>relative</strong>. If you need to set the position to <strong>absolute</strong>, you would use the mixin like so: <code>.vert-align(absolute);</code></p>
+
+  <p>If the vertically aligned element appears blurry, it is due to 1/2 pixel positioning. To fix, add the <code>.preserve-3d</code> class to the parent container or use the <code>.preserve-3d</code> mixin on the parent container. See <a href="http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/" target="_blank">http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/</a> for further explanation.</p>
 
   <h3 id="helper-classes-clearfix">Clearfix</h3>
   <p>Clear the <code>float</code> on any element with the <code>.clearfix</code> class. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher. Can also be used as a mixin.</p>

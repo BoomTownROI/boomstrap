@@ -1,22 +1,6 @@
 // File: mixins.less
 // Note: Custom Boomstrap mixins, overrides, extends
 
-// Anchor tag - outline badges
-// -------------------------
-
-.anchor-tag() {
-  color: @link-color;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: @link-hover-color;
-    text-decoration: underline;
-  }
-  &:focus {
-    .tab-focus();
-  }
-}
-
 
 // Badges - outline badges
 // -------------------------
@@ -162,8 +146,6 @@
 // Use on container that has element using .vertical-align mixin. Prevents 1/2 pixel positioning.
 
 .preserve-3d() {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -198,7 +180,22 @@
 .table-heading-typography() {
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: @font-weight-semibold;
+}
+
+// Typography
+// -------------------------
+
+// added clickable
+
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&,.btn-link&,.clickable& {
+    color: @color;
+  }
+  a&:hover,.btn-link&:hover,.clickable&:hover {
+    color: darken(@color, 10%);
+  }
 }
 
 
@@ -207,8 +204,8 @@
 
 // http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
 
-.vert-align() {
-  position: relative;
+.vert-align(@position:relative) {
+  position: @position;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
