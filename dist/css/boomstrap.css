@@ -7673,11 +7673,6 @@ textarea.ui-select-match.btn-sm ~ .ui-select-search,
 select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   height: auto;
 }
-/*img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}*/
 .alert a,
 .alert .alert-link {
   font-weight: 600;
@@ -8966,22 +8961,6 @@ button.close-inverted {
   top: 2px;
   width: 1em;
 }
-/*
-// Lead Type Icons
-// ------------------------------
-
-.bticon-buyer {
-  background-image: url(icons/buyer.svg);
-}
-
-.bticon-buyer-seller {
-  background-image: url(icons/buyer-seller.svg);
-}
-
-.bticon-seller {
-  background-image: url(icons/seller.svg);
-}
-*/
 .input-group-addon .fauxbox + label:before {
   top: 1px;
 }
@@ -9790,13 +9769,6 @@ a.list-group-item.active:focus .ficon {
   line-height: 1.5;
   border-radius: 3px;
 }
-/*.btn-sm {
-  // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-}
-.btn-xs {
-  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-}*/
 .baron {
   overflow: hidden;
   position: relative;
@@ -10313,9 +10285,6 @@ a.list-group-item.active:focus .ficon {
 .popover[class*="tour-"] .popover-navigation .btn + .btn {
   margin-left: 10px;
 }
-/*.tour-backdrop {
-  .opacity(25);
-}*/
 .lead {
   font-weight: 300;
 }
