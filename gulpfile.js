@@ -219,22 +219,16 @@ gulp.task('bower', function() {
 gulp.task('boomstrapcommon', ['boomstrapLess', 'boomstrapjs', 'docsHtml'], function() {
   var IMAGES_DIR   = 'docs/images',
     FONTS_DOCS_DIR = 'docs/css/fonts',
-    FONTS_DIST_DIR = 'dist/css/fonts',
-    ICONS_DOCS_DIR = 'docs/css/icons',
-    ICONS_DIST_DIR = 'dist/css/icons';
+    FONTS_DIST_DIR = 'dist/css/fonts';
 
-  // Copy all image/font/icon files if they are newer than destination
+  // Copy all image/font files if they are newer than destination
   return es.concat(
     gulp.src('images/**/*.*')
       .pipe(gulp.dest(IMAGES_DIR)),
     gulp.src('fonts/**/*.*')
       .pipe(gulp.dest(FONTS_DOCS_DIR)),
     gulp.src('fonts/**/*.*')
-      .pipe(gulp.dest(FONTS_DIST_DIR)),
-    gulp.src('icons/**/*.*')
-      .pipe(gulp.dest(ICONS_DOCS_DIR)),
-    gulp.src('icons/**/*.*')
-      .pipe(gulp.dest(ICONS_DIST_DIR))
+      .pipe(gulp.dest(FONTS_DIST_DIR))
   );
 });
 
