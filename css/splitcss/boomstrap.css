@@ -1,17 +1,4 @@
 
-.sash:before,
-.sash:after {
-  content: " ";
-  display: table;
-}
-.sash:after {
-  clear: both;
-}
-.sash:before,
-.sash:after {
-  content: " ";
-  display: table;
-}
 .sash:after {
   clear: both;
 }
@@ -96,13 +83,6 @@
   line-height: 1.5;
   border-radius: 3px;
 }
-/*.btn-sm {
-  // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-}
-.btn-xs {
-  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-}*/
 .baron {
   overflow: hidden;
   position: relative;
@@ -619,9 +599,6 @@
 .popover[class*="tour-"] .popover-navigation .btn + .btn {
   margin-left: 10px;
 }
-/*.tour-backdrop {
-  .opacity(25);
-}*/
 .lead {
   font-weight: 300;
 }
