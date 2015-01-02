@@ -1,5 +1,7 @@
-## btAddClassOnLoad
-### Directive (Attribute)
+# btAddClassOnLoad
+
+## Directive (Attribute)
+
 #### Parameters
 
 Parameter | Type | Required
