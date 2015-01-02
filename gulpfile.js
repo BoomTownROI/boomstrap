@@ -19,7 +19,8 @@ var es          = require('event-stream'),
   clean         = require('gulp-clean'),
   markdown      = require('gulp-markdown'),
   autoprefixer  = require('gulp-autoprefixer'),
-  plumber       = require('gulp-plumber');
+  plumber       = require('gulp-plumber'),
+  cheerio       = require('gulp-cheerio');
 
 require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
@@ -170,9 +171,31 @@ gulp.task(Tasks.CreateDocumentationHTML, function() {
  * Create html files from markdown
  */
 gulp.task(Tasks.JavascriptDocumentation, function() {
+  var highlight = require('highlight.js');
+
   gulp.src(['app/documentation/scripts/directives/**'])
-    .pipe(markdown())
+    .pipe(markdown({
+      highlight: function(code) {
+        return highlight.highlightAuto(code).value;
+      }
+    }))
     .pipe(concat('apiBody.html'))
+    .pipe(cheerio({
+      run: function($) {
+        // Make tables bootstrap-y
+        $('table').addClass('table table-bordered');
+
+        // Blockquotes are callouts
+        $('blockquote').addClass('callout callout-info');
+
+        // $('pre > code').map(function() {
+        //   var $code = $(this).html();
+        //   var highlightedCode = highlight.highlightAuto($code).value;
+        //   $(this).html(highlightedCode);
+        //   return $(this).html();
+        // });
+      }
+    }))
     .pipe(gulp.dest('views/javascript/'));
 });
 

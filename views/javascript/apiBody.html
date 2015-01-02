@@ -1,7 +1,7 @@
 <h2 id="btaddclassonload">btAddClassOnLoad</h2>
 <h3 id="directive-attribute-">Directive (Attribute)</h3>
 <h4 id="parameters">Parameters</h4>
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Parameter</th>
@@ -18,18 +18,18 @@
 </tbody>
 </table>
 <p>  The <code>btAddClassOnLoad</code> directive adds a class to an img tag when the image fires the load event.  This is useful for css transitions.</p>
-<blockquote>
+<blockquote class="callout callout-info">
 <p>This directive is useful for CSS Transitions</p>
 </blockquote>
 <h4 id="example-usage">Example Usage</h4>
-<pre><code class="lang-html">&lt;style type=&quot;text/css&quot;&gt;
-.my-img {
-  opacity: 0;
-  transition: opacity 5.0s linear;
-}
-.loaded {
-  opacity: 1;
-}
-&lt;/style&gt;
-&lt;img src=&quot;images/fpo-he-man.jpg&quot; bt-add-class-on-load=&quot;loaded&quot; class=&quot;my-img&quot;/&gt;
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+<span class="hljs-class">.my-img</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">5.0s</span> linear</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.loaded</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/fpo-he-man.jpg"</span> <span class="hljs-attribute">bt-add-class-on-load</span>=<span class="hljs-value">"loaded"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"my-img"</span>/&gt;</span>
 </code></pre>

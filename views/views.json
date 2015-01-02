@@ -418,6 +418,9 @@
 		"sources": [
 			{
 				"source": "views/javascript/apiBody.html"
+			},
+			{
+				"source": "views/partials/api-doc-nav.html"
 			}
 		]
 	}
