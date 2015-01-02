@@ -17,7 +17,7 @@ var es          = require('event-stream'),
   templateCache = require('gulp-angular-templatecache'),
   bower         = require('gulp-bower'),
   clean         = require('gulp-clean'),
-  order         = require('gulp-order'),
+  markdown      = require('gulp-markdown'),
   autoprefixer  = require('gulp-autoprefixer'),
   plumber       = require('gulp-plumber');
 
@@ -36,6 +36,7 @@ var Tasks = {
   BoomstrapStyles:            'Compile Less Files',
 
   CreateDocumentationHTML:    'Create Documentation HTML Files',
+  JavascriptDocumentation:    'Convert Javascript Documentation Markdown',
 
   DevelopmentServer:          'server',
   ReloadDevelopmentJS:        'Reload Development Server Javascript',
@@ -167,10 +168,14 @@ gulp.task(Tasks.CreateDocumentationHTML, function() {
 
 /*
  * Create html files from markdown
- *
- * gulp.task(Tasks.JavascriptDocumentation, function() {
- * });
  */
+gulp.task(Tasks.JavascriptDocumentation, function() {
+  gulp.src(['app/documentation/scripts/directives/**'])
+    .pipe(markdown())
+    .pipe(concat('apiBody.html'))
+    .pipe(gulp.dest('views/javascript/'));
+});
+
 
 gulp.task(Tasks.ReloadDevelopmentJS, function() {
  gulp.src('docs/js/*.js')
@@ -224,7 +229,7 @@ gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStyle
 /*
 * Common build task run by all tasks
 */
-gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML], function() {
+gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation], function() {
   var IMAGES_DIR   = 'docs/images',
   FONTS_DOCS_DIR = 'docs/css/fonts',
   FONTS_DIST_DIR = 'dist/css/fonts';
@@ -299,8 +304,3 @@ gulp.task('website', function() {
   gulp.run('grunt-tasks-ngdocs');
   return gulp.run('grunt-tasks-gh-pages');
 });
-
-// Utilities
-function htmlList(key, src) {
-
-};

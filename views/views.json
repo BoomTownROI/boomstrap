@@ -411,5 +411,16 @@
 			},
 			{ "source": "app/views/angular-footer.html" }
 		]
+	},
+
+	"api": {
+		"header": "Javascript Documentation",
+		"sources": [
+			{
+				"source": "views/javascript/apiBody.html"
+			}
+		]
 	}
+
+
 }
