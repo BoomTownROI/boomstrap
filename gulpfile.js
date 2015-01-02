@@ -1,16 +1,16 @@
+'use strict';
+
 var es          = require('event-stream'),
   gulp          = require('gulp'),
+  gulpif        = require('gulp-if'),
   bless         = require('gulp-bless'),
   concat        = require('gulp-concat'),
   rename        = require('gulp-rename'),
   less          = require('gulp-less'),
   uglify        = require('gulp-uglify'),
   jshint        = require('gulp-jshint'),
-  jshintstylish = require('jshint-stylish')
-  watch         = require('gulp-watch'),
+  jshintstylish = require('jshint-stylish'),
   connect       = require('gulp-connect'),
-  livereload    = require('gulp-livereload'),
-  ghPages       = require('gulp-gh-pages'),
   mustache      = require('gulp-mustache'),
   views         = require('./views/views'),
   ngmin         = require('gulp-ngmin'),
@@ -19,59 +19,34 @@ var es          = require('event-stream'),
   clean         = require('gulp-clean'),
   order         = require('gulp-order'),
   autoprefixer  = require('gulp-autoprefixer'),
-  plumber       = require('gulp-plumber'),
-  // dgeni = require('dgeni');
+  plumber       = require('gulp-plumber');
 
 require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
 });
 
-var htmlList = function(key, src) {
-  var sources = [],
-      idLinks = [];
+var Tasks = {
+  BoomstrapJavascriptVendor:  'Javascript Vendor Libraries',
+  BoomstrapJavascriptAngular: 'Boomstrap Angular Module',
+  BoomstrapAngularTemplates:  'Boomstrap Angular Templates',
+  BoomstrapJavascript:        'Boomstrap Javascript Distributable',
 
-  // Retrieve the ids and Headers
-  // for each item we are concatenating
-  src.sources.forEach(function(view) {
-    if (view.css_id){
-      idLinks.push({
-        css_id: view.css_id,
-        nav_header: view.nav_header
-      });
-    }
+  BoomstrapStylesDev:         'Compile Less Files for Development Server',
+  BoomstrapStylesDist:        'Compile Less Files for Distribution',
+  BoomstrapStyles:            'Compile Less Files',
 
-    sources.push(view.source);
-  });
+  CreateDocumentationHTML:    'Create Documentation HTML Files',
 
-  var orderedOutput = sources.slice();
-  orderedOutput.unshift('views/partials/header.html');
-  orderedOutput.push('views/partials/sub_nav.tpl.html');
-  orderedOutput.push('views/partials/footer.html');
+  DevelopmentServer:          'server',
+  ReloadDevelopmentJS:        'Reload Development Server Javascript',
+  ReloadDevelopmentHTML:      'Reload Development Server HTML',
+  ReloadDevelopmentStyles:    'Reload Development Server Styles',
 
-  // Remove fully qualified path except for file name
-  // Because gulp-order only uses the file name and not the path.
-  orderedOutput = orderedOutput.map(function(file) {
-    var splitFile = file.split('/');
-    return splitFile[splitFile.length - 1];
-  });
-
-  return es.concat(
-    // Populate the navigation template
-    gulp.src('views/partials/header.html')
-      .pipe(mustache({
-        page_title: src.header
-      })),
-    gulp.src(sources),
-    gulp.src('views/partials/sub_nav.tpl.html')
-      .pipe(mustache({
-        header: src.header,
-        link: idLinks
-      })),
-    gulp.src('views/partials/footer.html')
-  ).pipe(order(orderedOutput));
+  Boomstrap:                  'Build Tasks'
 };
 
-gulp.task('boomstrapjsLib', function() {
+
+gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
   return gulp.src([
     'bower_components/jquery/dist/jquery.min.js',
     'bower_components/jquery-mousewheel/jquery.mousewheel.min.js',
@@ -100,7 +75,7 @@ gulp.task('boomstrapjsLib', function() {
   .pipe(gulp.dest('dist/js/'));
 });
 
-gulp.task('boomstrapjsAngular', function() {
+gulp.task(Tasks.BoomstrapJavascriptAngular, function() {
   return gulp.src(['app/app.js', 'app/constants.js', 'app/scripts/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter(jshintstylish))
@@ -109,7 +84,7 @@ gulp.task('boomstrapjsAngular', function() {
     .pipe(gulp.dest('docs/js/'));
 });
 
-gulp.task('boomstrapjsTemplates', function() {
+gulp.task(Tasks.BoomstrapAngularTemplates, function() {
   return es.concat(
     gulp.src(['app/template/**/*.html', '!app/template/pagination/*.html'])
       .pipe(templateCache({
@@ -124,9 +99,14 @@ gulp.task('boomstrapjsTemplates', function() {
   )
   .pipe(concat('boomstrap-angular-templates.js'))
   .pipe(gulp.dest('docs/js/'));
-})
+});
 
-gulp.task('boomstrapjs', ['boomstrapjsLib', 'boomstrapjsAngular', 'boomstrapjsTemplates'], function() {
+gulp.task(Tasks.BoomstrapJavascript,
+  [
+    Tasks.BoomstrapJavascriptVendor,
+    Tasks.BoomstrapJavascriptAngular,
+    Tasks.BoomstrapAngularTemplates
+  ], function() {
   // Combine templates and angular
   return gulp.src(['docs/js/boomstrap-angular.js', 'docs/js/boomstrap-angular-templates.js'])
     .pipe(concat('boomstrap-angular.js'))
@@ -138,35 +118,79 @@ gulp.task('boomstrapjs', ['boomstrapjsLib', 'boomstrapjsAngular', 'boomstrapjsTe
     .pipe(gulp.dest('dist/js/'));
 });
 
-gulp.task('reloadDocsJs', function() {
-  gulp.src('docs/js/*.js')
-    .pipe(connect.reload());
-});
 
 /*
  * Create html files
  */
-gulp.task('docsHtml', function() {
+gulp.task(Tasks.CreateDocumentationHTML, function() {
   return es.concat.apply(es,
     Object.keys(views).map(function(key) {
-      var concatHtmlTask = htmlList(key, views[key]);
-      return concatHtmlTask.pipe(concat(key + '.html'));
+      var sources = [],
+        idLinks = [],
+        src = views[key];
+
+      // Retrieve the ids and Headers
+      // for each item we are concatenating
+      src.sources.forEach(function(view) {
+        if (view.css_id){
+          idLinks.push({
+            css_id: view.css_id,
+            nav_header: view.nav_header
+          });
+        }
+
+        sources.push(view.source);
+      });
+
+      var sourceFiles = ['views/partials/header.html'];
+      sourceFiles.push.apply(sourceFiles, sources);
+      sourceFiles.push.apply(sourceFiles, [
+        'views/partials/sub_nav.tpl.html',
+        'views/partials/footer.html'
+      ]);
+
+      return gulp.src(sourceFiles)
+        .pipe(
+          gulpif(
+            /(header|sub_nav\.tpl)\.html/,
+            mustache({
+              page_title: src.header,
+              header:     src.header,
+              link:       idLinks
+            })
+          )
+        )
+        .pipe(concat(key + '.html'));
     })
   ).pipe(gulp.dest('docs/'));
 });
 
 /*
+ * Create html files from markdown
+ *
+ * gulp.task(Tasks.JavascriptDocumentation, function() {
+ * });
+ */
+
+gulp.task(Tasks.ReloadDevelopmentJS, function() {
+ gulp.src('docs/js/*.js')
+ .pipe(connect.reload());
+});
+
+gulp.task(Tasks.ReloadDevelopmentStyles, function() {
+  gulp.src('docs/css/**/*.css')
+  .pipe(connect.reload());
+});
+
+/*
  * Dynamically reload connect website when html changes
  */
-gulp.task('reloadDocsHtml', function() {
+gulp.task(Tasks.ReloadDevelopmentHTML, function() {
   gulp.src('docs/**/*.html')
     .pipe(connect.reload());
 });
 
-/*
- * Compile less files
- */
-gulp.task('boomstrapLessDocs', function() {
+gulp.task(Tasks.BoomstrapStylesDev, function() {
   var DEST_DIR  = 'docs/css';
   var DEST_FILE = 'boomstrap.css';
 
@@ -181,70 +205,54 @@ gulp.task('boomstrapLessDocs', function() {
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR))
     .pipe(bless({ imports: false }))
-    .pipe(gulp.dest("docs/css/splitcss/"));
+    .pipe(gulp.dest('docs/css/splitcss/'));
 });
 
-
-gulp.task('boomstrapLessDist', function() {
+gulp.task(Tasks.BoomstrapStylesDist, function() {
   var DEST_DIR  = 'dist/css';
-  var DEST_FILE = 'boomstrap.css';
 
   return gulp.src([
     'less/boomstrap.less'
   ])
-    .pipe(less({ compress: false })) // compressing will screw up importing as "less" in other projects
+    .pipe(less({ compress: false })) // compressing will screw up importing as 'less' in other projects
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR));
 });
 
-gulp.task('boomstrapLess', ['boomstrapLessDocs', 'boomstrapLessDist']);
+gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStylesDist]);
 
-gulp.task('reloadDocsLess', function() {
-  gulp.src('docs/css/**/*.css')
-    .pipe(connect.reload());
+/*
+* Common build task run by all tasks
+*/
+gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML], function() {
+  var IMAGES_DIR   = 'docs/images',
+  FONTS_DOCS_DIR = 'docs/css/fonts',
+  FONTS_DIST_DIR = 'dist/css/fonts';
+
+  // Copy all image/font files if they are newer than destination
+  return es.concat(
+    gulp.src('images/**/*.*')
+    .pipe(gulp.dest(IMAGES_DIR)),
+    gulp.src('fonts/**/*.*')
+    .pipe(gulp.dest(FONTS_DOCS_DIR)),
+    gulp.src('fonts/**/*.*')
+    .pipe(gulp.dest(FONTS_DIST_DIR))
+  );
 });
 
 gulp.task('clean', function() {
   return gulp.src(['docs/', 'dist/'], { read: false })
     .pipe(clean());
-})
+});
 
 gulp.task('bower', function() {
   return bower();
-})
-
-/*
- * Common build task run by all tasks
- */
-gulp.task('boomstrapcommon', ['boomstrapLess', 'boomstrapjs', 'docsHtml'], function() {
-  var IMAGES_DIR   = 'docs/images',
-    FONTS_DOCS_DIR = 'docs/css/fonts',
-    FONTS_DIST_DIR = 'dist/css/fonts';
-
-  // Copy all image/font files if they are newer than destination
-  return es.concat(
-    gulp.src('images/**/*.*')
-      .pipe(gulp.dest(IMAGES_DIR)),
-    gulp.src('fonts/**/*.*')
-      .pipe(gulp.dest(FONTS_DOCS_DIR)),
-    gulp.src('fonts/**/*.*')
-      .pipe(gulp.dest(FONTS_DIST_DIR))
-  );
 });
 
-// gulp.task('angularAPI', function() {
-//   var generateDocs = dgeni.generator('apiDocs/dgeni.conf.js').generateDocs();
-//   return generateDocs()
-//     .catch(function(error) {
-//       process.exit(1);
-//     });
-// });
 
-// Just run compilation by default
-gulp.task('default', ['boomstrapcommon']);
 
 // Run a server with a watch with gulp server
-gulp.task('server', ['boomstrapcommon'], function() {
+gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
   gulp.run('grunt-tasks-ngdocs');
   // gulp.run('angularAPI');
   connect.server({
@@ -256,7 +264,7 @@ gulp.task('server', ['boomstrapcommon'], function() {
   });
 
   // Watch Less files
-  gulp.watch(['less/**/*.less'], ['boomstrapLessDocs', 'reloadDocsLess']);
+  gulp.watch(['less/**/*.less'], [Tasks.BoomstrapStylesDev, Tasks.ReloadDevelopmentStyles]);
 
 
 
@@ -266,11 +274,24 @@ gulp.task('server', ['boomstrapcommon'], function() {
     'js/**/*.js',
     'app/**/*.js',
     'app/template/**/*.html'
-  ], ['boomstrapjs', 'reloadDocsJs']);
+  ], [Tasks.BoomstrapJavascript, Tasks.ReloadDevelopmentJS]);
 
   // Watch html files
-  gulp.watch(['app/views/*.html', 'views/**/*.html'], ['docsHtml', 'reloadDocsHtml']);
+  gulp.watch(
+    ['app/views/*.html', 'views/**/*.html'],
+    [Tasks.CreateDocumentationHTML, Tasks.ReloadDevelopmentHTML]
+  );
 });
+
+/*
+ * +==============+
+ * =              =
+ * = Public Tasks =
+ * =              =
+ * +==============+
+ */
+// Just run compilation by default
+gulp.task('default', [Tasks.Boomstrap]);
 
 // Deploy to our github pages page
 gulp.task('website', function() {
@@ -278,3 +299,8 @@ gulp.task('website', function() {
   gulp.run('grunt-tasks-ngdocs');
   return gulp.run('grunt-tasks-gh-pages');
 });
+
+// Utilities
+function htmlList(key, src) {
+
+};
