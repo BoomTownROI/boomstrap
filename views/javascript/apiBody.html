@@ -1,0 +1,86 @@
+<h1 id="btaddclassonload">btAddClassOnLoad</h1>
+<h2 id="directive-attribute-">Directive (Attribute)</h2>
+<h4 id="parameters">Parameters</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th style="text-align:center">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bt-add-class-on-load</td>
+<td>string</td>
+<td style="text-align:center"><strong>yes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>  The <code>btAddClassOnLoad</code> directive adds a class to an img tag when the image fires the load event.  This is useful for css transitions.</p>
+<blockquote class="callout callout-info">
+<p>This directive is useful for CSS Transitions</p>
+</blockquote>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+<span class="hljs-class">.my-img</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">5.0s</span> linear</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.loaded</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/fpo-he-man.jpg"</span> <span class="hljs-attribute">bt-add-class-on-load</span>=<span class="hljs-value">"loaded"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"my-img"</span>/&gt;</span>
+</code></pre>
+
+<h1 id="btaffix">btAffix</h1>
+<h2 id="directive-attribute-">Directive (Attribute)</h2>
+<h3 id="requirements-window-">Requirements ($window)</h3>
+<h4 id="parameters">Parameters</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th style="text-align:center">Required</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>offset</td>
+<td>number</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Number of pixels to add to scroll before element is affixed</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>bool</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Indicates if the affixed element is allowed to scroll</td>
+</tr>
+<tr>
+<td>fullHeight</td>
+<td>bool</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Indicates that the affixed element spans the entire height of the page</td>
+</tr>
+<tr>
+<td>pinnedHeader</td>
+<td>bool</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Indicates that the affixed element spans the entire width of the page and is affixed to the top left</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>btAffix</code> element allows a user to affix an element at a given scroll point. Another element with the same height and width will take the place of the element to ensure that the page layout does not break upon affixing.</p>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="lang-html">&lt;<span class="hljs-tag">div</span> bt-affix offset=<span class="hljs-string">"500"</span>&gt;
+  &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;/div&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+</code></pre>

@@ -1,17 +1,18 @@
 // File: scrollbar.less
-// Note: 
+// Note:
 
 
 .baron {
   overflow: hidden;
   position: relative;
   &:hover {
-    .baron-scroller-bar {
+    .baron-scroller-bar, .baron-scroller-bar-h {
       opacity: .5;
     }
   }
-  .baron-scroller { 
+  .baron-scroller {
     overflow-y: scroll;
+    overflow-x: scroll;
   }
 }
 
@@ -42,13 +43,21 @@
   opacity: 0;
   pointer-events: auto;
   position: absolute;
-  right: 0;    
+  right: 0;
   .transition(opacity .2s linear);
   width: 9px;
   z-index: 1;
 }
 
-
-
-
-
+.baron-scroller-bar-h {
+  background-color: #000;
+  border: 1px solid @gray-light;
+  border-radius: @border-radius-base;
+  opacity: 0;
+  pointer-events: auto;
+  position: absolute;
+  bottom: 10px;
+  .transition(opacity .2s linear);
+  height: 9px;
+  z-index: 1;
+}

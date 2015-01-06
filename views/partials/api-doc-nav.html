@@ -1,0 +1,13 @@
+<script>
+  $(document).ready(function() {
+    var $nav = $('.pl-docs-sidenav');
+
+    $('h1').each(function() {
+        var title = $(this).html();
+        var id = '#' + $(this).attr('id');
+
+        $nav.append('<li><a href="' + id + '">' + title + '</li>');
+    });
+  })
+</script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/color-brewer.min.css">

@@ -84,91 +84,6 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  /**
-   * @ngdoc filter
-   * @name phoneNumber
-   *
-   * @description The 'phoneNumberfilter' filter will format or unformat a phone number.
-   * {{string|phoneNumber:'add'}} to format the number, {{string|phoneNumber:'remove'}}.
-   *
-   * @example
-     $scope.string1 = '1234567890';
-     <br />
-     $scope.string2 = '123-456-7890';
-
-     {{string1|phoneNumber:'add'}} // outputs (123) 456-7890
-     <br />
-     {{string2|phoneNumber:'remove'}} // outputs 1234567890
-   */
-  Boomstrap.filter('phoneNumber', function () {
-    return function (string, params) {
-      var number = string || '';
-      var formattedNumber;
-      var localPrefix;
-      var localMain;
-      var area;
-      switch (params) {
-      case 'remove':
-        formattedNumber = number.replace(/\D/g, '');
-        break;
-      case 'add':
-        number = number.replace(/\D/g, '');
-        area = number.substring(0, 3);
-        localPrefix = number.substring(3, 6);
-        localMain = number.substring(6);
-        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
-        break;
-      default:
-        formattedNumber = string;
-        break;
-      }
-      return formattedNumber;
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  /**
-   * @ngdoc directive
-   * @name  boomstrap.directive:btAddClassOnLoad
-   * @restrict A
-   * 
-   * @param {string} btAddClassOnLoad The string representation of the class to add to the image
-   *
-   * @description
-   * The `btAddClassOnLoad` directive adds a class to an img tag
-   * when the image fires the load event.  This is useful for
-   * css transitions.
-   *
-   * @element img
-   *
-   * @example
-      <doc:example module="boomstrap">
-        <doc:source>
-          <script>
-          </script>
-          <style type="text/css">
-            .my-img {
-              opacity: 0;
-              transition: opacity 5.0s linear;
-            }
-            .loaded {
-              opacity: 1;
-            }
-          </style>
-          <img src="images/fpo-he-man.jpg" bt-add-class-on-load="loaded" class="my-img"/>
-        </doc:source>
-      </doc:example>
-   * 
-   */
   Boomstrap.directive('btAddClassOnLoad', function () {
     return {
       link: function (scope, element, attrs) {
@@ -183,34 +98,6 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  /**
-   * @ngdoc directive
-   * @name  boomstrap.directive:btAffix
-   * @requires  $window
-   * @restrict A
-   *
-   * @description The `btAffix` element allows a user to affix an element at a given scroll point.
-   * Another element with the same height and width will take the place of the element to ensure
-   * that the page layout does not break upon affixing.
-   *
-   * @param {Number} offset Number of pixels to add to scroll before element is affixed
-   * @param {bool} scroll Indicates if the affixed element is allowed to scroll
-   * @param {bool} fullHeight Indicates that the affixed element spans the entire height of the page
-   * @param {bool} pinnedHeader Indicates that the affixed element spans the entire width of the page and is affixed to the top left
-   *
-   * @example
-     <doc:example module="boomstrap">
-        <doc:source>
-          <div bt-affix offset="500">
-            <img src="images/fpo-he-man.jpg"/>
-          </div>
-            <img src="images/fpo-he-man.jpg"/>
-            <img src="images/fpo-he-man.jpg"/>
-            <img src="images/fpo-he-man.jpg"/>
-            <img src="images/fpo-he-man.jpg"/>
-        </doc:source>
-      </doc:example>
-   */
   Boomstrap.directive('btAffix', function ($window) {
     return {
       template: '<div class="bt-affix" ng-transclude></div>',
@@ -1642,6 +1529,58 @@
     return tour;
   });
 }(angular.module('boomstrap'), window.Tour));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  /**
+   * @ngdoc filter
+   * @name phoneNumber
+   *
+   * @description The 'phoneNumberfilter' filter will format or unformat a phone number.
+   * {{string|phoneNumber:'add'}} to format the number, {{string|phoneNumber:'remove'}}.
+   *
+   * @example
+     $scope.string1 = '1234567890';
+     <br />
+     $scope.string2 = '123-456-7890';
+
+     {{string1|phoneNumber:'add'}} // outputs (123) 456-7890
+     <br />
+     {{string2|phoneNumber:'remove'}} // outputs 1234567890
+   */
+  Boomstrap.filter('phoneNumber', function () {
+    return function (string, params) {
+      var number = string || '';
+      var formattedNumber;
+      var localPrefix;
+      var localMain;
+      var area;
+      switch (params) {
+      case 'remove':
+        formattedNumber = number.replace(/\D/g, '');
+        break;
+      case 'add':
+        number = number.replace(/\D/g, '');
+        area = number.substring(0, 3);
+        localPrefix = number.substring(3, 6);
+        localMain = number.substring(6);
+        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
+        break;
+      default:
+        formattedNumber = string;
+        break;
+      }
+      return formattedNumber;
+    };
+  });
+}(angular.module('boomstrap')));
 angular.module("ui.bootstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/pager/bt-pager.tpl.html","<div class=\"btn-group minimal-pager\">\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noPrevious() }\"\n        ng-click=\"selectPage(page - 1)\"><i\n            class=\"ficon ficon-chevron-left\"></i></button>\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noNext() }\"\n        ng-click=\"selectPage(page + 1)\"><i\n            class=\"ficon ficon-chevron-right\"></i></button>\n</div>");}]);
 angular.module("boomstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/nav.html","<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#pl-nav\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">PL</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"pl-nav\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"#pl-colors\">Colors</a></li>\n        <li class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Buttons <b class=\"caret\"></b></a>\n          <ul class=\"dropdown-menu\">\n            <li><a href=\"#pl-button-options\">Options</a></li>\n            <li><a href=\"#pl-button-sizes\">Sizes</a></li>\n            <li><a href=\"#pl-button-active\">Active State</a></li>\n            <li><a href=\"#pl-button-disabled\">Disabled State</a></li>\n            <li><a href=\"#pl-button-tags\">Button Tags</a></li>\n          </ul>\n        </li>\n        <li><a href=\"#pl-labels\">Labels</a></li>\n        <li><a href=\"#pl-typography\">Typography</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n<div class=\"container\">");
 $templateCache.put("template/btLazyPen/btLazyPen.tpl.html","<div class=\"bt-lazy-pen\">\n  <span class=\"btn btn-attention\" ng-if=\"!showingPen.value\" ng-click=\"showingPen.value = !showingPen.value\">Load CodePen Example</span>\n  <div ng-if=\"showingPen.value\">\n    <p data-height=\"{{ height }}\" data-theme-id=\"{{ themeId }}\" data-slug-hash=\"{{ slug }}\" data-default-tab=\"result\" class=\'codepen\'>See the Pen <a href=\'http://codepen.io/{{ user }}/pen/{{ slug }}/\'>{{ title }}</a> by {{ author }} (<a href=\'http://codepen.io/{{ user }}\'>@{{ userId }}</a>) on <a href=\'http://codepen.io\'>CodePen</a>.</p>\n    <script async src=\"//codepen.io/assets/embed/ei.js\"></script>\n  </div>\n</div>");
