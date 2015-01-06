@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Introduction | Boomstrap Pattern Library</title>
+  <title>Javascript Documentation | Boomstrap Pattern Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -44,92 +44,112 @@
     <div class="row">
       <div class="col-sm-9" role="main">
 
-<!-- ================================== About Boomstrap ================================== -->
+<h1 id="btaddclassonload">btAddClassOnLoad</h1>
+<h2 id="directive-attribute-">Directive (Attribute)</h2>
+<h4 id="parameters">Parameters</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th style="text-align:center">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bt-add-class-on-load</td>
+<td>string</td>
+<td style="text-align:center"><strong>yes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>  The <code>btAddClassOnLoad</code> directive adds a class to an img tag when the image fires the load event.  This is useful for css transitions.</p>
+<blockquote class="callout callout-info">
+<p>This directive is useful for CSS Transitions</p>
+</blockquote>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+<span class="hljs-class">.my-img</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">5.0s</span> linear</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.loaded</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/fpo-he-man.jpg"</span> <span class="hljs-attribute">bt-add-class-on-load</span>=<span class="hljs-value">"loaded"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"my-img"</span>/&gt;</span>
+</code></pre>
 
-<div class="pl-docs-section">
-  <h1 id="about" class="page-header">About Boomstrap</h1>
-  <p class="lead">Boomstrap is a ui pattern library built on the <a href="http://www.getbootstrap.com" target="_blank">Bootstrap</a> framework - with BoomTown branding and custom, reusable components.</p>
-  <article class="pl-article">
-  	<h3>Extending Bootstrap</h3>
-  	<p>Boomstrap contains an incredible collection of additions to Bootstrap. Among this collection are reusable user interface components designed specifically to work within the Boomtown CRM platform.</p>
-  </article>
-  <article class="pl-article">
-  	<h3>Javascript / Angular</h3>
-  	<p>We developed Boomstrap to work with jQuery / Bootstrap.js or with Angular.</p>
-  </article>
-</div>
+<h1 id="btaffix">btAffix</h1>
+<h2 id="directive-attribute-">Directive (Attribute)</h2>
+<h3 id="requirements-window-">Requirements ($window)</h3>
+<h4 id="parameters">Parameters</h4>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th style="text-align:center">Required</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>offset</td>
+<td>number</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Number of pixels to add to scroll before element is affixed</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>bool</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Indicates if the affixed element is allowed to scroll</td>
+</tr>
+<tr>
+<td>fullHeight</td>
+<td>bool</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Indicates that the affixed element spans the entire height of the page</td>
+</tr>
+<tr>
+<td>pinnedHeader</td>
+<td>bool</td>
+<td style="text-align:center"><strong>no</strong></td>
+<td style="text-align:left">Indicates that the affixed element spans the entire width of the page and is affixed to the top left</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>btAffix</code> element allows a user to affix an element at a given scroll point. Another element with the same height and width will take the place of the element to ensure that the page layout does not break upon affixing.</p>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="lang-html">&lt;<span class="hljs-tag">div</span> bt-affix offset=<span class="hljs-string">"500"</span>&gt;
+  &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;/div&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+</code></pre>
 
-<!-- ================================== INSTALLATION ================================== -->
-<div class="pl-docs-section">
-  <h1 id="installation" class="page-header">Installation</h1>
-  <p class="lead">Boomstrap uses <a href="http://bower.io/" target="_blank">Bower</a> for our front-end package management.
-  <div class="pl-code">
-    <pre>bower install https://github.com/BoomTownROI/boomstrap.git --save</pre>
-  </div>
-</div>
+<script>
+  $(document).ready(function() {
+    var $nav = $('.pl-docs-sidenav');
 
-<!-- ================================== WE GOTZ RULES YO! ================================== -->
+    $('h1').each(function() {
+        var title = $(this).html();
+        var id = '#' + $(this).attr('id');
 
-<div class="pl-docs-section">
-  <h1 id="rules" class="page-header">Rules to Follow</h1>
-  <p class="lead">Please follow these rules when writing markup, LESS, and when hooking in to Javascript. If you fail to follow the rules, you will be hunted down and killed.</p>
-  <article class="pl-article">
-    <h3>LESS Syntax</h2>
-    <ul>
-    	<li>Use soft-tabs with a two space indent.</li>
-    	<li>Put spaces after <code>:</code> in property declarations.</li>
-    	<li>Put spaces before <code>{</code> in rule declarations.</li>
-      <li>Order properties in alphabetical order.</li>
-  	</ul>
-    <p>Here is an example of good syntax:</p>
-    <div class="pl-code">
-      <pre><code>
-<span class="s">.dog-brutus</span> {
-  <span class="s">&amp;</span><span class="s">:extend</span>(<span class="s">.dog</span>);
-  <span class="nt">backround-color:</span> <span class="t">@gray</span>;
-  <span class="nt">color:</span> <span class="t">@danger</span>;
-  <span class="nt">padding:</span> <span class="t">12px</span>;
-  <span class="s">.text-overflow</span>();
-}
-      </code></pre>
-    </div>
-  </article>
-  <article class="pl-article">
-    <h3>Pixels vs. Ems</h3>
-    <p>Use <code>px</code> for <code>font-size</code>, because it offers absolute control over text. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
-  </article>
-  <article class="pl-article">
-    <h3>Class Naming + JS</h3>
-    <p>Never reference <code>js-</code> prefixed class names from CSS files. <code>js-</code> are used exclusively from JS files.<br>Use the <code>is-</code> prefix for state rules that are shared between CSS and JS.</p>
-  </article>
-  <article class="pl-article">
-    <h3>Specificity (classes vs. ids)</h3>
-    <p>Elements that occur <strong>exactly once</strong> inside a page should use IDs, otherwise, use classes. When in doubt, use a class name.</p>
-    <ul>
-      <li><strong>Good</strong> candidates for ids: header, footer, modal popups.</li>
-      <li><strong>Bad</strong> candidates for ids: navigation, item listings, item view pages (ex: issue view).</li>
-    </ul>
-    <p>When styling a component, start with an element + class namespace (prefer class names over ids),  prefer direct descendant selectors by default, and use as little specificity as possible. Here is a good example:</p>
-  </article>
-  <article class="pl-article">
-    <h3>Javascript Style Guide</h3>
-    <p>BoomTown uses the 'Airbnb Javascript Style Guide'.  You can find our forked copy <a href="https://github.com/BoomTownROI/javascript">here</a>.</p>
-  </article>
-</div>
+        $nav.append('<li><a href="' + id + '">' + title + '</li>');
+    });
+  })
+</script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/color-brewer.min.css">
+
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
-            <p class="pl-docs-sidebar-header"><a href="#top">Introduction</a> <a href="#top"><i class="ficon ficon-chevron-up"></i></a></p>
+            <p class="pl-docs-sidebar-header"><a href="#top">Javascript Documentation</a> <a href="#top"><i class="ficon ficon-chevron-up"></i></a></p>
             <ul class="nav nav-pills pl-docs-sidenav">
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#installation">Installation</a>
-                </li>
-                <li>
-                    <a href="#rules">Rules</a>
-                </li>
             </ul>
         </div>
     </div> <!-- /column (sidebar) -->

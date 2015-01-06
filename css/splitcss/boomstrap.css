@@ -87,11 +87,13 @@
   overflow: hidden;
   position: relative;
 }
-.baron:hover .baron-scroller-bar {
+.baron:hover .baron-scroller-bar,
+.baron:hover .baron-scroller-bar-h {
   opacity: .5;
 }
 .baron .baron-scroller {
   overflow-y: scroll;
+  overflow-x: scroll;
 }
 .baron-scroller {
   border: 0;
@@ -122,6 +124,19 @@
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
   width: 9px;
+  z-index: 1;
+}
+.baron-scroller-bar-h {
+  background-color: #000;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: auto;
+  position: absolute;
+  bottom: 10px;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  height: 9px;
   z-index: 1;
 }
 .set-to-do__date,
