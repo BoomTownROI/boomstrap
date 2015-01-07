@@ -98,6 +98,8 @@
 }
 .baron .baron-scroller {
   overflow-y: scroll;
+}
+.baron-h .baron-scroller {
   overflow-x: scroll;
 }
 .baron-scroller {
