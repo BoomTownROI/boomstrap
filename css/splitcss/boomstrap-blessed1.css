@@ -263,7 +263,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #444444;
@@ -366,7 +366,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
   color: inherit;
 }
@@ -4311,7 +4311,7 @@ a.thumbnail.active {
   color: inherit;
 }
 .alert .alert-link {
-  font-weight: 600;
+  font-weight: 500;
 }
 .alert > p,
 .alert > ul {
@@ -7679,7 +7679,7 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
 }
 .alert a,
 .alert .alert-link {
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: underline;
 }
 @-webkit-keyframes bounce {
@@ -7782,6 +7782,9 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
 .badge {
   min-width: 18px;
   padding: 3px 4px;
+}
+.btn .badge {
+  top: 0;
 }
 .btn-xs .badge {
   padding: 1px 4px;
@@ -7998,7 +8001,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .callout a,
 .callout .callout-link {
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: underline;
 }
 .callout p:last-child {
@@ -8110,7 +8113,7 @@ fieldset[disabled] .btn-attention.active {
   white-space: nowrap;
 }
 .card strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 .card .btn {
   overflow: hidden;
@@ -8188,7 +8191,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .card-priority {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .card-stats {
   font-size: 11px;
@@ -8215,7 +8218,7 @@ fieldset[disabled] .btn-attention.active {
   border-bottom: #ececec 1px solid;
   border-top: #ececec 1px solid;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 5px 6px;
 }
 .card-sm {
@@ -8275,7 +8278,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .card-sm-priority {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .card-sm-stats {
   border-top: #ececec 1px solid;
@@ -8454,7 +8457,7 @@ button.close-inverted {
 .fauxble-headings {
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   border-top: none;
 }
 .fauxble-headings:before,
@@ -9134,7 +9137,7 @@ button.close-inverted {
 }
 .leadcat-eq-abbr-sm {
   width: 33px;
-  font-weight: 600;
+  font-weight: 500;
 }
 [class*="leadtype-"] {
   display: inline-block;
@@ -9666,7 +9669,7 @@ a.list-group-item.active:focus .ficon {
   border-bottom: 4px solid #999999;
   display: block;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   left: 0;
   padding: 5px 6px;
   position: absolute;
@@ -9683,9 +9686,4 @@ a.list-group-item.active:focus .ficon {
 }
 .sash:after {
   clear: both;
-}
-.sash:before,
-.sash:after {
-  content: " ";
-  display: table;
 }

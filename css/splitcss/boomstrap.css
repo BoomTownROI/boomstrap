@@ -1,4 +1,9 @@
 
+.sash:before,
+.sash:after {
+  content: " ";
+  display: table;
+}
 .sash:after {
   clear: both;
 }
@@ -169,7 +174,7 @@
   resize: none;
 }
 .set-to-do__date {
-  font-weight: 600;
+  font-weight: 500;
   padding-right: 68px;
 }
 .set-to-do__date-btns .btn {
@@ -230,7 +235,7 @@
 .table > tfoot > tr > th {
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -725,11 +730,6 @@ a.text-muted:hover,
 .xsmall {
   font-size: 75%;
 }
-h1,
-h2,
-h3 {
-  letter-spacing: -1px;
-}
 .page-heading {
   margin: 4px 0 20px 0;
 }
@@ -797,9 +797,6 @@ h2 {
 }
 .pl-docs-section > h1 {
   margin-top: 0px;
-}
-h1 {
-  letter-spacing: -1px;
 }
 .navbar-brand-logo {
   display: inline-block;
