@@ -9721,6 +9721,10 @@ a.list-group-item.active:focus .ficon {
 .ui-select-match.form-control {
   height: auto;
 }
+.ui-select-choices-row-inner > .fauxbox {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .score {
   background-color: #ffffff;
   border-color: #cccccc;
