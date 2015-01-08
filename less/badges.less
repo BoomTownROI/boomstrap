@@ -4,6 +4,9 @@
 .badge {
   min-width: @badge-min-width;
   padding: @badge-vertical-padding @badge-horizontal-padding;
+  .btn & {
+    top: 0; // override bootstrap
+  }
   .btn-xs & {
     padding: 1px @padding-xsmall;
   }
