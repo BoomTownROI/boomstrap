@@ -8576,8 +8576,8 @@ button.close-inverted {
 }
 @font-face {
   font-family: 'ficon';
-  src: url('fonts/ficon.eot?-2pyw2s');
-  src: url('fonts/ficon.eot?#iefix-2pyw2s') format('embedded-opentype'), url('fonts/ficon.woff?-2pyw2s') format('woff'), url('fonts/ficon.ttf?-2pyw2s') format('truetype'), url('fonts/ficon.svg?-2pyw2s#ficon') format('svg');
+  src: url('fonts/ficon.eot?-rho48l');
+  src: url('fonts/ficon.eot?#iefix-rho48l') format('embedded-opentype'), url('fonts/ficon.woff?-rho48l') format('woff'), url('fonts/ficon.ttf?-rho48l') format('truetype'), url('fonts/ficon.svg?-rho48l#ficon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -8594,14 +8594,14 @@ button.close-inverted {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.ficon-for-sale:before {
+  content: "\e631";
+}
 .ficon-text-bad:before {
   content: "\e62d";
 }
 .ficon-text-neutral:before {
   content: "\e62e";
-}
-.ficon-filter2:before {
-  content: "\f0b0";
 }
 .ficon-filter:before {
   content: "\e62c";
@@ -8839,6 +8839,9 @@ button.close-inverted {
 }
 .ficon-table:before {
   content: "\e630";
+}
+.ficon-filter2:before {
+  content: "\f0b0";
 }
 .ficon-transfer:before {
   content: "\e610";
