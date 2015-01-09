@@ -167,8 +167,7 @@ textarea {
 optgroup {
   font-weight: bold;
 }
-table,
-.fauxble {
+table {
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -242,8 +241,7 @@ th {
   .marker {
     border: 1px solid #000;
   }
-  .table,
-  .fauxble {
+  .table {
     border-collapse: collapse !important;
   }
   .table-bordered th,
@@ -1482,15 +1480,13 @@ pre code {
     margin-left: 0%;
   }
 }
-table,
-.fauxble {
+table {
   background-color: transparent;
 }
 th {
   text-align: left;
 }
-.table,
-.fauxble {
+.table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
@@ -8385,11 +8381,11 @@ button.close-inverted {
   background-color: #669900;
 }
 .circle-today {
-  background-color: #ffcc33;
+  background-color: #ffffff;
+  border: 2px solid #669900;
 }
 .circle-14-days {
-  background-color: #ffffff;
-  border: 2px solid #ffcc33;
+  background-color: #ffcc33;
 }
 .circle-90-days {
   background-color: #cccccc;
@@ -8444,106 +8440,6 @@ button.close-inverted {
 .dropdown-toggle.btn-link .caret {
   color: #696969;
 }
-.fauxble {
-  list-style: none;
-  /* for UL/OL case */
-  margin: 0 0 20px;
-  padding: 0;
-}
-.fauxble-headings {
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 500;
-  border-top: none;
-}
-.fauxble-headings:before,
-.fauxble-headings:after {
-  content: " ";
-  display: table;
-}
-.fauxble-headings:after {
-  clear: both;
-}
-.fauxble-headings:before,
-.fauxble-headings:after {
-  content: " ";
-  display: table;
-}
-.fauxble-headings:after {
-  clear: both;
-}
-.fauxble-headings > div,
-.fauxble-headings > span,
-.fauxble-headings > section,
-.fauxble-headings > p {
-  padding: 8px;
-  display: block;
-}
-.fauxble-row {
-  border-top: 1px solid #cccccc;
-}
-.fauxble-row:before,
-.fauxble-row:after {
-  content: " ";
-  display: table;
-}
-.fauxble-row:after {
-  clear: both;
-}
-.fauxble-row:before,
-.fauxble-row:after {
-  content: " ";
-  display: table;
-}
-.fauxble-row:after {
-  clear: both;
-}
-.fauxble-row > div,
-.fauxble-row > span,
-.fauxble-row > p {
-  padding: 8px;
-  display: block;
-}
-.fauxble-condensed .fauxble-row > div,
-.fauxble-condensed .fauxble-row > span,
-.fauxble-condensed .fauxble-row > p {
-  padding: 5px;
-}
-.fauxble-bordered {
-  border: 1px solid #cccccc;
-}
-.fauxble-bordered .fauxble-headings,
-.fauxble-bordered .fauxble-row {
-  border: none;
-  border-bottom: 1px solid #cccccc;
-}
-.fauxble-bordered .fauxble-headings:last-child,
-.fauxble-bordered .fauxble-row:last-child {
-  border: none;
-}
-.fauxble-bordered .fauxble-headings > div,
-.fauxble-bordered .fauxble-row > div,
-.fauxble-bordered .fauxble-headings > span,
-.fauxble-bordered .fauxble-row > span,
-.fauxble-bordered .fauxble-headings > p,
-.fauxble-bordered .fauxble-row > p {
-  border: none;
-  border-right: 1px solid #cccccc;
-}
-.fauxble-bordered .fauxble-headings > div:last-child,
-.fauxble-bordered .fauxble-row > div:last-child,
-.fauxble-bordered .fauxble-headings > span:last-child,
-.fauxble-bordered .fauxble-row > span:last-child,
-.fauxble-bordered .fauxble-headings > p:last-child,
-.fauxble-bordered .fauxble-row > p:last-child {
-  border: none;
-}
-.fauxble-striped .fauxble-row:nth-child(even) {
-  background-color: #f9f9f9;
-}
-.fauxble-hover .fauxble-row:hover {
-  background-color: #f5f5f5;
-}
 .ficon {
   display: inline-block;
   font-style: normal;
@@ -8564,7 +8460,7 @@ button.close-inverted {
 .ficon-email-good,
 .ficon-phone-good,
 .ficon-text-good {
-  color: #8db23e;
+  color: #6f8c31;
 }
 .ficon-email-good,
 .ficon-email-bad {
@@ -9920,8 +9816,7 @@ a.list-group-item.active:focus .ficon {
   display: block;
   margin: 4px 0 0 0;
 }
-.table,
-.fauxble {
+.table {
   background-color: #ffffff;
 }
 .table > thead > tr > th,
