@@ -9725,6 +9725,10 @@ a.list-group-item.active:focus .ficon {
 .ui-select-match.form-control {
   height: auto;
 }
+.ui-select-choices-row-inner > .fauxbox {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .score {
   background-color: #ffffff;
   border-color: #cccccc;
@@ -9887,9 +9891,6 @@ a.list-group-item.active:focus .ficon {
   float: none;
   margin: 0;
 }
-.set-to-do__time .fauxdio {
-  margin: 0;
-}
 .set-to-do__time__opts {
   display: inline-block;
   margin-left: 3px;
@@ -9899,6 +9900,10 @@ a.list-group-item.active:focus .ficon {
 }
 .set-to-do__time__radios {
   display: inline-block;
+}
+.set-to-do__time__radio {
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 .set-to-do--modal .set-to-do__body {
   padding: 15px;
