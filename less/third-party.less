@@ -15,7 +15,7 @@
   margin-bottom: inherit;
 }
 .bootstrap-select.btn-group .btn .filter-option {
-  .text-overflow();
+  &:extend(.text-overflow);
 }
 
 
@@ -35,6 +35,9 @@
     .input-sm;
   }
 }
-
+.ui-select-match {
+  padding-right: 25px; // account for caret
+  &:extend(.text-overflow);
+}
 
 

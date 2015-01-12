@@ -7456,11 +7456,6 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: inherit;
 }
-.bootstrap-select.btn-group .btn .filter-option {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .tour-backdrop {
   position: fixed;
   top: 0;
@@ -7668,6 +7663,9 @@ select.ui-select-match.btn-sm ~ .ui-select-search {
 textarea.ui-select-match.btn-sm ~ .ui-select-search,
 select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   height: auto;
+}
+.ui-select-match {
+  padding-right: 25px;
 }
 .alert a,
 .alert .alert-link {
@@ -8100,17 +8098,9 @@ fieldset[disabled] .btn-attention.active {
 }
 .card p {
   margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .card strong {
   font-weight: 500;
-}
-.card .btn {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .card .carousel-inner {
   padding-top: 75%;
@@ -9397,11 +9387,6 @@ a.list-group-item.active:focus .ficon {
   background-color: #fff;
   cursor: not-allowed;
 }
-.modal-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .modal-footer {
   margin-top: 0;
 }
@@ -10342,6 +10327,16 @@ a.text-muted:hover,
 .preserve-3d {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+}
+.text-overflow,
+.bootstrap-select.btn-group .btn .filter-option,
+.ui-select-match,
+.card p,
+.card .btn,
+.modal-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .vert-align {
   position: relative;
