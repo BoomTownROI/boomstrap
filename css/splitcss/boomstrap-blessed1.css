@@ -7460,11 +7460,6 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: inherit;
 }
-.bootstrap-select.btn-group .btn .filter-option {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .tour-backdrop {
   position: fixed;
   top: 0;
@@ -7672,6 +7667,9 @@ select.ui-select-match.btn-sm ~ .ui-select-search {
 textarea.ui-select-match.btn-sm ~ .ui-select-search,
 select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   height: auto;
+}
+.ui-select-match {
+  padding-right: 25px;
 }
 .alert a,
 .alert .alert-link {
@@ -8104,17 +8102,9 @@ fieldset[disabled] .btn-attention.active {
 }
 .card p {
   margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .card strong {
   font-weight: 500;
-}
-.card .btn {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .card .carousel-inner {
   padding-top: 75%;
@@ -9401,11 +9391,6 @@ a.list-group-item.active:focus .ficon {
   background-color: #fff;
   cursor: not-allowed;
 }
-.modal-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .modal-footer {
   margin-top: 0;
 }
@@ -9803,4 +9788,16 @@ a.list-group-item.active:focus .ficon {
 }
 .set-to-do--modal .set-to-do__body {
   padding: 15px;
+}
+@media (min-width: 768px) {
+  .set-to-do--modal-sm .set-to-do__date-btns .btn {
+    padding: 1px 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+  .set-to-do--modal-sm .set-to-do__date-btns .btn > i {
+    font-size: 14px;
+    margin: 1px 2px 0 0;
+  }
 }

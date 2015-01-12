@@ -1,16 +1,4 @@
 
-@media (min-width: 768px) {
-  .set-to-do--modal-sm .set-to-do__date-btns .btn {
-    padding: 1px 6px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-  }
-  .set-to-do--modal-sm .set-to-do__date-btns .btn > i {
-    font-size: 14px;
-    margin: 1px 2px 0 0;
-  }
-}
 .set-to-do--modal-sm .set-to-do__time__opts {
   display: block;
   margin: 4px 0 0 0;
@@ -541,6 +529,16 @@ a.text-muted:hover,
 .preserve-3d {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+}
+.text-overflow,
+.bootstrap-select.btn-group .btn .filter-option,
+.ui-select-match,
+.card p,
+.card .btn,
+.modal-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .vert-align {
   position: relative;
