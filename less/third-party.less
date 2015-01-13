@@ -15,7 +15,7 @@
   margin-bottom: inherit;
 }
 .bootstrap-select.btn-group .btn .filter-option {
-  .text-overflow();
+  &:extend(.text-overflow);
 }
 
 
@@ -23,7 +23,7 @@
 @import "bower_components/bootstrap-tour/src/less/bootstrap-tour.less";
 
 
-// Angular ui-select
+// Angular UI-Select (this thing is garbage)
 @import (less) "bower_components/angular-ui-select/dist/select.css";
 .ui-select-match.btn-lg {
   ~ .ui-select-search {
@@ -35,6 +35,13 @@
     .input-sm;
   }
 }
-
+.ui-select-match {
+  padding-right: 25px; // account for caret
+  &:extend(.text-overflow);
+}
+.ui-select-bootstrap > .ui-select-choices {
+  max-width: 300px;
+  width: auto;
+}
 
 

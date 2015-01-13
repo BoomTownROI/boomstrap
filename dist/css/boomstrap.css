@@ -7451,11 +7451,6 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: inherit;
 }
-.bootstrap-select.btn-group .btn .filter-option {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .tour-backdrop {
   position: fixed;
   top: 0;
@@ -7663,6 +7658,13 @@ select.ui-select-match.btn-sm ~ .ui-select-search {
 textarea.ui-select-match.btn-sm ~ .ui-select-search,
 select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   height: auto;
+}
+.ui-select-match {
+  padding-right: 25px;
+}
+.ui-select-bootstrap > .ui-select-choices {
+  max-width: 300px;
+  width: auto;
 }
 .alert a,
 .alert .alert-link {
@@ -8095,17 +8097,9 @@ fieldset[disabled] .btn-attention.active {
 }
 .card p {
   margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .card strong {
   font-weight: 500;
-}
-.card .btn {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .card .carousel-inner {
   padding-top: 75%;
@@ -9392,11 +9386,6 @@ a.list-group-item.active:focus .ficon {
   background-color: #fff;
   cursor: not-allowed;
 }
-.modal-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .modal-footer {
   margin-top: 0;
 }
@@ -10093,7 +10082,7 @@ a.list-group-item.active:focus .ficon {
   width: 50%;
 }
 .switcher__off {
-  background-color: #cccccc;
+  background-color: #999999;
   padding-left: 20px;
   z-index: 2;
 }
@@ -10137,6 +10126,11 @@ a.list-group-item.active:focus .ficon {
 .switcher__toggler--sm {
   height: 16px;
   width: 16px;
+}
+.switcher--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .switcher--sm {
   height: 20px;
@@ -10337,6 +10331,16 @@ a.text-muted:hover,
 .preserve-3d {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+}
+.text-overflow,
+.bootstrap-select.btn-group .btn .filter-option,
+.ui-select-match,
+.card p,
+.card .btn,
+.modal-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .vert-align {
   position: relative;

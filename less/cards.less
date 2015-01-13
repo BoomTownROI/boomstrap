@@ -17,10 +17,10 @@
   &:extend(.border all);
   p {
     margin: 0;
-    .text-overflow();
+    &:extend(.text-overflow);
   }
   strong { font-weight: @font-weight-semibold; }
-  .btn { .text-overflow(); }
+  .btn { &:extend(.text-overflow); }
   .carousel-inner {
     padding-top: @card-image-padding;
   }

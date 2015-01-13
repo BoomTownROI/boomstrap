@@ -56,7 +56,7 @@
 }
 
 .switcher__off {
-  background-color: @gray-light;
+  background-color: @gray;
   padding-left: @switcher-state-padding;
   z-index: 2;
   &:after {
@@ -88,6 +88,17 @@
   height: @switcher-sm-toggler-height;
   width: @switcher-sm-toggler-width;
 }
+
+// Disabled switcher
+// -------------------------
+
+.switcher--disabled {
+  pointer-events: none; // Future-proof disabling of clicks
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
 
 // Small switcher
 // -------------------------
