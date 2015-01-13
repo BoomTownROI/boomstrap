@@ -1,4 +1,16 @@
 
+@media (min-width: 768px) {
+  .set-to-do--modal-sm .set-to-do__date-btns .btn {
+    padding: 1px 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+  .set-to-do--modal-sm .set-to-do__date-btns .btn > i {
+    font-size: 14px;
+    margin: 1px 2px 0 0;
+  }
+}
 .set-to-do--modal-sm .set-to-do__time__opts {
   display: block;
   margin: 4px 0 0 0;
@@ -285,7 +297,7 @@
   width: 50%;
 }
 .switcher__off {
-  background-color: #cccccc;
+  background-color: #999999;
   padding-left: 20px;
   z-index: 2;
 }
@@ -329,6 +341,11 @@
 .switcher__toggler--sm {
   height: 16px;
   width: 16px;
+}
+.switcher--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .switcher--sm {
   height: 20px;
