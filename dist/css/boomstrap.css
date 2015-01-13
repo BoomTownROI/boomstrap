@@ -7667,6 +7667,10 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
 .ui-select-match {
   padding-right: 25px;
 }
+.ui-select-bootstrap > .ui-select-choices {
+  max-width: 300px;
+  width: auto;
+}
 .alert a,
 .alert .alert-link {
   font-weight: 500;
@@ -10083,7 +10087,7 @@ a.list-group-item.active:focus .ficon {
   width: 50%;
 }
 .switcher__off {
-  background-color: #cccccc;
+  background-color: #999999;
   padding-left: 20px;
   z-index: 2;
 }
@@ -10127,6 +10131,11 @@ a.list-group-item.active:focus .ficon {
 .switcher__toggler--sm {
   height: 16px;
   width: 16px;
+}
+.switcher--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .switcher--sm {
   height: 20px;
