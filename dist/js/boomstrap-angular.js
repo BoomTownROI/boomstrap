@@ -1413,31 +1413,31 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
+  Boomstrap.filter('btCurrency', function ($filter, $locale) {
+    var formats = $locale.NUMBER_FORMATS;
+    var currencyFilter = $filter('currency');
+    return function (amount, currencySymbol) {
+      amount = amount ? (amount * 1).toFixed(2) : 0;
+      var value = currencyFilter(amount, currencySymbol);
+      var parts = value.split(formats.DECIMAL_SEP);
+      var dollar = parts[0];
+      var cents = parts[1] || '00';
+      cents = cents.substring(0, 2) === '00' ? cents.substring(2) : '.' + cents;
+      return dollar + cents;
     };
   });
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
-  /**
-   * @ngdoc filter
-   * @name phoneNumber
-   *
-   * @description The 'phoneNumberfilter' filter will format or unformat a phone number.
-   * {{string|phoneNumber:'add'}} to format the number, {{string|phoneNumber:'remove'}}.
-   *
-   * @example
-     $scope.string1 = '1234567890';
-     <br />
-     $scope.string2 = '123-456-7890';
-
-     {{string1|phoneNumber:'add'}} // outputs (123) 456-7890
-     <br />
-     {{string2|phoneNumber:'remove'}} // outputs 1234567890
-   */
-  Boomstrap.filter('phoneNumber', function () {
+  Boomstrap.filter('btFormatDateToLocal', function ($filter) {
+    return function (utcDate) {
+      return utcDate === null ? '' : $filter('date')(new Date(utcDate), 'EEEE, MMMM d, y \'at\' h:mma');
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('btPhoneNumber', function () {
     return function (string, params) {
       var number = string || '';
       var formattedNumber;
@@ -1460,6 +1460,14 @@
         break;
       }
       return formattedNumber;
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
     };
   });
 }(angular.module('boomstrap')));

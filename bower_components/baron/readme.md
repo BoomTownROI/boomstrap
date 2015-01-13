@@ -1,4 +1,6 @@
-Baron — a small, fast and crossbrowser custom scrollbar with native system scroll mechanic.
+[![Build Status](https://travis-ci.org/Diokuz/baron.svg)](https://travis-ci.org/Diokuz/baron)
+
+Baron — a small, fast and crossbrowser custom scrollbar with native system scroll mechanic. 
 
 ## Demo
 
@@ -10,6 +12,7 @@ http://diokuz.github.io/baron/
 - Customizable scrollbar design with full CSS support.
 - No strong dependencies on jQuery.
 - Plugin system (fixable headers, sticky footer, autotests and more)
+- (new) Can be inited on hidden blocks
 
 Baron just hides the system scrollbar, without removing it. This guarantees scrolling will work on any system where the CSS property 'overflow: scroll' is applied.
 

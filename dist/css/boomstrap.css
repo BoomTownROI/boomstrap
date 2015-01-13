@@ -5788,9 +5788,6 @@ button.close {
   padding: 4px;
   border-radius: 4px;
   direction: ltr;
-  /*.dow {
-		border-top: 1px solid #ddd !important;
-	}*/
 }
 .datepicker-inline {
   width: 220px;
@@ -7177,8 +7174,6 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .input-group.date .input-group-addon i {
   cursor: pointer;
-  width: 16px;
-  height: 16px;
 }
 .input-daterange input {
   text-align: center;

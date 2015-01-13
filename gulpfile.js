@@ -173,7 +173,7 @@ gulp.task(Tasks.CreateDocumentationHTML, function() {
 gulp.task(Tasks.JavascriptDocumentation, function() {
   var highlight = require('highlight.js');
 
-  gulp.src(['app/documentation/scripts/directives/**'])
+  gulp.src(['app/documentation/scripts/directives/**', 'app/documentation/scripts/filters/**'])
     .pipe(markdown({
       highlight: function(code) {
         return highlight.highlightAuto(code).value;

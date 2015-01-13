@@ -1,23 +1,7 @@
 (function(Boomstrap) {
   'use strict';
 
-  /**
-   * @ngdoc filter
-   * @name phoneNumber
-   *
-   * @description The 'phoneNumberfilter' filter will format or unformat a phone number.
-   * {{string|phoneNumber:'add'}} to format the number, {{string|phoneNumber:'remove'}}.
-   *
-   * @example
-     $scope.string1 = '1234567890';
-     <br />
-     $scope.string2 = '123-456-7890';
-
-     {{string1|phoneNumber:'add'}} // outputs (123) 456-7890
-     <br />
-     {{string2|phoneNumber:'remove'}} // outputs 1234567890
-   */
-  Boomstrap.filter('phoneNumber', function() {
+  Boomstrap.filter('btPhoneNumber', function() {
     return function(string, params) {
       var number = string || '';
       var formattedNumber;

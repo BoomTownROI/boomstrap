@@ -84,3 +84,57 @@
 &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
 &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
 </code></pre>
+
+<h1 id="btcurrency">btCurrency</h1>
+<h2 id="filter">Filter</h2>
+<p>The <code>btCurrency</code> filter will format curreny in the same fashion as the
+built in Angular curreny filter, with one difference; if the currency is
+whole, that is $2.00, this filter leaves the 00.</p>
+<blockquote class="callout callout-info">
+<p>btCurrency respects the same l18n and l10n settings as Angular.</p>
+</blockquote>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{200<span class="hljs-variable">.</span>00|<span class="hljs-variable">btCurrency</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> // $200.00</span>
+</code></pre>
+
+<h1 id="btformatdatetolocal">btFormatDateToLocal</h1>
+<h2 id="filter">Filter</h2>
+<p>The <code>btFormatDateToLocal</code> filter will convert any date stored ass UTC to
+local time, based on local machine settings.</p>
+<blockquote class="callout callout-info">
+<p>This filter assumes the stored date is already in UTC</p>
+</blockquote>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">dateObject</span>|<span class="hljs-variable">btFormatDateToLocal</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span></span>
+</code></pre>
+
+<h1 id="btphonenumber">btPhoneNumber</h1>
+<h2 id="filter">Filter</h2>
+<p>The <code>phoneNumberfilter</code> filter will format or unformat a phone number.</p>
+<blockquote class="callout callout-info">
+<p>btPhoneNUmber has no opinions about the phone number you are trying to
+format. You will need to do any phone number validation.</p>
+</blockquote>
+<h4 id="exmaple-usage">Exmaple Usage</h4>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $scope.string1 = <span class="hljs-string">'1234567890'</span>;
+  $scope.string2 = <span class="hljs-string">'123-456-7890'</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  </span><span class="hljs-expression">{{<span class="hljs-variable">string</span>1|<span class="hljs-variable">phoneNumber</span>:'<span class="hljs-variable">add</span>'}}</span><span class="xml"> // (123) 456-7890
+  </span><span class="hljs-expression">{{<span class="hljs-variable">string</span>2|<span class="hljs-variable">phoneNumber</span>:'<span class="hljs-variable">remove</span>'}}</span><span class="xml"> // 1234567890
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
+</code></pre>
+
+<h1 id="capitalize">Capitalize</h1>
+<h2 id="filter">Filter</h2>
+<p>The <code>capitalize</code> filter will simply capitalize the first letter of a
+string.</p>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $scope.string = <span class="hljs-string">'word'</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">string</span>:<span class="hljs-variable">capitalize</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> // Word</span>
+</code></pre>
