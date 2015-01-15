@@ -123,11 +123,6 @@
 				"nav_header": "Dropdowns"
 			},
 			{
-				"source": "views/components/fauxbles.html",
-				"css_id": "#fauxbles",
-				"nav_header": "Fauxbles"
-			},
-			{
 				"source": "views/components/icons.html",
 				"css_id": "#icons",
 				"nav_header": "Icons"
