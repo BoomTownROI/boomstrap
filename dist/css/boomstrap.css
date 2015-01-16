@@ -7501,7 +7501,13 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.7.0 - 2014-09-09T01:02:43.612Z
+ * Version: 0.9.6 - 2015-01-12T20:24:40.593Z
+ * License: MIT
+ */
+/*!
+ * ui-select
+ * http://github.com/angular-ui/ui-select
+ * Version: 0.9.5 - 2014-12-12T16:07:20.859Z
  * License: MIT
  */
 /* Style when highlighting a search. */
@@ -7528,6 +7534,12 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .select2-result-single {
   padding-left: 0;
+}
+.select2-locked > .select2-search-choice-close {
+  display: none;
+}
+.select-locked > .ui-select-match-close {
+  display: none;
 }
 /* Selectize theme */
 /* Helper class to show styles when focus */
@@ -7556,6 +7568,16 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.ui-select-bootstrap .ui-select-toggle {
+  position: relative;
+}
+.ui-select-bootstrap .ui-select-toggle > .caret {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  right: 10px;
+  margin-top: -2px;
 }
 /* Fix Bootstrap dropdown position when inside a input-group */
 .input-group > .ui-select-bootstrap.dropdown {
@@ -7599,6 +7621,9 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   font-size: 1.6em;
   line-height: 0.75;
 }
+.ui-select-multiple.ui-select-bootstrap .ui-select-match-item {
+  outline: 0;
+}
 .ui-select-bootstrap .ui-select-choices-row > a {
   display: block;
   padding: 3px 20px;
@@ -7619,6 +7644,12 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   text-decoration: none;
   outline: 0;
   background-color: #428bca;
+}
+.ui-select-bootstrap .ui-select-choices-row.disabled > a,
+.ui-select-bootstrap .ui-select-choices-row.active.disabled > a {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
 }
 /* fix hide/show angular animation */
 .ui-select-match.ng-hide-add,
@@ -7662,8 +7693,10 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
 .ui-select-match {
   padding-right: 25px;
 }
-.ui-select-bootstrap > .ui-select-choices {
-  max-width: 300px;
+.ui-select-bootstrap--inline-block {
+  display: inline-block;
+}
+.ui-select-bootstrap--inline-block > .ui-select-choices {
   width: auto;
 }
 .alert a,
