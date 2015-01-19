@@ -43,13 +43,12 @@
   padding-right: 25px; // account for caret
   &:extend(.text-overflow);
 }
-// Inline-block modifier.
-// Must set width when using inline-block modifier. Otherwise the input element won't respect same button width.
+// Inline-block modifier. Must set width of the select or the width of the container.
 .ui-select-bootstrap--inline-block {
   display: inline-block;
+  vertical-align: middle;
+  width: 100%;
 }
-.ui-select-bootstrap--inline-block > .ui-select-choices {
-  width: auto;
-}
+
 
 
