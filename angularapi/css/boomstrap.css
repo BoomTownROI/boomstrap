@@ -7666,9 +7666,10 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
 .ui-select-match {
   padding-right: 25px;
 }
-.ui-select-bootstrap > .ui-select-choices {
-  max-width: 300px;
-  width: auto;
+.ui-select-bootstrap--inline-block {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
 }
 .alert a,
 .alert .alert-link {
