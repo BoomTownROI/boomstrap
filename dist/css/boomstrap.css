@@ -9011,6 +9011,7 @@ button.close-inverted {
 }
 .leadcat-disabled {
   background: #999999;
+  border-color: #999999;
 }
 [class*="leadtype-"] {
   display: inline-block;
