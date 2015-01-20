@@ -2,7 +2,7 @@
   "name": "boomstrap",
   "version": "1.10.7",
   "devDependencies": {
-    "event-stream": "^3.1.5"
+    "event-stream": "^3.1.5",
     "grunt": "~0.4.1",
     "grunt-gh-pages": "~0.9.1",
     "grunt-ngdocs": "^0.2.1",
