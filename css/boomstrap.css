@@ -9013,6 +9013,10 @@ button.close-inverted {
 .leadcat-muted {
   opacity: 0.7;
 }
+.leadcat-disabled {
+  background: #999999;
+  border-color: #999999;
+}
 [class*="leadtype-"] {
   display: inline-block;
   position: relative;
