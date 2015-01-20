@@ -9010,8 +9010,8 @@ button.close-inverted {
   opacity: 0.7;
 }
 .leadcat-disabled {
-  background: #999999;
-  border-color: #999999;
+  background: #cccccc;
+  border-color: #cccccc;
 }
 [class*="leadtype-"] {
   display: inline-block;
