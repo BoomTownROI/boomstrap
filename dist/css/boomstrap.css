@@ -9008,6 +9008,9 @@ button.close-inverted {
 .leadcat-muted {
   opacity: 0.7;
 }
+.leadcat-disabled {
+  background: #999999;
+}
 [class*="leadtype-"] {
   display: inline-block;
   line-height: 1.1;
