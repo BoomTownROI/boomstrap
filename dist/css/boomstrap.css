@@ -8861,7 +8861,7 @@ button.close-inverted {
 [class*="leadtype-"],
 .marker {
   font-weight: 700;
-  padding: 0.1em 0.5em 0.2em;
+  padding: 0.2em 0.5em 0.2em;
 }
 .label-attention {
   background-color: #f68a24;
@@ -9045,7 +9045,7 @@ button.close-inverted {
 .leadtype-bs:after {
   display: inline-block;
   padding-bottom: 0.2em;
-  padding-top: 0.1em;
+  padding-top: 0.2em;
   text-align: center;
   width: 44px;
 }
@@ -9061,7 +9061,7 @@ button.close-inverted {
 }
 .leadtype-abbr.leadtype-bs:before,
 .leadtype-abbr.leadtype-bs:after {
-  padding: 0.1em 0.5em 0.2em;
+  padding: 0.2em 0.5em 0.2em;
   width: auto;
 }
 .leadtype-abbr.leadtype-bs:before {
