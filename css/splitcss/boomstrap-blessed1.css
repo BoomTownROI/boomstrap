@@ -2377,7 +2377,7 @@ fieldset[disabled] .btn-primary.active {
   color: #f6f6f6;
 }
 .btn-success,
-.set-to-do__date-btns .btn.active {
+.set-to-do__date-btns > .btn.active {
   color: #ffffff;
   background-color: #669900;
   border-color: #558000;
@@ -2805,14 +2805,16 @@ fieldset[disabled] .btn-link:focus {
   border-radius: 6px;
 }
 .btn-sm,
-.btn-group-sm > .btn {
+.btn-group-sm > .btn,
+.set-to-do--sm .set-to-do__date-btns > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
 .btn-xs,
-.btn-group-xs > .btn {
+.btn-group-xs > .btn,
+.set-to-do__date-btns > .btn {
   padding: 1px 6px;
   font-size: 12px;
   line-height: 1.5;
@@ -9247,6 +9249,11 @@ a.list-group-item.active:focus .ficon {
 }
 .log-call__checkbox {
   margin: 0;
+  float: left;
+  width: 50%;
+}
+.log-call__checkbox + .log-call__checkbox {
+  padding-left: 0;
 }
 .log-call__comments textarea {
   height: 60px;
@@ -9258,6 +9265,12 @@ a.list-group-item.active:focus .ficon {
 }
 .log-call__status .list-group {
   margin-bottom: 0;
+}
+.log-call--sm .log-call__checkbox {
+  float: none;
+  width: auto;
+  display: inline-block;
+  margin-right: 8px;
 }
 .log-call--modal .log-call__body {
   padding: 15px;
@@ -9631,6 +9644,7 @@ a.list-group-item.active:focus .ficon {
   text-transform: lowercase;
 }
 .bootstrap-select.form-control {
+  background-color: inherit;
   margin-bottom: 0 !important;
 }
 .ui-select-match.form-control {
@@ -9785,37 +9799,23 @@ a.list-group-item.active:focus .ficon {
   font-weight: 500;
   padding-right: 68px;
 }
-.set-to-do__date-btns .btn {
-  float: left;
-  margin: 3px 0;
-  width: 49%;
+.set-to-do__date-btns {
+  font-size: 0;
+  margin: 0 0 15px -2%;
 }
-.set-to-do__date-btns .btn:nth-child(even) {
-  float: right;
-}
-.set-to-do__date-btns .btn:last-child {
-  display: block;
-  width: 100%;
-}
-.set-to-do__date-btns .btn:last-child > i {
+.set-to-do__date-btns > .btn {
   display: inline-block;
-  float: none;
-  margin: 0;
+  margin: 0 0 2% 2%;
+  width: 48%;
+}
+.set-to-do__date-btns > .btn.btn-block {
+  margin-bottom: 0;
+  width: 98%;
 }
 .set-to-do__time__opts {
-  display: inline-block;
-  margin-left: 3px;
+  display: block;
+  margin: 4px 0 0 0;
 }
 .set-to-do__time__opts.hide {
   display: none;
-}
-.set-to-do__time__radios {
-  display: inline-block;
-}
-.set-to-do__time__radio {
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-.set-to-do--modal .set-to-do__body {
-  padding: 15px;
 }

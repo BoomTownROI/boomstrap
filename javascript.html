@@ -1079,6 +1079,68 @@
 </div>
 
 
+<!-- ================================== Element Query ================================== -->
+
+<!-- Scrollbar (Boomstrap Custom) -->
+
+
+<section id="element-query" class="pl-docs-section">
+    <div class="page-header">
+      <h1>Element Queries <small>boomqueries.js</small></h1>
+    </div>
+    <p class="lead">BoomQueries is a plugin used to perform element queries. See <a href="https://github.com/BoomTownROI/boomqueries" target="_blank">https://github.com/BoomTownROI/boomqueries</a> for options and documentation.</p>
+   <div class="callout callout-info">
+      <h4>About Element Queries</h4>
+      <p>Element queries provide us with granular control over how the contents of an individual component will respond relative to its own size rather than the viewport size via media queries. To learn more about element queries, visit <a href="http://responsiveimagescg.github.io/eq-usecases/" target="_blank">http://responsiveimagescg.github.io/eq-usecases/</a>.</p>
+    </div>
+
+    <h2>Basic example</h2>
+    <p>In the following example, we register the component (<code>.pl-component</code>) with BoomQueries via JavaScript:</p>
+    <p><code>boomQueries.add(".pl-component", [[420, "pl-component--sm"],[600, "pl-component--md"]]);</code></p>
+    <p>Once registered, the component is set up to receive size modifier classes when <strong>its width</strong> matches the defined breakpoints. In this example, when the component's width reaches 420px it will receive the .pl-component--sm class. When the component's width reaches 600px it will receive the .pl-component--md class.</p>
+    <p>For demonstration purposes, we've provided two visual cues that indicate when a modifier class is added or removed:<br>
+    1) text inside of the component reveals modifier classes<br>
+    2) component's background changes color</p>
+    
+
+    <div class="pl-example">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5">
+          <div class="pl-component">.pl-component</div>
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <div class="pl-component">.pl-component</div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="pl-component">.pl-component</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="pl-code"><pre class="prettyprint"><code>&lt;div class="row"&gt;
+  &lt;div class="col-xs-12 col-sm-5"&gt;
+    &lt;div class="pl-component"&gt;.pl-component&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col-xs-12 col-sm-7"&gt;
+    &lt;div class="pl-component"&gt;.pl-component&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-xs-12"&gt;
+    &lt;div class="pl-component"&gt;.pl-component&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <script type="text/javascript">
+      boomQueries.add(".pl-component", [[420, "pl-component--sm"],[600, "pl-component--md"]]);
+    </script>
+</section>
+
+
 <!-- ================================== Modal ================================== -->
 
 <div class="pl-docs-section">
@@ -1144,43 +1206,82 @@
   <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
   <!-- sample modal content -->
   <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+    <div class="modal-dialog modal-lg texting texting--md texting--modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="ficon ficon-sms"></i> Text Message: Vincent</h4>
+          </div>
+          <div class="modal-body texting__body">
+            <div class="texting__convo">
+              <div class="texting__convo__inner">
+                <div class="texting__msg">
+                    <div class="texting__msg__time">Thursday 6:00 pm</div>
+                    <div class="texting__msg__bubble">
+                      Yeah, but do you consider a dog to be a filthy animal?
+                      <aside class="texting__msg__bubble__avatar">
+                        <i class="ficon ficon-user"></i>
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+                <div class="texting__msg">
+                    <div class="texting__msg__time">Thursday 6:01 pm</div>
+                    <div class="texting__msg__bubble">
+                      I wouldn't go so far as to call a dog filthy but they're definitely dirty. But, a dog's got personality. Personality goes a long way.
+                      <aside class="texting__msg__bubble__avatar">
+                        <img src="http://www.nicenicejpg.com/600">
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+                <div class="texting__msg">
+                    <div class="texting__msg__time">Thursday 6:02 pm</div>
+                    <div class="texting__msg__bubble">
+                      Ah, so by that rationale, if a pig had a better personality, he would cease to be a filthy animal. Is that true?
+                      <aside class="texting__msg__bubble__avatar">
+                        <i class="ficon ficon-user"></i>
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+                <div class="texting__msg">
+                    <div class="texting__msg__time">Thursday 6:03 pm</div>
+                    <div class="texting__msg__bubble">
+                      Well we'd have to be talkin' about one charming pig. I mean he'd have to be ten times more charmin' than that Arnold on Green Acres, you know what I'm sayin'?
+                      <aside class="texting__msg__bubble__avatar">
+                        <img src="http://www.nicenicejpg.com/600">
+                      </aside>
+                    </div>
+                </div> <!-- end texting__msg -->
+              </div> <!-- end texting__convo__inner -->
+            </div> <!-- end texting__convo -->
+            <div class="texting__actions">
+              <div class="texting__actions__phones">
+                <select class="selectpicker form-control" data-style="btn-default btn-sm">
+                  <option>888-555-1111 (home)</option>
+                  <option>888-555-2222 (cell)</option>
+                  <option>888-555-3333 (work)</option>
+                </select>
+              </div>
+              <div class="texting__actions__phone-assign">
+                <a href="#">Create New Lead</a> | <a href="#">Add to Existing Lead</a>
+              </div>
+              <hr class="texting__actions__hr">
+              <div class="texting__actions__templates">
+                <select class="selectpicker form-control" data-style="btn-default btn-sm">
+                  <option>templates</option>
+                  <option>templates</option>
+                  <option>templates</option>
+                </select>
+              </div>
+              <div class="texting__actions__compose">
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
+                </div>
+                <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
+              </div>
+            </div> <!-- end texting__actions -->
+          </div> <!-- end texting__body -->
         </div>
-        <div class="modal-body">
-          <h4>Text in a modal</h4>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-
-          <h4>Popover in a modal</h4>
-          <p>This <a href="#" role="button" class="btn btn-default popover-test" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
-
-          <h4>Tooltips in a modal</h4>
-          <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> should have tooltips on hover.</p>
-
-          <hr>
-
-          <h4>Overflowing text to show scroll behavior</h4>
-          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+      </div>  <!-- end texting -->
   </div><!-- /.modal -->
 
   <div class="pl-example" style="padding-bottom: 24px;">
@@ -2351,6 +2452,9 @@ doctour.init();</code></pre>
                     <a href="#dropdowns">dropdown</a>
                 </li>
                 <li>
+                    <a href="#element-query">element queries</a>
+                </li>
+                <li>
                     <a href="#modals">modal</a>
                 </li>
                 <li>
@@ -2460,8 +2564,6 @@ doctour.init();</code></pre>
 			   }
 			});
 
-			
-
 			///////////// view markup buttons
 
 			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
@@ -2471,6 +2573,8 @@ doctour.init();</code></pre>
 				$(this).next(prediv).show();
 				$(this).hide();
 			});
+
+
 
     });
 
