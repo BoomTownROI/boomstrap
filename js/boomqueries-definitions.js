@@ -1,4 +1,4 @@
-// Element Queries (BoomQueries - https://github.com/BoomTownROI/boomqueries)
+// BoomQuery Definitions (BoomQueries - https://github.com/BoomTownROI/boomqueries)
 
 // Define element queries
 // -------------------------

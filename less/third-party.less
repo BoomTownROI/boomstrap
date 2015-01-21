@@ -2,6 +2,7 @@
 // Note: Import desired files from third party plugins
 
 // Bootstrap Datepicker (http://eternicode.github.io/bootstrap-datepicker,https://github.com/eternicode/bootstrap-datepicker)
+// -------------------------
 @import "bower_components/bootstrap-datepicker/less/datepicker3.less";
 .datepicker {
   z-index: 1151 !important; /* Datepicker on modals */
@@ -9,21 +10,24 @@
 
 
 // Bootstrap Select (https://github.com/silviomoreto/bootstrap-select,http://silviomoreto.github.io/bootstrap-select/3/)
+// -------------------------
 @import "bower_components/bootstrap-select/less/bootstrap-select.less";
 .bootstrap-select.btn-group:not(.input-group-btn),
 .bootstrap-select.btn-group[class*="span"] {
   margin-bottom: inherit;
 }
 .bootstrap-select.btn-group .btn .filter-option {
-  .text-overflow();
+  &:extend(.text-overflow);
 }
 
 
 // Bootstrap Tour (https://github.com/sorich87/bootstrap-tour,http://bootstraptour.com/)
+// -------------------------
 @import "bower_components/bootstrap-tour/src/less/bootstrap-tour.less";
 
 
-// Angular ui-select
+// Angular UI-Select (this thing is garbage)
+// -------------------------
 @import (less) "bower_components/angular-ui-select/dist/select.css";
 .ui-select-match.btn-lg {
   ~ .ui-select-search {
@@ -34,6 +38,16 @@
   ~ .ui-select-search {
     .input-sm;
   }
+}
+.ui-select-match {
+  padding-right: 25px; // account for caret
+  &:extend(.text-overflow);
+}
+// Inline-block modifier. Must set width of the select or the width of the container.
+.ui-select-bootstrap--inline-block {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
 }
 
 

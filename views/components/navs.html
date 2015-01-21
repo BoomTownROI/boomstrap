@@ -179,11 +179,41 @@
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div>
 
+<!-- NAV LINKS -->
+  <h2 id="nav-links">Nav Links</h2>
+  <h3>Default</h3>
+  <p>Take the same HTML as nav tabs and nav pills, but use <code>.nav-links</code> instead.</p>
+  <p><strong>However, some additional markup is required.</strong> The <code>.nav-links__bar</code> element is required. The Javascript file used for this component is <em>boomstrap-navlinks.js</em> located in the js directory. Eventually we will write this as a plugin when time permits.</p>
+  <div class="pl-example">
+    <ul class="nav nav-links">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Messages</a></li>
+      <span class="nav-links__bar"></span>
+    </ul>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;ul class="nav nav-links"&gt;
+  &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+  &lt;span class="nav-links__bar"&gt;&lt;/span&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+  <p>Here is another example sitting on a darker background.</p>
+  <div class="pl-example bg-gray-lighter">
+    <ul class="nav nav-links">
+      <li><a href="#">Home</a></li>
+      <li class="active"><a href="#">Profile</a></li>
+      <li><a href="#">Messages</a></li>
+      <span class="nav-links__bar"></span>
+    </ul>
+  </div>
 
-
+  <!-- NAV BLOCKS -->
   <h2 id="nav--blocks">Nav Blocks</h2>
   <h3>Default</h3>
-  <p>Take that same HTML as nav tabs and nav pills, but use <code>.nav-blocks</code> instead.</p>
+  <p>Take the same HTML as nav tabs and nav pills, but use <code>.nav-blocks</code> instead.</p>
   <div class="pl-example">
     <ul class="nav nav-blocks">
       <li class="active"><a href="#">Home</a></li>

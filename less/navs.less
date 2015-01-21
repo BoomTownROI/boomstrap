@@ -8,6 +8,78 @@
   padding: @nav-link-padding-small;
 }
 
+// Nav Blocks
+// -------------------------
+
+.nav-blocks > li {
+  &.active > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-left-color: @brand-attention;
+      color: @brand-attention;
+      cursor: not-allowed;
+      font-weight: @font-weight-bold;
+      pointer-events: none;
+    }
+  }
+}
+
+.nav-blocks > li > a {
+  border-left: 3px solid transparent;
+  color: @nav-blocks-color;
+  &:focus,&:hover {
+    background-color: @nav-link-hover-bg;
+  }
+}
+
+// Light nav blocks simply change hover bg color
+
+.nav-blocks-light > li > a {
+  &:focus,&:hover {
+    background-color: @nav-link-light-hover-bg;
+  }
+}
+
+// Nav Links
+// -------------------------
+
+.nav-links {
+  position: relative;
+  > li {
+    display: inline-block;
+    margin-right: 15px;
+    &.active {
+      > a, > a:hover, > span, > span:hover {
+        background-color: transparent;
+        color: @link-hover-color;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+    > a {
+      display: inline-block;
+      padding: @padding-small 0;
+      transition: all linear 0.25s;
+      &:hover {
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
+  }
+  &__bar {
+    background-color: @link-hover-color;
+    bottom: 0;
+    height: 2px;
+    left: 0px;
+    transform: translateX(0);
+    position: absolute;
+    width: 0px;
+    transition: all 0.35s cubic-bezier(.43,.41,.22,.91);
+  }
+}
+
 // Nav Tabs
 // -------------------------
 
@@ -71,43 +143,3 @@
 }
 
 
-// Nav Blocks
-// -------------------------
-
-.nav-blocks > li {
-  &.active > a {
-    &,
-    &:hover,
-    &:focus {
-      border-left-color: @brand-attention;
-      color: @brand-attention;
-      font-weight: @font-weight-bold;
-    }
-  }
-}
-
-.nav-blocks > li > a {
-  border-left: 3px solid transparent;
-  color: @nav-blocks-color;
-  &:focus,&:hover {
-    background-color: @nav-link-hover-bg;
-  }
-}
-
-// Light nav blocks simply change active and hover bg color of nav-blocks
-
-// .nav-blocks-light > li {
-//   &.active > a {
-//     &,
-//     &:hover,
-//     &:focus {
-//       background-color: @nav-link-light-hover-bg;
-//     }
-//   }
-// }
-
-.nav-blocks-light > li > a {
-  &:focus,&:hover {
-    background-color: @nav-link-light-hover-bg;
-  }
-}

@@ -7,6 +7,7 @@
   <p class="lead">Toggle switches.</p>
 
   <h3>Default switcher</h3>
+  <p>The switcher is ON when the switcher's input selector (<code>.switcher__input</code>) is "checked."</p>
   <div class="pl-example bg-gray-lighter">
     <div class="switcher">
       <input type="checkbox" checked class="switcher__input" id="switcher-demo">
@@ -55,4 +56,31 @@
 &lt;/div&gt;</code></pre>
   </div>
 
+  <h3>Disabled switcher</h3>
+  <p>Make buttons look unclickable by fading them back 50%. Add <code>.switcher--disabled</code> modifier class to the <code>.switcher</code> class. </p>
+  <div class="pl-example bg-gray-lighter">
+    <div class="switcher switcher--disabled">
+      <input type="checkbox" checked class="switcher__input" id="switcher-demo">
+      <label class="switcher__label" for="switcher-demo">
+        <div class="switcher__inner">
+          <div class="switcher__on"><i class="ficon ficon-checkmark"></i></div>
+          <div class="switcher__off"><i class="ficon ficon-cross"></i></div>
+        </div>
+      </label>
+    </div>
+    <div class="switcher switcher--sm switcher--disabled">
+      <input type="checkbox" checked class="switcher__input" id="switcher-sm-demo">
+      <label class="switcher__label switcher__label--sm" for="switcher-sm-demo">
+        <div class="switcher__inner">
+          <div class="switcher__on"><i class="ficon ficon-checkmark"></i></div>
+          <div class="switcher__off"><i class="ficon ficon-cross"></i></div>
+        </div>
+      </label>
+    </div>
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="switcher switcher--disabled"&gt;...&lt;/div&gt;
+&lt;div class="switcher switcher--sm switcher--disabled"&gt;...&lt;/div&gt;
+    </code></pre>
+  </div>
 </div>

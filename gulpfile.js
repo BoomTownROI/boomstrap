@@ -60,14 +60,15 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
     'vendor/chosen/chosen.jquery.min.js',
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
-    'js/vendor-config.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     'bower_components/angular-ui-select/dist/select.js',
     'bower_components/angular-moment/angular-moment.min.js',
     'bower_components/boomqueries/dist/js/boomqueries.min.js',
-    'js/element-queries.js',
+    'js/vendor-config.js',
+    'js/boomqueries-definitions.js', // define elements that use BoomQueries
+    'js/boomstrap-navlinks.js', // rewrite as plugin at some point (CA)
     'js/global.js'
   ])
   .pipe(concat('boomstrap.js'))
@@ -175,7 +176,7 @@ gulp.task(Tasks.CreateDocumentationHTML, function() {
 gulp.task(Tasks.JavascriptDocumentation, function() {
   var highlight = require('highlight.js');
 
-  gulp.src(['app/documentation/scripts/directives/**'])
+  gulp.src(['app/documentation/scripts/directives/**', 'app/documentation/scripts/filters/**'])
     .pipe(markdown({
       highlight: function(code) {
         return highlight.highlightAuto(code).value;

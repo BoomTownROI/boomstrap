@@ -1,4 +1,4 @@
-/* angular-moment.js / v0.7.0 / (c) 2013, 2014 Uri Shaked / MIT Licence */
+/* angular-moment.js / v0.7.1 / (c) 2013, 2014 Uri Shaked / MIT Licence */
 
 /* global define */
 
@@ -225,6 +225,9 @@
 				 * @return {Moment} A value that can be parsed by the moment library
 				 */
 				this.preprocessDate = function (value, preprocess, format) {
+					if (angular.isUndefined(preprocess)) {
+						preprocess = angularMomentConfig.preprocess;
+					}
 					if (this.preprocessors[preprocess]) {
 						return this.preprocessors[preprocess](value, format);
 					}
