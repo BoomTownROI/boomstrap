@@ -100,12 +100,13 @@ whole, that is $2.00, this filter leaves the 00.</p>
 <h1 id="btformatdatetolocal">btFormatDateToLocal</h1>
 <h2 id="filter">Filter</h2>
 <p>The <code>btFormatDateToLocal</code> filter will convert any date stored ass UTC to
-local time, based on local machine settings.</p>
+local time, based on local machine settings. This filter accepts any
+formatting options that Angular&#39;s <code>date</code> filter accepts.</p>
 <blockquote class="callout callout-info">
 <p>This filter assumes the stored date is already in UTC</p>
 </blockquote>
 <h4 id="example-usage">Example Usage</h4>
-<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">dateObject</span>|<span class="hljs-variable">btFormatDateToLocal</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span></span>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">dateObject</span>|<span class="hljs-variable">btFormatDateToLocal</span>:'<span class="hljs-variable">MM</span><span class="hljs-end-block">/DD</span><span class="hljs-end-block">/yyyy</span>'}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span></span>
 </code></pre>
 
 <h1 id="btphonenumber">btPhoneNumber</h1>

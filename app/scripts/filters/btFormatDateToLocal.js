@@ -8,7 +8,7 @@
 
       if (utcDate) {
         utcDate = utcDate.replace(/Z$/, '') + 'Z';
-        defaultFilter = params ? params : "EEEE, MMMM d, y 'at' h:mma"
+        defaultFilter = params ? params : "EEEE, MMMM d, y 'at' h:mma";
 
         formattedDate = $filter('date')(utcDate, defaultFilter);
       }else{
