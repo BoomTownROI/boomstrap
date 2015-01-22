@@ -2143,6 +2143,322 @@
 
 </div>
 
+<!-- ================================== Fauxbles ================================== -->
+
+<!-- Fauxbles (Boomstrap Custom) -->
+<div class="pl-docs-section">
+  <h1 id="fauxbles" class="page-header">Fauxbles</h1>
+  <p class="lead">Fauxbles are regular block elements designed to look like tables and inherit table classes.</p>
+
+  <h2>Default fauxble</h2>
+  <div class="pl-example">
+    <ul class="fauxble">
+      <li class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-2">Heading</div>
+        <div class="col-md-5">Another Heading</div>
+        <div class="col-md-4">Yet Another Heading</div>
+      </li>
+      <li class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-2">Data "Cell"</div>
+        <div class="col-md-5">A horse is a horse ...</div>
+        <div class="col-md-4">of course, of course.</div>
+      </li>
+      <li class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-2">Data "Cell"</div>
+        <div class="col-md-5">And no one can talk to a horse, of course ...</div>
+        <div class="col-md-4">but the famous Mr. Ed.</div>
+      </li>
+    </ul>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;ul class="fauxble"&gt;
+  &lt;li class="fauxble-headings"&gt;
+    &lt;div class="col-md-1"&gt;#&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Heading&lt;/div&gt;
+    &lt;div class="col-md-5"&gt;Another Heading&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Yet Another Heading&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Data "Cell"&lt;/div&gt;
+    &lt;div class="col-md-5"&gt;A horse is a horse ...&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;of course, of course.&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;2&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Data "Cell"&lt;/div&gt;
+    &lt;div class="col-md-5"&gt;And no one can talk to a horse, of course ...&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;but the famous Mr. Ed.&lt;/div&gt;
+  &lt;/li&gt;
+  </code></pre></div>
+
+  <h2>Striped rows</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-striped">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Sport</div>
+        <div class="col-md-2">Season</div>
+        <div class="col-md-3">Location</div>
+        <div class="col-md-2">Price</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">snowboarding</div>
+        <div class="col-md-2">winter</div>
+        <div class="col-md-3">mountains</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">surfing</div>
+        <div class="col-md-2">summer</div>
+        <div class="col-md-3">coast</div>
+        <div class="col-md-2">$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">ice climbing</div>
+        <div class="col-md-2">winter</div>
+        <div class="col-md-3">mountains</div>
+        <div class="col-md-2">$$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-striped"&gt;
+  &lt;div class="fauxble-headings"&gt;
+    &lt;div class="col-md-1"&gt;#&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Sport&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Season&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;Location&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;Price&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;1&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;snowboarding&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;winter&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;mountains&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;$$$$&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;2&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;surfing&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;summer&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;coast&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;$$&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="fauxble-row"&gt;
+    &lt;div class="col-md-1"&gt;3&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;ice climbing&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;winter&lt;/div&gt;
+    &lt;div class="col-md-3"&gt;mountains&lt;/div&gt;
+    &lt;div class="col-md-2"&gt;$$&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div>
+  </code></pre></div>
+
+  <h2>Bordered cells</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-bordered">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Beach</div>
+        <div class="col-md-2">Surfing</div>
+        <div class="col-md-3">Bars &amp; Restaurants</div>
+        <div class="col-md-2">Real Estate</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">Folly Beach</div>
+        <div class="col-md-2">excellent</div>
+        <div class="col-md-3">laid back</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">Sullivan's Island</div>
+        <div class="col-md-2">poor</div>
+        <div class="col-md-3">upscale beachy</div>
+        <div class="col-md-2">$$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">Isle of Palms</div>
+        <div class="col-md-2">good</div>
+        <div class="col-md-3">touristy</div>
+        <div class="col-md-2">$$$$$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-bordered">
+  &lt;div class="fauxble-headings">
+    &lt;div class="col-md-1">#&lt;/div>
+    &lt;div class="col-md-4">Beach&lt;/div>
+    &lt;div class="col-md-2">Surfing&lt;/div>
+    &lt;div class="col-md-3">Bars &amp; Restaurants&lt;/div>
+    &lt;div class="col-md-2">Real Estate&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">1&lt;/div>
+    &lt;div class="col-md-4">Folly Beach&lt;/div>
+    &lt;div class="col-md-2">excellent&lt;/div>
+    &lt;div class="col-md-3">laid back&lt;/div>
+    &lt;div class="col-md-2">$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">2&lt;/div>
+    &lt;div class="col-md-4">Sullivan's Island&lt;/div>
+    &lt;div class="col-md-2">poor&lt;/div>
+    &lt;div class="col-md-3">upscale beachy&lt;/div>
+    &lt;div class="col-md-2">$$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">3&lt;/div>
+    &lt;div class="col-md-4">Isle of Palms&lt;/div>
+    &lt;div class="col-md-2">good&lt;/div>
+    &lt;div class="col-md-3">touristy&lt;/div>
+    &lt;div class="col-md-2">$$$$$&lt;/div>
+  &lt;/div>
+&lt;/div>
+  </code></pre></div>
+
+  <h2>Hover rows</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-hover">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Brand</div>
+        <div class="col-md-2">Industry</div>
+        <div class="col-md-3">Nationality</div>
+        <div class="col-md-2">Price</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">Beats By Dre</div>
+        <div class="col-md-2">audio</div>
+        <div class="col-md-3">USA</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">Adidas</div>
+        <div class="col-md-2">shoes</div>
+        <div class="col-md-3">Germany</div>
+        <div class="col-md-2">$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">Fruit of the Loom</div>
+        <div class="col-md-2">garments</div>
+        <div class="col-md-3">USA</div>
+        <div class="col-md-2">$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-hover">
+  &lt;div class="fauxble-headings">
+    &lt;div class="col-md-1">#&lt;/div>
+    &lt;div class="col-md-4">Brand&lt;/div>
+    &lt;div class="col-md-2">Industry&lt;/div>
+    &lt;div class="col-md-3">Nationality&lt;/div>
+    &lt;div class="col-md-2">Price&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">1&lt;/div>
+    &lt;div class="col-md-4">Beats By Dre&lt;/div>
+    &lt;div class="col-md-2">audio&lt;/div>
+    &lt;div class="col-md-3">USA&lt;/div>
+    &lt;div class="col-md-2">$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">2&lt;/div>
+    &lt;div class="col-md-4">Adidas&lt;/div>
+    &lt;div class="col-md-2">shoes&lt;/div>
+    &lt;div class="col-md-3">Germany&lt;/div>
+    &lt;div class="col-md-2">$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">3&lt;/div>
+    &lt;div class="col-md-4">Fruit of the Loom&lt;/div>
+    &lt;div class="col-md-2">garments&lt;/div>
+    &lt;div class="col-md-3">USA&lt;/div>
+    &lt;div class="col-md-2">$&lt;/div>
+  &lt;/div>
+&lt;/div>
+  </code></pre></div>
+
+  <h2>Condensed fauxble</h2>
+  <div class="pl-example">
+    <div class="fauxble fauxble-condensed">
+      <div class="fauxble-headings">
+        <div class="col-md-1">#</div>
+        <div class="col-md-4">Manufacturer</div>
+        <div class="col-md-2">Type</div>
+        <div class="col-md-3">Speed</div>
+        <div class="col-md-2">Price</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-4">Porsche</div>
+        <div class="col-md-2">sportscar</div>
+        <div class="col-md-3">really fast</div>
+        <div class="col-md-2">$$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">2</div>
+        <div class="col-md-4">BMW</div>
+        <div class="col-md-2">luxury</div>
+        <div class="col-md-3">fast</div>
+        <div class="col-md-2">$$$$</div>
+      </div>
+      <div class="fauxble-row">
+        <div class="col-md-1">3</div>
+        <div class="col-md-4">Kia</div>
+        <div class="col-md-2">economy</div>
+        <div class="col-md-3">not so fast</div>
+        <div class="col-md-2">$</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code"><pre class="prettyprint"><code>
+&lt;div class="fauxble fauxble-condensed">
+  &lt;div class="fauxble-headings">
+    &lt;div class="col-md-1">#&lt;/div>
+    &lt;div class="col-md-4">Manufacturer&lt;/div>
+    &lt;div class="col-md-2">Type&lt;/div>
+    &lt;div class="col-md-3">Speed&lt;/div>
+    &lt;div class="col-md-2">Price&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">1&lt;/div>
+    &lt;div class="col-md-4">Porsche&lt;/div>
+    &lt;div class="col-md-2">sportscar&lt;/div>
+    &lt;div class="col-md-3">really fast&lt;/div>
+    &lt;div class="col-md-2">$$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">2&lt;/div>
+    &lt;div class="col-md-4">BMW&lt;/div>
+    &lt;div class="col-md-2">luxury&lt;/div>
+    &lt;div class="col-md-3">fast&lt;/div>
+    &lt;div class="col-md-2">$$$$&lt;/div>
+  &lt;/div>
+  &lt;div class="fauxble-row">
+    &lt;div class="col-md-1">3&lt;/div>
+    &lt;div class="col-md-4">Kia&lt;/div>
+    &lt;div class="col-md-2">economy&lt;/div>
+    &lt;div class="col-md-3">not so fast&lt;/div>
+    &lt;div class="col-md-2">$&lt;/div>
+  &lt;/div>
+&lt;/div>
+  </code></pre></div>
+</div>
 <!-- ================================== Icons ================================== -->
 
 
@@ -2699,54 +3015,6 @@
 &lt;span class="leadcat leadcat-outline leadcat-watch"&gt;watch&lt;/span&gt;
 </code></pre></div>
 
-  <h4>Muted, outlined version</h4>
-  <p>For outlined and muted, just include both <code>leadcat-muted</code> and <code>leadcat-outline</code>.</p>
-  <div class="pl-example">
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-archive">archive</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-closed">closed</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-hot">hot</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-new">new</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-nurture">nurture</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-pending">pending</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-qualify">qualify</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-trash">trash</span>
-    <span class="leadcat leadcat-muted leadcat-outline leadcat-watch">watch</span>
-  </div><!-- /example -->
-<div class="pl-code"><pre class="prettyprint"><code>&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-archive"&gt;archive&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-closed"&gt;closed&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-hot"&gt;hot&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-new"&gt;new&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-nurture"&gt;nurture&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-pending"&gt;pending&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-qualify"&gt;qualify&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-trash"&gt;trash&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-outline leadcat-watch"&gt;watch&lt;/span&gt;
-</code></pre></div>
-
-  <h4>Disabled version</h4>
-  <p>For disabled leadcats, include <code>leadcat-disabled</code>. It will override any other leadcat class.</p>
-  <div class="pl-example">
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-archive">archive</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-closed">closed</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-hot">hot</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-new">new</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-nurture">nurture</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-pending">pending</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-qualify">qualify</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-trash">trash</span>
-    <span class="leadcat leadcat-muted leadcat-disabled leadcat-watch">watch</span>
-  </div><!-- /example -->
-<div class="pl-code"><pre class="prettyprint"><code>&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-archive"&gt;archive&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-closed"&gt;closed&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-hot"&gt;hot&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-new"&gt;new&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-nurture"&gt;nurture&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-pending"&gt;pending&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-qualify"&gt;qualify&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-trash"&gt;trash&lt;/span&gt;
-&lt;span class="leadcat leadcat-muted leadcat-disabled leadcat-watch"&gt;watch&lt;/span&gt;
-</code></pre></div>
-
   <h4>Equal width</h4>
   <p>For equal width lead category labels, include the <code>.leadcat-eq</code> class.</p>
   <div class="pl-example">
@@ -3048,25 +3316,7 @@
 
 <div class="pl-docs-section">
   <h1 id="log-call" class="page-header">Log call</h1>
-  <p class="lead">Modular component for logging a call. Uses <a href="javascript.html#element-query">BoomQueries</a> to apply <strong>size</strong> modifier classes.</p>
-
-  <div class="callout callout-danger pl-callout-boomqueries">
-    <h4>BoomQuery Values</h4>
-    <table class="table table-bordered pl-eq-table">
-      <thead>
-        <tr>
-          <th>Breakpoint</th>
-          <th>Size Modifier Class</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>>= 420px</td>
-          <td>log-call--sm</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p class="lead">Modular component for logging a call.</p>
 
   <h2>Basic log call example</h2>
   <p>This is the basic construction of the log call component.</p>
@@ -3099,19 +3349,19 @@
           <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
         </div>
         <div class="log-call__checkboxes">
-          <div class="log-call__checkbox fauxbox">
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
             <input type="checkbox" id="share-agent" checked>
             <label for="share-agent">Share with Agent</label>
           </div>
-          <div class="log-call__checkbox fauxbox">
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
             <input type="checkbox" id="share-lender" checked>
             <label for="share-lender">Share with Lender</label>
           </div>
-          <div class="log-call__checkbox fauxbox">
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
             <input type="checkbox" id="notify-agent">
             <label for="notify-agent">Notify Agent</label>
           </div>
-          <div class="log-call__checkbox fauxbox">
+          <div class="log-call__checkbox fauxbox fauxbox-inline">
             <input type="checkbox" id="notify-lender">
             <label for="notify-lender">Notify Lender</label>
           </div>
@@ -3147,19 +3397,19 @@
       &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
     &lt;/div&gt;
     &lt;div class="log-call__checkboxes"&gt;
-      &lt;div class="log-call__checkbox fauxbox"&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
         &lt;input type="checkbox" id="share-agent" checked&gt;
         &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
       &lt;/div&gt;
-      &lt;div class="log-call__checkbox fauxbox"&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
         &lt;input type="checkbox" id="share-lender" checked&gt;
         &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
       &lt;/div&gt;
-      &lt;div class="log-call__checkbox fauxbox"&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
         &lt;input type="checkbox" id="notify-agent"&gt;
         &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
       &lt;/div&gt;
-      &lt;div class="log-call__checkbox fauxbox"&gt;
+      &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
         &lt;input type="checkbox" id="notify-lender"&gt;
         &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
       &lt;/div&gt;
@@ -3173,14 +3423,18 @@
     <p>When a <strong>log call status button</strong> is clicked, it should receive the <code>.active</code> class.</p>
   </div>
 
-  <h2>Log call in modal</h2>
-  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> modifier class to the existing <code>.log-call</code> class.</p>
+  <h2>Log call in small modal</h2>
+  <p>This is the log call component wrapped in a small modal. Add the <code>.log-call--modal</code> and <code>.log-call--modal-sm</code> modifier classes to the existing <code>.log-call</code> class.</p>
 
+  <div class="callout callout-info">
+    <h4>Log call in modals</h4>
+    <p>When using the <strong>log call</strong> component in a modal, the <code>.log-call--modal</code> modifier class is required. Currently there are no additional modifier classes required for use within default and large modals.</p>
+  </div>
 
   <div class="pl-example pl-example-modal">
 
     <div class="modal">
-      <div class="modal-dialog modal-sm log-call log-call--modal">
+      <div class="modal-dialog modal-sm log-call log-call--modal log-call--modal-sm">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -3211,19 +3465,19 @@
               <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
             </div>
             <div class="log-call__checkboxes">
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="share-agent" checked>
                 <label for="share-agent">Share with Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="share-lender" checked>
                 <label for="share-lender">Share with Lender</label>
               </div>
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="notify-agent">
                 <label for="notify-agent">Notify Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="notify-lender">
                 <label for="notify-lender">Notify Lender</label>
               </div>
@@ -3240,7 +3494,7 @@
   </div><!-- /example -->
   <div class="pl-code">
     <pre class="prettyprint"><code>&lt;div class="modal"&gt;
-  &lt;div class="modal-dialog modal-sm log-call log-call--modal"&gt;
+  &lt;div class="modal-dialog modal-sm log-call log-call--modal log-call--modal-sm"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
@@ -3271,19 +3525,19 @@
           &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
         &lt;/div&gt;
         &lt;div class="log-call__checkboxes"&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="share-agent" checked&gt;
             &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="share-lender" checked&gt;
             &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="notify-agent"&gt;
             &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="notify-lender"&gt;
             &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
           &lt;/div&gt;
@@ -3314,7 +3568,7 @@
   <div class="pl-example pl-example-modal">
 
     <div class="modal">
-      <div class="modal-dialog modal-sm log-call log-call--modal set-to-do--modal">
+      <div class="modal-dialog modal-sm log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -3345,19 +3599,19 @@
               <textarea class="form-control" rows="3" placeholder="Optional details"></textarea>
             </div>
             <div class="log-call__checkboxes">
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="share-agent" checked>
                 <label for="share-agent">Share with Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="share-lender" checked>
                 <label for="share-lender">Share with Lender</label>
               </div>
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="notify-agent">
                 <label for="notify-agent">Notify Agent</label>
               </div>
-              <div class="log-call__checkbox fauxbox">
+              <div class="log-call__checkbox fauxbox fauxbox-inline">
                 <input type="checkbox" id="notify-lender">
                 <label for="notify-lender">Notify Lender</label>
               </div>
@@ -3367,15 +3621,15 @@
             <div class="set-to-do__date">Schedule a To-Do?</div>
             <a href="#" class="set-to-do__cancel hide">cancel to-do</a>
             <div class="set-to-do__date-btns">
-              <button class="btn btn-default">Today</button>
-              <button class="btn btn-default">Tomorrow</button>
-              <button class="btn btn-default">2 Days</button>
-              <button class="btn btn-default">3 Days</button>
-              <button class="btn btn-default">1 Week</button>
-              <button class="btn btn-default">2 Weeks</button>
-              <button class="btn btn-default">3 Weeks</button>
-              <button class="btn btn-default">1 Month</button>
-              <button class="btn btn-default"><i class="ficon ficon-schedule"></i> Select Date</button>
+              <button class="btn btn-sm btn-default">Today</button>
+              <button class="btn btn-sm btn-default">Tomorrow</button>
+              <button class="btn btn-sm btn-default">2 Days</button>
+              <button class="btn btn-sm btn-default">3 Days</button>
+              <button class="btn btn-sm btn-default">1 Week</button>
+              <button class="btn btn-sm btn-default">2 Weeks</button>
+              <button class="btn btn-sm btn-default">3 Weeks</button>
+              <button class="btn btn-sm btn-default">1 Month</button>
+              <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</button>
             </div>
             <div class="set-to-do__time">
               <span id="set-to-do__time__radios3" class="set-to-do__time__radios">
@@ -3453,7 +3707,7 @@
   </div><!-- /example -->
   <div class="pl-code">
     <pre class="prettyprint"><code>&lt;div class="modal"&gt;
-  &lt;div class="modal-dialog modal-sm log-call log-call--modal set-to-do--modal"&gt;
+  &lt;div class="modal-dialog modal-sm log-call log-call--modal log-call--modal-sm set-to-do--modal set-to-do--modal-sm"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
@@ -3484,19 +3738,19 @@
           &lt;textarea class="form-control" rows="3" placeholder="Optional details"&gt;&lt;/textarea&gt;
         &lt;/div&gt;
         &lt;div class="log-call__checkboxes"&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="share-agent" checked&gt;
             &lt;label for="share-agent"&gt;Share with Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="share-lender" checked&gt;
             &lt;label for="share-lender"&gt;Share with Lender&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="notify-agent"&gt;
             &lt;label for="notify-agent"&gt;Notify Agent&lt;/label&gt;
           &lt;/div&gt;
-          &lt;div class="log-call__checkbox fauxbox"&gt;
+          &lt;div class="log-call__checkbox fauxbox fauxbox-inline"&gt;
             &lt;input type="checkbox" id="notify-lender"&gt;
             &lt;label for="notify-lender"&gt;Notify Lender&lt;/label&gt;
           &lt;/div&gt;
@@ -3506,15 +3760,15 @@
         &lt;div class="set-to-do__date"&gt;Schedule a To-Do?&lt;/div&gt;
         &lt;a href="#" class="set-to-do__cancel hide"&gt;cancel to-do&lt;/a&gt;
         &lt;div class="set-to-do__date-btns"&gt;
-          &lt;button class="btn btn-default"&gt;Today&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;Tomorrow&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;2 Days&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;3 Days&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;1 Week&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;2 Weeks&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;3 Weeks&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;1 Month&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;Today&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/button&gt;
         &lt;/div&gt;
         &lt;div class="set-to-do__time"&gt;
           &lt;span id="set-to-do__time__radios3" class="set-to-do__time__radios"&gt;
@@ -3592,7 +3846,6 @@
 
 
 </div>
-
 <!-- ================================== Markers ================================== -->
 
 <!-- Tags (Boomstrap Custom) -->
@@ -3905,41 +4158,11 @@
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div>
 
-<!-- NAV LINKS -->
-  <h2 id="nav-links">Nav Links</h2>
-  <h3>Default</h3>
-  <p>Take the same HTML as nav tabs and nav pills, but use <code>.nav-links</code> instead.</p>
-  <p><strong>However, some additional markup is required.</strong> The <code>.nav-links__bar</code> element is required. The Javascript file used for this component is <em>boomstrap-navlinks.js</em> located in the js directory. Eventually we will write this as a plugin when time permits.</p>
-  <div class="pl-example">
-    <ul class="nav nav-links">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Messages</a></li>
-      <span class="nav-links__bar"></span>
-    </ul>
-  </div>
-  <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;ul class="nav nav-links"&gt;
-  &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
-  &lt;span class="nav-links__bar"&gt;&lt;/span&gt;
-&lt;/ul&gt;</code></pre>
-  </div>
-  <p>Here is another example sitting on a darker background.</p>
-  <div class="pl-example bg-gray-lighter">
-    <ul class="nav nav-links">
-      <li><a href="#">Home</a></li>
-      <li class="active"><a href="#">Profile</a></li>
-      <li><a href="#">Messages</a></li>
-      <span class="nav-links__bar"></span>
-    </ul>
-  </div>
 
-  <!-- NAV BLOCKS -->
+
   <h2 id="nav--blocks">Nav Blocks</h2>
   <h3>Default</h3>
-  <p>Take the same HTML as nav tabs and nav pills, but use <code>.nav-blocks</code> instead.</p>
+  <p>Take that same HTML as nav tabs and nav pills, but use <code>.nav-blocks</code> instead.</p>
   <div class="pl-example">
     <ul class="nav nav-blocks">
       <li class="active"><a href="#">Home</a></li>
@@ -4740,25 +4963,7 @@
 
 <div class="pl-docs-section">
   <h1 id="set-to-do" class="page-header">Set to-do</h1>
-  <p class="lead">Modular component for setting up a to-do task. Uses <a href="javascript.html#element-query">BoomQueries</a> to apply <strong>size</strong> modifier classes.</p>
-
-  <div class="callout callout-danger pl-callout-boomqueries">
-    <h4>BoomQuery Values</h4>
-    <table class="table table-bordered pl-eq-table">
-      <thead>
-        <tr>
-          <th>Breakpoint</th>
-          <th>Size Modifier Class</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>>= 420px</td>
-          <td>set-to-do--sm</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p class="lead">Modular component for setting up a to-do task.</p>
 
   <h2>Basic set to-do example</h2>
   <p>This is the basic construction of the set to-do component.</p>
@@ -4769,15 +4974,15 @@
       <div class="set-to-do__body">
         <div class="set-to-do__date">Friday, October 10, 2014</div>
         <div class="set-to-do__date-btns">
-          <button class="btn btn-default active">Today</button>
-          <button class="btn btn-default">Tomorrow</button>
-          <button class="btn btn-default">2 Days</button>
-          <button class="btn btn-default">3 Days</button>
-          <button class="btn btn-default">1 Week</button>
-          <button class="btn btn-default">2 Weeks</button>
-          <button class="btn btn-default">3 Weeks</button>
-          <button class="btn btn-default">1 Month</button>
-          <button class="btn btn-default btn-block"><i class="ficon ficon-schedule"></i> Select Date</a>
+          <button class="btn btn-sm btn-default active">Today</button>
+          <button class="btn btn-sm btn-default">Tomorrow</button>
+          <button class="btn btn-sm btn-default">2 Days</button>
+          <button class="btn btn-sm btn-default">3 Days</button>
+          <button class="btn btn-sm btn-default">1 Week</button>
+          <button class="btn btn-sm btn-default">2 Weeks</button>
+          <button class="btn btn-sm btn-default">3 Weeks</button>
+          <button class="btn btn-sm btn-default">1 Month</button>
+          <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
         </div>
         <div class="set-to-do__time">
           <span id="set-to-do__time__radios">
@@ -4852,15 +5057,15 @@
   &lt;div class="set-to-do__body"&gt;
     &lt;div class="set-to-do__date"&gt;Friday, October 10, 2014&lt;/div&gt;
     &lt;div class="set-to-do__date-btns"&gt;
-      &lt;button class="btn btn-default active"&gt;Today&lt;/button&gt;
-      &lt;button class="btn btn-default"&gt;Tomorrow&lt;/button&gt;
-      &lt;button class="btn btn-default"&gt;2 Days&lt;/button&gt;
-      &lt;button class="btn btn-default"&gt;3 Days&lt;/button&gt;
-      &lt;button class="btn btn-default"&gt;1 Week&lt;/button&gt;
-      &lt;button class="btn btn-default"&gt;2 Weeks&lt;/button&gt;
-      &lt;button class="btn btn-default"&gt;3 Weeks&lt;/button&gt;
-      &lt;button class="btn btn-default"&gt;1 Month&lt;/button&gt;
-      &lt;button class="btn btn-default btn-block"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
+      &lt;button class="btn btn-sm btn-default active"&gt;Today&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
     &lt;/div&gt;
     &lt;div class="set-to-do__time"&gt;
       &lt;span id="set-to-do__time__radios"&gt;
@@ -4935,13 +5140,18 @@
     <p>When a <strong>set to-do date button</strong> is clicked, it should receive the <code>.active</code> class and change the displayed date accordingly.<br>When <strong>specific time is checked</strong>, the <code>.hide</code> class should be removed from <code>.set-to-do__time__opts</code>.</p>
   </div>
 
-  <h2>Set to-do in modal</h2>
-  <p>This is the set to-do component wrapped in a small modal. Add the <code>.set-to-do--modal</code> modifier class to the existing <code>.set-to-do</code> class.</p>
+  <h2>Set to-do in small modal</h2>
+  <p>This is the set to-do component wrapped in a small modal. Add the <code>.set-to-do--modal</code> and <code>.set-to-do--modal-sm</code> modifier classes to the existing <code>.set-to-do</code> class.</p>
+
+  <div class="callout callout-info">
+    <h4>Set to-do in modals</h4>
+    <p>When using the <strong>set to-do</strong> component in a modal, the <code>.set-to-do--modal</code> modifier class is required. Currently there are no additional modifier classes needed for use within default and large modals.</p>
+  </div>
 
   <div class="pl-example pl-example-modal">
 
     <div class="modal">
-      <div class="modal-dialog modal-sm set-to-do set-to-do--modal">
+      <div class="modal-dialog modal-sm set-to-do set-to-do--modal set-to-do--modal-sm">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -4950,15 +5160,15 @@
           <div class="modal-body set-to-do__body">
             <div class="set-to-do__date">Friday, October 10, 2014</div>
             <div class="set-to-do__date-btns">
-              <button class="btn btn-default active">Today</button>
-              <button class="btn btn-default">Tomorrow</button>
-              <button class="btn btn-default">2 Days</button>
-              <button class="btn btn-default">3 Days</button>
-              <button class="btn btn-default">1 Week</button>
-              <button class="btn btn-default">2 Weeks</button>
-              <button class="btn btn-default">3 Weeks</button>
-              <button class="btn btn-default">1 Month</button>
-              <button class="btn btn-default btn-block"><i class="ficon ficon-schedule"></i> Select Date</a>
+              <button class="btn btn-sm btn-default active">Today</button>
+              <button class="btn btn-sm btn-default">Tomorrow</button>
+              <button class="btn btn-sm btn-default">2 Days</button>
+              <button class="btn btn-sm btn-default">3 Days</button>
+              <button class="btn btn-sm btn-default">1 Week</button>
+              <button class="btn btn-sm btn-default">2 Weeks</button>
+              <button class="btn btn-sm btn-default">3 Weeks</button>
+              <button class="btn btn-sm btn-default">1 Month</button>
+              <button class="btn btn-sm btn-default"><i class="ficon ficon-schedule"></i> Select Date</a>
             </div>
             <div class="set-to-do__time">
               <span id="set-to-do__time__radios2" class="set-to-do__time__radios">
@@ -5036,7 +5246,7 @@
   </div><!-- /example -->
   <div class="pl-code">
     <pre class="prettyprint"><code>&lt;div class="modal"&gt;
-  &lt;div class="modal-dialog modal-sm set-to-do set-to-do--modal"&gt;
+  &lt;div class="modal-dialog modal-sm set-to-do set-to-do--modal set-to-do--modal-sm"&gt;
     &lt;div class="modal-content"&gt;
       &lt;div class="modal-header"&gt;
         &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
@@ -5045,15 +5255,15 @@
       &lt;div class="modal-body set-to-do__body"&gt;
         &lt;div class="set-to-do__date"&gt;Friday, October 10, 2014&lt;/div&gt;
         &lt;div class="set-to-do__date-btns"&gt;
-          &lt;button class="btn btn-default active"&gt;Today&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;Tomorrow&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;2 Days&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;3 Days&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;1 Week&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;2 Weeks&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;3 Weeks&lt;/button&gt;
-          &lt;button class="btn btn-default"&gt;1 Month&lt;/button&gt;
-          &lt;button class="btn btn-default btn-block"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
+          &lt;button class="btn btn-sm btn-default active"&gt;Today&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;Tomorrow&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Days&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Week&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;2 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;3 Weeks&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;1 Month&lt;/button&gt;
+          &lt;button class="btn btn-sm btn-default"&gt;&lt;i class="ficon ficon-schedule"&gt;&lt;/i&gt; Select Date&lt;/a&gt;
         &lt;/div&gt;
         &lt;div class="set-to-do__time"&gt;
           &lt;span id="set-to-do__time__radios" class="set-to-do__time__radios"&gt;
@@ -5135,28 +5345,10 @@
 
 <div class="pl-docs-section">
   <h1 id="texting" class="page-header">Texting</h1>
-  <p class="lead">Modular component for texting. Uses <a href="javascript.html#element-query">BoomQueries</a> to apply <strong>size</strong> modifier classes.</p>
-
-  <div class="callout callout-danger pl-callout-boomqueries">
-    <h4>BoomQuery Values</h4>
-    <table class="table table-bordered pl-eq-table">
-      <thead>
-        <tr>
-          <th>Breakpoint</th>
-          <th>Size Modifier Class</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>>= 610px</td>
-          <td>texting--md</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p class="lead">Modular component for texting.</p>
 
   <h2>Basic texting example</h2>
-  <p>This is the basic construction of the texting component.</p>
+  <p>This is the basic construction of the texting component. In proper mobile-first fashion, the texting component begins in a stacked layout.</p>
 
   <div class="pl-example pl-example-texting">
 
@@ -5311,10 +5503,95 @@
 &lt;/div&gt; &lt;!-- end texting --&gt;</code></pre>
   </div>
 
+  <h4>Texting layout options</h4>
+  <p>Utilize the <code>.texting--md</code> modifier class to alter layout for use in wide containers. Simply add <code>.texting--md</code> to the <code>.texting</code> class directly or use media queries to extend the <code>.texting--md</code> class at different break points.</p><br>
+
+  <div class="pl-example pl-example-texting">
+
+    <div class="texting texting--md">
+      <div class="texting__body">
+        <div class="texting__convo">
+          <div class="texting__convo__inner">
+            <div class="texting__msg">
+                <div class="texting__msg__time">Thursday 6:00 pm</div>
+                <div class="texting__msg__bubble">
+                  Yeah, but do you consider a dog to be a filthy animal?
+                  <aside class="texting__msg__bubble__avatar">
+                    <i class="ficon ficon-user"></i>
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg texting__msg--user">
+                <div class="texting__msg__time">Thursday 6:01 pm</div>
+                <div class="texting__msg__bubble">
+                  I wouldn't go so far as to call a dog filthy but they're definitely dirty. But, a dog's got personality. Personality goes a long way.
+                  <aside class="texting__msg__bubble__avatar">
+                    <img src="images/fpo-avatar.jpg">
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg">
+                <div class="texting__msg__time">Thursday 6:02 pm</div>
+                <div class="texting__msg__bubble">
+                  Ah, so by that rationale, if a pig had a better personality, he would cease to be a filthy animal. Is that true?
+                  <aside class="texting__msg__bubble__avatar">
+                    <i class="ficon ficon-user"></i>
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+            <div class="texting__msg texting__msg--user">
+                <div class="texting__msg__time">Thursday 6:03 pm</div>
+                <div class="texting__msg__bubble">
+                  Well we'd have to be talkin' about one charming pig. I mean he'd have to be ten times more charmin' than that Arnold on Green Acres, you know what I'm sayin'?
+                  <aside class="texting__msg__bubble__avatar">
+                    <img src="images/fpo-avatar.jpg">
+                  </aside>
+                </div>
+            </div> <!-- end texting__msg -->
+          </div> <!-- end texting__convo__inner -->
+        </div> <!-- end texting__convo -->
+        <div class="texting__actions">
+          <div class="texting__actions__phones">
+            <select class="selectpicker form-control" data-style="btn-default btn-sm">
+              <option>888-555-1111 (home)</option>
+              <option>888-555-2222 (cell)</option>
+              <option>888-555-3333 (work)</option>
+            </select>
+          </div>
+          <div class="texting__actions__phone-assign">
+            <a href="#">Create New Lead</a> | <a href="#">Add to Existing Lead</a>
+          </div>
+          <hr class="texting__actions__hr">
+          <div class="texting__actions__templates">
+            <select class="selectpicker form-control" data-style="btn-default btn-sm">
+              <option>templates</option>
+              <option>templates</option>
+              <option>templates</option>
+            </select>
+          </div>
+          <div class="texting__actions__compose">
+            <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="Compose text message"></textarea>
+            </div>
+            <button class="btn btn-default btn-sm btn-primary btn-block">Send</button>
+          </div>
+        </div> <!-- end texting__actions -->
+      </div> <!-- end texting__body -->
+    </div> <!-- end texting -->
+
+  </div><!-- /example -->
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="texting texting--md"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+  </div>
+
+
+
   <h2>Texting panel</h2>
   <p>This is the texting component wrapped in a panel. Add the <code>.texting--panel</code> modifier class to the <code>.texting</code> class.</p>
   <div class="pl-example pl-example-texting">
-    <div class="panel panel-default texting texting--panel">
+    <div class="panel panel-default texting texting--panel texting--md">
         <div class="panel-heading">
           <h3 class="panel-title"><i class="ficon ficon-sms"></i> Text Message: Mr. White</h3>
         </div>
@@ -5360,25 +5637,7 @@
               <div class="texting__msg texting__msg--user">
                   <div class="texting__msg__time">Thursday 6:13 pm</div>
                   <div class="texting__msg__bubble">
-                    What? You gotta problem with that?
-                    <aside class="texting__msg__bubble__avatar">
-                      <img src="images/fpo-avatar.jpg">
-                    </aside>
-                  </div>
-              </div> <!-- end texting__msg -->
-              <div class="texting__msg texting__msg--user">
-                  <div class="texting__msg__time">Thursday 6:15 pm</div>
-                  <div class="texting__msg__bubble">
-                    Why you no answer?
-                    <aside class="texting__msg__bubble__avatar">
-                      <img src="images/fpo-avatar.jpg">
-                    </aside>
-                  </div>
-              </div> <!-- end texting__msg -->
-              <div class="texting__msg texting__msg--user">
-                  <div class="texting__msg__time">Friday 12:14 am</div>
-                  <div class="texting__msg__bubble">
-                    You will soon die at the hands of the sleestak.
+                    Where did you go?
                     <aside class="texting__msg__bubble__avatar">
                       <img src="images/fpo-avatar.jpg">
                     </aside>
@@ -5416,7 +5675,7 @@
       </div> <!-- end texting -->
   </div><!-- /example -->
   <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="panel panel-default texting texting--panel"&gt;
+    <pre class="prettyprint"><code>&lt;div class="panel panel-default texting texting--panel texting--md"&gt;
   &lt;div class="panel-heading"&gt;
     &lt;h3 class="panel-title"&gt;&lt;i class="ficon ficon-sms"&gt;&lt;/i&gt; Text Message: Mr. White&lt;/h3&gt;
   &lt;/div&gt;
@@ -5579,8 +5838,8 @@
             </div> <!-- end texting__actions -->
           </div> <!-- end texting__body -->
         </div>
-      </div>  <!-- end texting -->
-    </div>
+      </div>
+    </div> <!-- end texting -->
   </div>
   <div class="pl-code">
     <pre class="prettyprint"><code>&lt;div class="modal"&gt;
@@ -5909,6 +6168,9 @@
                     <a href="#dropdowns">Dropdowns</a>
                 </li>
                 <li>
+                    <a href="#fauxbles">Fauxbles</a>
+                </li>
+                <li>
                     <a href="#icons">Icons</a>
                 </li>
                 <li>
@@ -6048,6 +6310,8 @@
 			   }
 			});
 
+			
+
 			///////////// view markup buttons
 
 			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
@@ -6057,8 +6321,6 @@
 				$(this).next(prediv).show();
 				$(this).hide();
 			});
-
-
 
     });
 
