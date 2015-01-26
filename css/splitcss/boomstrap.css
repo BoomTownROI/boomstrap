@@ -1,4 +1,14 @@
 
+.set-to-do__time__radios {
+  display: inline-block;
+}
+.set-to-do__time__radio {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.set-to-do--modal .set-to-do__body {
+  padding: 15px;
+}
 @media (min-width: 768px) {
   .set-to-do--modal-sm .set-to-do__date-btns .btn {
     padding: 1px 6px;

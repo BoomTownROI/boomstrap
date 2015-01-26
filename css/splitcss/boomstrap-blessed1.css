@@ -9528,12 +9528,21 @@ a.list-group-item.active:focus .ficon {
   display: inline-block;
 }
 .panel-sm .panel-body {
-  padding: 10px;
+  padding: 6px;
 }
 .panel-sm .panel-footer {
-  padding: 8px 10px;
+  padding: 8px 6px;
 }
 .panel-sm .panel-heading {
+  padding: 8px 6px;
+}
+.panel-md .panel-body {
+  padding: 10px;
+}
+.panel-md .panel-footer {
+  padding: 8px 10px;
+}
+.panel-md .panel-heading {
   padding: 8px 10px;
 }
 .panel__nav-tabs {
@@ -9808,14 +9817,4 @@ a.list-group-item.active:focus .ficon {
 }
 .set-to-do__time__opts.hide {
   display: none;
-}
-.set-to-do__time__radios {
-  display: inline-block;
-}
-.set-to-do__time__radio {
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-.set-to-do--modal .set-to-do__body {
-  padding: 15px;
 }
