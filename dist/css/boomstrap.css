@@ -9524,13 +9524,13 @@ a.list-group-item.active:focus .ficon {
   display: inline-block;
 }
 .panel-sm .panel-body {
-  padding: 6px;
+  padding: 10px;
 }
 .panel-sm .panel-footer {
-  padding: 8px 6px;
+  padding: 8px 10px;
 }
 .panel-sm .panel-heading {
-  padding: 8px 6px;
+  padding: 8px 10px;
 }
 .panel__nav-tabs {
   border-top-right-radius: 3px;
