@@ -28,6 +28,8 @@ require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
 });
 
+var BoomstrapVersion = "/*! Boomstrap v" + packagedata.version + " */\n";
+
 var Tasks = {
   BoomstrapJavascriptVendor:  'Javascript Vendor Libraries',
   BoomstrapJavascriptAngular: 'Boomstrap Angular Module',
@@ -72,6 +74,7 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
     'bower_components/angular-moment/angular-moment.min.js'
   ])
   .pipe(concat('boomstrap.js'))
+  .pipe(insert.prepend(BoomstrapVersion))
   .pipe(gulp.dest('docs/js/'))
   .pipe(gulp.dest('dist/js/'))
   .pipe(rename({ suffix:'.min' }))
@@ -115,6 +118,7 @@ gulp.task(Tasks.BoomstrapJavascript,
   // Combine templates and angular
   return gulp.src(['docs/js/boomstrap-angular.js', 'docs/js/boomstrap-angular-templates.js'])
     .pipe(concat('boomstrap-angular.js'))
+    .pipe(insert.prepend(BoomstrapVersion))
     .pipe(gulp.dest('docs/js/'))
     .pipe(gulp.dest('dist/js/'))
     .pipe(rename({ suffix:'.min' }))
@@ -241,13 +245,12 @@ gulp.task(Tasks.BoomstrapStylesDev, function() {
 
 gulp.task(Tasks.BoomstrapStylesDist, function() {
   var DEST_DIR  = 'dist/css';
-  var BOOMSTRAP_VERSION = "/*! Boomstrap Version " + packagedata.version + " */\n";
   return gulp.src([
     'less/boomstrap.less'
   ])
     .pipe(less({ compress: false })) // Do not compress. It screw up importing as 'less' in other projects.
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
-    .pipe(insert.prepend(BOOMSTRAP_VERSION))
+    .pipe(insert.prepend(BoomstrapVersion))
     .pipe(gulp.dest(DEST_DIR));
 });
 
