@@ -1,4 +1,7 @@
 
+.set-to-do__time__opts.hide {
+  display: none;
+}
 .set-to-do__time__radios {
   display: inline-block;
 }

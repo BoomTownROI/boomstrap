@@ -9091,6 +9091,9 @@ button.close-inverted {
   border: none;
   box-shadow: 0 0 2px rgba(10, 10, 10, 0.5);
 }
+.marker .ficon-cross {
+  cursor: pointer;
+}
 .marker-default {
   background-color: #ffffff;
   color: #696969;
@@ -9814,7 +9817,4 @@ a.list-group-item.active:focus .ficon {
 .set-to-do__time__opts {
   display: inline-block;
   margin-left: 3px;
-}
-.set-to-do__time__opts.hide {
-  display: none;
 }
