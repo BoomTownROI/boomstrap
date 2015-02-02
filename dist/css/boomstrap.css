@@ -1,4 +1,4 @@
-/*! Boomstrap v1.10.10 */
+/*! Boomstrap v1.10.11 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9087,6 +9087,9 @@ button.close-inverted {
   padding: 3px 4px;
   border: none;
   box-shadow: 0 0 2px rgba(10, 10, 10, 0.5);
+}
+.marker .ficon-cross {
+  cursor: pointer;
 }
 .marker-default {
   background-color: #ffffff;
