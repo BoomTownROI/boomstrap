@@ -20,7 +20,9 @@ var es          = require('event-stream'),
   markdown      = require('gulp-markdown'),
   autoprefixer  = require('gulp-autoprefixer'),
   plumber       = require('gulp-plumber'),
-  cheerio       = require('gulp-cheerio');
+  cheerio       = require('gulp-cheerio'),
+  insert        = require('gulp-insert'),
+  packagedata   = require('./package.json');
 
 require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
@@ -61,7 +63,7 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
     'js/global.js',
-    'js/boomstrap-navlinks.js', // rewrite this beyotch (CA)
+    'js/boomstrap-navlinks.js', // Rewrite as plugin? (CA)
     'js/vendor-config.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
@@ -239,12 +241,13 @@ gulp.task(Tasks.BoomstrapStylesDev, function() {
 
 gulp.task(Tasks.BoomstrapStylesDist, function() {
   var DEST_DIR  = 'dist/css';
-
+  var BOOMSTRAP_VERSION = "/*! Boomstrap Version " + packagedata.version + " */\n";
   return gulp.src([
     'less/boomstrap.less'
   ])
-    .pipe(less({ compress: false })) // compressing will screw up importing as 'less' in other projects
+    .pipe(less({ compress: false })) // Do not compress. It screw up importing as 'less' in other projects.
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
+    .pipe(insert.prepend(BOOMSTRAP_VERSION))
     .pipe(gulp.dest(DEST_DIR));
 });
 
