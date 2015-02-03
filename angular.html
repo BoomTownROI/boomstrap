@@ -763,6 +763,10 @@ $scope.toggleLoader = function() { // flip the boolean to toggle
 </div>
 <script>
     $( document ).ready(function() {
+    	// init navs
+      $('.nav-links').btNavLinks();
+      $('.nav-blocks').btNavBlocks();
+
     	$('body').scrollspy({ target: '.pl-docs-sidebar'});
 
     	///////////// active nav

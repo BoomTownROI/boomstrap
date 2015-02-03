@@ -1,4 +1,29 @@
 
+.set-to-do__date {
+  font-weight: 500;
+  padding-right: 68px;
+}
+.set-to-do__date-btns .btn {
+  float: left;
+  margin: 3px 0;
+  width: 49%;
+}
+.set-to-do__date-btns .btn:nth-child(even) {
+  float: right;
+}
+.set-to-do__date-btns .btn:last-child {
+  display: block;
+  width: 100%;
+}
+.set-to-do__date-btns .btn:last-child > i {
+  display: inline-block;
+  float: none;
+  margin: 0;
+}
+.set-to-do__time__opts {
+  display: inline-block;
+  margin-left: 3px;
+}
 .set-to-do__time__opts.hide {
   display: none;
 }
