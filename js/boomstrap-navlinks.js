@@ -1,46 +1,82 @@
 /*
-Boomstrap Navigation Links
-This obviously needs to be rewritten as a plug-in or something (CA)
+Boomstrap Navigation Links and Navigation Link Blocks
+*
 */
 
+(function($) {
+  $.fn.btNavLinks = function() {
 
+    var handleNavLinksBar = function($navLinks) {
+      var $nav = $navLinks || $(this);
+      if (!$nav.hasClass('nav-links-initialized')) {
+        $nav.addClass('nav-links-initialized');
+        $nav.append('<span class="nav-links__bar"></span>');
+      }
+      var activeLink = $nav.find('li.active');
+      var navLinksBar = $nav.find('.nav-links__bar');
+      navLinksBar.css({
+        transform: 'translateX(' + activeLink.position().left + 'px)',
+        width: activeLink.width()
+      });
+    }
 
-// Handle click behavior
-function handleNavLinksClick(evt) {
-  evt.preventDefault()
-  var navLinks = $(evt.target).closest($(".nav-links"));
-  navLinks.find("li").removeClass("active");
-  var activeLink = $(evt.target).closest($("li"));
-  activeLink.addClass("active");
-  handleNavLinksBar(navLinks);
-}
+    // Handle click behavior
+    var handleNavLinksClick = function(e) {
+      e.preventDefault();
+      var $navLinks = $(this).closest($('.nav-links'));
+      $navLinks.find('li').removeClass('active');
+      var activeLink = $(e.target).closest($('li'));
+      activeLink.addClass('active');
+      handleNavLinksBar.call(this, $navLinks);
+    };
 
+    this.each(function() {
+      // make adjustments to nav links bar
+      handleNavLinksBar.apply(this);
+    });
 
-// Adjust nav links bar accordingly
-function handleNavLinksBar(target) {
-  var activeLink = target.find($("li.active"));
-  var navLinksBar = target.find($(".nav-links__bar"));
-  navLinksBar.css({
-   transform: 'translateX(' + activeLink.position().left + 'px)',
-   width: activeLink.width()
-  })
-}
+    $(document).on('click', '.nav-links > li > a', handleNavLinksClick);
 
-// Loop through and handle nav links bar for each instance
-function initNavLinks() {
-  var navLinks = document.querySelectorAll(".nav-links");
-  for (var i=0;i<navLinks.length;i++){
-    handleNavLinksBar($(navLinks[i]));
-  }
-}
+    return this;
 
-$(document).on("click",".nav-links > li > a",handleNavLinksClick);
+  };
+})(jQuery);
 
-$(document).ready(function(){
-  initNavLinks();
-});
+(function($) {
+  $.fn.btNavBlocks = function() {
 
+    var handleNavLinksBar = function($navLinks) {
+      var $nav = $navLinks || $(this);
+      if (!$nav.hasClass('nav-blocks-initialized')) {
+        $nav.addClass('nav-blocks-initialized');
+        $nav.append('<span class="nav-blocks__bar"></span>');
+      }
+      var activeLink = $nav.find('li.active');
+      var navLinksBar = $nav.find('.nav-blocks__bar');
+      navLinksBar.css({
+        transform: 'translateY(' + activeLink.position().top + 'px)',
+        height: activeLink.height()
+      });
+    }
 
+    // Handle click behavior
+    var handleNavLinksClick = function(e) {
+      e.preventDefault();
+      var $navLinks = $(this).closest($('.nav-blocks'));
+      $navLinks.find('li').removeClass('active');
+      var activeLink = $(e.target).closest($('li'));
+      activeLink.addClass('active');
+      handleNavLinksBar.call(this, $navLinks);
+    };
 
+    this.each(function() {
+      // make adjustments to nav links bar
+      handleNavLinksBar.apply(this);
+    });
 
+    $(document).on('click', '.nav-blocks-initialized > li > a', handleNavLinksClick);
 
+    return this;
+
+  };
+})(jQuery);

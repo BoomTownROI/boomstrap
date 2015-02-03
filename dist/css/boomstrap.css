@@ -1,4 +1,4 @@
-/*! Boomstrap v1.10.11 */
+/*! Boomstrap v1.10.12 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9410,6 +9410,30 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks-light > li > a:focus,
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;
+}
+.nav-blocks-initialized {
+  position: relative;
+}
+.nav-blocks-initialized > li > a {
+  border: none;
+}
+.nav-blocks-initialized > li.active > a,
+.nav-blocks-initialized > li.active > a:hover,
+.nav-blocks-initialized > li.active > a:focus {
+  border: none;
+}
+.nav-blocks-initialized .nav-blocks__bar {
+  background-color: #f68a24;
+  left: 0;
+  top: 0;
+  height: 32px;
+  width: 3px;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  position: absolute;
+  -webkit-transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
 .nav-links {
   position: relative;

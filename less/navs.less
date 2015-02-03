@@ -42,6 +42,35 @@
   }
 }
 
+// Nav Link Blocks
+// -------------------------
+// hook up with $('.nav-blocks').btNavLinkBlocks()
+.nav-blocks-initialized {
+  position: relative;
+  > li {
+    > a {
+      border: none;
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        border: none;
+      }
+    }
+  }
+  .nav-blocks__bar {
+    background-color: @brand-attention;
+    left: 0;
+    top: 0;
+    height: 32px;
+    width: 3px;
+    transform: translateY(0);
+    position: absolute;
+    transition: all 0.35s cubic-bezier(.43,.41,.22,.91);
+  }
+}
+
 // Nav Links
 // -------------------------
 
