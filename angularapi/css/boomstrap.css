@@ -9029,14 +9029,14 @@ button.close-inverted {
   color: #b3b3b3;
 }
 .leadtype-buyer:after {
-  color: #f68a24;
+  color: #1581e2;
   content: "buyer";
 }
 .leadtype-abbr.leadtype-buyer:after {
   content: "b";
 }
 .leadtype-seller:after {
-  color: #1581e2;
+  color: #f68a24;
   content: "seller";
 }
 .leadtype-abbr.leadtype-seller:after {
@@ -9055,12 +9055,12 @@ button.close-inverted {
 }
 .leadtype-bs:before {
   border-left: 1px solid transparent;
-  color: #f68a24;
+  color: #1581e2;
   content: "buyer";
 }
 .leadtype-bs:after {
   border-left: 1px solid #cccccc;
-  color: #1581e2;
+  color: #f68a24;
   content: "seller";
 }
 .leadtype-abbr.leadtype-bs:before,
