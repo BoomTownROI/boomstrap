@@ -7,27 +7,43 @@ Boomstrap Navigation Links and Navigation Link Blocks
   $.fn.btNavLinks = function() {
 
     // render and transform marker line
-    var handleNavLinksBar = function($navLinks) {
+    var handleNavLinksBar = function(el) {
       //  passed by the click event or fire on init
-      var $nav = $(this);
+      var $nav = $(el) || $(this);
       if (!$nav.hasClass('nav-links-init')) { // not inited yet
         $nav.addClass('nav-links-init');
         $nav.append('<span class="nav-links__bar"></span>');
       }
-      var activeLink = $nav.find('li.active');
-      var navLinksBar = $nav.find('.nav-links__bar');
+      var $activeLink = $nav.find('li.active');
+      var $navLinksBar = $nav.find('.nav-links__bar');
       
       // render bar
       if ($nav.hasClass('nav-links')) { // horizontal
-        navLinksBar.css({
-          transform: 'translateX(' + activeLink.position().left + 'px)',
-          width: activeLink.width()
-        });
+        if ($activeLink.length > 0) {
+          console.log('here dude', $activeLink.length);
+          $navLinksBar.css({
+            transform: 'translateX(' + $activeLink.position().left + 'px)',
+            width: $activeLink.width()
+          });
+        } else {
+          console.log('in here');
+          $navLinksBar.css({
+            width: 0
+          });
+        }
       } else if ($nav.hasClass('nav-blocks')) { // vertical
-        navLinksBar.css({
-          transform: 'translateY(' + activeLink.position().top + 'px)',
-          height: activeLink.height()
-        });
+        if ($activeLink.length > 0) {
+          console.log('naw. here dood', $activeLink.length);
+          $navLinksBar.css({
+            transform: 'translateY(' + $activeLink.position().top + 'px)',
+            height: $activeLink.height()
+          });
+        } else {
+          console.log('in yah!');
+          $navLinksBar.css({
+            height: 0
+          });
+        }
       }
     }
 
@@ -49,7 +65,10 @@ Boomstrap Navigation Links and Navigation Link Blocks
     };
 
     // initialize
-    handleNavLinksBar.apply(this);
+    this.each(function(i, el) {
+      handleNavLinksBar(el);
+    });
+    //handleNavLinksBar.apply(this);
 
     // set up event
     this.on('click', handleNavLinksClick);
