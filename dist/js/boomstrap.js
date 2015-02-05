@@ -3037,26 +3037,22 @@ Boomstrap Navigation Links and Navigation Link Blocks
       // render bar
       if ($nav.hasClass('nav-links')) { // horizontal
         if ($activeLink.length > 0) {
-          console.log('here dude', $activeLink.length);
           $navLinksBar.css({
             transform: 'translateX(' + $activeLink.position().left + 'px)',
             width: $activeLink.width()
           });
         } else {
-          console.log('in here');
           $navLinksBar.css({
             width: 0
           });
         }
       } else if ($nav.hasClass('nav-blocks')) { // vertical
         if ($activeLink.length > 0) {
-          console.log('naw. here dood', $activeLink.length);
           $navLinksBar.css({
             transform: 'translateY(' + $activeLink.position().top + 'px)',
             height: $activeLink.height()
           });
         } else {
-          console.log('in yah!');
           $navLinksBar.css({
             height: 0
           });
@@ -3088,7 +3084,7 @@ Boomstrap Navigation Links and Navigation Link Blocks
     //handleNavLinksBar.apply(this);
 
     // set up event
-    this.on('click', handleNavLinksClick);
+    this.on('click.btNavLinks', handleNavLinksClick);
 
     return this;
 
