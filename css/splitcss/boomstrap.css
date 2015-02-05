@@ -1,4 +1,22 @@
 
+.set-to-do__body {
+  padding: 0;
+  position: relative;
+}
+.set-to-do__cancel {
+  font-size: 11px;
+  position: absolute;
+  right: 15px;
+  top: 19px;
+}
+.set-to-do__category {
+  margin-bottom: 4px;
+}
+.set-to-do__comments textarea {
+  height: 60px;
+  overflow: auto;
+  resize: none;
+}
 .set-to-do__date {
   font-weight: 500;
   padding-right: 68px;

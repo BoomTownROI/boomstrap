@@ -9396,7 +9396,6 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks > li.active > a:hover,
 .nav-blocks > li.active > a:focus {
   background-color: transparent;
-  border-left-color: #f68a24;
   color: #f68a24;
   cursor: not-allowed;
   font-weight: 700;
@@ -9414,18 +9413,18 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;
 }
-.nav-blocks.nav-links-init {
+.nav-blocks {
   position: relative;
 }
-.nav-blocks.nav-links-init > li > a {
+.nav-blocks > li > a {
   border: none;
 }
-.nav-blocks.nav-links-init > li.active > a,
-.nav-blocks.nav-links-init > li.active > a:hover,
-.nav-blocks.nav-links-init > li.active > a:focus {
+.nav-blocks > li.active > a,
+.nav-blocks > li.active > a:hover,
+.nav-blocks > li.active > a:focus {
   border: none;
 }
-.nav-blocks.nav-links-init .nav-links__bar {
+.nav-blocks .nav-links__bar {
   background-color: #f68a24;
   left: 0;
   top: 0;
@@ -9437,6 +9436,14 @@ a.list-group-item.active:focus .ficon {
   position: absolute;
   -webkit-transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
   transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+.nav-muted > li.active > a,
+.nav-muted > li.active > a:hover,
+.nav-muted > li.active > a:focus {
+  color: #444444;
+}
+.nav-muted .nav-links__bar {
+  background-color: #0e599c;
 }
 .nav-links {
   position: relative;
@@ -9798,22 +9805,4 @@ a.list-group-item.active:focus .ficon {
 }
 .set-to-do__assign p {
   margin-bottom: 4px;
-}
-.set-to-do__body {
-  padding: 0;
-  position: relative;
-}
-.set-to-do__cancel {
-  font-size: 11px;
-  position: absolute;
-  right: 15px;
-  top: 19px;
-}
-.set-to-do__category {
-  margin-bottom: 4px;
-}
-.set-to-do__comments textarea {
-  height: 60px;
-  overflow: auto;
-  resize: none;
 }
