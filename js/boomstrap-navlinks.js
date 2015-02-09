@@ -1,46 +1,75 @@
 /*
-Boomstrap Navigation Links
-This obviously needs to be rewritten as a plug-in or something (CA)
+Boomstrap Navigation Links and Navigation Link Blocks
+*
 */
 
+(function($) {
+  $.fn.btNavLinks = function() {
 
+    // render and transform marker line
+    var handleNavLinksBar = function(el) {
+      //  passed by the click event or fire on init
+      var $nav = $(el) || $(this);
+      if (!$nav.hasClass('nav-links-init')) { // not inited yet
+        $nav.addClass('nav-links-init');
+        $nav.append('<span class="nav-links__bar"></span>');
+      }
+      var $activeLink = $nav.find('li.active');
+      var $navLinksBar = $nav.find('.nav-links__bar');
+      
+      // render bar
+      if ($nav.hasClass('nav-links')) { // horizontal
+        if ($activeLink.length > 0) {
+          $navLinksBar.css({
+            transform: 'translateX(' + $activeLink.position().left + 'px)',
+            width: $activeLink.width()
+          });
+        } else {
+          $navLinksBar.css({
+            width: 0
+          });
+        }
+      } else if ($nav.hasClass('nav-blocks')) { // vertical
+        if ($activeLink.length > 0) {
+          $navLinksBar.css({
+            transform: 'translateY(' + $activeLink.position().top + 'px)',
+            height: $activeLink.height()
+          });
+        } else {
+          $navLinksBar.css({
+            height: 0
+          });
+        }
+      }
+    }
 
-// Handle click behavior
-function handleNavLinksClick(evt) {
-  evt.preventDefault()
-  var navLinks = $(evt.target).closest($(".nav-links"));
-  navLinks.find("li").removeClass("active");
-  var activeLink = $(evt.target).closest($("li"));
-  activeLink.addClass("active");
-  handleNavLinksBar(navLinks);
-}
+    // click handler
+    var handleNavLinksClick = function(e) {
+      e.preventDefault();
+      if (!$(e.target).is('a')) {
+        return; // only allow clicks on 'a' tag (prevents clicks on extra space in nav from erroring)
+      }
+      // climb up to nav level
+      var $navLinks = $(this).closest($('.nav-links-init'));
+      // kill old active
+      $navLinks.find('li').removeClass('active');
+      // add new active
+      var activeLink = $(e.target).closest($('li'));
+      activeLink.addClass('active');
+      // re-render bar
+      handleNavLinksBar.call(this, $navLinks);
+    };
 
+    // initialize
+    this.each(function(i, el) {
+      handleNavLinksBar(el);
+    });
+    //handleNavLinksBar.apply(this);
 
-// Adjust nav links bar accordingly
-function handleNavLinksBar(target) {
-  var activeLink = target.find($("li.active"));
-  var navLinksBar = target.find($(".nav-links__bar"));
-  navLinksBar.css({
-   transform: 'translateX(' + activeLink.position().left + 'px)',
-   width: activeLink.width()
-  })
-}
+    // set up event
+    this.on('click.btNavLinks', handleNavLinksClick);
 
-// Loop through and handle nav links bar for each instance
-function initNavLinks() {
-  var navLinks = document.querySelectorAll(".nav-links");
-  for (var i=0;i<navLinks.length;i++){
-    handleNavLinksBar($(navLinks[i]));
-  }
-}
+    return this;
 
-$(document).on("click",".nav-links > li > a",handleNavLinksClick);
-
-$(document).ready(function(){
-  initNavLinks();
-});
-
-
-
-
-
+  };
+})(jQuery);

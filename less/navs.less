@@ -17,7 +17,6 @@
     &:hover,
     &:focus {
       background-color: transparent;
-      border-left-color: @brand-attention;
       color: @brand-attention;
       cursor: not-allowed;
       font-weight: @font-weight-bold;
@@ -39,6 +38,49 @@
 .nav-blocks-light > li > a {
   &:focus,&:hover {
     background-color: @nav-link-light-hover-bg;
+  }
+}
+
+// Nav Link Blocks
+// -------------------------
+// hook up with $('.nav-blocks').btNavLinkBlocks()
+.nav-blocks {
+  position: relative;
+  > li {
+    > a {
+      border: none;
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        border: none;
+      }
+    }
+  }
+  .nav-links__bar {
+    background-color: @brand-attention;
+    left: 0;
+    top: 0;
+    height: 32px;
+    width: 3px;
+    transform: translateY(0);
+    position: absolute;
+    transition: all 0.35s cubic-bezier(.43,.41,.22,.91);
+  }
+}
+
+// muted
+.nav-muted {
+  & > li.active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @gray-darker;
+    }
+  }
+  .nav-links__bar {
+    background-color: @link-hover-color;
   }
 }
 

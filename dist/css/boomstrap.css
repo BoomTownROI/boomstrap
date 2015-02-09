@@ -1,3 +1,4 @@
+/*! Boomstrap v1.11.5 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -7939,6 +7940,101 @@ fieldset[disabled] .btn-attention.active {
   border-color: #f6f6f6;
   color: #f6f6f6;
 }
+.btn-highlight {
+  color: #1581e2;
+  background-color: #f5fbff;
+  border-color: #8ab7e0;
+  background-image: -webkit-linear-gradient(top, #f5fbff 0%, #e1f3ff 100%);
+  background-image: linear-gradient(to bottom, #f5fbff 0%, #e1f3ff 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5fbff', endColorstr='#ffe1f3ff', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-highlight:hover,
+.btn-highlight:focus,
+.btn-highlight:active,
+.btn-highlight.active,
+.open > .dropdown-toggle.btn-highlight {
+  color: #1581e2;
+  background-color: #c2e7ff;
+  border-color: #5a99d3;
+}
+.btn-highlight:active,
+.btn-highlight.active,
+.open > .dropdown-toggle.btn-highlight {
+  background-image: none;
+}
+.btn-highlight.disabled,
+.btn-highlight[disabled],
+fieldset[disabled] .btn-highlight,
+.btn-highlight.disabled:hover,
+.btn-highlight[disabled]:hover,
+fieldset[disabled] .btn-highlight:hover,
+.btn-highlight.disabled:focus,
+.btn-highlight[disabled]:focus,
+fieldset[disabled] .btn-highlight:focus,
+.btn-highlight.disabled:active,
+.btn-highlight[disabled]:active,
+fieldset[disabled] .btn-highlight:active,
+.btn-highlight.disabled.active,
+.btn-highlight[disabled].active,
+fieldset[disabled] .btn-highlight.active {
+  background-color: #f5fbff;
+  border-color: #8ab7e0;
+}
+.btn-highlight .badge {
+  color: #f5fbff;
+  background-color: #1581e2;
+}
+.btn-highlight:hover,
+.btn-highlight:focus,
+.btn-highlight:active,
+.btn-highlight.active,
+.open .dropdown-toggle.btn-highlight {
+  color: #1581e2;
+  background-color: #c2e7ff;
+  border-color: #8ab7e0;
+  background-image: -webkit-linear-gradient(top, #e1f3ff 0%, #c2e7ff 100%);
+  background-image: linear-gradient(to bottom, #e1f3ff 0%, #c2e7ff 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe1f3ff', endColorstr='#ffc2e7ff', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-highlight:active,
+.btn-highlight.active,
+.open .dropdown-toggle.btn-highlight {
+  background-image: none;
+}
+.btn-highlight.disabled,
+.btn-highlight[disabled],
+fieldset[disabled] .btn-highlight,
+.btn-highlight.disabled:hover,
+.btn-highlight[disabled]:hover,
+fieldset[disabled] .btn-highlight:hover,
+.btn-highlight.disabled:focus,
+.btn-highlight[disabled]:focus,
+fieldset[disabled] .btn-highlight:focus,
+.btn-highlight.disabled:active,
+.btn-highlight[disabled]:active,
+fieldset[disabled] .btn-highlight:active,
+.btn-highlight.disabled.active,
+.btn-highlight[disabled].active,
+fieldset[disabled] .btn-highlight.active {
+  background-color: #f5fbff;
+  border-color: #8ab7e0;
+  background-image: -webkit-linear-gradient(top, #f5fbff 0%, #e1f3ff 100%);
+  background-image: linear-gradient(to bottom, #f5fbff 0%, #e1f3ff 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5fbff', endColorstr='#ffe1f3ff', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-highlight .badge-outline {
+  background-color: transparent;
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px;
+  color: #696969;
+}
 .btn > i {
   float: left;
   font-size: 16px;
@@ -8863,7 +8959,7 @@ button.close-inverted {
 [class*="leadtype-"],
 .marker {
   font-weight: 700;
-  padding: 0.1em 0.5em 0.2em;
+  padding: 0.2em 0.5em 0.2em;
 }
 .label-attention {
   background-color: #f68a24;
@@ -9027,14 +9123,14 @@ button.close-inverted {
   color: #b3b3b3;
 }
 .leadtype-buyer:after {
-  color: #f68a24;
+  color: #1581e2;
   content: "buyer";
 }
 .leadtype-abbr.leadtype-buyer:after {
   content: "b";
 }
 .leadtype-seller:after {
-  color: #1581e2;
+  color: #f68a24;
   content: "seller";
 }
 .leadtype-abbr.leadtype-seller:after {
@@ -9047,23 +9143,23 @@ button.close-inverted {
 .leadtype-bs:after {
   display: inline-block;
   padding-bottom: 0.2em;
-  padding-top: 0.1em;
+  padding-top: 0.2em;
   text-align: center;
   width: 44px;
 }
 .leadtype-bs:before {
   border-left: 1px solid transparent;
-  color: #f68a24;
+  color: #1581e2;
   content: "buyer";
 }
 .leadtype-bs:after {
   border-left: 1px solid #cccccc;
-  color: #1581e2;
+  color: #f68a24;
   content: "seller";
 }
 .leadtype-abbr.leadtype-bs:before,
 .leadtype-abbr.leadtype-bs:after {
-  padding: 0.1em 0.5em 0.2em;
+  padding: 0.2em 0.5em 0.2em;
   width: auto;
 }
 .leadtype-abbr.leadtype-bs:before {
@@ -9088,6 +9184,9 @@ button.close-inverted {
   padding: 3px 4px;
   border: none;
   box-shadow: 0 0 2px rgba(10, 10, 10, 0.5);
+}
+.marker .ficon-cross {
+  cursor: pointer;
 }
 .marker-default {
   background-color: #ffffff;
@@ -9402,7 +9501,6 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks > li.active > a:hover,
 .nav-blocks > li.active > a:focus {
   background-color: transparent;
-  border-left-color: #f68a24;
   color: #f68a24;
   cursor: not-allowed;
   font-weight: 700;
@@ -9419,6 +9517,38 @@ a.list-group-item.active:focus .ficon {
 .nav-blocks-light > li > a:focus,
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;
+}
+.nav-blocks {
+  position: relative;
+}
+.nav-blocks > li > a {
+  border: none;
+}
+.nav-blocks > li.active > a,
+.nav-blocks > li.active > a:hover,
+.nav-blocks > li.active > a:focus {
+  border: none;
+}
+.nav-blocks .nav-links__bar {
+  background-color: #f68a24;
+  left: 0;
+  top: 0;
+  height: 32px;
+  width: 3px;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  position: absolute;
+  -webkit-transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+.nav-muted > li.active > a,
+.nav-muted > li.active > a:hover,
+.nav-muted > li.active > a:focus {
+  color: #444444;
+}
+.nav-muted .nav-links__bar {
+  background-color: #0e599c;
 }
 .nav-links {
   position: relative;
@@ -9544,6 +9674,15 @@ a.list-group-item.active:focus .ficon {
 }
 .panel-sm .panel-heading {
   padding: 8px 6px;
+}
+.panel-md .panel-body {
+  padding: 10px;
+}
+.panel-md .panel-footer {
+  padding: 8px 10px;
+}
+.panel-md .panel-heading {
+  padding: 8px 10px;
 }
 .panel__nav-tabs {
   border-top-right-radius: 3px;

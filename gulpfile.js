@@ -20,11 +20,15 @@ var es          = require('event-stream'),
   markdown      = require('gulp-markdown'),
   autoprefixer  = require('gulp-autoprefixer'),
   plumber       = require('gulp-plumber'),
-  cheerio       = require('gulp-cheerio');
+  cheerio       = require('gulp-cheerio'),
+  insert        = require('gulp-insert'),
+  packagedata   = require('./package.json');
 
 require('gulp-grunt')(gulp, {
   prefix: 'grunt-tasks-'
 });
+
+var BoomstrapVersion = "/*! Boomstrap v" + packagedata.version + " */\n";
 
 var Tasks = {
   BoomstrapJavascriptVendor:  'Javascript Vendor Libraries',
@@ -60,6 +64,9 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
     'vendor/chosen/chosen.jquery.min.js',
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
+    'js/global.js',
+    'js/boomstrap-navlinks.js',
+    'js/vendor-config.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
@@ -72,6 +79,7 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
     'js/global.js'
   ])
   .pipe(concat('boomstrap.js'))
+  .pipe(insert.prepend(BoomstrapVersion))
   .pipe(gulp.dest('docs/js/'))
   .pipe(gulp.dest('dist/js/'))
   .pipe(rename({ suffix:'.min' }))
@@ -115,6 +123,7 @@ gulp.task(Tasks.BoomstrapJavascript,
   // Combine templates and angular
   return gulp.src(['docs/js/boomstrap-angular.js', 'docs/js/boomstrap-angular-templates.js'])
     .pipe(concat('boomstrap-angular.js'))
+    .pipe(insert.prepend(BoomstrapVersion))
     .pipe(gulp.dest('docs/js/'))
     .pipe(gulp.dest('dist/js/'))
     .pipe(rename({ suffix:'.min' }))
@@ -241,12 +250,12 @@ gulp.task(Tasks.BoomstrapStylesDev, function() {
 
 gulp.task(Tasks.BoomstrapStylesDist, function() {
   var DEST_DIR  = 'dist/css';
-
   return gulp.src([
     'less/boomstrap.less'
   ])
-    .pipe(less({ compress: false })) // compressing will screw up importing as 'less' in other projects
+    .pipe(less({ compress: false })) // Do not compress. It screw up importing as 'less' in other projects.
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
+    .pipe(insert.prepend(BoomstrapVersion))
     .pipe(gulp.dest(DEST_DIR));
 });
 
