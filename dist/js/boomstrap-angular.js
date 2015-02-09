@@ -85,6 +85,75 @@
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
+  Boomstrap.filter('btCurrency', function ($filter, $locale) {
+    var formats = $locale.NUMBER_FORMATS;
+    var currencyFilter = $filter('currency');
+    return function (amount, currencySymbol) {
+      amount = amount ? (amount * 1).toFixed(2) : 0;
+      var value = currencyFilter(amount, currencySymbol);
+      var parts = value.split(formats.DECIMAL_SEP);
+      var dollar = parts[0];
+      var cents = parts[1] || '00';
+      cents = cents.substring(0, 2) === '00' ? cents.substring(2) : '.' + cents;
+      return dollar + cents;
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('btFormatDateToLocal', function ($filter) {
+    return function (utcDate, params) {
+      var formattedDate;
+      var defaultFilter;
+      if (utcDate) {
+        utcDate = utcDate.replace(/Z$/, '') + 'Z';
+        defaultFilter = params ? params : 'EEEE, MMMM d, y \'at\' h:mma';
+        formattedDate = $filter('date')(utcDate, defaultFilter);
+      } else {
+        formattedDate = '';
+      }
+      return formattedDate;
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('btPhoneNumber', function () {
+    return function (string, params) {
+      var number = string || '';
+      var formattedNumber;
+      var localPrefix;
+      var localMain;
+      var area;
+      switch (params) {
+      case 'remove':
+        formattedNumber = number.replace(/\D/g, '');
+        break;
+      case 'add':
+        number = number.replace(/\D/g, '');
+        area = number.substring(0, 3);
+        localPrefix = number.substring(3, 6);
+        localMain = number.substring(6);
+        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
+        break;
+      default:
+        formattedNumber = string;
+        break;
+      }
+      return formattedNumber;
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
   Boomstrap.directive('btAddClassOnLoad', function () {
     return {
       link: function (scope, element, attrs) {
@@ -1411,75 +1480,6 @@
       return toolTip;
     }
   ]);
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('btCurrency', function ($filter, $locale) {
-    var formats = $locale.NUMBER_FORMATS;
-    var currencyFilter = $filter('currency');
-    return function (amount, currencySymbol) {
-      amount = amount ? (amount * 1).toFixed(2) : 0;
-      var value = currencyFilter(amount, currencySymbol);
-      var parts = value.split(formats.DECIMAL_SEP);
-      var dollar = parts[0];
-      var cents = parts[1] || '00';
-      cents = cents.substring(0, 2) === '00' ? cents.substring(2) : '.' + cents;
-      return dollar + cents;
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('btFormatDateToLocal', function ($filter) {
-    return function (utcDate, params) {
-      var formattedDate;
-      var defaultFilter;
-      if (utcDate) {
-        utcDate = utcDate.replace(/Z$/, '') + 'Z';
-        defaultFilter = params ? params : 'EEEE, MMMM d, y \'at\' h:mma';
-        formattedDate = $filter('date')(utcDate, defaultFilter);
-      } else {
-        formattedDate = '';
-      }
-      return formattedDate;
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('btPhoneNumber', function () {
-    return function (string, params) {
-      var number = string || '';
-      var formattedNumber;
-      var localPrefix;
-      var localMain;
-      var area;
-      switch (params) {
-      case 'remove':
-        formattedNumber = number.replace(/\D/g, '');
-        break;
-      case 'add':
-        number = number.replace(/\D/g, '');
-        area = number.substring(0, 3);
-        localPrefix = number.substring(3, 6);
-        localMain = number.substring(6);
-        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
-        break;
-      default:
-        formattedNumber = string;
-        break;
-      }
-      return formattedNumber;
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-  });
 }(angular.module('boomstrap')));
 (function (Boomstrap, Tour) {
   'use strict';
