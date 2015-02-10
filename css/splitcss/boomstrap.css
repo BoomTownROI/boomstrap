@@ -1,4 +1,7 @@
 
+.panel-sm .panel-heading {
+  padding: 8px 6px;
+}
 .panel-md .panel-body {
   padding: 10px;
 }

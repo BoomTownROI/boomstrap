@@ -9532,6 +9532,12 @@ a.list-group-item.active:focus .ficon {
   -webkit-transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
   transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
+.nav-blocks__divider {
+  width: 100%;
+  height: 0;
+  margin-top: 3px;
+  border-top: 1px solid #cccccc;
+}
 .nav-muted > li.active > a,
 .nav-muted > li.active > a:hover,
 .nav-muted > li.active > a:focus {
@@ -9660,8 +9666,5 @@ a.list-group-item.active:focus .ficon {
   padding: 6px;
 }
 .panel-sm .panel-footer {
-  padding: 8px 6px;
-}
-.panel-sm .panel-heading {
   padding: 8px 6px;
 }
