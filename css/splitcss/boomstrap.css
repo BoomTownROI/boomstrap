@@ -1,4 +1,7 @@
 
+.panel-sm .panel-footer {
+  padding: 8px 6px;
+}
 .panel-sm .panel-heading {
   padding: 8px 6px;
 }
