@@ -79,15 +79,18 @@
 
 // muted
 .nav-muted {
+  & > li > a {
+    color: @cool-light;
+  }
   & > li.active > a {
     &,
     &:hover,
     &:focus {
-      color: @gray-darker;
+      color: @cool-light;
     }
   }
   .nav-links__bar {
-    background-color: @link-hover-color;
+    background-color: @cool-light;
   }
 }
 

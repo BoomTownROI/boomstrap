@@ -1,4 +1,4 @@
-/*! Boomstrap v1.11.6 */
+/*! Boomstrap v1.11.7 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9535,13 +9535,16 @@ a.list-group-item.active:focus .ficon {
   margin-top: 3px;
   border-top: 1px solid #cccccc;
 }
+.nav-muted > li > a {
+  color: #5f7f8e;
+}
 .nav-muted > li.active > a,
 .nav-muted > li.active > a:hover,
 .nav-muted > li.active > a:focus {
-  color: #444444;
+  color: #5f7f8e;
 }
 .nav-muted .nav-links__bar {
-  background-color: #0e599c;
+  background-color: #5f7f8e;
 }
 .nav-links {
   position: relative;
