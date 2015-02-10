@@ -8036,6 +8036,101 @@ fieldset[disabled] .btn-highlight.active {
   border-width: 1px;
   color: #696969;
 }
+.btn-desaturated {
+  color: #696969;
+  background-color: #ececec;
+  border-color: #999999;
+  background-image: -webkit-linear-gradient(top, #ececec 0%, #e2e2e2 100%);
+  background-image: linear-gradient(to bottom, #ececec 0%, #e2e2e2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffececec', endColorstr='#ffe2e2e2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-desaturated:hover,
+.btn-desaturated:focus,
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open > .dropdown-toggle.btn-desaturated {
+  color: #696969;
+  background-color: #d3d3d3;
+  border-color: #7a7a7a;
+}
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open > .dropdown-toggle.btn-desaturated {
+  background-image: none;
+}
+.btn-desaturated.disabled,
+.btn-desaturated[disabled],
+fieldset[disabled] .btn-desaturated,
+.btn-desaturated.disabled:hover,
+.btn-desaturated[disabled]:hover,
+fieldset[disabled] .btn-desaturated:hover,
+.btn-desaturated.disabled:focus,
+.btn-desaturated[disabled]:focus,
+fieldset[disabled] .btn-desaturated:focus,
+.btn-desaturated.disabled:active,
+.btn-desaturated[disabled]:active,
+fieldset[disabled] .btn-desaturated:active,
+.btn-desaturated.disabled.active,
+.btn-desaturated[disabled].active,
+fieldset[disabled] .btn-desaturated.active {
+  background-color: #ececec;
+  border-color: #999999;
+}
+.btn-desaturated .badge {
+  color: #ececec;
+  background-color: #696969;
+}
+.btn-desaturated:hover,
+.btn-desaturated:focus,
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open .dropdown-toggle.btn-desaturated {
+  color: #696969;
+  background-color: #d3d3d3;
+  border-color: #999999;
+  background-image: -webkit-linear-gradient(top, #e2e2e2 0%, #d3d3d3 100%);
+  background-image: linear-gradient(to bottom, #e2e2e2 0%, #d3d3d3 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe2e2e2', endColorstr='#ffd3d3d3', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open .dropdown-toggle.btn-desaturated {
+  background-image: none;
+}
+.btn-desaturated.disabled,
+.btn-desaturated[disabled],
+fieldset[disabled] .btn-desaturated,
+.btn-desaturated.disabled:hover,
+.btn-desaturated[disabled]:hover,
+fieldset[disabled] .btn-desaturated:hover,
+.btn-desaturated.disabled:focus,
+.btn-desaturated[disabled]:focus,
+fieldset[disabled] .btn-desaturated:focus,
+.btn-desaturated.disabled:active,
+.btn-desaturated[disabled]:active,
+fieldset[disabled] .btn-desaturated:active,
+.btn-desaturated.disabled.active,
+.btn-desaturated[disabled].active,
+fieldset[disabled] .btn-desaturated.active {
+  background-color: #ececec;
+  border-color: #999999;
+  background-image: -webkit-linear-gradient(top, #ececec 0%, #e2e2e2 100%);
+  background-image: linear-gradient(to bottom, #ececec 0%, #e2e2e2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffececec', endColorstr='#ffe2e2e2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-desaturated .badge-outline {
+  background-color: transparent;
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px;
+  color: #696969;
+}
 .btn > i {
   float: left;
   font-size: 16px;
