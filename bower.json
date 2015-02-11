@@ -1,7 +1,7 @@
 {
   "name": "boomstrap",
   "description": "A custom pattern library built on Bootstrap.",
-  "version": "1.11.9",
+  "version": "1.11.10",
   "authors": [
     "Mark Funk <mark@boomtownroi.com>",
     "Sean McCambridge <sean@boomtownroi.com>",

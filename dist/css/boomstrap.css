@@ -1,4 +1,4 @@
-/*! Boomstrap v1.11.9 */
+/*! Boomstrap v1.11.10 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9407,6 +9407,9 @@ a.list-group-item.active:focus .ficon {
 .loader-sm > .loader-pulse {
   height: 12px;
   width: 12px;
+}
+.loader-desaturated > .loader-pulse {
+  background-color: #cccccc;
 }
 @-webkit-keyframes pulsedelay {
   0%,
