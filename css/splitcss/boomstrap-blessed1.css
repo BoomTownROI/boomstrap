@@ -9411,6 +9411,9 @@ a.list-group-item.active:focus .ficon {
   height: 12px;
   width: 12px;
 }
+.loader-desaturated > .loader-pulse {
+  background-color: #cccccc;
+}
 @-webkit-keyframes pulsedelay {
   0%,
   80%,
