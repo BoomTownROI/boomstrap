@@ -1,4 +1,8 @@
 
+.nav-blocks > li > a:focus,
+.nav-blocks > li > a:hover {
+  background-color: #ececec;
+}
 .nav-blocks-light > li > a:focus,
 .nav-blocks-light > li > a:hover {
   background-color: #f6f6f6;

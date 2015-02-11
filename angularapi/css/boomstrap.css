@@ -9407,6 +9407,10 @@ a.list-group-item.active:focus .ficon {
   -webkit-animation-delay: -0.25s;
   animation-delay: -0.25s;
 }
+.loader-sm > .loader-pulse {
+  height: 12px;
+  width: 12px;
+}
 @-webkit-keyframes pulsedelay {
   0%,
   80%,
