@@ -1,4 +1,4 @@
-/*! Boomstrap v1.11.8 */
+/*! Boomstrap v1.11.9 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9403,6 +9403,10 @@ a.list-group-item.active:focus .ficon {
 .loader-pulse:first-child {
   -webkit-animation-delay: -0.25s;
   animation-delay: -0.25s;
+}
+.loader-sm > .loader-pulse {
+  height: 12px;
+  width: 12px;
 }
 @-webkit-keyframes pulsedelay {
   0%,
