@@ -1,4 +1,4 @@
-/*! Boomstrap v1.11.10 */
+/*! Boomstrap v1.11.11 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -10152,11 +10152,8 @@ a.list-group-item.active:focus .ficon {
   position: relative;
   z-index: 10;
 }
-.texting__actions__charcount {
-  text-align: right;
-  /*&--danger {
-    .text-danger;
-  }*/
+.texting__actions__compose .form-group {
+  margin-bottom: 6px;
 }
 .texting__actions__compose textarea {
   height: 60px;
@@ -10179,6 +10176,39 @@ a.list-group-item.active:focus .ficon {
 .texting__body {
   padding: 0;
   position: relative;
+}
+.texting__charcount {
+  text-align: right;
+  color: #999999;
+}
+a.texting__charcount:hover {
+  color: #808080;
+}
+a.texting__charcount,
+.btn-link.texting__charcount,
+.clickable.texting__charcount {
+  color: #999999;
+}
+a.texting__charcount:hover,
+.btn-link.texting__charcount:hover,
+.clickable.texting__charcount:hover {
+  color: #808080;
+}
+.texting__charcount--danger {
+  color: #a94442;
+}
+a.texting__charcount--danger:hover {
+  color: #843534;
+}
+a.texting__charcount--danger,
+.btn-link.texting__charcount--danger,
+.clickable.texting__charcount--danger {
+  color: #a94442;
+}
+a.texting__charcount--danger:hover,
+.btn-link.texting__charcount--danger:hover,
+.clickable.texting__charcount--danger:hover {
+  color: #843534;
 }
 .texting__convo {
   background-color: #f6f6f6;
