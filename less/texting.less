@@ -15,11 +15,14 @@
 }
 
 .texting__actions__compose {
+  .form-group {
+    margin-bottom: @margin-small;
+  }
   textarea {
     height: 60px;
     overflow: auto;
     resize: none;
-  }  
+  }
 }
 
 .texting__actions__hr {
@@ -42,6 +45,14 @@
 .texting__body {
   padding: 0;
   position: relative;
+}
+
+.texting__charcount {
+  text-align: right;
+  .text-muted;
+  &--danger {
+    .text-danger;
+  }
 }
 
 .texting__convo {
@@ -80,12 +91,13 @@
 // -------------------------
 
 .texting__msg {
-  margin: 0 10% (@texting-padding/2) @texting-avatar-offset;
+  margin: 0 0 (@texting-padding/2) @texting-avatar-offset;
   position: relative;
 }
 
 .texting__msg--user {
-  margin: 0 @texting-avatar-offset (@texting-padding/2) 10%;
+  margin: 0 @texting-avatar-offset (@texting-padding/2) 0;
+  text-align: right;
   .texting__msg__bubble {
     &:extend(.bg-info);
   }
@@ -101,9 +113,12 @@
 .texting__msg__bubble {
   background-color: @gray-lighter;
   border-radius: @border-radius-small;
+  display: inline-block;
   font-size: 13px;
+  max-width: 85%;
   padding: @padding-small;
   position: relative;
+  text-align: left;
   &.texting__msg__bubble--error {
     &:extend(.bg-danger);
   }
@@ -144,7 +159,7 @@
 
 .texting__msg__status--error {
   color: @brand-danger;
-  padding-bottom: @padding-base;
+  padding: @padding-small 0;
   a {
     color: @brand-danger;
     text-decoration: underline;
@@ -188,10 +203,10 @@
     min-height: 100%;
   }
   .texting__msg {
-    margin: 0 15% @texting-padding @texting-avatar-offset;
+    margin: 0 0 @texting-padding @texting-avatar-offset;
   }
   .texting__msg--user {
-    margin: 0 @texting-avatar-offset @texting-padding 15%;
+    margin: 0 @texting-avatar-offset @texting-padding 0;
   }
 }
 

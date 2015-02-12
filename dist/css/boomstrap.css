@@ -10152,6 +10152,12 @@ a.list-group-item.active:focus .ficon {
   position: relative;
   z-index: 10;
 }
+.texting__actions__charcount {
+  text-align: right;
+  /*&--danger {
+    .text-danger;
+  }*/
+}
 .texting__actions__compose textarea {
   height: 60px;
   overflow: auto;
@@ -10205,11 +10211,12 @@ a.list-group-item.active:focus .ficon {
   top: 0;
 }
 .texting__msg {
-  margin: 0 10% 7.5px 52px;
+  margin: 0 0 7.5px 52px;
   position: relative;
 }
 .texting__msg--user {
-  margin: 0 52px 7.5px 10%;
+  margin: 0 52px 7.5px 0;
+  text-align: right;
 }
 .texting__msg--user .texting__msg__bubble__avatar {
   left: auto;
@@ -10221,9 +10228,12 @@ a.list-group-item.active:focus .ficon {
 .texting__msg__bubble {
   background-color: #ececec;
   border-radius: 3px;
+  display: inline-block;
   font-size: 13px;
+  max-width: 85%;
   padding: 6px;
   position: relative;
+  text-align: left;
   -webkit-transition: background-color 500ms linear 0s;
   transition: background-color 500ms linear 0s;
 }
@@ -10258,7 +10268,7 @@ a.list-group-item.active:focus .ficon {
 }
 .texting__msg__status--error {
   color: #cb2027;
-  padding-bottom: 8px;
+  padding: 6px 0;
 }
 .texting__msg__status--error a {
   color: #cb2027;
@@ -10293,10 +10303,10 @@ a.list-group-item.active:focus .ficon {
   min-height: 100%;
 }
 .texting--md .texting__msg {
-  margin: 0 15% 15px 52px;
+  margin: 0 0 15px 52px;
 }
 .texting--md .texting__msg--user {
-  margin: 0 52px 15px 15%;
+  margin: 0 52px 15px 0;
 }
 .texting--modal .texting__actions,
 .texting--panel .texting__actions {
