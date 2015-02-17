@@ -1,4 +1,17 @@
 
+.nav-blocks > li.active > a,
+.nav-blocks > li.active > a:hover,
+.nav-blocks > li.active > a:focus {
+  background-color: transparent;
+  color: #f68a24;
+  cursor: not-allowed;
+  font-weight: 700;
+  pointer-events: none;
+}
+.nav-blocks > li > a {
+  border-left: 3px solid transparent;
+  color: #696969;
+}
 .nav-blocks > li > a:focus,
 .nav-blocks > li > a:hover {
   background-color: #ececec;
@@ -28,7 +41,6 @@
   -ms-transform: translateY(0);
   transform: translateY(0);
   position: absolute;
-  -webkit-transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
   transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
 .nav-blocks__divider {
@@ -67,7 +79,6 @@
 .nav-links > li > a {
   display: inline-block;
   padding: 6px 0;
-  -webkit-transition: all linear 0.25s;
   transition: all linear 0.25s;
 }
 .nav-links > li > a:hover {
@@ -84,7 +95,6 @@
   transform: translateX(0);
   position: absolute;
   width: 0px;
-  -webkit-transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
   transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
 .nav-tabs {
@@ -340,6 +350,13 @@
   line-height: 1.5;
   border-radius: 3px;
 }
+/*.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+.btn-xs {
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}*/
 .baron {
   overflow: hidden;
   position: relative;
@@ -380,7 +397,6 @@
   pointer-events: auto;
   position: absolute;
   right: 0;
-  -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
   width: 9px;
   z-index: 1;
@@ -393,7 +409,6 @@
   pointer-events: auto;
   position: absolute;
   bottom: 10px;
-  -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
   height: 9px;
   z-index: 1;
@@ -664,7 +679,6 @@ a.texting__charcount--danger:hover,
   padding: 6px;
   position: relative;
   text-align: left;
-  -webkit-transition: background-color 500ms linear 0s;
   transition: background-color 500ms linear 0s;
 }
 .texting__msg__bubble__avatar {
@@ -764,7 +778,7 @@ a.texting__charcount--danger:hover,
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-transition: -webkit-transform 250ms;
+  transition: -webkit-transform 250ms;
   transition: transform 250ms;
   width: 200%;
 }
@@ -816,7 +830,7 @@ a.texting__charcount--danger:hover,
   margin: 2px;
   position: absolute;
   text-align: center;
-  -webkit-transition: -webkit-transform 250ms;
+  transition: -webkit-transform 250ms;
   transition: transform 250ms;
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -836,7 +850,7 @@ a.texting__charcount--danger:hover,
   margin: 2px;
   position: absolute;
   text-align: center;
-  -webkit-transition: -webkit-transform 250ms;
+  transition: -webkit-transform 250ms;
   transition: transform 250ms;
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -876,7 +890,7 @@ a.texting__charcount--danger:hover,
   margin: 2px;
   position: absolute;
   text-align: center;
-  -webkit-transition: -webkit-transform 250ms;
+  transition: -webkit-transform 250ms;
   transition: transform 250ms;
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -918,6 +932,9 @@ a.texting__charcount--danger:hover,
 .popover[class*="tour-"] .popover-navigation .btn + .btn {
   margin-left: 10px;
 }
+/*.tour-backdrop {
+  .opacity(25);
+}*/
 .lead {
   font-weight: 300;
 }
@@ -1082,19 +1099,15 @@ a.text-muted:hover,
   padding: 20px;
 }
 .progress-striped .progress-bar-success {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-striped .progress-bar-info {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-striped .progress-bar-warning {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-striped .progress-bar-danger {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 h1,
@@ -1149,7 +1162,6 @@ h2 {
   font-size: 12px;
   padding: 3px 6px;
   text-transform: lowercase;
-  -webkit-transition: all 0.35s;
   transition: all 0.35s;
   margin: 0;
 }
