@@ -34,7 +34,8 @@
         maxPlaceholder: '@',
         btnClass: '@',
         translateMin: '=',
-        translateMax: '='
+        translateMax: '=',
+        onSelectBoundary: '&'
       },
       link: function(scope, iElement, iAttrs, ngModel) {
         /*
@@ -49,6 +50,10 @@
         scope.minPlaceholder = scope.minPlaceholder || 'Select a minimum value';
         scope.maxPlaceholder = scope.maxPlaceholder || 'Select a maximum value';
         scope.btnClass       = scope.btnClass       || '';
+        scope.boundaryEnum = {
+          MINIMUM : 'minimum',
+          MAXIMUM : 'maximum'
+        };
 
         var validateMinMax = function(flippingFn) {
           if(scope.maximum.value !== -1 && scope.minimum.value !== -1 && scope.maximum.value < scope.minimum.value && flippingFn) {
@@ -94,6 +99,21 @@
             return value === -1 ? defaultText : translateValidValue(value);
           } else {
             return defaultText;
+          }
+        };
+
+        /*
+         * selectRangeBoundary
+         * This function is fired whenever user selects and item from either
+         * min or max dropdown and is used to communicate to external controllers
+         * Optional hook to onSelectBoundary may be provided in the directive markup: on-select-boundary='someFunction(minOrMax, value)'
+         * Specifically implemented for event tracking / analytics
+         * @minOrMax - string (boundaryEnum.MINIMUM or boundaryEnum.MAXIMUM) to differentiate between the dropdowns
+         * @value - selected value (currently only integers are supported)
+         */
+        scope.selectRangeBoundary = function (minOrMax, value) {
+          if (typeof(scope.onSelectBoundary) === 'function') {
+            scope.onSelectBoundary({minOrMax: minOrMax, value:value});
           }
         };
 
