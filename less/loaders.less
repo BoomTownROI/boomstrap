@@ -34,6 +34,15 @@
   }
 }
 
+.loader-sm > .loader-pulse {
+  height: 12px;
+  width: 12px;
+}
+
+.loader-desaturated > .loader-pulse {
+  background-color: @gray-light;
+}
+
 @-webkit-keyframes pulsedelay {
   0%, 80%, 100% { -webkit-transform: scale(0.0) }
   40% { -webkit-transform: scale(1.0) }

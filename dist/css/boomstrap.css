@@ -1,4 +1,4 @@
-/*! Boomstrap v1.11.5 */
+/*! Boomstrap v1.11.12 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8035,6 +8035,101 @@ fieldset[disabled] .btn-highlight.active {
   border-width: 1px;
   color: #696969;
 }
+.btn-desaturated {
+  color: #696969;
+  background-color: #ececec;
+  border-color: #999999;
+  background-image: -webkit-linear-gradient(top, #ececec 0%, #e2e2e2 100%);
+  background-image: linear-gradient(to bottom, #ececec 0%, #e2e2e2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffececec', endColorstr='#ffe2e2e2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-desaturated:hover,
+.btn-desaturated:focus,
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open > .dropdown-toggle.btn-desaturated {
+  color: #696969;
+  background-color: #d3d3d3;
+  border-color: #7a7a7a;
+}
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open > .dropdown-toggle.btn-desaturated {
+  background-image: none;
+}
+.btn-desaturated.disabled,
+.btn-desaturated[disabled],
+fieldset[disabled] .btn-desaturated,
+.btn-desaturated.disabled:hover,
+.btn-desaturated[disabled]:hover,
+fieldset[disabled] .btn-desaturated:hover,
+.btn-desaturated.disabled:focus,
+.btn-desaturated[disabled]:focus,
+fieldset[disabled] .btn-desaturated:focus,
+.btn-desaturated.disabled:active,
+.btn-desaturated[disabled]:active,
+fieldset[disabled] .btn-desaturated:active,
+.btn-desaturated.disabled.active,
+.btn-desaturated[disabled].active,
+fieldset[disabled] .btn-desaturated.active {
+  background-color: #ececec;
+  border-color: #999999;
+}
+.btn-desaturated .badge {
+  color: #ececec;
+  background-color: #696969;
+}
+.btn-desaturated:hover,
+.btn-desaturated:focus,
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open .dropdown-toggle.btn-desaturated {
+  color: #696969;
+  background-color: #d3d3d3;
+  border-color: #999999;
+  background-image: -webkit-linear-gradient(top, #e2e2e2 0%, #d3d3d3 100%);
+  background-image: linear-gradient(to bottom, #e2e2e2 0%, #d3d3d3 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe2e2e2', endColorstr='#ffd3d3d3', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-desaturated:active,
+.btn-desaturated.active,
+.open .dropdown-toggle.btn-desaturated {
+  background-image: none;
+}
+.btn-desaturated.disabled,
+.btn-desaturated[disabled],
+fieldset[disabled] .btn-desaturated,
+.btn-desaturated.disabled:hover,
+.btn-desaturated[disabled]:hover,
+fieldset[disabled] .btn-desaturated:hover,
+.btn-desaturated.disabled:focus,
+.btn-desaturated[disabled]:focus,
+fieldset[disabled] .btn-desaturated:focus,
+.btn-desaturated.disabled:active,
+.btn-desaturated[disabled]:active,
+fieldset[disabled] .btn-desaturated:active,
+.btn-desaturated.disabled.active,
+.btn-desaturated[disabled].active,
+fieldset[disabled] .btn-desaturated.active {
+  background-color: #ececec;
+  border-color: #999999;
+  background-image: -webkit-linear-gradient(top, #ececec 0%, #e2e2e2 100%);
+  background-image: linear-gradient(to bottom, #ececec 0%, #e2e2e2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffececec', endColorstr='#ffe2e2e2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-desaturated .badge-outline {
+  background-color: transparent;
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px;
+  color: #696969;
+}
 .btn > i {
   float: left;
   font-size: 16px;
@@ -9311,6 +9406,13 @@ a.list-group-item.active:focus .ficon {
   -webkit-animation-delay: -0.25s;
   animation-delay: -0.25s;
 }
+.loader-sm > .loader-pulse {
+  height: 12px;
+  width: 12px;
+}
+.loader-desaturated > .loader-pulse {
+  background-color: #cccccc;
+}
 @-webkit-keyframes pulsedelay {
   0%,
   80%,
@@ -9542,13 +9644,22 @@ a.list-group-item.active:focus .ficon {
   -webkit-transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
   transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
+.nav-blocks__divider {
+  width: 100%;
+  height: 0;
+  margin-top: 3px;
+  border-top: 1px solid #cccccc;
+}
+.nav-muted > li > a {
+  color: #5f7f8e;
+}
 .nav-muted > li.active > a,
 .nav-muted > li.active > a:hover,
 .nav-muted > li.active > a:focus {
-  color: #444444;
+  color: #5f7f8e;
 }
 .nav-muted .nav-links__bar {
-  background-color: #0e599c;
+  background-color: #5f7f8e;
 }
 .nav-links {
   position: relative;
@@ -10051,6 +10162,9 @@ a.list-group-item.active:focus .ficon {
   position: relative;
   z-index: 10;
 }
+.texting__actions__compose .form-group {
+  margin-bottom: 6px;
+}
 .texting__actions__compose textarea {
   height: 60px;
   overflow: auto;
@@ -10072,6 +10186,39 @@ a.list-group-item.active:focus .ficon {
 .texting__body {
   padding: 0;
   position: relative;
+}
+.texting__charcount {
+  text-align: right;
+  color: #999999;
+}
+a.texting__charcount:hover {
+  color: #808080;
+}
+a.texting__charcount,
+.btn-link.texting__charcount,
+.clickable.texting__charcount {
+  color: #999999;
+}
+a.texting__charcount:hover,
+.btn-link.texting__charcount:hover,
+.clickable.texting__charcount:hover {
+  color: #808080;
+}
+.texting__charcount--danger {
+  color: #a94442;
+}
+a.texting__charcount--danger:hover {
+  color: #843534;
+}
+a.texting__charcount--danger,
+.btn-link.texting__charcount--danger,
+.clickable.texting__charcount--danger {
+  color: #a94442;
+}
+a.texting__charcount--danger:hover,
+.btn-link.texting__charcount--danger:hover,
+.clickable.texting__charcount--danger:hover {
+  color: #843534;
 }
 .texting__convo {
   background-color: #f6f6f6;
@@ -10104,11 +10251,12 @@ a.list-group-item.active:focus .ficon {
   top: 0;
 }
 .texting__msg {
-  margin: 0 10% 7.5px 52px;
+  margin: 0 0 7.5px 52px;
   position: relative;
 }
 .texting__msg--user {
-  margin: 0 52px 7.5px 10%;
+  margin: 0 52px 7.5px 0;
+  text-align: right;
 }
 .texting__msg--user .texting__msg__bubble__avatar {
   left: auto;
@@ -10120,9 +10268,12 @@ a.list-group-item.active:focus .ficon {
 .texting__msg__bubble {
   background-color: #ececec;
   border-radius: 3px;
+  display: inline-block;
   font-size: 13px;
+  max-width: 85%;
   padding: 6px;
   position: relative;
+  text-align: left;
   -webkit-transition: background-color 500ms linear 0s;
   transition: background-color 500ms linear 0s;
 }
@@ -10157,7 +10308,7 @@ a.list-group-item.active:focus .ficon {
 }
 .texting__msg__status--error {
   color: #cb2027;
-  padding-bottom: 8px;
+  padding: 6px 0;
 }
 .texting__msg__status--error a {
   color: #cb2027;
@@ -10192,10 +10343,10 @@ a.list-group-item.active:focus .ficon {
   min-height: 100%;
 }
 .texting--md .texting__msg {
-  margin: 0 15% 15px 52px;
+  margin: 0 0 15px 52px;
 }
 .texting--md .texting__msg--user {
-  margin: 0 52px 15px 15%;
+  margin: 0 52px 15px 0;
 }
 .texting--modal .texting__actions,
 .texting--panel .texting__actions {
