@@ -3029,7 +3029,6 @@ Boomstrap Navigation Links and Navigation Link Blocks
       var $nav = $(el) || $(this);
       if (!$nav.hasClass('nav-links-init')) { // not inited yet
         $nav.addClass('nav-links-init');
-        $nav.append('<span class="nav-links__bar"></span>');
       }
       var $activeLink = $nav.find('li.active');
       var $navLinksBar = $nav.find('.nav-links__bar');
