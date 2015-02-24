@@ -10653,6 +10653,21 @@ a.text-muted:hover,
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
+.shadow-depth-1 {
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.shadow-depth-2 {
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+}
+.shadow-depth-3 {
+  box-shadow: 0px 17px 50px rgba(0, 0, 0, 0.19);
+}
+.shadow-depth-4 {
+  box-shadow: 0px 16px 28px 0 rgba(0, 0, 0, 0.22);
+}
+.shadow-depth-5 {
+  box-shadow: 0px 27px 24px 0 rgba(0, 0, 0, 0.2);
+}
 .text-overflow,
 .bootstrap-select.btn-group .btn .filter-option,
 .ui-select-match,
@@ -10674,7 +10689,6 @@ a.text-muted:hover,
   position: relative;
   padding: 15px 24px 15px 15px;
   background-color: #ffffff;
-  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
 }
 .ui-alert + .ui-alert {
   margin-top: 15px;

@@ -96,8 +96,13 @@
     <li>The contents of a UI Alert can be a string, or a full fledged React component for complex HTML.</li>
   </ul>
 
+  <div class="callout callout-info">
+    <h4>Shadows</h4>
+    <p>UI Alerts do not come with a border, and thus use box shadows to show depth on the page.  Our current global context uses the shadow depth class <code>.shadow-depth-2</code> but a different solution in which the Alert is embedded in the page could use something that feels closer to the page, like <code>.shadow-depth-1</code></p>
+  </div>
+
   <div class="pl-example">
-    <div class='ui-alert'>
+    <div class='ui-alert shadow-depth-2'>
         <div class='ui-alert__icon-wrapper alert-info'>
             <span class='ui-alert__icon ficon ficon-tag'></span>
         </div>
@@ -106,7 +111,7 @@
             <span>Your tags have been updated.</span>
         </div>
     </div>
-    <div class='ui-alert'>
+    <div class='ui-alert shadow-depth-2'>
         <div class='ui-alert__icon-wrapper alert-warning'>
             <span class='ui-alert__icon ficon ficon-cog'></span>
         </div>
@@ -119,7 +124,7 @@
           </span>
         </div>
     </div>
-    <div class='ui-alert'>
+    <div class='ui-alert shadow-depth-2'>
         <div class='ui-alert__icon-wrapper alert-success'>
             <span class='ui-alert__icon ficon ficon-user'></span>
         </div>

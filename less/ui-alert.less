@@ -1,12 +1,13 @@
 // File: ui-alert.less
-// Note: A new kind of alert for a sophisticated gentleman
-
+// Note: 
+//   UI Alerts do not have a default border, so a box-shadow is needed
+//   If you're looking to use this in a global context, use shadow-depth-2
+//   If you're looking to embed this in a page, use shadow-depth-1
 
 .ui-alert {
   position:         relative;
   padding:          @padding-half-gutter 24px @padding-half-gutter @padding-half-gutter;
   background-color: @white;
-  .box-shadow(@shadow-depth-2);
 
   & + .ui-alert {
     margin-top: @margin-half-gutter;
