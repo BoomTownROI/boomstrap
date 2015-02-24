@@ -1,0 +1,43 @@
+// File: ui-alert.less
+// Note: A new kind of alert for a sophisticated gentleman
+
+
+.ui-alert {
+  position:         relative;
+  padding:          @padding-half-gutter 24px @padding-half-gutter @padding-half-gutter;
+  background-color: @white;
+  .box-shadow(@shadow-depth-2);
+
+  & + .ui-alert {
+    margin-top: 16px;
+  }
+}
+
+.ui-alert__icon-wrapper {
+  position:    absolute;
+  top:         0;
+  left:        0;
+  width:       50px;
+  height:      100%;
+  borderColor: transparent;
+}
+
+.ui-alert__body {
+  margin-left: 50px;
+}
+
+.ui-alert__icon {
+  font-size:   26px;
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.ui-alert__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: inherit;
+  font-size: 16px;
+}
