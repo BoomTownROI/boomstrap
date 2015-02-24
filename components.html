@@ -128,6 +128,101 @@
   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;alert-link&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
+
+  
+  <h1 id="ui-alerts" class="page-header">UI Alerts</h1>
+
+  <p class="lead">UI Alerts are a new kind of alert.  Typically these alerts are page level alerts that provide a contextual color and icon.  Currently, these alerts are configured via the UI Alerts Javascript module in LMS.</p>
+
+
+  <h2 id="ui-alert-info">Configuration</h2>
+  <ul>
+    <li>UI Alerts can be dismissable, automatically dismissed after a timeout, or not dismissable.</li>
+    <li>The color of the icon is specified by the alert type supplied, and the icon is specified by the alert supplied.</li>
+    <li>The contents of a UI Alert can be a string, or a full fledged React component for complex HTML.</li>
+  </ul>
+
+  <div class="callout callout-info">
+    <h4>Shadows</h4>
+    <p>UI Alerts do not come with a border, and thus use box shadows to show depth on the page.  Our current global context uses the shadow depth class <code>.shadow-depth-2</code> but a different solution in which the Alert is embedded in the page could use something that feels closer to the page, like <code>.shadow-depth-1</code></p>
+  </div>
+
+  <div class="pl-example">
+    <div class='ui-alert shadow-depth-2'>
+        <div class='ui-alert__icon-wrapper alert-info'>
+            <span class='ui-alert__icon ficon ficon-tag'></span>
+        </div>
+        <div class='ui-alert__body'>
+            <i class='close ui-alert__close ficon ficon-cross'></i>
+            <span>Your tags have been updated.</span>
+        </div>
+    </div>
+    <div class='ui-alert shadow-depth-2'>
+        <div class='ui-alert__icon-wrapper alert-warning'>
+            <span class='ui-alert__icon ficon ficon-cog'></span>
+        </div>
+        <div class='ui-alert__body'>
+          <span>
+            <strong>
+              System Message:&nbsp;<a href="http://www.google.com" title="Test">Click me!</a>&nbsp;Testing to you!&nbsp;
+            </strong>
+            I'm not bold.
+          </span>
+        </div>
+    </div>
+    <div class='ui-alert shadow-depth-2'>
+        <div class='ui-alert__icon-wrapper alert-success'>
+            <span class='ui-alert__icon ficon ficon-user'></span>
+        </div>
+        <div class='ui-alert__body'>
+            <i class='close ui-alert__close ficon ficon-cross'></i>
+            <span>Bouncer settings saved.</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="pl-code">
+    <pre>
+      <code class="javascript">
+// AlertActions is `require`'d in via CommonJS modules
+AlertActions.addAlert({
+  dismissible: true,
+  icon: 'tag',
+  content: 'Your tags have been updated.',
+  autoDismiss: true,
+  autoDismissTime: 3000
+});
+
+// AlertActions is used on a global
+var message = '&lt;strong&gt;System Message:&amp;nbsp;&lt;a href=&quot;http://www.google.com&quot; title=&quot;Test&quot;&gt;Click me!&lt;/a&gt;&amp;nbsp;Testing to you!&amp;nbsp;&lt;/strong&gt;I&#39;m not bold.';
+window.ReactComponents.AlertActions.addAlert({
+  dismissible: false,
+  icon: 'cog',
+  type: 'warning',
+  content: window.React.createElement('span', {
+    dangerouslySetInnerHTML: { __html: result.message }
+  }),
+  autoDismiss: false
+});
+
+// AlertActions is `require`'d in via CommonJS modules
+AlertActions.addAlert({
+  dismissible: true,
+  icon: 'user',
+  type: 'success',
+  content: 'Bouncer settings saved.',
+  autoDismiss: false
+});
+      </code>
+    </pre>
+  </div>
+
+  <div class="callout callout-info">
+    <h4>No set width.</h4>
+    <p>UI Alerts do not have a specific width and will grow to their container.</p>
+  </div>
+
+
 </div>
 
 
