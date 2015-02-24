@@ -10677,7 +10677,7 @@ a.text-muted:hover,
   box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
 }
 .ui-alert + .ui-alert {
-  margin-top: 16px;
+  margin-top: 15px;
 }
 .ui-alert__icon-wrapper {
   position: absolute;
@@ -10695,9 +10695,9 @@ a.text-muted:hover,
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .ui-alert__close {
   position: absolute;

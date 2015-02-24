@@ -9,7 +9,7 @@
   .box-shadow(@shadow-depth-2);
 
   & + .ui-alert {
-    margin-top: 16px;
+    margin-top: @margin-half-gutter;
   }
 }
 
@@ -31,7 +31,7 @@
   position: absolute;
   top:  50%;
   left: 50%;
-  transform: translateY(-50%) translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .ui-alert__close {
