@@ -1,4 +1,4 @@
-/*! Boomstrap v1.11.13 */
+/*! Boomstrap v1.12.0 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -7667,6 +7667,9 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
+}
+.ui-select-bootstrap--inline-block > .ui-select-choices {
+  width: auto;
 }
 .alert a,
 .alert .alert-link {
