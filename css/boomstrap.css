@@ -7671,6 +7671,9 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   vertical-align: middle;
   width: 100%;
 }
+.ui-select-bootstrap--inline-block > .ui-select-choices {
+  width: auto;
+}
 .alert a,
 .alert .alert-link {
   font-weight: 500;

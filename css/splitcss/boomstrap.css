@@ -1,4 +1,8 @@
 
+.nav-blocks > li > a {
+  border-left: 3px solid transparent;
+  color: #696969;
+}
 .nav-blocks > li > a:focus,
 .nav-blocks > li > a:hover {
   background-color: #ececec;
