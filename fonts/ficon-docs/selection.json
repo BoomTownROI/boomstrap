@@ -4,6 +4,42 @@
 		{
 			"icon": {
 				"paths": [
+					"M448 768l-225.4-288 97.8-97.4 127.2 161.4 512.4-512 64 64-576 672z",
+					"M766.4 611.6v250.6h-637.4v-636.6h446l129.8-129.6h-650.6c-29 0-54.8 22.6-54.8 54.8v786.4c0 29 25.8 54.8 54.8 54.8h787.2c29 0 54.8-22.6 54.8-54.8v-476.8l-129.8 151.2z"
+				],
+				"attrs": [
+					{},
+					{}
+				],
+				"isMulticolor": false,
+				"grid": 16,
+				"tags": [
+					"checkoff"
+				],
+				"colorPermutations": {
+					"6868681": [
+						0,
+						0
+					]
+				}
+			},
+			"attrs": [
+				{},
+				{}
+			],
+			"properties": {
+				"order": 1,
+				"id": 0,
+				"name": "checkoff",
+				"prevSize": 32,
+				"code": 58914
+			},
+			"setIdx": 0,
+			"iconIdx": 0
+		},
+		{
+			"icon": {
+				"paths": [
 					"M838.4 281.6h-400c-70.4 0-128 57.6-128 128v240c0 70.4 57.6 128 128 128h400c70.4 0 128-57.6 128-128v-240c0-70.4-57.6-128-128-128z",
 					"M998.4 92.8h-748.8v-67.2c0-12.8-12.8-25.6-25.6-25.6h-73.6c-12.8 0-25.6 12.8-25.6 25.6v67.2h-99.2c-12.8 0-25.6 12.8-25.6 25.6v73.6c0 12.8 12.8 25.6 25.6 25.6h99.2v780.8c0 12.8 12.8 25.6 25.6 25.6h73.6c12.8 0 25.6-12.8 25.6-25.6v-780.8h748.8c12.8 0 25.6-12.8 25.6-25.6v-73.6c0-12.8-12.8-25.6-25.6-25.6z"
 				],
@@ -12,10 +48,10 @@
 					{}
 				],
 				"isMulticolor": false,
-				"grid": 0,
 				"tags": [
 					"for-sale"
-				]
+				],
+				"grid": 16
 			},
 			"attrs": [
 				{},
@@ -26,9 +62,9 @@
 				"id": 0,
 				"name": "for-sale",
 				"prevSize": 32,
-				"code": 58929
+				"code": 58930
 			},
-			"setIdx": 0,
+			"setIdx": 1,
 			"iconIdx": 0
 		},
 		{
@@ -67,7 +103,7 @@
 				"name": "text-bad"
 			},
 			"setIdx": 1,
-			"iconIdx": 0
+			"iconIdx": 1
 		},
 		{
 			"icon": {
@@ -105,7 +141,7 @@
 				"name": "text-neutral"
 			},
 			"setIdx": 1,
-			"iconIdx": 1
+			"iconIdx": 2
 		},
 		{
 			"icon": {
@@ -148,7 +184,7 @@
 				"order": 85,
 				"id": 296,
 				"prevSize": 32,
-				"code": 58922,
+				"code": 58928,
 				"name": "tag",
 				"ligatures": ""
 			},
@@ -196,7 +232,7 @@
 				"order": 83,
 				"id": 294,
 				"prevSize": 32,
-				"code": 58921,
+				"code": 58922,
 				"name": "checkmark-circle",
 				"ligatures": ""
 			},
@@ -267,10 +303,10 @@
 			},
 			"attrs": [],
 			"properties": {
-				"order": 9,
+				"order": 4,
 				"id": 292,
 				"prevSize": 32,
-				"code": 58914,
+				"code": 58915,
 				"name": "clipboard",
 				"ligatures": ""
 			},
@@ -294,7 +330,7 @@
 				"order": 6,
 				"id": 291,
 				"prevSize": 32,
-				"code": 58915,
+				"code": 58916,
 				"name": "house2",
 				"ligatures": ""
 			},
@@ -987,7 +1023,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 27,
-				"order": 35,
+				"order": 2,
 				"prevSize": 32,
 				"code": 57354,
 				"name": "checkmark",
@@ -2052,7 +2088,7 @@
 				"order": 90,
 				"name": "table",
 				"prevSize": 32,
-				"code": 58928
+				"code": 58929
 			},
 			"setIdx": 1,
 			"iconIdx": 81
@@ -2081,7 +2117,7 @@
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 2
+			"iconIdx": 82
 		},
 		{
 			"icon": {
@@ -2105,7 +2141,7 @@
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 82
+			"iconIdx": 83
 		},
 		{
 			"icon": {
@@ -2129,7 +2165,7 @@
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 83
+			"iconIdx": 84
 		},
 		{
 			"icon": {
@@ -2153,7 +2189,7 @@
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 84
+			"iconIdx": 85
 		},
 		{
 			"icon": {
@@ -2177,7 +2213,7 @@
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 85
+			"iconIdx": 86
 		},
 		{
 			"icon": {
@@ -2201,7 +2237,7 @@
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 86
+			"iconIdx": 87
 		},
 		{
 			"icon": {
@@ -2225,7 +2261,7 @@
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 87
+			"iconIdx": 88
 		},
 		{
 			"icon": {
@@ -2244,12 +2280,12 @@
 				"id": 221,
 				"order": 82,
 				"prevSize": 20,
-				"code": 58916,
+				"code": 58921,
 				"name": "up-down",
 				"ligatures": ""
 			},
 			"setIdx": 1,
-			"iconIdx": 88
+			"iconIdx": 89
 		}
 	],
 	"height": 1024,
@@ -2272,22 +2308,18 @@
 				"emSize": 1024,
 				"baseline": 6.25,
 				"whitespace": 50
-			},
-			"resetPoint": 58880,
-			"showSelector": true,
-			"selector": "",
-			"classSelector": ".icon",
-			"showMetrics": false
+			}
 		},
 		"imagePref": {
 			"prefix": "icon-",
 			"png": true,
-			"useClassSelector": true
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215
 		},
 		"historySize": 100,
 		"showCodes": true,
-		"search": "",
 		"gridSize": 16,
-		"showLiga": false
+		"showGrid": true
 	}
 }
