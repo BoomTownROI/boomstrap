@@ -8655,8 +8655,8 @@ button.close-inverted {
 }
 @font-face {
   font-family: 'ficon';
-  src: url('fonts/ficon.eot?-rho48l');
-  src: url('fonts/ficon.eot?#iefix-rho48l') format('embedded-opentype'), url('fonts/ficon.woff?-rho48l') format('woff'), url('fonts/ficon.ttf?-rho48l') format('truetype'), url('fonts/ficon.svg?-rho48l#ficon') format('svg');
+  src: url('fonts/ficon.eot?-ksfksj');
+  src: url('fonts/ficon.eot?#iefix-ksfksj') format('embedded-opentype'), url('fonts/ficon.woff?-ksfksj') format('woff'), url('fonts/ficon.ttf?-ksfksj') format('truetype'), url('fonts/ficon.svg?-ksfksj#ficon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -8673,8 +8673,11 @@ button.close-inverted {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.ficon-checkoff:before {
+  content: "\e622";
+}
 .ficon-for-sale:before {
-  content: "\e631";
+  content: "\e632";
 }
 .ficon-text-bad:before {
   content: "\e62d";
@@ -8686,13 +8689,13 @@ button.close-inverted {
   content: "\e62c";
 }
 .ficon-tag:before {
-  content: "\e62a";
+  content: "\e630";
 }
 .ficon-export:before {
   content: "\e62b";
 }
 .ficon-checkmark-circle:before {
-  content: "\e629";
+  content: "\e62a";
 }
 .ficon-text-good:before {
   content: "\e62f";
@@ -8701,10 +8704,10 @@ button.close-inverted {
   content: "\e628";
 }
 .ficon-clipboard:before {
-  content: "\e622";
+  content: "\e623";
 }
 .ficon-house2:before {
-  content: "\e623";
+  content: "\e624";
 }
 .ficon-paperclip:before {
   content: "\e621";
@@ -8917,7 +8920,7 @@ button.close-inverted {
   content: "\e60e";
 }
 .ficon-table:before {
-  content: "\e630";
+  content: "\e631";
 }
 .ficon-filter2:before {
   content: "\f0b0";
@@ -8941,7 +8944,7 @@ button.close-inverted {
   content: "\e611";
 }
 .ficon-up-down:before {
-  content: "\e624";
+  content: "\e629";
 }
 .fauxbox {
   padding-left: 0;

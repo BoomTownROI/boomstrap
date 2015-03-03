@@ -1,4 +1,13 @@
 
+.nav-blocks > li.active > a,
+.nav-blocks > li.active > a:hover,
+.nav-blocks > li.active > a:focus {
+  background-color: transparent;
+  color: #f68a24;
+  cursor: not-allowed;
+  font-weight: 700;
+  pointer-events: none;
+}
 .nav-blocks > li > a {
   border-left: 3px solid transparent;
   color: #696969;
