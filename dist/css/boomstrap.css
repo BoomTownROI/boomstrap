@@ -1,4 +1,4 @@
-/*! Boomstrap v1.12.3 */
+/*! Boomstrap v1.12.4 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8101,6 +8101,9 @@ fieldset[disabled] .btn-desaturated.active {
   display: inline-block;
   float: none;
   margin: 0;
+}
+.btn-block:not(.btn-icon) > i {
+  line-height: 0.9;
 }
 .btn-icon {
   padding-left: 6px;
