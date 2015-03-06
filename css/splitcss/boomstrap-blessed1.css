@@ -8105,6 +8105,9 @@ fieldset[disabled] .btn-desaturated.active {
   float: none;
   margin: 0;
 }
+.btn-block:not(.btn-icon) > i {
+  line-height: 0.9;
+}
 .btn-icon {
   padding-left: 6px;
   padding-right: 6px;
@@ -9538,13 +9541,4 @@ a.list-group-item.active:focus .ficon {
 }
 .nav-sm > li > a {
   padding: 6px 10px;
-}
-.nav-blocks > li.active > a,
-.nav-blocks > li.active > a:hover,
-.nav-blocks > li.active > a:focus {
-  background-color: transparent;
-  color: #f68a24;
-  cursor: not-allowed;
-  font-weight: 700;
-  pointer-events: none;
 }

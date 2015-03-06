@@ -8105,6 +8105,9 @@ fieldset[disabled] .btn-desaturated.active {
   float: none;
   margin: 0;
 }
+.btn-block:not(.btn-icon) > i {
+  line-height: 0.9;
+}
 .btn-icon {
   padding-left: 6px;
   padding-right: 6px;
