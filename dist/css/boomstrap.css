@@ -8872,6 +8872,9 @@ button.close-inverted {
   position: relative;
   top: 1px;
 }
+.ficon.form-control-feedback {
+  position: absolute;
+}
 .ficon-email-bad,
 .ficon-phone-bad,
 .ficon-text-bad {
@@ -9179,6 +9182,29 @@ button.close-inverted {
 .ficon-up-down:before {
   content: "\e629";
 }
+/*.has-feedback label {
+  & ~ .form-control-feedback {
+     top: (@line-height-computed + 14); // Height of the `label` and its margin
+  }
+  &.sr-only ~ .form-control-feedback {
+     top: 0;
+  }
+}
+
+.form-horizontal {
+  .has-feedback .form-control-feedback {
+    top: (@line-height-computed - 10);
+  }
+}
+
+.form-inline {
+  @media (min-width: @screen-sm-min) {
+    .has-feedback .form-control-feedback {
+      top: (@line-height-computed - 10);
+    }
+  }
+}
+*/
 .fauxbox {
   padding-left: 0;
 }
@@ -9275,16 +9301,6 @@ button.close-inverted {
 .row-xcondensed [class*="col-"] {
   padding-left: 3px;
   padding-right: 3px;
-}
-.bticon {
-  background: transparent 0 0;
-  background-size: 100%;
-  display: inline-block;
-  height: 1em;
-  line-height: 1;
-  position: relative;
-  top: 2px;
-  width: 1em;
 }
 .input-group-addon .fauxbox + label:before {
   top: 1px;
