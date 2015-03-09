@@ -1,0 +1,44 @@
+// File: ui-alert.less
+// Note: 
+//   UI Alerts do not have a default border, so a box-shadow is needed
+//   If you're looking to use this in a global context, use shadow-depth-2
+//   If you're looking to embed this in a page, use shadow-depth-1
+
+.ui-alert {
+  position:         relative;
+  padding:          @padding-half-gutter 24px @padding-half-gutter @padding-half-gutter;
+  background-color: @white;
+
+  & + .ui-alert {
+    margin-top: @margin-half-gutter;
+  }
+}
+
+.ui-alert__icon-wrapper {
+  position:    absolute;
+  top:         0;
+  left:        0;
+  width:       50px;
+  height:      100%;
+  border-color: transparent;
+}
+
+.ui-alert__body {
+  margin-left: 50px;
+}
+
+.ui-alert__icon {
+  font-size:   26px;
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ui-alert__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: inherit;
+  font-size: 16px;
+}

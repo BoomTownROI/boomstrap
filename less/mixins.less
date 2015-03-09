@@ -37,7 +37,7 @@
   background-color: @background;
   border-color: @border;
 
-  #gradient > .vertical(@background; darken(@background,4%)); // add gradient
+  #gradient > .vertical(@background; darken(@background,7%)); // add gradient
   .reset-filter(); // reset IE<=9
 
   &:hover,
@@ -48,7 +48,7 @@
     color: @color;
     background-color: darken(@background, 10%);
     border-color: @border;
-    #gradient > .vertical(darken(@background,4%); darken(@background,10%)); // add gradient
+    #gradient > .vertical(darken(@background,4%); darken(@background,14%)); // add gradient
     .reset-filter();
   }
   &:active,
@@ -66,7 +66,7 @@
     &.active {
       background-color: @background;
       border-color: @border;
-      #gradient > .vertical(@background; darken(@background,4%)); // add gradient
+      //#gradient > .vertical(@background; darken(@background,6%)); // add gradient
       .reset-filter();
     }
   }
