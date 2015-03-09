@@ -1,6 +1,38 @@
 // File: forms.less
 // Note: Extends Bootstrap forms.less
 
+
+// Forms with optional icons
+// -------------------------
+
+// Too much crap to override. Poorly implemented as it's too coupled to glyphicons.
+
+/*.has-feedback label {
+  & ~ .form-control-feedback {
+     top: (@line-height-computed + 14); // Height of the `label` and its margin
+  }
+  &.sr-only ~ .form-control-feedback {
+     top: 0;
+  }
+}
+
+.form-horizontal {
+  .has-feedback .form-control-feedback {
+    top: (@line-height-computed - 10);
+  }
+}
+
+.form-inline {
+  @media (min-width: @screen-sm-min) {
+    .has-feedback .form-control-feedback {
+      top: (@line-height-computed - 10);
+    }
+  }
+}
+*/
+// Fauxbox and faudio
+// -------------------------
+
 .fauxbox {
   &:extend(.checkbox);
   padding-left: 0;
