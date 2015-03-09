@@ -1,4 +1,4 @@
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -16,6 +16,7 @@ footer,
 header,
 hgroup,
 main,
+menu,
 nav,
 section,
 summary {
@@ -37,7 +38,7 @@ template {
   display: none;
 }
 a {
-  background: transparent;
+  background-color: transparent;
 }
 a:active,
 a:hover {
@@ -175,12 +176,15 @@ td,
 th {
   padding: 0;
 }
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
-  * {
-    text-shadow: none !important;
-    color: #000 !important;
+  *,
+  *:before,
+  *:after {
     background: transparent !important;
+    color: #000 !important;
     box-shadow: none !important;
+    text-shadow: none !important;
   }
   a,
   a:visited {
@@ -192,8 +196,8 @@ th {
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
     content: "";
   }
   pre,
@@ -227,10 +231,6 @@ th {
   .navbar {
     display: none;
   }
-  .table td,
-  .table th {
-    background-color: #fff !important;
-  }
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
@@ -243,6 +243,10 @@ th {
   }
   .table {
     border-collapse: collapse !important;
+  }
+  .table td,
+  .table th {
+    background-color: #fff !important;
   }
   .table-bordered th,
   .table-bordered td {
@@ -303,7 +307,6 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  width: 100% \9;
   max-width: 100%;
   height: auto;
 }
@@ -319,7 +322,6 @@ img {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
-  width: 100% \9;
   max-width: 100%;
   height: auto;
 }
@@ -488,9 +490,6 @@ small,
 .set-to-do__comments textarea,
 .set-to-do__time__radio {
   font-size: 85%;
-}
-cite {
-  font-style: normal;
 }
 mark,
 .mark {
@@ -753,10 +752,6 @@ blockquote.pull-right small:after,
 blockquote.pull-right .small:after {
   content: '\00A0 \2014';
 }
-blockquote:before,
-blockquote:after {
-  content: "";
-}
 address {
   margin-bottom: 20px;
   font-style: normal;
@@ -786,6 +781,7 @@ kbd {
 kbd kbd {
   padding: 0;
   font-size: 100%;
+  font-weight: bold;
   box-shadow: none;
 }
 pre {
@@ -1483,6 +1479,12 @@ pre code {
 table {
   background-color: transparent;
 }
+caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #999999;
+  text-align: left;
+}
 th {
   text-align: left;
 }
@@ -1543,12 +1545,10 @@ th {
 .table-bordered > thead > tr > td {
   border-bottom-width: 2px;
 }
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th {
+.table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
-.table-hover > tbody > tr:hover > td,
-.table-hover > tbody > tr:hover > th {
+.table-hover > tbody > tr:hover {
   background-color: #f5f5f5;
 }
 table col[class*="col-"] {
@@ -1667,15 +1667,17 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.danger:hover > th {
   background-color: #ebcccc;
 }
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+}
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
     overflow-y: hidden;
-    overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid #dddddd;
-    -webkit-overflow-scrolling: touch;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -1795,14 +1797,14 @@ output {
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 .form-control::-moz-placeholder {
-  color: #cccccc;
+  color: #999999;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
-  color: #cccccc;
+  color: #999999;
 }
 .form-control::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #999999;
 }
 .form-control[disabled],
 .form-control[readonly],
@@ -1817,24 +1819,33 @@ textarea.form-control {
 input[type="search"] {
   -webkit-appearance: none;
 }
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  line-height: 34px;
-  line-height: 1.42857143 \0;
-}
-input[type="date"].input-sm,
-input[type="time"].input-sm,
-input[type="datetime-local"].input-sm,
-input[type="month"].input-sm {
-  line-height: 30px;
-}
-input[type="date"].input-lg,
-input[type="time"].input-lg,
-input[type="datetime-local"].input-lg,
-input[type="month"].input-lg {
-  line-height: 47px;
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    line-height: 34px;
+  }
+  input[type="date"].input-sm,
+  input[type="time"].input-sm,
+  input[type="datetime-local"].input-sm,
+  input[type="month"].input-sm,
+  .input-group-sm input[type="date"],
+  .input-group-sm input[type="time"],
+  .input-group-sm input[type="datetime-local"],
+  .input-group-sm input[type="month"] {
+    line-height: 30px;
+  }
+  input[type="date"].input-lg,
+  input[type="time"].input-lg,
+  input[type="datetime-local"].input-lg,
+  input[type="month"].input-lg,
+  .input-group-lg input[type="date"],
+  .input-group-lg input[type="time"],
+  .input-group-lg input[type="datetime-local"],
+  .input-group-lg input[type="month"] {
+    line-height: 47px;
+  }
 }
 .form-group {
   margin-bottom: 15px;
@@ -1845,12 +1856,12 @@ input[type="month"].input-lg {
 .fauxdio {
   position: relative;
   display: block;
-  min-height: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .radio label,
 .checkbox label {
+  min-height: 20px;
   padding-left: 20px;
   margin-bottom: 0;
   font-weight: normal;
@@ -1912,8 +1923,7 @@ fieldset[disabled] .checkbox label {
   padding-left: 0;
   padding-right: 0;
 }
-.input-sm,
-.form-horizontal .form-group-sm .form-control {
+.input-sm {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -1928,8 +1938,28 @@ textarea.input-sm,
 select[multiple].input-sm {
   height: auto;
 }
-.input-lg,
-.form-horizontal .form-group-lg .form-control {
+.form-group-sm .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+select.form-group-sm .form-control {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.form-group-sm .form-control,
+select[multiple].form-group-sm .form-control {
+  height: auto;
+}
+.form-group-sm .form-control-static {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.input-lg {
   height: 47px;
   padding: 10px 16px;
   font-size: 18px;
@@ -1944,6 +1974,27 @@ textarea.input-lg,
 select[multiple].input-lg {
   height: auto;
 }
+.form-group-lg .form-control {
+  height: 47px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.34;
+  border-radius: 6px;
+}
+select.form-group-lg .form-control {
+  height: 47px;
+  line-height: 47px;
+}
+textarea.form-group-lg .form-control,
+select[multiple].form-group-lg .form-control {
+  height: auto;
+}
+.form-group-lg .form-control-static {
+  height: 47px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.34;
+}
 .has-feedback {
   position: relative;
 }
@@ -1952,7 +2003,7 @@ select[multiple].input-lg {
 }
 .form-control-feedback {
   position: absolute;
-  top: 25px;
+  top: 0;
   right: 0;
   z-index: 2;
   display: block;
@@ -1960,6 +2011,7 @@ select[multiple].input-lg {
   height: 34px;
   line-height: 34px;
   text-align: center;
+  pointer-events: none;
 }
 .input-lg + .form-control-feedback {
   width: 47px;
@@ -1976,7 +2028,11 @@ select[multiple].input-lg {
 .has-success .radio,
 .has-success .checkbox,
 .has-success .radio-inline,
-.has-success .checkbox-inline {
+.has-success .checkbox-inline,
+.has-success.radio label,
+.has-success.checkbox label,
+.has-success.radio-inline label,
+.has-success.checkbox-inline label {
   color: #3c763d;
 }
 .has-success .form-control {
@@ -2000,7 +2056,11 @@ select[multiple].input-lg {
 .has-warning .radio,
 .has-warning .checkbox,
 .has-warning .radio-inline,
-.has-warning .checkbox-inline {
+.has-warning .checkbox-inline,
+.has-warning.radio label,
+.has-warning.checkbox label,
+.has-warning.radio-inline label,
+.has-warning.checkbox-inline label {
   color: #8a6d3b;
 }
 .has-warning .form-control {
@@ -2024,7 +2084,11 @@ select[multiple].input-lg {
 .has-error .radio,
 .has-error .checkbox,
 .has-error .radio-inline,
-.has-error .checkbox-inline {
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
   color: #a94442;
 }
 .has-error .form-control {
@@ -2042,6 +2106,9 @@ select[multiple].input-lg {
 }
 .has-error .form-control-feedback {
   color: #a94442;
+}
+.has-feedback label ~ .form-control-feedback {
+  top: 25px;
 }
 .has-feedback label.sr-only ~ .form-control-feedback {
   top: 0;
@@ -2062,6 +2129,9 @@ select[multiple].input-lg {
     display: inline-block;
     width: auto;
     vertical-align: middle;
+  }
+  .form-inline .form-control-static {
+    display: inline-block;
   }
   .form-inline .input-group {
     display: inline-table;
@@ -2123,7 +2193,6 @@ select[multiple].input-lg {
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
-  top: 0;
   right: 15px;
 }
 @media (min-width: 768px) {
@@ -2142,6 +2211,8 @@ select[multiple].input-lg {
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -2157,7 +2228,10 @@ select[multiple].input-lg {
 }
 .btn:focus,
 .btn:active:focus,
-.btn.active:focus {
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
   outline: thin dotted;
@@ -2165,7 +2239,8 @@ select[multiple].input-lg {
   outline-offset: -3px;
 }
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn.focus {
   color: #696969;
   text-decoration: none;
 }
@@ -2196,6 +2271,7 @@ fieldset[disabled] .btn {
 }
 .btn-default:hover,
 .btn-default:focus,
+.btn-default.focus,
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
@@ -2217,6 +2293,9 @@ fieldset[disabled] .btn-default:hover,
 .btn-default.disabled:focus,
 .btn-default[disabled]:focus,
 fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
 .btn-default.disabled:active,
 .btn-default[disabled]:active,
 fieldset[disabled] .btn-default:active,
@@ -2287,6 +2366,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary:hover,
 .btn-primary:focus,
+.btn-primary.focus,
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
@@ -2308,6 +2388,9 @@ fieldset[disabled] .btn-primary:hover,
 .btn-primary.disabled:focus,
 .btn-primary[disabled]:focus,
 fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
 .btn-primary.disabled:active,
 .btn-primary[disabled]:active,
 fieldset[disabled] .btn-primary:active,
@@ -2381,6 +2464,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success:hover,
 .btn-success:focus,
+.btn-success.focus,
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
@@ -2402,6 +2486,9 @@ fieldset[disabled] .btn-success:hover,
 .btn-success.disabled:focus,
 .btn-success[disabled]:focus,
 fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus,
+.btn-success[disabled].focus,
+fieldset[disabled] .btn-success.focus,
 .btn-success.disabled:active,
 .btn-success[disabled]:active,
 fieldset[disabled] .btn-success:active,
@@ -2474,6 +2561,7 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info:hover,
 .btn-info:focus,
+.btn-info.focus,
 .btn-info:active,
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
@@ -2495,6 +2583,9 @@ fieldset[disabled] .btn-info:hover,
 .btn-info.disabled:focus,
 .btn-info[disabled]:focus,
 fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus,
+.btn-info[disabled].focus,
+fieldset[disabled] .btn-info.focus,
 .btn-info.disabled:active,
 .btn-info[disabled]:active,
 fieldset[disabled] .btn-info:active,
@@ -2567,6 +2658,7 @@ fieldset[disabled] .btn-info.active {
 }
 .btn-warning:hover,
 .btn-warning:focus,
+.btn-warning.focus,
 .btn-warning:active,
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
@@ -2588,6 +2680,9 @@ fieldset[disabled] .btn-warning:hover,
 .btn-warning.disabled:focus,
 .btn-warning[disabled]:focus,
 fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled.focus,
+.btn-warning[disabled].focus,
+fieldset[disabled] .btn-warning.focus,
 .btn-warning.disabled:active,
 .btn-warning[disabled]:active,
 fieldset[disabled] .btn-warning:active,
@@ -2660,6 +2755,7 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger:hover,
 .btn-danger:focus,
+.btn-danger.focus,
 .btn-danger:active,
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
@@ -2681,6 +2777,9 @@ fieldset[disabled] .btn-danger:hover,
 .btn-danger.disabled:focus,
 .btn-danger[disabled]:focus,
 fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled.focus,
+.btn-danger[disabled].focus,
+fieldset[disabled] .btn-danger.focus,
 .btn-danger.disabled:active,
 .btn-danger[disabled]:active,
 fieldset[disabled] .btn-danger:active,
@@ -2744,11 +2843,11 @@ fieldset[disabled] .btn-danger.active {
 .btn-link {
   color: #1581e2;
   font-weight: normal;
-  cursor: pointer;
   border-radius: 0;
 }
 .btn-link,
 .btn-link:active,
+.btn-link.active,
 .btn-link[disabled],
 fieldset[disabled] .btn-link {
   background-color: transparent;
@@ -2816,9 +2915,11 @@ input[type="button"].btn-block {
 }
 .collapse {
   display: none;
+  visibility: hidden;
 }
 .collapse.in {
   display: block;
+  visibility: visible;
 }
 tr.collapse.in {
   display: table-row;
@@ -2830,8 +2931,12 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition: height 0.35s ease;
-  transition: height 0.35s ease;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
 }
 .caret,
 .caret-left,
@@ -2847,6 +2952,7 @@ tbody.collapse.in {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
+.dropup,
 .dropdown {
   position: relative;
 }
@@ -2963,7 +3069,7 @@ tbody.collapse.in {
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 @media (min-width: 768px) {
   .navbar-right .dropdown-menu {
@@ -2995,10 +3101,6 @@ tbody.collapse.in {
 .btn-group > .btn.active,
 .btn-group-vertical > .btn.active {
   z-index: 2;
-}
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus {
-  outline: 0;
 }
 .btn-group .btn + .btn,
 .btn-group .btn + .btn-group,
@@ -3039,12 +3141,12 @@ tbody.collapse.in {
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
 }
-.btn-group > .btn-group:first-child > .btn:last-child,
-.btn-group > .btn-group:first-child > .dropdown-toggle {
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-.btn-group > .btn-group:last-child > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -3137,12 +3239,13 @@ tbody.collapse.in {
 .btn-group-justified > .btn-group .dropdown-menu {
   left: auto;
 }
-[data-toggle="buttons"] > .btn > input[type="radio"],
-[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
   position: absolute;
-  z-index: -1;
-  opacity: 0;
-  filter: alpha(opacity=0);
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
 }
 .input-group {
   position: relative;
@@ -3481,9 +3584,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .tab-content > .tab-pane {
   display: none;
+  visibility: hidden;
 }
 .tab-content > .active {
   display: block;
+  visibility: visible;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -3525,6 +3630,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-collapse.collapse {
     display: block !important;
+    visibility: visible !important;
     height: auto !important;
     padding-bottom: 0;
     overflow: visible !important;
@@ -3543,7 +3649,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-bottom .navbar-collapse {
   max-height: 340px;
 }
-@media (max-width: 480px) and (orientation: landscape) {
+@media (max-device-width: 480px) and (orientation: landscape) {
   .navbar-fixed-top .navbar-collapse,
   .navbar-fixed-bottom .navbar-collapse {
     max-height: 200px;
@@ -3580,8 +3686,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   right: 0;
   left: 0;
   z-index: 1030;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
@@ -3608,6 +3712,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
+}
+.navbar-brand > img {
+  display: block;
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
@@ -3686,17 +3793,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
-  }
-}
-@media (min-width: 768px) {
-  .navbar-left {
-    float: left !important;
-  }
-  .navbar-right {
-    float: right !important;
-  }
 }
 .navbar-form {
   margin-left: -15px;
@@ -3718,6 +3814,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: inline-block;
     width: auto;
     vertical-align: middle;
+  }
+  .navbar-form .form-control-static {
+    display: inline-block;
   }
   .navbar-form .input-group {
     display: inline-table;
@@ -3759,6 +3858,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-form .form-group {
     margin-bottom: 5px;
   }
+  .navbar-form .form-group:last-child {
+    margin-bottom: 0;
+  }
 }
 @media (min-width: 768px) {
   .navbar-form {
@@ -3770,9 +3872,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding-bottom: 0;
     box-shadow: none;
   }
-  .navbar-form.navbar-right:last-child {
-    margin-right: -15px;
-  }
 }
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
@@ -3780,6 +3879,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-left-radius: 0;
 }
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  margin-bottom: 0;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3805,7 +3907,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-left: 15px;
     margin-right: 15px;
   }
-  .navbar-text.navbar-right:last-child {
+}
+@media (min-width: 768px) {
+  .navbar-left {
+    float: left !important;
+  }
+  .navbar-right {
+    float: right !important;
+    margin-right: -15px;
+  }
+  .navbar-right ~ .navbar-right {
     margin-right: 0;
   }
 }
@@ -3910,7 +4021,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #cccccc;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -3918,10 +4029,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #cccccc;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #cccccc;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -3968,7 +4079,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     background-color: #080808;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #cccccc;
+    color: #f2f2f2;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -3989,13 +4100,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 .navbar-inverse .navbar-link {
-  color: #cccccc;
+  color: #f2f2f2;
 }
 .navbar-inverse .navbar-link:hover {
   color: #ffffff;
 }
 .navbar-inverse .btn-link {
-  color: #cccccc;
+  color: #f2f2f2;
 }
 .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link:focus {
@@ -4239,10 +4350,16 @@ a.badge:focus {
   text-decoration: none;
   cursor: pointer;
 }
-a.list-group-item.active > .badge,
+.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
   color: #1581e2;
   background-color: #ffffff;
+}
+.list-group-item > .badge {
+  float: right;
+}
+.list-group-item > .badge + .badge {
+  margin-right: 5px;
 }
 .nav-pills > li > a > .badge {
   margin-left: 3px;
@@ -4255,8 +4372,8 @@ a.list-group-item.active > .badge,
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
 }
 .thumbnail > img,
 .thumbnail a > img {
@@ -4347,29 +4464,46 @@ a.thumbnail.active {
 .alert-danger .alert-link {
   color: #843534;
 }
-.media,
-.media-body {
-  overflow: hidden;
-  zoom: 1;
-}
-.media,
-.media .media {
+.media {
   margin-top: 15px;
 }
 .media:first-child {
   margin-top: 0;
 }
+.media,
+.media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+.media-body {
+  width: 10000px;
+}
 .media-object {
   display: block;
 }
-.media-heading {
-  margin: 0 0 5px;
-}
-.media > .pull-left {
-  margin-right: 10px;
-}
+.media-right,
 .media > .pull-right {
-  margin-left: 10px;
+  padding-left: 10px;
+}
+.media-left,
+.media > .pull-left {
+  padding-right: 10px;
+}
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+.media-middle {
+  vertical-align: middle;
+}
+.media-bottom {
+  vertical-align: bottom;
+}
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 .media-list {
   padding-left: 0;
@@ -4396,12 +4530,6 @@ a.thumbnail.active {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.list-group-item > .badge {
-  float: right;
-}
-.list-group-item > .badge + .badge {
-  margin-right: 5px;
-}
 a.list-group-item {
   color: #555555;
 }
@@ -4419,6 +4547,7 @@ a.list-group-item:focus {
 .list-group-item.disabled:focus {
   background-color: #ececec;
   color: #cccccc;
+  cursor: not-allowed;
 }
 .list-group-item.disabled .list-group-item-heading,
 .list-group-item.disabled:hover .list-group-item-heading,
@@ -4575,7 +4704,11 @@ a.list-group-item-danger.active:focus {
   font-size: 16px;
   color: inherit;
 }
-.panel-title > a {
+.panel-title > a,
+.panel-title > small,
+.panel-title > .small,
+.panel-title > small > a,
+.panel-title > .small > a {
   color: inherit;
 }
 .panel-footer {
@@ -4585,19 +4718,23 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.panel > .list-group {
+.panel > .list-group,
+.panel > .panel-collapse > .list-group {
   margin-bottom: 0;
 }
-.panel > .list-group .list-group-item {
+.panel > .list-group .list-group-item,
+.panel > .panel-collapse > .list-group .list-group-item {
   border-width: 1px 0;
   border-radius: 0;
 }
-.panel > .list-group:first-child .list-group-item:first-child {
+.panel > .list-group:first-child .list-group-item:first-child,
+.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
   border-top: 0;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
-.panel > .list-group:last-child .list-group-item:last-child {
+.panel > .list-group:last-child .list-group-item:last-child,
+.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
   border-bottom: 0;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -4613,10 +4750,23 @@ a.list-group-item-danger.active:focus {
 .panel > .panel-collapse > .table {
   margin-bottom: 0;
 }
+.panel > .table caption,
+.panel > .table-responsive > .table caption,
+.panel > .panel-collapse > .table caption {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .panel > .table:first-child,
 .panel > .table-responsive:first-child > .table:first-child {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+}
+.panel > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
@@ -4643,6 +4793,13 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
+.panel > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
@@ -4664,7 +4821,9 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: 3px;
 }
 .panel > .panel-body + .table,
-.panel > .panel-body + .table-responsive {
+.panel > .panel-body + .table-responsive,
+.panel > .table + .panel-body,
+.panel > .table-responsive + .panel-body {
   border-top: 1px solid #dddddd;
 }
 .panel > .table > tbody:first-child > tr:first-child th,
@@ -4740,7 +4899,8 @@ a.list-group-item-danger.active:focus {
 .panel-group .panel-heading {
   border-bottom: 0;
 }
-.panel-group .panel-heading + .panel-collapse > .panel-body {
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group {
   border-top: 1px solid #dddddd;
 }
 .panel-group .panel-footer {
@@ -4867,7 +5027,8 @@ a.list-group-item-danger.active:focus {
 .embed-responsive .embed-responsive-item,
 .embed-responsive iframe,
 .embed-responsive embed,
-.embed-responsive object {
+.embed-responsive object,
+.embed-responsive video {
   position: absolute;
   top: 0;
   left: 0;
@@ -4940,19 +5101,21 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 1040;
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
 .modal.fade .modal-dialog {
-  -webkit-transform: translate3d(0, -25%, 0);
-  transform: translate3d(0, -25%, 0);
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 .modal-open .modal {
   overflow-x: hidden;
@@ -4974,12 +5137,10 @@ button.close {
   outline: 0;
 }
 .modal-backdrop {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
-  z-index: 1040;
   background-color: #000000;
 }
 .modal-backdrop.fade {
@@ -5050,7 +5211,9 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 12px;
+  font-weight: normal;
   line-height: 1.4;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -5100,13 +5263,15 @@ button.close {
 }
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
-  left: 5px;
+  right: 5px;
+  margin-bottom: -5px;
   border-width: 5px 5px 0;
   border-top-color: #999999;
 }
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
-  right: 5px;
+  left: 5px;
+  margin-bottom: -5px;
   border-width: 5px 5px 0;
   border-top-color: #999999;
 }
@@ -5133,13 +5298,15 @@ button.close {
 }
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
-  left: 5px;
+  right: 5px;
+  margin-top: -5px;
   border-width: 0 5px 5px;
   border-bottom-color: #999999;
 }
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
-  right: 5px;
+  left: 5px;
+  margin-top: -5px;
   border-width: 0 5px 5px;
   border-bottom-color: #999999;
 }
@@ -5151,6 +5318,10 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
   text-align: left;
   background-color: #ffffff;
   background-clip: padding-box;
@@ -5176,8 +5347,6 @@ button.close {
   margin: 0;
   padding: 8px 14px;
   font-size: 14px;
-  font-weight: normal;
-  line-height: 18px;
   background-color: transparent;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px 5px 0 0;
@@ -5279,6 +5448,35 @@ button.close {
 .carousel-inner > .item > a > img {
   line-height: 1;
 }
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-inner > .item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  .carousel-inner > .item.next,
+  .carousel-inner > .item.active.right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    left: 0;
+  }
+  .carousel-inner > .item.prev,
+  .carousel-inner > .item.active.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    left: 0;
+  }
+  .carousel-inner > .item.next.left,
+  .carousel-inner > .item.prev.right,
+  .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
 .carousel-inner > .active,
 .carousel-inner > .next,
 .carousel-inner > .prev {
@@ -5368,6 +5566,7 @@ button.close {
   width: 20px;
   height: 20px;
   margin-top: -10px;
+  line-height: 1;
   font-family: serif;
 }
 .carousel-control .icon-prev:before {
@@ -5542,8 +5741,6 @@ button.close {
 }
 .affix {
   position: fixed;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 @-ms-viewport {
   width: device-width;
@@ -5898,6 +6095,10 @@ button.close {
 .datepicker table tr td.today:hover:focus,
 .datepicker table tr td.today.disabled:focus,
 .datepicker table tr td.today.disabled:hover:focus,
+.datepicker table tr td.today.focus,
+.datepicker table tr td.today:hover.focus,
+.datepicker table tr td.today.disabled.focus,
+.datepicker table tr td.today.disabled:hover.focus,
 .datepicker table tr td.today:active,
 .datepicker table tr td.today:hover:active,
 .datepicker table tr td.today.disabled:active,
@@ -5964,6 +6165,18 @@ fieldset[disabled] .datepicker table tr td.today:focus,
 fieldset[disabled] .datepicker table tr td.today:hover:focus,
 fieldset[disabled] .datepicker table tr td.today.disabled:focus,
 fieldset[disabled] .datepicker table tr td.today.disabled:hover:focus,
+.datepicker table tr td.today.disabled.focus,
+.datepicker table tr td.today:hover.disabled.focus,
+.datepicker table tr td.today.disabled.disabled.focus,
+.datepicker table tr td.today.disabled:hover.disabled.focus,
+.datepicker table tr td.today[disabled].focus,
+.datepicker table tr td.today:hover[disabled].focus,
+.datepicker table tr td.today.disabled[disabled].focus,
+.datepicker table tr td.today.disabled:hover[disabled].focus,
+fieldset[disabled] .datepicker table tr td.today.focus,
+fieldset[disabled] .datepicker table tr td.today:hover.focus,
+fieldset[disabled] .datepicker table tr td.today.disabled.focus,
+fieldset[disabled] .datepicker table tr td.today.disabled:hover.focus,
 .datepicker table tr td.today.disabled:active,
 .datepicker table tr td.today:hover.disabled:active,
 .datepicker table tr td.today.disabled.disabled:active,
@@ -6150,6 +6363,10 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .datepicker table tr td.range.today:hover:focus,
 .datepicker table tr td.range.today.disabled:focus,
 .datepicker table tr td.range.today.disabled:hover:focus,
+.datepicker table tr td.range.today.focus,
+.datepicker table tr td.range.today:hover.focus,
+.datepicker table tr td.range.today.disabled.focus,
+.datepicker table tr td.range.today.disabled:hover.focus,
 .datepicker table tr td.range.today:active,
 .datepicker table tr td.range.today:hover:active,
 .datepicker table tr td.range.today.disabled:active,
@@ -6216,6 +6433,18 @@ fieldset[disabled] .datepicker table tr td.range.today:focus,
 fieldset[disabled] .datepicker table tr td.range.today:hover:focus,
 fieldset[disabled] .datepicker table tr td.range.today.disabled:focus,
 fieldset[disabled] .datepicker table tr td.range.today.disabled:hover:focus,
+.datepicker table tr td.range.today.disabled.focus,
+.datepicker table tr td.range.today:hover.disabled.focus,
+.datepicker table tr td.range.today.disabled.disabled.focus,
+.datepicker table tr td.range.today.disabled:hover.disabled.focus,
+.datepicker table tr td.range.today[disabled].focus,
+.datepicker table tr td.range.today:hover[disabled].focus,
+.datepicker table tr td.range.today.disabled[disabled].focus,
+.datepicker table tr td.range.today.disabled:hover[disabled].focus,
+fieldset[disabled] .datepicker table tr td.range.today.focus,
+fieldset[disabled] .datepicker table tr td.range.today:hover.focus,
+fieldset[disabled] .datepicker table tr td.range.today.disabled.focus,
+fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.focus,
 .datepicker table tr td.range.today.disabled:active,
 .datepicker table tr td.range.today:hover.disabled:active,
 .datepicker table tr td.range.today.disabled.disabled:active,
@@ -6389,6 +6618,10 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
 .datepicker table tr td.selected:hover:focus,
 .datepicker table tr td.selected.disabled:focus,
 .datepicker table tr td.selected.disabled:hover:focus,
+.datepicker table tr td.selected.focus,
+.datepicker table tr td.selected:hover.focus,
+.datepicker table tr td.selected.disabled.focus,
+.datepicker table tr td.selected.disabled:hover.focus,
 .datepicker table tr td.selected:active,
 .datepicker table tr td.selected:hover:active,
 .datepicker table tr td.selected.disabled:active,
@@ -6455,6 +6688,18 @@ fieldset[disabled] .datepicker table tr td.selected:focus,
 fieldset[disabled] .datepicker table tr td.selected:hover:focus,
 fieldset[disabled] .datepicker table tr td.selected.disabled:focus,
 fieldset[disabled] .datepicker table tr td.selected.disabled:hover:focus,
+.datepicker table tr td.selected.disabled.focus,
+.datepicker table tr td.selected:hover.disabled.focus,
+.datepicker table tr td.selected.disabled.disabled.focus,
+.datepicker table tr td.selected.disabled:hover.disabled.focus,
+.datepicker table tr td.selected[disabled].focus,
+.datepicker table tr td.selected:hover[disabled].focus,
+.datepicker table tr td.selected.disabled[disabled].focus,
+.datepicker table tr td.selected.disabled:hover[disabled].focus,
+fieldset[disabled] .datepicker table tr td.selected.focus,
+fieldset[disabled] .datepicker table tr td.selected:hover.focus,
+fieldset[disabled] .datepicker table tr td.selected.disabled.focus,
+fieldset[disabled] .datepicker table tr td.selected.disabled:hover.focus,
 .datepicker table tr td.selected.disabled:active,
 .datepicker table tr td.selected:hover.disabled:active,
 .datepicker table tr td.selected.disabled.disabled:active,
@@ -6628,6 +6873,10 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .datepicker table tr td.active:hover:focus,
 .datepicker table tr td.active.disabled:focus,
 .datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active.focus,
+.datepicker table tr td.active:hover.focus,
+.datepicker table tr td.active.disabled.focus,
+.datepicker table tr td.active.disabled:hover.focus,
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
 .datepicker table tr td.active.disabled:active,
@@ -6694,6 +6943,18 @@ fieldset[disabled] .datepicker table tr td.active:focus,
 fieldset[disabled] .datepicker table tr td.active:hover:focus,
 fieldset[disabled] .datepicker table tr td.active.disabled:focus,
 fieldset[disabled] .datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active.disabled.focus,
+.datepicker table tr td.active:hover.disabled.focus,
+.datepicker table tr td.active.disabled.disabled.focus,
+.datepicker table tr td.active.disabled:hover.disabled.focus,
+.datepicker table tr td.active[disabled].focus,
+.datepicker table tr td.active:hover[disabled].focus,
+.datepicker table tr td.active.disabled[disabled].focus,
+.datepicker table tr td.active.disabled:hover[disabled].focus,
+fieldset[disabled] .datepicker table tr td.active.focus,
+fieldset[disabled] .datepicker table tr td.active:hover.focus,
+fieldset[disabled] .datepicker table tr td.active.disabled.focus,
+fieldset[disabled] .datepicker table tr td.active.disabled:hover.focus,
 .datepicker table tr td.active.disabled:active,
 .datepicker table tr td.active:hover.disabled:active,
 .datepicker table tr td.active.disabled.disabled:active,
@@ -6888,6 +7149,10 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .datepicker table tr td span.active:hover:focus,
 .datepicker table tr td span.active.disabled:focus,
 .datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.focus,
+.datepicker table tr td span.active:hover.focus,
+.datepicker table tr td span.active.disabled.focus,
+.datepicker table tr td span.active.disabled:hover.focus,
 .datepicker table tr td span.active:active,
 .datepicker table tr td span.active:hover:active,
 .datepicker table tr td span.active.disabled:active,
@@ -6954,6 +7219,18 @@ fieldset[disabled] .datepicker table tr td span.active:focus,
 fieldset[disabled] .datepicker table tr td span.active:hover:focus,
 fieldset[disabled] .datepicker table tr td span.active.disabled:focus,
 fieldset[disabled] .datepicker table tr td span.active.disabled:hover:focus,
+.datepicker table tr td span.active.disabled.focus,
+.datepicker table tr td span.active:hover.disabled.focus,
+.datepicker table tr td span.active.disabled.disabled.focus,
+.datepicker table tr td span.active.disabled:hover.disabled.focus,
+.datepicker table tr td span.active[disabled].focus,
+.datepicker table tr td span.active:hover[disabled].focus,
+.datepicker table tr td span.active.disabled[disabled].focus,
+.datepicker table tr td span.active.disabled:hover[disabled].focus,
+fieldset[disabled] .datepicker table tr td span.active.focus,
+fieldset[disabled] .datepicker table tr td span.active:hover.focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled.focus,
+fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus,
 .datepicker table tr td span.active.disabled:active,
 .datepicker table tr td span.active:hover.disabled:active,
 .datepicker table tr td span.active.disabled.disabled:active,
@@ -7821,6 +8098,7 @@ fieldset[disabled] .btn {
 }
 .btn-attention:hover,
 .btn-attention:focus,
+.btn-attention.focus,
 .btn-attention:active,
 .btn-attention.active,
 .open > .dropdown-toggle.btn-attention {
@@ -7842,6 +8120,9 @@ fieldset[disabled] .btn-attention:hover,
 .btn-attention.disabled:focus,
 .btn-attention[disabled]:focus,
 fieldset[disabled] .btn-attention:focus,
+.btn-attention.disabled.focus,
+.btn-attention[disabled].focus,
+fieldset[disabled] .btn-attention.focus,
 .btn-attention.disabled:active,
 .btn-attention[disabled]:active,
 fieldset[disabled] .btn-attention:active,
@@ -7914,6 +8195,7 @@ fieldset[disabled] .btn-attention.active {
 }
 .btn-highlight:hover,
 .btn-highlight:focus,
+.btn-highlight.focus,
 .btn-highlight:active,
 .btn-highlight.active,
 .open > .dropdown-toggle.btn-highlight {
@@ -7935,6 +8217,9 @@ fieldset[disabled] .btn-highlight:hover,
 .btn-highlight.disabled:focus,
 .btn-highlight[disabled]:focus,
 fieldset[disabled] .btn-highlight:focus,
+.btn-highlight.disabled.focus,
+.btn-highlight[disabled].focus,
+fieldset[disabled] .btn-highlight.focus,
 .btn-highlight.disabled:active,
 .btn-highlight[disabled]:active,
 fieldset[disabled] .btn-highlight:active,
@@ -8005,6 +8290,7 @@ fieldset[disabled] .btn-highlight.active {
 }
 .btn-desaturated:hover,
 .btn-desaturated:focus,
+.btn-desaturated.focus,
 .btn-desaturated:active,
 .btn-desaturated.active,
 .open > .dropdown-toggle.btn-desaturated {
@@ -8026,6 +8312,9 @@ fieldset[disabled] .btn-desaturated:hover,
 .btn-desaturated.disabled:focus,
 .btn-desaturated[disabled]:focus,
 fieldset[disabled] .btn-desaturated:focus,
+.btn-desaturated.disabled.focus,
+.btn-desaturated[disabled].focus,
+fieldset[disabled] .btn-desaturated.focus,
 .btn-desaturated.disabled:active,
 .btn-desaturated[disabled]:active,
 fieldset[disabled] .btn-desaturated:active,
@@ -8586,6 +8875,9 @@ button.close-inverted {
   position: relative;
   top: 1px;
 }
+.ficon.form-control-feedback {
+  position: absolute;
+}
 .ficon-email-bad,
 .ficon-phone-bad,
 .ficon-text-bad {
@@ -8893,6 +9185,29 @@ button.close-inverted {
 .ficon-up-down:before {
   content: "\e629";
 }
+/*.has-feedback label {
+  & ~ .form-control-feedback {
+     top: (@line-height-computed + 14); // Height of the `label` and its margin
+  }
+  &.sr-only ~ .form-control-feedback {
+     top: 0;
+  }
+}
+
+.form-horizontal {
+  .has-feedback .form-control-feedback {
+    top: (@line-height-computed - 10);
+  }
+}
+
+.form-inline {
+  @media (min-width: @screen-sm-min) {
+    .has-feedback .form-control-feedback {
+      top: (@line-height-computed - 10);
+    }
+  }
+}
+*/
 .fauxbox {
   padding-left: 0;
 }
@@ -8989,16 +9304,6 @@ button.close-inverted {
 .row-xcondensed [class*="col-"] {
   padding-left: 3px;
   padding-right: 3px;
-}
-.bticon {
-  background: transparent 0 0;
-  background-size: 100%;
-  display: inline-block;
-  height: 1em;
-  line-height: 1;
-  position: relative;
-  top: 2px;
-  width: 1em;
 }
 .input-group-addon .fauxbox + label:before {
   top: 1px;
