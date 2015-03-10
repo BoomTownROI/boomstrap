@@ -8591,6 +8591,12 @@ button.close-inverted {
 .ficon-text-bad {
   color: #f05b5a;
 }
+.ficon-email-neutral,
+.ficon-phone-neutral,
+.ficon-text-neutral,
+.log-call .ficon-speaker {
+  color: #444444;
+}
 .ficon-email-good,
 .ficon-phone-good,
 .ficon-text-good {
@@ -9534,11 +9540,4 @@ a.list-group-item.active:focus .ficon {
 }
 .modal-footer {
   margin-top: 0;
-}
-.nav > li > a {
-  -webkit-transition: all linear 0.25s;
-  transition: all linear 0.25s;
-}
-.nav-sm > li > a {
-  padding: 6px 10px;
 }
