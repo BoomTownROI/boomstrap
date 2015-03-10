@@ -12,6 +12,10 @@
       switch (params) {
         case 'remove':
           formattedNumber = number.replace(/\D/g, '');
+
+          if (formattedNumber.length > 10 && formattedNumber.indexOf('1') === 0) {
+            formattedNumber = formattedNumber.substring(1);
+          }
           break;
         case 'add':
           number = number.replace(/\D/g, '');
