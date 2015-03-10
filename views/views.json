@@ -168,6 +168,11 @@
 				"nav_header": "navs"
 			},
 			{
+				"source": "views/components/navbar.html",
+				"css_id": "#navbar",
+				"nav_header": "navbar"
+			},
+			{
 				"source": "views/components/pagination.html",
 				"css_id": "#pagination",
 				"nav_header": "Pagination"

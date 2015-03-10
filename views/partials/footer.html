@@ -86,14 +86,15 @@
 			
 
 			///////////// view markup buttons
-
-			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
-			$('.pl-code pre').hide();
-			$('.btn-showmarkup').click(function(){
-				var prediv = $('pre');
-				$(this).next(prediv).show();
-				$(this).hide();
-			});
+			if($(window).width() < 768) {
+				$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
+				$('.pl-code pre').hide();
+				$('.btn-showmarkup').click(function(){
+					var prediv = $('pre');
+					$(this).next(prediv).show();
+					$(this).hide();
+				});
+			}
 
     });
 
