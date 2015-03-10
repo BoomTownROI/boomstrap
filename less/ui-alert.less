@@ -5,22 +5,21 @@
 //   If you're looking to embed this in a page, use shadow-depth-1
 
 .ui-alert {
-  position:         relative;
-  padding:          @padding-half-gutter 24px @padding-half-gutter @padding-half-gutter;
   background-color: @white;
-
+  padding: @padding-half-gutter 24px @padding-half-gutter @padding-half-gutter;
+  position: relative;
   & + .ui-alert {
     margin-top: @margin-half-gutter;
   }
 }
 
 .ui-alert__icon-wrapper {
-  position:    absolute;
-  top:         0;
-  left:        0;
-  width:       50px;
-  height:      100%;
   border-color: transparent;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50px;
 }
 
 .ui-alert__body {
@@ -28,17 +27,17 @@
 }
 
 .ui-alert__icon {
-  font-size:   26px;
-  position: absolute;
-  top:  50%;
+  font-size: 26px;
   left: 50%;
+  position: absolute;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .ui-alert__close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
   color: inherit;
   font-size: 16px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }

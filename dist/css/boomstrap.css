@@ -1,4 +1,4 @@
-/*! Boomstrap v1.12.4 */
+/*! Boomstrap v1.12.5 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8588,6 +8588,12 @@ button.close-inverted {
 .ficon-text-bad {
   color: #f05b5a;
 }
+.ficon-email-neutral,
+.ficon-phone-neutral,
+.ficon-text-neutral,
+.log-call .ficon-speaker {
+  color: #444444;
+}
 .ficon-email-good,
 .ficon-phone-good,
 .ficon-text-good {
@@ -10639,39 +10645,39 @@ a.text-muted:hover,
   transform: translateY(-50%);
 }
 .ui-alert {
-  position: relative;
-  padding: 15px 24px 15px 15px;
   background-color: #ffffff;
+  padding: 15px 24px 15px 15px;
+  position: relative;
 }
 .ui-alert + .ui-alert {
   margin-top: 15px;
 }
 .ui-alert__icon-wrapper {
+  border-color: transparent;
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 50px;
-  height: 100%;
-  border-color: transparent;
 }
 .ui-alert__body {
   margin-left: 50px;
 }
 .ui-alert__icon {
   font-size: 26px;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 .ui-alert__close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
   color: inherit;
   font-size: 16px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 .well {
   box-shadow: none;
