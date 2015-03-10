@@ -4,7 +4,7 @@
 <div class="pl-docs-section">
   <h1 id="alerts" class="page-header">Alerts</h1>
 
-  <p class="lead">Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages. For inline dismissal, use the <a href="../javascript/#alerts">alerts jQuery plugin</a>.</p>
+  <p class="lead">Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
 
   <h2 id="alerts-examples">Examples</h2>
   <p>Wrap any text and an optional dismiss button in <code>.alert</code> and one of the four contextual classes (e.g., <code>.alert-success</code>) for basic alert messages.</p>
@@ -36,6 +36,12 @@
 
   <h2 id="alerts-dismissable">Dismissable alerts</h2>
   <p>Build on any alert by adding an optional <code>.alert-dismissable</code> and close button.</p>
+
+  <div class="callout callout-info" id="callout-alerts-dismiss-plugin">
+    <h4>Requires JavaScript alert plugin</h4>
+    <p>For fully functioning, dismissible alerts, you must use the <a href="../javascript.html#alerts">alerts JavaScript plugin</a>.</p>
+  </div>
+
   <div class="pl-example">
     <div class="alert alert-warning alert-dismissable">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -103,40 +109,70 @@
 
   <div class="pl-example">
     <div class='ui-alert shadow-depth-2'>
-        <div class='ui-alert__icon-wrapper alert-info'>
-            <span class='ui-alert__icon ficon ficon-tag'></span>
-        </div>
-        <div class='ui-alert__body'>
-            <i class='close ui-alert__close ficon ficon-cross'></i>
-            <span>Your tags have been updated.</span>
-        </div>
+      <div class='ui-alert__icon-wrapper alert-info'>
+        <span class='ui-alert__icon ficon ficon-tag'></span>
+      </div>
+      <div class='ui-alert__body'>
+        <i class='close ui-alert__close ficon ficon-cross'></i>
+        <span>Your tags have been updated.</span>
+      </div>
     </div>
     <div class='ui-alert shadow-depth-2'>
-        <div class='ui-alert__icon-wrapper alert-warning'>
-            <span class='ui-alert__icon ficon ficon-cog'></span>
-        </div>
-        <div class='ui-alert__body'>
-          <span>
-            <strong>
-              System Message:&nbsp;<a href="http://www.google.com" title="Test">Click me!</a>&nbsp;Testing to you!&nbsp;
-            </strong>
-            I'm not bold.
-          </span>
-        </div>
+      <div class='ui-alert__icon-wrapper alert-warning'>
+        <span class='ui-alert__icon ficon ficon-cog'></span>
+      </div>
+      <div class='ui-alert__body'>
+        <span>
+          <strong>
+            System Message:&nbsp;<a href="http://www.google.com" title="Test">Click me!</a>&nbsp;Testing to you!&nbsp;
+          </strong>
+          I'm not bold.
+        </span>
+      </div>
     </div>
     <div class='ui-alert shadow-depth-2'>
-        <div class='ui-alert__icon-wrapper alert-success'>
-            <span class='ui-alert__icon ficon ficon-user'></span>
-        </div>
-        <div class='ui-alert__body'>
-            <i class='close ui-alert__close ficon ficon-cross'></i>
-            <span>Bouncer settings saved.</span>
-        </div>
+      <div class='ui-alert__icon-wrapper alert-success'>
+        <span class='ui-alert__icon ficon ficon-user'></span>
+      </div>
+      <div class='ui-alert__body'>
+        <i class='close ui-alert__close ficon ficon-cross'></i>
+        <span>Bouncer settings saved.</span>
+      </div>
     </div>
   </div>
 
-  <div class="pl-code">
-    <pre>
+  <div class="pl-code"><pre class="prettyprint"><code>&lt;div class='ui-alert shadow-depth-2'&gt;
+  &lt;div class='ui-alert__icon-wrapper alert-info'&gt;
+    &lt;span class='ui-alert__icon ficon ficon-tag'&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class='ui-alert__body'&gt;
+    &lt;i class='close ui-alert__close ficon ficon-cross'&gt;&lt;/i&gt;
+    &lt;span&gt;Your tags have been updated.&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='ui-alert shadow-depth-2'&gt;
+  &lt;div class='ui-alert__icon-wrapper alert-warning'&gt;
+    &lt;span class='ui-alert__icon ficon ficon-cog'&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class='ui-alert__body'&gt;
+    &lt;span&gt;
+      &lt;strong&gt;
+        System Message:&nbsp;&lt;a href="http://www.google.com" title="Test"&gt;Click me!&lt;/a&gt;&nbsp;Testing to you!&nbsp;
+      &lt;/strong&gt;
+      I'm not bold.
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='ui-alert shadow-depth-2'&gt;
+  &lt;div class='ui-alert__icon-wrapper alert-success'&gt;
+    &lt;span class='ui-alert__icon ficon ficon-user'&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class='ui-alert__body'&gt;
+    &lt;i class='close ui-alert__close ficon ficon-cross'&gt;&lt;/i&gt;
+    &lt;span&gt;Bouncer settings saved.&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+
       <code class="javascript">
 // AlertActions is `require`'d in via CommonJS modules
 AlertActions.addAlert({
@@ -167,15 +203,13 @@ AlertActions.addAlert({
   content: 'Bouncer settings saved.',
   autoDismiss: false
 });
-      </code>
-    </pre>
+      </code></pre>
   </div>
 
   <div class="callout callout-info">
     <h4>No set width.</h4>
     <p>UI Alerts do not have a specific width and will grow to their container.</p>
   </div>
-
 
 </div>
 
