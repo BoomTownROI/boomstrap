@@ -1,4 +1,4 @@
-/*! Boomstrap v1.12.6 */
+/*! Boomstrap v1.12.7 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8884,7 +8884,7 @@ button.close-inverted {
 .ficon-phone-neutral,
 .ficon-text-neutral,
 .log-call .ficon-speaker {
-  color: #444444;
+  color: #696969;
 }
 .ficon-email-good,
 .ficon-phone-good,
