@@ -1,4 +1,4 @@
-/*! Boomstrap v1.12.7 */
+/*! Boomstrap v1.13.0 */
 (function () {
   'use strict';
   angular.module('boomstrap', [
@@ -82,6 +82,78 @@
       active: false
     }
   ]);
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('btCurrency', function ($filter, $locale) {
+    var formats = $locale.NUMBER_FORMATS;
+    var currencyFilter = $filter('currency');
+    return function (amount, currencySymbol) {
+      amount = amount ? (amount * 1).toFixed(2) : 0;
+      var value = currencyFilter(amount, currencySymbol);
+      var parts = value.split(formats.DECIMAL_SEP);
+      var dollar = parts[0];
+      var cents = parts[1] || '00';
+      cents = cents.substring(0, 2) === '00' ? cents.substring(2) : '.' + cents;
+      return dollar + cents;
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('btFormatDateToLocal', function ($filter) {
+    return function (utcDate, params) {
+      var formattedDate;
+      var defaultFilter;
+      if (utcDate) {
+        utcDate = utcDate.replace(/Z$/, '') + 'Z';
+        defaultFilter = params ? params : 'EEEE, MMMM d, y \'at\' h:mma';
+        formattedDate = $filter('date')(utcDate, defaultFilter);
+      } else {
+        formattedDate = '';
+      }
+      return formattedDate;
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('btPhoneNumber', function () {
+    return function (string, params) {
+      var number = string || '';
+      var formattedNumber;
+      var localPrefix;
+      var localMain;
+      var area;
+      switch (params) {
+      case 'remove':
+        formattedNumber = number.replace(/\D/g, '');
+        if (formattedNumber.length > 10 && formattedNumber.indexOf('1') === 0) {
+          formattedNumber = formattedNumber.substring(1);
+        }
+        break;
+      case 'add':
+        number = number.replace(/\D/g, '');
+        area = number.substring(0, 3);
+        localPrefix = number.substring(3, 6);
+        localMain = number.substring(6);
+        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
+        break;
+      default:
+        formattedNumber = string;
+        break;
+      }
+      return formattedNumber;
+    };
+  });
+}(angular.module('boomstrap')));
+(function (Boomstrap) {
+  'use strict';
+  Boomstrap.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
 }(angular.module('boomstrap')));
 (function (Boomstrap) {
   'use strict';
@@ -1552,83 +1624,11 @@
     return tour;
   });
 }(angular.module('boomstrap'), window.Tour));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('btCurrency', function ($filter, $locale) {
-    var formats = $locale.NUMBER_FORMATS;
-    var currencyFilter = $filter('currency');
-    return function (amount, currencySymbol) {
-      amount = amount ? (amount * 1).toFixed(2) : 0;
-      var value = currencyFilter(amount, currencySymbol);
-      var parts = value.split(formats.DECIMAL_SEP);
-      var dollar = parts[0];
-      var cents = parts[1] || '00';
-      cents = cents.substring(0, 2) === '00' ? cents.substring(2) : '.' + cents;
-      return dollar + cents;
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('btFormatDateToLocal', function ($filter) {
-    return function (utcDate, params) {
-      var formattedDate;
-      var defaultFilter;
-      if (utcDate) {
-        utcDate = utcDate.replace(/Z$/, '') + 'Z';
-        defaultFilter = params ? params : 'EEEE, MMMM d, y \'at\' h:mma';
-        formattedDate = $filter('date')(utcDate, defaultFilter);
-      } else {
-        formattedDate = '';
-      }
-      return formattedDate;
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('btPhoneNumber', function () {
-    return function (string, params) {
-      var number = string || '';
-      var formattedNumber;
-      var localPrefix;
-      var localMain;
-      var area;
-      switch (params) {
-      case 'remove':
-        formattedNumber = number.replace(/\D/g, '');
-        if (formattedNumber.length > 10 && formattedNumber.indexOf('1') === 0) {
-          formattedNumber = formattedNumber.substring(1);
-        }
-        break;
-      case 'add':
-        number = number.replace(/\D/g, '');
-        area = number.substring(0, 3);
-        localPrefix = number.substring(3, 6);
-        localMain = number.substring(6);
-        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
-        break;
-      default:
-        formattedNumber = string;
-        break;
-      }
-      return formattedNumber;
-    };
-  });
-}(angular.module('boomstrap')));
-(function (Boomstrap) {
-  'use strict';
-  Boomstrap.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-  });
-}(angular.module('boomstrap')));
 angular.module("ui.bootstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/pager/bt-pager.tpl.html","<div class=\"btn-group minimal-pager\">\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noPrevious() }\"\n        ng-click=\"selectPage(page - 1)\"><i\n            class=\"ficon ficon-chevron-left\"></i></button>\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noNext() }\"\n        ng-click=\"selectPage(page + 1)\"><i\n            class=\"ficon ficon-chevron-right\"></i></button>\n</div>");}]);
 angular.module("boomstrap").run(["$templateCache", function($templateCache) {$templateCache.put("template/nav.html","<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#pl-nav\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">PL</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"pl-nav\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"#pl-colors\">Colors</a></li>\n        <li class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Buttons <b class=\"caret\"></b></a>\n          <ul class=\"dropdown-menu\">\n            <li><a href=\"#pl-button-options\">Options</a></li>\n            <li><a href=\"#pl-button-sizes\">Sizes</a></li>\n            <li><a href=\"#pl-button-active\">Active State</a></li>\n            <li><a href=\"#pl-button-disabled\">Disabled State</a></li>\n            <li><a href=\"#pl-button-tags\">Button Tags</a></li>\n          </ul>\n        </li>\n        <li><a href=\"#pl-labels\">Labels</a></li>\n        <li><a href=\"#pl-typography\">Typography</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n<div class=\"container\">");
 $templateCache.put("template/btLazyPen/btLazyPen.tpl.html","<div class=\"bt-lazy-pen\">\n  <span class=\"btn btn-attention\" ng-if=\"!showingPen.value\" ng-click=\"showingPen.value = !showingPen.value\">Load CodePen Example</span>\n  <div ng-if=\"showingPen.value\">\n    <p data-height=\"{{ height }}\" data-theme-id=\"{{ themeId }}\" data-slug-hash=\"{{ slug }}\" data-default-tab=\"result\" class=\'codepen\'>See the Pen <a href=\'http://codepen.io/{{ user }}/pen/{{ slug }}/\'>{{ title }}</a> by {{ author }} (<a href=\'http://codepen.io/{{ user }}\'>@{{ userId }}</a>) on <a href=\'http://codepen.io\'>CodePen</a>.</p>\n    <script async src=\"//codepen.io/assets/embed/ei.js\"></script>\n  </div>\n</div>");
-$templateCache.put("template/btPager/bt-pager.tpl.html","<pager\n	template-url=\"template/pager/bt-pager.tpl.html\"\n	total-items=\"totalItems\"\n	items-per-page=\"itemsPerPage\"\n	ng-model=\"currentPage\">\n</pager>");
 $templateCache.put("template/carousel/carousel.html","<div ng-mouseenter=\"pause()\" ng-mouseleave=\"play()\" class=\"carousel\">\n    <ol class=\"carousel-indicators\" ng-show=\"slides.length > 1\">\n        <li ng-repeat=\"slide in slides\" ng-class=\"{active: isActive(slide)}\" ng-click=\"select(slide)\"></li>\n    </ol>\n    <div class=\"carousel-inner\" ng-transclude></div>\n    <a class=\"left carousel-control\" ng-click=\"prev()\" ng-show=\"slides.length > 1\"><span class=\"ficon ficon-chevron-left\"></span></a>\n    <a class=\"right carousel-control\" ng-click=\"next()\" ng-show=\"slides.length > 1\"><span class=\"ficon ficon-chevron-right\"></span></a>\n</div>");
+$templateCache.put("template/btPager/bt-pager.tpl.html","<pager\n	template-url=\"template/pager/bt-pager.tpl.html\"\n	total-items=\"totalItems\"\n	items-per-page=\"itemsPerPage\"\n	ng-model=\"currentPage\">\n</pager>");
 $templateCache.put("template/dropdown/bt-dropdown.tpl.html","<div class=\"dropdown\">\n    <button class=\"btn btn-default dropdown-toggle\" type=\"button\">\n        <span class=\"pull-left\" ng-bind=\"selectedValue\"></span>\n        <span class=\"caret\"></span>\n        <!-- <i class=\"ficon ficon-chevron-down pull-right\"></i> -->\n    </button>\n    <ul class=\"dropdown-menu\" role=\"menu\" ng-style=\"{ \'min-width\': dropdownWidth + \'px\'}\">\n        <li ng-repeat=\"value in arrayValues\" ng-if=\"keysAreNumbers\">\n            <a ng-click=\"assignValue(value.key)\">{{ value.value }}</a>\n        </li>\n        <li ng-repeat=\"(choiceValue, choiceName) in values\" ng-if=\"!keysAreNumbers\">\n            <a ng-click=\"assignValue(choiceValue)\">{{choiceName}}</a>\n        </li>\n    </ul>\n</div>");
 $templateCache.put("template/loader/bt-loader.tpl.html","<div class=\"loader\">\n  <span class=\"loader-pulse\"></span>\n  <span class=\"loader-pulse\"></span>\n  <span class=\"loader-pulse\"></span>\n</div>");
 $templateCache.put("template/popover/popover-bootstrap-tour.html","<div class=\"popover\">\n    <div class=\"arrow\"></div>\n    <div class=\"popover-close\">\n        <i data-role=\'end\' class=\"ficon ficon-cross property-close\"></i>\n    </div>\n    <h3 class=\"popover-title\">Tour</h3>\n    <div class=\"tour-popover popover-content\"></div>\n    <div class=\"popover-navigation\">\n        <button class=\"btn btn-sm btn-default\" data-role=\"prev\">Prev</button>\n        <button class=\"btn btn-sm btn-primary\" data-role=\"next\"><span>Next</span></button>\n    </div>\n</div>");
