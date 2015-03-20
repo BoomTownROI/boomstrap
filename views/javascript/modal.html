@@ -3,7 +3,7 @@
 <div class="pl-docs-section">
   <h1 id="modals" class="page-header">Modals <small>modal.js</small></h1>
 
-  <h2 id="modals-examples">Examples</h2>
+  
   <p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.</p>
 
   <div class="callout callout-warning" id="callout-stacked-modals">
@@ -16,9 +16,15 @@
   </div>
   <div class="callout callout-warning">
     <h4>Mobile device caveats</h4>
-    <p>There are some caveats regarding using modals on mobile devices. <a href="../getting-started/#support-fixed-position-keyboards">See our browser support docs</a> for details.</p>
+    <p>There are some caveats regarding using modals on mobile devices. <a href="http://getbootstrap.com/getting-started/#support-fixed-position-keyboards" target="_blank">See our browser support docs</a> for details.</p>
   </div>
 
+  <p><strong class="text-danger">Due to how HTML5 defines its semantics, the <code>autofocus</code> HTML attribute has no effect in Bootstrap modals.</strong> To achieve the same effect, use some custom JavaScript:</p>
+  <div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#myModal'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'shown.bs.modal'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#myInput'</span><span class="p">).</span><span class="nx">focus</span><span class="p">()</span>
+  <span class="p">})</span></code></pre></div>
+
+  <h2 id="modals-examples">Examples</h2>
   <h3>Static example</h3>
   <p>A rendered modal with header, body, and set of actions in the footer.</p>
   <div class="pl-example pl-example-modal">
@@ -139,6 +145,11 @@
     <p>Additionally, you may give a description of your modal dialog with <code>aria-describedby</code> on <code>.modal</code>.</p>
   </div>
 
+  <div class="callout callout-info" id="callout-modal-youtube">
+    <h4>Embedding YouTube videos</h4>
+    <p>Embedding YouTube videos in modals requires additional JavaScript not in Bootstrap to automatically stop playback and more. <a href="http://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">See this helpful Stack Overflow post</a> for more information.</p>
+  </div>
+
   <h2 id="modals-sizes">Optional sizes</h2>
   <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
   <div class="pl-example">
@@ -198,6 +209,12 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
+
+  <h2 id="modals-remove-animation">Remove animation</h2>
+  <p>For modals that simply appear rather than fade in to view, remove the <code>.fade</code> class from your modal markup.</p>
+  <div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">""</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h2 id="modals-usage">Usage</h2>
   <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
@@ -263,7 +280,7 @@
 <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">({</span>
   <span class="nx">keyboard</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">})</span>
-</code>pre></div>
+</code></pre></div>
 
   <h4>.modal('toggle')</h4>
   <p>Manually toggles a modal. <strong>Returns to the caller before the modal has actually been shown or hidden</strong> (i.e. before the <code>shown.bs.modal</code> or <code>hidden.bs.modal</code> event occurs).</p>

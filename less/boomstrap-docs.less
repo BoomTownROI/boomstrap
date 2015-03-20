@@ -95,6 +95,7 @@ h1, h2 {
   &:extend(.well);
   //background-color: @white;
   margin-bottom: 0;
+  position: relative;
   &+.pl-code {
     margin: -2px 0 @line-height-computed 0;
     pre {
@@ -329,6 +330,16 @@ border: 1px solid #d6e9c6;
   p { margin: 0; padding: 5px 10px; }
 }
 
+// Scroll Spy
+// -------------------------
+
+.scrollspy-example {
+  position: relative;
+  height: 200px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
 // Typography
 // -------------------------
 
@@ -380,11 +391,21 @@ border: 1px solid #d6e9c6;
 }
 
 
+
+
+// Navbar
+// -------------------------
+
+.pl-example .navbar:last-child {
+  margin-bottom: 0;
+}
+
+.bs-navbar-top-example {
+  padding-bottom: 45px;
+}
+
+
+
 .btn-showmarkup { margin-top: @margin-large; }
-
-
-
-
-
 
 

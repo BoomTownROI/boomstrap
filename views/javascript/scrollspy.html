@@ -4,7 +4,7 @@
   <h1 id="scrollspy" class="page-header">ScrollSpy <small>scrollspy.js</small></h1>
 
   <h2 id="scrollspy-examples">Example in navbar</h2>
-  <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be pl-codeed as well.</p>
+  <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.</p>
   <div class="pl-example">
     <nav id="navbar-example2" class="navbar navbar-default navbar-static" role="navigation">
       <div class="container-fluid">
@@ -53,6 +53,22 @@
 
   <h2 id="scrollspy-usage">Usage</h2>
 
+  <div class="callout callout-warning" id="callout-scrollspy-needs-nav">
+    <h4>Requires Bootstrap nav</h4>
+    <p>Scrollspy currently requires the use of a <a href="../components.html#nav">Bootstrap nav component</a> for proper highlighting of active links.</p>
+  </div>
+  <div class="callout callout-danger" id="callout-scrollspy-target-ids">
+    <h4>Resolvable ID targets required</h4>
+    <p>Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something in the DOM like <code>&lt;div id="home"&gt;&lt;/div&gt;</code>.</p>
+  </div>
+  <div class="callout callout-info" id="callout-scrollspy-invisible-targets">
+    <h4>Non-<code>:visible</code> target elements ignored</h4>
+    <p>Target elements that are not <a href="http://api.jquery.com/visible-selector/"><code>:visible</code> according to jQuery</a> will be ignored and their corresponding nav items will never be highlighted.</p>
+  </div>
+
+  <h3>Requires relative positioning</h3>
+  <p>No matter the implementation method, scrollspy requires the use of <code>position: relative;</code> on the element you're spying on. In most cases this is the <code>&lt;body&gt;</code>.</p>
+
   <h3>Via data attributes</h3>
   <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Bootstrap <code>.nav</code> component.</p>
 <div class="pl-code"><pre><code class="html"><span class="nt">&lt;body</span> <span class="na">data-spy=</span><span class="s">&quot;scroll&quot;</span> <span class="na">data-target=</span><span class="s">&quot;.navbar-example&quot;</span><span class="nt">&gt;</span>
@@ -67,14 +83,11 @@
 </code></pre></div>
 
   <h3>Via JavaScript</h3>
-  <p>Call the scrollspy via JavaScript:</p>
+  <p>After adding <code>position: relative;</code> in your CSS, call the scrollspy via JavaScript:</p>
 <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">scrollspy</span><span class="p">({</span> <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;.navbar-example&#39;</span> <span class="p">})</span>
 </code></pre></div>
 
-  <div class="callout callout-danger">
-    <h4>Resolvable ID targets required</h4>
-    <p>Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something in the DOM like <code>&lt;div id="home"&gt;&lt;/div&gt;</code>.</p>
-  </div>
+  
 
   <h3>Methods</h3>
   <h4>.scrollspy('refresh')</h4>
