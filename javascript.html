@@ -1084,7 +1084,7 @@
 <div class="pl-docs-section">
   <h1 id="modals" class="page-header">Modals <small>modal.js</small></h1>
 
-  <h2 id="modals-examples">Examples</h2>
+  
   <p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.</p>
 
   <div class="callout callout-warning" id="callout-stacked-modals">
@@ -1097,9 +1097,15 @@
   </div>
   <div class="callout callout-warning">
     <h4>Mobile device caveats</h4>
-    <p>There are some caveats regarding using modals on mobile devices. <a href="../getting-started/#support-fixed-position-keyboards">See our browser support docs</a> for details.</p>
+    <p>There are some caveats regarding using modals on mobile devices. <a href="http://getbootstrap.com/getting-started/#support-fixed-position-keyboards" target="_blank">See our browser support docs</a> for details.</p>
   </div>
 
+  <p><strong class="text-danger">Due to how HTML5 defines its semantics, the <code>autofocus</code> HTML attribute has no effect in Bootstrap modals.</strong> To achieve the same effect, use some custom JavaScript:</p>
+  <div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#myModal'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'shown.bs.modal'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#myInput'</span><span class="p">).</span><span class="nx">focus</span><span class="p">()</span>
+  <span class="p">})</span></code></pre></div>
+
+  <h2 id="modals-examples">Examples</h2>
   <h3>Static example</h3>
   <p>A rendered modal with header, body, and set of actions in the footer.</p>
   <div class="pl-example pl-example-modal">
@@ -1220,6 +1226,11 @@
     <p>Additionally, you may give a description of your modal dialog with <code>aria-describedby</code> on <code>.modal</code>.</p>
   </div>
 
+  <div class="callout callout-info" id="callout-modal-youtube">
+    <h4>Embedding YouTube videos</h4>
+    <p>Embedding YouTube videos in modals requires additional JavaScript not in Bootstrap to automatically stop playback and more. <a href="http://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">See this helpful Stack Overflow post</a> for more information.</p>
+  </div>
+
   <h2 id="modals-sizes">Optional sizes</h2>
   <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
   <div class="pl-example">
@@ -1279,6 +1290,12 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
+
+  <h2 id="modals-remove-animation">Remove animation</h2>
+  <p>For modals that simply appear rather than fade in to view, remove the <code>.fade</code> class from your modal markup.</p>
+  <div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">""</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h2 id="modals-usage">Usage</h2>
   <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
@@ -1344,7 +1361,7 @@
 <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">({</span>
   <span class="nx">keyboard</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">})</span>
-</code>pre></div>
+</code></pre></div>
 
   <h4>.modal('toggle')</h4>
   <p>Manually toggles a modal. <strong>Returns to the caller before the modal has actually been shown or hidden</strong> (i.e. before the <code>shown.bs.modal</code> or <code>hidden.bs.modal</code> event occurs).</p>
@@ -1406,25 +1423,38 @@
 <div class="pl-docs-section">
   <h1 id="popovers" class="page-header">Popovers <small>popover.js</small></h1>
 
-  <h2 id="popovers-examples">Examples</h2>
   <p>Add small overlays of content, like those on the iPad, to any element for housing secondary information.</p>
 
-  <div class="callout callout-danger">
+  <div class="callout callout-danger" id="callout-popover-needs-tooltip">
     <h4>Plugin dependency</h4>
     <p>Popovers require the <a href="#tooltips">tooltip plugin</a> to be included in your version of Bootstrap.</p>
   </div>
-  <div class="callout callout-danger">
+  <div class="callout callout-danger" id="callout-popover-opt-in">
     <h4>Opt-in functionality</h4>
     <p>For performance reasons, the Tooltip and Popover data-apis are opt-in, meaning <strong>you must initialize them yourself</strong>.</p>
+    <p>One way to initialize all popovers on a page would be to select them by their <code>data-toggle</code> attribute:</p>
+<div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-toggle="popover"]'</span><span class="p">).</span><span class="nx">popover</span><span class="p">()</span>
+<span class="p">})</span></code></pre></div>
   </div>
-  <div class="callout callout-warning">
+  <div class="callout callout-warning" id="callout-popover-groups">
     <h4>Popovers in button groups and input groups require special setting</h4>
     <p>When using popovers on elements within a <code>.btn-group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the popover is triggered).</p>
   </div>
-  <div class="callout callout-info">
+  <div class="callout callout-warning" id="callout-popover-hidden">
+    <h4>Don't try to show popovers on hidden elements</h4>
+    <p>Invoking <code>$(...).popover('show')</code> when the target element is <code>display: none;</code> will cause the popover to be incorrectly positioned.</p>
+  </div>
+  <div class="callout callout-info" id="callout-popover-disabled">
     <h4>Popovers on disabled elements require wrapper elements</h4>
     <p>To add a popover to a <code>disabled</code> or <code>.disabled</code> element, put the element inside of a <code>&lt;div&gt;</code> and apply the popover to that <code>&lt;div&gt;</code> instead.</p>
   </div>
+  <div class="callout callout-info" id="callout-popover-multiline">
+    <h4>Multiple-line links</h4>
+    <p>Sometimes you want to add a popover to a hyperlink that wraps multiple lines. The default behavior of the popover plugin is to center it horizontally and vertically. Add <code>white-space: nowrap;</code> to your anchors to avoid this.</p>
+  </div>
+
+  <h2 id="popovers-examples">Examples</h2>
 
   <h3>Live demo</h3>
   <div class="pl-example">
@@ -1466,10 +1496,23 @@
 <span class="nt">&lt;/button&gt;</span>
 </code></pre></div>
 
-  <div class="callout callout-warning">
-    <h4>Multiple-line links</h4>
-    <p>Sometimes you want to add a popover to a hyperlink that wraps multiple lines. The default behavior of the popover plugin is to center it horizontally and vertically. Add <code>white-space: nowrap;</code> to your anchors to avoid this.</p>
+
+  <div class="callout callout-danger" id="callout-popover-dismiss-click">
+    <h4>Dismissable popovers</h4>
+    <p>We rolled our own dismissable popovers instead of using Bootstrap's. By default, all popovers will contain a close button.</p>
   </div>
+ <!--  <h4>Dismiss on next click</h4>
+  <p>Use the <code>focus</code> trigger to dismiss popovers on the next click that the user makes.</p>
+  <div class="callout callout-danger" id="callout-popover-dismiss-click">
+    <h4>Specific markup required for dismiss-on-next-click</h4>
+    <p>For proper cross-browser and cross-platform behavior, you must use the <code>&lt;a&gt;</code> tag, <i>not</i> the <code>&lt;button&gt;</code> tag, and you also must include a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#tabindex"><code>tabindex</code></a> attribute.</p>
+  </div>
+  <div class="pl-example" style="padding-bottom: 24px;">
+    <a tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="Dismissible popover">Dismissible popover</a>
+  </div>
+  <div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">class=</span><span class="s">"btn btn-lg btn-danger"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"popover"</span> <span class="na">data-trigger=</span><span class="s">"focus"</span> <span class="na">title=</span><span class="s">"Dismissible popover"</span> <span class="na">data-content=</span><span class="s">"And here's some amazing content. It's very engaging. Right?"</span><span class="nt">&gt;</span>Dismissible popover<span class="nt">&lt;/a&gt;</span></code></pre></div> -->
+
+
 
 
   <h2 id="popovers-usage">Usage</h2>
@@ -1484,9 +1527,9 @@
       <thead>
         <tr>
           <th style="width: 100px;">Name</th>
-          <th style="width: 100px;">type</th>
-          <th style="width: 50px;">default</th>
-          <th>description</th>
+          <th style="width: 100px;">Type</th>
+          <th style="width: 50px;">Default</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
@@ -1494,7 +1537,34 @@
           <td>animation</td>
           <td>boolean</td>
           <td>true</td>
-          <td>apply a CSS fade transition to the popover</td>
+          <td>Apply a CSS fade transition to the popover</td>
+        </tr>
+        <tr>
+          <td>container</td>
+          <td>string | false</td>
+          <td>false</td>
+          <td>
+            <p>Appends the popover to a specific element. Example: <code>container: 'body'</code>. This option is particularly useful in that it allows you to position the popover in the flow of the document near the triggering element -&nbsp;which will prevent the popover from floating away from the triggering element during a window resize.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>content</td>
+          <td>string | function</td>
+          <td>''</td>
+          <td>
+            <p>Default content value if <code>data-content</code> attribute isn't present.</p>
+            <p>If a function is given, it will be called with its <code>this</code> reference set to the element that the popover is attached to.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>delay</td>
+          <td>number | object</td>
+          <td>0</td>
+          <td>
+           <p>Delay showing and hiding the popover (ms) - does not apply to manual trigger type</p>
+           <p>If a number is supplied, delay is applied to both hide/show</p>
+           <p>Object structure is: <code>delay: { "show": 500, "hide": 100 }</code></p>
+          </td>
         </tr>
         <tr>
           <td>html</td>
@@ -1506,53 +1576,55 @@
           <td>placement</td>
           <td>string | function</td>
           <td>'right'</td>
-          <td>how to position the popover - top | bottom | left | right | auto.<br> When "auto" is specified, it will dynamically reorient the popover. For example, if placement is "auto left", the popover will display to the left when possible, otherwise it will display right.</td>
+          <td>
+            <p>How to position the popover - top | bottom | left | right | auto.<br>When "auto" is specified, it will dynamically reorient the popover. For example, if placement is "auto left", the popover will display to the left when possible, otherwise it will display right.</p>
+            <p>When a function is used to determine the placement, it is called with the popover DOM node as its first argument and the triggering element DOM node as its second. The <code>this</code> context is set to the popover instance.</p>
+          </td>
         </tr>
         <tr>
           <td>selector</td>
           <td>string</td>
           <td>false</td>
-          <td>if a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have popovers added. See <a href="https://github.com/twbs/bootstrap/issues/4215">this</a> and <a href="http://jsfiddle.net/fScua/">an informative example</a>.</td>
+          <td>If a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have popovers added. See <a href="https://github.com/twbs/bootstrap/issues/4215">this</a> and <a href="http://jsbin.com/zopod/1/edit">an informative example</a>.</td>
         </tr>
         <tr>
-          <td>trigger</td>
+          <td>template</td>
           <td>string</td>
-          <td>'click'</td>
-          <td>how popover is triggered - click | hover | focus | manual</td>
+          <td><code>'&lt;div class="popover" role="tooltip"&gt;&lt;div class="arrow"&gt;&lt;/div&gt;&lt;h3 class="popover-title"&gt;&lt;/h3&gt;&lt;div class="popover-content"&gt;&lt;/div&gt;&lt;/div&gt;'</code></td>
+          <td>
+            <p>Base HTML to use when creating the popover.</p>
+            <p>The popover's <code>title</code> will be injected into the <code>.popover-title</code>.</p>
+            <p>The popover's <code>content</code> will be injected into the <code>.popover-content</code>.</p>
+            <p><code>.arrow</code> will become the popover's arrow.</p>
+            <p>The outermost wrapper element should have the <code>.popover</code> class.</p>
+          </td>
         </tr>
         <tr>
           <td>title</td>
           <td>string | function</td>
           <td>''</td>
-          <td>default title value if <code>title</code> attribute isn't present</td>
-        </tr>
-        <tr>
-          <td>content</td>
-          <td>string | function</td>
-          <td>''</td>
-          <td>default content value if <code>data-content</code> attribute isn't present</td>
-        </tr>
-        <tr>
-          <td>delay</td>
-          <td>number | object</td>
-          <td>0</td>
           <td>
-           <p>delay showing and hiding the popover (ms) - does not apply to manual trigger type</p>
-           <p>If a number is supplied, delay is applied to both hide/show</p>
-           <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+            <p>Default title value if <code>title</code> attribute isn't present.</p>
+            <p>If a function is given, it will be called with its <code>this</code> reference set to the element that the popover is attached to.</p>
           </td>
         </tr>
         <tr>
-          <td>container</td>
-          <td>string | false</td>
-          <td>false</td>
-          <td>
-           <p>Appends the popover to a specific element. Example: <code>container: 'body'</code>. This option is particularly useful in that it allows you to position the popover in the flow of the document near the triggering element - which will prevent the popover from floating away from the triggering element during a window resize.</p>
-          </td>
+          <td>trigger</td>
+          <td>string</td>
+          <td>'click'</td>
+          <td>How popover is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a space.</td>
         </tr>
+        <tr>
+          <td>viewport</td>
+          <td>string | object</td>
+          <td>{ selector: 'body', padding: 0 }</td>
+          <td>
+            <p>Keeps the popover within the bounds of this element. Example: <code>viewport: '#viewport'</code> or <code>{ "selector": "#viewport", "padding": 0 }</code></p>
+          </td>
+       </tr>
       </tbody>
     </table>
-  </div><!-- /.table-responsive -->
+  </div>
   <div class="callout callout-info">
     <h4>Data attributes for individual popovers</h4>
     <p>Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.</p>
@@ -1698,7 +1770,7 @@ window.onload = function() {
   <h1 id="scrollspy" class="page-header">ScrollSpy <small>scrollspy.js</small></h1>
 
   <h2 id="scrollspy-examples">Example in navbar</h2>
-  <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be pl-codeed as well.</p>
+  <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.</p>
   <div class="pl-example">
     <nav id="navbar-example2" class="navbar navbar-default navbar-static" role="navigation">
       <div class="container-fluid">
@@ -1747,6 +1819,22 @@ window.onload = function() {
 
   <h2 id="scrollspy-usage">Usage</h2>
 
+  <div class="callout callout-warning" id="callout-scrollspy-needs-nav">
+    <h4>Requires Bootstrap nav</h4>
+    <p>Scrollspy currently requires the use of a <a href="../components.html#nav">Bootstrap nav component</a> for proper highlighting of active links.</p>
+  </div>
+  <div class="callout callout-danger" id="callout-scrollspy-target-ids">
+    <h4>Resolvable ID targets required</h4>
+    <p>Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something in the DOM like <code>&lt;div id="home"&gt;&lt;/div&gt;</code>.</p>
+  </div>
+  <div class="callout callout-info" id="callout-scrollspy-invisible-targets">
+    <h4>Non-<code>:visible</code> target elements ignored</h4>
+    <p>Target elements that are not <a href="http://api.jquery.com/visible-selector/"><code>:visible</code> according to jQuery</a> will be ignored and their corresponding nav items will never be highlighted.</p>
+  </div>
+
+  <h3>Requires relative positioning</h3>
+  <p>No matter the implementation method, scrollspy requires the use of <code>position: relative;</code> on the element you're spying on. In most cases this is the <code>&lt;body&gt;</code>.</p>
+
   <h3>Via data attributes</h3>
   <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Bootstrap <code>.nav</code> component.</p>
 <div class="pl-code"><pre><code class="html"><span class="nt">&lt;body</span> <span class="na">data-spy=</span><span class="s">&quot;scroll&quot;</span> <span class="na">data-target=</span><span class="s">&quot;.navbar-example&quot;</span><span class="nt">&gt;</span>
@@ -1761,14 +1849,11 @@ window.onload = function() {
 </code></pre></div>
 
   <h3>Via JavaScript</h3>
-  <p>Call the scrollspy via JavaScript:</p>
+  <p>After adding <code>position: relative;</code> in your CSS, call the scrollspy via JavaScript:</p>
 <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">scrollspy</span><span class="p">({</span> <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;.navbar-example&#39;</span> <span class="p">})</span>
 </code></pre></div>
 
-  <div class="callout callout-danger">
-    <h4>Resolvable ID targets required</h4>
-    <p>Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something in the DOM like <code>&lt;div id="home"&gt;&lt;/div&gt;</code>.</p>
-  </div>
+  
 
   <h3>Methods</h3>
   <h4>.scrollspy('refresh')</h4>
@@ -1888,7 +1973,7 @@ window.onload = function() {
 
   <div class="callout callout-info">
     <h4>Extends tabbed navigation</h4>
-    <p>This plugin extends the <a href="../components/#nav-tabs">tabbed navigation component</a> to add tabbable areas.</p>
+    <p>This plugin extends the <a href="../components.html#nav-tabs">tabbed navigation component</a> to add tabbable areas.</p>
   </div>
 
 
@@ -1910,63 +1995,72 @@ window.onload = function() {
 </code></pre></div>
 
   <h3>Markup</h3>
-  <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Bootstrap <a href="../components/#nav-tabs">tab styling</a>, while adding the <code>nav</code> and <code>nav-pills</code> classes will apply <a href="../components/#nav-pills">pill styling</a>.</p>
-<div class="pl-code"><pre><code class="html"><span class="c">&lt;!-- Nav tabs --&gt;</span>
-<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav nav-tabs&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#home&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#profile&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#messages&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#settings&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
+  <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Bootstrap <a href="../components.html#nav-tabs">tab styling</a>, while adding the <code>nav</code> and <code>nav-pills</code> classes will apply <a href="../components.html#nav-pills">pill styling</a>.</p>
+<div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span>
 
-<span class="c">&lt;!-- Tab panes --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-content&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane active&quot;</span> <span class="na">id=</span><span class="s">&quot;home&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane&quot;</span> <span class="na">id=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane&quot;</span> <span class="na">id=</span><span class="s">&quot;messages&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane&quot;</span> <span class="na">id=</span><span class="s">&quot;settings&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+  <span class="c">&lt;!-- Nav tabs --&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span> <span class="na">role=</span><span class="s">"tablist"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#home"</span> <span class="na">aria-controls=</span><span class="s">"home"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#profile"</span> <span class="na">aria-controls=</span><span class="s">"profile"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#messages"</span> <span class="na">aria-controls=</span><span class="s">"messages"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#settings"</span> <span class="na">aria-controls=</span><span class="s">"settings"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+
+  <span class="c">&lt;!-- Tab panes --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tab-content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane active"</span> <span class="na">id=</span><span class="s">"home"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"profile"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"messages"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"settings"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h3>Fade effect</h3>
   <p>To make tabs fade in, add <code>.fade</code> to each <code>.tab-pane</code>. The first tab pane must also have <code>.in</code> to properly fade in initial content.</p>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-content&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane fade in active&quot;</span> <span class="na">id=</span><span class="s">&quot;home&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane fade&quot;</span> <span class="na">id=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane fade&quot;</span> <span class="na">id=</span><span class="s">&quot;messages&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane fade&quot;</span> <span class="na">id=</span><span class="s">&quot;settings&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tab-content"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane fade in active"</span> <span class="na">id=</span><span class="s">"home"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane fade"</span> <span class="na">id=</span><span class="s">"profile"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane fade"</span> <span class="na">id=</span><span class="s">"messages"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane fade"</span> <span class="na">id=</span><span class="s">"settings"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h3>Methods</h3>
   <h4>$().tab</h4>
   <p>
     Activates a tab element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node in the DOM.
   </p>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav nav-tabs&quot;</span> <span class="na">id=</span><span class="s">&quot;myTab&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#home&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#profile&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#messages&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#settings&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span> <span class="na">role=</span><span class="s">"tablist"</span> <span class="na">id=</span><span class="s">"myTab"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#home"</span> <span class="na">aria-controls=</span><span class="s">"home"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#profile"</span> <span class="na">aria-controls=</span><span class="s">"profile"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#messages"</span> <span class="na">aria-controls=</span><span class="s">"messages"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#settings"</span> <span class="na">aria-controls=</span><span class="s">"settings"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Settings<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-content&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane active&quot;</span> <span class="na">id=</span><span class="s">&quot;home&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane&quot;</span> <span class="na">id=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane&quot;</span> <span class="na">id=</span><span class="s">&quot;messages&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab-pane&quot;</span> <span class="na">id=</span><span class="s">&quot;settings&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tab-content"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane active"</span> <span class="na">id=</span><span class="s">"home"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"profile"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"messages"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"tabpanel"</span> <span class="na">class=</span><span class="s">"tab-pane"</span> <span class="na">id=</span><span class="s">"settings"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
   <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myTab a:last&#39;</span><span class="p">).</span><span class="nx">tab</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#myTab a:last'</span><span class="p">).</span><span class="nx">tab</span><span class="p">(</span><span class="s1">'show'</span><span class="p">)</span>
   <span class="p">})</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
   <h3>Events</h3>
+  <p>When showing a new tab, the events fire in the following order:</p>
+  <ol>
+    <li><code>hide.bs.tab</code> (on the current active tab)</li>
+    <li><code>show.bs.tab</code> (on the to-be-shown tab)</li>
+    <li><code>hidden.bs.tab</code> (on the previous active tab, the same one as for the <code>hide.bs.tab</code> event)</li>
+    <li><code>shown.bs.tab</code> (on the newly-active just-shown tab, the same one as for the <code>show.bs.tab</code> event)</li>
+  </ol>
+  <p>If no tab was already active, then the <code>hide.bs.tab</code> and <code>hidden.bs.tab</code> events will not be fired.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
          <th style="width: 150px;">Event Type</th>
@@ -1982,57 +2076,69 @@ window.onload = function() {
          <td>shown.bs.tab</td>
          <td>This event fires on tab show after a tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
        </tr>
+       <tr>
+         <td>hide.bs.tab</td>
+         <td>This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use <code>event.target</code> and <code>event.relatedTarget</code> to target the current active tab and the new soon-to-be-active tab, respectively.</td>
+       </tr>
+       <tr>
+         <td>hidden.bs.tab</td>
+         <td>This event fires after a new tab is shown (and thus the previous active tab is hidden). Use <code>event.target</code> and <code>event.relatedTarget</code> to target the previous active tab and the new active tab, respectively.</td>
+       </tr>
       </tbody>
     </table>
-  </div><!-- /.table-responsive -->
-<div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;a[data-toggle=&quot;tab&quot;]&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;shown.bs.tab&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="c1">// activated tab</span>
-  <span class="nx">e</span><span class="p">.</span><span class="nx">relatedTarget</span> <span class="c1">// previous tab</span>
-<span class="p">})</span>
-</code></pre></div>
+  </div>
+<div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'a[data-toggle="tab"]'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'shown.bs.tab'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="c1">// newly activated tab</span>
+  <span class="nx">e</span><span class="p">.</span><span class="nx">relatedTarget</span> <span class="c1">// previous active tab</span>
+<span class="p">})</span></code></pre></div>
 </div>
-
-<!-- ================================== Tooltip ================================== -->
-
 
 <div class="pl-docs-section">
   <h1 id="tooltips" class="page-header">Tooltips <small>tooltip.js</small></h1>
+  <p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
+  <p>Tooltips with zero-length titles are never displayed.</p>
 
   <h2 id="tooltips-examples">Examples</h2>
-  <p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
   <p>Hover over the links below to see tooltips:</p>
-  <div class="pl-example tooltip-demo">
-    <p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
-    </p>
+  <div class="bs-example tooltip-demo">
+    <p>Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.</p>
   </div><!-- /example -->
+
 
   <h3>Four directions</h3>
   <div class="pl-example tooltip-demo">
-    <div class="pl-example-tooltips">
+    <div class="bs-example-tooltips">
       <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</button>
       <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
       <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
     </div>
   </div><!-- /example -->
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">data-placement=</span><span class="s">&quot;left&quot;</span> <span class="na">title=</span><span class="s">&quot;Tooltip on left&quot;</span><span class="nt">&gt;</span>Tooltip on left<span class="nt">&lt;/button&gt;</span>
+<div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"left"</span> <span class="na">title=</span><span class="s">"Tooltip on left"</span><span class="nt">&gt;</span>Tooltip on left<span class="nt">&lt;/button&gt;</span>
 
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">data-placement=</span><span class="s">&quot;top&quot;</span> <span class="na">title=</span><span class="s">&quot;Tooltip on top&quot;</span><span class="nt">&gt;</span>Tooltip on top<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"top"</span> <span class="na">title=</span><span class="s">"Tooltip on top"</span><span class="nt">&gt;</span>Tooltip on top<span class="nt">&lt;/button&gt;</span>
 
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">data-placement=</span><span class="s">&quot;bottom&quot;</span> <span class="na">title=</span><span class="s">&quot;Tooltip on bottom&quot;</span><span class="nt">&gt;</span>Tooltip on bottom<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"bottom"</span> <span class="na">title=</span><span class="s">"Tooltip on bottom"</span><span class="nt">&gt;</span>Tooltip on bottom<span class="nt">&lt;/button&gt;</span>
 
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">data-placement=</span><span class="s">&quot;right&quot;</span> <span class="na">title=</span><span class="s">&quot;Tooltip on right&quot;</span><span class="nt">&gt;</span>Tooltip on right<span class="nt">&lt;/button&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"right"</span> <span class="na">title=</span><span class="s">"Tooltip on right"</span><span class="nt">&gt;</span>Tooltip on right<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
-  <div class="callout callout-danger">
+  <div class="callout callout-danger" id="callout-tooltip-opt-in">
     <h4>Opt-in functionality</h4>
     <p>For performance reasons, the Tooltip and Popover data-apis are opt-in, meaning <strong>you must initialize them yourself</strong>.</p>
+    <p>One way to initialize all tooltips on a page would be to select them by their <code>data-toggle</code> attribute:</p>
+<div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-toggle="tooltip"]'</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">()</span>
+<span class="p">})</span></code></pre></div>
   </div>
-  <div class="callout callout-warning">
+  <div class="callout callout-warning" id="callout-tooltip-groups">
     <h4>Tooltips in button groups and input groups require special setting</h4>
     <p>When using tooltips on elements within a <code>.btn-group</code> or an <code>.input-group</code>, you'll have to specify the option <code>container: 'body'</code> (documented below) to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip is triggered).</p>
   </div>
-  <div class="callout callout-info">
+  <div class="callout callout-warning" id="callout-tooltip-hidden">
+    <h4>Don't try to show tooltips on hidden elements</h4>
+    <p>Invoking <code>$(...).tooltip('show')</code> when the target element is <code>display: none;</code> will cause the tooltip to be incorrectly positioned.</p>
+  </div>
+  <div class="callout callout-info" id="callout-tooltip-disabled">
     <h4>Tooltips on disabled elements require wrapper elements</h4>
     <p>To add a tooltip to a <code>disabled</code> or <code>.disabled</code> element, put the element inside of a <code>&lt;div&gt;</code> and apply the tooltip to that <code>&lt;div&gt;</code> instead.</p>
   </div>
@@ -2040,162 +2146,179 @@ window.onload = function() {
   <h2 id="tooltips-usage">Usage</h2>
   <p>The tooltip plugin generates content and markup on demand, and by default places tooltips after their trigger element.</p>
   <p>Trigger the tooltip via JavaScript:</p>
-<div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#example&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
-</code></pre></div>
+<div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#example'</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span></code></pre></div>
 
   <h3>Markup</h3>
   <p>The required markup for a tooltip is only a <code>data</code> attribute and <code>title</code> on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to <code>top</code> by the plugin).</p>
-  <div class="callout callout-warning">
+  <div class="callout callout-warning" id="callout-tooltip-multiline">
     <h4>Multiple-line links</h4>
     <p>Sometimes you want to add a tooltip to a hyperlink that wraps multiple lines. The default behavior of the tooltip plugin is to center it horizontally and vertically. Add <code>white-space: nowrap;</code> to your anchors to avoid this.</p>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="lineno"> 1</span> <span class="c">&lt;!-- HTML to write --&gt;</span>
-<span class="lineno"> 2</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;tooltip&quot;</span> <span class="na">title=</span><span class="s">&quot;Some tooltip text!&quot;</span><span class="nt">&gt;</span>Hover over me<span class="nt">&lt;/a&gt;</span>
-<span class="lineno"> 3</span> 
-<span class="lineno"> 4</span> <span class="c">&lt;!-- Generated markup by the plugin --&gt;</span>
-<span class="lineno"> 5</span> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tooltip top&quot;</span><span class="nt">&gt;</span>
-<span class="lineno"> 6</span>   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tooltip-inner&quot;</span><span class="nt">&gt;</span>
-<span class="lineno"> 7</span>     Some tooltip text!
-<span class="lineno"> 8</span>   <span class="nt">&lt;/div&gt;</span>
-<span class="lineno"> 9</span>   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tooltip-arrow&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="lineno">10</span> <span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<div class="pl-code"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- HTML to write --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">title=</span><span class="s">"Some tooltip text!"</span><span class="nt">&gt;</span>Hover over me<span class="nt">&lt;/a&gt;</span>
 
-  <h3>Options</h3>
+<span class="c">&lt;!-- Generated markup by the plugin --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tooltip top"</span> <span class="na">role=</span><span class="s">"tooltip"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tooltip-arrow"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tooltip-inner"</span><span class="nt">&gt;</span>
+    Some tooltip text!
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  <h3 id="tooltips-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-animation=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
-       <tr>
-         <th style="width: 100px;">Name</th>
-         <th style="width: 100px;">type</th>
-         <th style="width: 50px;">default</th>
-         <th>description</th>
-       </tr>
+        <tr>
+          <th style="width: 100px;">Name</th>
+          <th style="width: 100px;">Type</th>
+          <th style="width: 50px;">Default</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody>
-       <tr>
-         <td>animation</td>
-         <td>boolean</td>
-         <td>true</td>
-         <td>apply a CSS fade transition to the tooltip</td>
-       </tr>
-       <tr>
-         <td>html</td>
-         <td>boolean</td>
-         <td>false</td>
-         <td>Insert HTML into the tooltip. If false, jQuery's <code>text</code> method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.</td>
-       </tr>
-       <tr>
-         <td>placement</td>
-         <td>string | function</td>
-         <td>'top'</td>
-         <td>how to position the tooltip - top | bottom | left | right | auto. <br> When "auto" is specified, it will dynamically reorient the tooltip. For example, if placement is "auto left", the tooltip will display to the left when possible, otherwise it will display right.</td>
-       </tr>
-       <tr>
-         <td>selector</td>
-         <td>string</td>
-         <td>false</td>
-         <td>If a selector is provided, tooltip objects will be delegated to the specified targets.</td>
-       </tr>
-       <tr>
-         <td>title</td>
-         <td>string | function</td>
-         <td>''</td>
-         <td>default title value if <code>title</code> attribute isn't present</td>
-       </tr>
-       <tr>
-         <td>trigger</td>
-         <td>string</td>
-         <td>'hover focus'</td>
-         <td>how tooltip is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a space.</td>
-       </tr>
-       <tr>
-         <td>delay</td>
-         <td>number | object</td>
-         <td>0</td>
-         <td>
-          <p>delay showing and hiding the tooltip (ms) - does not apply to manual trigger type</p>
-          <p>If a number is supplied, delay is applied to both hide/show</p>
-          <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
-         </td>
-       </tr>
-       <tr>
-         <td>container</td>
-         <td>string | false</td>
-         <td>false</td>
-         <td>
-          <p>Appends the tooltip to a specific element. Example: <code>container: 'body'</code></p>
-         </td>
-       </tr>
+        <tr>
+          <td>animation</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td>Apply a CSS fade transition to the tooltip</td>
+        </tr>
+        <tr>
+          <td>container</td>
+          <td>string | false</td>
+          <td>false</td>
+          <td>
+            <p>Appends the tooltip to a specific element. Example: <code>container: 'body'</code>. This option is particularly useful in that it allows you to position the tooltip in the flow of the document  near the triggering element -&nbsp;which will prevent the tooltip from floating away from the triggering element during a window resize.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>delay</td>
+          <td>number | object</td>
+          <td>0</td>
+          <td>
+            <p>Delay showing and hiding the tooltip (ms) - does not apply to manual trigger type</p>
+            <p>If a number is supplied, delay is applied to both hide/show</p>
+            <p>Object structure is: <code>delay: { "show": 500, "hide": 100 }</code></p>
+          </td>
+        </tr>
+        <tr>
+          <td>html</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Insert HTML into the tooltip. If false, jQuery's <code>text</code> method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.</td>
+        </tr>
+        <tr>
+          <td>placement</td>
+          <td>string | function</td>
+          <td>'top'</td>
+          <td>
+            <p>How to position the tooltip - top | bottom | left | right | auto.<br>When "auto" is specified, it will dynamically reorient the tooltip. For example, if placement is "auto left", the tooltip will display to the left when possible, otherwise it will display right.</p>
+            <p>When a function is used to determine the placement, it is called with the tooltip DOM node as its first argument and the triggering element DOM node as its second. The <code>this</code> context is set to the tooltip instance.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>selector</td>
+          <td>string</td>
+          <td>false</td>
+          <td>If a selector is provided, tooltip objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have tooltips added. See <a href="https://github.com/twbs/bootstrap/issues/4215">this</a> and <a href="http://jsbin.com/zopod/1/edit">an informative example</a>.</td>
+        </tr>
+        <tr>
+          <td>template</td>
+          <td>string</td>
+          <td><code>'&lt;div class="tooltip" role="tooltip"&gt;&lt;div class="tooltip-arrow"&gt;&lt;/div&gt;&lt;div class="tooltip-inner"&gt;&lt;/div&gt;&lt;/div&gt;'</code></td>
+          <td>
+            <p>Base HTML to use when creating the tooltip.</p>
+            <p>The tooltip's <code>title</code> will be injected into the <code>.tooltip-inner</code>.</p>
+            <p><code>.tooltip-arrow</code> will become the tooltip's arrow.</p>
+            <p>The outermost wrapper element should have the <code>.tooltip</code> class.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>string | function</td>
+          <td>''</td>
+          <td>
+            <p>Default title value if <code>title</code> attribute isn't present.</p>
+            <p>If a function is given, it will be called with its <code>this</code> reference set to the element that the tooltip is attached to.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>trigger</td>
+          <td>string</td>
+          <td>'hover focus'</td>
+          <td>How tooltip is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a space.</td>
+        </tr>
+        <tr>
+          <td>viewport</td>
+          <td>string | object</td>
+          <td>{ selector: 'body', padding: 0 }</td>
+          <td>
+            <p>Keeps the tooltip within the bounds of this element. Example: <code>viewport: '#viewport'</code> or <code>{ "selector": "#viewport", "padding": 0 }</code></p>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-  <div class="callout callout-info">
+  <div class="callout callout-info" id="callout-tooltip-data">
     <h4>Data attributes for individual tooltips</h4>
     <p>Options for individual tooltips can alternatively be specified through the use of data attributes, as explained above.</p>
   </div>
 
-  <h3>Methods</h3>
+  <h3 id="tooltips-methods">Methods</h3>
 
   <h4>$().tooltip(options)</h4>
   <p>Attaches a tooltip handler to an element collection.</p>
 
   <h4>.tooltip('show')</h4>
-  <p>Reveals an element's tooltip.</p>
-  <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>
-</code></pre></div>
+  <p>Reveals an element's tooltip. <strong>Returns to the caller before the tooltip has actually been shown</strong> (i.e. before the <code>shown.bs.tooltip</code> event occurs). This is considered a "manual" triggering of the tooltip. Tooltips with zero-length titles are never displayed.</p>
+  <div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#element'</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">'show'</span><span class="p">)</span></code></pre></div>
 
   <h4>.tooltip('hide')</h4>
-  <p>Hides an element's tooltip.</p>
-  <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;hide&#39;</span><span class="p">)</span>
-</code></pre></div>
+  <p>Hides an element's tooltip. <strong>Returns to the caller before the tooltip has actually been hidden</strong> (i.e. before the <code>hidden.bs.tooltip</code> event occurs). This is considered a "manual" triggering of the tooltip.</p>
+  <div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#element'</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">'hide'</span><span class="p">)</span></code></pre></div>
 
   <h4>.tooltip('toggle')</h4>
-  <p>Toggles an element's tooltip.</p>
-  <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;toggle&#39;</span><span class="p">)</span>
-</code></pre></div>
+  <p>Toggles an element's tooltip. <strong>Returns to the caller before the tooltip has actually been shown or hidden</strong> (i.e. before the <code>shown.bs.tooltip</code> or <code>hidden.bs.tooltip</code> event occurs). This is considered a "manual" triggering of the tooltip.</p>
+  <div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#element'</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">'toggle'</span><span class="p">)</span></code></pre></div>
 
   <h4>.tooltip('destroy')</h4>
   <p>Hides and destroys an element's tooltip.</p>
-  <div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#element&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">&#39;destroy&#39;</span><span class="p">)</span>
-</code></pre></div>
+  <div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#element'</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">(</span><span class="s1">'destroy'</span><span class="p">)</span></code></pre></div>
 
-  <h3>Events</h3>
+  <h3 id="tooltips-events">Events</h3>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
-       <tr>
-         <th style="width: 150px;">Event Type</th>
-         <th>Description</th>
-       </tr>
+        <tr>
+          <th style="width: 150px;">Event Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody>
-       <tr>
-         <td>show.bs.tooltip</td>
-         <td>This event fires immediately when the <code>show</code> instance method is called.</td>
-       </tr>
-       <tr>
-         <td>shown.bs.tooltip</td>
-         <td>This event is fired when the tooltip has been made visible to the user (will wait for CSS transitions to complete).</td>
-       </tr>
-       <tr>
-         <td>hide.bs.tooltip</td>
-         <td>This event is fired immediately when the <code>hide</code> instance method has been called.</td>
-       </tr>
-       <tr>
-         <td>hidden.bs.tooltip</td>
-         <td>This event is fired when the tooltip has finished being hidden from the user (will wait for CSS transitions to complete).</td>
-       </tr>
+        <tr>
+          <td>show.bs.tooltip</td>
+          <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+        </tr>
+        <tr>
+          <td>shown.bs.tooltip</td>
+          <td>This event is fired when the tooltip has been made visible to the user (will wait for CSS transitions to complete).</td>
+        </tr>
+        <tr>
+          <td>hide.bs.tooltip</td>
+          <td>This event is fired immediately when the <code>hide</code> instance method has been called.</td>
+        </tr>
+        <tr>
+          <td>hidden.bs.tooltip</td>
+          <td>This event is fired when the tooltip has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+        </tr>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-<div class="pl-code"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myTooltip&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.tooltip&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="pl-code"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#myTooltip'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'hidden.bs.tooltip'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="c1">// do something…</span>
-<span class="p">})</span>
-</code></pre></div>
+<span class="p">})</span></code></pre></div>
 </div>
-
 <!-- ================================== Tour ================================== -->
 
 <!-- Tour (Boomstrap Custom) -->
@@ -2467,14 +2590,15 @@ doctour.init();</code></pre>
 			
 
 			///////////// view markup buttons
-
-			$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
-			$('.pl-code pre').hide();
-			$('.btn-showmarkup').click(function(){
-				var prediv = $('pre');
-				$(this).next(prediv).show();
-				$(this).hide();
-			});
+			if($(window).width() < 768) {
+				$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
+				$('.pl-code pre').hide();
+				$('.btn-showmarkup').click(function(){
+					var prediv = $('pre');
+					$(this).next(prediv).show();
+					$(this).hide();
+				});
+			}
 
     });
 
