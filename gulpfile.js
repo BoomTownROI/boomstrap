@@ -65,7 +65,7 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
     'bower_components/baron/baron.min.js',
     'bower_components/momentjs/min/moment.min.js',
     'js/global.js',
-    'js/boomstrap-navlinks.js', // Rewrite as plugin? (CA)
+    'js/boomstrap-navlinks.js',
     'js/vendor-config.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
