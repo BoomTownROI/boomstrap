@@ -9308,6 +9308,16 @@ button.close-inverted {
   padding-left: 3px;
   padding-right: 3px;
 }
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  line-height: 1;
+  position: relative;
+  top: 1px;
+  vertical-align: top;
+  width: 1em;
+}
 .input-group-addon .fauxbox + label:before {
   top: 1px;
 }

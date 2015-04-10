@@ -22,6 +22,8 @@ var es          = require('event-stream'),
   plumber       = require('gulp-plumber'),
   cheerio       = require('gulp-cheerio'),
   insert        = require('gulp-insert'),
+  svgSprite     = require('gulp-svg-sprite'),
+  imagemin      = require('gulp-imagemin'),
   packagedata   = require('./package.json');
 
 require('gulp-grunt')(gulp, {
@@ -40,6 +42,10 @@ var Tasks = {
   BoomstrapStylesDist:        'Compile Less Files for Distribution',
   BoomstrapStyles:            'Compile Less Files',
 
+  BoomstrapSvgIconsDev:       'Build SVG Icons for Development Server',
+  BoomstrapSvgIconsDist:      'Build SVG Icons for Distribution',
+  BoomstrapSvgIcons:          'Build SVG Icons',
+
   CreateDocumentationHTML:    'Create Documentation HTML Files',
   JavascriptDocumentation:    'Convert Javascript Documentation Markdown',
 
@@ -47,6 +53,7 @@ var Tasks = {
   ReloadDevelopmentJS:        'Reload Development Server Javascript',
   ReloadDevelopmentHTML:      'Reload Development Server HTML',
   ReloadDevelopmentStyles:    'Reload Development Server Styles',
+  ReloadDevelopmentSvgIcons:  'Reload Development Server SVG Icons',
 
   Boomstrap:                  'Build Tasks'
 };
@@ -217,6 +224,11 @@ gulp.task(Tasks.ReloadDevelopmentStyles, function() {
   .pipe(connect.reload());
 });
 
+gulp.task(Tasks.ReloadDevelopmentSvgIcons, function() {
+  gulp.src('docs/icons/**/*.svg')
+  .pipe(connect.reload());
+});
+
 /*
  * Dynamically reload connect website when html changes
  */
@@ -256,10 +268,39 @@ gulp.task(Tasks.BoomstrapStylesDist, function() {
 
 gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStylesDist]);
 
+gulp.task(Tasks.BoomstrapSvgIconsDev, function () {
+  return gulp.src('icons/**/*.svg')
+    .pipe(imagemin())
+    .pipe(gulp.dest('docs/icons'))
+    .pipe(svgSprite({
+      'svg': {
+        'xmlDeclaration': false,
+        'doctypeDeclaration': false,
+        'dimensionAttributes': false
+      },
+      'mode': {
+        'symbol': {
+          'dest': '',
+          'example': true,
+          'sprite': 'sprite.svg'
+        }
+      }
+    }))
+    .pipe(gulp.dest('docs/icons'));
+});
+
+
+gulp.task(Tasks.BoomstrapSvgIconsDist, function () {
+  return gulp.src('docs/icons/**/*.svg')
+    .pipe(gulp.dest('dist/icons'));
+});
+
+gulp.task(Tasks.BoomstrapSvgIcons, [Tasks.BoomstrapSvgIconsDev, Tasks.BoomstrapSvgIconsDist]);
+
 /*
 * Common build task run by all tasks
 */
-gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation], function() {
+gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation], function() {
   var IMAGES_DIR   = 'docs/images',
   FONTS_DOCS_DIR = 'docs/css/fonts',
   FONTS_DIST_DIR = 'dist/css/fonts';
@@ -301,7 +342,8 @@ gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
   // Watch Less files
   gulp.watch(['less/**/*.less'], [Tasks.BoomstrapStylesDev, Tasks.ReloadDevelopmentStyles]);
 
-
+  // Watch SVG Icon files
+  gulp.watch(['icons/**/*.svg'], [Tasks.BoomstrapSvgIconsDev, Tasks.ReloadDevelopmentSvgIcons]);
 
   // Watch Javascript Files and Templates
   gulp.watch([
