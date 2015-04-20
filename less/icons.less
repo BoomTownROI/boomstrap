@@ -6,8 +6,28 @@
   height: 1em;
   line-height: 1;
   position: relative;
-  //top: 1px;
+  top: -1px;
   vertical-align: middle;
   width: 1em;
+}
+
+// Fine tune positions
+// -------------------------
+
+/*.icon-checkmark,.icon-cross,.icon-heart {
+  top: -1px;
+}*/
+
+// Comm status icon colors
+// -------------------------
+
+.icon-email-bad, .icon-phone-bad, .icon-text-bad {
+  color: @comm-status-bad;
+}
+.icon-email-neutral, .icon-phone-neutral, .icon-text-neutral, .log-call .icon-speaker {
+  color: @comm-status-neutral;
+}
+.icon-email-good, .icon-phone-good, .icon-text-good {
+  color: @comm-status-good;
 }
 

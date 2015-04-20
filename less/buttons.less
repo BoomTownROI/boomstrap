@@ -36,7 +36,7 @@
 // -------------------------
 
 .btn {
-  > i {
+  > .ficon {
     float: left;
     font-size: @font-size-base + 2px;
     margin: 1px @margin-xsmall 0 0;
@@ -47,7 +47,7 @@
 }
 
 .btn-lg {
-  > i {
+  > .ficon {
     font-size: @font-size-large + 2px;
     margin: 1px @margin-small 0 -2px;
   }
@@ -57,7 +57,7 @@
 }
 
 .btn-sm {
-  > i {
+  > .ficon {
     font-size: @font-size-small + 2px;
   }
   > .icon {
@@ -66,7 +66,7 @@
 }
 
 .btn-xs {
-  > i {
+  > .ficon {
     font-size: @font-size-small + 2px;
     margin: 1px 2px 0 0;
   }
@@ -76,7 +76,7 @@
 }
 
 .btn-block {
-  > i {
+  > .ficon {
     display: inline-block;
     float: none;
     margin: 0;
@@ -85,7 +85,7 @@
 
 // Ensure that button height won't change now that icon isn't floated
 .btn-block:not(.btn-icon) {
-  > i {
+  > .ficon {
     line-height: 0.9;
   }
 }
@@ -96,7 +96,7 @@
 .btn-icon {
   padding-left: @padding-base;
   padding-right: @padding-base;
-  i {
+  > .ficon {
     display: block;
     margin: 0;
     padding: 2px;
