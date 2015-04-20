@@ -2939,7 +2939,7 @@ $.fn.extend({
             template:
                 '<div class="popover">\
 <div class="arrow"></div>\
-<div class="popover-close" data-dismiss="popover" aria-hidden="true"><i class="ficon ficon-cross" data-role="end"></i></div>\
+<div class="popover-close" data-dismiss="popover" aria-hidden="true"><svg class="icon icon-cross" data-role="end"><use xlink:href="icons/sprite.svg#cross"/></svg></div>\
 <h3 class="popover-title"></h3>\
 <div class="popover-content"></div>\
 </div>'

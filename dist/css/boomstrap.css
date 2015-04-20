@@ -8370,7 +8370,7 @@ fieldset[disabled] .btn-desaturated.active {
   border-width: 1px;
   color: #696969;
 }
-.btn > i {
+.btn > .ficon {
   float: left;
   font-size: 16px;
   margin: 1px 4px 0 0;
@@ -8378,39 +8378,39 @@ fieldset[disabled] .btn-desaturated.active {
 .btn > .icon {
   font-size: 16px;
 }
-.btn-lg > i {
+.btn-lg > .ficon {
   font-size: 20px;
   margin: 1px 6px 0 -2px;
 }
 .btn-lg > .icon {
   font-size: 20px;
 }
-.btn-sm > i {
+.btn-sm > .ficon {
   font-size: 14px;
 }
 .btn-sm > .icon {
   font-size: 14px;
 }
-.btn-xs > i {
+.btn-xs > .ficon {
   font-size: 14px;
   margin: 1px 2px 0 0;
 }
 .btn-xs > .icon {
   font-size: 14px;
 }
-.btn-block > i {
+.btn-block > .ficon {
   display: inline-block;
   float: none;
   margin: 0;
 }
-.btn-block:not(.btn-icon) > i {
+.btn-block:not(.btn-icon) > .ficon {
   line-height: 0.9;
 }
 .btn-icon {
   padding-left: 8px;
   padding-right: 8px;
 }
-.btn-icon i {
+.btn-icon > .ficon {
   display: block;
   margin: 0;
   padding: 2px;
@@ -9326,8 +9326,28 @@ button.close-inverted {
   height: 1em;
   line-height: 1;
   position: relative;
+  top: -1px;
   vertical-align: middle;
   width: 1em;
+}
+/*.icon-checkmark,.icon-cross,.icon-heart {
+  top: -1px;
+}*/
+.icon-email-bad,
+.icon-phone-bad,
+.icon-text-bad {
+  color: #f05b5a;
+}
+.icon-email-neutral,
+.icon-phone-neutral,
+.icon-text-neutral,
+.log-call .icon-speaker {
+  color: #696969;
+}
+.icon-email-good,
+.icon-phone-good,
+.icon-text-good {
+  color: #6f8c31;
 }
 .input-group-addon .fauxbox + label:before {
   top: 1px;
@@ -10328,7 +10348,7 @@ a.list-group-item.active:focus .ficon {
   display: block;
   width: 100%;
 }
-.set-to-do__date-btns .btn:last-child > i {
+.set-to-do__date-btns .btn:last-child > .ficon {
   display: inline-block;
   float: none;
   margin: 0;
@@ -10357,7 +10377,7 @@ a.list-group-item.active:focus .ficon {
     line-height: 1.5;
     border-radius: 3px;
   }
-  .set-to-do--modal-sm .set-to-do__date-btns .btn > i {
+  .set-to-do--modal-sm .set-to-do__date-btns .btn > .ficon {
     font-size: 14px;
     margin: 1px 2px 0 0;
   }
