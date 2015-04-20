@@ -8375,16 +8375,28 @@ fieldset[disabled] .btn-desaturated.active {
   font-size: 16px;
   margin: 1px 4px 0 0;
 }
+.btn > .icon {
+  font-size: 16px;
+}
 .btn-lg > i {
   font-size: 20px;
   margin: 1px 6px 0 -2px;
 }
+.btn-lg > .icon {
+  font-size: 20px;
+}
 .btn-sm > i {
+  font-size: 14px;
+}
+.btn-sm > .icon {
   font-size: 14px;
 }
 .btn-xs > i {
   font-size: 14px;
   margin: 1px 2px 0 0;
+}
+.btn-xs > .icon {
+  font-size: 14px;
 }
 .btn-block > i {
   display: inline-block;
@@ -8395,8 +8407,8 @@ fieldset[disabled] .btn-desaturated.active {
   line-height: 0.9;
 }
 .btn-icon {
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .btn-icon i {
   display: block;
@@ -8404,8 +8416,8 @@ fieldset[disabled] .btn-desaturated.active {
   padding: 2px;
 }
 .btn-icon.btn-lg {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .btn-icon.btn-xs {
   padding-left: 2px;
@@ -9314,8 +9326,7 @@ button.close-inverted {
   height: 1em;
   line-height: 1;
   position: relative;
-  top: 1px;
-  vertical-align: top;
+  vertical-align: middle;
   width: 1em;
 }
 .input-group-addon .fauxbox + label:before {
@@ -10349,6 +10360,9 @@ a.list-group-item.active:focus .ficon {
   .set-to-do--modal-sm .set-to-do__date-btns .btn > i {
     font-size: 14px;
     margin: 1px 2px 0 0;
+  }
+  .set-to-do--modal-sm .set-to-do__date-btns .btn > .icon {
+    font-size: 14px;
   }
 }
 .set-to-do--modal-sm .set-to-do__time__opts {

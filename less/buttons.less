@@ -41,6 +41,9 @@
     font-size: @font-size-base + 2px;
     margin: 1px @margin-xsmall 0 0;
   }
+  > .icon {
+    font-size: @font-size-base + 2px;
+  }
 }
 
 .btn-lg {
@@ -48,10 +51,16 @@
     font-size: @font-size-large + 2px;
     margin: 1px @margin-small 0 -2px;
   }
+  > .icon {
+    font-size: @font-size-large + 2px;
+  }
 }
 
 .btn-sm {
   > i {
+    font-size: @font-size-small + 2px;
+  }
+  > .icon {
     font-size: @font-size-small + 2px;
   }
 }
@@ -60,6 +69,9 @@
   > i {
     font-size: @font-size-small + 2px;
     margin: 1px 2px 0 0;
+  }
+  > .icon {
+    font-size: @font-size-small + 2px;
   }
 }
 
@@ -82,16 +94,16 @@
 // -------------------------
 
 .btn-icon {
-  padding-left: @padding-small;
-  padding-right: @padding-small;
+  padding-left: @padding-base;
+  padding-right: @padding-base;
   i {
     display: block;
     margin: 0;
     padding: 2px;
   }
   &.btn-lg {
-    padding-left: @padding-medium;
-    padding-right: @padding-medium;
+    padding-left: @padding-large;
+    padding-right: @padding-large;
   }
   &.btn-xs {
     padding-left: 2px;
