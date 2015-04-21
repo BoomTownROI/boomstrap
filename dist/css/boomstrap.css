@@ -10590,7 +10590,7 @@ a.texting__charcount--danger:hover,
   width: 42px;
   z-index: 10;
 }
-.texting__msg__bubble__avatar .ficon {
+.texting__msg__bubble__avatar .icon {
   border-radius: 50%;
   color: #ececec;
   font-size: 40px;
@@ -10612,8 +10612,8 @@ a.texting__charcount--danger:hover,
   color: #cb2027;
   text-decoration: underline;
 }
-.texting__msg__status--error .ficon-warning {
-  top: 0;
+.texting__msg__status--error .icon-warning {
+  top: -2px;
 }
 .texting__msg__time {
   color: #696969;
