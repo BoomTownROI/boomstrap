@@ -8745,12 +8745,11 @@ fieldset[disabled] .btn-desaturated.active {
 .carousel-control {
   cursor: pointer;
 }
-.carousel-control .ficon {
+.carousel-control > .icon {
   background-color: #444444;
   display: inline-block;
-  font-size: 28px;
+  font-size: 36px;
   margin-top: -18px;
-  padding: 4px;
   position: absolute;
   top: 50%;
   z-index: 5;
@@ -8758,13 +8757,13 @@ fieldset[disabled] .btn-desaturated.active {
 .carousel-control.left {
   background: transparent;
 }
-.carousel-control.left .ficon {
+.carousel-control.left > .icon {
   left: 0;
 }
 .carousel-control.right {
   background: transparent;
 }
-.carousel-control.right .ficon {
+.carousel-control.right > .icon {
   right: 0;
 }
 .clickable {
@@ -9330,9 +9329,10 @@ button.close-inverted {
   vertical-align: middle;
   width: 1em;
 }
-/*.icon-checkmark,.icon-cross,.icon-heart {
-  top: -1px;
-}*/
+.icon-schedule,
+.icon-star {
+  top: -2px;
+}
 .icon-email-bad,
 .icon-phone-bad,
 .icon-text-bad {
@@ -10590,14 +10590,14 @@ a.texting__charcount--danger:hover,
   width: 42px;
   z-index: 10;
 }
-.texting__msg__bubble__avatar .icon {
+.texting__msg__bubble__avatar > .icon {
   border-radius: 50%;
   color: #ececec;
   font-size: 40px;
   left: 1px;
   top: 6px;
 }
-.texting__msg__bubble__avatar img {
+.texting__msg__bubble__avatar > img {
   margin-left: -2px;
   width: 46px;
 }

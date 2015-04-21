@@ -12,15 +12,15 @@
   .btn {
     text-align: left;
     width: 100%;
-    .caret {
+    > .caret {
       right: @padding-base-horizontal; // default button padding
       .vert-align();
       position: absolute; // comes after vert-align to overwrite position relative
     }
-    i { margin-right: @margin-small; }
+    > .icon { margin-right: @margin-small; }
   }
   .btn-sm {
-    .caret {
+    > .caret {
       right: @padding-small-horizontal; // small button padding
     }
   }

@@ -9,12 +9,12 @@
   <p><a id="bootstrap-tour-btn" class="btn btn-attention">take the tour</a></p>
   
   <div class="row">
-      <div class="col-md-6"><h4><i id="stop1" class="ficon ficon-location"></i> First Stop</h4></div>
-      <div class="col-md-6"><h4><i id="stop2" class="ficon ficon-location"></i> Second Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop1" class="icon icon-location"><use xlink:href="icons/sprite.svg#location"/></svg> First Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop2" class="icon icon-location"><use xlink:href="icons/sprite.svg#location"/></svg> Second Stop</h4></div>
   </div>
   <div class="row">
-      <div class="col-md-6"><h4><i id="stop3" class="ficon ficon-location"></i> Third Stop</h4></div>
-      <div class="col-md-6"><h4><i id="stop4" class="ficon ficon-location"></i> Fourth Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop3" class="icon icon-location"><use xlink:href="icons/sprite.svg#location"/></svg> Third Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop4" class="icon icon-location"><use xlink:href="icons/sprite.svg#location"/></svg> Fourth Stop</h4></div>
   </div>
 
   <div class="pl-code"><pre class="prettyprint"><code>// Instance the tour
@@ -22,7 +22,7 @@ var doctour = new Tour({
     name: "example",
     template: "&lt;div class='popover tour'&gt;" +
         "&lt;div class='arrow'&gt;&lt;/div&gt;" +
-        "&lt;div class='popover-close'&gt;&lt;i class='ficon ficon-cross' data-role='end'&gt;&lt;/i&gt;&lt;/div&gt;" +
+        "&lt;div class='popover-close'&gt;&lt;svg class='icon icon-cross' data-role='end'&gt;&lt;use xlink:href='icons/sprite.svg#cross'/&gt;&lt;/svg&gt;&lt;/div&gt;" +
         "&lt;h3 class='popover-title'&gt;&lt;/h3&gt;" +
         "&lt;div class='popover-content'&gt;&lt;/div&gt;" +
         "&lt;div class='popover-navigation'&gt;&lt;button class='btn btn-sm btn-default' data-role='prev'&gt;Prev&lt;/button&gt;&lt;button class='btn btn-sm btn-primary js-next' data-role='next'&gt;Next&lt;/button&gt;&lt;/div&gt;"+
@@ -75,7 +75,7 @@ doctour.init();</code></pre>
           name: "example",
           template: "<div class='popover tour'>" +
               "<div class='arrow'></div>" +
-              "<div class='popover-close'><i class='ficon ficon-cross' data-role='end'></i></div>" +
+              "<div class='popover-close'><svg class='icon icon-cross' data-role='end'><use xlink:href='icons/sprite.svg#cross'/></svg></div>" +
               "<h3 class='popover-title'></h3>" +
               "<div class='popover-content'></div>" +
               "<div class='popover-navigation'><button class='btn btn-sm btn-default' data-role='prev'>Prev</button><button class='btn btn-sm btn-primary js-next' data-role='next'>Next</button></div>"+
