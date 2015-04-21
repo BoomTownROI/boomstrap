@@ -12,21 +12,23 @@ a.list-group-item {
   }
   // pseudo check mark
   &.active:after {
-    //color: @brand-success;
-    content: "\e00a";
-    font-family: 'ficon';
-    font-size: 1.15em;
-    font-weight: normal;
+    .svg-bg-add-fill("../icons/checkmark.svg", @list-group-active-color);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.15em 1.15em;
+    content: "";
+    height: 1.15em;
     right: 15px;
+    width: 1.15em;
     .vert-align(absolute);
   }
   // Active class on item itself, not parent
-  &.active,
+  /*&.active,
   &.active:hover,
   &.active:focus {
     // ensure all icons match text
     .ficon {
       color: @list-group-active-color;
     }
-  }
+  }*/
 }
