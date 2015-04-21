@@ -2,34 +2,9 @@
 // Note: Extends Bootstrap forms.less
 
 
-// Forms with optional icons
-// -------------------------
 
-// Too much crap to override. Poorly implemented as it's too coupled to glyphicons.
 
-/*.has-feedback label {
-  & ~ .form-control-feedback {
-     top: (@line-height-computed + 14); // Height of the `label` and its margin
-  }
-  &.sr-only ~ .form-control-feedback {
-     top: 0;
-  }
-}
 
-.form-horizontal {
-  .has-feedback .form-control-feedback {
-    top: (@line-height-computed - 10);
-  }
-}
-
-.form-inline {
-  @media (min-width: @screen-sm-min) {
-    .has-feedback .form-control-feedback {
-      top: (@line-height-computed - 10);
-    }
-  }
-}
-*/
 // Fauxbox and faudio
 // -------------------------
 
@@ -39,38 +14,35 @@
   input {
     display: none;
     &:checked+label:before {
-      content: "\e00a";
-      background: @white;
+      .svg-bg-add-fill("../icons/checkmark.svg", @boomtown-blue);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 16px 16px;
+      //display: inline-block;
     }
   }
   label {
-    display: inline;
     cursor: pointer;
+    display: inline;
     font-weight: normal;
     margin-bottom: 0 !important;
     user-select: none;
     &:before {
       content: "";
       background-color: @white;
-      display: inline-block;
-      width: 16px;
-      height: 16px;
       border: 2px solid @gray;
-      vertical-align: middle;
-      color: @boomtown-blue;
-      padding: 0;
-      text-align: center;
-      font-size: 16px;
-      margin: 1px @margin-small 1px 0px;
-      font-family: 'ficon';
-      font-weight: normal;
-      speak: none;
-      line-height: 13px;
-      text-indent: -2px;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
+      display: inline-block;
+      height: 16px;
       left: 0.5px;
+      line-height: 13px;
+      margin: 1px @margin-small 1px 0px;
+      padding: 0;
+      position: relative;
+      speak: none;
+      text-align: center;
       top: -1px;
+      vertical-align: middle;
+      width: 16px;
     }
   }
 }
@@ -96,11 +68,11 @@
     margin-bottom: 0 !important;
     user-select: none;
     &:before {
+      background-color: @white;
       border: 3px solid @white;
       border-radius: 50%;
       box-shadow: 0 0 0 2px @gray-dark;
       content: "";
-      background-color: @white;
       display: inline-block;
       height: 12px;
       left: 2px;
