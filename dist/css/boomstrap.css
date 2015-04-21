@@ -9241,11 +9241,11 @@ button.close-inverted {
   user-select: none;
 }
 .fauxdio label:before {
+  background-color: #ffffff;
   border: 3px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 0 0 2px #696969;
   content: "";
-  background-color: #ffffff;
   display: inline-block;
   height: 12px;
   left: 2px;
