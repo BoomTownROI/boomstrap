@@ -8,25 +8,24 @@
 
 .carousel-control {
   cursor: pointer;
-  .ficon {
+  > .icon {
     background-color: @gray-darker;
     display: inline-block;
-    font-size: 28px;
+    font-size: 36px;
     margin-top: -18px;
-    padding: 4px;
     position: absolute;
     top: 50%;
     z-index: 5;
   }
   &.left {
     background: transparent; // override bootstrap's grandient
-    .ficon {
+    > .icon {
       left: 0;
     }
   }
   &.right {
     background: transparent; // override bootstrap's grandient
-    .ficon {
+    > .icon {
       right: 0;
     }
   }
