@@ -3,12 +3,10 @@
         type="button"
         class="btn btn-default btn-icon"
         ng-class="{ 'disabled': noPrevious() }"
-        ng-click="selectPage(page - 1)"><i
-            class="ficon ficon-chevron-left"></i></button>
+        ng-click="selectPage(page - 1)"><svg class="icon icon-chevron-left"><use xlink:href="icons/sprite.svg#chevron-left"/></svg></button>
     <button
         type="button"
         class="btn btn-default btn-icon"
         ng-class="{ 'disabled': noNext() }"
-        ng-click="selectPage(page + 1)"><i
-            class="ficon ficon-chevron-right"></i></button>
+        ng-click="selectPage(page + 1)"><svg class="icon icon-chevron-right"><use xlink:href="icons/sprite.svg#chevron-right"/></svg></button>
 </div>
