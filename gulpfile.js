@@ -303,17 +303,17 @@ gulp.task(Tasks.BoomstrapSvgIcons, [Tasks.BoomstrapSvgIconsDev, Tasks.BoomstrapS
 */
 gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation], function() {
   var IMAGES_DIR   = 'docs/images',
-  FONTS_DOCS_DIR = 'docs/css/fonts',
-  FONTS_DIST_DIR = 'dist/css/fonts';
+  ICONS_DOCS_DIR = 'docs/icons',
+  ICONS_DIST_DIR = 'dist/icons';
 
-  // Copy all image/font files if they are newer than destination
+  // Copy all image/icon files if they are newer than destination
   return es.concat(
     gulp.src('images/**/*.*')
     .pipe(gulp.dest(IMAGES_DIR)),
-    gulp.src('fonts/**/*.*')
-    .pipe(gulp.dest(FONTS_DOCS_DIR)),
-    gulp.src('fonts/**/*.*')
-    .pipe(gulp.dest(FONTS_DIST_DIR))
+    gulp.src('icons/**/*.*')
+    .pipe(gulp.dest(ICONS_DOCS_DIR)),
+    gulp.src('icons/**/*.*')
+    .pipe(gulp.dest(ICONS_DIST_DIR))
   );
 });
 
