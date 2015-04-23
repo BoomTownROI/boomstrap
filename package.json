@@ -30,7 +30,7 @@
     "gulp-order": "^1.0.6",
     "gulp-plumber": "^0.6.5",
     "gulp-rename": "^1.2.0",
-    "gulp-svg-sprite": "^1.1.0",
+    "gulp-svg-sprite": "^1.1.2",
     "gulp-uglify": "^0.2.1",
     "gulp-watch": "^0.6.4",
     "highlight.js": "^8.4.0",
