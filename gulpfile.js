@@ -42,8 +42,6 @@ var Tasks = {
   BoomstrapStylesDist:        'Compile Less Files for Distribution',
   BoomstrapStyles:            'Compile Less Files',
 
-  BoomstrapSvgIconsDev:       'Build SVG Icons for Development Server',
-  BoomstrapSvgIconsDist:      'Build SVG Icons for Distribution',
   BoomstrapSvgIcons:          'Build SVG Icons',
 
   CreateDocumentationHTML:    'Create Documentation HTML Files',
@@ -269,10 +267,11 @@ gulp.task(Tasks.BoomstrapStylesDist, function() {
 
 gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStylesDist]);
 
-gulp.task(Tasks.BoomstrapSvgIconsDev, function () {
+gulp.task(Tasks.BoomstrapSvgIcons, function () {
   return gulp.src('icons/**/*.svg')
     .pipe(imagemin())
     .pipe(gulp.dest('docs/icons'))
+    .pipe(gulp.dest('dist/icons'))
     .pipe(svgSprite({
       'svg': {
         'xmlDeclaration': false,
@@ -287,33 +286,20 @@ gulp.task(Tasks.BoomstrapSvgIconsDev, function () {
         }
       }
     }))
-    .pipe(gulp.dest('docs/icons'));
-});
-
-
-gulp.task(Tasks.BoomstrapSvgIconsDist, function () {
-  return gulp.src('docs/icons/**/*.svg')
+    .pipe(gulp.dest('docs/icons'))
     .pipe(gulp.dest('dist/icons'));
 });
 
-gulp.task(Tasks.BoomstrapSvgIcons, [Tasks.BoomstrapSvgIconsDev, Tasks.BoomstrapSvgIconsDist]);
 
 /*
 * Common build task run by all tasks
 */
 gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation], function() {
-  var IMAGES_DIR   = 'docs/images',
-  ICONS_DOCS_DIR = 'docs/icons',
-  ICONS_DIST_DIR = 'dist/icons';
-
+  var IMAGES_DIR   = 'docs/images';
   // Copy all image/icon files if they are newer than destination
   return es.concat(
     gulp.src('images/**/*.*')
-    .pipe(gulp.dest(IMAGES_DIR)),
-    gulp.src('icons/**/*.*')
-    .pipe(gulp.dest(ICONS_DOCS_DIR)),
-    gulp.src('icons/**/*.*')
-    .pipe(gulp.dest(ICONS_DIST_DIR))
+    .pipe(gulp.dest(IMAGES_DIR))
   );
 });
 
@@ -344,7 +330,7 @@ gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
   gulp.watch(['less/**/*.less'], [Tasks.BoomstrapStylesDev, Tasks.ReloadDevelopmentStyles]);
 
   // Watch SVG Icon files
-  gulp.watch(['icons/**/*.svg'], [Tasks.BoomstrapSvgIconsDev, Tasks.ReloadDevelopmentSvgIcons]);
+  gulp.watch(['icons/**/*.svg'], [Tasks.BoomstrapSvgIcons, Tasks.ReloadDevelopmentSvgIcons]);
 
   // Watch Javascript Files and Templates
   gulp.watch([
