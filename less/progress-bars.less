@@ -5,15 +5,16 @@
 // Progress bar
 // -------------------------
 
-
 .progress-bar {
-  border-radius: @border-radius-base;
+  border-radius: @progress-bar-radius;
   box-shadow: @progress-bar-inset-shadow;
   height: @progress-bar-height;
   overflow: hidden;
   position: relative;
+  transform: translateZ(0); // Chrome overflow bug fix - trigger hardware acceleration
 }
 
+// Color modifiers - solid, contextual colors
 .progress-bar--attention { background-color: @brand-attention; }
 .progress-bar--danger { background-color: @brand-danger; }
 .progress-bar--info { background-color: @brand-info; }
@@ -21,19 +22,28 @@
 .progress-bar--success { background-color: @brand-success; }
 .progress-bar--warning { background-color: @brand-warning; }
 
+// Color modifiers - gradient colors
 .progress-bar--success-to-danger {
-  // success to warning to danger
   @list: @brand-success, @brand-warning 75%, @brand-danger;
   background-image: svg-gradient(to right, @list);
 }
 
+// Size modifers
+.progress-bar--lg { height: @progress-bar-height-lg; }
+.progress-bar--sm { height: @progress-bar-height-sm; }
+.progress-bar--xs { height: @progress-bar-height-xs; }
+
+
+// Progress bar's bar 
+// -------------------------
+
 .progress-bar__bar {
   background-color: @gray-lighter;
+  bottom: 0;
   box-shadow: @progress-bar-inset-shadow;
-  height: @progress-bar-height;
   left: 0;
   position: absolute;
+  right: 0;
   top: 0;
-  width: 100%;
   transition: all 500ms ease-out;
 }

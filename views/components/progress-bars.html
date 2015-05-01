@@ -11,8 +11,8 @@
     <p>Progress bars use CSS3 transitions and animations to achieve some of their effects. These features are not supported in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.</p>
   </div>
 
-  <h3 id="progress-basic">Solid color</h3>
-  <p>Each progress bar requires a contextual color modifier class. Click on progress bars to view transitions.</p>
+  <h3>Solid color</h3>
+  <p>Each progress bar requires a contextual color modifier class. <strong>Click on progress bars to view transitions.</strong></p>
   <div class="pl-example pl-example-progress-bar">
 
     <div class="progress-bar progress-bar--success">
@@ -55,16 +55,87 @@
 &lt;/div&gt;</code></pre>
   </div>
 
-  <h3 id="progress-basic">Gradient color</h3>
-  <p>Used to communicate status along with progress. Click on progress bars to view transitions.</p>
+  <h3>Gradient color</h3>
+  <p>Used to communicate status along with progress. <strong>Click on progress bars to view transitions.</strong></p>
   <div class="pl-example pl-example-progress-bar">
-    <p>Success to Danger</p>
+    <p>Brand success to brand danger</p>
     <div class="progress-bar progress-bar--success-to-danger">
       <div class="progress-bar__bar"></div>
     </div>
   </div>
   <div class="pl-code">
     <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success-to-danger"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <h3>Sizes</h3>
+  <p>Fancy larger or smaller progress bars? Add <code>.progress-bar--lg</code>,<code>.progress-bar--sm</code>, or <code>.progress-bar--xs</code> modifier classes.</p>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Extra small</p>
+    <div class="progress-bar progress-bar--success progress-bar--xs">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Small</p>
+    <div class="progress-bar progress-bar--success progress-bar--sm">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Default</p>
+    <div class="progress-bar progress-bar--success">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Large</p>
+    <div class="progress-bar progress-bar--success progress-bar--lg">
+      <div class="progress-bar__bar"></div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success progress-bar--xs"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--sm"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--lg"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <h3>Labels</h3>
+  <p></p>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Extra small</p>
+    <div class="progress-bar progress-bar--success progress-bar--xs">
+      20%
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Small</p>
+    <div class="progress-bar progress-bar--success progress-bar--sm">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Default</p>
+    <div class="progress-bar progress-bar--success">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Large</p>
+    <div class="progress-bar progress-bar--success progress-bar--lg">
+      <div class="progress-bar__bar"></div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success progress-bar--xs"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--sm"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--lg"&gt;
   &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
   </div>
