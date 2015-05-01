@@ -188,6 +188,11 @@
 				"nav_header": "Panels"
 			},
 			{
+				"source": "views/components/progress-bars.html",
+				"css_id": "#progressbars",
+				"nav_header": "Progress Bars"
+			},
+			{
 				"source": "views/components/sashes.html",
 				"css_id": "#sashes",
 				"nav_header": "Sashes"
