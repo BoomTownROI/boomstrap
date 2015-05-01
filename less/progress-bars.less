@@ -29,12 +29,24 @@
 }
 
 // Size modifers
-.progress-bar--lg { height: @progress-bar-height-lg; }
-.progress-bar--sm { height: @progress-bar-height-sm; }
-.progress-bar--xs { height: @progress-bar-height-xs; }
+.progress-bar--lg {
+  height: @progress-bar-height-lg;
+  .progress-bar__bar__label {
+    font-size: 19px;
+  }
+}
+.progress-bar--sm {
+  height: @progress-bar-height-sm;
+  .progress-bar__bar__label {
+    font-size: 11px;
+  }
+}
+.progress-bar--xs {
+  height: @progress-bar-height-xs;
+}
 
 
-// Progress bar's bar 
+// Progress bar - bar 
 // -------------------------
 
 .progress-bar__bar {
@@ -45,5 +57,22 @@
   position: absolute;
   right: 0;
   top: 0;
-  transition: all 500ms ease-out;
+  transition: transform 500ms ease-out;
 }
+
+// Progress bar - bar's label
+// -------------------------
+
+/*.progress-bar__label {
+  color: @white;
+  padding-left: 4px;
+  ~ .progress-bar__bar { left: 34px; }
+}*/
+
+.progress-bar__bar__label {
+  color: @white;
+  padding: 0 @padding-xsmall;
+  position: absolute;
+  right: 100%;
+}
+
