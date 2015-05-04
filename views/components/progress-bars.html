@@ -105,7 +105,11 @@
   </div>
 
   <h3>Labels</h3>
-  <p></p>
+  <p>Labels on progress bars.</p>
+  <div class="callout callout-info">
+    <h4>Javascript</h4>
+    <p>For <strong>demonstration purposes</strong>, Javascript was used to prevent labels from being hidden at low percentages. The script is not bundled in Boomstrap's output.</p>
+  </div>
   <div class="pl-example pl-example-progress-bar">
     <p>Small</p>
     <div class="progress-bar progress-bar--success progress-bar--sm">
@@ -127,7 +131,21 @@
     </div>
   </div>
   <div class="pl-code">
-    <pre class="prettyprint"><code></code></pre>
-  </div>
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success progress-bar--sm"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--info"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--attention progress-bar--lg"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
 
 </div>
