@@ -72,10 +72,10 @@
 <span class="hljs-class">.my-img</span> <span class="hljs-rules">{
   <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
   <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">5.0s</span> linear</span></span>;
-<span class="hljs-rule">}</span></span>
+}</span>
 <span class="hljs-class">.loaded</span> <span class="hljs-rules">{
   <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
-<span class="hljs-rule">}</span></span>
+}</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/fpo-he-man.jpg"</span> <span class="hljs-attribute">bt-add-class-on-load</span>=<span class="hljs-value">"loaded"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"my-img"</span>/&gt;</span>
 </code></pre>
@@ -163,9 +163,9 @@ formatting options that Angular&#39;s <code>date</code> filter accepts.</p>
 format. You will need to do any phone number validation.</p>
 </blockquote>
 <h4 id="exmaple-usage">Exmaple Usage</h4>
-<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  $scope.string1 = <span class="hljs-string">'1234567890'</span>;
-  $scope.string2 = <span class="hljs-string">'123-456-7890'</span>;
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="bash">
+  <span class="hljs-variable">$scope</span>.string1 = <span class="hljs-string">'1234567890'</span>;
+  <span class="hljs-variable">$scope</span>.string2 = <span class="hljs-string">'123-456-7890'</span>;
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
@@ -179,8 +179,8 @@ format. You will need to do any phone number validation.</p>
 <p>The <code>capitalize</code> filter will simply capitalize the first letter of a
 string.</p>
 <h4 id="example-usage">Example Usage</h4>
-<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
-  $scope.string = <span class="hljs-string">'word'</span>;
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="mel">
+  <span class="hljs-variable">$scope</span>.<span class="hljs-keyword">string</span> = <span class="hljs-string">'word'</span>;
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">string</span>:<span class="hljs-variable">capitalize</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> // Word</span>
@@ -295,9 +295,45 @@ string.</p>
 			   }
 			});
 
+			// progress bars - send to random position
+
+			$('.progress-bar').each(function(){
+				var position = Math.floor(Math.random()*100);
+				if(position<5) { position = 5; }
+			  // add % to label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
+
+			// progress bars - click progress bar to transition
+
+			$(".progress-bar").on("click", function(e) {
+			  var offset = $(this).offset(),
+			      position = Math.floor((e.pageX - offset.left)/$(this).width()*100) + 1;
+			  // check for label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	// add % to label
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  	/*// if position is less than five, need to prevent label from being hidden
+			  	if(position < 5) {
+			  		// get label's width and divide by width of progress-bar
+				  	var labelWidth = $(this).find('.progress-bar__bar__label').width()/$(this).width()*100;
+				  	// add label's width to position
+				  	position = position + Math.round(labelWidth);
+				  }*/
+				  if (position < 4 ) { position = 4; }
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
 			
 
-			///////////// view markup buttons
+			// view markup buttons
 			if($(window).width() < 768) {
 				$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
 				$('.pl-code pre').hide();

@@ -220,9 +220,45 @@
 			   }
 			});
 
+			// progress bars - send to random position
+
+			$('.progress-bar').each(function(){
+				var position = Math.floor(Math.random()*100);
+				if(position<5) { position = 5; }
+			  // add % to label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
+
+			// progress bars - click progress bar to transition
+
+			$(".progress-bar").on("click", function(e) {
+			  var offset = $(this).offset(),
+			      position = Math.floor((e.pageX - offset.left)/$(this).width()*100) + 1;
+			  // check for label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	// add % to label
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  	/*// if position is less than five, need to prevent label from being hidden
+			  	if(position < 5) {
+			  		// get label's width and divide by width of progress-bar
+				  	var labelWidth = $(this).find('.progress-bar__bar__label').width()/$(this).width()*100;
+				  	// add label's width to position
+				  	position = position + Math.round(labelWidth);
+				  }*/
+				  if (position < 4 ) { position = 4; }
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
 			
 
-			///////////// view markup buttons
+			// view markup buttons
 			if($(window).width() < 768) {
 				$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
 				$('.pl-code pre').hide();

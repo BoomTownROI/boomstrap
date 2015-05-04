@@ -5345,6 +5345,163 @@ AlertActions.addAlert({
 
 </div>
 
+<!-- ================================== Progress bars ================================== -->
+
+
+<div class="pl-docs-section">
+  <h1 id="progressbars" class="page-header">Progress bars</h1>
+
+  <p class="lead">Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.</p>
+
+  <div class="callout callout-danger">
+    <h4>Cross-browser compatibility</h4>
+    <p>Progress bars use CSS3 transitions and animations to achieve some of their effects. These features are not supported in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.</p>
+  </div>
+
+  <div class="callout callout-info">
+    <h4>Javascript</h4>
+    <p>For <strong>demonstration purposes</strong>, Javascript was used to add click events to the progress bars in order to show transitions. The script is not bundled in Boomstrap's output.</p>
+  </div>
+
+
+  <h3>Solid color</h3>
+  <p>Each progress bar requires a contextual color modifier class. <strong>Click on progress bars to view transitions.</strong></p>
+  <div class="pl-example pl-example-progress-bar">
+
+    <div class="progress-bar progress-bar--success">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <div class="progress-bar progress-bar--attention">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <div class="progress-bar progress-bar--info">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <div class="progress-bar progress-bar--warning">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <div class="progress-bar progress-bar--danger">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <div class="progress-bar progress-bar--primary">
+      <div class="progress-bar__bar"></div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--attention"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--info"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--warning"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--danger"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--primary"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <h3>Gradient color</h3>
+  <p>Used to communicate status along with progress. <strong>Click on progress bars to view transitions.</strong></p>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Brand success to brand danger</p>
+    <div class="progress-bar progress-bar--success-to-danger">
+      <div class="progress-bar__bar"></div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success-to-danger"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <h3>Sizes</h3>
+  <p>Fancy larger or smaller progress bars? Add <code>.progress-bar--lg</code>,<code>.progress-bar--sm</code>, or <code>.progress-bar--xs</code> modifier classes.</p>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Extra small</p>
+    <div class="progress-bar progress-bar--success progress-bar--xs">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Small</p>
+    <div class="progress-bar progress-bar--success progress-bar--sm">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Default</p>
+    <div class="progress-bar progress-bar--success">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Large</p>
+    <div class="progress-bar progress-bar--success progress-bar--lg">
+      <div class="progress-bar__bar"></div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success progress-bar--xs"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--sm"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--lg"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <h3>Labels</h3>
+  <p>Labels on progress bars.</p>
+  <div class="callout callout-info">
+    <h4>Javascript</h4>
+    <p>For <strong>demonstration purposes</strong>, Javascript was used to add alter label % and to prevent labels from being hidden at low percentages. The script is not bundled in Boomstrap's output.</p>
+  </div>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Small</p>
+    <div class="progress-bar progress-bar--success progress-bar--sm">
+      <div class="progress-bar__bar">
+        <div class="progress-bar__bar__label">60%</div>
+      </div>
+    </div>
+    <p>Default</p>
+    <div class="progress-bar progress-bar--info">
+      <div class="progress-bar__bar">
+        <div class="progress-bar__bar__label">60%</div>
+      </div>
+    </div>
+    <p>Large</p>
+    <div class="progress-bar progress-bar--attention progress-bar--lg">
+      <div class="progress-bar__bar">
+        <div class="progress-bar__bar__label">60%</div>
+      </div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success progress-bar--sm"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--info"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--attention progress-bar--lg"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+</div>
 <!-- ================================== Sashes ================================== -->
 
 
@@ -6721,6 +6878,9 @@ AlertActions.addAlert({
                     <a href="#panels">Panels</a>
                 </li>
                 <li>
+                    <a href="#progressbars">Progress Bars</a>
+                </li>
+                <li>
                     <a href="#sashes">Sashes</a>
                 </li>
                 <li>
@@ -6828,9 +6988,45 @@ AlertActions.addAlert({
 			   }
 			});
 
+			// progress bars - send to random position
+
+			$('.progress-bar').each(function(){
+				var position = Math.floor(Math.random()*100);
+				if(position<5) { position = 5; }
+			  // add % to label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
+
+			// progress bars - click progress bar to transition
+
+			$(".progress-bar").on("click", function(e) {
+			  var offset = $(this).offset(),
+			      position = Math.floor((e.pageX - offset.left)/$(this).width()*100) + 1;
+			  // check for label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	// add % to label
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  	/*// if position is less than five, need to prevent label from being hidden
+			  	if(position < 5) {
+			  		// get label's width and divide by width of progress-bar
+				  	var labelWidth = $(this).find('.progress-bar__bar__label').width()/$(this).width()*100;
+				  	// add label's width to position
+				  	position = position + Math.round(labelWidth);
+				  }*/
+				  if (position < 4 ) { position = 4; }
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
 			
 
-			///////////// view markup buttons
+			// view markup buttons
 			if($(window).width() < 768) {
 				$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
 				$('.pl-code pre').hide();
