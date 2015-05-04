@@ -9733,8 +9733,14 @@ a.list-group-item.active:focus .ficon {
 .progress-bar--lg {
   height: 26px;
 }
+.progress-bar--lg .progress-bar__bar__label {
+  font-size: 19px;
+}
 .progress-bar--sm {
   height: 14px;
+}
+.progress-bar--sm .progress-bar__bar__label {
+  font-size: 11px;
 }
 .progress-bar--xs {
   height: 10px;
@@ -9747,7 +9753,19 @@ a.list-group-item.active:focus .ficon {
   position: absolute;
   right: 0;
   top: 0;
-  transition: all 500ms ease-out;
+  transition: -webkit-transform 500ms ease-out;
+  transition: transform 500ms ease-out;
+}
+/*.progress-bar__label {
+  color: @white;
+  padding-left: 4px;
+  ~ .progress-bar__bar { left: 34px; }
+}*/
+.progress-bar__bar__label {
+  color: #ffffff;
+  padding: 0 4px;
+  position: absolute;
+  right: 100%;
 }
 .message-face {
   background-color: #cccccc;
