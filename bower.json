@@ -1,7 +1,7 @@
 {
   "name": "boomstrap",
   "description": "A custom pattern library built on Bootstrap.",
-  "version": "1.13.1",
+  "version": "1.14.0",
   "authors": [
     "Mark Funk <mark@boomtownroi.com>",
     "Sean McCambridge <sean@boomtownroi.com>",
@@ -25,9 +25,10 @@
     "momentjs": "~2.6.0",
     "angular-moment": "~0.7.0",
     "bootstrap-select": "~1.6.3",
-    "bootstrap-datepicker": "~1.3.0"
+    "bootstrap-datepicker": "~1.3.0",
+    "bootstrap": "~3.3.4"
   },
   "dependencies": {
-    "bootstrap": "~3.3.0"
+    "bootstrap": "3.3.4"
   }
 }
