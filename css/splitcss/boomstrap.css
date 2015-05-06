@@ -1,4 +1,16 @@
 
+.ficon-house:before {
+  content: "\f015";
+}
+.ficon-email-good:before {
+  content: "\e608";
+}
+.ficon-eye:before {
+  content: "\e613";
+}
+.ficon-dismiss:before {
+  content: "\e603";
+}
 .ficon-phone-good:before {
   content: "\e605";
 }
@@ -1333,7 +1345,7 @@ a.list-group-item.active:focus .ficon {
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top: 4px solid;
+  border-top: 4px dashed;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
