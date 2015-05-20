@@ -115,8 +115,8 @@
 // -------------------------
 
 .label-variant-disabled(@color) {
-  background-color: screen(multiply(@color, #666), #666);
-  border: 1px solid screen(multiply(@color, #666), #666);
+  background-color: screen(multiply(exclusion(@color, #888), #888), #777);
+  border: 1px solid screen(multiply(exclusion(@color, #888), #888), #777);
   color: @white;
   &[href] {
     &:hover,
