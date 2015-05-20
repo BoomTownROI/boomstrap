@@ -9452,17 +9452,17 @@ button.close-inverted {
   color: #647f33;
 }
 .leadcat-trash {
-  background-color: #636363;
-  border: 1px solid #636363;
+  background-color: #444444;
+  border: 1px solid #444444;
 }
 .leadcat-trash.leadcat-outline {
   background-color: #ffffff;
-  border: 1px solid #636363;
-  color: #636363;
+  border: 1px solid #444444;
+  color: #444444;
 }
 .leadcat-trash.leadcat-outline[href]:hover,
 .leadcat-trash.leadcat-outline[href]:focus {
-  color: #4a4a4a;
+  color: #2b2b2b;
 }
 .leadcat-trash.leadcat-disabled {
   background-color: #9c9c9c;
@@ -9471,7 +9471,7 @@ button.close-inverted {
 }
 .leadcat-trash.leadcat-disabled[href]:hover,
 .leadcat-trash.leadcat-disabled[href]:focus {
-  color: #4a4a4a;
+  color: #2b2b2b;
 }
 .leadcat-watch {
   background-color: #c58c33;

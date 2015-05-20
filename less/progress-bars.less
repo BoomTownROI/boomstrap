@@ -24,7 +24,6 @@
 
 // Color modifiers - gradient colors
 .progress-bar--success-to-danger {
-  // less wouldn't build for me using this var. -SM
   @list: @brand-success, @brand-warning 75%, @brand-danger;
   background-image: svg-gradient(to right, @list);
 }
