@@ -111,6 +111,21 @@
   }
 }
 
+// Labels - Disabled Variant (lead categories, lead types)
+// -------------------------
+
+.label-variant-disabled(@color) {
+  background-color: screen(multiply(@color, #666), #666);
+  border: 1px solid screen(multiply(@color, #666), #666);
+  color: @white;
+  &[href] {
+    &:hover,
+    &:focus {
+      color: darken(@color, 10%);
+    }
+  }
+}
+
 // Markers
 // --------------------------
 

@@ -7412,18 +7412,15 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   /* Datepicker on modals */
 }
 .bootstrap-select {
-  /*width: 220px\9; IE8 and below*/
   width: 220px \0;
   /*IE9 and below*/
 }
-.bootstrap-select > .btn {
+.bootstrap-select > .dropdown-toggle {
   width: 100%;
   padding-right: 25px;
 }
-.error .bootstrap-select .btn {
-  border: 1px solid #b94a48;
-}
-.control-group.error .bootstrap-select .dropdown-toggle {
+.has-error .bootstrap-select .dropdown-toggle,
+.error .bootstrap-select .dropdown-toggle {
   border-color: #b94a48;
 }
 .bootstrap-select.fit-width {
@@ -7432,7 +7429,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
   width: 220px;
 }
-.bootstrap-select .btn:focus {
+.bootstrap-select .dropdown-toggle:focus {
   outline: thin dotted #333333 !important;
   outline: 5px auto -webkit-focus-ring-color !important;
   outline-offset: -2px;
@@ -7445,6 +7442,9 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.form-control:not([class*="col-"]) {
   width: 100%;
 }
+.bootstrap-select.form-control.input-group-btn {
+  z-index: auto;
+}
 .bootstrap-select.btn-group:not(.input-group-btn),
 .bootstrap-select.btn-group[class*="col-"] {
   float: none;
@@ -7453,10 +7453,9 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .bootstrap-select.btn-group.dropdown-menu-right,
 .bootstrap-select.btn-group[class*="col-"].dropdown-menu-right,
-.row-fluid .bootstrap-select.btn-group[class*="col-"].dropdown-menu-right {
+.row .bootstrap-select.btn-group[class*="col-"].dropdown-menu-right {
   float: right;
 }
-.form-search .bootstrap-select.btn-group,
 .form-inline .bootstrap-select.btn-group,
 .form-horizontal .bootstrap-select.btn-group,
 .form-group .bootstrap-select.btn-group {
@@ -7469,32 +7468,26 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .form-inline .bootstrap-select.btn-group .form-control {
   width: 100%;
 }
-.input-append .bootstrap-select.btn-group {
-  margin-left: -1px;
-}
-.input-prepend .bootstrap-select.btn-group {
-  margin-right: -1px;
-}
 .bootstrap-select.btn-group > .disabled {
   cursor: not-allowed;
 }
 .bootstrap-select.btn-group > .disabled:focus {
   outline: none !important;
 }
-.bootstrap-select.btn-group .btn .filter-option {
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
   display: inline-block;
   overflow: hidden;
   width: 100%;
   text-align: left;
 }
-.bootstrap-select.btn-group .btn .caret {
+.bootstrap-select.btn-group .dropdown-toggle .caret {
   position: absolute;
   top: 50%;
   right: 12px;
   margin-top: -2px;
   vertical-align: middle;
 }
-.bootstrap-select.btn-group[class*="col-"] .btn {
+.bootstrap-select.btn-group[class*="col-"] .dropdown-toggle {
   width: 100%;
 }
 .bootstrap-select.btn-group .dropdown-menu {
@@ -7504,6 +7497,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .bootstrap-select.btn-group .dropdown-menu.inner {
   position: static;
+  float: none;
   border: 0;
   padding: 0;
   margin: 0;
@@ -7513,11 +7507,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.btn-group .dropdown-menu li {
   position: relative;
 }
-.bootstrap-select.btn-group .dropdown-menu li:not(.disabled) a:hover small,
-.bootstrap-select.btn-group .dropdown-menu li:not(.disabled) a:focus small,
-.bootstrap-select.btn-group .dropdown-menu li.active:not(.disabled) a small {
-  color: #64b1d8;
-  color: rgba(100, 177, 216, 0.4);
+.bootstrap-select.btn-group .dropdown-menu li.active small {
+  color: #fff;
 }
 .bootstrap-select.btn-group .dropdown-menu li.disabled a {
   cursor: not-allowed;
@@ -7557,10 +7548,10 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   background: #f5f5f5;
   margin: 0 5px;
 }
-.bootstrap-select.btn-group.fit-width .btn .filter-option {
+.bootstrap-select.btn-group.fit-width .dropdown-toggle .filter-option {
   position: static;
 }
-.bootstrap-select.btn-group.fit-width .btn .caret {
+.bootstrap-select.btn-group.fit-width .dropdown-toggle .caret {
   position: static;
   top: auto;
   margin-top: -1px;
@@ -7574,17 +7565,14 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
   margin-right: 34px;
 }
-.bootstrap-select.show-menu-arrow.open > .btn {
+.bootstrap-select.show-menu-arrow.open > .dropdown-toggle {
   z-index: 1036;
 }
 .bootstrap-select.show-menu-arrow .dropdown-toggle:before {
   content: '';
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-bottom-width: 7px;
-  border-bottom-style: solid;
-  border-bottom-color: #cccccc;
-  border-bottom-color: rgba(204, 204, 204, 0.2);
+  border-bottom: 7px solid rgba(204, 204, 204, 0.2);
   position: absolute;
   bottom: -4px;
   left: 9px;
@@ -7603,11 +7591,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:before {
   bottom: auto;
   top: -3px;
+  border-top: 7px solid rgba(204, 204, 204, 0.2);
   border-bottom: 0;
-  border-top-width: 7px;
-  border-top-style: solid;
-  border-top-color: #cccccc;
-  border-top-color: rgba(204, 204, 204, 0.2);
 }
 .bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:after {
   bottom: auto;
@@ -7628,7 +7613,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   display: block;
 }
 .bs-searchbox,
-.bs-actionsbox {
+.bs-actionsbox,
+.bs-donebutton {
   padding: 4px 8px;
 }
 .bs-actionsbox {
@@ -7639,6 +7625,14 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .bs-actionsbox .btn-group button {
   width: 50%;
 }
+.bs-donebutton {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+.bs-donebutton .btn-group button {
+  width: 100%;
+}
 .bs-searchbox + .bs-actionsbox {
   padding: 0 8px 4px;
 }
@@ -7647,7 +7641,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   width: 100%;
 }
 .mobile-device {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   display: block !important;
@@ -9304,30 +9298,48 @@ button.close-inverted {
   text-transform: lowercase;
 }
 .leadcat-archive {
-  background-color: #9b9b9b;
-  border: 1px solid #9b9b9b;
+  background-color: #8565b0;
+  border: 1px solid #8565b0;
 }
 .leadcat-archive.leadcat-outline {
   background-color: #ffffff;
-  border: 1px solid #9b9b9b;
-  color: #9b9b9b;
+  border: 1px solid #8565b0;
+  color: #8565b0;
 }
 .leadcat-archive.leadcat-outline[href]:hover,
 .leadcat-archive.leadcat-outline[href]:focus {
-  color: #828282;
+  color: #6c4d95;
+}
+.leadcat-archive.leadcat-disabled {
+  background-color: #867e90;
+  border: 1px solid #867e90;
+  color: #ffffff;
+}
+.leadcat-archive.leadcat-disabled[href]:hover,
+.leadcat-archive.leadcat-disabled[href]:focus {
+  color: #6c4d95;
 }
 .leadcat-closed {
-  background-color: #a4c16b;
-  border: 1px solid #a4c16b;
+  background-color: #68c4a3;
+  border: 1px solid #68c4a3;
 }
 .leadcat-closed.leadcat-outline {
   background-color: #ffffff;
-  border: 1px solid #a4c16b;
-  color: #a4c16b;
+  border: 1px solid #68c4a3;
+  color: #68c4a3;
 }
 .leadcat-closed.leadcat-outline[href]:hover,
 .leadcat-closed.leadcat-outline[href]:focus {
-  color: #8daf4a;
+  color: #46b38c;
+}
+.leadcat-closed.leadcat-disabled {
+  background-color: #7f958d;
+  border: 1px solid #7f958d;
+  color: #ffffff;
+}
+.leadcat-closed.leadcat-disabled[href]:hover,
+.leadcat-closed.leadcat-disabled[href]:focus {
+  color: #46b38c;
 }
 .leadcat-hot {
   background-color: #f75117;
@@ -9340,6 +9352,15 @@ button.close-inverted {
 }
 .leadcat-hot.leadcat-outline[href]:hover,
 .leadcat-hot.leadcat-outline[href]:focus {
+  color: #d43c07;
+}
+.leadcat-hot.leadcat-disabled {
+  background-color: #a1796c;
+  border: 1px solid #a1796c;
+  color: #ffffff;
+}
+.leadcat-hot.leadcat-disabled[href]:hover,
+.leadcat-hot.leadcat-disabled[href]:focus {
   color: #d43c07;
 }
 .leadcat-new {
@@ -9355,6 +9376,15 @@ button.close-inverted {
 .leadcat-new.leadcat-outline[href]:focus {
   color: #ca9d15;
 }
+.leadcat-new.leadcat-disabled {
+  background-color: #9e9270;
+  border: 1px solid #9e9270;
+  color: #ffffff;
+}
+.leadcat-new.leadcat-disabled[href]:hover,
+.leadcat-new.leadcat-disabled[href]:focus {
+  color: #ca9d15;
+}
 .leadcat-nurture {
   background-color: #1581e2;
   border: 1px solid #1581e2;
@@ -9366,6 +9396,15 @@ button.close-inverted {
 }
 .leadcat-nurture.leadcat-outline[href]:hover,
 .leadcat-nurture.leadcat-outline[href]:focus {
+  color: #1166b3;
+}
+.leadcat-nurture.leadcat-disabled {
+  background-color: #6b859c;
+  border: 1px solid #6b859c;
+  color: #ffffff;
+}
+.leadcat-nurture.leadcat-disabled[href]:hover,
+.leadcat-nurture.leadcat-disabled[href]:focus {
   color: #1166b3;
 }
 .leadcat-pending {
@@ -9381,6 +9420,15 @@ button.close-inverted {
 .leadcat-pending.leadcat-outline[href]:focus {
   color: #d47f80;
 }
+.leadcat-pending.leadcat-disabled {
+  background-color: #9c8e8e;
+  border: 1px solid #9c8e8e;
+  color: #ffffff;
+}
+.leadcat-pending.leadcat-disabled[href]:hover,
+.leadcat-pending.leadcat-disabled[href]:focus {
+  color: #d47f80;
+}
 .leadcat-qualify {
   background-color: #5b8801;
   border: 1px solid #5b8801;
@@ -9392,6 +9440,15 @@ button.close-inverted {
 }
 .leadcat-qualify.leadcat-outline[href]:hover,
 .leadcat-qualify.leadcat-outline[href]:focus {
+  color: #395501;
+}
+.leadcat-qualify.leadcat-disabled {
+  background-color: #7c8766;
+  border: 1px solid #7c8766;
+  color: #ffffff;
+}
+.leadcat-qualify.leadcat-disabled[href]:hover,
+.leadcat-qualify.leadcat-disabled[href]:focus {
   color: #395501;
 }
 .leadcat-trash {
@@ -9407,6 +9464,15 @@ button.close-inverted {
 .leadcat-trash.leadcat-outline[href]:focus {
   color: #4a4a4a;
 }
+.leadcat-trash.leadcat-disabled {
+  background-color: #7e7e7e;
+  border: 1px solid #7e7e7e;
+  color: #ffffff;
+}
+.leadcat-trash.leadcat-disabled[href]:hover,
+.leadcat-trash.leadcat-disabled[href]:focus {
+  color: #4a4a4a;
+}
 .leadcat-watch {
   background-color: #be7810;
   border: 1px solid #be7810;
@@ -9418,6 +9484,15 @@ button.close-inverted {
 }
 .leadcat-watch.leadcat-outline[href]:hover,
 .leadcat-watch.leadcat-outline[href]:focus {
+  color: #8f5a0c;
+}
+.leadcat-watch.leadcat-disabled {
+  background-color: #94836a;
+  border: 1px solid #94836a;
+  color: #ffffff;
+}
+.leadcat-watch.leadcat-disabled[href]:hover,
+.leadcat-watch.leadcat-disabled[href]:focus {
   color: #8f5a0c;
 }
 .leadcat-eq,
@@ -9436,10 +9511,6 @@ button.close-inverted {
 }
 .leadcat-muted {
   opacity: 0.7;
-}
-.leadcat-disabled {
-  background: #cccccc;
-  border-color: #cccccc;
 }
 [class*="leadtype-"] {
   display: inline-block;
