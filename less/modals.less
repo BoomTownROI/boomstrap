@@ -10,19 +10,23 @@
 }
 
 .fade {
+  transition: opacity 100ms ease-out; /* IE9 */
   transition: opacity 100ms @modal-easing;
 }
 
 .fade.in {
+  transition: opacity 300ms ease-out; /* IE9 */
   transition: opacity 300ms @modal-easing;
 }
 
 .modal.fade .modal-dialog {
   transform:  scale(1.15);
+  transition: transform 100ms ease-out; /* IE9 */
   transition: transform 100ms @modal-easing;
 }
 
 .modal.in .modal-dialog {
   transform:  scale(1);
+  transition: transform 300ms ease-out; /* IE9 */
   transition: transform 300ms @modal-easing;
 }
