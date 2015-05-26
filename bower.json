@@ -1,7 +1,7 @@
 {
   "name": "boomstrap",
   "description": "A custom pattern library built on Bootstrap.",
-  "version": "1.13.0",
+  "version": "1.14.3",
   "authors": [
     "Mark Funk <mark@boomtownroi.com>",
     "Sean McCambridge <sean@boomtownroi.com>",
@@ -29,6 +29,6 @@
     "svg4everybody": "~1.0.0"
   },
   "dependencies": {
-    "bootstrap": "~3.3.0"
+    "bootstrap": "3.3.4"
   }
 }

@@ -2,7 +2,7 @@
 
 
 <div class="pl-docs-section">
-  <h1 id="progress" class="page-header">Progress bars</h1>
+  <h1 id="progressbars" class="page-header">Progress bars</h1>
 
   <p class="lead">Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.</p>
 
@@ -11,169 +11,147 @@
     <p>Progress bars use CSS3 transitions and animations to achieve some of their effects. These features are not supported in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.</p>
   </div>
 
-  <h3 id="progress-basic">Basic example</h3>
-  <p>Default progress bar.</p>
-  <div class="pl-example">
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-        <span class="sr-only">60% Complete</span>
-      </div>
-    </div>
+  <div class="callout callout-info">
+    <h4>Javascript</h4>
+    <p>For <strong>demonstration purposes</strong>, Javascript was used to add click events to the progress bars in order to show transitions. The script is not bundled in Boomstrap's output.</p>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;60&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 60%;&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>60% Complete<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
 
-  <h3 id="progress-label">With label</h3>
-  <p>Remove the <code>.sr-only</code> class from within the progress bar to show a visible percentage. For low percentages, consider adding a <code>min-width</code> to ensure the label's text is fully visible.</p>
-  <div class="pl-example">
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-        60%
-      </div>
-    </div>
-  </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;60&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 60%;&quot;</span><span class="nt">&gt;</span>
-    60%
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
 
-  <h3 id="progress-alternatives">Contextual alternatives</h3>
-  <p>Progress bars use some of the same button and alert classes for consistent styles.</p>
-  <div class="pl-example">
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-        <span class="sr-only">40% Complete (success)</span>
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-        <span class="sr-only">20% Complete</span>
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-        <span class="sr-only">60% Complete (warning)</span>
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-        <span class="sr-only">80% Complete (danger)</span>
-      </div>
-    </div>
-  </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-success&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;40&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 40%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>40% Complete (success)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-info&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;20&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 20%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>20% Complete<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-warning&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;60&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 60%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>60% Complete (warning)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-danger&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;80&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 80%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>80% Complete<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+  <h3>Solid color</h3>
+  <p>Each progress bar requires a contextual color modifier class. <strong>Click on progress bars to view transitions.</strong></p>
+  <div class="pl-example pl-example-progress-bar">
 
-  <h3 id="progress-striped">Striped</h3>
-  <p>Uses a gradient to create a striped effect. Not available in IE8.</p>
-  <div class="pl-example">
-    <div class="progress progress-striped" >
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-        <span class="sr-only">40% Complete (success)</span>
-      </div>
+    <div class="progress-bar progress-bar--success">
+      <div class="progress-bar__bar"></div>
     </div>
-    <div class="progress progress-striped">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-        <span class="sr-only">20% Complete</span>
-      </div>
+    <div class="progress-bar progress-bar--attention">
+      <div class="progress-bar__bar"></div>
     </div>
-    <div class="progress progress-striped">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-        <span class="sr-only">60% Complete (warning)</span>
-      </div>
+    <div class="progress-bar progress-bar--info">
+      <div class="progress-bar__bar"></div>
     </div>
-    <div class="progress progress-striped">
-      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-        <span class="sr-only">80% Complete (danger)</span>
-      </div>
+    <div class="progress-bar progress-bar--warning">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <div class="progress-bar progress-bar--danger">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <div class="progress-bar progress-bar--primary">
+      <div class="progress-bar__bar"></div>
     </div>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress progress-striped&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-success&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;40&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 40%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>40% Complete (success)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress progress-striped&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-info&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;20&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 20%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>20% Complete<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress progress-striped&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-warning&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;60&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 60%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>60% Complete (warning)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress progress-striped&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-danger&quot;</span> <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;80&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 80%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>80% Complete (danger)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--attention"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--info"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--warning"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--danger"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--primary"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
 
-  <h3 id="progress-animated">Animated</h3>
-  <p>Add <code>.active</code> to <code>.progress-striped</code> to animate the stripes right to left. Not available in IE9 and below.</p>
-  <div class="pl-example">
-    <div class="progress progress-striped active">
-      <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"><span class="sr-only">45% Complete</span></div>
+  <h3>Gradient color</h3>
+  <p>Used to communicate status along with progress. <strong>Click on progress bars to view transitions.</strong></p>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Brand success to brand danger</p>
+    <div class="progress-bar progress-bar--success-to-danger">
+      <div class="progress-bar__bar"></div>
     </div>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress progress-striped active&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar&quot;</span>  <span class="na">role=</span><span class="s">&quot;progressbar&quot;</span> <span class="na">aria-valuenow=</span><span class="s">&quot;45&quot;</span> <span class="na">aria-valuemin=</span><span class="s">&quot;0&quot;</span> <span class="na">aria-valuemax=</span><span class="s">&quot;100&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 45%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>45% Complete<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success-to-danger"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
 
-  <h3 id="progress-stacked">Stacked</h3>
-  <p>Place multiple bars into the same <code>.progress</code> to stack them.</p>
-  <div class="pl-example">
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
+  <h3>Sizes</h3>
+  <p>Fancy larger or smaller progress bars? Add <code>.progress-bar--lg</code>,<code>.progress-bar--sm</code>, or <code>.progress-bar--xs</code> modifier classes.</p>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Extra small</p>
+    <div class="progress-bar progress-bar--success progress-bar--xs">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Small</p>
+    <div class="progress-bar progress-bar--success progress-bar--sm">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Default</p>
+    <div class="progress-bar progress-bar--success">
+      <div class="progress-bar__bar"></div>
+    </div>
+    <p>Large</p>
+    <div class="progress-bar progress-bar--success progress-bar--lg">
+      <div class="progress-bar__bar"></div>
+    </div>
+  </div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success progress-bar--xs"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--sm"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--success progress-bar--lg"&gt;
+  &lt;div class="progress-bar__bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <h3>Labels</h3>
+  <p>Labels on progress bars.</p>
+  <div class="callout callout-info">
+    <h4>Javascript</h4>
+    <p>For <strong>demonstration purposes</strong>, Javascript was used to add alter label % and to prevent labels from being hidden at low percentages. The script is not bundled in Boomstrap's output.</p>
+  </div>
+  <div class="pl-example pl-example-progress-bar">
+    <p>Small</p>
+    <div class="progress-bar progress-bar--success progress-bar--sm">
+      <div class="progress-bar__bar">
+        <div class="progress-bar__bar__label">60%</div>
       </div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
+    </div>
+    <p>Default</p>
+    <div class="progress-bar progress-bar--info">
+      <div class="progress-bar__bar">
+        <div class="progress-bar__bar__label">60%</div>
       </div>
-      <div class="progress-bar progress-bar-danger" style="width: 10%">
-        <span class="sr-only">10% Complete (danger)</span>
+    </div>
+    <p>Large</p>
+    <div class="progress-bar progress-bar--attention progress-bar--lg">
+      <div class="progress-bar__bar">
+        <div class="progress-bar__bar__label">60%</div>
       </div>
     </div>
   </div>
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-success&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 35%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>35% Complete (success)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-warning&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 20%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>20% Complete (warning)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-danger&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 10%&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>10% Complete (danger)<span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+  <div class="pl-code">
+    <pre class="prettyprint"><code>&lt;div class="progress-bar progress-bar--success progress-bar--sm"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--info"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-bar progress-bar--attention progress-bar--lg"&gt;
+  &lt;div class="progress-bar__bar"&gt;
+    &lt;div class="progress-bar__bar__label"&gt;0%&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
 </div>

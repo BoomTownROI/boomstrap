@@ -34,12 +34,18 @@
   &.leadcat-outline {
     .label-variant-outline(@label-archive-color);
   }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-archive-color);
+  }
 }
 .leadcat-closed {
   background-color: @label-closed-color;
   border: 1px solid @label-closed-color;
   &.leadcat-outline {
     .label-variant-outline(@label-closed-color);
+  }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-closed-color);
   }
 }
 .leadcat-hot {
@@ -48,12 +54,18 @@
   &.leadcat-outline {
     .label-variant-outline(@label-hot-color);
   }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-hot-color);
+  }
 }
 .leadcat-new {
   background-color: @label-new-color;
   border: 1px solid @label-new-color;
   &.leadcat-outline {
     .label-variant-outline(@label-new-color);
+  }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-new-color);
   }
 }
 .leadcat-nurture {
@@ -62,12 +74,18 @@
   &.leadcat-outline {
     .label-variant-outline(@label-nurture-color);
   }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-nurture-color);
+  }
 }
 .leadcat-pending {
   background-color: @label-pending-color;
   border: 1px solid @label-pending-color;
   &.leadcat-outline {
     .label-variant-outline(@label-pending-color);
+  }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-pending-color);
   }
 }
 .leadcat-qualify {
@@ -76,6 +94,9 @@
   &.leadcat-outline {
     .label-variant-outline(@label-qualify-color);
   }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-qualify-color);
+  }
 }
 .leadcat-trash {
   background-color: @label-trash-color;
@@ -83,12 +104,18 @@
   &.leadcat-outline {
     .label-variant-outline(@label-trash-color);
   }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-trash-color);
+  }
 }
 .leadcat-watch {
   background-color: @label-watch-color;
   border: 1px solid @label-watch-color;
   &.leadcat-outline {
     .label-variant-outline(@label-watch-color);
+  }
+  &.leadcat-disabled {
+    .label-variant-disabled(@label-watch-color);
   }
 }
 
@@ -120,10 +147,10 @@
 // Lead Category Disabled
 // -------------------
 
-.leadcat-disabled {
-  background: @gray-light;
-  border-color: @gray-light;
-}
+// .leadcat-disabled {
+//   background: @gray-light;
+//   border-color: @gray-light;
+// }
 
 
 // Lead Type
