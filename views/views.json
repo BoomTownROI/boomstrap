@@ -188,6 +188,11 @@
 				"nav_header": "Panels"
 			},
 			{
+				"source": "views/components/profile-pics.html",
+				"css_id": "#profile-pics",
+				"nav_header": "Profile Pics"
+			},
+			{
 				"source": "views/components/progress-bars.html",
 				"css_id": "#progressbars",
 				"nav_header": "Progress Bars"
