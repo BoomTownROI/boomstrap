@@ -161,11 +161,11 @@ NG_DOCS={
     "ngboomstrap": false
   },
   "html5Mode": false,
+  "editExample": true,
   "startPage": "/ngboomstrap",
   "scripts": [
     "boomstrap.js",
     "boomstrap-angular.js",
     "angular-animate.min.js"
-  ],
-  "editExample": true
+  ]
 };
