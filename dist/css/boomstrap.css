@@ -1,4 +1,4 @@
-/*! Boomstrap v1.15.0 */
+/*! Boomstrap v1.15.1 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -10230,10 +10230,10 @@ a.list-group-item.active:focus .ficon {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  object-fit: cover;
   display: inline-block;
   vertical-align: top;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  background-size: cover;
 }
 .profile-pic--initials {
   font-size: 36px;
