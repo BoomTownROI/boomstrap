@@ -1,4 +1,4 @@
-/*! Boomstrap v1.15.1 */
+/*! Boomstrap v1.15.2 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9568,6 +9568,18 @@ button.close-inverted {
 }
 .leadtype-abbr.leadtype-bs:after {
   content: "s";
+}
+.leadtype-abbr-vertical.leadtype-bs {
+  vertical-align: middle;
+}
+.leadtype-abbr-vertical.leadtype-bs:before {
+  display: block;
+  border-left: none;
+}
+.leadtype-abbr-vertical.leadtype-bs:after {
+  display: block;
+  border-left: none;
+  border-top: 1px solid #cccccc;
 }
 .leadtype-abbr {
   text-transform: uppercase;
