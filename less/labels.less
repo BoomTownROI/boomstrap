@@ -223,6 +223,18 @@
       content: @leadtype-txt-seller-abbr;
     }
   }
+  .leadtype-abbr-vertical& {
+    vertical-align: middle;
+    &:before {
+      display: block;
+      border-left: none;
+    }
+    &:after {
+      display: block;
+      border-left: none;
+      border-top: 1px solid @gray-light;
+    }
+  }
 }
 
 // Lead Type Abbreviated
