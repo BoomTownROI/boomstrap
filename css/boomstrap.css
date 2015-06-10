@@ -10260,6 +10260,7 @@ a.list-group-item.active:focus .ficon {
 .profile-pic--sm {
   width: 32px;
   height: 32px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 .profile-pic--sm.profile-pic--initials {
   font-size: 16px;
