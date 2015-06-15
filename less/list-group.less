@@ -22,4 +22,12 @@ a.list-group-item {
     width: 1.15em;
     .vert-align(absolute);
   }
+  // deprecated ficon
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    .ficon {
+      color: @list-group-active-color;
+    }
+  }
 }

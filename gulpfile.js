@@ -295,11 +295,18 @@ gulp.task(Tasks.BoomstrapSvgIcons, function () {
 * Common build task run by all tasks
 */
 gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation], function() {
-  var IMAGES_DIR   = 'docs/images';
-  // Copy all image/icon files if they are newer than destination
+  var IMAGES_DIR   = 'docs/images',
+  FONTS_DOCS_DIR = 'docs/css/fonts',
+  FONTS_DIST_DIR = 'dist/css/fonts';
+
+  // Copy all image/font files if they are newer than destination
   return es.concat(
     gulp.src('images/**/*.*')
-    .pipe(gulp.dest(IMAGES_DIR))
+    .pipe(gulp.dest(IMAGES_DIR)),
+    gulp.src('fonts/**/*.*')
+    .pipe(gulp.dest(FONTS_DOCS_DIR)),
+    gulp.src('fonts/**/*.*')
+    .pipe(gulp.dest(FONTS_DIST_DIR))
   );
 });
 

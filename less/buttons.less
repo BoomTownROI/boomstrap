@@ -39,16 +39,31 @@
   > .icon {
     font-size: @font-size-base + 2px;
   }
+  // deprecated ficon
+  > .ficon {
+    float: left;
+    font-size: @font-size-base + 2px;
+    margin: 1px @margin-xsmall 0 0;
+  }
 }
 
 .btn-lg {
   > .icon {
     font-size: @font-size-large + 2px;
   }
+  // deprecated ficon
+  > .ficon {
+    font-size: @font-size-large + 2px;
+    margin: 1px @margin-small 0 -2px;
+  }
 }
 
 .btn-sm {
   > .icon {
+    font-size: @font-size-small + 2px;
+  }
+  // deprecated ficon
+  > .ficon {
     font-size: @font-size-small + 2px;
   }
 }
@@ -57,11 +72,28 @@
   > .icon {
     font-size: @font-size-small + 2px;
   }
+  // deprecated ficon
+  > .ficon {
+    font-size: @font-size-small + 2px;
+    margin: 1px 2px 0 0;
+  }
 }
 
-/*.btn-block {
-  > .icon {}
-}*/
+// deprecated ficon
+.btn-block {
+  > .ficon {
+    display: inline-block;
+    float: none;
+    margin: 0;
+  }
+}
+
+// deprecated ficon
+.btn-block:not(.btn-icon) {
+  > .ficon {
+    line-height: 0.9;
+  }
+}
 
 
 // Icon-only buttons
@@ -81,6 +113,12 @@
   &.btn-xs {
     padding-left: @padding-xsmall - 1px;
     padding-right: @padding-xsmall - 1px;
+  }
+  // deprecated ficon
+  .ficon {
+    display: block;
+    margin: 0;
+    padding: 2px;
   }
 }
 
