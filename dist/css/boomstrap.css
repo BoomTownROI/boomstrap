@@ -1,4 +1,4 @@
-/*! Boomstrap v1.14.3 */
+/*! Boomstrap v1.15.3 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9239,6 +9239,18 @@ button.close-inverted {
 .leadtype-abbr.leadtype-bs:after {
   content: "s";
 }
+.leadtype-abbr-vertical.leadtype-bs {
+  vertical-align: middle;
+}
+.leadtype-abbr-vertical.leadtype-bs:before {
+  display: block;
+  border-left: none;
+}
+.leadtype-abbr-vertical.leadtype-bs:after {
+  display: block;
+  border-left: none;
+  border-top: 1px solid #cccccc;
+}
 .leadtype-abbr {
   text-transform: uppercase;
 }
@@ -9893,6 +9905,31 @@ a.list-group-item.active:after {
   font-weight: 700;
   margin-bottom: -10px;
   padding: 14px 24px 0 14px;
+}
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  background-size: cover;
+}
+.profile-pic--initials {
+  font-size: 36px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 21px;
+  background-color: #cccccc;
+}
+.profile-pic--sm {
+  width: 32px;
+  height: 32px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+.profile-pic--sm.profile-pic--initials {
+  font-size: 16px;
+  padding-top: 6px;
 }
 .sash {
   background-color: #ffffff;
