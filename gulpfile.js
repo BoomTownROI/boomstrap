@@ -320,7 +320,6 @@ gulp.task('bower', function() {
 });
 
 
-
 // Run a server with a watch with gulp server
 gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
   gulp.run('grunt-tasks-ngdocs');
