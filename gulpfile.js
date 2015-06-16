@@ -1,34 +1,33 @@
 'use strict';
 
-var es          = require('event-stream'),
-  gulp          = require('gulp'),
-  gulpif        = require('gulp-if'),
-  bless         = require('gulp-bless'),
-  concat        = require('gulp-concat'),
-  rename        = require('gulp-rename'),
-  less          = require('gulp-less'),
-  uglify        = require('gulp-uglify'),
-  jshint        = require('gulp-jshint'),
-  jshintstylish = require('jshint-stylish'),
-  connect       = require('gulp-connect'),
-  mustache      = require('gulp-mustache'),
-  views         = require('./views/views'),
-  ngmin         = require('gulp-ngmin'),
-  templateCache = require('gulp-angular-templatecache'),
-  bower         = require('gulp-bower'),
-  clean         = require('gulp-clean'),
-  markdown      = require('gulp-markdown'),
-  autoprefixer  = require('gulp-autoprefixer'),
-  plumber       = require('gulp-plumber'),
-  cheerio       = require('gulp-cheerio'),
-  insert        = require('gulp-insert'),
-  svgSprite     = require('gulp-svg-sprite'),
-  imagemin      = require('gulp-imagemin'),
-  packagedata   = require('./package.json');
+var autoprefixer  = require('gulp-autoprefixer'),
+    bless         = require('gulp-bless'),
+    bower         = require('gulp-bower'), // not used
+    cheerio       = require('gulp-cheerio'),
+    clean         = require('gulp-clean'),
+    concat        = require('gulp-concat'),
+    connect       = require('gulp-connect'),
+    es            = require('event-stream'), // not used
+    ghpages       = require('gulp-gh-pages'),
+    gulp          = require('gulp'),
+    gulpif        = require('gulp-if'),
+    imagemin      = require('gulp-imagemin'),
+    insert        = require('gulp-insert'),
+    jshint        = require('gulp-jshint'),
+    jshintstylish = require('jshint-stylish'),
+    less          = require('gulp-less'),
+    markdown      = require('gulp-markdown'),
+    mustache      = require('gulp-mustache'),
+    ngdocs        = require('gulp-ngdocs'),
+    ngmin         = require('gulp-ngmin'),
+    packagedata   = require('./package.json'),
+    plumber       = require('gulp-plumber'),
+    rename        = require('gulp-rename'),
+    svgSprite     = require('gulp-svg-sprite'),
+    templateCache = require('gulp-angular-templatecache'),
+    uglify        = require('gulp-uglify'),
+    views         = require('./views/views');
 
-require('gulp-grunt')(gulp, {
-  prefix: 'grunt-tasks-'
-});
 
 var BoomstrapVersion = "/*! Boomstrap v" + packagedata.version + " */\n";
 
@@ -46,6 +45,7 @@ var Tasks = {
 
   CreateDocumentationHTML:    'Create Documentation HTML Files',
   JavascriptDocumentation:    'Convert Javascript Documentation Markdown',
+  AngularApiDocumentation:    'Create Angular API Documentation',
 
   DevelopmentServer:          'server',
   ReloadDevelopmentJS:        'Reload Development Server Javascript',
@@ -212,6 +212,64 @@ gulp.task(Tasks.JavascriptDocumentation, function() {
     .pipe(gulp.dest('views/javascript/'));
 });
 
+/*
+ * Create angular api documentation
+ */
+gulp.task(Tasks.AngularApiDocumentation, function() {
+  var options = {
+    scripts: [
+      'docs/js/boomstrap.js',
+      'docs/js/boomstrap-angular.js',
+      'bower_components/angular-animate/angular-animate.min.js'
+    ],
+    styles: [
+      '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
+      'docs/css/boomstrap.css'
+    ],
+    html5Mode: false,
+    startPage: '/ngboomstrap',
+    title: "",
+    image: "docs/images/fpo-boomstrap-logo.png",
+    imageLink: "/index.html",
+    navTemplate: 'views/partials/ngdocs-nav.html',
+    titleLink: "/index.html"
+  }
+
+  return ngdocs.sections({
+    ngboomstrap: {
+      glob:['docs/js/boomstrap-angular.js'],
+      title: ''
+    }
+  }).pipe(ngdocs.process(options)).pipe(gulp.dest('docs/angularapi'));
+
+  /*return gulp.src('docs/js/boomstrap-angular.js')
+    .pipe(ngdocs.process(options))
+    .pipe(gulp.dest('docs/angularapi'));*/
+});
+
+/*options: {
+  dest: 'docs/angularapi',
+  scripts: [
+    'docs/js/boomstrap.js',
+    'docs/js/boomstrap-angular.js',
+    'bower_components/angular-animate/angular-animate.min.js'
+  ],
+  styles: [
+    '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
+    'docs/css/boomstrap.css'
+  ],
+  html5Mode: false,
+  animate: false,
+  startPage: '/ngboomstrap',
+  image: 'docs/images/fpo-boomstrap-logo.png',
+  imageLink: '/index.html',
+  navTemplate: 'views/partials/ngdocs-nav.html'
+},
+ngboomstrap: {
+  src: ['docs/js/boomstrap-angular.js'],
+  title: 'boomstrap'
+}*/
+
 
 gulp.task(Tasks.ReloadDevelopmentJS, function() {
  gulp.src('docs/js/*.js')
@@ -294,7 +352,7 @@ gulp.task(Tasks.BoomstrapSvgIcons, function () {
 /*
 * Common build task run by all tasks
 */
-gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation], function() {
+gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Tasks.BoomstrapJavascript, Tasks.CreateDocumentationHTML, Tasks.JavascriptDocumentation, Tasks.AngularApiDocumentation], function() {
   var IMAGES_DIR   = 'docs/images',
   FONTS_DOCS_DIR = 'docs/css/fonts',
   FONTS_DIST_DIR = 'dist/css/fonts';
@@ -322,7 +380,7 @@ gulp.task('bower', function() {
 
 // Run a server with a watch with gulp server
 gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
-  gulp.run('grunt-tasks-ngdocs');
+  // gulp.run('grunt-tasks-ngdocs');
   // gulp.run('angularAPI');
   connect.server({
     hostname: 'localhost',
@@ -366,6 +424,8 @@ gulp.task('default', [Tasks.Boomstrap]);
 // Deploy to our github pages page
 gulp.task('website', function() {
   // Run our gulp tasks
-  gulp.run('grunt-tasks-ngdocs');
-  return gulp.run('grunt-tasks-gh-pages');
+  // gulp.run('grunt-tasks-ngdocs');
+  // return gulp.run('grunt-tasks-gh-pages');
+  return gulp.src('./docs/**/*')
+    .pipe(ghpages());
 });
