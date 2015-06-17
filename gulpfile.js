@@ -242,7 +242,7 @@ gulp.task(Tasks.AngularApiDocumentation, function() {
   return ngdocs.sections({
     ngboomstrap: {
       glob:['docs/js/boomstrap-angular.js'],
-      title: ''
+      title: 'angular api'
     }
   }).pipe(ngdocs.process(options)).pipe(gulp.dest('docs/angularapi'));
 
