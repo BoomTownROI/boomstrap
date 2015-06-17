@@ -26,7 +26,7 @@
     "gulp-markdown": "1.0.0",
     "gulp-mustache": "1.0.2",
     "gulp-newer": "0.5.1",
-    "gulp-ngdocs": "^0.2.10",
+    "gulp-ngdocs": "0.2.10",
     "gulp-ngmin": "0.3.0",
     "gulp-order": "1.1.1",
     "gulp-plumber": "1.0.1",

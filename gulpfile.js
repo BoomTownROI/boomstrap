@@ -226,6 +226,10 @@ gulp.task(Tasks.AngularApiDocumentation, function() {
       '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
       'docs/css/boomstrap.css'
     ],
+    loadDefaults: {
+      angular: false,
+      angularAnimate: false
+    },
     html5Mode: false,
     startPage: '/ngboomstrap',
     title: "",
