@@ -232,11 +232,11 @@ gulp.task(Tasks.AngularApiDocumentation, function() {
     },
     html5Mode: false,
     startPage: '/ngboomstrap',
-    title: "",
-    image: "docs/images/fpo-boomstrap-logo.png",
-    imageLink: "/index.html",
+    title: '',
+    image: 'docs/images/fpo-boomstrap-logo.png',
+    imageLink: '/index.html',
     navTemplate: 'views/partials/ngdocs-nav.html',
-    titleLink: "/index.html"
+    titleLink: '/index.html'
   }
 
   return ngdocs.sections({
@@ -246,9 +246,6 @@ gulp.task(Tasks.AngularApiDocumentation, function() {
     }
   }).pipe(ngdocs.process(options)).pipe(gulp.dest('docs/angularapi'));
 
-  /*return gulp.src('docs/js/boomstrap-angular.js')
-    .pipe(ngdocs.process(options))
-    .pipe(gulp.dest('docs/angularapi'));*/
 });
 
 /*options: {
