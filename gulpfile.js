@@ -128,7 +128,7 @@ gulp.task(Tasks.BoomstrapJavascript,
     .pipe(gulp.dest('docs/js/'))
     .pipe(gulp.dest('dist/js/'))
     .pipe(rename({ suffix:'.min' }))
-    .pipe(uglify({ mangle: false, outSourceMap: true  }))
+    .pipe(uglify({ mangle: false, outSourceMap: true }))
     .pipe(gulp.dest('docs/js/'))
     .pipe(gulp.dest('dist/js/'));
 });
@@ -238,38 +238,13 @@ gulp.task(Tasks.AngularApiDocumentation, function() {
     navTemplate: 'views/partials/ngdocs-nav.html',
     titleLink: '/index.html'
   }
-
   return ngdocs.sections({
     ngboomstrap: {
       glob:['docs/js/boomstrap-angular.js'],
       title: 'angular api'
     }
   }).pipe(ngdocs.process(options)).pipe(gulp.dest('docs/angularapi'));
-
 });
-
-/*options: {
-  dest: 'docs/angularapi',
-  scripts: [
-    'docs/js/boomstrap.js',
-    'docs/js/boomstrap-angular.js',
-    'bower_components/angular-animate/angular-animate.min.js'
-  ],
-  styles: [
-    '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
-    'docs/css/boomstrap.css'
-  ],
-  html5Mode: false,
-  animate: false,
-  startPage: '/ngboomstrap',
-  image: 'docs/images/fpo-boomstrap-logo.png',
-  imageLink: '/index.html',
-  navTemplate: 'views/partials/ngdocs-nav.html'
-},
-ngboomstrap: {
-  src: ['docs/js/boomstrap-angular.js'],
-  title: 'boomstrap'
-}*/
 
 
 gulp.task(Tasks.ReloadDevelopmentJS, function() {
