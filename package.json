@@ -1,6 +1,6 @@
 {
   "name": "boomstrap",
-  "version": "1.15.3",
+  "version": "1.16.0",
   "devDependencies": {
     "event-stream": "3.3.1",
     "grunt": "0.4.5",
