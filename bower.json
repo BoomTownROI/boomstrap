@@ -12,7 +12,8 @@
   "ignore": [
     "*",
     "!dist/**/*.*",
-    "!less/**/*.*"
+    "!less/**/*.*",
+    "!fonts/**/*.*"
   ],
   "devDependencies": {
     "angular": "1.2.28",
