@@ -258,7 +258,7 @@ gulp.task(Tasks.ReloadDevelopmentStyles, function() {
 });
 
 gulp.task(Tasks.ReloadDevelopmentSvgIcons, function() {
-  gulp.src('docs/icons/**/*.svg')
+  gulp.src('docs/svg/**/*.svg')
   .pipe(connect.reload());
 });
 
@@ -302,10 +302,10 @@ gulp.task(Tasks.BoomstrapStylesDist, function() {
 gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStylesDist]);
 
 gulp.task(Tasks.BoomstrapSvgIcons, function () {
-  return gulp.src('icons/**/*.svg')
+  return gulp.src('svg/**/*.svg')
     .pipe(imagemin())
-    .pipe(gulp.dest('docs/icons'))
-    .pipe(gulp.dest('dist/icons'))
+    .pipe(gulp.dest('docs/svg'))
+    .pipe(gulp.dest('dist/svg'))
     .pipe(svgSprite({
       'svg': {
         'xmlDeclaration': false,
@@ -320,8 +320,8 @@ gulp.task(Tasks.BoomstrapSvgIcons, function () {
         }
       }
     }))
-    .pipe(gulp.dest('docs/icons'))
-    .pipe(gulp.dest('dist/icons'));
+    .pipe(gulp.dest('docs/svg'))
+    .pipe(gulp.dest('dist/svg'));
 });
 
 
@@ -370,7 +370,7 @@ gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
   gulp.watch(['less/**/*.less'], [Tasks.BoomstrapStylesDev, Tasks.ReloadDevelopmentStyles]);
 
   // Watch SVG Icon files
-  gulp.watch(['icons/**/*.svg'], [Tasks.BoomstrapSvgIcons, Tasks.ReloadDevelopmentSvgIcons]);
+  gulp.watch(['svg/**/*.svg'], [Tasks.BoomstrapSvgIcons, Tasks.ReloadDevelopmentSvgIcons]);
 
   // Watch Javascript Files and Templates
   gulp.watch([
