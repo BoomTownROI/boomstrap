@@ -22,6 +22,6 @@
     "commit": "5a3005c04ce87994e46e1c576762fa846e83c778"
   },
   "_source": "git://github.com/sorich87/bootstrap-tour.git",
-  "_target": "~0.9.1",
+  "_target": "0.9.3",
   "_originalSource": "bootstrap-tour"
 }

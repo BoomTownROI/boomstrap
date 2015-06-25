@@ -9,6 +9,6 @@
     "commit": "7216a41aabf74a814912cc60c1882cc1ace79983"
   },
   "_source": "git://github.com/Diokuz/baron.git",
-  "_target": "~0.7.8",
+  "_target": "0.7.10",
   "_originalSource": "baron"
 }
