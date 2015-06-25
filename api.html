@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Javascript Documentation | Boomstrap Pattern Library</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -68,7 +69,7 @@
 <p>This directive is useful for CSS Transitions</p>
 </blockquote>
 <h4 id="example-usage">Example Usage</h4>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span>&gt;</span><span class="css">
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">style</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/css&quot;</span>&gt;</span><span class="css">
 <span class="hljs-class">.my-img</span> <span class="hljs-rules">{
   <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
   <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> opacity <span class="hljs-number">5.0s</span> linear</span></span>;
@@ -77,7 +78,7 @@
   <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
 }</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/fpo-he-man.jpg"</span> <span class="hljs-attribute">bt-add-class-on-load</span>=<span class="hljs-value">"loaded"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"my-img"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/fpo-he-man.jpg&quot;</span> <span class="hljs-attribute">bt-add-class-on-load</span>=<span class="hljs-value">&quot;loaded&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;my-img&quot;</span>/&gt;</span>
 </code></pre>
 
 <h1 id="btaffix">btAffix</h1>
@@ -122,13 +123,13 @@
 </table>
 <p>The <code>btAffix</code> element allows a user to affix an element at a given scroll point. Another element with the same height and width will take the place of the element to ensure that the page layout does not break upon affixing.</p>
 <h4 id="example-usage">Example Usage</h4>
-<pre><code class="lang-html">&lt;<span class="hljs-tag">div</span> bt-affix offset=<span class="hljs-string">"500"</span>&gt;
-  &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+<pre><code class="lang-html">&lt;<span class="hljs-tag">div</span> bt-affix offset=<span class="hljs-string">&quot;500&quot;</span>&gt;
+  &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">&quot;images/fpo-he-man.jpg&quot;</span>/&gt;
 &lt;/div&gt;
-&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
-&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
-&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
-&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"images/fpo-he-man.jpg"</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">&quot;images/fpo-he-man.jpg&quot;</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">&quot;images/fpo-he-man.jpg&quot;</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">&quot;images/fpo-he-man.jpg&quot;</span>/&gt;
+&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">&quot;images/fpo-he-man.jpg&quot;</span>/&gt;
 </code></pre>
 
 <h1 id="btcurrency">btCurrency</h1>
@@ -147,12 +148,12 @@ whole, that is $2.00, this filter leaves the 00.</p>
 <h2 id="filter">Filter</h2>
 <p>The <code>btFormatDateToLocal</code> filter will convert any date stored ass UTC to
 local time, based on local machine settings. This filter accepts any
-formatting options that Angular&#39;s <code>date</code> filter accepts.</p>
+formatting options that Angular&apos;s <code>date</code> filter accepts.</p>
 <blockquote class="callout callout-info">
 <p>This filter assumes the stored date is already in UTC</p>
 </blockquote>
 <h4 id="example-usage">Example Usage</h4>
-<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">dateObject</span>|<span class="hljs-variable">btFormatDateToLocal</span>:'<span class="hljs-variable">MM</span><span class="hljs-end-block">/DD</span><span class="hljs-end-block">/yyyy</span>'}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span></span>
+<pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">dateObject</span>|<span class="hljs-variable">btFormatDateToLocal</span>:&apos;<span class="hljs-variable">MM</span><span class="hljs-end-block">/DD</span><span class="hljs-end-block">/yyyy</span>&apos;}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span></span>
 </code></pre>
 
 <h1 id="btphonenumber">btPhoneNumber</h1>
@@ -164,13 +165,13 @@ format. You will need to do any phone number validation.</p>
 </blockquote>
 <h4 id="exmaple-usage">Exmaple Usage</h4>
 <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="bash">
-  <span class="hljs-variable">$scope</span>.string1 = <span class="hljs-string">'1234567890'</span>;
-  <span class="hljs-variable">$scope</span>.string2 = <span class="hljs-string">'123-456-7890'</span>;
+  <span class="hljs-variable">$scope</span>.string1 = <span class="hljs-string">&apos;1234567890&apos;</span>;
+  <span class="hljs-variable">$scope</span>.string2 = <span class="hljs-string">&apos;123-456-7890&apos;</span>;
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-  </span><span class="hljs-expression">{{<span class="hljs-variable">string</span>1|<span class="hljs-variable">phoneNumber</span>:'<span class="hljs-variable">add</span>'}}</span><span class="xml"> // (123) 456-7890
-  </span><span class="hljs-expression">{{<span class="hljs-variable">string</span>2|<span class="hljs-variable">phoneNumber</span>:'<span class="hljs-variable">remove</span>'}}</span><span class="xml"> // 1234567890
+  </span><span class="hljs-expression">{{<span class="hljs-variable">string</span>1|<span class="hljs-variable">phoneNumber</span>:&apos;<span class="hljs-variable">add</span>&apos;}}</span><span class="xml"> // (123) 456-7890
+  </span><span class="hljs-expression">{{<span class="hljs-variable">string</span>2|<span class="hljs-variable">phoneNumber</span>:&apos;<span class="hljs-variable">remove</span>&apos;}}</span><span class="xml"> // 1234567890
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
 </code></pre>
 
@@ -180,7 +181,7 @@ format. You will need to do any phone number validation.</p>
 string.</p>
 <h4 id="example-usage">Example Usage</h4>
 <pre><code class="lang-html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="mel">
-  <span class="hljs-variable">$scope</span>.<span class="hljs-keyword">string</span> = <span class="hljs-string">'word'</span>;
+  <span class="hljs-variable">$scope</span>.<span class="hljs-keyword">string</span> = <span class="hljs-string">&apos;word&apos;</span>;
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">string</span>:<span class="hljs-variable">capitalize</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> // Word</span>
@@ -203,7 +204,7 @@ string.</p>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
-            <p class="pl-docs-sidebar-header"><a href="#top">Javascript Documentation</a> <a href="#top"><i class="ficon ficon-chevron-up"></i></a></p>
+            <p class="pl-docs-sidebar-header"><a href="#top">Javascript Documentation</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="svg/sprite.svg#chevron-up"/></svg></a></p>
             <ul class="nav nav-pills pl-docs-sidenav">
             </ul>
         </div>

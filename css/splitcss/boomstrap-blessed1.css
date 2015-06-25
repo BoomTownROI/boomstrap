@@ -8009,8 +8009,8 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   text-align: left;
   width: 100%;
 }
-.btn-group-block-dropdown .btn .caret,
-.log-call__phones__dropdown .btn .caret {
+.btn-group-block-dropdown .btn > .caret,
+.log-call__phones__dropdown .btn > .caret {
   right: 12px;
   position: relative;
   top: 50%;
@@ -8019,12 +8019,12 @@ select[multiple].ui-select-match.btn-sm ~ .ui-select-search {
   transform: translateY(-50%);
   position: absolute;
 }
-.btn-group-block-dropdown .btn i,
-.log-call__phones__dropdown .btn i {
+.btn-group-block-dropdown .btn > .icon,
+.log-call__phones__dropdown .btn > .icon {
   margin-right: 6px;
 }
-.btn-group-block-dropdown .btn-sm .caret,
-.log-call__phones__dropdown .btn-sm .caret {
+.btn-group-block-dropdown .btn-sm > .caret,
+.log-call__phones__dropdown .btn-sm > .caret {
   right: 10px;
 }
 .btn-group-block-dropdown .dropdown-menu,
@@ -8340,46 +8340,62 @@ fieldset[disabled] .btn-desaturated.active {
   border-width: 1px;
   color: #696969;
 }
-.btn > i {
+.btn > .icon {
+  font-size: 16px;
+}
+.btn > .ficon {
   float: left;
   font-size: 16px;
   margin: 1px 4px 0 0;
 }
-.btn-lg > i {
+.btn-lg > .icon {
+  font-size: 20px;
+}
+.btn-lg > .ficon {
   font-size: 20px;
   margin: 1px 6px 0 -2px;
 }
-.btn-sm > i {
+.btn-sm > .icon {
   font-size: 14px;
 }
-.btn-xs > i {
+.btn-sm > .ficon {
+  font-size: 14px;
+}
+.btn-xs > .icon {
+  font-size: 14px;
+}
+.btn-xs > .ficon {
   font-size: 14px;
   margin: 1px 2px 0 0;
 }
-.btn-block > i {
+.btn-block > .ficon {
   display: inline-block;
   float: none;
   margin: 0;
 }
-.btn-block:not(.btn-icon) > i {
+.btn-block:not(.btn-icon) > .ficon {
   line-height: 0.9;
 }
 .btn-icon {
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
-.btn-icon i {
+.btn-icon.btn-lg {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.btn-icon.btn-sm {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.btn-icon.btn-xs {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.btn-icon .ficon {
   display: block;
   margin: 0;
   padding: 2px;
-}
-.btn-icon.btn-lg {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.btn-icon.btn-xs {
-  padding-left: 2px;
-  padding-right: 2px;
 }
 .callout {
   margin: 20px 0;
@@ -8703,12 +8719,11 @@ fieldset[disabled] .btn-desaturated.active {
 .carousel-control {
   cursor: pointer;
 }
-.carousel-control .ficon {
+.carousel-control > .icon {
   background-color: #444444;
   display: inline-block;
-  font-size: 28px;
+  font-size: 36px;
   margin-top: -18px;
-  padding: 4px;
   position: absolute;
   top: 50%;
   z-index: 5;
@@ -8716,11 +8731,17 @@ fieldset[disabled] .btn-desaturated.active {
 .carousel-control.left {
   background: transparent;
 }
+.carousel-control.left > .icon {
+  left: 0;
+}
 .carousel-control.left .ficon {
   left: 0;
 }
 .carousel-control.right {
   background: transparent;
+}
+.carousel-control.right > .icon {
+  right: 0;
 }
 .carousel-control.right .ficon {
   right: 0;
@@ -9052,25 +9073,4 @@ button.close-inverted {
 }
 .ficon-bars:before {
   content: "\e018";
-}
-.ficon-plus:before {
-  content: "\e011";
-}
-.ficon-minus:before {
-  content: "\e00d";
-}
-.ficon-minus-circle:before {
-  content: "\e00f";
-}
-.ficon-justify:before {
-  content: "\f039";
-}
-.ficon-calculator:before {
-  content: "\e033";
-}
-.ficon-grid:before {
-  content: "\e038";
-}
-.ficon-house:before {
-  content: "\f015";
 }

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>JavaScript | Boomstrap Pattern Library</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -473,39 +474,38 @@
         </div>
       </div>
       <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-        <span class="ficon ficon-chevron-left"></span>
+        <svg class="icon icon-chevron-left"><use xlink:href="svg/sprite.svg#chevron-left"/></svg>
       </a>
       <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-        <span class="ficon ficon-chevron-right"></span>
+        <svg class="icon icon-chevron-right"><use xlink:href="svg/sprite.svg#chevron-right"/></svg>
       </a>
     </div>
   </div><!-- /example -->
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;carousel-example-generic&quot;</span> <span class="na">class=</span><span class="s">&quot;carousel slide&quot;</span> <span class="na">data-ride=</span><span class="s">&quot;carousel&quot;</span><span class="nt">&gt;</span>
-  <span class="c">&lt;!-- Indicators --&gt;</span>
-  <span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">&quot;carousel-indicators&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">data-target=</span><span class="s">&quot;#carousel-example-generic&quot;</span> <span class="na">data-slide-to=</span><span class="s">&quot;0&quot;</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">data-target=</span><span class="s">&quot;#carousel-example-generic&quot;</span> <span class="na">data-slide-to=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">data-target=</span><span class="s">&quot;#carousel-example-generic&quot;</span> <span class="na">data-slide-to=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
-  <span class="nt">&lt;/ol&gt;</span>
-  <span class="c">&lt;!-- Wrapper for slides --&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;carousel-inner&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;item active&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span> <span class="na">alt=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;carousel-caption&quot;</span><span class="nt">&gt;</span>
-        ...
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    ...
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="c">&lt;!-- Controls --&gt;</span><!-- Carousel Controls (Boomstrap Custom) -->
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;left carousel-control&quot;</span> <span class="na">href=</span><span class="s">&quot;#carousel-example-generic&quot;</span> <span class="na">data-slide=</span><span class="s">&quot;prev&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ficon ficon-chevron-left&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-  <span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;right carousel-control&quot;</span> <span class="na">href=</span><span class="s">&quot;#carousel-example-generic&quot;</span> <span class="na">data-slide=</span><span class="s">&quot;next&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ficon ficon-chevron-right&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-  <span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+  <div class="pl-code"><pre class="prettyprint"><code>&lt;div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="max-width: 800px;"&gt;
+  &lt;ol class="carousel-indicators"&gt;
+    &lt;li data-target="#carousel-example-generic" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+    &lt;li data-target="#carousel-example-generic" data-slide-to="1"&gt;&lt;/li&gt;
+    &lt;li data-target="#carousel-example-generic" data-slide-to="2"&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="item active"&gt;
+      &lt;img src="images/fpo-carousel-1.jpg" alt="First slide"&gt;
+    &lt;/div&gt;
+    &lt;div class="item"&gt;
+      &lt;img src="images/fpo-carousel-2.jpg" alt="Second slide"&gt;
+    &lt;/div&gt;
+    &lt;div class="item"&gt;
+      &lt;img src="images/fpo-carousel-3.jpg" alt="Third slide"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"&gt;
+    &lt;svg class="icon icon-chevron-left"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-left"/&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;a class="right carousel-control" href="#carousel-example-generic" data-slide="next"&gt;
+    &lt;svg class="icon icon-chevron-right"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-right"/&gt;&lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+  </div>
 
   <div class="callout callout-warning" id="callout-carousel-transitions">
     <h4>Transition animations not supported in Internet Explorer 8 &amp; 9</h4>
@@ -545,10 +545,10 @@
         </div>
       </div>
       <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
-        <span class="ficon ficon-chevron-left"></span>
+        <svg class="icon icon-chevron-left"><use xlink:href="svg/sprite.svg#chevron-left"/></svg>
       </a>
       <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
-        <span class="ficon ficon-chevron-right"></span>
+        <svg class="icon icon-chevron-right"><use xlink:href="svg/sprite.svg#chevron-right"/></svg>
       </a>
     </div>
   </div><!-- /example -->
@@ -693,8 +693,8 @@
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
               Collapsible Group Item #1
               <!-- Collapse (Boomstrap Custom) -->
-              <i class="panel-collapse-more ficon ficon-chevron-right"></i>
-              <i class="panel-collapse-less ficon ficon-chevron-down"></i>
+              <svg class="panel-collapse-more icon icon-chevron-right"><use xlink:href="svg/sprite.svg#chevron-right"/></svg>
+              <svg class="panel-collapse-less icon icon-chevron-down"><use xlink:href="svg/sprite.svg#chevron-down"/></svg>
             </a>
           </h4>
         </div>
@@ -710,8 +710,8 @@
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
               Collapsible Group Item #2
               <!-- Collapse (Boomstrap Custom) -->
-              <i class="panel-collapse-more ficon ficon-chevron-right"></i>
-              <i class="panel-collapse-less ficon ficon-chevron-down"></i>
+              <svg class="panel-collapse-more icon icon-chevron-right"><use xlink:href="svg/sprite.svg#chevron-right"/></svg>
+              <svg class="panel-collapse-less icon icon-chevron-down"><use xlink:href="svg/sprite.svg#chevron-down"/></svg>
             </a>
           </h4>
         </div>
@@ -727,8 +727,8 @@
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
               Collapsible Group Item #3
               <!-- Collapse (Boomstrap Custom) -->
-              <i class="panel-collapse-more ficon ficon-chevron-right"></i>
-              <i class="panel-collapse-less ficon ficon-chevron-down"></i>
+              <svg class="panel-collapse-more icon icon-chevron-right"><use xlink:href="svg/sprite.svg#chevron-right"/></svg>
+              <svg class="panel-collapse-less icon icon-chevron-down"><use xlink:href="svg/sprite.svg#chevron-down"/></svg>
             </a>
           </h4>
         </div>
@@ -740,54 +740,59 @@
       </div>
     </div>
   </div><!-- /example -->
-<div class="pl-code"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-group&quot;</span> <span class="na">id=</span><span class="s">&quot;accordion&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel panel-default&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-heading&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;panel-title&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;collapsed&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> <span class="na">data-parent=</span><span class="s">&quot;#accordion&quot;</span> <span class="na">href=</span><span class="s">&quot;#collapseOne&quot;</span><span class="nt">&gt;</span>
-          Collapsible Group Item #1
-          <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;panel-collapse-more ficon ficon-chevron-right&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-          <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;panel-collapse-less ficon ficon-chevron-down&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-      <span class="nt">&lt;/h4&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;collapseOne&quot;</span> <span class="na">class=</span><span class="s">&quot;panel-collapse collapse in&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-body&quot;</span><span class="nt">&gt;</span>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&#39;t heard of them accusamus labore sustainable VHS.
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel panel-default&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-heading&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;panel-title&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> <span class="na">data-parent=</span><span class="s">&quot;#accordion&quot;</span> <span class="na">href=</span><span class="s">&quot;#collapseTwo&quot;</span><span class="nt">&gt;</span>
-          Collapsible Group Item #2
-          <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;ficon&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-      <span class="nt">&lt;/h4&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;collapseTwo&quot;</span> <span class="na">class=</span><span class="s">&quot;panel-collapse collapse&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-body&quot;</span><span class="nt">&gt;</span>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&#39;t heard of them accusamus labore sustainable VHS.
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel panel-default&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-heading&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;panel-title&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">data-toggle=</span><span class="s">&quot;collapse&quot;</span> <span class="na">data-parent=</span><span class="s">&quot;#accordion&quot;</span> <span class="na">href=</span><span class="s">&quot;#collapseThree&quot;</span><span class="nt">&gt;</span>
-          Collapsible Group Item #3
-          <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;ficon&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-      <span class="nt">&lt;/h4&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;collapseThree&quot;</span> <span class="na">class=</span><span class="s">&quot;panel-collapse collapse&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-body&quot;</span><span class="nt">&gt;</span>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&#39;t heard of them accusamus labore sustainable VHS.
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;div class="panel-group" id="accordion"&gt;
+&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h4 class="panel-title"&gt;
+      &lt;a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"&gt;
+        Collapsible Group Item #1
+        &lt;!-- Collapse (Boomstrap Custom) --&gt;
+        &lt;svg class="panel-collapse-more icon icon-chevron-right"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-right"/&gt;&lt;/svg&gt;
+        &lt;svg class="panel-collapse-less icon icon-chevron-down"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-down"/&gt;&lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div id="collapseOne" class="panel-collapse collapse in"&gt;
+    &lt;div class="panel-body"&gt;
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h4 class="panel-title"&gt;
+      &lt;a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"&gt;
+        Collapsible Group Item #2
+        &lt;!-- Collapse (Boomstrap Custom) --&gt;
+        &lt;svg class="panel-collapse-more icon icon-chevron-right"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-right"/&gt;&lt;/svg&gt;
+        &lt;svg class="panel-collapse-less icon icon-chevron-down"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-down"/&gt;&lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div id="collapseTwo" class="panel-collapse collapse"&gt;
+    &lt;div class="panel-body"&gt;
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h4 class="panel-title"&gt;
+      &lt;a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"&gt;
+        Collapsible Group Item #3
+        &lt;!-- Collapse (Boomstrap Custom) --&gt;
+        &lt;svg class="panel-collapse-more icon icon-chevron-right"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-right"/&gt;&lt;/svg&gt;
+        &lt;svg class="panel-collapse-less icon icon-chevron-down"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-down"/&gt;&lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div id="collapseThree" class="panel-collapse collapse"&gt;
+    &lt;div class="panel-body"&gt;
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </code></pre></div>
 
   <p>You can also use the plugin without the accordion markup. Make a button toggle the expanding and collapsing of another element.</p>
@@ -2330,12 +2335,12 @@ window.onload = function() {
   <p><a id="bootstrap-tour-btn" class="btn btn-attention">take the tour</a></p>
   
   <div class="row">
-      <div class="col-md-6"><h4><i id="stop1" class="ficon ficon-location"></i> First Stop</h4></div>
-      <div class="col-md-6"><h4><i id="stop2" class="ficon ficon-location"></i> Second Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop1" class="icon icon-location"><use xlink:href="svg/sprite.svg#location"/></svg> First Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop2" class="icon icon-location"><use xlink:href="svg/sprite.svg#location"/></svg> Second Stop</h4></div>
   </div>
   <div class="row">
-      <div class="col-md-6"><h4><i id="stop3" class="ficon ficon-location"></i> Third Stop</h4></div>
-      <div class="col-md-6"><h4><i id="stop4" class="ficon ficon-location"></i> Fourth Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop3" class="icon icon-location"><use xlink:href="svg/sprite.svg#location"/></svg> Third Stop</h4></div>
+      <div class="col-md-6"><h4><svg id="stop4" class="icon icon-location"><use xlink:href="svg/sprite.svg#location"/></svg> Fourth Stop</h4></div>
   </div>
 
   <div class="pl-code"><pre class="prettyprint"><code>// Instance the tour
@@ -2343,7 +2348,7 @@ var doctour = new Tour({
     name: "example",
     template: "&lt;div class='popover tour'&gt;" +
         "&lt;div class='arrow'&gt;&lt;/div&gt;" +
-        "&lt;div class='popover-close'&gt;&lt;i class='ficon ficon-cross' data-role='end'&gt;&lt;/i&gt;&lt;/div&gt;" +
+        "&lt;div class='popover-close'&gt;&lt;svg class='icon icon-cross' data-role='end'&gt;&lt;use xlink:href='svg/sprite.svg#cross'/&gt;&lt;/svg&gt;&lt;/div&gt;" +
         "&lt;h3 class='popover-title'&gt;&lt;/h3&gt;" +
         "&lt;div class='popover-content'&gt;&lt;/div&gt;" +
         "&lt;div class='popover-navigation'&gt;&lt;button class='btn btn-sm btn-default' data-role='prev'&gt;Prev&lt;/button&gt;&lt;button class='btn btn-sm btn-primary js-next' data-role='next'&gt;Next&lt;/button&gt;&lt;/div&gt;"+
@@ -2396,7 +2401,7 @@ doctour.init();</code></pre>
           name: "example",
           template: "<div class='popover tour'>" +
               "<div class='arrow'></div>" +
-              "<div class='popover-close'><i class='ficon ficon-cross' data-role='end'></i></div>" +
+              "<div class='popover-close'><svg class='icon icon-cross' data-role='end'><use xlink:href='svg/sprite.svg#cross'/></svg></div>" +
               "<h3 class='popover-title'></h3>" +
               "<div class='popover-content'></div>" +
               "<div class='popover-navigation'><button class='btn btn-sm btn-default' data-role='prev'>Prev</button><button class='btn btn-sm btn-primary js-next' data-role='next'>Next</button></div>"+
@@ -2450,7 +2455,7 @@ doctour.init();</code></pre>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
-            <p class="pl-docs-sidebar-header"><a href="#top">JavaScript</a> <a href="#top"><i class="ficon ficon-chevron-up"></i></a></p>
+            <p class="pl-docs-sidebar-header"><a href="#top">JavaScript</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="svg/sprite.svg#chevron-up"/></svg></a></p>
             <ul class="nav nav-pills pl-docs-sidenav">
                 <li>
                     <a href="#overview">overview</a>

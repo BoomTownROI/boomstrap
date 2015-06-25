@@ -1,6 +1,6 @@
 NG_DOCS={
   "sections": {
-    "ngboomstrap": "boomstrap"
+    "ngboomstrap": "angular api"
   },
   "pages": [
     {
@@ -158,14 +158,46 @@ NG_DOCS={
     }
   ],
   "apis": {
-    "ngboomstrap": false
+    "ngboomstrap": true
+  },
+  "__file": "_FAKE_DEST_/js/docs-setup.js",
+  "__options": {
+    "startPage": "/ngboomstrap",
+    "scripts": [
+      "js/marked.js",
+      "js/prettify.js",
+      "js/boomstrap.js",
+      "js/boomstrap-angular.js",
+      "js/angular-animate.min.js"
+    ],
+    "styles": [
+      "//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700",
+      "css/boomstrap.css"
+    ],
+    "title": "",
+    "html5Mode": false,
+    "editExample": true,
+    "navTemplate": "views/partials/ngdocs-nav.html",
+    "navContent": "<ul id=\"pl-docs-nav\" class=\"nav navbar-nav\">\n  <li><a href=\"../index.html\">Introduction</a></li>\n  <li><a href=\"../css.html\">CSS</a></li>\n  <li><a href=\"../components.html\">Components</a></li>\n  <li><a href=\"../javascript.html\">JavaScript</a></li>\n  <li><a href=\"../angular.html\">Angular</a></li>\n  <!-- <li><a href=\"../angularapi\">API</a></li> -->\n  <li><a href=\"../api.html\">API (beta)</a></li>\n</ul>\n<script type=\"text/javascript\">\n  $(document).ready(function() {\n  \t$('ul.breadcrumb').css('display', 'none');\n  });\n</script>",
+    "navTemplateData": {},
+    "loadDefaults": {
+      "angular": false,
+      "angularAnimate": false,
+      "marked": true,
+      "prettify": true
+    },
+    "image": "img/fpo-boomstrap-logo.png",
+    "imageLink": "/index.html",
+    "titleLink": "/index.html"
   },
   "html5Mode": false,
+  "editExample": true,
   "startPage": "/ngboomstrap",
   "scripts": [
+    "marked.js",
+    "prettify.js",
     "boomstrap.js",
     "boomstrap-angular.js",
     "angular-animate.min.js"
-  ],
-  "editExample": true
+  ]
 };

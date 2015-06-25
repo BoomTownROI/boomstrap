@@ -15,12 +15,12 @@ img.AngularJS-small {
   line-height: 18px
 }
 
-.header img {
+.navbar img {
   max-height: 40px;
   padding-right: 20px;
 }
 
-.header img+.brand {
+.navbar img+.brand {
   padding: 10px 20px 10px 10px;
 }
 
@@ -68,6 +68,7 @@ img.AngularJS-small {
 
 .form-search > ul.nav > li > a {
   margin: 0;
+  overflow: auto;
 }
 
 .form-search > ul.nav > li.module {
