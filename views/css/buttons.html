@@ -80,27 +80,32 @@
 
   <!-- Buttons (Boomstrap Custom) -->
   <h2 id="">Icon-only buttons</h2>
-  <p>Add <code>.btn-icon</code> for icon-only buttons</p>
+  <p>Add <code>.btn-icon</code> for icon-only buttons. The <code>.btn-icon</code> class reduces left and right button padding so that the button shape is square. In the example below, notice that <strong>contextual color classes</strong> can be added to any icon.</p>
   <div class="pl-example">
     <p>
-      <button type="button" class="btn btn-default btn-lg btn-icon"><i class="ficon ficon-heart text-danger"></i></button>
-      <button type="button" class="btn btn-default btn-icon"><i class="ficon ficon-heart text-success"></i></button>
-      <button type="button" class="btn btn-default btn-sm btn-icon"><i class="ficon ficon-heart"></i></button>
-      <button type="button" class="btn btn-default btn-xs btn-icon"><i class="ficon ficon-heart"></i></button>
+      <button type="button" class="btn btn-default btn-lg btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-sm btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-xs btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
     </p>
+    <hr>
     <p>
-      <button type="button" class="btn btn-default btn-lg btn-icon"><i class="ficon ficon-cross"></i></button>
-      <button type="button" class="btn btn-default btn-icon"><i class="ficon ficon-cross"></i></button>
-      <button type="button" class="btn btn-default btn-sm btn-icon"><i class="ficon ficon-cross"></i></button>
-      <button type="button" class="btn btn-default btn-xs btn-icon"><i class="ficon ficon-cross"></i></button>
+      <button type="button" class="btn btn-default btn-lg btn-icon"><svg class="icon icon-heart text-danger"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-icon"><svg class="icon icon-heart text-success"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-sm btn-icon"><svg class="icon icon-heart text-attention"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-xs btn-icon"><svg class="icon icon-heart text-info"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
     </p>
   </div>
-<div class="pl-code"><pre class="prettyprint"><code>&lt;p&gt;
-  &lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;i class="ficon ficon-heart text-danger"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-heart text-success"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/p&gt;
+<div class="pl-code"><pre class="prettyprint"><code>&lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+
+&lt;!-- with contextual colors --&gt;
+&lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;svg class="icon icon-heart text-danger"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;svg class="icon icon-heart text-success"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;svg class="icon icon-heart text-attention"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;svg class="icon icon-heart text-info"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
 </code></pre></div>
 
   <h2 id="buttons-sizes">Sizes</h2>
@@ -109,53 +114,53 @@
     <p>
       <button type="button" class="btn btn-primary btn-lg">Large button</button>
       <button type="button" class="btn btn-default btn-lg">Large button</button>
-      <button type="button" class="btn btn-default btn-lg"><i class="ficon ficon-heart"></i> Large button</button>
-      <button type="button" class="btn btn-default btn-lg btn-icon"><i class="ficon ficon-heart"></i></button>
+      <button type="button" class="btn btn-default btn-lg"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg> Large button</button>
+      <button type="button" class="btn btn-default btn-lg btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
     </p>
     <p>
       <button type="button" class="btn btn-primary">Default button</button>
       <button type="button" class="btn btn-default">Default button</button>
-      <button type="button" class="btn btn-default"><i class="ficon ficon-heart"></i> Default button</button>
-      <button type="button" class="btn btn-default btn-icon"><i class="ficon ficon-heart"></i></button>
+      <button type="button" class="btn btn-default"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg> Default button</button>
+      <button type="button" class="btn btn-default btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
     </p>
     <p>
       <button type="button" class="btn btn-primary btn-sm">Small button</button>
       <button type="button" class="btn btn-default btn-sm">Small button</button>
-      <button type="button" class="btn btn-default btn-sm"><i class="ficon ficon-heart"></i> Small button</button>
-      <button type="button" class="btn btn-default btn-sm btn-icon"><i class="ficon ficon-heart"></i></button>
+      <button type="button" class="btn btn-default btn-sm"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg> Small button</button>
+      <button type="button" class="btn btn-default btn-sm btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
     </p>
     <p>
       <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
       <button type="button" class="btn btn-default btn-xs">Extra small button</button>
-      <button type="button" class="btn btn-default btn-xs"><i class="ficon ficon-heart"></i> Extra Small button</button>
-      <button type="button" class="btn btn-default btn-xs btn-icon"><i class="ficon ficon-heart"></i></button>
+      <button type="button" class="btn btn-default btn-xs"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg> Extra Small button</button>
+      <button type="button" class="btn btn-default btn-xs btn-icon"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg></button>
     </p>
   </div>
 <div class="pl-code"><pre class="prettyprint"><code>
-&lt;p&gt;
-  &lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-lg"&gt;Large button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-lg"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt; Large button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;button type="button" class="btn btn-primary"&gt;Default button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default"&gt;Default button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt; Default button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-sm"&gt;Small button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-sm"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt; Small button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;button type="button" class="btn btn-primary btn-xs"&gt;Extra small button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-xs"&gt;Extra small button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-xs"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt; Extra Small button&lt;/button&gt;
-  &lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/p&gt;
+&lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-lg"&gt;Large button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-lg"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt; Large button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+
+
+&lt;button type="button" class="btn btn-primary"&gt;Default button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default"&gt;Default button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt; Default button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+
+
+&lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-sm"&gt;Small button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-sm"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt; Small button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+
+
+&lt;button type="button" class="btn btn-primary btn-xs"&gt;Extra small button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-xs"&gt;Extra small button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-xs"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt; Extra Small button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
+
+
 </code></pre></div>
 
   <p>Create block level buttons&mdash;those that span the full width of a parent&mdash; by adding <code>.btn-block</code>.</p>
@@ -163,14 +168,12 @@
     <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
       <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
       <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
-      <button type="button" class="btn btn-primary btn-lg btn-block"><i class="ficon ficon-heart"></i> Block level button</button>
-      <button type="button" class="btn btn-default btn-lg btn-block"><i class="ficon ficon-heart"></i> Block level button</button>
+      <button type="button" class="btn btn-default btn-lg btn-block"><svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg> Block level button</button>
     </div>
   </div>
 <div class="pl-code"><pre class="prettyprint"><code>&lt;button type="button" class="btn btn-primary btn-lg btn-block"&gt;Block level button&lt;/button&gt;
 &lt;button type="button" class="btn btn-default btn-lg btn-block"&gt;Block level button&lt;/button&gt;
-&lt;button type="button" class="btn btn-primary btn-lg btn-block"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt; Block level button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-lg btn-block"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt; Block level button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default btn-lg btn-block"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt; Block level button&lt;/button&gt;
 </code></pre></div>
 
 

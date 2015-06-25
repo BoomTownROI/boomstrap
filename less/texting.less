@@ -139,15 +139,22 @@
   top: 50%;
   width: @texting-avatar-size;
   z-index: 10;
-  .ficon {
+  > .icon {
     border-radius: 50%;
     color: @gray-lighter;
     font-size: 40px;
     left: 1px;
     top: 6px;
   }
-  img {
-    //border-radius: @texting-avatar-size;
+  // deprecated ficon
+  > .ficon {
+    border-radius: 50%;
+    color: @gray-lighter;
+    font-size: 40px;
+    left: 1px;
+    top: 6px;
+  }
+  > img {
     margin-left: -2px;
     width: @texting-avatar-size + 4px;
   }
@@ -164,7 +171,8 @@
     color: @brand-danger;
     text-decoration: underline;
   }
-  .ficon-warning { top: 0; }
+  .icon-warning { top: -2px; }
+  .ficon-warning { top: 0; } // deprecated ficon
 }
 
 .texting__msg__time {

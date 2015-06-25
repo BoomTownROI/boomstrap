@@ -36,7 +36,11 @@
 // -------------------------
 
 .btn {
-  > i {
+  > .icon {
+    font-size: @font-size-base + 2px;
+  }
+  // deprecated ficon
+  > .ficon {
     float: left;
     font-size: @font-size-base + 2px;
     margin: 1px @margin-xsmall 0 0;
@@ -44,58 +48,77 @@
 }
 
 .btn-lg {
-  > i {
+  > .icon {
+    font-size: @font-size-large + 2px;
+  }
+  // deprecated ficon
+  > .ficon {
     font-size: @font-size-large + 2px;
     margin: 1px @margin-small 0 -2px;
   }
 }
 
 .btn-sm {
-  > i {
+  > .icon {
+    font-size: @font-size-small + 2px;
+  }
+  // deprecated ficon
+  > .ficon {
     font-size: @font-size-small + 2px;
   }
 }
 
 .btn-xs {
-  > i {
+  > .icon {
+    font-size: @font-size-small + 2px;
+  }
+  // deprecated ficon
+  > .ficon {
     font-size: @font-size-small + 2px;
     margin: 1px 2px 0 0;
   }
 }
 
+// deprecated ficon
 .btn-block {
-  > i {
+  > .ficon {
     display: inline-block;
     float: none;
     margin: 0;
   }
 }
 
-// Ensure that button height won't change now that icon isn't floated
+// deprecated ficon
 .btn-block:not(.btn-icon) {
-  > i {
+  > .ficon {
     line-height: 0.9;
   }
 }
+
 
 // Icon-only buttons
 // -------------------------
 
 .btn-icon {
-  padding-left: @padding-small;
-  padding-right: @padding-small;
-  i {
+  padding-left: @padding-base;
+  padding-right: @padding-base;
+  &.btn-lg {
+    padding-left: @padding-large;
+    padding-right: @padding-large;
+  }
+  &.btn-sm {
+    padding-left: @padding-small + 1px;
+    padding-right: @padding-small + 1px;
+  }
+  &.btn-xs {
+    padding-left: @padding-xsmall - 1px;
+    padding-right: @padding-xsmall - 1px;
+  }
+  // deprecated ficon
+  .ficon {
     display: block;
     margin: 0;
     padding: 2px;
-  }
-  &.btn-lg {
-    padding-left: @padding-medium;
-    padding-right: @padding-medium;
-  }
-  &.btn-xs {
-    padding-left: 2px;
-    padding-right: 2px;
   }
 }
 

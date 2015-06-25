@@ -4,134 +4,76 @@
 <!-- Icons (Boomstrap Custom) -->
 <div class="pl-docs-section">
   <h1 id="icons" class="page-header">Icons</h1>
-  <p class="lead">We have a serious set of icons. Check 'em out below.</p>
-  <h3>Icon Font</h3>
-  <p>We built our icon font, lovingly referred to as "ficon", using <a href="http://www.icomoon.io" target="_blank">icomoon</a>. Below you will find a few examples to demonstrate use and syntax.</p>
-  <p><a href="css/fonts/ficon-docs/demo.html" target="_blank" class="btn btn-attention">view full set</a></p><br>
-  <h4>Utility, Interface, Action</h4>
-  <div class="pl-example pl-icons">
-    <i class="ficon ficon-heart"></i>
+  <div class="callout callout-danger">
+    <h4>Deprecated Font Icons <i class="ficon ficon-heart"></i>
     <i class="ficon ficon-eye"></i>
     <i class="ficon ficon-chat"></i>
     <i class="ficon ficon-user"></i>
     <i class="ficon ficon-cog"></i>
     <i class="ficon ficon-chevron-left"></i>
-    <i class="ficon ficon-chevron-right"></i>
+    <i class="ficon ficon-chevron-right"></i></h4>
+    <p>We have switched to an SVG icon system. Font icons are still available for use but development has stopped and they will eventually be removed from the project - <a class="callout-link" href="css/fonts/ficon-docs/demo.html" target="_blank" class="btn btn-attention">view font icons</a>.</p>
   </div>
-<div class="pl-code"><pre class="prettyprint"><code>&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;
-&lt;i class="ficon ficon-eye"&gt;&lt;/i&gt;
-&lt;i class="ficon ficon-chat"&gt;&lt;/i&gt;
-&lt;i class="ficon ficon-user"&gt;&lt;/i&gt;
-&lt;i class="ficon ficon-cog"&gt;&lt;/i&gt;
-&lt;i class="ficon ficon-chevron-left"&gt;&lt;/i&gt;
-&lt;i class="ficon ficon-chevron-right"&gt;&lt;/i&gt;
-</code></pre></div>
-	<p>Here they are inside of default buttons.</p>
-	<div class="pl-example">
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-heart"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-eye"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-chat"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-user"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-cog"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-chevron-left"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-chevron-right"></i></button>
-	</div>
-<div class="pl-code"><pre class="prettyprint"><code>&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-eye"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-chat"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-user"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-cog"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-chevron-left"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-chevron-right"&gt;&lt;/i&gt;&lt;/button&gt;
+  <p class="lead">We have a serious set of SVG icons. We've implemented our icons with SVG 'use' pointing to an external source (see <a href="https://css-tricks.com/svg-use-external-source/" target="_blank">CSS Tricks</a> and <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">svg4everybody</a>).</p>
+  <p><a href="svg/sprite.symbol.html" target="_blank" class="btn btn-attention">view full svg icon set</a><br><br></p>
+  <h4>Utility, Interface, Action Icons</h4>
+  <div class="pl-example pl-icons">
+    <svg class="icon icon-heart"><use xlink:href="svg/sprite.svg#heart"/></svg>
+    <svg class="icon icon-eye"><use xlink:href="svg/sprite.svg#eye"/></svg>
+    <svg class="icon icon-chat"><use xlink:href="svg/sprite.svg#chat"/></svg>
+    <svg class="icon icon-user"><use xlink:href="svg/sprite.svg#user"/></svg>
+    <svg class="icon icon-cog"><use xlink:href="svg/sprite.svg#cog"/></svg>
+    <svg class="icon icon-chevron-left"><use xlink:href="svg/sprite.svg#chevron-left"/></svg>
+    <svg class="icon icon-chevron-right"><use xlink:href="svg/sprite.svg#chevron-right"/></svg>
+  </div>
+<div class="pl-code"><pre class="prettyprint"><code>&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="svg/sprite.svg#heart"/&gt;&lt;/svg&gt;
+&lt;svg class="icon icon-eye"&gt;&lt;use xlink:href="svg/sprite.svg#eye"/&gt;&lt;/svg&gt;
+&lt;svg class="icon icon-chat"&gt;&lt;use xlink:href="svg/sprite.svg#chat"/&gt;&lt;/svg&gt;
+&lt;svg class="icon icon-user"&gt;&lt;use xlink:href="svg/sprite.svg#user"/&gt;&lt;/svg&gt;
+&lt;svg class="icon icon-cog"&gt;&lt;use xlink:href="svg/sprite.svg#cog"/&gt;&lt;/svg&gt;
+&lt;svg class="icon icon-chevron-left"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-left"/&gt;&lt;/svg&gt;
+&lt;svg class="icon icon-chevron-right"&gt;&lt;use xlink:href="svg/sprite.svg#chevron-right"/&gt;&lt;/svg&gt;
 </code></pre></div>
 
-	<h4>Communication Status</h4>
-	<p>Our icon font also includes custom icons for showing communication status.</p>
+	<h4>Communication Status Icons</h4>
 	<div class="pl-example pl-icons">
-    <i class="ficon ficon-email-good"></i>
-    <i class="ficon ficon-email-neutral"></i>
-    <i class="ficon ficon-email-bad"></i>
-    <i class="ficon ficon-phone-good"></i>
-    <i class="ficon ficon-phone-neutral"></i>
-    <i class="ficon ficon-phone-bad"></i>
-    <i class="ficon ficon-text-good"></i>
-    <i class="ficon ficon-text-neutral"></i>
-    <i class="ficon ficon-text-bad"></i>
+    <svg class="icon icon-email-good"><use xlink:href="svg/sprite.svg#email-good"/></svg>
+    <svg class="icon icon-email-neutral"><use xlink:href="svg/sprite.svg#email-neutral"/></svg>
+    <svg class="icon icon-email-bad"><use xlink:href="svg/sprite.svg#email-bad"/></svg>
+    <svg class="icon icon-phone-good"><use xlink:href="svg/sprite.svg#phone-good"/></svg>
+    <svg class="icon icon-phone-neutral"><use xlink:href="svg/sprite.svg#phone-neutral"/></svg>
+    <svg class="icon icon-phone-bad"><use xlink:href="svg/sprite.svg#phone-bad"/></svg>
+    <svg class="icon icon-text-good"><use xlink:href="svg/sprite.svg#text-good"/></svg>
+    <svg class="icon icon-text-neutral"><use xlink:href="svg/sprite.svg#text-neutral"/></svg>
+    <svg class="icon icon-text-bad"><use xlink:href="svg/sprite.svg#text-bad"/></svg>
   </div>
 <div class="pl-code"><pre class="prettyprint"><code>&lt;!-- 2-way emailing --&gt;
-&lt;i class="ficon ficon-email-good"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-email-good"&gt;&lt;use xlink:href="svg/sprite.svg#email-good"/&gt;&lt;/svg&gt;
 
 &lt;!-- no replies --&gt;
-&lt;i class="ficon ficon-email-neutral"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-email-neutral"&gt;&lt;use xlink:href="svg/sprite.svg#email-neutral"/&gt;&lt;/svg&gt;
 
 &lt;!-- opt-out or invalid --&gt;
-&lt;i class="ficon ficon-email-bad"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-email-bad"&gt;&lt;use xlink:href="svg/sprite.svg#email-bad"/&gt;&lt;/svg&gt;
 
 &lt;!-- talking to prospect --&gt;
-&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-phone-good"&gt;&lt;use xlink:href="svg/sprite.svg#phone-good"/&gt;&lt;/svg&gt;
 
 &lt;!-- no conversations --&gt;
-&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-phone-neutral"&gt;&lt;use xlink:href="svg/sprite.svg#phone-neutral"/&gt;&lt;/svg&gt;
 
 &lt;!-- opt-out or wrong number --&gt;
-&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-phone-bad"&gt;&lt;use xlink:href="svg/sprite.svg#phone-bad"/&gt;&lt;/svg&gt;
 
 &lt;!-- texting to prospect --&gt;
-&lt;i class="ficon ficon-text-good"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-text-good"&gt;&lt;use xlink:href="svg/sprite.svg#text-good"/&gt;&lt;/svg&gt;
 
 &lt;!-- no conversations --&gt;
-&lt;i class="ficon ficon-text-neutral"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-text-neutral"&gt;&lt;use xlink:href="svg/sprite.svg#text-neutral"/&gt;&lt;/svg&gt;
 
 &lt;!-- opt-out or wrong number --&gt;
-&lt;i class="ficon ficon-text-bad"&gt;&lt;/i&gt;
+&lt;svg class="icon icon-text-bad"&gt;&lt;use xlink:href="svg/sprite.svg#text-bad"/&gt;&lt;/svg&gt;
 </code></pre></div>
 	
-	<p>Here they are inside of default buttons.</p>
-	<div class="pl-example">
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-email-good"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-email-neutral"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-email-bad"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-phone-good"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-phone-neutral"></i></button>
-		<button class="btn btn-default btn-icon"><i class="ficon ficon-phone-bad"></i></button>
-    <button class="btn btn-default btn-icon"><i class="ficon ficon-text-good"></i></button>
-    <button class="btn btn-default btn-icon"><i class="ficon ficon-text-neutral"></i></button>
-    <button class="btn btn-default btn-icon"><i class="ficon ficon-text-bad"></i></button>
-	</div>
-<div class="pl-code"><pre class="prettyprint"><code>&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-email-good"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-email-neutral"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-email-bad"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-phone-good"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-phone-neutral"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-phone-bad"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-text-good"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-text-neutral"&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class="btn btn-default btn-icon"&gt;&lt;i class="ficon ficon-text-bad"&gt;&lt;/i&gt;&lt;/button&gt;
-</code></pre></div>
-
-<!-- 	TOOK THESE OUT FOR NOW B/C GEORGY BOY WANTS TO DO AWAY WITH THE ICONS
-  <h3>Custom Icons</h3>
-	<p>Our custom icons, lovingly referred to as "bticon", are used when mulitple colors are necessary within the icon. These are icons with an <code>svg</code> background image.</p>
-	<h4>Lead Type</h4>
-  <div class="pl-example pl-icons">
-    <i class="bticon bticon-buyer"></i>
-    <i class="bticon bticon-seller"></i>
-    <i class="bticon bticon-buyer-seller"></i>
-  </div>
-<div class="pl-code"><pre class="prettyprint"><code>&lt;i class="bticon bticon-buyer"&gt;&lt;/i&gt;
-&lt;i class="bticon bticon-seller"&gt;&lt;/i&gt;
-&lt;i class="bticon bticon-buyer-seller"&gt;&lt;/i&gt;
-</code></pre></div>
-
-  <div class="callout callout-danger">
-    <h4>Icon Sizing</h4>
-    <p>All icons are sized via <code>font-size</code>. This allows greater control, flexibility, and consistency. By default, all icons will inherit font-size from their parent. <strong>DO NOT</strong> try to size via width and height!</p>
-  </div>
-  <div class="callout callout-info">
-    <h4>Icon Naming</h4>
-    <p>We intentionally refrained from using <code>icon</code> in our icon class naming convention as <code>icon</code> is a popular class name in third-party iconography frameworks. Should we choose to move toward a third-party solution in the future, we won't have to worry about class name collisions.</p>
-  </div> -->
-
-
 
 </div>

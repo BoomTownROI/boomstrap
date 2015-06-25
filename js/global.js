@@ -9,7 +9,7 @@ $.fn.extend({
             template:
                 '<div class="popover">\
 <div class="arrow"></div>\
-<div class="popover-close" data-dismiss="popover" aria-hidden="true"><i class="ficon ficon-cross" data-role="end"></i></div>\
+<div class="popover-close" data-dismiss="popover" aria-hidden="true"><svg class="icon icon-cross" data-role="end"><use xlink:href="icons/sprite.svg#cross"/></svg></div>\
 <h3 class="popover-title"></h3>\
 <div class="popover-content"></div>\
 </div>'
@@ -71,17 +71,4 @@ $(function () {
   }
 })(window.jQuery);
 
-// Add icons to Bootstrap collpase.js
 
-/*$( document ).ready(function() {
-  $('.panel-collapse.collapse').prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
-  $('.panel-collapse.collapse.in').prev().find(".ficon").removeClass("ficon-chevron-down").addClass("ficon-chevron-up");
-
-  $('.panel-collapse').on('shown.bs.collapse', function () {
-      $(this).prev().find(".ficon").removeClass("ficon-chevron-down").addClass("ficon-chevron-up");
-  });
-
-  $('.panel-collapse').on('hidden.bs.collapse', function () {
-      $(this).prev().find(".ficon").removeClass("ficon-chevron-up").addClass("ficon-chevron-down");
-  });
-});*/

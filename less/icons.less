@@ -1,33 +1,33 @@
 // File: icons.less
 
-
-@icon-size-default: 1em;
-
-.bticon {
-  background: transparent 0 0;
-  background-size: 100%;
+.icon {
   display: inline-block;
-  height: @icon-size-default;
+  fill: currentColor;
+  height: 1em;
   line-height: 1;
   position: relative;
-  top: 2px;
-  width: @icon-size-default;
+  top: -1px;
+  vertical-align: middle;
+  width: 1em;
 }
 
+// Fine tune positions
+// -------------------------
 
-/*
-// Lead Type Icons
-// ------------------------------
-
-.bticon-buyer {
-  background-image: url(icons/buyer.svg);
+.icon-schedule,.icon-star {
+  top: -2px;
 }
 
-.bticon-buyer-seller {
-  background-image: url(icons/buyer-seller.svg);
+// Comm status icon colors
+// -------------------------
+
+.icon-email-bad, .icon-phone-bad, .icon-text-bad {
+  color: @comm-status-bad;
+}
+.icon-email-neutral, .icon-phone-neutral, .icon-text-neutral, .log-call .icon-speaker {
+  color: @comm-status-neutral;
+}
+.icon-email-good, .icon-phone-good, .icon-text-good {
+  color: @comm-status-good;
 }
 
-.bticon-seller {
-  background-image: url(icons/seller.svg);
-}
-*/
