@@ -1,4 +1,37 @@
 
+.ficon-delete:before {
+  content: "\e020";
+}
+.ficon-location:before {
+  content: "\e01c";
+}
+.ficon-edit:before {
+  content: "\e01e";
+}
+.ficon-sort:before {
+  content: "\e01a";
+}
+.ficon-arrow-bend-down-left:before {
+  content: "\e005";
+}
+.ficon-arrow-bend-left:before {
+  content: "\e006";
+}
+.ficon-arrow-bend-right:before {
+  content: "\e002";
+}
+.ficon-arrow-down:before {
+  content: "\e028";
+}
+.ficon-external-link:before {
+  content: "\e004";
+}
+.ficon-search:before {
+  content: "\e019";
+}
+.ficon-bars:before {
+  content: "\e018";
+}
 .ficon-plus:before {
   content: "\e011";
 }
@@ -79,30 +112,6 @@
 }
 .ficon-table:before {
   content: "\e631";
-}
-.ficon-filter2:before {
-  content: "\f0b0";
-}
-.ficon-transfer:before {
-  content: "\e610";
-}
-.ficon-schedule:before {
-  content: "\e61b";
-}
-.ficon-play:before {
-  content: "\e625";
-}
-.ficon-pause:before {
-  content: "\e626";
-}
-.ficon-stop:before {
-  content: "\e627";
-}
-.ficon-graph:before {
-  content: "\e611";
-}
-.ficon-up-down:before {
-  content: "\e629";
 }
 .fauxbox {
   padding-left: 0;
