@@ -81,6 +81,7 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
   ])
   .pipe(concat('boomstrap.js'))
   .pipe(insert.prepend(BoomstrapVersion))
+  .pipe(insert.append(';'))
   .pipe(gulp.dest('docs/js/'))
   .pipe(gulp.dest('dist/js/'))
   .pipe(rename({ suffix:'.min' }))
@@ -95,6 +96,7 @@ gulp.task(Tasks.BoomstrapJavascriptAngular, function() {
     .pipe(jshint.reporter(jshintstylish))
     .pipe(ngmin())
     .pipe(concat('boomstrap-angular.js'))
+    .pipe(insert.append(';'))
     .pipe(gulp.dest('docs/js/'));
 });
 
