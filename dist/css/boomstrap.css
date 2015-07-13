@@ -1,4 +1,4 @@
-/*! Boomstrap v1.16.4 */
+/*! Boomstrap v1.16.5 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -10775,21 +10775,21 @@ a.texting__charcount--danger:hover,
   width: 42px;
   z-index: 10;
 }
-.texting__msg__bubble__avatar > .icon {
+.texting__msg__bubble__avatar .icon {
   border-radius: 50%;
   color: #ececec;
   font-size: 40px;
   left: 1px;
   top: 6px;
 }
-.texting__msg__bubble__avatar > .ficon {
+.texting__msg__bubble__avatar .ficon {
   border-radius: 50%;
   color: #ececec;
   font-size: 40px;
   left: 1px;
   top: 6px;
 }
-.texting__msg__bubble__avatar > img {
+.texting__msg__bubble__avatar img {
   margin-left: -2px;
   width: 46px;
 }
