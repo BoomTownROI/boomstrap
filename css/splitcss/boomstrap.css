@@ -1,4 +1,7 @@
 
+.ficon-info-circle:before {
+  content: "\e024";
+}
 .ficon-delete:before {
   content: "\e020";
 }

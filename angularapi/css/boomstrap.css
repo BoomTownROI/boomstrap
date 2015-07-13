@@ -8719,7 +8719,8 @@ fieldset[disabled] .btn-desaturated.active {
 .carousel-control {
   cursor: pointer;
 }
-.carousel-control > .icon {
+.carousel-control > .icon,
+.carousel-control .ficon {
   background-color: #444444;
   display: inline-block;
   font-size: 36px;
