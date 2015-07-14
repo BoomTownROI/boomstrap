@@ -139,25 +139,19 @@
   top: 50%;
   width: @texting-avatar-size;
   z-index: 10;
-  .icon {
-    border-radius: 50%;
-    color: @gray-lighter;
-    font-size: 40px;
-    left: 1px;
-    top: 6px;
-  }
-  // deprecated ficon
-  .ficon {
-    border-radius: 50%;
-    color: @gray-lighter;
-    font-size: 40px;
-    left: 1px;
-    top: 6px;
-  }
-  img {
-    margin-left: -2px;
-    width: @texting-avatar-size + 4px;
-  }
+}
+
+.texting__msg__bubble__avatar__icon {
+  border-radius: 50%;
+  color: @gray-lighter;
+  font-size: 40px;
+  left: 1px;
+  top: 6px;
+}
+
+.texting__msg__bubble__avatar__img {
+  margin-left: -2px;
+  width: @texting-avatar-size + 4px;
 }
 
 .texting__msg__status {
