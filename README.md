@@ -11,7 +11,7 @@ http://boomtownroi.github.io/boomstrap/
 
 3) Do your work
 
-4) Update Boomstrap versions in package.json and bower.json
+4) Update Boomstrap version in package.json
 
 5) Run **gulp** when done working
 
@@ -83,17 +83,10 @@ Install [Gulp](http://gulpjs.com/) globally.
 ```
 npm install -g gulp
 ```
-#### Install Bower
 
-Install [Bower](http://bower.io/) globally.
+#### Install Node Modules
 
-```
-npm install -g bower
-```
-
-#### Install Node Modules & Bower Packages
-
-Now that you have Node, Gulp and Bower installed you can install the Node modules and Bower packages required to build.
+Now that you have Node and Gulp installed you can install the Node modules required to build.
 
 Change directory to [boomtownroot]/admin_styles/ so that all subsequent commands apply.
 
@@ -102,19 +95,13 @@ Install Node modules (specified in package.json).
 ```
 npm install
 ```
-Next, install Bower packages (specified in bower.json).
 
-```
-bower install
-```
+#### Troubleshooting Node
 
-#### Troubleshooting Node & Bower
-
-Sometimes Node and/or Bower will flake out. When this happens, it may be necessary to delete your local **node_modules** and **bower_components** folders and reinstall.
+Sometimes Node will flake out. When this happens, it may be necessary to delete your local **node_modules** folders and reinstall.
 
 ```
 npm install
-bower install
 ```
 
 

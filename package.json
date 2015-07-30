@@ -1,13 +1,32 @@
 {
   "name": "boomstrap",
   "version": "1.16.6",
+  "files": [
+    "README.md",
+    "dist/**",
+    "less/**"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoomTownROI/boomstrap"
+  },
+  "dependencies": {
+    "angular": "1.2.28",
+    "angular-animate": "1.2.28",
+    "angular-moment": "0.7.1",
+    "baron": "0.7.10",
+    "bootstrap": "3.3.4",
+    "bootstrap-select": "1.7.3",
+    "jquery": ">= 1.9.0",
+    "moment": "2.6.0",
+    "svg4everybody": "^1.0.0"
+  },
   "devDependencies": {
     "event-stream": "3.3.1",
     "gulp": "3.9.0",
     "gulp-angular-templatecache": "1.6.0",
     "gulp-autoprefixer": "2.3.1",
     "gulp-bless": "3.0.1",
-    "gulp-bower": "0.0.10",
     "gulp-cheerio": "0.6.2",
     "gulp-clean": "0.3.1",
     "gulp-concat": "2.5.2",
@@ -36,14 +55,5 @@
     "load-grunt-tasks": "3.2.0",
     "mustache": "2.1.1",
     "vinyl": "0.4.6"
-  },
-  "files": [
-    "README.md",
-    "dist/**",
-    "less/**"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BoomTownROI/boomstrap"
   }
 }

@@ -2,7 +2,6 @@
 
 var autoprefixer  = require('gulp-autoprefixer'),
     bless         = require('gulp-bless'),
-    bower         = require('gulp-bower'), // not used
     cheerio       = require('gulp-cheerio'),
     clean         = require('gulp-clean'),
     concat        = require('gulp-concat'),
@@ -59,25 +58,24 @@ var Tasks = {
 
 gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
   return gulp.src([
-    'bower_components/jquery/dist/jquery.min.js',
-    'bower_components/jquery-mousewheel/jquery.mousewheel.min.js',
-    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js',
-    'bower_components/bootstrap-select/js/bootstrap-select.js',
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'vendor/bootstrap-tour/build/js/bootstrap-tour.min.js',
+    'node_modules/bootstrap-select/js/bootstrap-select.js',
     'js/bootstrap-datepicker-custom.js',
     'js/bootstrap-datepicker-override.js',
     'vendor/chosen/chosen.jquery.min.js',
-    'bower_components/baron/baron.min.js',
-    'bower_components/momentjs/min/moment.min.js',
+    'node_modules/baron/baron.min.js',
+    'node_modules/moment/min/moment.min.js',
     'js/global.js',
     'js/boomstrap-navlinks.js',
     'js/vendor-config.js',
-    'bower_components/angular/angular.min.js',
-    'bower_components/angular/angular-animate.min.js',
-    'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-    'bower_components/angular-ui-select/dist/select.js', // No minified version
-    'bower_components/angular-moment/angular-moment.min.js',
-    'bower_components/svg4everybody/svg4everybody.min.js'
+    'node_modules/angular/angular.min.js',
+    'node_modules/angular/angular-animate.min.js',
+    'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+    'vendor/angular-ui-select/dist/select.min.js',
+    'node_modules/angular-moment/angular-moment.min.js',
+    'node_modules/svg4everybody/svg4everybody.min.js'
   ])
   .pipe(concat('boomstrap.js'))
   .pipe(insert.prepend(BoomstrapVersion))
@@ -222,7 +220,7 @@ gulp.task(Tasks.AngularApiDocumentation, function() {
     scripts: [
       'docs/js/boomstrap.js',
       'docs/js/boomstrap-angular.js',
-      'bower_components/angular-animate/angular-animate.min.js'
+      'node_modules/angular-animate/angular-animate.min.js'
     ],
     styles: [
       '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
@@ -351,15 +349,8 @@ gulp.task('clean', function() {
     .pipe(clean());
 });
 
-gulp.task('bower', function() {
-  return bower();
-});
-
-
 // Run a server with a watch with gulp server
 gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
-  // gulp.run('grunt-tasks-ngdocs');
-  // gulp.run('angularAPI');
   connect.server({
     hostname: 'localhost',
     port: 9000,
@@ -376,7 +367,7 @@ gulp.task(Tasks.DevelopmentServer, [Tasks.Boomstrap], function() {
 
   // Watch Javascript Files and Templates
   gulp.watch([
-    'bower_components/**/*.js',
+    'node_modules/**/*.js',
     'js/**/*.js',
     'app/**/*.js',
     'app/template/**/*.html'
@@ -402,8 +393,6 @@ gulp.task('default', [Tasks.Boomstrap]);
 // Deploy to our github pages page
 gulp.task('website', function() {
   // Run our gulp tasks
-  // gulp.run('grunt-tasks-ngdocs');
-  // return gulp.run('grunt-tasks-gh-pages');
   return gulp.src('./docs/**/*')
     .pipe(ghpages());
 });
