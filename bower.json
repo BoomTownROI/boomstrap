@@ -25,8 +25,7 @@
     "bootstrap-select": "1.6.5",
     "bootstrap-tour": "0.9.3",
     "jquery": ">= 1.9.0",
-    "momentjs": "2.6.0",
-    "svg4everybody": "1.0.0"
+    "momentjs": "2.6.0"
   },
   "dependencies": {
     "bootstrap": "3.3.4"
