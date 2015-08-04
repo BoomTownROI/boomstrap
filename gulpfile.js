@@ -4,9 +4,9 @@ var autoprefixer  = require('gulp-autoprefixer'),
     bless         = require('gulp-bless'),
     bower         = require('gulp-bower'), // not used
     cheerio       = require('gulp-cheerio'),
-    clean         = require('gulp-clean'),
     concat        = require('gulp-concat'),
     connect       = require('gulp-connect'),
+    del           = require('del'),
     es            = require('event-stream'), // not used
     ghpages       = require('gulp-gh-pages'),
     gulp          = require('gulp'),
@@ -41,7 +41,8 @@ var Tasks = {
   BoomstrapStylesDist:        'Compile Less Files for Distribution',
   BoomstrapStyles:            'Compile Less Files',
 
-  BoomstrapSvgIcons:          'Build SVG Icons',
+  BoomstrapCleanSvgIcons:     'cleansvgicons',
+  BoomstrapSvgIcons:          'svgicons',
 
   CreateDocumentationHTML:    'Create Documentation HTML Files',
   JavascriptDocumentation:    'Convert Javascript Documentation Markdown',
@@ -53,6 +54,7 @@ var Tasks = {
   ReloadDevelopmentStyles:    'Reload Development Server Styles',
   ReloadDevelopmentSvgIcons:  'Reload Development Server SVG Icons',
 
+  BoomstrapClean:             'clean',
   Boomstrap:                  'Build Tasks'
 };
 
@@ -302,6 +304,10 @@ gulp.task(Tasks.BoomstrapStylesDist, function() {
 
 gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStylesDist]);
 
+/*
+* SVG build tasks
+*/
+
 gulp.task(Tasks.BoomstrapSvgIcons, function () {
   return gulp.src('svg/**/*.svg')
     .pipe(imagemin())
@@ -325,6 +331,13 @@ gulp.task(Tasks.BoomstrapSvgIcons, function () {
     .pipe(gulp.dest('dist/svg'));
 });
 
+gulp.task(Tasks.BoomstrapCleanSvgIcons, function () {
+  del([
+    'docs/svg/',
+    'dist/svg/'
+  ]);
+});
+
 
 /*
 * Common build task run by all tasks
@@ -345,9 +358,16 @@ gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Task
   );
 });
 
-gulp.task('clean', function() {
+/*gulp.task('clean', function() {
   return gulp.src(['docs/', 'dist/'], { read: false })
     .pipe(clean());
+});*/
+
+gulp.task(Tasks.BoomstrapClean, function () {
+  del([
+    'docs/',
+    'dist/'
+  ]);
 });
 
 gulp.task('bower', function() {
