@@ -3258,34 +3258,6 @@ Boomstrap Navigation Links and Navigation Link Blocks
   };
 })(jQuery);
 
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD
-    define(['boomstrapSvgLoader'], factory);
-  } else if (typeof exports === 'object') {
-    // Node, CommonJS-like
-    module.exports = factory();
-  } else {
-    // Browser globals (root is window)
-    root.boomstrapSvgLoader = factory();
-  }
-}(this, function() {
-  'use strict';
-  function loadSvg(url) {
-    var ajax = new XMLHttpRequest();
-    ajax.open("GET", url, true);
-    ajax.send();
-    ajax.onload = function(e) {
-      var div = document.createElement("div");
-      div.style.cssText = 'display: none;';
-      div.innerHTML = ajax.responseText;
-      document.body.insertBefore(div, document.body.childNodes[0]);
-    }
-  }
-  return {
-    loadSvg: loadSvg
-  };
-}));
 (function() {
   // configure momentjs langs to display relative time our way
   moment.lang('en', {
@@ -4449,4 +4421,6 @@ $templateCache.put("select2/select.tpl.html","<div class=\"select2 select2-conta
 $templateCache.put("selectize/choices.tpl.html","<div ng-show=\"$select.open\" class=\"ui-select-choices selectize-dropdown single\"><div class=\"ui-select-choices-content selectize-dropdown-content\"><div class=\"ui-select-choices-group optgroup\"><div ng-show=\"$select.isGrouped\" class=\"ui-select-choices-group-label optgroup-header\">{{$group.name}}</div><div class=\"ui-select-choices-row\" ng-class=\"{active: $select.isActive(this)}\"><div class=\"option ui-select-choices-row-inner\" data-selectable=\"\"></div></div></div></div></div>");
 $templateCache.put("selectize/match.tpl.html","<div ng-hide=\"$select.searchEnabled && ($select.open || $select.isEmpty())\" class=\"ui-select-match\" ng-transclude=\"\"></div>");
 $templateCache.put("selectize/select.tpl.html","<div class=\"selectize-control single\"><div class=\"selectize-input\" ng-class=\"{\'focus\': $select.open, \'disabled\': $select.disabled, \'selectize-focus\' : $select.focus}\" ng-click=\"$select.activate()\"><div class=\"ui-select-match\"></div><input type=\"text\" autocomplete=\"off\" tabindex=\"-1\" class=\"ui-select-search\" placeholder=\"{{$select.placeholder}}\" ng-model=\"$select.search\" ng-hide=\"!$select.searchEnabled || ($select.selected && !$select.open)\" ng-disabled=\"$select.disabled\"></div><div class=\"ui-select-choices\"></div></div>");}]);
-!function(){"use strict";function a(a,b){return a.module("angularMoment",[]).constant("angularMomentConfig",{preprocess:null,timezone:""}).constant("moment",b).constant("amTimeAgoConfig",{withoutSuffix:!1}).directive("amTimeAgo",["$window","moment","amMoment","amTimeAgoConfig","angularMomentConfig",function(b,c,d,e,f){return function(g,h,i){function j(){o&&(b.clearTimeout(o),o=null)}function k(a){h.text(a.fromNow(p));var d=c().diff(a,"minute"),e=3600;1>d?e=1:60>d?e=30:180>d&&(e=300),o=b.setTimeout(function(){k(a)},1e3*e)}function l(){j(),m&&k(d.preprocessDate(m,q,n))}var m,n,o=null,p=e.withoutSuffix,q=f.preprocess;g.$watch(i.amTimeAgo,function(a){return"undefined"==typeof a||null===a||""===a?(j(),void(m&&(h.text(""),m=null))):(m=a,void l())}),a.isDefined(i.amWithoutSuffix)&&g.$watch(i.amWithoutSuffix,function(a){"boolean"==typeof a?(p=a,l()):p=e.withoutSuffix}),i.$observe("amFormat",function(a){n=a,l()}),i.$observe("amPreprocess",function(a){q=a,l()}),g.$on("$destroy",function(){j()}),g.$on("amMoment:languageChange",function(){l()})}}]).service("amMoment",["moment","$rootScope","$log","angularMomentConfig",function(b,c,d,e){this.preprocessors={utc:b.utc,unix:b.unix},this.changeLanguage=function(d){var e=b.lang(d);return a.isDefined(d)&&c.$broadcast("amMoment:languageChange"),e},this.preprocessDate=function(c,f,g){return a.isUndefined(f)&&(f=e.preprocess),this.preprocessors[f]?this.preprocessors[f](c,g):(f&&d.warn("angular-moment: Ignoring unsupported value for preprocess: "+f),!isNaN(parseFloat(c))&&isFinite(c)?b(parseInt(c,10)):b(c,g))},this.applyTimezone=function(a){var b=e.timezone;return a&&b&&(a.tz?a=a.tz(b):d.warn("angular-moment: timezone specified but moment.tz() is undefined. Did you forget to include moment-timezone.js?")),a}}]).filter("amCalendar",["moment","amMoment",function(a,b){return function(c,d){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,d);var e=a(c);return e.isValid()?b.applyTimezone(e).calendar():""}}]).filter("amDateFormat",["moment","amMoment",function(a,b){return function(c,d,e){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,e);var f=a(c);return f.isValid()?b.applyTimezone(f).format(d):""}}]).filter("amDurationFormat",["moment",function(a){return function(b,c,d){return"undefined"==typeof b||null===b?"":a.duration(b,c).humanize(d)}}])}"function"==typeof define&&define.amd?define("angular-moment",["angular","moment"],a):a(angular,window.moment)}();;
+!function(){"use strict";function a(a,b){return a.module("angularMoment",[]).constant("angularMomentConfig",{preprocess:null,timezone:""}).constant("moment",b).constant("amTimeAgoConfig",{withoutSuffix:!1}).directive("amTimeAgo",["$window","moment","amMoment","amTimeAgoConfig","angularMomentConfig",function(b,c,d,e,f){return function(g,h,i){function j(){o&&(b.clearTimeout(o),o=null)}function k(a){h.text(a.fromNow(p));var d=c().diff(a,"minute"),e=3600;1>d?e=1:60>d?e=30:180>d&&(e=300),o=b.setTimeout(function(){k(a)},1e3*e)}function l(){j(),m&&k(d.preprocessDate(m,q,n))}var m,n,o=null,p=e.withoutSuffix,q=f.preprocess;g.$watch(i.amTimeAgo,function(a){return"undefined"==typeof a||null===a||""===a?(j(),void(m&&(h.text(""),m=null))):(m=a,void l())}),a.isDefined(i.amWithoutSuffix)&&g.$watch(i.amWithoutSuffix,function(a){"boolean"==typeof a?(p=a,l()):p=e.withoutSuffix}),i.$observe("amFormat",function(a){n=a,l()}),i.$observe("amPreprocess",function(a){q=a,l()}),g.$on("$destroy",function(){j()}),g.$on("amMoment:languageChange",function(){l()})}}]).service("amMoment",["moment","$rootScope","$log","angularMomentConfig",function(b,c,d,e){this.preprocessors={utc:b.utc,unix:b.unix},this.changeLanguage=function(d){var e=b.lang(d);return a.isDefined(d)&&c.$broadcast("amMoment:languageChange"),e},this.preprocessDate=function(c,f,g){return a.isUndefined(f)&&(f=e.preprocess),this.preprocessors[f]?this.preprocessors[f](c,g):(f&&d.warn("angular-moment: Ignoring unsupported value for preprocess: "+f),!isNaN(parseFloat(c))&&isFinite(c)?b(parseInt(c,10)):b(c,g))},this.applyTimezone=function(a){var b=e.timezone;return a&&b&&(a.tz?a=a.tz(b):d.warn("angular-moment: timezone specified but moment.tz() is undefined. Did you forget to include moment-timezone.js?")),a}}]).filter("amCalendar",["moment","amMoment",function(a,b){return function(c,d){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,d);var e=a(c);return e.isValid()?b.applyTimezone(e).calendar():""}}]).filter("amDateFormat",["moment","amMoment",function(a,b){return function(c,d,e){if("undefined"==typeof c||null===c)return"";c=b.preprocessDate(c,e);var f=a(c);return f.isValid()?b.applyTimezone(f).format(d):""}}]).filter("amDurationFormat",["moment",function(a){return function(b,c,d){return"undefined"==typeof b||null===b?"":a.duration(b,c).humanize(d)}}])}"function"==typeof define&&define.amd?define("angular-moment",["angular","moment"],a):a(angular,window.moment)}();
+/*! BoomSVGLoader 0.0.1 | http://boomtownroi.github.io/boomsvgloader/ | (c) 2015 BoomTown | MIT License */
+!function(e,o){"function"==typeof define&&define.amd?define(["boomsvgloader"],o):"object"==typeof exports?module.exports=o():e.boomsvgloader=o()}(this,function(){"use strict";function e(e){var o=new XMLHttpRequest;o.open("GET",e,!0),o.send(),o.onload=function(e){var n=document.createElement("div");n.style.cssText="display: none;",n.innerHTML=o.responseText,document.body.insertBefore(n,document.body.childNodes[0])}}return{load:e}});;
