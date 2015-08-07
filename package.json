@@ -1,9 +1,11 @@
 {
   "name": "boomstrap",
-  "version": "1.16.6",
+  "version": "1.16.7",
   "devDependencies": {
+    "boomsvgloader": "0.0.2",
+    "del": "1.2.0",
     "event-stream": "3.3.1",
-    "gulp": "3.9.0",
+    "gulp": "^3.9.0",
     "gulp-angular-templatecache": "1.6.0",
     "gulp-autoprefixer": "2.3.1",
     "gulp-bless": "3.0.1",
