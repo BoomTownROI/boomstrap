@@ -310,16 +310,17 @@ gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStyle
 * SVG build tasks
 */
 
+
 gulp.task(Tasks.BoomstrapSvgIcons, function () {
   return gulp.src('svg/**/*.svg')
     .pipe(imagemin())
     .pipe(gulp.dest('docs/svg'))
     .pipe(gulp.dest('dist/svg'))
     .pipe(svgSprite({
-      'svg': {
-        'xmlDeclaration': false,
-        'doctypeDeclaration': false,
-        'dimensionAttributes': false
+      'shape': {
+        'id': {
+          'generator': 'icon-'
+        }
       },
       'mode': {
         'symbol': {
@@ -327,6 +328,11 @@ gulp.task(Tasks.BoomstrapSvgIcons, function () {
           'example': true,
           'sprite': 'sprite.svg'
         }
+      },
+      'svg': {
+        'xmlDeclaration': false,
+        'doctypeDeclaration': false,
+        'dimensionAttributes': false
       }
     }))
     .pipe(gulp.dest('docs/svg'))
