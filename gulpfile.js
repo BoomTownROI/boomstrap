@@ -4,9 +4,9 @@ var autoprefixer  = require('gulp-autoprefixer'),
     bless         = require('gulp-bless'),
     bower         = require('gulp-bower'), // not used
     cheerio       = require('gulp-cheerio'),
-    clean         = require('gulp-clean'),
     concat        = require('gulp-concat'),
     connect       = require('gulp-connect'),
+    del           = require('del'),
     es            = require('event-stream'), // not used
     ghpages       = require('gulp-gh-pages'),
     gulp          = require('gulp'),
@@ -41,7 +41,8 @@ var Tasks = {
   BoomstrapStylesDist:        'Compile Less Files for Distribution',
   BoomstrapStyles:            'Compile Less Files',
 
-  BoomstrapSvgIcons:          'Build SVG Icons',
+  BoomstrapCleanSvgIcons:     'cleansvgicons',
+  BoomstrapSvgIcons:          'svgicons',
 
   CreateDocumentationHTML:    'Create Documentation HTML Files',
   JavascriptDocumentation:    'Convert Javascript Documentation Markdown',
@@ -53,6 +54,7 @@ var Tasks = {
   ReloadDevelopmentStyles:    'Reload Development Server Styles',
   ReloadDevelopmentSvgIcons:  'Reload Development Server SVG Icons',
 
+  BoomstrapClean:             'clean',
   Boomstrap:                  'Build Tasks'
 };
 
@@ -71,13 +73,14 @@ gulp.task(Tasks.BoomstrapJavascriptVendor, function() {
     'bower_components/momentjs/min/moment.min.js',
     'js/global.js',
     'js/boomstrap-navlinks.js',
+    'js/boomstrap-svgloader.js',
     'js/vendor-config.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
     'bower_components/angular-ui-select/dist/select.js', // No minified version
     'bower_components/angular-moment/angular-moment.min.js',
-    'bower_components/svg4everybody/svg4everybody.min.js'
+    'node_modules/boomsvgloader/dist/js/boomsvgloader.min.js'
   ])
   .pipe(concat('boomstrap.js'))
   .pipe(insert.prepend(BoomstrapVersion))
@@ -303,16 +306,21 @@ gulp.task(Tasks.BoomstrapStylesDist, function() {
 
 gulp.task(Tasks.BoomstrapStyles, [Tasks.BoomstrapStylesDev, Tasks.BoomstrapStylesDist]);
 
+/*
+* SVG build tasks
+*/
+
+
 gulp.task(Tasks.BoomstrapSvgIcons, function () {
   return gulp.src('svg/**/*.svg')
     .pipe(imagemin())
     .pipe(gulp.dest('docs/svg'))
     .pipe(gulp.dest('dist/svg'))
     .pipe(svgSprite({
-      'svg': {
-        'xmlDeclaration': false,
-        'doctypeDeclaration': false,
-        'dimensionAttributes': false
+      'shape': {
+        'id': {
+          'generator': 'icon-'
+        }
       },
       'mode': {
         'symbol': {
@@ -320,10 +328,22 @@ gulp.task(Tasks.BoomstrapSvgIcons, function () {
           'example': true,
           'sprite': 'sprite.svg'
         }
+      },
+      'svg': {
+        'xmlDeclaration': false,
+        'doctypeDeclaration': false,
+        'dimensionAttributes': false
       }
     }))
     .pipe(gulp.dest('docs/svg'))
     .pipe(gulp.dest('dist/svg'));
+});
+
+gulp.task(Tasks.BoomstrapCleanSvgIcons, function () {
+  del([
+    'docs/svg/',
+    'dist/svg/'
+  ]);
 });
 
 
@@ -346,9 +366,16 @@ gulp.task(Tasks.Boomstrap, [Tasks.BoomstrapStyles, Tasks.BoomstrapSvgIcons, Task
   );
 });
 
-gulp.task('clean', function() {
+/*gulp.task('clean', function() {
   return gulp.src(['docs/', 'dist/'], { read: false })
     .pipe(clean());
+});*/
+
+gulp.task(Tasks.BoomstrapClean, function () {
+  del([
+    'docs/',
+    'dist/'
+  ]);
 });
 
 gulp.task('bower', function() {
