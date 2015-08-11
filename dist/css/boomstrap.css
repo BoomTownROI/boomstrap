@@ -1,4 +1,4 @@
-/*! Boomstrap v1.16.8 */
+/*! Boomstrap v1.16.9 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -10301,6 +10301,21 @@ a.list-group-item.active:focus .ficon {
   padding-top: 21px;
   background-color: #cccccc;
 }
+.profile-pic--initials:before {
+  display: none !important;
+}
+.profile-pic--initials.profile-pic--buyer {
+  box-shadow: 1px 1px 6px rgba(21, 129, 226, 0.25), 0 1px 4px rgba(21, 129, 226, 0.25);
+  text-shadow: 0 -1px 2px rgba(21, 129, 226, 0.25);
+}
+.profile-pic--initials.profile-pic--seller {
+  box-shadow: 1px 1px 6px rgba(246, 138, 36, 0.25), 0 1px 4px rgba(246, 138, 36, 0.25);
+  text-shadow: 0 -1px 2px rgba(246, 138, 36, 0.25);
+}
+.profile-pic--initials.profile-pic--buyer-seller {
+  box-shadow: 2px 2px 6px rgba(21, 129, 226, 0.3), -1px -1px 4px rgba(246, 138, 36, 0.25);
+  text-shadow: 0 -1px 2px rgba(246, 138, 36, 0.25);
+}
 .profile-pic--sm {
   width: 32px;
   height: 32px;
@@ -10308,7 +10323,46 @@ a.list-group-item.active:focus .ficon {
 }
 .profile-pic--sm.profile-pic--initials {
   font-size: 16px;
-  padding-top: 6px;
+  padding-top: 5.5px;
+}
+.profile-pic--buyer,
+.profile-pic--seller,
+.profile-pic--buyer-seller {
+  position: relative;
+}
+.profile-pic--buyer:before,
+.profile-pic--seller:before,
+.profile-pic--buyer-seller:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  border: 3px solid rgba(21, 129, 226, 0.4);
+}
+.profile-pic--seller:before {
+  border: 3px solid rgba(246, 138, 36, 0.4);
+}
+.profile-pic--buyer-seller:before {
+  border-left-color: rgba(21, 129, 226, 0.4);
+  border-top-color: rgba(21, 129, 226, 0.4);
+  border-right-color: rgba(246, 138, 36, 0.4);
+  border-bottom-color: rgba(246, 138, 36, 0.4);
+}
+.profile-pic--sm.profile-pic--buyer:before,
+.profile-pic--sm.profile-pic--seller:before,
+.profile-pic--sm.profile-pic--buyer-seller:before {
+  border: 2px solid rgba(21, 129, 226, 0.5);
+}
+.profile-pic--sm.profile-pic--seller:before {
+  border-color: rgba(246, 138, 36, 0.5);
+}
+.profile-pic--sm.profile-pic--buyer-seller:before {
+  border-left-color: rgba(21, 129, 226, 0.5);
+  border-top-color: rgba(21, 129, 226, 0.5);
+  border-right-color: rgba(246, 138, 36, 0.5);
+  border-bottom-color: rgba(246, 138, 36, 0.5);
 }
 .sash {
   background-color: #ffffff;

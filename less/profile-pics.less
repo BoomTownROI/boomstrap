@@ -1,5 +1,13 @@
 // File: profile-pic.less
 
+@profile-pic-orange-25: fade(@boomtown-orange, 25%);
+@profile-pic-orange-40: fade(@boomtown-orange, 40%);
+@profile-pic-orange-50: fade(@boomtown-orange, 50%);
+@profile-pic-blue-25:   fade(@boomtown-blue, 25%);
+@profile-pic-blue-30:   fade(@boomtown-blue, 30%);
+@profile-pic-blue-40:   fade(@boomtown-blue, 40%);
+@profile-pic-blue-50:   fade(@boomtown-blue, 50%);
+
 .profile-pic {
   width: 90px;
   height: 90px;
@@ -16,6 +24,21 @@
   text-align: center;
   padding-top: 21px;
   background-color: @gray-light;
+  &:before {
+    display: none !important;
+  }
+  &.profile-pic--buyer {
+    box-shadow: 1px 1px 6px @profile-pic-blue-25, 0 1px 4px @profile-pic-blue-25;
+    text-shadow: 0 -1px 2px @profile-pic-blue-25;
+  }
+  &.profile-pic--seller {
+    box-shadow: 1px 1px 6px @profile-pic-orange-25, 0 1px 4px @profile-pic-orange-25;
+    text-shadow: 0 -1px 2px @profile-pic-orange-25;
+  }
+  &.profile-pic--buyer-seller {
+    box-shadow: 2px 2px 6px @profile-pic-blue-30, -1px -1px 4px @profile-pic-orange-25;
+    text-shadow: 0 -1px 2px @profile-pic-orange-25;
+  }
 }
 
 .profile-pic--sm {
@@ -26,5 +49,50 @@
 
 .profile-pic--sm.profile-pic--initials {
   font-size: 16px;
-  padding-top: 6px;
+  padding-top: 5.5px;
+}
+
+.profile-pic--buyer, .profile-pic--seller, .profile-pic--buyer-seller {
+  position: relative;
+  &.profile-pic--initials {
+
+  }
+  &:before {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    border: 3px solid @profile-pic-blue-40;
+  }
+}
+
+.profile-pic--seller:before {
+  border: 3px solid @profile-pic-orange-40;
+}
+
+.profile-pic--buyer-seller:before {
+  border-left-color: @profile-pic-blue-40;
+  border-top-color: @profile-pic-blue-40;
+  border-right-color: @profile-pic-orange-40;
+  border-bottom-color: @profile-pic-orange-40;
+}
+
+.profile-pic--sm.profile-pic--buyer,
+.profile-pic--sm.profile-pic--seller,
+.profile-pic--sm.profile-pic--buyer-seller {
+  &:before {
+    border: 2px solid @profile-pic-blue-50;
+  }
+}
+
+.profile-pic--sm.profile-pic--seller:before {
+  border-color: @profile-pic-orange-50;
+}
+
+.profile-pic--sm.profile-pic--buyer-seller:before {
+  border-left-color: @profile-pic-blue-50;
+  border-top-color: @profile-pic-blue-50;
+  border-right-color: @profile-pic-orange-50;
+  border-bottom-color: @profile-pic-orange-50;
 }
