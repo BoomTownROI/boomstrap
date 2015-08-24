@@ -11274,6 +11274,7 @@ a.text-muted:hover,
   transform: translate(-50%, -50%);
 }
 .ui-alert__close {
+  color: inherit;
   font-size: 16px;
   position: absolute;
   right: 5px;
