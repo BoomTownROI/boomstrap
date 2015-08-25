@@ -1,4 +1,4 @@
-/*! Boomstrap v1.16.10 */
+/*! Boomstrap v1.16.11 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -9280,6 +9280,7 @@ button.close-inverted {
   padding-right: 3px;
 }
 .icon {
+  box-sizing: content-box;
   display: inline-block;
   fill: currentColor;
   height: 1em;
