@@ -9537,12 +9537,9 @@ button.close-inverted {
   padding-right: 0;
   width: 56px;
 }
-.leadcat-eq-abbr {
-  width: 42px;
-}
+.leadcat-eq-abbr,
 .leadcat-eq-abbr-sm {
-  width: 33px;
-  font-weight: 500;
+  width: 38px;
 }
 .leadcat-muted {
   opacity: 0.7;
