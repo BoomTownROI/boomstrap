@@ -180,6 +180,11 @@
   width: 18px;
 }
 
+.leadtype-vertical-sm {
+  width: 13px;
+  font-size: 60%;
+}
+
 // buyer/seller combo
 .leadtype-bs {
   padding: 0;
@@ -199,7 +204,7 @@
     color: @leadtype-color-seller;
     content: @leadtype-txt-seller;
   }
-  .leadtype-vertical& {
+  .leadtype-vertical&, .leadtype-vertical-sm& {
     vertical-align: middle;
     &:before {
       display: block;
@@ -209,6 +214,11 @@
       display: block;
       border-left: none;
       border-top: 1px solid @gray-light;
+    }
+  }
+  .leadtype-vertical-sm& {
+    &:before, &:after {
+      padding: @label-padding-sm;
     }
   }
 }
