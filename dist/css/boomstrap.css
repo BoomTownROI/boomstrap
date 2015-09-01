@@ -9537,8 +9537,7 @@ button.close-inverted {
   display: inline-block;
   position: relative;
   text-transform: uppercase;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0.2em 0.33333333em 0.2em;
   width: 38px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
