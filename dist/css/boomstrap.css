@@ -8837,17 +8837,6 @@ button.close-inverted {
   padding-right: 0;
   width: 56px;
 }
-.dropdown-menu-leadtype {
-  min-width: 50px;
-}
-.dropdown-menu-leadtype > li > a {
-  padding: 3px 8px 6px;
-}
-.dropdown-menu-leadtype [class*="leadtype-"] {
-  padding-left: 0;
-  padding-right: 0;
-  width: 88px;
-}
 .dropdown-toggle.btn-link {
   padding: 0;
   text-decoration: none;
@@ -9547,6 +9536,9 @@ button.close-inverted {
 [class*="leadtype-"] {
   display: inline-block;
   position: relative;
+  text-transform: uppercase;
+  padding: 0.2em 0.33333333em 0.2em;
+  width: 38px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   color: #cccccc;
@@ -9557,17 +9549,18 @@ button.close-inverted {
 }
 .leadtype-buyer:after {
   color: #1581e2;
-  content: "buyer";
-}
-.leadtype-abbr.leadtype-buyer:after {
   content: "b";
 }
 .leadtype-seller:after {
   color: #f68a24;
-  content: "seller";
-}
-.leadtype-abbr.leadtype-seller:after {
   content: "s";
+}
+.leadtype-vertical {
+  width: 18px;
+}
+.leadtype-vertical-sm {
+  width: 13px;
+  font-size: 60%;
 }
 .leadtype-bs {
   padding: 0;
@@ -9575,46 +9568,38 @@ button.close-inverted {
 .leadtype-bs:before,
 .leadtype-bs:after {
   display: inline-block;
-  padding-bottom: 0.2em;
-  padding-top: 0.2em;
+  padding: 0.2em 0.5em 0.2em;
   text-align: center;
-  width: 44px;
+  width: auto;
 }
 .leadtype-bs:before {
   border-left: 1px solid transparent;
   color: #1581e2;
-  content: "buyer";
+  content: "b";
 }
 .leadtype-bs:after {
   border-left: 1px solid #cccccc;
   color: #f68a24;
-  content: "seller";
-}
-.leadtype-abbr.leadtype-bs:before,
-.leadtype-abbr.leadtype-bs:after {
-  padding: 0.2em 0.5em 0.2em;
-  width: auto;
-}
-.leadtype-abbr.leadtype-bs:before {
-  content: "b";
-}
-.leadtype-abbr.leadtype-bs:after {
   content: "s";
 }
-.leadtype-abbr-vertical.leadtype-bs {
+.leadtype-vertical.leadtype-bs,
+.leadtype-vertical-sm.leadtype-bs {
   vertical-align: middle;
 }
-.leadtype-abbr-vertical.leadtype-bs:before {
+.leadtype-vertical.leadtype-bs:before,
+.leadtype-vertical-sm.leadtype-bs:before {
   display: block;
   border-left: none;
 }
-.leadtype-abbr-vertical.leadtype-bs:after {
+.leadtype-vertical.leadtype-bs:after,
+.leadtype-vertical-sm.leadtype-bs:after {
   display: block;
   border-left: none;
   border-top: 1px solid #cccccc;
 }
-.leadtype-abbr {
-  text-transform: uppercase;
+.leadtype-vertical-sm.leadtype-bs:before,
+.leadtype-vertical-sm.leadtype-bs:after {
+  padding: 0.2em 0.25em 0.2em;
 }
 .leadtype-eq {
   padding-left: 0;

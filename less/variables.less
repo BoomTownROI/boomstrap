@@ -181,6 +181,8 @@
 @label-padding-top:         0.2em;
 
 @label-padding:             @label-padding-top @label-padding-sides @label-padding-bottom;
+@label-padding-bs:          @label-padding-top (@label-padding-sides / 1.5) @label-padding-bottom;
+@label-padding-bs-sm:       @label-padding-top (@label-padding-sides / 2) @label-padding-bottom;
 
 @label-default-bg:          darken(@gray-light,5%);
 @label-attention-bg:        @brand-attention;
@@ -202,10 +204,8 @@
 @leadtype-color-buyer:      @brand-primary;
 @leadtype-color-seller:     @brand-attention;
 
-@leadtype-txt-buyer:        "buyer";
-@leadtype-txt-buyer-abbr:   "b";
-@leadtype-txt-seller:       "seller";
-@leadtype-txt-seller-abbr:  "s";
+@leadtype-txt-buyer:        "b";
+@leadtype-txt-seller:       "s";
 
 
 // -------------------------

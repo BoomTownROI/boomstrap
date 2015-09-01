@@ -155,6 +155,9 @@
   &:extend(.label);
   display: inline-block;
   position: relative;
+  text-transform: uppercase;
+  padding: @label-padding-bs;
+  width: 38px;
   .label-variant-outline(@gray-light);
 }
 
@@ -163,11 +166,6 @@
     color: @leadtype-color-buyer;
     content: @leadtype-txt-buyer;
   }
-  .leadtype-abbr& {
-    &:after {
-      content: @leadtype-txt-buyer-abbr;
-    }
-  }
 }
 
 .leadtype-seller {
@@ -175,11 +173,15 @@
     color: @leadtype-color-seller;
     content: @leadtype-txt-seller;
   }
-  .leadtype-abbr& {
-    &:after {
-      content: @leadtype-txt-seller-abbr;
-    }
-  }
+}
+
+.leadtype-vertical {
+  width: 18px;
+}
+
+.leadtype-vertical-sm {
+  width: 13px;
+  font-size: 60%;
 }
 
 // buyer/seller combo
@@ -187,10 +189,9 @@
   padding: 0;
   &:before, &:after {
     display: inline-block;
-    padding-bottom: @label-padding-bottom;
-    padding-top: @label-padding-top;
+    padding: @label-padding;
     text-align: center;
-    width: 44px;
+    width: auto;
   }
   &:before {
     border-left: 1px solid transparent;
@@ -202,23 +203,7 @@
     color: @leadtype-color-seller;
     content: @leadtype-txt-seller;
   }
-  .leadtype-abbr& {
-    &:before,&:after {
-      padding: @label-padding;
-      width: auto;
-    }
-  }
-  .leadtype-abbr& {
-    &:before {
-      content: @leadtype-txt-buyer-abbr;
-    }
-  }
-  .leadtype-abbr& {
-    &:after {
-      content: @leadtype-txt-seller-abbr;
-    }
-  }
-  .leadtype-abbr-vertical& {
+  .leadtype-vertical&, .leadtype-vertical-sm& {
     vertical-align: middle;
     &:before {
       display: block;
@@ -230,15 +215,12 @@
       border-top: 1px solid @gray-light;
     }
   }
+  .leadtype-vertical-sm& {
+    &:before, &:after {
+      padding: @label-padding-bs-sm;
+    }
+  }
 }
-
-// Lead Type Abbreviated
-// -------------------------
-
-.leadtype-abbr {
-  text-transform: uppercase;
-}
-
 
 // Lead Type Equal Width
 // -------------------------
@@ -248,7 +230,6 @@
   padding-right: 0;
   width: 88px;
 }
-
 
 // Marker
 // -------------------------
