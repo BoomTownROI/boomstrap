@@ -175,11 +175,11 @@
   }
 }
 
-.leadtype-vertical {
+.leadtype-square, .leadtype-vertical {
   width: 18px;
 }
 
-.leadtype-vertical-sm {
+.leadtype-square-sm, .leadtype-vertical-sm {
   width: 13px;
   font-size: 60%;
 }
@@ -203,7 +203,7 @@
     color: @leadtype-color-seller;
     content: @leadtype-txt-seller;
   }
-  .leadtype-vertical&, .leadtype-vertical-sm& {
+  .leadtype-square&, .leadtype-square-sm&, .leadtype-vertical&, .leadtype-vertical-sm& {
     vertical-align: middle;
     &:before {
       display: block;
@@ -215,20 +215,11 @@
       border-top: 1px solid @gray-light;
     }
   }
-  .leadtype-vertical-sm& {
+  .leadtype-square-sm&, .leadtype-square-sm& {
     &:before, &:after {
       padding: @label-padding-bs-sm;
     }
   }
-}
-
-// Lead Type Equal Width
-// -------------------------
-
-.leadtype-eq {
-  padding-left: 0;
-  padding-right: 0;
-  width: 88px;
 }
 
 // Marker

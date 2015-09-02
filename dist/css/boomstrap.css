@@ -9555,9 +9555,11 @@ button.close-inverted {
   color: #f68a24;
   content: "s";
 }
+.leadtype-square,
 .leadtype-vertical {
   width: 18px;
 }
+.leadtype-square-sm,
 .leadtype-vertical-sm {
   width: 13px;
   font-size: 60%;
@@ -9582,29 +9584,32 @@ button.close-inverted {
   color: #f68a24;
   content: "s";
 }
+.leadtype-square.leadtype-bs,
+.leadtype-square-sm.leadtype-bs,
 .leadtype-vertical.leadtype-bs,
 .leadtype-vertical-sm.leadtype-bs {
   vertical-align: middle;
 }
+.leadtype-square.leadtype-bs:before,
+.leadtype-square-sm.leadtype-bs:before,
 .leadtype-vertical.leadtype-bs:before,
 .leadtype-vertical-sm.leadtype-bs:before {
   display: block;
   border-left: none;
 }
+.leadtype-square.leadtype-bs:after,
+.leadtype-square-sm.leadtype-bs:after,
 .leadtype-vertical.leadtype-bs:after,
 .leadtype-vertical-sm.leadtype-bs:after {
   display: block;
   border-left: none;
   border-top: 1px solid #cccccc;
 }
-.leadtype-vertical-sm.leadtype-bs:before,
-.leadtype-vertical-sm.leadtype-bs:after {
+.leadtype-square-sm.leadtype-bs:before,
+.leadtype-square-sm.leadtype-bs:before,
+.leadtype-square-sm.leadtype-bs:after,
+.leadtype-square-sm.leadtype-bs:after {
   padding: 0.2em 0.25em 0.2em;
-}
-.leadtype-eq {
-  padding-left: 0;
-  padding-right: 0;
-  width: 88px;
 }
 .marker {
   display: inline-block;
