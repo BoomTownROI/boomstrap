@@ -8840,17 +8840,6 @@ button.close-inverted {
   padding-right: 0;
   width: 56px;
 }
-.dropdown-menu-leadtype {
-  min-width: 50px;
-}
-.dropdown-menu-leadtype > li > a {
-  padding: 3px 8px 6px;
-}
-.dropdown-menu-leadtype [class*="leadtype-"] {
-  padding-left: 0;
-  padding-right: 0;
-  width: 88px;
-}
 .dropdown-toggle.btn-link {
   padding: 0;
   text-decoration: none;
@@ -9071,4 +9060,13 @@ button.close-inverted {
 }
 .ficon-info:before {
   content: "\e025";
+}
+.ficon-info-circle:before {
+  content: "\e024";
+}
+.ficon-delete:before {
+  content: "\e020";
+}
+.ficon-location:before {
+  content: "\e01c";
 }
