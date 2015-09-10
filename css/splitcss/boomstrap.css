@@ -404,11 +404,12 @@
 .leadtype-square,
 .leadtype-vertical {
   width: 18px;
+  font-size: 10px;
 }
 .leadtype-square-sm,
 .leadtype-vertical-sm {
   width: 13px;
-  font-size: 62%;
+  font-size: 8px;
 }
 .leadtype-bs {
   padding: 0;
