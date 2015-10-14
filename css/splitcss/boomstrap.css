@@ -1767,6 +1767,7 @@ a.texting__charcount--danger:hover,
   border-radius: 3px;
   display: block;
   height: 100%;
+  margin-bottom: 0;
   overflow: hidden;
   position: relative;
   width: 100%;
