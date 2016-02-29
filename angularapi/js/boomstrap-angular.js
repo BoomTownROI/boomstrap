@@ -1,4 +1,4 @@
-/*! Boomstrap v1.17.0 */
+/*! Boomstrap v1.17.1 */
 (function () {
   'use strict';
   angular.module('boomstrap', [
@@ -35,7 +35,7 @@
     },
     {
       value: 3,
-      name: 'qual',
+      name: 'qualify',
       abbr: 'qual',
       active: true
     },
@@ -47,7 +47,7 @@
     },
     {
       value: 4,
-      name: 'nurt',
+      name: 'nurture',
       abbr: 'nurt',
       active: true
     },
@@ -59,19 +59,19 @@
     },
     {
       value: 11,
-      name: 'pend',
+      name: 'pending',
       abbr: 'pend',
       active: false
     },
     {
       value: 10,
-      name: 'close',
+      name: 'closed',
       abbr: 'close',
       active: false
     },
     {
       value: 6,
-      name: 'arch',
+      name: 'archive',
       abbr: 'arch',
       active: false
     },
