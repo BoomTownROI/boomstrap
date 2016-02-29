@@ -9,7 +9,7 @@
     },
     {
       value: 3,
-      name: 'qualify',
+      name: 'qual',
       abbr: 'qual',
       active: true
     },
@@ -21,7 +21,7 @@
     },
     {
       value: 4,
-      name: 'nurture',
+      name: 'nurt',
       abbr: 'nurt',
       active: true
 
@@ -34,19 +34,19 @@
     },
     {
       value: 11,
-      name: 'pending',
+      name: 'pend',
       abbr: 'pend',
       active: false
     },
     {
       value: 10,
-      name: 'closed',
+      name: 'close',
       abbr: 'close',
       active: false
     },
     {
       value: 6,
-      name: 'archive',
+      name: 'arch',
       abbr: 'arch',
       active: false
     },
