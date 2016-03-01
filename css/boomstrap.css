@@ -10459,6 +10459,12 @@ a.texting__charcount--danger:hover,
   text-align: center;
   width: 50%;
 }
+.switcher__off > .icon,
+.switcher__on > .icon {
+  height: 24px;
+  top: 0;
+  vertical-align: inherit;
+}
 .switcher__off {
   background-color: #999999;
   padding-left: 20px;
@@ -10520,6 +10526,10 @@ a.texting__charcount--danger:hover,
 .switcher--sm .switcher__off,
 .switcher--sm .switcher__on {
   line-height: 20px;
+}
+.switcher--sm .switcher__off > .icon,
+.switcher--sm .switcher__on > .icon {
+  height: 20px;
 }
 .switcher--sm .switcher__off {
   padding-left: 16px;
