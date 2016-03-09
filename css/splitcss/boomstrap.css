@@ -143,7 +143,6 @@ a.list-group-item.active:after {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .loader {
@@ -433,7 +432,6 @@ a.list-group-item.active:after {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: scale(1.15);
-  -ms-transform: scale(1.15);
   transform: scale(1.15);
   transition: -webkit-transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -443,7 +441,6 @@ a.list-group-item.active:after {
 }
 .modal.in .modal-dialog {
   -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
   transition: -webkit-transform 300ms ease-out;
   transition: transform 300ms ease-out;
@@ -496,7 +493,6 @@ a.list-group-item.active:after {
   height: 32px;
   width: 3px;
   -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
   transform: translateY(0);
   position: absolute;
   transition: all 0.35s cubic-bezier(0.43, 0.41, 0.22, 0.91);
@@ -549,7 +545,6 @@ a.list-group-item.active:after {
   height: 3px;
   left: 0px;
   -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
   transform: translateX(0);
   position: absolute;
   width: 0px;
@@ -1308,7 +1303,6 @@ a.texting__charcount--danger:hover,
 .switcher__inner {
   font-size: 0;
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   transition: -webkit-transform 250ms;
   transition: transform 250ms;
@@ -1330,12 +1324,10 @@ a.texting__charcount--danger:hover,
 }
 .switcher__input:checked ~ .switcher__label .switcher__inner {
   -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
   transform: translateX(0);
 }
 .switcher__input:checked ~ .switcher__label .switcher__off:after {
   -webkit-transform: translateX(-24px);
-  -ms-transform: translateX(-24px);
   transform: translateX(-24px);
 }
 .switcher__off,
@@ -1372,7 +1364,6 @@ a.texting__charcount--danger:hover,
   transition: -webkit-transform 250ms;
   transition: transform 250ms;
   -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
   transform: translateX(0);
   width: 20px;
   z-index: 10;
@@ -1392,7 +1383,6 @@ a.texting__charcount--danger:hover,
   transition: -webkit-transform 250ms;
   transition: transform 250ms;
   -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
   transform: translateX(0);
   width: 20px;
   z-index: 10;
@@ -1436,7 +1426,6 @@ a.texting__charcount--danger:hover,
   transition: -webkit-transform 250ms;
   transition: transform 250ms;
   -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
   transform: translateX(0);
   width: 20px;
   z-index: 10;
@@ -1448,7 +1437,6 @@ a.texting__charcount--danger:hover,
 }
 .switcher__input:checked ~ .switcher__label--sm .switcher__off:after {
   -webkit-transform: translateX(-20px);
-  -ms-transform: translateX(-20px);
   transform: translateX(-20px);
 }
 .popover[class*="tour-"] {
@@ -1639,7 +1627,6 @@ a.text-muted:hover,
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .ui-alert {
@@ -1667,7 +1654,6 @@ a.text-muted:hover,
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 .ui-alert__close {
