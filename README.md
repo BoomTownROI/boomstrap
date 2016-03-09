@@ -23,7 +23,9 @@ http://boomtownroi.github.io/boomstrap/
 
 9) Run **gulp website**
 
-10) Publish release through GitHub
+10) Run **npm publish ./** to make available on NPM
+
+10) Publish release on GitHub and rename tag accordingly
 
 #### Working on Another Branch
 

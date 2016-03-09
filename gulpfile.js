@@ -228,7 +228,7 @@ gulp.task(Tasks.AngularApiDocumentation, function() {
       'bower_components/angular-animate/angular-animate.min.js'
     ],
     styles: [
-      '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700',
+      '//fonts.googleapis.com/css?family=Roboto:500,300,700,400italic,400',
       'docs/css/boomstrap.css'
     ],
     loadDefaults: {
@@ -287,7 +287,7 @@ gulp.task(Tasks.BoomstrapStylesDev, function() {
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: false }))
     .pipe(plumber.stop())
-    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
+    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 10'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR))
     .pipe(bless({ imports: false }))
     .pipe(gulp.dest('docs/css/splitcss/'));
@@ -299,7 +299,7 @@ gulp.task(Tasks.BoomstrapStylesDist, function() {
     'less/boomstrap.less'
   ])
     .pipe(less({ compress: false })) // Do not compress. It screw up importing as 'less' in other projects.
-    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 9'], cascade: false }))
+    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 10'], cascade: false }))
     .pipe(insert.prepend(BoomstrapVersion))
     .pipe(gulp.dest(DEST_DIR));
 });
