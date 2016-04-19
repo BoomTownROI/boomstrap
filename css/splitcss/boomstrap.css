@@ -132,7 +132,7 @@ a.list-group-item.active {
   padding-right: 35px;
 }
 a.list-group-item.active:after {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generated%20by%20IcoMoon.io%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M13.272%2027.2c-0.696%200-1.355-0.325-1.778-0.885l-5.718-7.549c-0.744-0.982-0.55-2.381%200.432-3.125%200.984-0.746%202.381-0.55%203.125%200.432l3.762%204.966%209.459-15.186c0.651-1.045%202.027-1.365%203.074-0.714%201.045%200.65%201.365%202.027%200.712%203.072l-11.173%2017.936c-0.389%200.626-1.059%201.018-1.794%201.050-0.034%200.002-0.067%200.002-0.101%200.002z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generated%20by%20IcoMoon.io%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M13.272%2027.2c-0.696%200-1.355-0.325-1.778-0.885l-5.718-7.549c-0.744-0.982-0.55-2.381%200.432-3.125%200.984-0.746%202.381-0.55%203.125%200.432l3.762%204.966%209.459-15.186c0.651-1.045%202.027-1.365%203.074-0.714%201.045%200.65%201.365%202.027%200.712%203.072l-11.173%2017.936c-0.389%200.626-1.059%201.018-1.794%201.050-0.034%200.002-0.067%200.002-0.101%200.002z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 1.15em 1.15em;
@@ -504,15 +504,15 @@ a.list-group-item.active:after {
   border-top: 1px solid #cccccc;
 }
 .nav-muted > li > a {
-  color: #5f7f8e;
+  color: #5F7F8E;
 }
 .nav-muted > li.active > a,
 .nav-muted > li.active > a:hover,
 .nav-muted > li.active > a:focus {
-  color: #5f7f8e;
+  color: #5F7F8E;
 }
 .nav-muted .nav-links__bar {
-  background-color: #5f7f8e;
+  background-color: #5F7F8E;
 }
 .nav-links {
   position: relative;
@@ -1477,21 +1477,21 @@ a.bg-attention:hover {
   background-color: #de7009;
 }
 .bg-cool-dark {
-  background-color: #222c32;
+  background-color: #222C32;
   color: #ffffff;
 }
 a.bg-cool-dark:hover {
   background-color: #0d1114;
 }
 .bg-cool {
-  background-color: #394b54;
+  background-color: #394B54;
   color: #ffffff;
 }
 a.bg-cool:hover {
   background-color: #243036;
 }
 .bg-cool-light {
-  background-color: #5f7f8e;
+  background-color: #5F7F8E;
   color: #ffffff;
 }
 a.bg-cool-light:hover {
@@ -1673,18 +1673,6 @@ a.text-muted:hover,
 }
 .well-lg {
   padding: 20px;
-}
-.progress-striped .progress-bar-success {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-}
-.progress-striped .progress-bar-info {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-}
-.progress-striped .progress-bar-warning {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-}
-.progress-striped .progress-bar-danger {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 h1,
 h2 {
@@ -1941,13 +1929,13 @@ a.responsive-utilities td.is-visible:hover {
   background-color: #444444;
 }
 .pl-swatch--cool {
-  background-color: #394b54;
+  background-color: #394B54;
 }
 .pl-swatch--cool-light {
-  background-color: #5f7f8e;
+  background-color: #5F7F8E;
 }
 .pl-swatch--cool-dark {
-  background-color: #222c32;
+  background-color: #222C32;
 }
 .pl-swatch--cool-hover {
   background-color: #f2f9fc;
