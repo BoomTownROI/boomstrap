@@ -767,6 +767,11 @@ a.list-group-item.active:after {
   border-right-color: rgba(246, 138, 36, 0.5);
   border-bottom-color: rgba(246, 138, 36, 0.5);
 }
+.profile-pic--placeholder {
+  border: 2px dashed #cccccc;
+  background: none;
+  box-shadow: none;
+}
 .sash {
   background-color: #ffffff;
   border-bottom: 4px solid #999999;
