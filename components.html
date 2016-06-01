@@ -1708,7 +1708,7 @@ AlertActions.addAlert({
       </div> <!-- /column -->
       <div class="col-sm-6">
         <div class="card">
-          <div class="sash sash-reduced"><svg class="icon"><use xlink:href="#icon-arrow-down"/></svg> $35,000 (&lt;1%) <span class="sash-time">10 mins ago</span></div>
+          <div class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> $35,000 (&lt;1%) <span class="sash-time">10 mins ago</span></div>
           <div id="carousel-example-card" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="item active">
@@ -2292,6 +2292,16 @@ AlertActions.addAlert({
 <!-- Icons (Boomstrap Custom) -->
 <div class="pl-docs-section">
   <h1 id="icons" class="page-header">Icons</h1>
+  <div class="callout callout-danger">
+    <h4>Deprecated Font Icons <i class="ficon ficon-heart"></i>
+    <i class="ficon ficon-eye"></i>
+    <i class="ficon ficon-chat"></i>
+    <i class="ficon ficon-user"></i>
+    <i class="ficon ficon-cog"></i>
+    <i class="ficon ficon-chevron-left"></i>
+    <i class="ficon ficon-chevron-right"></i></h4>
+    <p>We have switched to an SVG icon system. Font icons are still available for use but development has stopped and they will eventually be removed from the project - <a class="callout-link" href="css/fonts/ficon-docs/demo.html" target="_blank" class="btn btn-attention">view font icons</a>.</p>
+  </div>
   <p class="lead">We have a serious set of SVG icons. In our system, we are injecting the SVG sprite in the top of each page via AJAX. While SVG 'use' pointing to an external source would have been ideal, we decided that we didn't want to maintain polyfills for the IE browser.</p>
   <p><a href="svg/sprite.symbol.html" target="_blank" class="btn btn-attention">view full svg icon set</a><br><br></p>
   <h4>Utility, Interface, Action Icons</h4>
@@ -5168,15 +5178,6 @@ AlertActions.addAlert({
   <h1 id="profile-pics" class="page-header">Profile Pics</h1>
   <p class="lead">Standard display of lead photo. Like, wow.</p>
 
-  <h3>Placeholder</h3>
-  <p>Used in the rare instance when there is no profile pic or initials.</p>
-  <div class="pl-example pl-example-profile-pic">
-    <div class="profile-pic profile-pic--placeholder"></div>
-  </div>
-  <div class="pl-code">
-    <pre class="prettyprint"><code>&lt;div class="profile-pic profile-pic--placeholder"&gt;&lt;/div&gt;</code></pre>
-  </div>
-
   <h3>Default</h3>
   <p>As seen on the profile page! Pretty straightforward. 90px x 90px.</p>
 
@@ -5191,11 +5192,11 @@ AlertActions.addAlert({
   </div>
   <div class="pl-code">
     <pre class="prettyprint"><code>
-&lt;div class="profile-pic" style="background-image: url(//media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/087/3b6/03d99cf.jpg);" alt="Mark Funk"&gt;&lt;/div&gt;
+&lt;div class="profile-pic" style="background-image: url(//media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/087/3b6/03d99cf.jpg);" alt="Mark Funk" /&gt;
 &amp;nbsp;
-&lt;div class="profile-pic" style="background-image: url(//gp1.wac.edgecastcdn.net/802892/production_public/Artist/335365/image/small/Photo_302.jpg);" alt="Frock"&gt;&lt;/div&gt;
+&lt;div class="profile-pic" style="background-image: url(//gp1.wac.edgecastcdn.net/802892/production_public/Artist/335365/image/small/Photo_302.jpg);" alt="Frock" /&gt;
 &amp;nbsp;
-&lt;div class="profile-pic" style="background-image: url(//pbs.twimg.com/profile_images/1366993370/6090_400x400.png);" alt="Zach Schnackel"&gt;&lt;/div&gt;
+&lt;div class="profile-pic" style="background-image: url(//pbs.twimg.com/profile_images/1366993370/6090_400x400.png);" alt="Zach Schnackel" /&gt;
 &amp;nbsp;
 &lt;div class="profile-pic profile-pic--initials"&gt;MF&lt;/div&gt;</code></pre>
   </div>

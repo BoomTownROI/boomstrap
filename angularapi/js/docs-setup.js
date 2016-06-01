@@ -171,7 +171,7 @@ NG_DOCS={
       "js/angular-animate.min.js"
     ],
     "styles": [
-      "//fonts.googleapis.com/css?family=Roboto:500,300,700,400italic,400",
+      "//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700",
       "css/boomstrap.css"
     ],
     "title": "",
