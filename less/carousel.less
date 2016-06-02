@@ -8,8 +8,7 @@
 
 .carousel-control {
   cursor: pointer;
-  // deprecated ficon
-  > .icon, .ficon {
+  > .icon {
     background-color: @gray-darker;
     display: inline-block;
     font-size: 36px;
@@ -19,26 +18,17 @@
     z-index: 5;
   }
   &.left {
-    background: transparent; // override bootstrap's grandient
+    background: transparent; // override bootstrap's gradient
     > .icon {
-      left: 0;
-    }
-    // deprecated ficon
-    .ficon {
       left: 0;
     }
   }
   &.right {
-    background: transparent; // override bootstrap's grandient
+    background: transparent; // override bootstrap's gradient
     > .icon {
       right: 0;
     }
-    // deprecated ficon
-    .ficon {
-      right: 0;
-    }
   }
-
 }
 
 

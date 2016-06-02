@@ -28,6 +28,7 @@
   border-radius: @switcher-border-radius;
   display: block;
   height: 100%;
+  margin-bottom: 0;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -53,6 +54,11 @@
   position: relative;
   text-align: center;
   width: 50%;
+  > .icon {
+    height: @switcher-height;
+    top: 0;
+    vertical-align: inherit;
+  }
 }
 
 .switcher__off {
@@ -111,6 +117,9 @@
   }
   .switcher__off, .switcher__on {
     line-height: @switcher-sm-state-line-height;
+    > .icon {
+      height: @switcher-sm-height;
+    }
   }
   .switcher__off {
     padding-left: @switcher-sm-state-padding;

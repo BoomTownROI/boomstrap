@@ -1,7 +1,7 @@
 <div class="card" ng-class="{ 'card-sm': size === 'sm' }">
   <div ng-if="property.newProperty" class="sash sash-new">New <span class="sash-time" am-time-ago="{{ property.newProperty }}"></span></div>
   <div ng-if="property.offMarket" class="sash sash-off">Off Market <span class="sash-time" am-time-ago="{{ property.offMarket }}"></span></div>
-  <div ng-if="property.reduced" class="sash sash-reduced"><i class="ficon ficon-arrow-down"></i> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time" am-time-ago="{{ property.reduced.when }}">{{ property.reduced.when }}</span></div>
+  <div ng-if="property.reduced" class="sash sash-reduced"><svg class="icon"><use xlink:href="#icon-arrow-down"/></svg> {{ property.reduced.change }} ({{ property.reduced.changePercent }}) <span class="sash-time" am-time-ago="{{ property.reduced.when }}">{{ property.reduced.when }}</span></div>
   <div ng-if="property.backOnMarket" class="sash sash-back">Back <span class="sash-time" am-time-ago="{{ property.backOnMarket }}">{{ property.backOnMarket }}</span></div>
   <div class="card-photo">
     <div class="card-photo-inner">
@@ -37,17 +37,17 @@
   <div class="card-container">
     <div class="row row-xcondensed">
       <div class="col-sm-6">
-        <button type="button" class="btn btn-default btn-block btn-sm" ng-click="onClickBestFit($event)"><i class="ficon ficon-star"></i> {{ property.bestFits }} Best-Fit</button>
+        <button type="button" class="btn btn-default btn-block btn-sm" ng-click="onClickBestFit($event)"><svg class="icon icon-star"><use xlink:href="#icon-star"/></svg> {{ property.bestFits }} Best-Fit</button>
       </div>
       <div class="col-sm-6">
-        <button type="button" class="btn btn-default btn-block btn-sm" ng-click="onClickFavs($event)"><i class="ficon ficon-heart"></i> {{ property.favs }} Favs</button>
+        <button type="button" class="btn btn-default btn-block btn-sm" ng-click="onClickFavs($event)"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg> {{ property.favs }} Favs</button>
       </div>
     </div>
   </div> <!-- /card-container -->
   <div ng-if="!isSmall">
     <div class="card-toggle">
-        <span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><i class="ficon ficon-chevron-down"></i> More Detail</span>
-        <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><i class="ficon ficon-chevron-up"></i> Less Detail</span>
+        <span ng-click="isExpanded = !isExpanded" ng-show="!isExpanded"><svg class="icon"><use xlink:href="#icon-chevron-down"/></svg> More Detail</span>
+        <span ng-click="isExpanded = !isExpanded" ng-show="isExpanded"><svg class="icon"><use xlink:href="#icon-chevron-up"/></svg> Less Detail</span>
     </div>
     <div collapse="!isExpanded" class="card-detail">
       <div class="card-container">
@@ -68,7 +68,7 @@
             <p class="small">{{ history.when }}</p>
           </div>
           <div class="col-xs-5 col-xs-offset-1">
-            <p class="small card-price-history-change"><i class="ficon ficon-arrow-down"></i> {{ history.change }} ({{ history.changePercent }})</p>
+            <p class="small card-price-history-change"><svg class="icon"><use xlink:href="#icon-arrow-down"/></svg> {{ history.change }} ({{ history.changePercent }})</p>
           </div>
           <div class="col-xs-3 text-right">
             <p class="small">{{ history.price }}</p>
@@ -78,10 +78,10 @@
       <div class="card-container">
         <div class="row row-xcondensed">
           <div class="col-sm-6">
-            <button class="btn btn-default btn-sm btn-block"><i class="ficon ficon-location"></i> Map View</button>
+            <button class="btn btn-default btn-sm btn-block"><svg class="icon"><use xlink:href="#icon-location"/></svg> Map View</button>
           </div>
           <div class="col-sm-6">
-            <button class="btn btn-default btn-sm btn-block">Full Details <i class="ficon ficon-arrow-bend-right"></i> </button>
+            <button class="btn btn-default btn-sm btn-block">Full Details <svg class="icon"><use xlink:href="#icon-arrow-bend-right"/></svg> </button>
           </div>
         </div>
       </div> <!-- /card-container -->
