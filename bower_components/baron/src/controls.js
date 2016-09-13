@@ -1,5 +1,13 @@
 /* Controls plugin for baron 0.6+ */
-(function(window, undefined) {
+(function(scopedWindow, undefined) {
+    var scopedBaron;
+
+    if (typeof module != 'undefined') {
+        scopedBaron = require('./core');
+    } else {
+        scopedBaron = scopedWindow.baron;
+    }
+
     var controls = function(params) {
         var forward, backward, track, screen,
             self = this, // AAAAAA!!!!!11
@@ -14,7 +22,7 @@
                 element: forward,
 
                 handler: function() {
-                    var y = self.pos() - params.delta || 30;
+                    var y = self.pos() + (params.delta || 30);
 
                     self.pos(y);
                 },
@@ -33,7 +41,7 @@
                 element: backward,
 
                 handler: function() {
-                    var y = self.pos() + params.delta || 30;
+                    var y = self.pos() - (params.delta || 30);
 
                     self.pos(y);
                 },
@@ -57,6 +65,9 @@
                     element: track,
 
                     handler: function(e) {
+                        // https://github.com/Diokuz/baron/issues/121
+                        if (e.target != track) return;
+
                         var x = e['offset' + self.origin.x],
                             xBar = self.bar[self.origin.offsetPos],
                             sign = 0;
@@ -80,7 +91,7 @@
         }
     };
 
-    baron.fn.controls = function(params) {
+    scopedBaron.fn.controls = function(params) {
         var i = 0;
 
         while (this[i]) {
@@ -90,4 +101,4 @@
 
         return this;
     };
-})(window);
+})(this);

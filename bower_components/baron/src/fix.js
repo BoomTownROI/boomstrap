@@ -1,5 +1,19 @@
 /* Fixable elements plugin for baron 0.6+ */
-(function(window, undefined) {
+(function(scopedWindow, undefined) {
+    var scopedBaron;
+
+    if (typeof module != 'undefined') {
+        scopedBaron = require('./core.js');
+    } else {
+        scopedBaron = scopedWindow.baron;
+    }
+
+    // removeIf(production)
+    var log = function() {
+        scopedBaron.fn.log.apply(this, arguments);
+    };
+    // endRemoveIf(production)
+
     var fix = function(userParams) {
         var elements, viewPortSize,
             params = { // Default params
@@ -19,6 +33,15 @@
             eventManager = this.event,
             $ = this.$,
             self = this;
+
+        // removeIf(production)
+        if (this.position != 'static') {
+            log('error', [
+                'Fix plugin cannot work properly in non-static baron position.',
+                'See more https://github.com/Diokuz/baron/issues/135'
+            ].join(' '), this.params);
+        }
+        // endRemoveIf(production)
 
         // i - number of fixing element, pos - fix-position in px, flag - 1: top, 2: bottom
         // Invocation only in case when fix-state changed
@@ -229,7 +252,7 @@
         });
     };
 
-    baron.fn.fix = function(params) {
+    scopedBaron.fn.fix = function(params) {
         var i = 0;
 
         while (this[i]) {
@@ -239,4 +262,4 @@
 
         return this;
     };
-})(window);
+})(this);

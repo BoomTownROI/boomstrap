@@ -1,3 +1,85 @@
+## 2.2.2
+
+ - Fix root bidirect bug && add tests https://github.com/Diokuz/baron/issues/139
+
+## 2.2.0
+
+ - Add `position` param
+
+## 2.1.1
+
+ - Update dist files properly
+
+## 2.1.0
+
+ - Rework of cross-scroll bugs issue https://github.com/Diokuz/baron/issues/134
+ - Add tests for scroll-scroll bugs
+ - Update uglify-js package
+ - Change `main` field to prod version of baron
+
+## 2.0.2
+
+ - Remove baron instances from baron._instances on dispose (https://github.com/Diokuz/baron/issues/132)
+ - baron._instances now reachable only in dev mode
+
+## 2.0.1
+
+ - Baron now trows an Error when no jQuery nor params.$ found
+
+## 2.0.0
+
+ - `impact` default value now always `scroller`.
+ - Mac OS X Firefox support
+ - draggingCls now adds to `root`, not `bar`
+ - second baron init for same direction now always returns existing instance
+
+## 1.2.1
+
+ - [fix `controls` click and direction](https://github.com/Diokuz/baron/issues/121).
+
+## 1.2.0
+
+ - `scrollingCls` param now sets on `root`, not `scroller`.
+
+## 1.1.0
+
+ - add `rtl` param.
+
+## 1.0.3
+
+ - add ```-ms-overflow-style: none``` for non-guru css mode.
+
+## 1.0.2
+
+ - fix ie clipper (cross-scroll)[https://github.com/Diokuz/baron/issues/116]
+
+## 1.0.0
+
+ - add `cssGuru` option for css guru.
+ - add default css.
+ - remove resizeDebounce param.
+ - fix phantom tests.
+ - remove pause param.
+
+## 0.8.0
+
+ - `impact` param added
+
+## 0.7.16
+
+ - fixed noParams initialization bug for multiple barons on page
+
+## 0.7.15
+
+ - fixed module.exports bug (now baron is compatible with react-baron)
+
+## 0.7.14
+
+ - fixed flexbox bug
+ - fixed Opera 12 nested flexbox bug
+ - rework of horizontal scroll
+ - removed `freeze` param
+
 ## 0.6.2
 
 - dispose method added (to free memory and remove event listeners when scroller removed from dom)

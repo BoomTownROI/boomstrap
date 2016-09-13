@@ -1,5 +1,13 @@
 /* Pull to load plugin for baron 0.6+ */
-(function(window, undefined) {
+(function(scopedWindow, undefined) {
+    var scopedBaron;
+
+    if (typeof module != 'undefined') {
+        scopedBaron = require('./core');
+    } else {
+        scopedBaron = scopedWindow.baron;
+    }
+
     var pull = function(params) {
         var block = this.$(params.block),
             size = params.size || this.origin.size,
@@ -139,7 +147,7 @@
         });
     };
 
-    baron.fn.pull = function(params) {
+    scopedBaron.fn.pull = function(params) {
         var i = 0;
 
         while (this[i]) {
@@ -149,4 +157,4 @@
 
         return this;
     };
-})(window);
+})(this);

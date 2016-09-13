@@ -1,10 +1,20 @@
 /* Autoupdate plugin for baron 0.6+ */
-(function(window) {
-    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver || null;
+(function(scopedWindow) {
+    if (typeof module != 'undefined') {
+        scopedBaron = require('./core');
+    } else {
+        scopedBaron = scopedWindow.baron;
+    }
+
+    var MutationObserver = scopedWindow.MutationObserver || scopedWindow.WebKitMutationObserver || scopedWindow.MozMutationObserver || null;
 
     var autoUpdate = function() {
         var self = this;
         var watcher;
+
+        if (this._au) {
+            return;
+        }
 
         function actualizeWatcher() {
             if (!self.root[self.origin.offset]) {
@@ -61,9 +71,11 @@
             stopWatch();
             delete self._observer;
         });
+
+        this._au = true;
     };
 
-    baron.fn.autoUpdate = function(params) {
+    scopedBaron.fn.autoUpdate = function(params) {
         if (!MutationObserver) return this;
 
         var i = 0;
@@ -75,4 +87,4 @@
 
         return this;
     };
-})(window);
+})(this);
