@@ -1,0 +1,30 @@
+<h1><code ng:non-bindable="">btIFrame</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">boomstrap</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="boomstrap-directive-page boomstrap-directive-btiframe-page"><p>The <code>btIFrame</code> attribute directive allows the user to embed an iFrame with the ability
+to communicate the iFrame closing back to Angular.  The iFrame must be on the same domain as
+the calling code, and must implement a global function called registerClose, which takes a function
+as an argument and sets a function internally to that function.  It is intended that that function
+will be called when the iFrame wishes to close.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/ngboomstrap/ng.$window">$window</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY bt-i-frame
+     width="{string}"
+     height="{string}"
+     src="{string}"
+     close-frame="{expression}"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>width</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btiframe-page"><p>Number value representing the width of the iFrame</p>
+</div></td></tr><tr><td>height</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btiframe-page"><p>Number value representing the height of the iFrame</p>
+</div></td></tr><tr><td>src</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btiframe-page"><p>The uri to the iFrame</p>
+</div></td></tr><tr><td>closeFrame</td><td><a href="" class="label type-hint type-hint-expression">expression</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btiframe-page"><p>Expression to call when the iFrame has been closed internally.</p>
+</div></td></tr></tbody></table></div>
+</div>

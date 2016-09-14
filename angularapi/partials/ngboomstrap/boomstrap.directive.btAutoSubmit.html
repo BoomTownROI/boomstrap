@@ -1,0 +1,64 @@
+<h1><code ng:non-bindable="">btAutoSubmit</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">boomstrap</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="boomstrap-directive-page boomstrap-directive-btautosubmit-page"><p><code>btAutoSubmit</code> allows you to auto submit a form whenever the model of a form-field changes.
+This directive requires the <code>ngForm</code> directive to also be present on the element.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/ngboomstrap/ng.$timeout">$timeout</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/ngboomstrap/ngForm">ngForm</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY bt-auto-submit
+     ng-submit="{expression}"="{expression}"
+     submit-timeout="{Number}"
+     will-load="{expression}"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>ngSubmit</td><td><a href="" class="label type-hint type-hint-expression">expression</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btautosubmit-page"><p>Fires upon timeout completion</p>
+</div></td></tr><tr><td>btAutoSubmit</td><td><a href="" class="label type-hint type-hint-expression">expression</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btautosubmit-page"><p>If the <code>expression</code> is truthy then the <code>ngSubmit</code> expression will fire upon timeout</p>
+</div></td></tr><tr><td>submitTimeout</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btautosubmit-page"><p>Number of milliseconds to wait after a model change before firing the <code>ngSubmit</code></p>
+</div></td></tr><tr><td>willLoad</td><td><a href="" class="label type-hint type-hint-expression">expression</a></td><td><div class="boomstrap-directive-page boomstrap-directive-btautosubmit-page"><p>This directive will set the value supplied here to true when it has scheduled the timeout, but not fired it</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="boomstrap-directive-page boomstrap-directive-btautosubmit-page"><h4 id="example_source">Source</h4>
+<div source-edit="boomstrap" source-edit-deps="angular.js script.js" source-edit-html="index.html" source-edit-css="" source-edit-js="script.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html" ng-html-wrap-loaded="boomstrap angular.js script.js"></pre>
+<script type="text/ng-template" id="index.html">
+    
+    <div ng-app="autoSubmitTest">
+      <div ng-controller="subTest">
+        <ng-form ng-submit="submit()" bt-auto-submit="true" submit-timeout="3000" will-load="willLoad">
+          <input name="myName" ng-model="inputValue">
+        </ng-form>
+        <label ng-show="willLoad.value">I'm thinking...</label>
+        <label ng-bind="delayedValue"></label>
+      </div>
+    </div>
+  </script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js"></pre>
+<script type="text/ng-template" id="script.js">
+      angular.module('boomstrap')
+        .controller('subTest', function($scope) {
+          $scope.willLoad = {
+            value: false
+          };
+          $scope.inputValue = 'Type here!';
+          $scope.submit = function() {
+            $scope.delayedValue = $scope.inputValue;
+          }
+        });
+    </script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="boomstrap" ng-set-html="index.html" ng-eval-javascript="script.js"></div> </p>
+</div></div>
+</div>
