@@ -287,7 +287,7 @@ gulp.task(Tasks.BoomstrapStylesDev, function() {
     .pipe(concat(DEST_FILE))
     .pipe(less({ compress: false }))
     .pipe(plumber.stop())
-    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 10'], cascade: false }))
+    .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie 10', 'safari 8'], cascade: false }))
     .pipe(gulp.dest(DEST_DIR))
     .pipe(bless({ imports: false }))
     .pipe(gulp.dest('docs/css/splitcss/'));
@@ -299,7 +299,7 @@ gulp.task(Tasks.BoomstrapStylesDist, function() {
     'less/boomstrap.less'
   ])
     .pipe(less({ compress: false })) // Do not compress. It screw up importing as 'less' in other projects.
-    .pipe(autoprefixer({ browsers: ['last 2 versions','ie 10'], cascade: false }))
+    .pipe(autoprefixer({ browsers: ['last 2 versions', 'ie 10', 'safari 8'], cascade: false }))
     .pipe(insert.prepend(BoomstrapVersion))
     .pipe(gulp.dest(DEST_DIR));
 });
