@@ -113,6 +113,7 @@ They might well be outsourced to an external stylesheet of course.
 	.svg-icon-up-down-dims { width: 20px; height: 20px; }
 	.svg-icon-user-dims { width: 32px; height: 32px; }
 	.svg-icon-user-add-dims { width: 32px; height: 32px; }
+	.svg-icon-user-match-dims { width: 32px; height: 32px; }
 	.svg-icon-users-dims { width: 32px; height: 32px; }
 	.svg-icon-warning-dims { width: 32px; height: 32px; }
 </style>
@@ -231,6 +232,7 @@ for further details on how to create this embeddable sprite variant.
 		<symbol viewBox="0 0 20 20" id="icon-up-down"><path d="M10 0L5.4 7.3h9.2L10 0zm0 20l4.6-7.3H5.4L10 20z"/></symbol>
 		<symbol viewBox="0 0 32 32" id="icon-user"><path d="M23.712 23.117c-3.944-1.437-5.205-2.65-5.205-5.246 0-1.557 1.205-1.05 1.733-3.903.22-1.184 1.283-.02 1.488-2.722 0-1.077-.58-1.346-.58-1.346s.295-1.596.41-2.822c.14-1.53-.883-5.478-6.358-5.478-5.474 0-6.5 3.95-6.357 5.478.115 1.226.41 2.82.41 2.82s-.58.268-.58 1.347c.202 2.702 1.266 1.538 1.485 2.722.53 2.854 1.734 2.346 1.734 3.904 0 2.598-1.26 3.81-5.205 5.247C2.73 24.557.16 26.027.16 27.03v3.37h30.08v-3.37c0-1-2.572-2.47-6.53-3.913z"/></symbol>
 		<symbol viewBox="0 0 32 32" id="icon-user-add"><path d="M19.803 23.117c-3.986-1.437-5.26-2.65-5.26-5.246 0-1.557 1.22-1.05 1.753-3.903.222-1.184 1.298-.02 1.5-2.722 0-1.077-.585-1.346-.585-1.346s.3-1.596.415-2.822C17.77 5.548 16.732 1.6 11.2 1.6S4.63 5.55 4.772 7.078c.117 1.227.416 2.82.416 2.82s-.588.268-.588 1.347c.206 2.702 1.282 1.538 1.5 2.722.537 2.854 1.755 2.346 1.755 3.904 0 2.598-1.275 3.81-5.26 5.247-.48.17-1.625.44-2.598.86V30.4h25.6v-3.368c0-1.002-1.798-2.474-5.798-3.915zM27.2 14.4V9.6H24v4.8h-4.8v3.2H24v4.8h3.2v-4.8H32v-3.2h-4.8z"/></symbol>
+		<symbol viewBox="0 0 32 32" id="icon-user-match"><path class="dqst0" d="M3.5 3.2h3v20.7h-3zM24 28.9l8-5.9-8-6.1M17.9 12l8-5.9-8-6.1"/><path class="dqst0" d="M2.6 21.4h25.1v3H2.6z"/><circle class="dqst0" cx="5" cy="22.9" r="5"/><circle class="dqst0" cx="5" cy="6" r="5"/><path class="dqst0" d="M5 4.3h14.8v3.4H5z"/></symbol>
 		<symbol viewBox="0 0 32 32" id="icon-users"><path d="M22.97 23.568c-.593-.093-.607-1.708-.607-1.708s1.74-1.708 2.12-4.005c1.02 0 1.65-2.442.63-3.3.042-.905 1.31-7.1-5.113-7.1s-5.155 6.195-5.112 7.1c-1.02.858-.39 3.3.63 3.3.38 2.297 2.12 4.005 2.12 4.005s-.014 1.615-.606 1.708C15.124 23.868 8 26.984 8 30.4h24c0-3.416-7.124-6.53-9.03-6.832zm-12.218.545c1.378-.848 3.05-1.635 4.423-2.107-.492-.7-1.04-1.654-1.385-2.783-.48-.393-.873-.954-1.125-1.644a4.907 4.907 0 0 1-.27-2.18c.057-.51.203-.99.428-1.408-.136-1.456-.232-4.314 1.64-6.398.724-.808 1.64-1.39 2.74-1.74-.196-2.024-1.224-4.4-5.202-4.4-6.423 0-5.154 6.196-5.11 7.1-1.02.86-.39 3.3.63 3.3.378 2.298 2.12 4.006 2.12 4.006s-.015 1.615-.607 1.708c-1.908.3-9.03 3.416-9.03 6.832h10.3c.146-.096.296-.192.45-.287z"/></symbol>
 		<symbol viewBox="0 0 32 32" id="icon-warning"><path d="M31.22 28.77L16.965 3.76c-.197-.345-.566-.557-.966-.557s-.768.213-.966.558L.784 28.77c-.195.34-.19.755.007 1.09s.564.543.958.543h28.504c.39 0 .757-.206.957-.542.197-.335.2-.75.01-1.09zm-13.46-1.567h-3.52v-3.2h3.52v3.2zm0-5.6h-3.52v-9.6h3.52v9.6z"/></symbol>
 </svg>
@@ -1295,6 +1297,17 @@ embedded above. They may be styled via CSS.
 						
 					</div>
 					<h2>icon-user-add</h2>
+				</li>
+				<li title="icon-user-match">
+					<div class="icon-box">
+						
+						<!-- icon-user-match -->
+						<svg class="svg-icon-user-match-dims">
+							<use xlink:href="#icon-user-match"></use>
+						</svg>
+						
+					</div>
+					<h2>icon-user-match</h2>
 				</li>
 				<li title="icon-users">
 					<div class="icon-box">
@@ -2373,6 +2386,17 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 					</div>
 					<h2>icon-user-add</h2>
 				</li>
+				<li title="icon-user-match">
+					<div class="icon-box">
+						
+						<!-- icon-user-match -->
+						<svg class="svg-icon-user-match-dims">
+							<use xlink:href="sprite.svg#icon-user-match"></use>
+						</svg>
+						
+					</div>
+					<h2>icon-user-match</h2>
+				</li>
 				<li title="icon-users">
 					<div class="icon-box">
 						
@@ -2403,7 +2427,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Wed, 14 Sep 2016 17:44:35 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Fri, 23 Sep 2016 15:10:07 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>
