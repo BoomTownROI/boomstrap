@@ -8933,7 +8933,6 @@ button.close-inverted {
 .leadcat,
 [class*="leadtype-"],
 .marker {
-  font-weight: 700;
   padding: 0.2em 0.5em 0.2em;
 }
 .label-attention {
