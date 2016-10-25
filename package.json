@@ -1,6 +1,6 @@
 {
   "name": "boomstrap",
-  "version": "1.17.11",
+  "version": "1.17.12",
   "devDependencies": {
     "boomsvgloader": "0.0.2",
     "del": "1.2.0",
