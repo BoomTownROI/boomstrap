@@ -1,4 +1,4 @@
-/*! Boomstrap v1.17.11 */
+/*! Boomstrap v1.17.13 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8933,6 +8933,7 @@ button.close-inverted {
 .leadcat,
 [class*="leadtype-"],
 .marker {
+  font-weight: 400;
   padding: 0.2em 0.5em 0.2em;
 }
 .label-attention {
