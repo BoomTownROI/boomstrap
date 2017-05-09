@@ -98,10 +98,10 @@
                                 <div style="height: 305px">
                                   <carousel interval="myInterval">
                                     <slide ng-repeat="slide in slides" active="slide.active">
-                                      <img ng-src="{{slide.image}}" style="margin:auto;">
+                                      <img ng-src="" style="margin:auto;">
                                       <div class="carousel-caption">
-                                        <h4>Slide {{$index}}</h4>
-                                        <p>{{slide.text}}</p>
+                                        <h4>Slide </h4>
+                                        <p></p>
                                       </div>
                                     </slide>
                                   </carousel>
@@ -132,10 +132,10 @@
   &lt;div style=&quot;height: 305px&quot;&gt;
     &lt;carousel interval=&quot;myInterval&quot;&gt;
       &lt;slide ng-repeat=&quot;slide in slides&quot; active=&quot;slide.active&quot;&gt;
-        &lt;img ng-src=&quot;{{slide.image}}&quot; style=&quot;margin:auto;&quot;&gt;
+        &lt;img ng-src=&quot;&quot; style=&quot;margin:auto;&quot;&gt;
         &lt;div class=&quot;carousel-caption&quot;&gt;
-          &lt;h4&gt;Slide {{$index}}&lt;/h4&gt;
-          &lt;p&gt;{{slide.text}}&lt;/p&gt;
+          &lt;h4&gt;Slide &lt;/h4&gt;
+          &lt;p&gt;&lt;/p&gt;
         &lt;/div&gt;
       &lt;/slide&gt;
     &lt;/carousel&gt;
@@ -334,7 +334,7 @@
     </div><!-- /callout -->
     <div class="pl-example">
         <button type="button" class="btn btn-default" bt-date-picker="date">Click me!</button>
-        <span ng-show="date.value">You selected {{ date.value }}</span>
+        <span ng-show="date.value">You selected </span>
     </div>
     <h2>Usage</h2>
     <p>Create an object on the scope with a key/value pair of <code>value: myDate</code> and add the bt-date-picker attribute to the item you wish to control.</p>
@@ -466,7 +466,7 @@ $scope.toggleLoader = function() { // flip the boolean to toggle
       <h1 class="page-header">Minimal Pagination</h1>
       <div class="pl-example" ng-controller="btPagerTest">
         <bt-pager current-page="currentPage" total-items="totalItems" items-per-page="itemsPerPage"></bt-pager>
-        <pre style="margin-top: 20px">Page: {{currentPage}} / {{totalItems / itemsPerPage}}</pre>
+        <pre style="margin-top: 20px">Page:  / </pre>
       </div>
       <div class="pl-code">
         <pre class="prettyprint" ng-non-bindable>
@@ -479,7 +479,7 @@ $scope.toggleLoader = function() { // flip the boolean to toggle
     })
     &lt;/script&gt;
     &lt;bt-pager current-page=&quot;currentPage&quot; total-items=&quot;totalItems&quot; items-per-page=&quot;itemsPerPage&quot;&gt;&lt;/bt-pager&gt;
-    &lt;pre&gt;Page: {{currentPage}} / {{totalItems / itemsPerPage}}&lt;/pre&gt;
+    &lt;pre&gt;Page:  / &lt;/pre&gt;
         </pre>
       </div>
     </div>
