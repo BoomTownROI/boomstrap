@@ -1,4 +1,4 @@
-/*! Boomstrap v1.19.5 */
+/*! Boomstrap v1.19.7 */
 (function () {
   'use strict';
   angular.module('boomstrap', [
