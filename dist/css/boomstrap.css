@@ -8912,20 +8912,20 @@ button.close-inverted {
 }
 .icon-email-bad,
 .icon-phone-bad,
-.icon-bulk-text-bad,
+.icon-text-bulk-bad,
 .icon-text-bad {
   color: #f05b5a;
 }
 .icon-email-neutral,
 .icon-phone-neutral,
 .icon-text-neutral,
-.icon-bulk-text-neutral,
+.icon-text-bulk-neutral,
 .log-call .icon-speaker {
   color: #696969;
 }
 .icon-email-good,
 .icon-phone-good,
-.icon-bulk-text-good,
+.icon-text-bulk-good,
 .icon-text-good {
   color: #6f8c31;
 }
