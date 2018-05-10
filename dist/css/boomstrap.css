@@ -1,4 +1,4 @@
-/*! Boomstrap v1.20.0 */
+/*! Boomstrap v1.20.21 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8913,20 +8913,23 @@ button.close-inverted {
 .icon-email-bad,
 .icon-phone-bad,
 .icon-text-bad,
-.icon-text-bulk-bad {
+.icon-text-bulk-bad,
+.icon-email-bulk-bad {
   color: #f05b5a;
 }
 .icon-email-neutral,
 .icon-phone-neutral,
 .icon-text-neutral,
 .log-call .icon-speaker,
-.icon-text-bulk-neutral {
+.icon-text-bulk-neutral,
+.icon-email-bulk-neutral {
   color: #696969;
 }
 .icon-email-good,
 .icon-phone-good,
 .icon-text-good,
-.icon-text-bulk-good {
+.icon-text-bulk-good,
+.icon-email-bulk-good {
   color: #6f8c31;
 }
 .input-group-addon .fauxbox + label:before {
