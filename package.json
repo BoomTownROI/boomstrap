@@ -34,7 +34,7 @@
     "gulp-watch": "4.2.4",
     "highlight.js": "8.6.0",
     "jshint-stylish": "2.0.0",
-    "mustache": "2.1.1",
+    "mustache": "2.2.1",
     "vinyl": "0.4.6"
   },
   "files": [
